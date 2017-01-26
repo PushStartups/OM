@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "frankandoak/smooch-api": "^0.1.0"
+    }
+}

@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.gif" type="image/gif" sizes="16x16">
+    <title>Welcome to OrderApp</title>
+
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/my-style.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/ajaxServerRequests.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('.slideLeftRight').click(function () {
+                // $('#popup').bPopup();
+
+                $('.slideLeftRightMsg').bPopup({
+                    easing: 'easeOutBack', //uses jQuery easing plugin
+                    speed: 1050,
+                    transition: 'slideDown'
+                });
+            });
+        });
+
+        $(function () {
+            $('.slideLeftRight1').click(function () {
+                // $('#popup').bPopup();
+
+                $('.slideLeftRightMsg1').bPopup({
+                    easing: 'easeOutBack', //uses jQuery easing plugin
+                    speed: 1050,
+                    transition: 'slideDown'
+                });
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        #popup, .bMulti {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+
+<!--GET ALL RESTAURANTS FROM SERVER -->
+<script>
+
+    var restaurants = getAllRestaurants();
+
+</script>
+
+
+
+<body>
+
+<!--HEADER START -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container nav_container">
+        <div class="navbar-header">
+            <div class="navbar-brand navbar-brand-centered animate-box fadeInDown animated">
+                <img src="img/logo.png" class="img-responsive">
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="" id="navbar-brand-centered">
+            <ul class="nav navbar-nav navbar-right pull-right animate-box fadeInRight animated">
+                <li><a href="#" > <span class="navigation-btn"> HE </span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- /.container-fluid -->
+    <div class="top_notification">
+        <div class="col-lg-12">
+            Hungry? Choose a restaurant and order.
+        </div>
+    </div>
+</nav>
+<!--HEADER END -->
+
+
+<!--ALL RESTAURANTS -->
+<div class="middle_panel">
+    <div class="container middle_panel_padding">
+        <div class="accordion" id="accordion2">
+            <!--   according one-->
+            <div class="accordion-group animate-box fadeInUp animated">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="status_online"></div>
+                            <div class="img_cernter_crop">
+                                <img src="img/resto_logo_02.png" class="picture-src">
+                            </div>
+                            <div id="right-triangle"></div>
+                            <div class="resto_title">
+                                <h3>Bandora Shawarma</h3>
+                                <p>Burger, Burger, Burger, Burger, Burger, Burger</p>
+                                <span>Kosher</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+                <div id="collapseOne" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <p>DANIEL’s private Bellecour Room is an ideal setting for an elegant and impressive event, The space, located off of the Upper Lounge, accommodates up to 90 guests for a seated event and 150 guests.</p>
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p>60 E 65th Street</p> <span>New York</span></div>
+                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now <img src="img/dropdown.png"></p> <span class="text-left">10:00AM - 11:00PM</span></a>
+                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>
+                        </div>
+                        <a href="#" class="order_now">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <!--   according one-->
+
+            <!--   according two-->
+            <div class="accordion-group animate-box fadeInUp animated">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="status_offline"><span class="close_arrow" aria-hidden="true">×</span></div>
+                            <div class="img_cernter_crop">
+                                <img src="img/resto_logo_01.png" class="picture-src">
+                            </div>
+                            <div id="right-triangle"></div>
+                            <div class="resto_title">
+                                <h3>Gordi Schnitzel</h3>
+                                <p>Burger, Burger, Burger, Burger, Burger, Burger</p>
+                                <span>Kosher</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <p>DANIEL’s private Bellecour Room is an ideal setting for an elegant and impressive event, The space, located off of the Upper Lounge, accommodates up to 90 guests for a seated event and 150 guests.</p>
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p>60 E 65th Street</p> <span>New York</span></div>
+                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now <img src="img/dropdown.png"></p> <span class="text-left">10:00AM - 11:00PM</span></a>
+                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>
+                        </div>
+                        <a href="#" class="order_now_gray">Order Now <p>Open in 5 hr</p></a>
+                    </div>
+                </div>
+            </div>
+            <!--   according two-->
+        </div>
+    </div>
+</div>
+
+
+<div id="popup" class="slideLeftRightMsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 100%; left: 0px;">
+    <div class="modal-dialog">
+        <div class="modal-dialog gallery_digonal">
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+                    <table class="table" style="margin-bottom:0px;">
+                        <tbody>
+                        <tr class="todays_date_bold">
+                            <td>Sunday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>10 : 00 AM</td>
+                            <td>11 : 00 PM</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+<!-- Delete Modal -->
+
+
+
+<!-- Modal HTML -->
+<div id="popup" class="slideLeftRightMsg1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 100%; left: 0px;">
+    <div class="modal-dialog">
+        <div class="modal-content gallery_modal_content">
+            <div class="modal-body">
+                <div class="carousel slide" data-interval="false" id="myCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active gallery_img_cernter_crop"><img alt="item2" src="img/gallery_01.png">
+                        </div>
+                        <div class="item gallery_img_cernter_crop"><img alt="item3" src="img/gallery_02.png">
+                        </div>
+                        <div class="item gallery_img_cernter_crop"><img alt="item4" src="img/gallery_01.png">
+                        </div>
+                        <div class="item gallery_img_cernter_crop"><img alt="item6" src="img/gallery_02.png">
+                            <!--end of items-->
+                        </div>
+                        <!--end carousel-inner-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<!-- jQuery -->
+<!--<script src="js/jquery.js"></script>-->
+<!-- Mobile & Tab device swipe Left and Right Side JavaScript -->
+<script src="js/jquery.mobile.custom.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.js"></script>
+
+<!-- Mobile & Tab device swipe Left and Right Side Start -->
+<script>
+
+    $(document).ready(function () {
+
+        $("#myCarousel").swiperight(function () {
+            $(this).carousel('prev');
+        });
+
+        $("#myCarousel").swipeleft(function () {
+            $(this).carousel('next');
+        });
+    });
+
+</script>
+<!-- Mobile & Tab device swipe Left and Right Side End -->
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        function alignModal() {
+
+            var modalDialog = $(this).find(".modal-dialog");
+
+            // Applying the top margin on modal dialog to align it vertically center
+            modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+        }
+        // Align modal when it is displayed
+        $(".modal").on("shown.bs.modal", alignModal);
+
+        // Align modal when user resize the window
+        $(window).on("resize", function () {
+            $(".modal:visible").each(alignModal);
+        });
+    });
+
+</script>
+
+<!-- According Script Start -->
+<script>
+    /**
+     * EFECTO PARA FLECHAS EN ACORDEON
+     */
+    $(document).on('show', '.accordion', function (e) {
+        //$('.accordion-heading i').toggleClass(' ');
+        $(e.target).prev('.accordion-heading').addClass('accordion-opened');
+    });
+
+    $(document).on('hide', '.accordion', function (e) {
+        $(this).find('.accordion-heading').not($(e.target)).removeClass('accordion-opened');
+    });
+</script>
+
+
+</body>
+</html>
