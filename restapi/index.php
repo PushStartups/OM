@@ -14,7 +14,7 @@ $app = new \Slim\App();
 
 //  WEB HOOK GET ALL RESTAURANT
 
-$app->post('/get_all_restaurants_he', function ($request, $response, $args)
+$app->post('/get_all_restaurants', function ($request, $response, $args)
 {
     $restaurants = Array();
 
@@ -33,38 +33,63 @@ $app->post('/get_all_restaurants_he', function ($request, $response, $args)
 
         foreach ($tagsIds as $id) {
 
-            $tag = DB::queryFirstRow("select name_he from tags where id = '".$id["tag_id"]."'");
-            $tags[$count2] = $tag["name_he"];
-
+            $tag = DB::queryFirstRow("select * from tags where id = '".$id["tag_id"]."'");
+            $tags[$count2] = $tag;
             $count2++;
         };
 
-        // RETRIEVING RESTAURANT TIMINGS;
+
+        // RETRIEVING RESTAURANT TIMINGS i.e SUNDAY   STAT_TIME : 12:00  END_TIME 21:00;
 
         $restaurantTimings = DB::query("select * from weekly_availibility where restaurant_id = '".$result['id']."'");
-        $timings = Array();
-        $count3 = 0;
+
+        // CURRENT TIME OF ISRAEL
+        date_default_timezone_set("Asia/Jerusalem");
+        $currentTime           =    date("H:i:s");
+        $tempDate              =    date("Y/m/d");
+        $dayOfWeek             =    date('l', strtotime( $tempDate));
+
+        // RESTAURANT AVAILABILITY ACCORDING TO TIME
+        $currentStatus = false;
+
+        $today_timings = "";
 
         foreach ($restaurantTimings as $singleTime) {
 
-            $time [] = [
-                "week_day"            => $singleTime['week_day'],
-                "openning_time"    => $singleTime['openning_time'],
-                "closing_time"    => $singleTime['closing_time']
-            ];
+            if($singleTime['week_en'] == $dayOfWeek) {
 
-            $timings[$count3] = $time;
-            $count3++;
+                $today_timings = $singleTime['opening_time']." - ". $singleTime['closing_time'];
+
+                $openingTime = DateTime::createFromFormat('H:i', $singleTime['opening_time']);
+                $closingTime = DateTime::createFromFormat('H:i', $singleTime['closing_time']);
+                $currentTime = DateTime::createFromFormat('H:i:s', $currentTime);
+
+
+                if ($currentTime >= $openingTime && $currentTime <= $closingTime) {
+
+                    $currentStatus = true;
+                    break;
+                }
+
+            }
         }
+
+
 
         // CREATE DEFAULT RESTAURANT OBJECT;
 
-        $restaurant[] = [
-            "name"              => $result["name_he"],
-            "logo"              => $result["logo"],
-            "description"       => $result["description_he"],
-            "address"           => $result["address_he"],
-            "tags"              => $tags
+        $restaurant = [
+            "name_en"              =>  $result["name_en"],           // RESTAURANT NAME
+            "name_he"              =>  $result["name_he"],           // RESTAURANT NAME
+            "logo"                 =>  $result["logo"],              // RESTAURANT LOGO
+            "description_en"       =>  $result["description_en"],    // RESTAURANT DESCRIPTION
+            "description_he"       =>  $result["description_he"],    // RESTAURANT DESCRIPTION
+            "address_en"           =>  $result["address_en"],        // RESTAURANT ADDRESS
+            "address_he"           =>  $result["address_he"],        // RESTAURANT ADDRESS
+            "tags"                 =>  $tags,                        // RESTAURANT TAGS
+            "timings"              =>  $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
+            "availability"         =>  $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
+            "today_timings"        =>  $today_timings                // TODAY TIMINGS
         ];
 
         $restaurants[$count] = $restaurant;

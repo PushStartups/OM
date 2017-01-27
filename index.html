@@ -28,17 +28,36 @@
 
 
     <script type="text/javascript">
-        $(function () {
-            $('.slideLeftRight').click(function () {
-                // $('#popup').bPopup();
 
-                $('.slideLeftRightMsg').bPopup({
-                    easing: 'easeOutBack', //uses jQuery easing plugin
-                    speed: 1050,
-                    transition: 'slideDown'
-                });
+        // CLICK LISTENER FOR RESTAURANT TIMINGS POPUP
+        $(document).on('click','.slideLeftRight',function(){
+
+            // RESTAURANT CLICKED BY USER
+            var clickedRestId = $(this).attr('id').replace('timings','');
+
+            // DISPLAY RESTAURANT TIMINGS
+            var str = "";
+            for(var x=0;x<allRestJson[clickedRestId].timings.length;x++)
+            {
+                str +=  '<tr class="todays_date_bold">'+
+                        '<td>'+allRestJson[clickedRestId].timings[x].week_en+'</td>'+
+                        '<td>'+allRestJson[clickedRestId].timings[x].opening_time+'</td>'+
+                        '<td>'+allRestJson[clickedRestId].timings[x].closing_time+'</td>'+
+                        '</tr>';
+            }
+
+            $("#tableBody").html(str);
+
+            // DISPLAY POPUP
+
+            $('.slideLeftRightMsg').bPopup({
+                easing: 'easeOutBack', //uses jQuery easing plugin
+                speed: 1050,
+                transition: 'slideDown'
             });
+
         });
+
 
         $(function () {
             $('.slideLeftRight1').click(function () {
@@ -66,10 +85,9 @@
 <!--GET ALL RESTAURANTS FROM SERVER -->
 <script>
 
-    var restaurants = getAllRestaurants();
+    getAllRestaurants();
 
 </script>
-
 
 
 <body>
@@ -103,73 +121,8 @@
 
 <!--ALL RESTAURANTS -->
 <div class="middle_panel">
-    <div class="container middle_panel_padding">
+    <div  id = "restaurantList" class="container middle_panel_padding">
         <div class="accordion" id="accordion2">
-            <!--   according one-->
-            <div class="accordion-group animate-box fadeInUp animated">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="status_online"></div>
-                            <div class="img_cernter_crop">
-                                <img src="img/resto_logo_02.png" class="picture-src">
-                            </div>
-                            <div id="right-triangle"></div>
-                            <div class="resto_title">
-                                <h3>Bandora Shawarma</h3>
-                                <p>Burger, Burger, Burger, Burger, Burger, Burger</p>
-                                <span>Kosher</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-                <div id="collapseOne" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                        <p>DANIEL’s private Bellecour Room is an ideal setting for an elegant and impressive event, The space, located off of the Upper Lounge, accommodates up to 90 guests for a seated event and 150 guests.</p>
-                        <div class="btn-group btn-group-justified">
-                            <div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p>60 E 65th Street</p> <span>New York</span></div>
-                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now <img src="img/dropdown.png"></p> <span class="text-left">10:00AM - 11:00PM</span></a>
-                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>
-                        </div>
-                        <a href="#" class="order_now">Order Now</a>
-                    </div>
-                </div>
-            </div>
-            <!--   according one-->
-
-            <!--   according two-->
-            <div class="accordion-group animate-box fadeInUp animated">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="status_offline"><span class="close_arrow" aria-hidden="true">×</span></div>
-                            <div class="img_cernter_crop">
-                                <img src="img/resto_logo_01.png" class="picture-src">
-                            </div>
-                            <div id="right-triangle"></div>
-                            <div class="resto_title">
-                                <h3>Gordi Schnitzel</h3>
-                                <p>Burger, Burger, Burger, Burger, Burger, Burger</p>
-                                <span>Kosher</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="clearfix"></div>
-                <div id="collapseTwo" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                        <p>DANIEL’s private Bellecour Room is an ideal setting for an elegant and impressive event, The space, located off of the Upper Lounge, accommodates up to 90 guests for a seated event and 150 guests.</p>
-                        <div class="btn-group btn-group-justified">
-                            <div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p>60 E 65th Street</p> <span>New York</span></div>
-                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now <img src="img/dropdown.png"></p> <span class="text-left">10:00AM - 11:00PM</span></a>
-                            <a href="#" onClick='return false;' onClick='return false;' id="pop" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>
-                        </div>
-                        <a href="#" class="order_now_gray">Order Now <p>Open in 5 hr</p></a>
-                    </div>
-                </div>
-            </div>
-            <!--   according two-->
         </div>
     </div>
 </div>
@@ -182,47 +135,8 @@
 
                 <div class="modal-body text-center">
                     <table class="table" style="margin-bottom:0px;">
-                        <tbody>
-                        <tr class="todays_date_bold">
-                            <td>Sunday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Monday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td>10 : 00 AM</td>
-                            <td>11 : 00 PM</td>
-                        </tr>
+                        <tbody id="tableBody">
+
                         </tbody>
                     </table>
                 </div>
@@ -292,22 +206,31 @@
 
 <script type="text/javascript">
 
+
     $(document).ready(function () {
 
-        function alignModal() {
+
+        function alignModal()
+        {
+
+            alert("hi");
 
             var modalDialog = $(this).find(".modal-dialog");
 
             // Applying the top margin on modal dialog to align it vertically center
             modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
         }
+
         // Align modal when it is displayed
         $(".modal").on("shown.bs.modal", alignModal);
+
 
         // Align modal when user resize the window
         $(window).on("resize", function () {
             $(".modal:visible").each(alignModal);
         });
+
+
     });
 
 </script>
@@ -321,6 +244,7 @@
         //$('.accordion-heading i').toggleClass(' ');
         $(e.target).prev('.accordion-heading').addClass('accordion-opened');
     });
+
 
     $(document).on('hide', '.accordion', function (e) {
         $(this).find('.accordion-heading').not($(e.target)).removeClass('accordion-opened');
