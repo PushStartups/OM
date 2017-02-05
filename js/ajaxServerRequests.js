@@ -1,9 +1,21 @@
-
 var allRestJson = null;
 
 
-// GET ALL RESTAURANTS FROM SERVER
+// USER ORDER INFORMATION
+var userObject =   {'restaurantId' : "",
+                    'restaurantTitle' : "",
+                    'restaurantAddress' : "",
+                    'name' : "",
+                    'email' : "",
+                    'orders' : [],
+                    'total'  : 0,
+                    'pickFromRestaurant' : false,
+                    'deliveryAddress' : "",
+                    'isCoupon' : false};
 
+
+
+// GET ALL RESTAURANTS FROM SERVER
 function  getAllRestaurants()
 {
     $.ajax({
@@ -40,8 +52,8 @@ function  getAllRestaurants()
                         '<div id="right-triangle">'+'</div>'+
                         '<div class="resto_title" >'+
                         '<h3>'+result[x].name_en+'</h3>'+
-                        '<p style="font-size: 16px">'+ tagsString +'</p>'+
                         '<span>"Kosher"</span>'+
+                        '<p style="font-size: 16px">'+ tagsString +'</p>'+
                         '</div>'+
                         '</div>'+
                         '</a>'+
@@ -49,13 +61,13 @@ function  getAllRestaurants()
                         '<div class="clearfix">'+'</div>'+
                         '<div id="collapse'+x+'"class="accordion-body collapse">'+
                         '<div class="accordion-inner">'+
-                        '<p>'+ result[x].description_en +'</p>'+
+                        '<p style="word-break: normal">'+ result[x].description_en +'</p>'+
                         '<div class="btn-group btn-group-justified">'+
-                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p>'+ result[x].address_en +'</p><span>New York</span></div>'+
+                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">'+ result[x].address_en +'</p><span>New York</span></div>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now<img src="img/dropdown.png"></p><span class="text-left">'+result[x].today_timings+'</span></a>'+
-                        '<a href="#" onClick="return false;" onClick="return false;" id="pop" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p><span>View Gallery</span></a>'+
+                        '<a href="#" onClick="return false;" onClick="return false;" id="pop'+x+'" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p><span>View Gallery</span></a>'+
                         '</div>'+
-                        '<a href="#" class="order_now">Order Now</a>'+
+                        '<a href="#" id="ordernow'+x+'" class="order_now">Order Now</a>'+
                         '</div>'+
                         '</div>'+
                         '</div>';
@@ -75,8 +87,8 @@ function  getAllRestaurants()
                         '<div id="right-triangle"></div>'+
                         '<div class="resto_title" >'+
                         '<h3>'+result[x].name_en+'</h3>'+
-                        '<h3 style="font-size: 16px">'+ tagsString +'</h3>'+
                         '<span>Kosher</span>'+
+                        '<h3 style="font-size: 16px">'+ tagsString +'</h3>'+
                         '</div>'+
                         '</div>'+
                         '</a>'+
@@ -84,13 +96,13 @@ function  getAllRestaurants()
                         '<div class="clearfix"></div>'+
                         '<div id="collapse'+x+'" class="accordion-body collapse">'+
                         '<div class="accordion-inner">'+
-                        '<p>'+ result[x].description_en +'</p>'+
+                        '<p style="word-break: normal">'+ result[x].description_en +'</p>'+
                         '<div class="btn-group btn-group-justified">'+
-                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p>'+ result[x].address_en +'</p> <span></span></div>'+
+                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">'+ result[x].address_en +'</p> <span></span></div>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Closed Now<img src="img/dropdown.png"></p> <span class="text-left"></span></a>'+
-                        '<a href="#" onClick="return false;" onClick="return false;" id="pop" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>'+
+                        '<a href="#" onClick="return false;" onClick="return false;" id="pop'+x+'" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>'+
                         '</div>'+
-                        '<a href="#" class="order_now_gray">Order Now <p>Open in 5 hr</p></a>'+
+                        '<a href="#" id="ordernow'+x+'" class="order_now_gray">Order Now <p>'+result[x].hours_left_to_open+'</p></a>'+
                         '</div>'+
                         '</div>'+
                         '</div>';
@@ -112,19 +124,17 @@ function  getAllRestaurants()
 
 }
 
-
-
 /**
- * @param result  RESPONSE OF SERVER
  * @returns {Array of all tags  }
  *  return array of all tags for each restaurant
  *  each index of array have tags string for particular restaurant
+ * @param restaurant
  */
-
 
 function fromTagsToString (restaurant){
 
     var tags = "";
+
 
     for (var i=0 ; i < restaurant.tags.length ; i++)
     {
@@ -134,6 +144,24 @@ function fromTagsToString (restaurant){
             tags += ", "+restaurant.tags[i]['name_en'] ;
     }
 
+
     return tags;
 }
 
+
+// CLICK LISTENER FOR RESTAURANT TIMINGS POPUP
+$(document).on('click','.order_now',function() {
+
+    // RESTAURANT CLICKED BY USER
+    var clickedRestId = $(this).attr('id').replace('ordernow','');
+
+    userObject.restaurantId      = allRestJson[clickedRestId].id;
+    userObject.restaurantTitle   = allRestJson[clickedRestId].name_en;
+    userObject.restaurantAddress = allRestJson[clickedRestId].address_en;
+
+    //console.log(userObject);
+
+    localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+
+    window.location.href = '../webclient/page2.html';
+});

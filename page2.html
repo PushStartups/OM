@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/dropdown.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/ajaxServerRequestsPage2.js"></script>
+
+</head>
+
+<body>
+<header>
+    <img id="ic_back" src="img/back_arrow.png" onclick="window.location.href = 'index.html';">
+    <img id="ic_logo" src="img/bg_logo.png">
+    <span id ='restName' > Res Name </span>
+    <img id="ic_cart" onclick="showCartElements(); updateCartElements();" src="img/shopping-cart.png">
+    <div onclick="showCartElements(); updateCartElements();" class="count-badge">
+        0
+    </div>
+</header>
+
+<div id="cards-drop" class="custom-drop-down">
+    <input id='firstItem' value="" style="font-size: 18px" readonly />
+    <img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">
+    <div class="custom-drop-down-list">
+        <ul id="categories_list">
+        </ul>
+    </div>
+</div>
+<div id="cards" style="height: calc(100% - 163px); width: 100%; overflow: hidden; overflow-y: auto">
+</div>
+<div id="overlay"></div>
+
+
+
+
+<!--ORDER SUMMARY DETAIL POPUP (FOOD CART)-->
+
+<div id="food-cart-popup" style="display: none" class="food-cart">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> FOOD CART </h5>
+        <h2 id="totalAmount"> 110 NIS </h2>
+    </header>
+
+    <section id="orderItems">
+
+    </section>
+
+    <div class="model-footer" onclick="orderNow(); OnOrderNowClicked();" >ORDER NOW</div>
+</div>
+
+
+<!--TAKE CUSTOMER INFO POPUP-->
+
+<div id="customer-popup"  class="food-cart">
+    <header>
+        <img class="ic_close" onclick="hidePopup('customer-popup')" src="img/ic_close_white.png">
+        <h5> CUSTOMER INFO </h5>
+        <h2 class="totalBill"> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <div class="caption-input">
+                <span class="caption"> Name </span>
+                <input id="name" type="text">
+            </div>
+            <div class="caption-input" style="margin-top: 20px">
+                <span class="caption"> Email address </span>
+                <input id="email" type="text">
+            </div>
+            <ul class="checkbox-list">
+                <li>
+                    <input type="radio" name="a" id="checkbox-id11" /> <label for="checkbox-id11">
+                    Pick up from resturent
+
+                    <div id="restAddress">  </div>
+                </label>
+                </li>
+                <li id="bottom-border">
+                    <input type="radio" name="a" id="checkbox-id12" /> <label for="checkbox-id12">
+                    Delivery
+                    <br>
+                    <input type="text"  id="address"/>
+                </label>
+                </li>
+                <li>
+                    <input type="radio"  id="checkbox-id13" /> <label for="checkbox-id13">
+                    coupon code
+
+                    <div> Use coupen code </div>
+                </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="model-footer" onclick="takeNameAndEmail()" >Next</div>
+
+    </section>
+
+</div>
+
+
+<!--TAKE COUPON NUMBER -->
+
+<div id="coupon-popup" style="display: none" class="food-cart">
+    <header>
+        <img class="ic_close"  src="img/ic_close_white.png">
+        <h5> COUPON CODE </h5>
+        <h2> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <div class="centered-div">
+                <h3> ENTER COUPON CODE </h3>
+                <input id="coponInput" type="text" />
+            </div>
+            <a href="#"> Skip </a>
+        </div>
+        <div id="coupon-footer"  class="model-footer">Next</div>
+
+    </section>
+</div>
+
+
+
+
+
+
+<div id="check-coupon-popup" style="display: none" class="food-cart">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> COUPON CODE </h5>
+        <h2> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <div class="centered-div">
+                <h3> ENTER COUPON CODE </h3>
+                <input  type="text" />
+            </div>
+            <table style="width:100%; margin-top:20px">
+                <tr>
+                    <td>Sub total</td>
+                    <td>80 NIS</td>
+                </tr>
+            </table>
+
+            <table style="width:100%;">
+                <tr>
+                    <td>Coupon</td>
+                    <td>-20</td>
+                </tr>
+            </table>
+
+            <table style="width:100%;">
+                <tr>
+                    <td>Total</td>
+                    <td>60 NIS</td>
+                </tr>
+            </table>
+        </div>
+        <div id="confimed-footer" class="model-footer">Next</div>
+
+    </section>
+</div>
+<div id="payment-choice-popup" style="display: none" class="food-cart">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> CUSTOMER INFO </h5>
+        <h2 class="totalBill"> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <table>
+                <tr>
+                    <td>
+                        <div onclick="goToConfirmOrder(); confirmOrder('cash')" class="choice">
+                            <span>CASH</span>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div id="cash-div" class="choice">
+                                <span>
+                                    CREDIT
+                                    CARD
+                                </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </section>
+</div>
+
+<div id="creditcard-info-popup" style="display: none" class="food-cart">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> PAYMENT INFO </h5>
+        <h2> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <div id="type-of-card">
+                <p>Type of card </p>
+                <span class="active">
+                        <img src="img/ic_visa.png">
+                    </span>
+                <span>
+                        <img src="img/2.png">
+                    </span>
+                <span>
+                        <img src="img/3.png">
+                    </span>
+            </div>
+
+            <div class="caption-input" style="margin-top: 20px">
+                <span class="caption"> Name on card </span>
+                <img src="img/ic_visa.png">
+                <input type="text">
+            </div>
+            <div class="caption-input" style="margin-top: 20px">
+                <span class="caption"> Card number </span>
+                <img src="img/ic_visa.png">
+                <input type="text">
+            </div>
+            <table style="border-bottom:unset; width:100%">
+                <tr>
+                    <td style="width:50%" >
+                        <div class="caption-input" style="margin-top: 10px">
+                            <span class="caption"> Expiration date </span>
+                            <input style="width:80%" type="text">
+                        </div>
+                    </td>
+                    <td style="width:50%" >
+                        <div class="caption-input" style="margin-top: 10px">
+                            <span class="caption"> cvv </span>
+                            <img src="img/ic_cvs.png">
+                            <input style="border-bottom:1px solid #FEBEBC" type="text">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="caption-input">
+                <span class="caption"> Teudat Zehut </span>
+                <input style="border-bottom:1px solid #FEBEBC" type="text">
+            </div>
+
+        </div>
+        <div onclick="goToConfirmOrder()" class="model-footer">Next</div>
+
+    </section>
+</div>
+
+<div id="confirm-order-popup" style="" class="food-cart">
+    <header>
+        <img class="ic_close" onclick="hidePopup('confirm-order-popup')" src="img/ic_close_white.png">
+        <h5> CONFIRM ORDER </h5>
+        <h2 class="totalBill"> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <table>
+                <tr>
+                    <td>
+                        <img src="img/ic_notifi.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="all_orders_str">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/ic_location.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="userProvidedInfo">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/ic_gift.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="coupon_detail">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/ic_card.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="payment_choice">
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="confirm-footer" onclick="callPage3()"  class="model-footer" > Next</div>
+    </section>
+</div>
+<div id="footer-dots" >
+    <span id="first-dot" class="active" > </span>
+    <span id="second-dot" > </span>
+    <span id="third-dot" > </span>
+    <span id="fourth-dot" > </span>
+    <span id="fifth-dot" > </span>
+</div>
+
+
+
+<!--ON ITEM SELECTED POPUP-->
+<div id="main-popup" class="popup" style="height: calc(100% - 10px) ; padding-bottom: 50px">
+    <div class="body" style="height: 100%; overflow:hidden; overflow-y: auto ; position: relative">
+        <h3 id="itemPopUpTitle"> King Angus Sandwish </h3>
+        <img class="ic_close" src="img/ic_close.png">
+        <div class="product-circle">
+            <div class="product-circle">
+                <div class="circle" style="background-image: url('img/Image.png')" ></div>
+            </div>
+            <div id="itemPopUpPrice" class="circle-badge"> 20 NIS </div>
+        </div>
+        <p class="para-detail" id="itemPopUpDesc">
+            150 grams of quality Angus entrcote meat and 80 grams of goose liver with mayonnaise , mustard, chimichuri and tomatoes
+        </p>
+        <div class="sperator"></div>
+
+        <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
+        <div id="parent_type_one"></div>
+
+        <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
+
+        <div id="parent_type_multiple">
+        </div>
+    </div>
+
+    <div onclick="addOrder(); addOrderToServer();"  class="model-footer">ADD TO MY ORDER</div>
+</div>
+
+
+
+<div id="error_alert" style="width: 80%;text-align: center;box-shadow: 0 0 20px black; border-radius: 10px; position: absolute; top: 50%; left: 50%; padding: 30px; background: white; transform: translate(-50%,-50%)">
+    <img style="width: 45px; padding: 14px; position: absolute; left: 0px; top: 0px; " src="img/ic_close.png">
+    Min Order 75 NIS
+</div>
+
+
+<footer id="main-footer" onclick="OnOrderNowClicked()">
+    ORDER NOW
+</footer>
+
+
+</body>
+
+<script>
+
+    getCategoriesWithItems();
+
+</script>
+
+
+</html>
