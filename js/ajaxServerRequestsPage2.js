@@ -1,5 +1,8 @@
+var host = "http://"+window.location.hostname;
+
 
 var userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
+
 
 var result                      = null;                                            // SERVER RESPONSE RAW
 var restName                    = userObject.restaurantTitle;                      // SELECTED RESTAURANT NAME
@@ -10,7 +13,6 @@ var currentExtraIndex           = 0;                                            
 var oneTypeSubItems             = [];                                              // SUB-ITEMS TYPE ONE
 var multipleTypeSubItems        = [];                                              // SUB-ITEMS TYPE MULTIPLE
 var minOrderLimit               = 75;                                              // MINIMUM ORDER LIMIT
-
 
 // FOOD CART DATA 
 var foodCartData                = [];                                               // DISPLAY DATA FOR FOOD CART 
@@ -27,7 +29,7 @@ function  getCategoriesWithItems()
 
     $.ajax({
 
-        url: "http://dev.bot2.orderapp.com/webclient/restapi/index.php/categories_with_items",
+        url:  host+"/restapi/index.php/categories_with_items",
         type: "post",
         data: {"restaurantId" :  restId },
 
@@ -61,6 +63,7 @@ function  getCategoriesWithItems()
     });
 
 }
+
 
 
 function onCategoryChange(x) {
@@ -110,6 +113,7 @@ function onCategoryChange(x) {
 
 
 
+
 function onItemSelected (y)
 {
     currentItemId = y;
@@ -124,7 +128,7 @@ function onItemSelected (y)
 
     $.ajax({
 
-        url: "http://dev.bot2.orderapp.com/webclient/restapi/index.php/extras_with_subitems",
+        url:  host+"/restapi/index.php/extras_with_subitems",
         type: "post",
         data: {"itemId" :  result.categories_items[currentCategoryId].items[currentItemId].id},
 
@@ -140,11 +144,11 @@ function onItemSelected (y)
             {
                 if(extras.extra_with_subitems[x].type == "One") {
 
-                    oneTypeStr += '<h3 style="text-align: left">'+extras.extra_with_subitems[x].name_en+'</h3>'+
+                    oneTypeStr += ' <div class="sperator"></div> <h3 style="text-align: left">'+extras.extra_with_subitems[x].name_en+'</h3>'+
                         '<div class="custom-drop-down">'+
                         '<input id="input'+x+'" placeholder="Please choose " />'+
                         '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">'+
-                        '<div class="custom-drop-down-list">'+
+                        '<div class="custom-drop-down-list" style=" z-index: 99999;">'+
                         '<ul>';
 
                     for(var y=0;y<extras.extra_with_subitems[x].subitems.length;y++)
@@ -203,6 +207,7 @@ function onItemSelected (y)
 
 
             $('#parent_type_multiple').html(multipleTypeStr);
+            $('#parent_type_multiple').show();
 
 
         },
@@ -214,16 +219,18 @@ function onItemSelected (y)
 
 
 
+
 function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, e) {
 
     var index = '#input'+extraIndex;
 
     $(index).val(e.innerHTML);
 
-    var subItem  =   {"subItemId"       : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
-                      "replace_price"   : extras.extra_with_subitems[extraIndex].price_replace,
-                      "subItemPrice"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
-                      "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en};
+    var subItem  =     {"subItemId"       : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
+        "replace_price"   : extras.extra_with_subitems[extraIndex].price_replace,
+        "subItemPrice"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
+        "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+        "qty"             : 1};
 
     oneTypeSubItems[extraIndex][extras.extra_with_subitems[extraIndex].name_en] =  subItem;
 
@@ -238,9 +245,10 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     if($(id).is(':checked'))
     {
-        var subItem  =  {"subItemId"      : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
-                        "subItemPrice"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
-                        "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en};
+        var subItem  = {"subItemId"      : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
+            "subItemPrice"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
+            "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+            "qty"             : 1};
 
         multipleTypeSubItems[index][name] = subItem;
 
@@ -255,118 +263,167 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
 function addOrderToServer() {
 
+    if(oneTypeSubItems)
+
+        $('#parent_type_one').hide();
+    $('#parent_type_multiple').hide();
+
+
     // SAVE ORDER TO SERVER AGAINST USER
-    var order = {"itemId"             : result.categories_items[currentCategoryId].items[currentItemId].id,
-                 "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemId].price,
-                 "itemName"           : result.categories_items[currentCategoryId].items[currentItemId].name_en,
-                 "qty"                : 1 ,
-                 "subItemsOneType"    : oneTypeSubItems,
-                 "multiItemsOneType"  : multipleTypeSubItems};
+    var order = {"itemId"            : result.categories_items[currentCategoryId].items[currentItemId].id,
+        "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemId].price,
+        "itemName"           : result.categories_items[currentCategoryId].items[currentItemId].name_en,
+        "qty"                : 1 ,
+        "subItemsOneType"    : oneTypeSubItems,
+        "multiItemsOneType"  : multipleTypeSubItems};
+
 
     userObject.orders.push(order);
+
+    generateTotalUpdateFoodCart();
+
+    addOrder();
 }
 
 
 function generateTotalUpdateFoodCart()
 {
+    foodCartData = [];
     var total = 0;
-    
-    for(var x=0; x<userObject.orders.length ;x++) 
+
+    for(var x=0; x<userObject.orders.length ;x++)
     {
         var order = userObject.orders[x];
-        var orderAmount = order.itemPrice;      // SET DEFAULT ITEM PRICE FOR ORDER
-        var sumTotalAmount = 0;                 // TOTAL AMOUNT
+        var orderAmount = parseInt(order.itemPrice) * parseInt(order.qty);      // SET DEFAULT ITEM PRICE FOR ORDER
+        var sumTotalAmount = 0;                                                 // TOTAL AMOUNT
 
-        var cartItem = {"name": order.itemName, "price" : order.itemPrice , "detail" : ""};
+
+        var cartItem = {
+            "name": order.itemName,
+            "price" : order.itemPrice ,
+            "detail" : "" ,
+            "orderIndex" : x ,
+            "qty" : order.qty,
+            "subItemOneIndex" : null,
+            "subItemMultipleIndex" : null};
+
 
         foodCartData.push(cartItem);
 
-        for (var y = 0; y < order.subItemsOneType.length; y++) 
+        for (var y = 0; y < order.subItemsOneType.length; y++)
         {
             for (var key in order.subItemsOneType[y])
             {
-
                 // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
-                if (parseInt(order.subItemsOneType[y][key].replace_price) != 0) 
+                if (parseInt(order.subItemsOneType[y][key].replace_price) != 0)
                 {
-                    orderAmount = parseInt(order.subItemsOneType[y][key].replace_price);
-                    cartItem.price = orderAmount;
-                    cartItem.detail += " "+order.subItemsOneType[y][key].subItemName;
+                    orderAmount = parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.qty);
+                    cartItem.price = parseInt(orderAmount);
+                    cartItem.detail +=  key+":"+order.subItemsOneType[y][key].subItemName+", ";
 
                 }
                 // SUM THE AMOUNT 
                 else
                 {
+                    if(parseInt(order.subItemsOneType[y][key].subItemPrice) != 0) {
 
-                    sumTotalAmount +=
+                        var cartSubItem = {
+                            "name": order.subItemsOneType[y][key].subItemName,
+                            "price": order.subItemsOneType[y][key].subItemPrice,
+                            "detail": "",
+                            "qty" : order.subItemsOneType[y][key].qty,
+                            "orderIndex" : x,
+                            "subItemOneIndex" : y ,
+                            "subItemMultipleIndex" : null
+                        };
 
+
+                        sumTotalAmount = parseInt(sumTotalAmount) +( parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.subItemsOneType[y][key].qty));
+                        foodCartData.push(cartSubItem);
+                    }
+                    else
+                    {
+                        cartItem.detail +=  order.subItemsOneType[y][key].subItemName+", ";
+                    }
                 }
 
             }
         }
+
+
+        for (var y = 0; y < order.multiItemsOneType.length; y++)
+        {
+            for (var key in order.multiItemsOneType[y])
+            {
+                if(order.multiItemsOneType[y][key] != null)
+                {
+
+                    if(parseInt(order.multiItemsOneType[y][key].subItemPrice) != 0)
+                    {
+                        var cartSubItem = {
+                            "name": order.multiItemsOneType[y][key].subItemName,
+                            "price": order.multiItemsOneType[y][key].subItemPrice,
+                            "detail": "",
+                            "qty" : order.multiItemsOneType[y][key].qty,
+                            "orderIndex" : x,
+                            "subItemOneIndex" : null ,
+                            "subItemMultipleIndex" : y
+                        };
+
+                        sumTotalAmount = parseInt(sumTotalAmount) + (parseInt(order.multiItemsOneType[y][key].subItemPrice) * parseInt(order.multiItemsOneType[y][key].qty) );
+                        foodCartData.push(cartSubItem);
+                    }
+                    else
+                    {
+                        cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+", ";
+                    }
+                }
+            }
+        }
+
+        total = parseInt(total) +  ( parseInt(orderAmount) + parseInt(sumTotalAmount));
     }
+
+    userObject.total = total;
+    console.log('total :'+total);
+    console.log(foodCartData);
 }
-
-
-
 
 
 function updateCartElements()
 {
     var str = '';
 
-    for(var x=0; x<userObject.orders.length ;x++)
+    for(var x=0; x< foodCartData.length ;x++)
     {
         str += '<table>'+
             '<tr>'+
-            '<th>'+userObject.orders[x].itemName+'</th>'+
-            '<th>'+userObject.orders[x].itemPrice.toString()+' NIS</th>';
+            '<th>'+foodCartData[x].name+'</th>'+
+            '<th>'+foodCartData[x].price+' NIS</th>';
 
         str += '</tr>'+
             '<tr>'+
-            '<td>In a cream sauce, seasoned with garlic and fresh basil</td>'+
+            '<td>'+foodCartData[x].detail+'</td>'+
             '<td>'+
-            '<div class="switch-btn">'+
-            '<img onclick="onQtyDecreasedButtonClicked('+x+')" class="left-btn" src="img/ic_cancel.png">'+
-            '<span class="count">'+
-            userObject.orders[x].qty.toString()+
+            '<div class="switch-btn">';
+
+        if(parseInt(foodCartData[x].qty) == 1) {
+
+            str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="img/ic_cancel.png">';
+        }
+        else
+        {
+            str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="img/ic_reduce.png">';
+        }
+
+        str += '<span class="count">'+
+            foodCartData[x].qty.toString()+
             '</span>'+
             '<img onclick="onQtyIncreaseButtonClicked('+x+')" class="increase-btn" src="img/ic_plus.png">'+
             '</div>'+
             '</td>'+
             '</tr>'+
             '</table>';
-
-
-        for(var y=0;y<userObject.orders[x].subItemsOneType.length;y++)
-        {
-            for (var key in userObject.orders[x].subItemsOneType[y]) {
-
-                if(parseInt(userObject.orders[x].subItemsOneType[y][key].subItemPrice) != 0) {
-
-                    str += '<table>' +
-                        '<tr>' +
-                        '<th>' + key + '</th>' +
-                        '<th>' + userObject.orders[x].subItemsOneType[y][key].subItemPrice + ' NIS</th>';
-
-                    str += '</tr>' +
-                        '<tr>' +
-                        '<td>In a cream sauce, seasoned with garlic and fresh basil</td>' +
-                        '<td>' +
-                        '<div class="switch-btn">' +
-                        '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="img/ic_cancel.png">' +
-                        '<span class="count">' +
-                        userObject.orders[x].qty.toString() +
-                        '</span>' +
-                        '<img onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="img/ic_plus.png">' +
-                        '</div>' +
-                        '</td>' +
-                        '</tr>' +
-                        '</table>';
-                }
-            }
-
-        }
 
     }
 
@@ -378,43 +435,172 @@ function updateCartElements()
 
 function onQtyIncreaseButtonClicked(index) {
 
-    userObject.orders[index].qty = parseInt(userObject.orders[index].qty) + 1;
+    // UPDATE ITEM MAIN
 
-    console.log(userObject.orders[index].qty);
+    if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex == null && foodCartData[index].subItemMultipleIndex == null)
+    {
 
-    userObject.total = parseInt(userObject.total) + parseInt(userObject.orders[index].itemPrice);
+        console.log('enter');
+        userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
+
+    }
+    // UPDATE ITEM SUB FROM TYPE ONE
+    else if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex != null && foodCartData[index].subItemMultipleIndex == null)
+    {
+
+        for(var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex])
+        {
+            userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty = parseInt( userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty ) + 1;
+        }
+
+    }
+    // UPDATE SUB ITEM MULTIPLE
+    else
+    {
+        for(var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex])
+        {
+            userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) + 1;
+        }
+
+    }
+
+    foodCartData[index].qty = parseInt(foodCartData[index].qty) + 1;
+
+
+    userObject.total = parseInt(userObject.total) + parseInt(foodCartData[index].price);
 
     $('#totalAmount').html(userObject.total + " NIS");
+
+
+    console.log(foodCartData);
+    console.log(userObject);
 }
 
 
 
 function onQtyDecreasedButtonClicked(index) {
 
-    if(parseInt(userObject.orders[index].qty) != 1) {
+    // UPDATE ITEM MAIN
 
-        userObject.orders[index].qty = parseInt(userObject.orders[index].qty) - 1;
-        console.log(userObject.orders[index].qty);
+    if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex == null && foodCartData[index].subItemMultipleIndex == null)
+    {
 
-        userObject.total = parseInt(userObject.total) - parseInt(userObject.orders[index].itemPrice);
+        console.log('enter');
+        userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
 
-        $('#totalAmount').html(userObject.total + " NIS");
     }
+    // UPDATE ITEM SUB FROM TYPE ONE
+    else if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex != null && foodCartData[index].subItemMultipleIndex == null)
+    {
+
+        for(var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex])
+        {
+            userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty = parseInt( userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty ) - 1;
+        }
+
+    }
+    // UPDATE SUB ITEM MULTIPLE
+    else
+    {
+        for(var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex])
+        {
+            userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) - 1;
+        }
+
+    }
+
+    foodCartData[index].qty = parseInt(foodCartData[index].qty) - 1;
+
+
+    userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
+
+
+    $('#totalAmount').html(userObject.total + " NIS");
+
 }
 
 
 function OnOrderNowClicked() {
+
+    generateTotalUpdateFoodCart();
 
     $('.totalBill').html(userObject.total + " NIS");
     $('#restAddress').html(userObject.restaurantAddress);
 
 }
 
+// VALIDATE EMAIL ADDRESS
 
+function validateEmail(email) {
+
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+
+}
+
+
+// TAKE NAME AND EMAIL ADDRESS
 function takeNameAndEmail()
 {
-    userObject.name =  $("#name").val();
-    userObject.email =  $("#email").val();
+
+    // EXCEPTION HANDLING
+
+    // NAME CANNOT BE EMPTY
+
+    $("#email").removeClass("red-border");
+    $("#checkbox-id11").removeClass("red-border");
+    $("#address").removeClass("red-border");
+
+    if($("#name").val() == "")
+    {
+        document.getElementById("name-error").innerHTML = "Empty Name!";
+        $("#name").addClass("red-border");
+        return;
+    }
+
+    // EMAIL CANNOT BE EMPTY
+    if($("#email").val() == ""){
+
+        document.getElementById("email-error").innerHTML = "Empty Email!";
+        $("#email").addClass("red-border");
+        return;
+    }
+    if( !validateEmail($("#email").val())){
+        document.getElementById("email-error").innerHTML = "Invalid Email!";
+        $("#email").addClass("red-border");
+        return;
+    }
+
+    // NEED TO CHECK ATLEAST ONE CHECK BOX
+    if(!$('#checkbox-id11').is(':checked') &&  !$('#checkbox-id12').is(':checked'))
+    {
+        $("#checkbox-id11").addClass("red-border");
+        document.getElementById("checkbox-error").innerHTML = "Please select atleast one checkbox!";
+        document.getElementById("address-error").innerHTML = "";
+        return;
+    }
+
+    console.log();
+
+    // DELIVER ADDRESS EMPTY
+    if($('#checkbox-id12').is(':checked') && $("#address").val() == "")
+    {
+        $("#address").addClass("red-border");
+        if($("#address").val() == ""){
+            document.getElementById("address-error").innerHTML = "Empty Address!";
+            document.getElementById("checkbox-error").innerHTML = "";
+        }
+        else{
+            document.getElementById("address-error").innerHTML = "Empty Checkbox!";
+        }
+
+        return;
+    }
+
+
+    userObject.name     =  $("#name").val();
+    userObject.email    =  $("#email").val();
+
 
     // PICK FROM RESTAURANT
     if($('#checkbox-id11').is(':checked')) {

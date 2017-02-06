@@ -1,3 +1,5 @@
+var host = "http://"+window.location.hostname;
+
 var allRestJson = null;
 
 
@@ -20,7 +22,7 @@ function  getAllRestaurants()
 {
     $.ajax({
 
-        url: "http://dev.bot2.orderapp.com/webclient/restapi/index.php/get_all_restaurants",
+        url: host+"/restapi/index.php/get_all_restaurants",
         type: "post",
         data: "",
 

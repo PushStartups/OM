@@ -14,6 +14,7 @@ $app = new \Slim\App();
 
 $app->post('/get_all_restaurants', function ($request, $response, $args)
 {
+
     $restaurants = Array();
 
 
@@ -23,7 +24,6 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
     foreach ($results as $result)
     {
-
         // GET TAGS OF RESTAURANT i.e BURGER , PIZZA
 
         $tagsIds = DB::query("select tag_id from restaurant_tags where restaurant_id = '".$result['id']."'");
@@ -39,6 +39,10 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
             $count2++;
         };
 
+        // GET GALLERY OF RESTAURANT
+
+        $galleryImages = DB::query("select url from restaurant_gallery where restaurant_id = '".$result['id']."'");
+
 
         // RETRIEVING RESTAURANT TIMINGS i.e SUNDAY   STAT_TIME : 12:00  END_TIME 21:00;
 
@@ -51,7 +55,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
         $dayOfWeek             =    date('l', strtotime( $tempDate));
 
         // RESTAURANT AVAILABILITY ACCORDING TO TIME
-        $currentStatus = false;
+        $currentStatus = true;
 
         $today_timings = "";
 
@@ -69,12 +73,15 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 if ($currentTime >= $openingTime && $currentTime <= $closingTime) {
 
                     $currentStatus = true;
+
                     break;
                 }
                 else
                 {
-                    $hoursLeftToOpen = $openingTime->diff($currentTime);
-                    $hoursLeftToOpen = $hoursLeftToOpen->format('Open in %H hr %i m');
+
+                    $hoursLeftToOpen = "Open On Sunday";
+                    
+
                 }
 
             }
@@ -82,8 +89,8 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
 
         // CREATE DEFAULT RESTAURANT OBJECT;
-
         $restaurant = [
+            "id"                   =>  $result["id"],                // RESTAURANT ID
             "name_en"              =>  $result["name_en"],           // RESTAURANT NAME
             "name_he"              =>  $result["name_he"],           // RESTAURANT NAME
             "logo"                 =>  $result["logo"],              // RESTAURANT LOGO
@@ -92,6 +99,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
             "address_en"           =>  $result["address_en"],        // RESTAURANT ADDRESS
             "address_he"           =>  $result["address_he"],        // RESTAURANT ADDRESS
             "tags"                 =>  $tags,                        // RESTAURANT TAGS
+            "gallery"              =>  $galleryImages,               // RESTAURANT GALLERY
             "timings"              =>  $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
             "availability"         =>  $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
             "today_timings"        =>  $today_timings,               // TODAY TIMINGS
@@ -103,82 +111,100 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
     }
 
 
-    // RESPONSE RETURN TO REST API CALL FROM SMOOCH
+    // RESPONSE RETURN TO REST API CALL
     return $response->withStatus(200)->write(json_encode($restaurants));
 
 });
 
 //  WEB HOOK GET DATA OF ALL RESTAURANT
 
-$app->post('/get_restaurants_data', function ($request, $response, $args)
+$app->post('/categories_with_items', function ($request, $response, $args)
 {
+
     $id = $request->getParam('restaurantId');
-    $restaurant_data = Array();
 
     // GET MENUS FOR RESTAURANT i.e LUNCH
+    $menu = DB::queryFirstRow("select * from menus where restaurant_id = '".$id."'");
 
-    $menus = DB::query("select * from menus where restaurant_id = '".$id."'");
-    $count = 0;
+    // GET CATEGORIES OF RESTAURANT i.e ANGUS SALAD , ANGUS BURGER
+    $categories = DB::query("select * from categories where menu_id = '".$menu['id']."'");
 
-
-    foreach ($menus as $menu)
-    {
-        // GET CATEGORIES OF RESTAURANT i.e ANGUS SALAD , ANGUS BURGER
-
-        $categories = DB::query("select * from categories where menu_id = '".$menu['id']."'");
-
-        $categories_items_data = Array();
-        $count2 = 0;
-
-        foreach ($categories as $category) {
-
-            $items = DB::query("select * from items where category_id = '".$category["id"]."'");
-            $items_extras = Array();
-            $count3 = 0;
-//            foreach ($items as $item ) {
-//                $extras = DB::query("select * from extras where item_id = '".$item["id"]."'");
-//                $extras_subitems = Array();
-//                $count4 = 0;
-//                foreach ($extras as $extra) {
-//                    $sub_items = DB::query("select * from subitems where extra_id = '".$extra["id"]."'");
-//                    $extra_data['extra'] = $extra;
-//                    $extra_data['subitems'] = $sub_items;
-//                    $extras_subitems[$count4] = $extra_data;
-//                    $count4++;
-//
-//                }
-//
-//                $items_extra_data['item'] = $item;
-//                $items_extra_data['extras'] = $extras_subitems;
-//                $items_extras [$count3] = $items_extra_data;
-//                $count3++;
-//            }
-
-            $categories_items['category'] = $category;
-            $categories_items['items'] = $items;
-            $categories_items_data[$count2] = $categories_items;
-            $count2++;
-        };
-
-
-        // CREATE DEFAULT OBJECT FOR ITEMS AND CATEGORIES;
-
-        $data = [
-            "menu_name_en"              => $menu['name_en'],               // MENU NAME EN
-            "menu_name_he"              => $menu['name_he'],               // MENU NAME HE
-            "categories_items"          =>  $categories_items_data         // CATEGORIES AND ITEMS
-        ];
-
-        $restaurant_data[$count] = $data;
-        $count++;
+    $count2 = 0;
+    foreach ($categories as $category) {
+        $items = DB::query("select * from items where category_id = '".$category["id"]."'");
+        $categories[$count2]['items'] = $items;
+        $count2++;
     }
+
+    // CREATE DEFAULT OBJECT FOR ITEMS AND CATEGORIES;
+    $data = [
+        "menu_name_en"              => $menu['name_en'],               // MENU NAME EN
+        "menu_name_he"              => $menu['name_he'],               // MENU NAME HE
+        "categories_items"          =>  $categories                   // CATEGORIES AND ITEMS
+    ];
+
 
 
     // RESPONSE RETURN TO REST API CALL FROM SMOOCH
-    return $response->withStatus(200)->write(json_encode($restaurant_data));
+    return $response->withStatus(200)->write(json_encode($data));
 
 });
 
+// GET EXTRAS WITH SUBITEMS
+$app->post('/extras_with_subitems', function ($request, $response, $args) {
+    //GETTING ITEM_ID FROM CLIENT SIDE
+    $item_id = $request->getParam('itemId');
+
+    //GETTING EXTRAS OF ITEMS i,e ADDONS,SAUCES ETC
+    $extra = DB::query("select * from extras where item_id = '$item_id'");
+
+    $countExtra = 0;
+
+    foreach ($extra as $extras) {
+        //GETTING SUNITEMS OF EXTRAS i,e KETCHUP,AMERICAN FRIES
+        $subItems = DB::query("select * from subitems where extra_id = '" . $extras["id"] . "'");
+
+        $extra[$countExtra]['subitems'] = $subItems;
+
+        $countExtra++;
+
+    }
+    $data = [
+        "extra_with_subitems" => $extra                           // EXTRA AND ITEMS
+    ];
+
+
+    // RESPONSE RETURN TO REST API CALL
+    return $response->withStatus(200)->write(json_encode($data));
+
+});
+
+// ADD USER ORDER INTO DATABASE
+$app->post('/add_orders', function ($request, $response, $args) {
+    $email = $request->getParam('email');
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
+
+    if(DB::count() == 0){
+        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+        DB::insert('users', array(
+            'smooch_id' => $email
+        ));
+        $user_id = DB::insertId();
+    }
+    else{
+        // IF USER ALREADY EXIST IN DATABASE
+        $user_id = $getUser['id'];
+    }
+
+    // INSERTING USER INTO USER_ORDERS TABLE
+    DB::insert('users_orders', array(
+        'user_id' => $user_id
+    ));
+    $order_id = DB::insertId();
+
+});
 
 $app->run();
 
