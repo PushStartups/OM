@@ -516,11 +516,11 @@ function onQtyDecreasedButtonClicked(index) {
     if( parseInt(foodCartData[index].qty != 1))
     {
         foodCartData[index].qty = parseInt(foodCartData[index].qty) - 1;
-
         userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
 
-        $('#totalAmount').html(userObject.total + " NIS");
     }
+
+   $('#totalAmount').html(userObject.total + " NIS");
 
 }
 
