@@ -112,19 +112,14 @@
 
                         <script>
                             $('#address').on('input',function(e){
+
                                 if($("#address").val() != "")
                                 {
-                                    console.log("not empty");
-                                    $('#checkbox-id12').attr('checked', true);
-                                    document.getElementById("address-error").innerHTML = "";
-                                    $("#address").removeClass("red-border");
-
+                                    $("#checkbox-id12").prop('checked', true);
                                 }
                                 else
                                 {
-                                    console.log("empty");
-                                    $('#checkbox-id12').attr('checked', false);
-                                    document.getElementById("checkbox-error").innerHTML = "Please select checkbox!";
+                                    $("#checkbox-id12").prop('checked', false);
                                 }
                             });
                         </script>
@@ -141,6 +136,16 @@
                         });
 
                     });
+
+                    $('#checkbox-id11').click(function(){
+
+                        if($('#checkbox-id11').is(':checked'))
+                        {
+                            $("#address").val("");
+                        }
+                    });
+
+
                 </script>
                 <li>
                     <span class="error-handler" id="address-error"></span>

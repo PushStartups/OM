@@ -165,5 +165,5 @@ $(document).on('click','.order_now',function() {
 
     localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
 
-    window.location.href = '../webclient/page2.html';
+    window.location.href = '../page2.html';
 });

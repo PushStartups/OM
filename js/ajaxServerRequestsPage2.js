@@ -146,7 +146,7 @@ function onItemSelected (y)
 
                     oneTypeStr += ' <div class="sperator"></div> <h3 style="text-align: left">'+extras.extra_with_subitems[x].name_en+'</h3>'+
                         '<div class="custom-drop-down">'+
-                        '<input id="input'+x+'" placeholder="Please choose " />'+
+                        '<input id="input'+x+'" placeholder="Please choose " readonly />'+
                         '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">'+
                         '<div class="custom-drop-down-list" style=" z-index: 99999;">'+
                         '<ul>';
@@ -485,37 +485,42 @@ function onQtyDecreasedButtonClicked(index) {
     if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex == null && foodCartData[index].subItemMultipleIndex == null)
     {
 
-        console.log('enter');
-        userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
+        if(parseInt(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
+        {
+            userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
+        }
 
     }
     // UPDATE ITEM SUB FROM TYPE ONE
     else if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex != null && foodCartData[index].subItemMultipleIndex == null)
     {
+        for(var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex]) {
 
-        for(var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex])
-        {
-            userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty = parseInt( userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty ) - 1;
+            if (parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty) != 1)
+            {
+                userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty = parseInt( userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty ) - 1;
+            }
         }
-
     }
     // UPDATE SUB ITEM MULTIPLE
     else
     {
-        for(var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex])
-        {
-            userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) - 1;
+        for(var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex]) {
+            if (parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) != 1) {
+                userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) - 1;
+            }
         }
 
     }
 
-    foodCartData[index].qty = parseInt(foodCartData[index].qty) - 1;
+    if( parseInt(foodCartData[index].qty != 1))
+    {
+        foodCartData[index].qty = parseInt(foodCartData[index].qty) - 1;
 
+        userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
 
-    userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
-
-
-    $('#totalAmount').html(userObject.total + " NIS");
+        $('#totalAmount').html(userObject.total + " NIS");
+    }
 
 }
 
@@ -694,8 +699,11 @@ function confirmOrder(paymentChoice)
 
 function  callPage3() {
 
-    window.location.href = '../webclient/page3.html';
+    window.location.href = '../page3.html';
 
 };
+
+
+
 
 
