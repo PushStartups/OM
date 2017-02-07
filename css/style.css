@@ -402,7 +402,12 @@ div.food-cart#customer-popup .model-footer {
     background: linear-gradient(to right, #34D760,#8CD5AB);
 }
 
-
+.blur-class
+{
+    -webkit-filter: opacity(.2);
+    filter: opacity(.2);
+    pointer-events: none;
+}
 div.food-cart#customer-popup input[type="radio"] + label {
     line-height: 20px !important;
     padding-left: 34px;
@@ -898,4 +903,15 @@ div.food-cart#question-popup {
     width: 50vw;
     margin: 0 auto;
     border-radius: 50%;
+}
+
+
+.wrapDesc{
+
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 119px;
+    white-space: nowrap;
+    overflow: hidden !important;
+
 }

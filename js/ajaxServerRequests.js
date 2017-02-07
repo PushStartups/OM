@@ -1,19 +1,27 @@
+//SERVER HOST DETAIL
+
 var host = "http://"+window.location.hostname;
 
-var allRestJson = null;
+
+var allRestJson = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
 
 
 // USER ORDER INFORMATION
-var userObject =   {'restaurantId' : "",
-                    'restaurantTitle' : "",
-                    'restaurantAddress' : "",
-                    'name' : "",
-                    'email' : "",
-                    'orders' : [],
-                    'total'  : 0,
-                    'pickFromRestaurant' : false,
-                    'deliveryAddress' : "",
-                    'isCoupon' : false};
+
+var userObject = {
+    'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
+    'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
+    'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
+    'name': "",                        // USER NAME
+    'email': "",                       // USER EMAIL
+    'orders': [],                      // USER ORDERS
+    'total': 0,                        // TOTAL AMOUNT OF ORDER
+    'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
+    'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
+    'isCoupon': false,                 // USER HAVE COUPON CODE ?
+    'isFixAmountCoupon' : false,       // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
+    'discount'          : 0            // DISCOUNT ON COUPON VALUE
+};
 
 
 
@@ -26,16 +34,17 @@ function  getAllRestaurants()
         type: "post",
         data: "",
 
-        success: function (response) {
-
+        success: function (response)
+        {
             var result = JSON.parse(response);
 
-            allRestJson = result;
+            allRestJson = result;   // MAKE SERVER RESPONSE GLOBAL FOR ACCESS IN OTHER FUNTIONS
 
             var allRestaurants = "";
 
             for(var x=0 ;x <result.length;x++)
             {
+
                 var temp = "";
                 var tagsString  =  fromTagsToString (result[x]);
 
@@ -119,31 +128,31 @@ function  getAllRestaurants()
 
         },
         error: function(jqXHR, textStatus, errorThrown) {
+
             console.log(textStatus, errorThrown);
+
         }
 
     });
 
 }
 
-/**
- * @returns {Array of all tags  }
- *  return array of all tags for each restaurant
- *  each index of array have tags string for particular restaurant
- * @param restaurant
- */
 
-function fromTagsToString (restaurant){
+// CONVERT ALL RESTAUTANT TAGS TO STRING
 
+function fromTagsToString (restaurant)
+{
     var tags = "";
-
 
     for (var i=0 ; i < restaurant.tags.length ; i++)
     {
         if ( i == 0)
-            tags += restaurant.tags[i]['name_en'];
+
+             tags += restaurant.tags[i]['name_en'];
+
         else
-            tags += ", "+restaurant.tags[i]['name_en'] ;
+
+             tags += ", "+restaurant.tags[i]['name_en'] ;
     }
 
 
@@ -151,19 +160,23 @@ function fromTagsToString (restaurant){
 }
 
 
-// CLICK LISTENER FOR RESTAURANT TIMINGS POPUP
+// CLICK LISTENER FOR RESTAURANT (ORDER NOW)
+
 $(document).on('click','.order_now',function() {
+
 
     // RESTAURANT CLICKED BY USER
     var clickedRestId = $(this).attr('id').replace('ordernow','');
+
 
     userObject.restaurantId      = allRestJson[clickedRestId].id;
     userObject.restaurantTitle   = allRestJson[clickedRestId].name_en;
     userObject.restaurantAddress = allRestJson[clickedRestId].address_en;
 
-    //console.log(userObject);
+    // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 
     localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
 
+   // MOVING TO PAGE 2
     window.location.href = '../page2.html';
 });

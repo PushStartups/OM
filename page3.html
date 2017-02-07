@@ -7,10 +7,83 @@
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/dropdown.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <script src="js/jquery.min.js" ></script>
+    
+    <script>
+    $(function(){
+$('#questuin-btn').on('click', function(){
+            $(this).fadeOut();
+        $("#feedback").fadeIn();
+        });
+        $("#feedback button").on("click" , function(){
+        $("#feedback p").fadeIn();
+
+        $("#feedback textarea").fadeOut();
+
+        $("#feedback button").fadeOut();
+        })
+    })
+
+    </script>
     <style>
     div.food-cart section{
         height: 100% !important;
     }
+    .model-footer{
+        cursor: pointer;
+        transition: all ease-in-out .3s;
+    }
+    #feedback{
+        background: white;
+        position: absolute;
+        bottom: 0;
+        height: 45%;
+        width: 100%;
+        padding:25px 20px;
+        display:none;
+    }
+      #feedback textarea{
+        background:#F5F5F5;
+        width:100%;
+        height:calc(100% - 30px);
+        border:none;
+        outline:unset;
+        padding:20px;
+        font-size:15px;
+    font-family: 'Open Sans', sans-serif;
+    resize:none;
+    }
+      #feedback button{
+        background:transparent;
+        width:100%;
+        line-height:40px;
+        color:#FF7F00;
+        font-size:16px;
+        border:none;
+        outline:unset;
+        transition: all ease-in-out .3s;
+    }
+
+        #feedback p {
+            color:#FF7F00;
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            font-size:20px;
+            width:70%;
+            margin:0;
+            padding:0;display:none;
+            text-align:center;
+        }
+
+        #feedback button:active {
+            transform:scale(0.7)
+        }
+        div.food-cart#question-popup section .centered-div {
+            top:15%;
+            padding:15px 30px;
+        }
     </style>
 </head>
 
@@ -25,7 +98,14 @@
                 GREAT YOUR FOOD IS ON IT'S WAY TO YOU!
             </div>
 
-            <div class="model-footer">Question ?</div>
+            <div id="feedback">
+
+                <p> Thanks, We will be in touch shortly </p>
+                <textarea placeholder="How can we help you ?" ></textarea>
+                <button>Send</button>
+            </div>
+
+            <div id="questuin-btn"  class="model-footer">Question ?</div>
 
         </section>
     </div>

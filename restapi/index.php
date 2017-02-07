@@ -80,7 +80,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 {
 
                     $hoursLeftToOpen = "Open On Sunday";
-                    
+
 
                 }
 
@@ -206,8 +206,117 @@ $app->post('/add_orders', function ($request, $response, $args) {
 
 });
 
-$app->run();
+// VALIDATE COUPONS
+$app->post('/coupon_validation', function ($request, $response, $args) {
 
+    $email = $request->getParam('email');
+    $coupon_code = $request->getParam('code');
+    $success_validation = "false";
+
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
+
+    if(DB::count() == 0){
+
+        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+        DB::insert('users', array(
+            'smooch_id' => $email
+        ));
+        $user_id = DB::insertId();
+    }
+    else{
+
+        // IF USER ALREADY EXIST IN DATABASE
+        $user_id = $getUser['id'];
+    }
+
+
+    // COUPON VALIDATION
+    $coupon_code = strtolower($coupon_code);
+
+    //EXACT TIMEZONE OF ISRAEL
+    date_default_timezone_set("Asia/Jerusalem");
+    $current_date_time = date('Y-m-d H:i:s');
+
+
+    $arr = explode(" ",$current_date_time);
+    $current_date_time = $arr[0];
+    $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $coupon_code);
+
+
+    if(!empty($getCouponCode)){
+
+        $coupon_id = $getCouponCode['id'];
+        $getStartingTime = $getCouponCode['starting_date'];
+        $getEndingTime = $getCouponCode['ending_date'];
+        $discount = $getCouponCode['discount'];
+        $type = $getCouponCode['type'];
+
+        if($type == "amount"){
+
+            $isFixAmountCoupon = true;
+        }
+        else
+        {
+            $isFixAmountCoupon = false;
+        }
+
+
+        // GETTING STARTDATE AND ENDDATE OF COUPON FROM DATABASE
+        $arr1 = explode(" ",$getStartingTime);
+        $start_date = $arr1[0];
+
+
+        $arr2 = explode(" ",$getEndingTime);
+        $end_date = $arr2[0];
+
+
+        if ((($current_date_time >= $start_date) && ($current_date_time <= $end_date))) {
+
+            //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
+            $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id,$coupon_id);
+            if(DB::count() == 0){
+                DB::insert('user_coupons', array(
+                    'user_id'     =>  $user_id,
+                    'coupon_id'   =>  $coupon_id
+                ));
+                $success_validation = "true";
+
+            }
+            else{
+                $success_validation = "false";
+                $message = "Already Receive Coupon, Please Try Another Coupon";
+            }
+
+        }
+        else{
+            $success_validation = "false";
+            $message = "Invalid Coupon, Please Try Another Coupon";
+        }
+
+    }
+    if($success_validation == "true"){
+        $data = [
+            "success"               =>    true,                                          // COUPON VALID OR NOT (TRUE OR FALSE)
+            "amount"                =>    $discount,                                     // DISCOUNT ON COUPON
+            "isFixAmountCoupon"     =>    $isFixAmountCoupon                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
+
+        ];
+    }
+    else
+    {
+
+        $data = [
+            "success"               =>    false
+        ];
+    }
+
+    // RESPONSE RETURN TO REST API CALL
+    return $response->withStatus(200)->write(json_encode($data));
+
+});
+$app->run();
 
 ?>
 

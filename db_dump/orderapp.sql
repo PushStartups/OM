@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 06, 2017 at 01:48 PM
+-- Generation Time: Feb 07, 2017 at 10:37 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -58,6 +58,30 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `sort`) VALUES
 (15, 3, 'Bandora Salad', 'סלטים', 114),
 (16, 3, 'Bandora Chummus', 'צלחת חומוס', 115),
 (17, 3, 'Bandora Drinks', 'שתיה', 116);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coupons`
+--
+
+CREATE TABLE IF NOT EXISTS `coupons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(222) NOT NULL,
+  `starting_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ending_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `discount` int(11) DEFAULT NULL,
+  `type` varchar(222) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `coupons`
+--
+
+INSERT INTO `coupons` (`id`, `name`, `starting_date`, `ending_date`, `discount`, `type`) VALUES
+(1, 'alex20', '2017-02-05 00:00:00', '2017-02-10 00:00:00', 30, 'percentage'),
+(2, 'alex50', '2017-02-07 09:18:24', '2017-02-21 00:00:00', 50, 'amount');
 
 -- --------------------------------------------------------
 
@@ -1226,14 +1250,43 @@ CREATE TABLE IF NOT EXISTS `users` (
   `restaurant_id` int(16) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=234 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=237 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`) VALUES
-(233, 'eaba97fb7ab217e0bbe46926', '0548086730', NULL, 3, 'english', NULL, NULL, NULL);
+(233, 'eaba97fb7ab217e0bbe46926', '0548086730', NULL, 3, 'english', NULL, NULL, NULL),
+(234, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL),
+(235, 'ahmad@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL),
+(236, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_coupons`
+--
+
+CREATE TABLE IF NOT EXISTS `user_coupons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `coupon_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `coupon_id` (`coupon_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `user_coupons`
+--
+
+INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
+(1, 234, 1),
+(3, 234, 2),
+(5, 235, 2),
+(6, 235, 1),
+(13, 236, 1);
 
 -- --------------------------------------------------------
 

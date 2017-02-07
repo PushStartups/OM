@@ -19,19 +19,8 @@ $(function () {
     });
 
 
-    var edited = false;
-    $('#coponInput').on('input',function(e){
-        $("#coupon-footer").html("CHECK COUPON");
-        edited = true;
-    });
-
-    $("#coupon-footer").on("click" , function(){
-        if(edited)
-            goToConfirmCoupon();
-    });
-
     $("#confimed-footer").on("click" , function(){
-        goToPAymentChoice();
+        goToPaymentChoice();
     });
     $("#cash-div").on("click" , function(){
         goToCards();
@@ -99,7 +88,9 @@ $(function () {
 
 })
 function setUpPopup(id){
-    $("#" + id).slideDown();
+
+    $("#"+id).slideDown();
+
     setTimeout(function(){
         $("#overlay").fadeIn();
     } , 100)
@@ -121,15 +112,21 @@ function goToCoupon(){
 }
 
 function goToConfirmCoupon(){
+
     $("#coupon-popup").slideDown();
+
     setUpPopup("check-coupon-popup");
+
     setTimeout(function(){
         $("#overlay").fadeIn();
     } , 100);
     setDot("third-dot");
 }
-function goToPAymentChoice(){
+function goToPaymentChoice(){
+
     $("#check-coupon-popup").slideUp();
+    $("#coupon-popup").slideUp();
+
     setUpPopup("payment-choice-popup");
     setTimeout(function(){
         $("#overlay").fadeIn();
@@ -163,7 +160,6 @@ function showCartElements(){
 
 }
 
-
 function orderNow(){
 
     var total = parseInt(userObject.total);
@@ -184,7 +180,7 @@ function orderNow(){
 
 function addOrder(){
 
-    increaseCounter()
+    increaseCounter();
     $("#overlay").fadeOut();
     $("#main-popup").slideUp();
     $(".expandable").slideUp();
@@ -194,7 +190,13 @@ function addOrder(){
 
 
 function increaseCounter() {
+
     $(".count-badge").html(parseInt($(".count-badge").html()) + 1);
+}
+
+function decreaseCounter() {
+
+    $(".count-badge").html(parseInt($(".count-badge").html()) - 1);
 }
 
 function displayDots(){
