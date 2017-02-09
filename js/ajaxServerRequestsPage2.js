@@ -27,9 +27,6 @@ var minOrderLimit               = 75;                                           
 
 // FOOD CART DATA 
 var foodCartData                = [];                                              // DISPLAY DATA FOR FOOD CART
-
-
-
 // GET ALL CATEGORIES WITH ITEMS FROM SERVER AGAINST RESTAURANT SELECTED
 function  getCategoriesWithItems()
 {
@@ -93,6 +90,9 @@ function  getCategoriesWithItems()
 
 function onCategoryChange(x)
 {
+
+    $("#firstItem").attr('value', result.categories_items[x].name_en);
+
     addLoading();
 
     // SELECTED CATEGORY ID
@@ -104,15 +104,14 @@ function onCategoryChange(x)
 
     for(var y=0;y<result.categories_items[x].items.length ; y = y+2)
     {
-
         str += '<div class="cci-row">';
-
 
         str += '<div class="cci-col-50">'+
             '<div onclick="onItemSelected ('+y+')"  class="product-card">'+
             '<img src="'+result.categories_items[x].items[y].image_url+'" />'+
-            '<div class="card-body">'+
-            '<div class="header"> <span class="dark-text"> '+result.categories_items[x].items[y].name_en+' </span> <span class="cci-badge"> '+result.categories_items[x].items[y].price+' NIS </span> </div>'+
+            '<div class="card-body">';
+
+        str+= '<div class="header"> <span class="dark-text"> '+result.categories_items[x].items[y].name_en+' </span> <span class="cci-badge"> '+result.categories_items[x].items[y].price+' NIS </span> </div>'+
             '<div class="dim-text"><span class="wrapDesc"> '+result.categories_items[x].items[y].desc_en+' </span> </div>'+
             '</div>'+
             '</div>'+
@@ -162,7 +161,6 @@ function onItemSelected (y)
     // UPDATE ITEM NAME
     $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_en);
 
-    // UPDATE ITEM AVAILABLE PRICE
     $('#itemPopUpPrice').html(result.categories_items[currentCategoryId].items[currentItemIndex].price+' NIS');
 
     // UPDATE DESCRIPTION
@@ -196,29 +194,66 @@ function onItemSelected (y)
 
                 if(extras.extra_with_subitems[x].type == "One") {
 
+                    var temp    = "";
+                    var minSubItemName = "";
+                    var minPrice = 0;
+                    var minY = 0;
+
+                    for(var y=0;y<extras.extra_with_subitems[x].subitems.length;y++)
+                    {
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected('+oneTypeSubItems.length+','+y+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '</li>';
+
+                        if (extras.extra_with_subitems[x].price_replace == 1)
+                        {
+                            if (y ==0 || (parseInt(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
+                            {
+                                minPrice = extras.extra_with_subitems[x].subitems[y].price;
+                                minSubItemName = extras.extra_with_subitems[x].subitems[y].name_en;
+                                minY = y;
+                            }
+                        }
+                    }
+
                     oneTypeStr += ' <div class="sperator"></div> <h3 style="text-align: left">'+extras.extra_with_subitems[x].name_en+'</h3>'+
                         '<div class="custom-drop-down">'+
-                        '<input id="input'+oneTypeSubItems.length+'" placeholder="Please choose " readonly />'+
+                        '<input id="input'+oneTypeSubItems.length+'" value ="'+ minSubItemName +' " readonly />'+
                         '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">'+
                         '<div class="custom-drop-down-list" style=" z-index: 99999;">'+
                         '<ul>';
 
 
-                    for(var y=0;y<extras.extra_with_subitems[x].subitems.length;y++)
-                    {
-                        oneTypeStr += '<li onclick="onOneTypeExtraSubItemSelected('+oneTypeSubItems.length+','+y+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '</li>';
-                    }
+                    oneTypeStr += temp;
 
                     oneTypeStr += '</ul> </div><span style="font-size:8px; color:red;" id="error-one-type'+oneTypeSubItems.length+'"></span> </div>';
 
+                    if(minSubItemName ==  "")
+                    {
+                        // CREATE SUB ITEM DEFAULT OBJECT AND PUSH IN ONE TYPE ARRAY EMPTY AS DEFAULT
+                        // UPDATE VALUE FROM SUB ITEM SELECTION FROM DROP DOWN TYPE ONE
+                        var subItem = {};
 
-                    // CREATE SUB ITEM DEFAULT OBJECT AND PUSH IN ONE TYPE ARRAY EMPTY AS DEFAULT
-                    // UPDATE VALUE FROM SUB ITEM SELECTION FROM DROP DOWN TYPE ONE
-                    var subItem = {};
+                        subItem[extras.extra_with_subitems[x].name_en] = null;
+                        oneTypeSubItems.push(subItem);
+                        isOneExist = true;
+                    }
+                    else
+                    {
+                        // SUB ITEM OBJECT
 
-                    subItem[extras.extra_with_subitems[x].name_en] = null;
-                    oneTypeSubItems.push(subItem);
-                    isOneExist = true;
+                        var temp = {
+
+                            "subItemId"       : extras.extra_with_subitems[x].subitems[minY].id,
+                            "replace_price"   : extras.extra_with_subitems[x].price_replace,
+                            "subItemPrice"    : extras.extra_with_subitems[x].subitems[minY].price,
+                            "subItemName"     : extras.extra_with_subitems[x].subitems[minY].name_en,
+                            "qty"             : 1};   // QUANTITY OF SUB-ITEM BY DEFAULT 1
+
+                        var subItem = {};
+                        subItem[extras.extra_with_subitems[x].name_en] = temp;
+
+                        oneTypeSubItems.push(subItem);
+                    }
+
                 }
 
                 // EXTRAS WITH TYPE MULTIPLE (MULTIPLE SELECTABLE)
@@ -292,6 +327,11 @@ function onItemSelected (y)
 // ON ONE TYPE EXTRA SELECTED BY USER
 function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, e) {
 
+    if(parseInt(extras.extra_with_subitems[extraIndex].price_replace) == 1)
+    {
+        $('#itemPopUpPrice').html(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price+' NIS');
+    }
+
     var index = '#input'+extraIndex;
     $(index).val(e.innerHTML);
 
@@ -337,6 +377,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
 
         multipleTypeSubItems[index][name] = subItem;
+
     }
 
     // IF CHECK BOX NOT CHECKED REMOVE SUB ITEM
@@ -642,12 +683,15 @@ function onQtyDecreasedButtonClicked(index) {
             {
                 $("#food-cart-popup").slideUp();
                 $("#overlay").fadeOut();
-                decreaseCounter();
+
             }
             else
             {
                 updateCartElements();
+
             }
+
+            decreaseCounter();
         }
 
     }
@@ -669,6 +713,7 @@ function onQtyDecreasedButtonClicked(index) {
                 userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key] = null;
 
                 foodCartData.splice(index, 1);
+
 
                 updateCartElements();
             }

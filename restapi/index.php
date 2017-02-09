@@ -118,7 +118,11 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
 });
 
-//  WEB HOOK GET DATA OF ALL RESTAURANT
+
+
+
+
+//  WEB HOOK GET DATA OF CATEGORIES WITH ITEMS
 
 $app->post('/categories_with_items', function ($request, $response, $args)
 {
@@ -133,7 +137,40 @@ $app->post('/categories_with_items', function ($request, $response, $args)
 
     $count2 = 0;
     foreach ($categories as $category) {
+
         $items = DB::query("select * from items where category_id = '".$category["id"]."'");
+
+        $count3 = 0;
+        // CHECK FOR ITEMS PRICE ZERO
+        foreach ($items as $item)
+        {
+            if($item['price'] == 0)
+            {
+                $extras = DB::query("select * from extras where item_id = '".$item["id"]."' AND type = 'One' AND price_replace=1");
+                // EXTRAS WITH TYPE OME AND PRICE REPLACE 1
+
+                foreach ($extras as $extra)
+                {
+                    $subItems = DB::query("select * from subitems where extra_id = '".$extra["id"]."'");
+                    $lowestPrice = $subItems[0]['price'];
+                    foreach ($subItems as $subitem)
+                    {
+                        if ($subitem['price'] < $lowestPrice)
+                        {
+                            $lowestPrice = $subitem['price'];
+                        }
+                    }
+
+                    $items[$count3]['price'] = $lowestPrice;
+
+                }
+                //break;
+            }
+            $count3++;
+        }
+
+
+
         $categories[$count2]['items'] = $items;
         $count2++;
     }
@@ -151,6 +188,12 @@ $app->post('/categories_with_items', function ($request, $response, $args)
     return $response->withStatus(200)->write(json_encode($data));
 
 });
+
+
+
+
+
+
 
 // GET EXTRAS WITH SUBITEMS
 $app->post('/extras_with_subitems', function ($request, $response, $args) {

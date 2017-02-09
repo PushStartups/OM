@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 09, 2017 at 09:52 AM
+-- Generation Time: Feb 09, 2017 at 02:44 PM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -70,6 +70,29 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `sort`) VALUES
 (27, 4, 'Roza Snacks', 'נשנושים', 126),
 (28, 4, 'Roza Kid''s meals', 'מנות ילדים\n', 127),
 (29, 4, 'Roza Drinks', 'שתייה', 128);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE IF NOT EXISTS `company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `url` text NOT NULL,
+  `voting_start` varchar(255) NOT NULL,
+  `voting_end` varchar(255) NOT NULL,
+  `ordering_end` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id`, `name`, `url`, `voting_start`, `voting_end`, `ordering_end`) VALUES
+(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco', '09:30:00', '16:00:00', '20:00:00');
 
 -- --------------------------------------------------------
 
@@ -407,20 +430,20 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (79, 18, 'Baladi eggplant in tahini', 'חציל בלאדי בטחינה ירוקה', 'Plus salsa and olive oil', 'בתוספת סלסה ושמן זית', 22, 'restapi/images/test.png', 178),
 (80, 18, 'Cauliflower tahini', 'כרובית בטחינה', 'With sweet chili', 'בליווי צ''ילי מתוק', 26, 'restapi/images/test.png', 179),
 (81, 18, 'Sourdough bread and four homemade dips', 'לחם מחמצת וארבעה מטבלי הבית', '', '', 18, 'restapi/images/test.png', 180),
-(82, 18, 'Focaccias', 'פוקצ''ה מתבלים', 'Comes with five types of dips', 'חמישה סוגי מטבלים משתנים', 28, 'restapi/images/test.png', 181),
+(82, 18, 'Focaccias', 'פוקצ''ה מתבלים', 'Comes with five types of dips', 'חמישה סוגי מטבלים משתנים', 28, 'img/roza_items/roza_foccacia.JPG', 181),
 (83, 18, 'Sweet potato fries with a touch of maple', 'צ''יפס בטטה בנגיעות מייפל', '', '', 22, 'restapi/images/test.png', 182),
 (84, 18, 'Soup of the day', 'מרק היום- שאל את הטלפן', '', '', 22, 'restapi/images/test.png', 183),
 (85, 18, 'Tempura chicken fillet', 'פילה עוף טמפורה', 'Drizzled with sweet chili', 'על מצע צ''ילי מתוק', 28, 'restapi/images/test.png', 184),
 (86, 18, 'Stir fried mushrooms', 'פטריות מוקפצות', 'Portobello Mushrooms and teriyaki sauce', 'שמפיניון ופורטובלו ברוטב טריאקי', 33, 'restapi/images/test.png', 185),
-(87, 19, 'Sandwich chicken', 'סנדוויץ'' עוף', 'Chicken strips grilled with fried onion spread with guacamole and roasted peppers', 'נתחי עוף בגריל עם בצל מטוגן, ממרח גוואקאמולי ופלפל קלוי', 45, 'restapi/images/test.png', 186),
+(87, 19, 'Sandwich chicken', 'סנדוויץ'' עוף', 'Chicken strips grilled with fried onion spread with guacamole and roasted peppers', 'נתחי עוף בגריל עם בצל מטוגן, ממרח גוואקאמולי ופלפל קלוי', 45, 'img/roza_items/roza_chicken_sandwich.JPG', 186),
 (88, 19, 'Steak sandwich', 'סטייק סנדוויץ''', 'Entrecote strips stirfried together with fried onion and Dijonnaise sauce', 'נתחי אנטריקוט מוקפצים עם בצל מטוגן בממרח דיז''ונז''', 48, 'restapi/images/test.png', 187),
 (89, 19, 'Sandwich sloppy joe', 'סנדוויץ'' סלופי ג''ו', 'Chopped lamb pieces in a salsa and Dijonnaise sauce', 'נתחי טלה קצוצים ברוטב סלסה וממרח דיז''ונז''', 45, 'restapi/images/test.png', 188),
 (90, 19, 'Sandwich Schnitzel Rosa', 'סנדוויץ'' שניצל רוזה', 'Shnitzel with house blend spices served wiht a choice of sauces and green vegetables', 'שניצל בתיבול ביתי מוגש עם מבחר רטבים בליווי ירקות טריים', 43, 'restapi/images/test.png', 189),
 (91, 20, 'House burger 150g', 'המבורגר הבית 150 גרם', '100% fresh beef from select cuts', '100% בשר בקר טרי מחלקים מובחרים', 34, 'restapi/images/test.png', 190),
 (92, 20, 'The house burger 250g', 'המבורגר הבית 250 גרם', '100% fresh beef from select cuts', '100% בשר בקר טרי מחלקים מובחרים', 42, 'restapi/images/test.png', 191),
-(93, 20, 'Rosa Burger 220 grams', 'המבורגר רוזה 220 גרם', '100% lamb meat with house blend spices', '100% בשר טלה משובח בתיבות הבית', 42, 'restapi/images/test.png', 192),
+(93, 20, 'Rosa Burger 220 grams', 'המבורגר רוזה 220 גרם', '100% lamb meat with house blend spices', '100% בשר טלה משובח בתיבות הבית', 42, 'img/roza_items/roza_burger.jpg', 192),
 (94, 20, '220 gram entrecote hamburger', 'המבורגר אנטריקוט 220 גרם', '', '', 44, 'restapi/images/test.png', 193),
-(95, 21, 'Tortilla Chicken', 'טורטיה עוף', 'Chicken strips stirfried with onion and tehina', 'נתחי חזה עוף מוקפצים עם בצל וטחינה', 45, 'restapi/images/test.png', 194),
+(95, 21, 'Tortilla Chicken', 'טורטיה עוף', 'Chicken strips stirfried with onion and tehina', 'נתחי חזה עוף מוקפצים עם בצל וטחינה', 45, 'img/roza_items/roza_chicken_tortilla.JPG', 194),
 (96, 21, 'Tortilla Chicken liver', 'טורטיה כבד עוף', 'Chicken liver stirfried with onion and our house sauces', 'כבדי עוף מוקפצים עם בצל ברטבי הבית', 41, 'restapi/images/test.png', 195),
 (97, 21, 'Tortilla kebab', 'טורטיה קבב', 'Small kebabs with tehina and salsa', 'קבבונים בטחינה ביתית וסלסה', 46, 'restapi/images/test.png', 196),
 (98, 21, 'Tortilla entrecote', 'טורטיה אנטריקוט', 'Entrecote strips stirfried with onion and Dijonnaise sauce', 'נתחי אנטריקוט מוקפצים עם בצל מטוגן בממרח דיז''ונז''', 48, 'restapi/images/test.png', 197),
@@ -438,7 +461,7 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (110, 23, 'Fettuccini with Chicken Livers', 'פטוצ''יני כבד עוף', 'Chicken Livers, Mirin sauce, fresh herbs and mushrooms', 'כבד עוף, מירין, עשבי תיבול ופטריות', 49, 'restapi/images/test.png', 209),
 (111, 23, 'Fettuccini Entrecote', 'פטוצ''יני אנטריקוט', 'With pan-seared entrecot pieces and shallots, champignon mushrooms and Mirin sauce', 'נתחי אנטריקוט צרובים במחבת לצד בצלי שאלוט, פטריות שמפניון ומירין', 52, 'restapi/images/test.png', 210),
 (112, 24, 'Vegetarian Noodles', 'נודלס צמחוני', 'Egg noodles stirfried with carrot, variety of peppers and soya sauce', 'אטריות ביצים מוקפצות עם גזר, בצל ופלפלים צבעוניים ברוטב סויה', 39, 'restapi/images/test.png', 211),
-(113, 24, 'Chicken Noodles', 'נודלס עוף', 'Egg noodles stirfried with carrot, variety of peppers, soya sauce and chicken pieces', 'אטריות ביצים מוקפצות עם גזר, בצל, פלפלים צבעוניים ברוטב סויה עם נתחי עוף', 49, 'restapi/images/test.png', 212),
+(113, 24, 'Chicken Noodles', 'נודלס עוף', 'Egg noodles stirfried with carrot, variety of peppers, soya sauce and chicken pieces', 'אטריות ביצים מוקפצות עם גזר, בצל, פלפלים צבעוניים ברוטב סויה עם נתחי עוף', 49, 'img/roza_items/roza_chicken_noodles.jpg', 212),
 (114, 24, 'Beef Noodles', 'נודלס בקר', 'Egg noodles stirfried with carrot, variety of peppers, soya sauce and beef pieces', 'אטריות ביצים מוקפצות עם גזר, בצל ופלפלים צבעוניים ברוטב סויה עם נתחי בקר', 52, 'restapi/images/test.png', 213),
 (115, 25, 'Jerusalem Foccaccia', 'פוקצ''ה ירושלמית', 'Jerusalem Mix with tehina, amba sauce and parsley', 'מעורב ירושלמי בתוספת טחינה, עמבה ופטרוזיליה', 52, 'restapi/images/test.png', 214),
 (116, 25, 'Lamb sausage Foccaccia (spicy)', 'פוקצ''ה נקניקיות טלה (חריף)', 'Lamb sausage, baby leaves, onion and Dijonnaise sauce', 'נקניקיות טלה, עלי בייבי, שרי, בצל וממרח דיז''ונז''', 52, 'restapi/images/test.png', 215),
@@ -1481,6 +1504,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `payment_url` varchar(255) DEFAULT NULL,
   `extras` varchar(255) DEFAULT NULL,
   `restaurant_id` int(16) DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=238 ;
@@ -1489,12 +1513,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`) VALUES
-(233, 'eaba97fb7ab217e0bbe46926', '0548086730', NULL, 3, 'english', NULL, NULL, NULL),
-(234, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL),
-(235, 'ahmad@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL),
-(236, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL),
-(237, 'test2@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`) VALUES
+(233, 'eaba97fb7ab217e0bbe46926', '0548086730', NULL, 3, 'english', NULL, NULL, NULL, 1),
+(235, 'ahmad@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
+(236, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
+(237, 'test2@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1540,6 +1563,26 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_roles`
+--
+
+CREATE TABLE IF NOT EXISTS `user_roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `user_roles`
+--
+
+INSERT INTO `user_roles` (`id`, `name`) VALUES
+(1, 'normal'),
+(2, 'b2b');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `weekly_availibility`
 --
 
@@ -1552,7 +1595,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `weekly_availibility`
@@ -1579,7 +1622,14 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (25, 3, 'Wednesday', 'יום ד', '12:00', '21:00'),
 (26, 3, 'Thursday', 'יום ה', '12:00', '21:00'),
 (27, 3, 'Friday', 'ששי', 'Closed', 'Closed'),
-(28, 3, 'Saturday', 'שבת', 'Closed', 'Closed');
+(28, 3, 'Saturday', 'שבת', 'Closed', 'Closed'),
+(36, 4, 'Sunday', 'יום א', '12:00', '21:00'),
+(37, 4, 'Monday', 'יום ב', '12:00', '21:00'),
+(38, 4, 'Tuesday', 'יום ג', '12:00', '21:00'),
+(39, 4, 'Wednesday', 'יום ד', '12:00', '21:00'),
+(40, 4, 'Thursday', 'יום ה', '12:00', '21:00'),
+(41, 4, 'Friday', 'ששי', 'Closed', 'Closed'),
+(42, 4, 'Saturday', 'שבת', 'Closed', 'Closed');
 
 --
 -- Constraints for dumped tables

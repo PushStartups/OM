@@ -192,8 +192,7 @@ div.food-cart {
     max-width: 540px;
     bottom: 40px;
     height: calc(100% - 60px);
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 10px;
     z-index: 100;
 }
 
@@ -562,8 +561,8 @@ div.popup .model-footer, div.food-cart .model-footer {
     color: white;
     font-size: 14px;
     text-align: center;
-    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     background: -webkit-linear-gradient(left,#8CD5AB,#34D760); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, #8CD5AB,#34D760); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right,#8CD5AB,#34D760); /* For Firefox 3.6 to 15 */
