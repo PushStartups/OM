@@ -33,6 +33,9 @@ var foodCartData                = [];                                           
 // GET ALL CATEGORIES WITH ITEMS FROM SERVER AGAINST RESTAURANT SELECTED
 function  getCategoriesWithItems()
 {
+    // SET MIN ORDER LIMIT TO ERROR POPUP
+    $('#min_order').html("Min Order "+minOrderLimit+" NIS");
+
     // UPDATE RESTAURANT TITLE
     $('#restName').text(restName);
 
@@ -233,9 +236,20 @@ function onItemSelected (y)
 
                         for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
                         {
-
-                            // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                            multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected('+x+','+y+','+multipleTypeSubItems.length+')"  id="checkbox-id-'+x.toString()+y.toString()+'" /> <label for="checkbox-id-'+x.toString()+y.toString()+'">' + extras.extra_with_subitems[x].subitems[y].name_en + '</label></li>';
+                            if(parseInt(extras.extra_with_subitems[x].subitems[y].price) > 0)
+                            {
+                                // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
+                                multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                                    ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
+                                    + extras.extra_with_subitems[x].subitems[y].name_en+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
+                            }
+                            else
+                            {
+                                // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
+                                multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                                    ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
+                                    + extras.extra_with_subitems[x].subitems[y].name_en + '</label></li>';
+                            }
 
 
                             // CREATE SUB ITEM OBJECT FOR ALL SUB ITEMS AVAILABLE AND SAVE VALUE ON USER SELECTION
@@ -703,10 +717,12 @@ function onQtyDecreasedButtonClicked(index) {
 
 function OnOrderNowClicked() {
 
+
     generateTotalUpdateFoodCart();
 
     $('.totalBill').html(userObject.total + " NIS");
     $('#restAddress').html(userObject.restaurantAddress);
+
 
     orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
 }
@@ -865,6 +881,8 @@ function CheckCouponFromServer() {
                         discountedAmount = parseInt(userObject.discount);
 
                         newTotal = parseInt(userObject.total) - parseInt(userObject.discount);
+
+                        $('#discountAmount').html("-" + discountedAmount);
                     }
                     else {
                         userObject.isFixAmountCoupon = false;
@@ -873,12 +891,13 @@ function CheckCouponFromServer() {
 
                         newTotal = userObject.total - discountedAmount;
 
+                        $('#discountAmount').html("-" + discountedAmount+"%");
+
                     }
 
                     $('.totalBill').html(newTotal + " NIS");
                     $('#code').val(code);
                     $('#oldTotal').html(userObject.total);
-                    $('#discountAmount').html("-" + discountedAmount);
                     $('#newTotal').html(newTotal);
 
                     userObject.total = newTotal;
@@ -889,7 +908,7 @@ function CheckCouponFromServer() {
                 // INVALID COUPON CODE
                 else {
                     $("#coponInput").addClass('red-boarder');
-                    $("#couponError").html("Invalid Coupon!");
+                    $("#couponError").html("Oops, this Coupons wrong, Try Again!");
                 }
 
 
@@ -912,6 +931,56 @@ function CheckCouponFromServer() {
     }
 
 };
+
+
+
+// CREDIT CARD PAYMENT
+function payment_credit_card() {
+
+    addLoading();
+
+    //  REQUEST COUPON VALIDATION
+    $.ajax({
+
+        url: host + "/restapi/index.php/get_credit_card_payment_url",
+        type: "post",
+        data: {
+            "amount": userObject.total,
+            "email": userObject.email
+        }, //  AMOUNT OF ORDER AND USER EMAIL
+
+        // RESPONSE RECEIVE SUCCESSFULLY
+
+        success: function (response) {
+
+            var resp = decodeURIComponent(JSON.parse(response));
+            console.log(resp);
+
+            $('#payment_guard').html("<iframe src='"+resp+"' width='100%' height='100%' frameBorder='0'/>");
+
+            goToCards();
+            hideLoading();
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+            hideLoading();
+        }
+    });
+
+}
+
+function onPaymentCancel() {
+
+    goToPaymentChoice();
+}
+
+
+function onPaymentSuccess()
+{
+    confirmOrder('creditCard');
+    goToConfirmOrder();
+}
 
 
 // PAYMENT OPTION WHAT USER CHOOSE CASH OR CREDIT
@@ -938,8 +1007,11 @@ function confirmOrder(paymentChoice)
     // PAYMENT CHOICE
     if(paymentChoice == 'cash')
     {
-
         str += '<span > PAYMENT </span> <a href = "#"> edit </a> <br>'+paymentChoice;
+    }
+    else if(paymentChoice == 'creditCard')
+    {
+        str += '<span > PAYMENT </span> <a href = "#"> edit </a> <br>'+'payment received through credit card';
     }
 
     $('#payment_choice').html(str);
@@ -947,8 +1019,8 @@ function confirmOrder(paymentChoice)
     str = "";
 
     str = '<span> CUSTOMER INFO </span> <a href="#"> edit </a>'+
-          '<br>'+
-          userObject.name+'<br>'+userObject.email+'<br>';
+        '<br>'+
+        userObject.name+'<br>'+userObject.email+'<br>';
 
     if(userObject.pickFromRestaurant)
     {
@@ -971,18 +1043,18 @@ function confirmOrder(paymentChoice)
     }
     else
     {
-         if(userObject.isFixAmountCoupon) {
+        if(userObject.isFixAmountCoupon) {
 
-             str += '<span> COUPON CODE </span> <a href="#"> edit </a>' +
-                 '<br>' +
-                 'Discount = -'+userObject.discount;
-         }
-         else
-         {
-             str += '<span> COUPON CODE </span> <a href="#"> edit </a>' +
-                 '<br>' +
-                 'Discount = -'+userObject.discount+"%";
-         }
+            str += '<span> COUPON CODE </span> <a href="#"> edit </a>' +
+                '<br>' +
+                'Discount = -'+userObject.discount;
+        }
+        else
+        {
+            str += '<span> COUPON CODE </span> <a href="#"> edit </a>' +
+                '<br>' +
+                'Discount = -'+userObject.discount+"%";
+        }
     }
 
     $('#coupon_detail').html(str);
@@ -1017,14 +1089,11 @@ function  callPage3() {
         error: function (jqXHR, textStatus, errorThrown) {
 
             window.location.href = '../page3.html';
-           hideLoading();
+            hideLoading();
         }
     });
 
-
 };
-
-
 
 
 //SHOW LOADER ON AJAX CALLS

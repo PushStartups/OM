@@ -6,12 +6,13 @@ require      'vendor/autoload.php';
 require_once 'inc/initDb.php';
 
 DB::query("set names utf8");
+
+
 // SLIM INITIALIZATION
 $app = new \Slim\App();
 
 
 //  WEB HOOK GET ALL RESTAURANT
-
 $app->post('/get_all_restaurants', function ($request, $response, $args)
 {
 
@@ -98,6 +99,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
             "description_he"       =>  $result["description_he"],    // RESTAURANT DESCRIPTION
             "address_en"           =>  $result["address_en"],        // RESTAURANT ADDRESS
             "address_he"           =>  $result["address_he"],        // RESTAURANT ADDRESS
+            "hechsher_en"          =>  $result["hechsher_en"],       // RESTAURANT HECHSHER
             "tags"                 =>  $tags,                        // RESTAURANT TAGS
             "gallery"              =>  $galleryImages,               // RESTAURANT GALLERY
             "timings"              =>  $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -140,7 +142,7 @@ $app->post('/categories_with_items', function ($request, $response, $args)
     $data = [
         "menu_name_en"              => $menu['name_en'],               // MENU NAME EN
         "menu_name_he"              => $menu['name_he'],               // MENU NAME HE
-        "categories_items"          =>  $categories                   // CATEGORIES AND ITEMS
+        "categories_items"          =>  $categories                    // CATEGORIES AND ITEMS
     ];
 
 
@@ -206,12 +208,15 @@ $app->post('/add_orders', function ($request, $response, $args) {
 
 });
 
+
+
 // VALIDATE COUPONS
+
 $app->post('/coupon_validation', function ($request, $response, $args) {
 
-    $email = $request->getParam('email');
-    $coupon_code = $request->getParam('code');
-    $success_validation = "false";
+    $email = $request->getParam('email');        //  GET USER EMAIL
+    $coupon_code = $request->getParam('code');   //  COUPON CODE ENTER BY USER
+    $success_validation = "false";               //  SUCCESS VALIDATION RESPONSE FOR USER
 
 
     //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
@@ -234,6 +239,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
     // COUPON VALIDATION
     $coupon_code = strtolower($coupon_code);
+
 
     //EXACT TIMEZONE OF ISRAEL
     date_default_timezone_set("Asia/Jerusalem");
@@ -263,7 +269,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         }
 
 
-        // GETTING STARTDATE AND ENDDATE OF COUPON FROM DATABASE
+        // GETTING START DATE AND END DATE OF COUPON FROM DATABASE
         $arr1 = explode(" ",$getStartingTime);
         $start_date = $arr1[0];
 
@@ -277,27 +283,31 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
             //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
             $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id,$coupon_id);
             if(DB::count() == 0){
+
                 DB::insert('user_coupons', array(
                     'user_id'     =>  $user_id,
                     'coupon_id'   =>  $coupon_id
                 ));
+
                 $success_validation = "true";
 
             }
             else{
+
                 $success_validation = "false";
-                $message = "Already Receive Coupon, Please Try Another Coupon";
             }
 
         }
-        else{
+        else
+        {
             $success_validation = "false";
-            $message = "Invalid Coupon, Please Try Another Coupon";
         }
 
     }
     if($success_validation == "true"){
+
         $data = [
+
             "success"               =>    true,                                          // COUPON VALID OR NOT (TRUE OR FALSE)
             "amount"                =>    $discount,                                     // DISCOUNT ON COUPON
             "isFixAmountCoupon"     =>    $isFixAmountCoupon                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
@@ -308,7 +318,9 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
     {
 
         $data = [
-            "success"               =>    false
+
+            "success"               =>    false                                          // SUCCESS FALSE WRONG CODE
+
         ];
     }
 
@@ -316,7 +328,215 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
     return $response->withStatus(200)->write(json_encode($data));
 
 });
+
+
+
+//  STORE USER ORDER IN DATABASE
+$app->post('/add_order', function ($request, $response, $args) {
+
+
+    $order   =  $request->getParam('user_order');
+
+
+    // RESPONSE RETURN TO REST API CALL
+    return $response->withStatus(200)->write("");
+
+});
+
+
+
+//  RETURN PAYMENT URL OF GUARD API AGAINST PAYMENT OF USER ORDER
+$app->post('/get_credit_card_payment_url', function ($request, $response, $args) {
+
+    $email   =  $request->getParam('email');
+    $amount  =  $request->getParam('amount');
+
+    $user_id  = 0;
+
+    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
+
+    if(DB::count() == 0){
+
+        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+        DB::insert('users', array(
+            'smooch_id' => $email
+        ));
+        $user_id = DB::insertId();
+    }
+    else{
+
+        // IF USER ALREADY EXIST IN DATABASE
+        $user_id = $getUser['id'];
+    }
+
+
+    $url = urlencode(guardPaymentRequest(($amount * 100),$user_id));
+
+    // RESPONSE RETURN TO REST API CALL
+    return $response->withStatus(200)->write(json_encode($url));
+
+});
+
+
+// WEB HOOK FOR PAYMENT CANCEL BY USER DO APPROPRIATE ACTION
+$app->get('/payment_cancel', function ($request, $response, $args)
+{
+    $email = $request->getParam('userId');
+
+    $str =  '<script type="text/javascript">'.
+    'window.top.onPaymentCancel();'.
+    '</script>';
+
+    return $response->withStatus(200)->write($str);
+});
+
+
+
+// WEB HOOK FOR PAYMENT SUCCESS
+$app->get('/payment_success', function ($request, $response, $args)
+{
+    $email = $request->getParam('userId');
+
+    $str =  '<script type="text/javascript">'.
+        'window.top.onPaymentSuccess();'.
+        '</script>';
+
+    return $response->withStatus(200)->write($str);
+});
+
+
+// WEB HOOK FOR PAYMENT SUCCESS
+$app->get('/payment_error', function ($request, $response, $args)
+{
+    $email = $request->getParam('userId');
+
+    $str =  '<script type="text/javascript">'.
+        'window.top.onPaymentCancel();'.
+        '</script>';
+
+    return $response->withStatus(200)->write($str);
+});
+
+
+
 $app->run();
 
+
+// SUPPORT METHODS
+// GUARD API PAYMENT REQUEST
+// AMOUNT DIVIDED BY 100 FROM API
+
+function  guardPaymentRequest($amount,$userId)
+{
+
+    $cgConf['tid'] = '0963432';
+    $cgConf['mid'] = 10998;
+    $cgConf['amount'] = $amount;
+    $cgConf['user'] = 'pushstartups';
+    $cgConf['password'] = 'P!dc3cg4w';
+    $cgConf['cg_gateway_url'] = "https://cguat2.creditguard.co.il/xpo/Relay";
+
+    $poststring = 'user=' . $cgConf['user'];
+    $poststring .= '&password=' . $cgConf['password'];
+
+    /*Build Ashrait XML to post*/
+    $poststring .= '&int_in=<ashrait>
+                           <request>
+                            <version>1000</version>
+                            <language>ENG</language>
+                            <dateTime></dateTime>
+                            <command>doDeal</command>
+                            <doDeal>
+                                 <terminalNumber>' . $cgConf['tid'] . '</terminalNumber>
+                                 <mainTerminalNumber/>
+                                 <cardNo>CGMPI</cardNo>
+                                 <successUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_success?userId='.$userId.'</successUrl>
+                                 <errorUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_error?userId='.$userId.'</errorUrl>
+                                 <cancelUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_cancel?userId='.$userId.'</cancelUrl>
+                                 <total>' . $cgConf['amount'] . '</total>
+                                 <transactionType>Debit</transactionType>
+                                 <creditType>RegularCredit</creditType>
+                                 <currency>ILS</currency>
+                                 <transactionCode>Phone</transactionCode>
+                                 <authNumber/>
+                                 <numberOfPayments/>
+                                 <firstPayment/>
+                                 <periodicalPayment/>
+                                 <validation>TxnSetup</validation>
+                                 <dealerNumber>7451669</dealerNumber>
+                                 <user>something</user>
+                                 <mid>' . $cgConf['mid'] . '</mid>
+                                 <uniqueid>' . time() . rand(100, 1000) . '</uniqueid>
+                                 <mpiValidation>autoComm</mpiValidation>
+                                 <email>contact@orderapp.com</email>
+                                 <clientIP/>
+                                 <customerData>
+                                  <userData1/>
+                                  <userData2/>
+                                  <userData3/>
+                                  <userData4/>
+                                  <userData5/>
+                                  <userData6/>
+                                  <userData7/>
+                                  <userData8/>
+                                  <userData9/>
+                                  <userData10/>
+                                 </customerData>
+                            </doDeal>
+                           </request>
+                          </ashrait>';
+
+    //init curl connection
+    if (function_exists("curl_init")) {
+        $CR = curl_init();
+        curl_setopt($CR, CURLOPT_URL, $cgConf['cg_gateway_url']);
+        curl_setopt($CR, CURLOPT_POST, 1);
+        curl_setopt($CR, CURLOPT_FAILONERROR, true);
+        curl_setopt($CR, CURLOPT_POSTFIELDS, $poststring);
+        curl_setopt($CR, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($CR, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($CR, CURLOPT_FAILONERROR, true);
+
+
+        //actual curl execution perfom
+        $result = curl_exec($CR);
+        $error = curl_error($CR);
+
+        // on error - die with error message
+        if (!empty($error)) {
+            die($error);
+        }
+
+        curl_close($CR);
+    }
+
+    if (function_exists("simplexml_load_string")) {
+        if (strpos(strtoupper($result), 'HEB')) {
+
+            $result = iconv("utf-8", "iso-8859-8", $result);
+        }
+        $xmlObj = simplexml_load_string($result);
+        if (isset($xmlObj->response->doDeal->mpiHostedPageUrl)) {
+
+            // print out the url which we should redirect our customers to
+             return $xmlObj->response->doDeal->mpiHostedPageUrl;
+
+        }
+        else
+        {
+            die('<strong>Can\'t Create Transaction</strong> <br />' .
+                'Error Code: ' . $xmlObj->response->result . '<br />' .
+                'Message: ' . $xmlObj->response->message . '<br />' .
+                'Addition Info: ' . $xmlObj->response->additionalInfo);
+        }
+    }
+    else
+    {
+        die("simplexml_load_string function is not support, upgrade PHP version!");
+    }
+
+}
 ?>
+
+
 

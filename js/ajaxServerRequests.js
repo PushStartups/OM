@@ -28,6 +28,8 @@ var userObject = {
 // GET ALL RESTAURANTS FROM SERVER
 function  getAllRestaurants()
 {
+    addLoading();
+
     $.ajax({
 
         url: host+"/restapi/index.php/get_all_restaurants",
@@ -63,7 +65,7 @@ function  getAllRestaurants()
                         '<div id="right-triangle">'+'</div>'+
                         '<div class="resto_title" >'+
                         '<h3>'+result[x].name_en+'</h3>'+
-                        '<span>"Kosher"</span>'+
+                        '<span>'+result[x].hechsher_en+'</span>'+
                         '<p style="font-size: 16px">'+ tagsString +'</p>'+
                         '</div>'+
                         '</div>'+
@@ -74,7 +76,7 @@ function  getAllRestaurants()
                         '<div class="accordion-inner">'+
                         '<p style="word-break: normal">'+ result[x].description_en +'</p>'+
                         '<div class="btn-group btn-group-justified">'+
-                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">'+ result[x].address_en +'</p><span>New York</span></div>'+
+                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">'+ result[x].address_en +'</p></div>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now<img src="img/dropdown.png"></p><span class="text-left">'+result[x].today_timings+'</span></a>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="pop'+x+'" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p><span>View Gallery</span></a>'+
                         '</div>'+
@@ -98,7 +100,7 @@ function  getAllRestaurants()
                         '<div id="right-triangle"></div>'+
                         '<div class="resto_title" >'+
                         '<h3>'+result[x].name_en+'</h3>'+
-                        '<span>Kosher</span>'+
+                        '<span>'+result[x].hechsher_en+'</span>'+
                         '<h3 style="font-size: 16px">'+ tagsString +'</h3>'+
                         '</div>'+
                         '</div>'+
@@ -109,7 +111,7 @@ function  getAllRestaurants()
                         '<div class="accordion-inner">'+
                         '<p style="word-break: normal">'+ result[x].description_en +'</p>'+
                         '<div class="btn-group btn-group-justified">'+
-                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">'+ result[x].address_en +'</p> <span></span></div>'+
+                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">'+ result[x].address_en +'</p></div>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Closed Now<img src="img/dropdown.png"></p> <span class="text-left"></span></a>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="pop'+x+'" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>'+
                         '</div>'+
@@ -121,22 +123,29 @@ function  getAllRestaurants()
 
                 allRestaurants += temp;
 
+
             }
 
 
             $("#accordion2").append(allRestaurants);
 
+            hideLoading();
+
         },
         error: function(jqXHR, textStatus, errorThrown) {
 
+
             console.log(textStatus, errorThrown);
+
+            alert(errorThrown);
+
+            window.location.href('../index.html');
 
         }
 
     });
 
 }
-
 
 // CONVERT ALL RESTAUTANT TAGS TO STRING
 
@@ -160,6 +169,7 @@ function fromTagsToString (restaurant)
 }
 
 
+
 // CLICK LISTENER FOR RESTAURANT (ORDER NOW)
 
 $(document).on('click','.order_now',function() {
@@ -180,3 +190,25 @@ $(document).on('click','.order_now',function() {
    // MOVING TO PAGE 2
     window.location.href = '../page2.html';
 });
+
+
+
+
+//SHOW LOADER ON AJAX CALLS
+function addLoading(){
+
+    $("body").addClass("blur-class");
+    $("#loader").css("display" , "block");
+}
+
+
+
+
+// HIDE LOADING ON AJAX CALLS
+function hideLoading(){
+    setTimeout(function() {
+        $("body").removeClass("blur-class");
+        $("#loader").css("display" , "none");
+    }, 1000);
+}
+

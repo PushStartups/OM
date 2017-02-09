@@ -1,7 +1,6 @@
 
 $(function () {
 
-    var currentScreen = 0;
 
     $("#main-footer , #food-cart-popup .model-footer").on("click" , function(){
         orderNow()
@@ -22,10 +21,6 @@ $(function () {
     $("#confimed-footer").on("click" , function(){
         goToPaymentChoice();
     });
-    $("#cash-div").on("click" , function(){
-        goToCards();
-    });
-
 
     $(document).on('click','.expandable input:checkbox',function(){
 
@@ -51,6 +46,7 @@ $(function () {
         $("#food-cart-popup").slideUp();
         $("#coupon-popup").slideUp();
         $("#payment-choice-popup").slideUp();
+        $("#creditcard-info-popup").slideUp();
         hideDots();
         setDot("first-dot");
 
@@ -89,12 +85,15 @@ $(function () {
 })
 function setUpPopup(id){
 
+    $("#overlay").fadeIn();
+
     $("#"+id).slideDown();
 
     setTimeout(function(){
         $("#overlay").fadeIn();
     } , 100)
 }
+
 function hidePopup(id){
     $("#overlay").fadeOut();
     $("#" + id).slideUp();
@@ -126,6 +125,7 @@ function goToPaymentChoice(){
 
     $("#check-coupon-popup").slideUp();
     $("#coupon-popup").slideUp();
+    $("#creditcard-info-popup").slideUp();
 
     setUpPopup("payment-choice-popup");
     setTimeout(function(){
@@ -133,15 +133,22 @@ function goToPaymentChoice(){
     } , 100);
     setDot("fourth-dot");
 }
+
+
 function goToCards(){
-    $("#payment-choice-popup").slideDown();
+
+    $("#payment-choice-popup").slideUp();
     setUpPopup("creditcard-info-popup");
     setTimeout(function(){
         $("#overlay").fadeIn();
     } , 100)
+
 }
+
+
 function goToConfirmOrder(){
-    $("#creditcard-info-popup").slideDown();
+
+    $("#creditcard-info-popup").slideUp();
     setUpPopup("confirm-order-popup");
     setTimeout(function(){
         $("#overlay").fadeIn();
