@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 09, 2017 at 02:44 PM
+-- Generation Time: Feb 12, 2017 at 09:32 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -92,7 +92,32 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`id`, `name`, `url`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco', '09:30:00', '16:00:00', '20:00:00');
+(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco', '09:20:00', '23:00:00', '24:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company_voting`
+--
+
+CREATE TABLE IF NOT EXISTS `company_voting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `restaurant_id` int(11) NOT NULL,
+  `vote_count` int(11) NOT NULL,
+  `voting_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `company_voting`
+--
+
+INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `voting_date`) VALUES
+(5, 1, 1, 0, '2017-02-12'),
+(6, 1, 2, 0, '2017-02-12'),
+(7, 1, 3, 0, '2017-02-12'),
+(8, 1, 4, 0, '2017-02-12');
 
 -- --------------------------------------------------------
 
@@ -1507,7 +1532,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=238 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=240 ;
 
 --
 -- Dumping data for table `users`
@@ -1517,7 +1542,9 @@ INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language
 (233, 'eaba97fb7ab217e0bbe46926', '0548086730', NULL, 3, 'english', NULL, NULL, NULL, 1),
 (235, 'ahmad@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
 (236, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
-(237, 'test2@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1);
+(237, 'test2@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
+(238, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
+(239, 'testing@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

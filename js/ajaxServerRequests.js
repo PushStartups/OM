@@ -14,6 +14,7 @@ var userObject = {
     'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
     'name': "",                        // USER NAME
     'email': "",                       // USER EMAIL
+    'contact' : "",                    // USER CONTACT
     'orders': [],                      // USER ORDERS
     'total': 0,                        // TOTAL AMOUNT OF ORDER
     'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO

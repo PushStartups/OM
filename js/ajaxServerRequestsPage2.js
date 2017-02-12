@@ -152,6 +152,7 @@ function onItemSelected (y)
     currentItemIndex = y;                 // SELECTED ITEM INDEX
     oneTypeSubItems = [];                 // REINITIALIZE ALL SUB ITEMS SELECTED BY USER TYPE ONE (SINGLE SELECTION)
     multipleTypeSubItems = [];            // REINITIALIZE ALL SUB ITEMS SELECTED BY USER TYPE MULTIPLE (MULTIPLE SELECTION)
+    itemPrice = result.categories_items[currentCategoryId].items[currentItemIndex].price;
 
     // DISPLAY ITEM (PRODUCT) DETAIL CARD
 
@@ -186,6 +187,8 @@ function onItemSelected (y)
             var multipleTypeStr = "";
             var isOneExist = false;
 
+            var first = true;
+
             // DISPLAY ALL AVAILABLE EXTRAS
             for(var x=0 ;x <extras.extra_with_subitems.length;x++)
             {
@@ -214,13 +217,20 @@ function onItemSelected (y)
                         }
                     }
 
-                    oneTypeStr += ' <div class="sperator"></div> <h3 style="text-align: left">'+extras.extra_with_subitems[x].name_en+'</h3>'+
+                    if(first == false)
+                    {
+                        oneTypeStr += '<div class="sperator"></div>';
+                    }
+                    else {
+                        first = true;
+                    }
+
+                    oneTypeStr += '<h3 style="text-align: left" >' + extras.extra_with_subitems[x].name_en + '</h3>'+
                         '<div class="custom-drop-down">'+
                         '<input id="input'+oneTypeSubItems.length+'" value ="'+ minSubItemName +' " readonly />'+
                         '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">'+
                         '<div class="custom-drop-down-list" style=" z-index: 99999;">'+
                         '<ul>';
-
 
                     oneTypeStr += temp;
 
@@ -264,10 +274,17 @@ function onItemSelected (y)
                     if(extras.extra_with_subitems[x].subitems.length != 0)
                     {
                         // SUB ITEMS WITH MULTIPLE SELECTABLE OPTIONS
-                        multipleTypeStr += '<div class="sperator" style="margin-top: 30px; margin-bottom: 30px; border-color: #BFBFBF"></div>' +
-                            '<h3 style="text-align: left; margin-bottom: 8px"> ' + extras.extra_with_subitems[x].name_en + ' </h3>' +
-                            '<ul id="subItems" class="checkbox-list">';
 
+                        if(first == false)
+                        {
+                            multipleTypeStr += '<div class="sperator" style="margin-top: 30px; margin-bottom: 30px; border-color: #BFBFBF"></div>';
+                        }
+                        else {
+                            first = true;
+                        }
+
+                        multipleTypeStr += '<h3 style="text-align: left; margin-bottom: 8px">'+extras.extra_with_subitems[x].name_en+'</h3>' +
+                            '<ul id="subItems" class="checkbox-list">';
 
                         for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
                         {
@@ -484,19 +501,8 @@ function generateTotalUpdateFoodCart()
                 {
                     if(parseInt(order.subItemsOneType[y][key].subItemPrice) != 0) {
 
-                        // SUB ITEM FOOD CART
-
-                        var cartSubItem = {
-                            "name": order.subItemsOneType[y][key].subItemName,
-                            "price": order.subItemsOneType[y][key].subItemPrice,
-                            "detail": "",
-                            "qty" : order.subItemsOneType[y][key].qty,
-                            "orderIndex" : x,
-                            "subItemOneIndex" : y ,
-                            "subItemMultipleIndex" : null
-                        };
                         sumTotalAmount = parseInt(sumTotalAmount) +( parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.subItemsOneType[y][key].qty));
-                        foodCartData.push(cartSubItem);
+                        cartItem.detail +=  order.subItemsOneType[y][key].subItemName+" (+"+order.subItemsOneType[y][key].subItemPrice+"), ";
                     }
                     else
                     {
@@ -518,21 +524,8 @@ function generateTotalUpdateFoodCart()
                 {
                     if(parseInt(order.multiItemsOneType[y][key].subItemPrice) != 0)
                     {
-                        // SUB ITEM OBJECT FOOD CART
-
-                        var cartSubItem = {
-                            "name": order.multiItemsOneType[y][key].subItemName,
-                            "price": order.multiItemsOneType[y][key].subItemPrice,
-                            "detail": "",
-                            "qty" : order.multiItemsOneType[y][key].qty,
-                            "orderIndex" : x,
-                            "subItemOneIndex" : null ,
-                            "subItemMultipleIndex" : y
-                        };
-
-
                         sumTotalAmount = parseInt(sumTotalAmount) + (parseInt(order.multiItemsOneType[y][key].subItemPrice) * parseInt(order.multiItemsOneType[y][key].qty) );
-                        foodCartData.push(cartSubItem);
+                        cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+"), ";
                     }
                     else
                     {
@@ -543,6 +536,9 @@ function generateTotalUpdateFoodCart()
                 }
             }
         }
+
+        // TOTAL OF ITEM WITH SUB ITEMS
+        cartItem.price = parseInt(orderAmount) + parseInt(sumTotalAmount);
 
         total = parseInt(total) +  ( parseInt(orderAmount) + parseInt(sumTotalAmount));
     }
@@ -616,33 +612,7 @@ function updateCartElements()
 function onQtyIncreaseButtonClicked(index) {
 
     // UPDATE ITEM MAIN
-
-    if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex == null && foodCartData[index].subItemMultipleIndex == null)
-    {
-
-        console.log('enter');
-        userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
-
-    }
-    // UPDATE ITEM SUB FROM TYPE ONE
-    else if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex != null && foodCartData[index].subItemMultipleIndex == null)
-    {
-
-        for(var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex])
-        {
-            userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty = parseInt( userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty ) + 1;
-        }
-
-    }
-    // UPDATE SUB ITEM MULTIPLE
-    else
-    {
-        for(var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex])
-        {
-            userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) + 1;
-        }
-
-    }
+    userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
 
     foodCartData[index].qty = parseInt(foodCartData[index].qty) + 1;
 
@@ -659,92 +629,40 @@ function onQtyIncreaseButtonClicked(index) {
 function onQtyDecreasedButtonClicked(index) {
 
     // UPDATE ITEM MAIN
-    if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex == null && foodCartData[index].subItemMultipleIndex == null)
+
+    // DECREASE QUANTITY
+    if(parseInt(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
     {
-        // DECREASE QUANTITY
-        if(parseInt(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
-        {
 
-            userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
-
-        }
-        // REMOVE ITEM
-        else
-        {
-            // IF MAIN ITEM DELETED ALL SUB ITEMS ALSO DELETED
-
-            userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
-
-            userObject.orders.splice(foodCartData[index].orderIndex, 1);
-
-            generateTotalUpdateFoodCart();
-
-            if(foodCartData.length == 0)
-            {
-                $("#food-cart-popup").slideUp();
-                $("#overlay").fadeOut();
-
-            }
-            else
-            {
-                updateCartElements();
-
-            }
-
-            decreaseCounter();
-        }
+        userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
 
     }
-    // UPDATE ITEM SUB FROM TYPE ONE
-    else if(foodCartData[index].orderIndex != null && foodCartData[index].subItemOneIndex != null && foodCartData[index].subItemMultipleIndex == null)
-    {
-        for(var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex]) {
-
-            // DECREASE QUANTITY
-            if (parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty) != 1)
-            {
-                userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty = parseInt( userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key].qty ) - 1;
-            }
-            // REMOVE SUB ITEM
-            else
-            {
-                userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
-
-                userObject.orders[foodCartData[index].orderIndex].subItemsOneType[foodCartData[index].subItemOneIndex][key] = null;
-
-                foodCartData.splice(index, 1);
-
-
-                updateCartElements();
-            }
-
-        }
-
-    }
-    // UPDATE SUB ITEM MULTIPLE
+    // REMOVE ITEM
     else
     {
-        for(var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex]) {
+        // IF MAIN ITEM DELETED ALL SUB ITEMS ALSO DELETED
 
-            // DECREASE QUANTITY
-            if (parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) != 1) {
+        userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
 
-                userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key].qty) - 1;
-            }
-            // REMOVE SUB ITEM
-            else
-            {
-                userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
+        userObject.orders.splice(foodCartData[index].orderIndex, 1);
 
-                userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[foodCartData[index].subItemMultipleIndex][key] = null;
+        generateTotalUpdateFoodCart();
 
-                foodCartData.splice(index, 1);
+        if(foodCartData.length == 0)
+        {
+            $("#food-cart-popup").slideUp();
+            $("#overlay").fadeOut();
 
-                updateCartElements();
-            }
+        }
+        else
+        {
+            updateCartElements();
+
         }
 
+        decreaseCounter();
     }
+
 
     if(foodCartData.length != 0 && foodCartData[index] != undefined  && (parseInt(foodCartData[index].qty) != 1))
     {
@@ -788,18 +706,18 @@ function validateEmail(email) {
 // SAVE USER INFORMATION
 function takeNameAndEmail()
 {
-
     // EXCEPTION HANDLING
 
     // NAME CANNOT BE EMPTY
 
     $("#email").removeClass("red-border");
+    $("#contact").removeClass("red-border");
     $("#checkbox-id11").removeClass("red-border");
     $("#address").removeClass("red-border");
 
     if($("#name").val() == "")
     {
-        document.getElementById("name-error").innerHTML = "Empty Name!";
+        document.getElementById("name-error").innerHTML = "*Required Field";
         $("#name").addClass("red-border");
         return;
     }
@@ -808,7 +726,7 @@ function takeNameAndEmail()
     // EMAIL CANNOT BE EMPTY
     if($("#email").val() == ""){
 
-        document.getElementById("email-error").innerHTML = "Empty Email!";
+        document.getElementById("email-error").innerHTML = "*Required Field";
         $("#email").addClass("red-border");
         return;
     }
@@ -818,6 +736,28 @@ function takeNameAndEmail()
         $("#email").addClass("red-border");
         return;
     }
+
+    // CONTACT NO CANNOT BE EMPTY
+
+    if($("#contact").val() == ""){
+
+        document.getElementById("contact-error").innerHTML = "*Required Field";
+        $("#contact").addClass("red-border");
+        return;
+    }
+
+
+    // VALIDATION OF CONTACT NO NOT CONTAIN CHAR EXCEPT +
+
+    var contact = $("#contact").val().replace('+','');
+
+    if(!(/^\d+$/.test(contact)))
+    {
+        document.getElementById("contact-error").innerHTML = "Invalid Phone Number!";
+        $("#contact").addClass("red-border");
+        return;
+    }
+
 
     // NEED TO CHECK ATLEAST ONE CHECK BOX
     if(!$('#checkbox-id11').is(':checked') &&  !$('#checkbox-id12').is(':checked'))
@@ -847,8 +787,9 @@ function takeNameAndEmail()
     }
 
 
-    userObject.name     =  $("#name").val();
-    userObject.email    =  $("#email").val();
+    userObject.name       =  $("#name").val();
+    userObject.email      =  $("#email").val();
+    userObject.contact    =  $("#contact").val();
 
 
     // PICK FROM RESTAURANT
@@ -870,11 +811,15 @@ function takeNameAndEmail()
     if($('#checkbox-id13').is(':checked'))
     {
 
+        $('#coupon_section').show();
         userObject.isCoupon = true;
+        $("#coponInput").removeClass('red-border-c');
+        $('#couponError').html('');
         goToCoupon();    // MOVE USER TO TAKE COUPON CODE
     }
     else
     {
+        $('#coupon_section').hide();
         goToPaymentChoice();   // MOVE USER DIRECT TO PAYMENTS SKIP COUPON
     }
 
@@ -884,10 +829,15 @@ function takeNameAndEmail()
 
 
 
+function hideCoupon() {
+    $('#coupon_section').hide();
+}
+
+
+
 function CheckCouponFromServer() {
 
 
-    $("#coponInput").removeClass('red-boarder');
     $("#couponError").html("");
 
     var code = $("#coponInput").val();
@@ -930,6 +880,7 @@ function CheckCouponFromServer() {
                         $('#discountAmount').html("-" + discountedAmount);
                     }
                     else {
+
                         userObject.isFixAmountCoupon = false;
 
                         discountedAmount = ((parseInt(userObject.total) * parseInt(userObject.discount)) / 100);
@@ -947,13 +898,15 @@ function CheckCouponFromServer() {
 
                     userObject.total = newTotal;
 
-
+                    $('#coupon_section').show();
                     goToConfirmCoupon();  // COUPON IS VALID GO TO NEXT POPUP TO DISPLAY COUPON DETAIL
                 }
                 // INVALID COUPON CODE
                 else {
-                    $("#coponInput").addClass('red-boarder');
+                    $('#coupon_section').hide();
+                    $("#coponInput").addClass('red-border-c');
                     $("#couponError").html("Oops, this Coupons wrong, Try Again!");
+                    $("#coponInput").val('');
                 }
 
 
@@ -972,7 +925,7 @@ function CheckCouponFromServer() {
         // EXCEPTION EMPTY COUPON CODE
 
         $("#couponError").html("Enter Coupon Code!");
-        $("#coponInput").addClass('red-boarder');
+        $("#coponInput").addClass('red-border-c');
     }
 
 };
@@ -1034,7 +987,7 @@ function confirmOrder(paymentChoice)
     var str = "";
 
     // ALL ORDERS IN ONE STRING DISPLAY FOR USER SUMMARY
-    str += '<span> ORDER </span> <a href="#"> edit </a> <br>';
+    str += '<span> ORDER </span> <a href="#"></a> <br>';
 
     for(var x=0;x< foodCartData.length ;x++)
     {
@@ -1052,20 +1005,20 @@ function confirmOrder(paymentChoice)
     // PAYMENT CHOICE
     if(paymentChoice == 'cash')
     {
-        str += '<span > PAYMENT </span> <a href = "#"> edit </a> <br>'+paymentChoice;
+        str += '<span > PAYMENT </span> <a href = "#"></a> <br>'+paymentChoice;
     }
     else if(paymentChoice == 'creditCard')
     {
-        str += '<span > PAYMENT </span> <a href = "#"> edit </a> <br>'+'payment received through credit card';
+        str += '<span > PAYMENT </span> <a href = "#"> </a> <br>'+'payment received through credit card';
     }
 
     $('#payment_choice').html(str);
 
     str = "";
 
-    str = '<span> CUSTOMER INFO </span> <a href="#"> edit </a>'+
+    str = '<span> CUSTOMER INFO </span> <a href="#"> </a>'+
         '<br>'+
-        userObject.name+'<br>'+userObject.email+'<br>';
+        userObject.name+'<br>'+userObject.email+'<br>'+userObject.contact+'<br>';
 
     if(userObject.pickFromRestaurant)
     {
@@ -1082,7 +1035,7 @@ function confirmOrder(paymentChoice)
     str = "";
 
     if(!userObject.isCoupon) {
-        str += '<span> COUPON CODE </span> <a href="#"> edit </a>'+
+        str += '<span> COUPON CODE </span> <a href="#"> </a>'+
             '<br>'+
             'N/A';
     }
@@ -1090,13 +1043,13 @@ function confirmOrder(paymentChoice)
     {
         if(userObject.isFixAmountCoupon) {
 
-            str += '<span> COUPON CODE </span> <a href="#"> edit </a>' +
+            str += '<span> COUPON CODE </span> <a href="#"> </a>' +
                 '<br>' +
                 'Discount = -'+userObject.discount;
         }
         else
         {
-            str += '<span> COUPON CODE </span> <a href="#"> edit </a>' +
+            str += '<span> COUPON CODE </span> <a href="#"> </a>' +
                 '<br>' +
                 'Discount = -'+userObject.discount+"%";
         }

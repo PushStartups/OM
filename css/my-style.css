@@ -529,20 +529,27 @@ body {
         font-family: "HelveticaNeu";
         font-size: 13px;
         color: rgba(16, 14, 7, 0.8);
-        margin: 26px;
+        margin: 29px;
         left: 66px;
         text-align: center;
-        padding: 0px;
+        padding: 0;
+        padding-top: 3px;
         white-space: nowrap;
         float: left;
-        position: absolute;
+        top: 15px;
         margin-top: 4px;
-        right: 40px;
+        right: 14px;
         border-radius: 100px;
         border: solid 1px #333;
         padding-bottom: 2px;
         background-color: rgba(204, 207, 202, 0.05);
     }
+}
+
+.red-border{
+
+    border-bottom: 1px solid red !important;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 @media screen and (min-width: 351px) and (max-width: 400px) {

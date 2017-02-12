@@ -6,8 +6,14 @@ $(function() {
 
     $(document).on('click','.custom-drop-down',function(e){
 
-
-           $(this).find(".custom-drop-down-list").slideToggle(200);
+        if ($('.custom-drop-down-list').is(':visible'))
+        {
+            $(this).find(".custom-drop-down-list").slideUp(200);
+        }
+        else
+        {
+            $(this).find(".custom-drop-down-list").slideDown(200);
+        }
 
 
             if ($(document).innerHeight() - $(this).position().top < 250) /* Check if it is near bottom */ {
@@ -26,6 +32,7 @@ $(function() {
 
 
     function feedDropDown(it) {
+
         var ul = $("#cards-drop.custom-drop-down").find("ul");
 
         for (i = 0; i < it.length; i++) {

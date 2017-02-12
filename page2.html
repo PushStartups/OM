@@ -25,7 +25,7 @@
     <img id="ic_logo" src="img/bg_logo.png" onclick="window.location.href = 'page1.html';">
     <span id ='restName' > Res Name </span>
     <img id="ic_cart" onclick="showCartElements(); updateCartElements();" src="img/shopping-cart.png">
-    <div onclick="showCartElements(); updateCartElements();" class="count-badge">
+    <div style="display: none" onclick="showCartElements(); updateCartElements();" class="count-badge">
         0
     </div>
 </header>
@@ -38,7 +38,7 @@
 <div id="cards-drop" class="custom-drop-down">
     <input id='firstItem' value="" style="font-size: 18px" readonly />
     <img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">
-    <div class="custom-drop-down-list">
+    <div id="list" class="custom-drop-down-list">
         <ul id="categories_list">
         </ul>
     </div>
@@ -77,8 +77,8 @@
         <h2 class="totalBill"> 0 NIS </h2>
     </header>
 
-    <section>
-        <div class="inner-section">
+    <section style="overflow: hidden">
+        <div class="inner-section" style="overflow-y: auto">
             <div class="caption-input">
                 <span class="caption"> Name </span>
                 <input id="name" type="text">
@@ -99,11 +99,31 @@
                 <script>
                     // WHEN EMAIL FIELD CHANGES
                     $('#email').bind('input', function() {
+
                         document.getElementById("email-error").innerHTML = "";
                         $("#email").removeClass("red-border");
 
                     });
                 </script>
+            </div>
+            <div class="caption-input" style="margin-top: 20px">
+
+                <span class="caption"> Phone Number </span>
+                <input id="contact" type="text">
+                <span class="error-handler" id="contact-error"></span>
+                <script>
+
+                    // WHEN EMAIL FIELD CHANGES
+                    $('#contact').bind('input', function() {
+
+                        document.getElementById("contact-error").innerHTML = "";
+                        $("#contact").removeClass("red-border");
+
+
+                    });
+
+                </script>
+
             </div>
             <ul class="checkbox-list">
                 <li>
@@ -163,20 +183,17 @@
                 </li>
 
                 <li>
-                    <input type="radio"  id="checkbox-id13" /> <label for="checkbox-id13">
+                    <input type="checkbox" id="checkbox-id13"  /> <label for="checkbox-id13">
                     coupon code
-
                     <div>Use coupon code</div>
                 </label>
                 </li>
             </ul>
         </div>
 
-        <div class="model-footer" onclick="takeNameAndEmail()" >Next</div>
+        <div style="position: absolute;bottom: 20px;width: 94.5%;" class="model-footer" onclick="takeNameAndEmail()" >Next</div>
     </section>
 </div>
-
-
 
 
 
@@ -191,13 +208,13 @@
 
 
     <section>
-        <div class="inner-section">
+        <div style="border-radius: 0" class="inner-section">
             <div class="centered-div">
                 <h3> ENTER COUPON CODE </h3>
                 <input id="coponInput" type="text" />
                 <span id="couponError" style="font-size: 8px; color: red"></span>
             </div>
-            <a onclick="goToPaymentChoice()"> Skip </a>
+            <a onclick="goToPaymentChoice(); hideCoupon()"> <b>Skip</b> </a>
         </div>
 
 
@@ -206,10 +223,6 @@
     </section>
 
 </div>
-
-
-
-
 
 
 <!--DISPLAY COUPON RESULT -->
@@ -250,12 +263,6 @@
         <div id="confimed-footer"  class="model-footer">Next</div>
     </section>
 </div>
-
-
-
-
-
-
 
 <!--PAYMENT CHOSE POPUP-->
 <div id="payment-choice-popup" style="display: none" class="food-cart">
@@ -307,8 +314,6 @@
 
 
 
-
-
 <!--CONFIRM ORDER POPUP-->
 <div id="confirm-order-popup" style="" class="food-cart">
     <header>
@@ -318,7 +323,7 @@
     </header>
 
     <section>
-        <div class="inner-section">
+        <div class="inner-section" style="border-radius: 0px">
             <table>
                 <tr>
                     <td>
@@ -340,7 +345,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr id="coupon_section">
                     <td>
                         <img src="img/ic_gift.png">
                     </td>
@@ -381,7 +386,7 @@
 
 <!--ON ITEM SELECTED POPUP-->
 <div id="main-popup" class="popup" style="height: calc(100% - 10px) ; padding-bottom: 50px">
-    <div class="body" style="height: 100%; overflow:hidden; overflow-y: auto ; position: relative">
+    <div class="body" style="height: 100%; overflow:hidden; overflow-y: auto; position: relative">
         <h3 id="itemPopUpTitle">  </h3>
         <img class="ic_close" src="img/ic_close.png">
         <div class="product-circle">
@@ -393,12 +398,16 @@
         <p class="para-detail" id="itemPopUpDesc">
         </p>
 
+        <div class="sperator"></div>
+
         <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
         <div id="parent_type_one"></div>
 
         <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
         <div id="parent_type_multiple">
         </div>
+
+
 
     </div>
 

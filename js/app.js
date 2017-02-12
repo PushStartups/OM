@@ -24,7 +24,9 @@ $(function () {
 
     $(document).on('click','.expandable input:checkbox',function(){
 
+
         $(this).attr('checked', 'checked');
+
     })
 
 
@@ -198,12 +200,21 @@ function addOrder(){
 
 function increaseCounter() {
 
+    $(".count-badge").show();
+
     $(".count-badge").html(parseInt($(".count-badge").html()) + 1);
 }
 
 function decreaseCounter() {
 
+    if(parseInt($(".count-badge").html()) == 1)
+    {
+       $(".count-badge").hide();
+    }
+
     $(".count-badge").html(parseInt($(".count-badge").html()) - 1);
+
+
 }
 
 function displayDots(){
