@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 12, 2017 at 09:32 AM
+-- Generation Time: Feb 14, 2017 at 10:39 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -85,14 +85,15 @@ CREATE TABLE IF NOT EXISTS `company` (
   `voting_end` varchar(255) NOT NULL,
   `ordering_end` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `company`
 --
 
 INSERT INTO `company` (`id`, `name`, `url`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco', '09:20:00', '23:00:00', '24:00:00');
+(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco', '07:01:00', '08:03:00', '15:06:00'),
+(2, 'josh', 'http://dev.biz.orderapp.com/?biz=josh', '02:00:00', '21:00:00', '24:30:00');
 
 -- --------------------------------------------------------
 
@@ -107,17 +108,29 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `vote_count` int(11) NOT NULL,
   `voting_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
 
 --
 -- Dumping data for table `company_voting`
 --
 
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `voting_date`) VALUES
-(5, 1, 1, 0, '2017-02-12'),
-(6, 1, 2, 0, '2017-02-12'),
-(7, 1, 3, 0, '2017-02-12'),
-(8, 1, 4, 0, '2017-02-12');
+(5, 1, 1, 63, '2017-02-12'),
+(6, 1, 2, 41, '2017-02-12'),
+(7, 1, 3, 341, '2017-02-12'),
+(8, 1, 4, 16, '2017-02-12'),
+(9, 2, 1, 2, '2017-02-13'),
+(10, 2, 2, 1, '2017-02-13'),
+(11, 2, 3, 1, '2017-02-13'),
+(12, 2, 4, 0, '2017-02-13'),
+(57, 1, 1, 1, '2017-02-13'),
+(58, 1, 2, 0, '2017-02-13'),
+(59, 1, 3, 0, '2017-02-13'),
+(60, 1, 4, 0, '2017-02-13'),
+(73, 1, 1, 0, '2017-02-14'),
+(74, 1, 2, 0, '2017-02-14'),
+(75, 1, 3, 0, '2017-02-14'),
+(76, 1, 4, 1, '2017-02-14');
 
 -- --------------------------------------------------------
 
@@ -140,8 +153,8 @@ CREATE TABLE IF NOT EXISTS `coupons` (
 --
 
 INSERT INTO `coupons` (`id`, `name`, `starting_date`, `ending_date`, `discount`, `type`) VALUES
-(1, 'alex20', '2017-02-05 00:00:00', '2017-02-10 00:00:00', 30, 'percentage'),
-(2, 'alex50', '2017-02-07 09:18:24', '2017-02-21 00:00:00', 50, 'amount');
+(1, 'alex20', '2017-02-12 13:58:00', '2017-03-09 00:00:00', 30, 'percentage'),
+(2, 'alex50', '2017-02-12 13:58:06', '2017-03-21 00:00:00', 50, 'amount');
 
 -- --------------------------------------------------------
 
@@ -551,20 +564,19 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Table structure for table `order_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `orders` (
+CREATE TABLE IF NOT EXISTS `order_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
-  `item_id` int(11) DEFAULT NULL,
-  `subitem_id` int(11) DEFAULT NULL,
-  `item_name` varchar(255) DEFAULT NULL,
-  `subitem_name` varchar(255) DEFAULT NULL,
+  `qty` int(11) NOT NULL,
+  `item` varchar(255) NOT NULL,
+  `sub_total` int(11) NOT NULL,
+  `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `order_id` (`order_id`),
-  KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=127 ;
+  KEY `order_id` (`order_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 -- --------------------------------------------------------
 
@@ -1532,7 +1544,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=240 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=255 ;
 
 --
 -- Dumping data for table `users`
@@ -1544,7 +1556,20 @@ INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language
 (236, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
 (237, 'test2@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
 (238, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
-(239, 'testing@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL);
+(239, 'testing@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(240, 'test555@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(241, 'rrrr@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(242, 'test33@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(243, 'rrr@gamil.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(244, 'test22@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(245, 'rael@pushstartups.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
+(246, 'josh@pushstartups.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
+(247, 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
+(248, 'shoaib.it002@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
+(251, 'test@gmnail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(252, 'test222@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(253, 'iftikhar_aftab@yahoo.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
+(254, 'rtrt@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1559,7 +1584,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -1571,7 +1596,13 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (5, 235, 2),
 (6, 235, 1),
 (13, 236, 1),
-(14, 237, 1);
+(14, 237, 1),
+(15, 240, 2),
+(16, 242, 1),
+(17, 243, 1),
+(18, 244, 1),
+(19, 252, 1),
+(20, 238, 1);
 
 -- --------------------------------------------------------
 
@@ -1582,10 +1613,15 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 CREATE TABLE IF NOT EXISTS `user_orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
+  `restaurant_id` int(11) NOT NULL,
   `total` int(11) NOT NULL,
+  `coupon_discount` varchar(255) DEFAULT NULL,
+  `discount_value` int(11) NOT NULL,
+  `order_date` date NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_user_order` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
+  KEY `fk_user_order` (`user_id`),
+  KEY `restaurant_id` (`restaurant_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=81 ;
 
 -- --------------------------------------------------------
 
@@ -1610,6 +1646,32 @@ INSERT INTO `user_roles` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_votes`
+--
+
+CREATE TABLE IF NOT EXISTS `user_votes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `voting_date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `user_votes`
+--
+
+INSERT INTO `user_votes` (`id`, `user_id`, `company_id`, `voting_date`) VALUES
+(5, 238, 1, '2017-02-13'),
+(6, 245, 1, '2017-02-13'),
+(7, 248, 1, '2017-02-13'),
+(12, 238, 1, '2017-02-14');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `weekly_availibility`
 --
 
@@ -1619,7 +1681,9 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `week_en` varchar(255) NOT NULL,
   `week_he` varchar(255) NOT NULL,
   `opening_time` varchar(255) NOT NULL,
+  `opening_time_he` varchar(255) NOT NULL,
   `closing_time` varchar(255) NOT NULL,
+  `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
@@ -1628,35 +1692,35 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
 -- Dumping data for table `weekly_availibility`
 --
 
-INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `closing_time`) VALUES
-(8, 1, 'Sunday', 'יום א', '12:00', '21:00'),
-(9, 1, 'Monday', 'יום ב', '12:00', '21:00'),
-(10, 1, 'Tuesday', 'יום ג', '12:00', '21:00'),
-(11, 1, 'Wednesday', 'יום ד', '12:00', '21:00'),
-(12, 1, 'Thursday', 'יום ה', '12:00', '21:00'),
-(13, 1, 'Friday', 'ששי', 'Closed', 'Closed'),
-(14, 1, 'Saturday', 'שבת', 'Closed', 'Closed'),
-(15, 2, 'Sunday', 'יום א', '12:00', '21:00'),
-(16, 2, 'Monday', 'יום ב', '12:00', '21:00'),
-(17, 2, 'Tuesday', 'יום ג', '12:00', '21:00'),
-(18, 2, 'Wednesday', 'יום ד', '12:00', '21:00'),
-(19, 2, 'Thursday', 'יום ה', '12:00', '21:00'),
-(20, 2, 'Friday', 'ששי', 'Closed', 'Closed'),
-(21, 2, 'Saturday', 'שבת', 'Closed', 'Closed'),
-(22, 3, 'Sunday', 'יום א', '12:00', '21:00'),
-(23, 3, 'Monday', 'יום ב', '12:00', '21:00'),
-(24, 3, 'Tuesday', 'יום ג', '12:00', '21:00'),
-(25, 3, 'Wednesday', 'יום ד', '12:00', '21:00'),
-(26, 3, 'Thursday', 'יום ה', '12:00', '21:00'),
-(27, 3, 'Friday', 'ששי', 'Closed', 'Closed'),
-(28, 3, 'Saturday', 'שבת', 'Closed', 'Closed'),
-(36, 4, 'Sunday', 'יום א', '12:00', '21:00'),
-(37, 4, 'Monday', 'יום ב', '12:00', '21:00'),
-(38, 4, 'Tuesday', 'יום ג', '12:00', '21:00'),
-(39, 4, 'Wednesday', 'יום ד', '12:00', '21:00'),
-(40, 4, 'Thursday', 'יום ה', '12:00', '21:00'),
-(41, 4, 'Friday', 'ששי', 'Closed', 'Closed'),
-(42, 4, 'Saturday', 'שבת', 'Closed', 'Closed');
+INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `opening_time_he`, `closing_time`, `closing_time_he`) VALUES
+(8, 1, 'Sunday', 'יום א', '12:00', '12:00', '21:00', '21:00'),
+(9, 1, 'Monday', 'יום ב', '12:00', '12:00', '21:00', '21:00'),
+(10, 1, 'Tuesday', 'יום ג', '12:00', '12:00', '21:00', '21:00'),
+(11, 1, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
+(12, 1, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
+(13, 1, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(14, 1, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(15, 2, 'Sunday', 'יום א', '12:00', '12:00', '21:00', '21:00'),
+(16, 2, 'Monday', 'יום ב', '12:00', '12:00', '21:00', '21:00'),
+(17, 2, 'Tuesday', 'יום ג', '12:00', '12:00', '21:00', '21:00'),
+(18, 2, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
+(19, 2, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
+(20, 2, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(21, 2, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(22, 3, 'Sunday', 'יום א', '12:00', '12:00', '21:00', '21:00'),
+(23, 3, 'Monday', 'יום ב', '12:00', '12:00', '21:00', '21:00'),
+(24, 3, 'Tuesday', 'יום ג', '12:00', '12:00', '21:00', '21:00'),
+(25, 3, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
+(26, 3, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
+(27, 3, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(28, 3, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(36, 4, 'Sunday', 'יום א', '12:00', '12:00', '21:00', '21:00'),
+(37, 4, 'Monday', 'יום ב', '12:00', '12:00', '21:00', '21:00'),
+(38, 4, 'Tuesday', 'יום ג', '12:00', '12:00', '21:00', '21:00'),
+(39, 4, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
+(40, 4, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
+(41, 4, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(42, 4, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
 
 --
 -- Constraints for dumped tables
@@ -1681,11 +1745,10 @@ ALTER TABLE `menus`
   ADD CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
 
 --
--- Constraints for table `orders`
+-- Constraints for table `order_detail`
 --
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `user_orders` (`id`),
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`);
+ALTER TABLE `order_detail`
+  ADD CONSTRAINT `order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `user_orders` (`id`);
 
 --
 -- Constraints for table `restaurant_gallery`
@@ -1716,7 +1779,15 @@ ALTER TABLE `users`
 -- Constraints for table `user_orders`
 --
 ALTER TABLE `user_orders`
-  ADD CONSTRAINT `fk_user_order` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_user_order` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `user_orders_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
+
+--
+-- Constraints for table `user_votes`
+--
+ALTER TABLE `user_votes`
+  ADD CONSTRAINT `user_votes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `user_votes_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 
 --
 -- Constraints for table `weekly_availibility`
