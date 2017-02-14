@@ -233,7 +233,7 @@ function onItemSelected (y)
                     oneTypeStr += '<h3 style="text-align: left" >' + extras.extra_with_subitems[x].name_en + '</h3>'+
                         '<div class="custom-drop-down">'+
                         '<input id="input'+oneTypeSubItems.length+'" value ="'+ minSubItemName +' " readonly />'+
-                        '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">'+
+                        '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="../img/drop_down.png">'+
                         '<div class="custom-drop-down-list" style=" z-index: 99999;">'+
                         '<ul>';
 
@@ -588,19 +588,19 @@ function updateCartElements()
             // BUTTON DECREASE OR CANCEL DEPENDS ON QUANTITY
             if (parseInt(foodCartData[x].qty) == 1) {
 
-                str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="img/ic_cancel.png">';
+                str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="../img/ic_cancel.png">';
             }
             else
             {
 
-                str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="img/ic_reduce.png">';
+                str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="../img/ic_reduce.png">';
             }
 
 
             str += '<span class="count">' +
                 foodCartData[x].qty.toString() +
                 '</span>' +
-                '<img onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="img/ic_plus.png">' +
+                '<img onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="../img/ic_plus.png">' +
                 '</div>' +
                 '</td>' +
                 '</tr>' +
@@ -1014,15 +1014,10 @@ function confirmOrder(paymentChoice)
     if(paymentChoice == 'cash')
     {
         str += '<span > PAYMENT </span> <a href = "#"></a> <br>'+paymentChoice;
-
-        userObject['Cash_Card'] = "CASH";
-
     }
     else if(paymentChoice == 'creditCard')
     {
         str += '<span > PAYMENT </span> <a href = "#"> </a> <br>'+'payment received through credit card';
-
-        userObject['Cash_Card'] = "Credit Card";
     }
 
     $('#payment_choice').html(str);

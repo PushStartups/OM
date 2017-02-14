@@ -3,6 +3,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require      'vendor/autoload.php';
+require      'PHPMailer/PHPMailerAutoload.php';
 require_once 'inc/initDb.php';
 
 DB::query("set names utf8");
@@ -100,6 +101,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
             "address_en"           =>  $result["address_en"],        // RESTAURANT ADDRESS
             "address_he"           =>  $result["address_he"],        // RESTAURANT ADDRESS
             "hechsher_en"          =>  $result["hechsher_en"],       // RESTAURANT HECHSHER
+            "hechsher_he"          =>  $result["hechsher_he"],       // RESTAURANT HECHSHER
             "tags"                 =>  $tags,                        // RESTAURANT TAGS
             "gallery"              =>  $galleryImages,               // RESTAURANT GALLERY
             "timings"              =>  $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -192,9 +194,6 @@ $app->post('/categories_with_items', function ($request, $response, $args)
 
 
 
-
-
-
 // GET EXTRAS WITH SUBITEMS
 $app->post('/extras_with_subitems', function ($request, $response, $args) {
     //GETTING ITEM_ID FROM CLIENT SIDE
@@ -223,34 +222,6 @@ $app->post('/extras_with_subitems', function ($request, $response, $args) {
     return $response->withStatus(200)->write(json_encode($data));
 
 });
-
-// ADD USER ORDER INTO DATABASE
-$app->post('/add_orders', function ($request, $response, $args) {
-    $email = $request->getParam('email');
-
-    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
-    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
-
-    if(DB::count() == 0){
-        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
-        DB::insert('users', array(
-            'smooch_id' => $email
-        ));
-        $user_id = DB::insertId();
-    }
-    else{
-        // IF USER ALREADY EXIST IN DATABASE
-        $user_id = $getUser['id'];
-    }
-
-    // INSERTING USER INTO USER_ORDERS TABLE
-    DB::insert('users_orders', array(
-        'user_id' => $user_id
-    ));
-    $order_id = DB::insertId();
-
-});
-
 
 
 // VALIDATE COUPONS
@@ -377,13 +348,90 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 //  STORE USER ORDER IN DATABASE
 $app->post('/add_order', function ($request, $response, $args) {
 
+    // GET ORDER RESPONSE FROM USER (CLIENT SIDE)
+    $user_order  =  $request->getParam('user_order');
+    $user_id     =  null;
 
-    $order   =  $request->getParam('user_order');
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '".$user_order['email']."'");
+
+    if(DB::count() == 0){
+
+        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+        DB::insert('users', array(
+
+            'smooch_id' => $user_order['email']
+
+        ));
+
+        $user_id = DB::insertId();
+    }
+    else{
+
+        // IF USER ALREADY EXIST IN DATABASE
+        $user_id = $getUser['id'];
+    }
+
+
+    // CHECK IF DISCOUNT GIVEN TO USER ADD IN DB
+    $discountType = null;
+    $discountValue = 0;
+
+    if($user_order['isCoupon'] == 'true') {
+
+        if ($user_order['isFixAmountCoupon'] == 'true') {
+
+            $discountType = "fixed value";
+        }
+        else {
+
+            $discountType = "fixed percentage";
+        }
+
+        $discountValue = $user_order['discount'];
+    }
+
+
+    $todayDate = Date("Y/m/d");
+
+    // CREATE A NEW ORDER AGAINST USER
+    DB::insert('user_orders', array(
+
+        'user_id'          =>  $user_id,
+        'restaurant_id'    =>  $user_order['restaurantId'],
+        'total'            =>  $user_order['total'],
+        'coupon_discount'  =>  $discountType,
+        'discount_value'   =>  $discountValue,
+        "order_date"       =>  DB::sqleval("NOW()")
+    ));
+
+
+    $orderId = DB::insertId();
+
+    foreach($user_order['cartData'] as  $orders)
+    {
+
+        // ADD ORDER DETAIL AGAINST USER
+        DB::insert('order_detail', array(
+
+            'order_id'          => $orderId,
+            'qty'               => $orders['qty'],
+            'item'              => $orders['name'],
+            'sub_total'         => $orders['price'],
+            'sub_items'         => $orders['detail']
+        ));
+
+    }
+
+
+    // EMAIL ORDER SUMMARY
+
+    email_order_summary_english($user_order,$orderId,$todayDate);
 
 
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write("");
-
+    return $response->withStatus(200)->write(json_encode($todayDate));
 });
 
 
@@ -413,7 +461,7 @@ $app->post('/get_credit_card_payment_url', function ($request, $response, $args)
     }
 
 
-    $url = urlencode(guardPaymentRequest(($amount * 100),$user_id));
+    $url = urlencode(guardPaymentRequest(($amount * 100),$user_id,$email));
 
     // RESPONSE RETURN TO REST API CALL
     return $response->withStatus(200)->write(json_encode($url));
@@ -427,8 +475,8 @@ $app->get('/payment_cancel', function ($request, $response, $args)
     $email = $request->getParam('userId');
 
     $str =  '<script type="text/javascript">'.
-    'window.top.onPaymentCancel();'.
-    '</script>';
+        'window.top.onPaymentCancel();'.
+        '</script>';
 
     return $response->withStatus(200)->write($str);
 });
@@ -469,7 +517,7 @@ $app->run();
 // GUARD API PAYMENT REQUEST
 // AMOUNT DIVIDED BY 100 FROM API
 
-function  guardPaymentRequest($amount,$userId)
+function  guardPaymentRequest($amount,$userId,$email)
 {
 
     $cgConf['tid'] = '0963432';
@@ -511,7 +559,7 @@ function  guardPaymentRequest($amount,$userId)
                                  <mid>' . $cgConf['mid'] . '</mid>
                                  <uniqueid>' . time() . rand(100, 1000) . '</uniqueid>
                                  <mpiValidation>autoComm</mpiValidation>
-                                 <email>contact@orderapp.com</email>
+                                 <email>'.$email.'</email>
                                  <clientIP/>
                                  <customerData>
                                   <userData1/>
@@ -562,7 +610,7 @@ function  guardPaymentRequest($amount,$userId)
         if (isset($xmlObj->response->doDeal->mpiHostedPageUrl)) {
 
             // print out the url which we should redirect our customers to
-             return $xmlObj->response->doDeal->mpiHostedPageUrl;
+            return $xmlObj->response->doDeal->mpiHostedPageUrl;
 
         }
         else
@@ -579,6 +627,138 @@ function  guardPaymentRequest($amount,$userId)
     }
 
 }
+
+
+// EMAIL ORDER SUMMARY
+
+function email_order_summary_english($user_order,$orderId,$todayDate)
+{
+    $server    =   $_SERVER['HTTP_HOST'];
+
+    $mailbody  = '<html><head></head>';
+    $mailbody .= '<body style="padding: 0; margin: 0" >';
+    $mailbody .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px " >';
+    $mailbody .= '<div style="font-family: Open Sans" src="https://fonts.googleapis.com/css?family=Open+Sans:300">';
+    $mailbody .= '<div  style="background-image: url(http://dev.m.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;">';
+    $mailbody .= '<table style="width: 100%; color: white; padding: 30px" >';
+    $mailbody .= '<tr style="font-size: 30px; padding: 10px" >';
+    $mailbody .= '<td > <img style="padding-top: 10px; width: 20px" src="http://dev.m.orderapp.com/restapi/images/bag.png" > Order Summary </td>';
+    $mailbody .= '<td style="text-align: right">'.$user_order['total'].'</td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 10px" >';
+    $mailbody .= '<td> '.$todayDate.' &nbsp; Order ID # '.$orderId.'</td>';
+    $mailbody .= '<td style="text-align: right">'.$user_order['Cash_Card'].'</td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '</table>';
+    $mailbody .= '</div>';
+
+
+    $mailbody .= '<div  style="padding: 10px 30px 0px 30px;" >';
+
+    foreach($user_order['cartData'] as $t) {
+
+        $mailbody .= '<table style="width: 100%; color:black; padding: 30px 0; border-bottom: 1px solid #D3D3D3" >';
+
+        $mailbody .= '<tr style="font-size: 18px; padding: 10px; font-weight: bold" >';
+        // print item name
+        $mailbody .= '<td >' . $t['name'] . '  </td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$t['price'].' NIS X '.$t['qty'].'  &nbsp; <span style="color: FF864C;" >'.(($t['price'] * $t['qty'])).' NIS</span></td>';
+        $mailbody .= '</tr>';
+
+        // subitems
+        $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
+        $mailbody .= '<td >' . $t['detail'] . ' </td>';
+        $mailbody .= '<td style="text-align: right"> </td>';
+        $mailbody .= '</tr>';
+
+        $mailbody .= '</table>';
+
+    }
+
+    $mailbody .= '</div>';
+
+
+    $mailbody .= '<table style="width: 100%; color:black; padding:10px 30px; background: #FEF2E8; border-bottom: 1px solid #D3D3D3 " >';
+    $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
+    $mailbody .= '<td style="padding: 5px 0" > Sub total  </td>';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['total'].' NIS</span></td>';
+    $mailbody .= '</tr>';
+
+
+    $mailbody .= '</table>';
+
+    $mailbody .= '<table style=" color:black; padding:10px 30px; width: 270px; " cellspacing="5px">';
+    $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
+    $mailbody .= '<td colspan="2" style="padding: 10px 0" > Customer information   </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
+    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png" ></td>';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['contact'].' </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
+    $mailbody .= '<td style="padding: 10px 0; text-align: center" > <img style=" height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['restaurantAddress'].'</td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
+    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_email.png" ></td>';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['email'].' </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
+    $mailbody .= '<td style="padding: 10px 0" > <img style=" width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_card.png" ></td>';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['Cash_Card'].' </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '</table>';
+
+    $mailbody .= '</div>';
+    $mailbody .= '</div>';
+    $mailbody .= '</body>';
+    $mailbody .= '</html>';
+
+    $mail = new PHPMailer;
+
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
+//From email address and name
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
+
+
+//To address and name
+    $mail->addAddress($user_order['email']);
+    $mail->addAddress("qaorders@orderapp.com"); //Recipient name is optional
+    $mail->addAddress("orders@orderapp.com"); //Recipient name is optional
+
+
+//Address to which recipient will reply
+    $mail->addReplyTo("order@orderapp.com", "Reply");
+
+
+//Send HTML or Plain Text email
+    $mail->isHTML(true);
+    $mail->Subject = "Order App";
+    $mail->Body = "<i>$mailbody</i>";
+    $mail->AltBody = "OrderApp";
+
+    if (!$mail->send())
+    {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+    else
+    {
+        echo "Message has been sent successfully";
+    }
+
+
+}
+
 ?>
 
 

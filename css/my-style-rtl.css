@@ -1,8 +1,8 @@
 /* Regular */
-
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 
 .top_notification {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     /*    background-color: rgba(231, 131, 23, 0.83);*/
     border-color: rgba(231, 131, 23, 0.83);
     color: rgba(255, 255, 255, 0.93);
@@ -19,7 +19,7 @@
 
 
 @font-face {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 400;
     src: url("../fonts/HelveticaNeu.woff");
 }
@@ -41,16 +41,25 @@
 
 
 @font-face {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;";
     font-weight: 400;
     src: url("../fonts/HelveticaNeu.ttf");
 }
 
 
-.navigation-btn {
+ .navigation-btn {
     padding: 8px;
     border-radius: 5px;
     margin-right: 10px;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.9);
+    font-size: 11px;
+}
+
+.rtl .navigation-btn {
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 10px;
     border: 1px solid rgba(255,255,255,0.5);
     color: rgba(255,255,255,0.9);
     font-size: 11px;
@@ -218,6 +227,9 @@ body {
     margin-bottom: 20px;
     border-radius: 6px;
 }
+.rtl .accordion-group {
+    direction: rtl;
+}
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
     .accordion-group {
@@ -271,6 +283,18 @@ body {
     border: solid 5px rgba(255, 252, 252, 0.7);
     float: left;
     margin-right: 10px;
+}
+/*RTL*/
+.rtl .img_cernter_crop {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    position: relative;
+    border-radius: 100px;
+    border: solid 5px rgba(255, 252, 252, 0.7);
+    float: right;
+    margin-right: -5px;
 }
 
 .img_cernter_crop > img {
@@ -457,7 +481,7 @@ body {
 }
 
 .resto_title > h3 {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 23px;
     color: #100e07;
     margin: 0px;
@@ -465,10 +489,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 28px;
+    padding-right: 10px;
 }
 
 .resto_title > p {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 15px;
     color: rgba(16, 14, 7, 0.8);
     margin: 0px;
@@ -476,11 +501,15 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 28px;
+    padding-right: 10px;
     width: 66%;
+}
+.rtl .resto_title > p {
+    width: unset;
 }
 
 .resto_title > span {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 14px;
     color: rgba(16, 14, 7, 0.8);
     margin: 0px;
@@ -497,11 +526,15 @@ body {
     padding-bottom:2px;
     background-color: rgba(204, 207, 202, 0.05);
 }
+.rtl .resto_title > span {
+    right: unset;
+    left: 12px;
+}
 
 
 @media screen and (min-width: 300px) and (max-width: 350px) {
     .resto_title > h3 {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 20px;
         color: #100e07;
         margin: 0px;
@@ -512,7 +545,7 @@ body {
     }
 
     .resto_title > p {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 14px;
         color: rgba(16, 14, 7, 0.8);
         margin: 0px;
@@ -523,38 +556,40 @@ body {
         line-height: 28px;
         width: 50%;
     }
+   .rtl .resto_title > p {
+        width: unset;
+    }
 
 
     .resto_title > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 13px;
         color: rgba(16, 14, 7, 0.8);
-        margin: 29px;
+        margin: 26px;
         left: 66px;
         text-align: center;
-        padding: 0;
-        padding-top: 3px;
+        padding: 0px;
         white-space: nowrap;
         float: left;
-        top: 15px;
-        margin-top: 8px;
-        right: 14px;
+        position: absolute;
+        margin-top: 4px;
+        right: 40px;
         border-radius: 100px;
         border: solid 1px #333;
         padding-bottom: 2px;
         background-color: rgba(204, 207, 202, 0.05);
     }
+    .rtl .resto_title > span {
+    right: 65px;
+    left: unset;
+    padding: 6px 11px 6px 11px;
+    line-height: 10px;
 }
-
-.red-border{
-
-    border-bottom: 1px solid red !important;
-    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 @media screen and (min-width: 351px) and (max-width: 400px) {
     .resto_title > h3 {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 18px;
         color: #100e07;
         margin: 0px;
@@ -565,7 +600,7 @@ body {
     }
 
     .resto_title > p {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 13px;
         color: rgba(16, 14, 7, 0.8);
         margin: 0px;
@@ -578,7 +613,7 @@ body {
     }
 
     .resto_title > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 13px;
         color: rgba(16, 14, 7, 0.8);
         margin: 26px;
@@ -596,13 +631,18 @@ body {
         background-color: rgba(204, 207, 202, 0.05);
 
     }
+     .rtl .resto_title > span {
+    right: 60px;
+    left: unset;padding: 5px 10px 0 10px;
+    line-height: 10px;
+}
 
 }
 
 
 @media screen and (min-width: 401px) and (max-width: 450px) {
     .resto_title > h3 {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 18px;
         color: #100e07;
         margin: 0px;
@@ -613,7 +653,7 @@ body {
     }
 
     .resto_title > p {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 14px;
         color: rgba(16, 14, 7, 0.8);
         margin: 0px;
@@ -626,7 +666,7 @@ body {
     }
 
     .resto_title > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 14px;
         color: rgba(16, 14, 7, 0.8);
         margin: 0px;
@@ -644,13 +684,18 @@ body {
         padding-bottom: 2px;
         background-color: rgba(204, 207, 202, 0.05);
     }
+     .rtl .resto_title > span {
+    right: 90px;
+    left: unset;padding: 5px 10px 0 10px;
+    line-height: 10px;
+}
 }
 
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .resto_title > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 14px;
         color: rgba(16, 14, 7, 0.8);
         margin: 0px;
@@ -698,6 +743,15 @@ body {
     padding-left: 3px;
     margin-top: -1px;
 }
+.rtl .close_arrow {
+    color: #fff;
+    position: absolute;
+    font-size: 10px;
+    padding-left: 0px;
+    padding-right: 3px;
+    padding-bottom: 5px;
+    margin-top: -2px;
+}
 
 
 
@@ -707,7 +761,7 @@ body {
 
 
 .accordion-inner > p {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 12px;
     color: rgba(16, 14, 7, 0.8);
     width: 94%;
@@ -726,7 +780,7 @@ body {
 
 
 .btn-primary {
-    font-family: "HelveticaNeu";
+    ffont-family:'Open Sans Hebrew', serif;
     font-size: 12px;
     color: #100e07;
     background-color: transparent;
@@ -741,7 +795,7 @@ body {
 
 @media screen and (min-width: 300px) and (max-width: 500px) {
     .btn-primary {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 14px;
         color: #100e07;
         background-color: transparent;
@@ -752,7 +806,7 @@ body {
 }
 
 .btn-primary > p {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 11px;
     color: rgba(16, 14, 7, 0.8);
     margin-bottom: 5px;
@@ -764,14 +818,14 @@ body {
 }
 
 .btn-primary > span {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 11px;
     color: rgba(16, 14, 7, 0.8);
 }
 
 @media screen and (min-width: 300px) and (max-width: 325px) {
     .btn-primary > p {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 9px;
         color: rgba(16, 14, 7, 0.8);
         margin-bottom: 0px;
@@ -783,7 +837,7 @@ body {
     }
 
     .btn-primary > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 9px;
         color: rgba(16, 14, 7, 0.8);
     }
@@ -791,7 +845,7 @@ body {
 
 @media screen and (min-width: 326px) and (max-width: 351px) {
     .btn-primary > p {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 8px;
         color: rgba(16, 14, 7, 0.8);
         margin-bottom: 0px;
@@ -803,7 +857,7 @@ body {
     }
 
     .btn-primary > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 8px;
         color: rgba(16, 14, 7, 0.8);
     }
@@ -811,7 +865,7 @@ body {
 
 @media screen and (min-width: 352px) and (max-width: 400px) {
     .btn-primary > p {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 10px;
         color: rgba(16, 14, 7, 0.8);
         margin-bottom: 5px;
@@ -823,14 +877,14 @@ body {
     }
 
     .btn-primary > span {
-        font-family: "HelveticaNeu";
+        font-family:'Open Sans Hebrew', serif;
         font-size: 10px;
         color: rgba(16, 14, 7, 0.8);
     }
 }
 
 .order_now:link, .order_now:visited {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 100;
     font-size: 16px;
     width: 100%;
@@ -849,7 +903,7 @@ body {
 }
 
 .order_now:hover, .order_now:focus {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 100;
     font-size: 18px;
     width: 100%;
@@ -868,7 +922,7 @@ body {
 }
 
 .order_now_gray:link, .order_now_gray:visited {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 100;
     font-size: 16px;
     width: 100%;
@@ -887,7 +941,7 @@ body {
 }
 
 .order_now_gray:hover, .order_now_gray:focus {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 100;
     font-size: 18px;
     width: 100%;
@@ -906,7 +960,7 @@ body {
 }
 
 .order_now_gray > p {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-size: 12px;
     color: #fff;
     margin-bottom: 0px;
@@ -944,7 +998,7 @@ body {
 }
 
 .popup_title > h4 {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 300;
     font-size: 25px;
     color: #30323f;
@@ -953,7 +1007,7 @@ body {
 }
 
 .popup_btn_green {
-    font-family: "HelveticaNeu";
+    font-family:'Open Sans Hebrew', serif;
     font-weight: 300;
     width: 99%;
     font-size: 20px;

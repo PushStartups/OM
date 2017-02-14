@@ -4,6 +4,42 @@ html, body {
     height: 100%;
 }
 
+
+.my-button{
+
+    float: right;
+    padding: 2px;
+    text-align: center;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+
+.my-button-he{
+
+    float: left;
+    padding: 5px;
+    text-align: center;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+
+
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url("../img/home-bg.png");

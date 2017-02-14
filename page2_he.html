@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/Style-rtl.css" rel="stylesheet" />
+    <link href="css/dropdown-rtl.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+</head>
+
+<body>
+    <header class="rtl" >
+        <img id="ic_back" src="images/Back Arrow.png">
+        <img id="ic_logo" src="images/bg_logo.png">
+        <span> Bandora </span>
+        
+        <img id="ic_cart" onclick="showCartElements()" src="images/shopping-cart.png">
+        <div onclick="showCartElements()" class="count-badge">
+            0
+        </div>
+    </header>
+    <div id="cards-drop" dir="rtl" class="custom-drop-down">
+        <input value="PIZZA" style="font-size: 18px" readonly />
+        <img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="images/drop_down.png">
+        <div class="custom-drop-down-list">
+            <ul>
+                <li> Item0 </li>
+            </ul>
+        </div>
+    </div>
+    <div id="cards" style="height: calc(100% - 163px); width: 100%; overflow: hidden; overflow-y: auto">
+        <div class="cci-row rtl">
+            <div class="cci-col-50">
+                <div class="product-card">
+                    <img src="images/image.png" />
+                    <div class="card-body">
+                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
+                        <div class="dim-text"> Freshly brewed coffee </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cci-col-50">
+                <div class="product-card">
+                    <img src="images/image.png" />
+                    <div class="card-body">
+                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
+                        <div class="dim-text"> Freshly brewed coffee </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cci-row rtl">
+            <div class="cci-col-50">
+                <div class="product-card">
+                    <img src="images/image.png" />
+                    <div class="card-body">
+                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
+                        <div class="dim-text"> Freshly brewed coffee </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cci-col-50">
+                <div class="product-card">
+                    <img src="images/image.png" />
+                    <div class="card-body">
+                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
+                        <div class="dim-text"> Freshly brewed coffee </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cci-row rtl">
+            <div class="cci-col-50">
+                <div class="product-card">
+                    <img src="images/image.png" />
+                    <div class="card-body">
+                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
+                        <div class="dim-text"> Freshly brewed coffee </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cci-col-50">
+                <div class="product-card">
+                    <img src="images/image.png" />
+                    <div class="card-body">
+                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
+                        <div class="dim-text"> Freshly brewed coffee </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <div id="food-cart-popup" style="display: none" class="food-cart rtl">
+        <header>
+            <img class="ic_close" src="images/ic_close_white.png">
+            <h5> FOOD CART </h5>
+            <h2> 110 NIS </h2>
+        </header>
+
+        <section>
+            <table>
+                <tr>
+                    <th>Cheese Ravioli</th>
+                    <th>85 NIS</th>
+                </tr>
+                <tr>
+                    <td>In a cream sauce, seasoned with garlic and fresh basil</td>
+                    <td>
+                        <div class="switch-btn">
+
+                            <img class="left-btn" src="images/ic_cancel.png">
+                            <span class="count">
+                                1
+                            </span>
+                            <img class="increase-btn" src="images/ic_plus.png">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Cheese Ravioli</th>
+                    <th>85 NIS</th>
+                </tr>
+                <tr>
+                    <td>In a cream sauce, seasoned with garlic and fresh basil</td>
+                    <td>
+                        <div class="switch-btn">
+
+                            <img class="left-btn" src="images/ic_cancel.png">
+                            <span class="count">
+                                1
+                            </span>
+                            <img class="increase-btn" src="images/ic_plus.png">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Cheese Ravioli</th>
+                    <th>85 NIS</th>
+                </tr>
+                <tr>
+                    <td>In a cream sauce, seasoned with garlic and fresh basil</td>
+                    <td>
+                        <div class="switch-btn">
+
+                            <img class="left-btn" src="images/ic_cancel.png">
+                            <span class="count">
+                                1
+                            </span>
+                            <img class="increase-btn" src="images/ic_plus.png">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="model-footer" onclick="addOrder()" >ORDER NOW</div>
+    </div>
+
+    <div id="customer-popup"  class="food-cart rtl">
+        <header>
+            <img class="ic_close" onclick="hidePopup('customer-popup')" src="images/ic_close_white.png">
+            <h5> CUSTOMER INFO </h5>
+            <h2> 81 NIS </h2>
+        </header>
+
+        <section>
+            <div class="inner-section">
+                <div class="caption-input">
+                    <span class="caption"> Name </span>
+                    <input type="text">
+                </div>
+                <div class="caption-input" style="margin-top: 20px">
+                    <span class="caption"> Email address </span>
+                    <input type="text">
+                </div>
+                <ul class="checkbox-list">
+                    <li>
+                        <input type="radio" name="a" id="checkbox-id1" /> <label for="checkbox-id1">
+                            Pick up from resturent
+
+                            <div> Gad st 14, Bet Shemesh </div>
+                        </label>
+                    </li>
+                    <li id="bottom-border">
+                        <input type="radio" name="a" id="checkbox-id2" /> <label for="checkbox-id2">
+                            Delivery
+                            <br>
+                            <div> Gad st 14 Bet Shemesh </div>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio"  id="checkbox-id3" /> <label for="checkbox-id3">
+                            coupon code
+
+                            <div> Use coupen code </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="model-footer" onclick="goToCoupon()" >Next</div>
+
+        </section>
+
+
+    </div>
+
+    <div id="coupon-popup" style="display: none" class="food-cart rtl">
+        <header>
+            <img class="ic_close" src="images/ic_close_white.png">
+            <h5> COUPON CODE </h5>
+            <h2> 81 NIS </h2>
+        </header>
+
+        <section>
+            <div class="inner-section">
+                <div class="centered-div">
+                    <h3> ENTER COUPON CODE </h3>
+                    <input dir="rtl" id="coponInput" type="text" />
+                </div>
+                <a href="#"> Skip </a>
+            </div>
+            <div id="coupon-footer"  class="model-footer">Next</div>
+
+        </section>
+    </div>
+
+    <div id="check-coupon-popup" style="display: none" class="food-cart rtl">
+        <header>
+            <img class="ic_close" src="images/ic_close_white.png">
+            <h5> COUPON CODE </h5>
+            <h2> 81 NIS </h2>
+        </header>
+
+        <section>
+            <div class="inner-section">
+                <div class="centered-div">
+                    <h3> ENTER COUPON CODE </h3>
+                    <input  type="text" />
+                </div>
+                <table style="width:100%; margin-top:20px">
+                    <tr>
+                        <td>Sub total</td>
+                        <td>80 NIS</td>
+                    </tr>
+                </table>
+
+                <table style="width:100%;">
+                    <tr>
+                        <td>Coupon</td>
+                        <td>-20</td>
+                    </tr>
+                </table>
+
+                <table style="width:100%;">
+                    <tr>
+                        <td>Total</td>
+                        <td>60 NIS</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="confimed-footer" class="model-footer">Next</div>
+
+        </section>
+    </div>
+    <div id="payment-choice-popup" style="display: none" class="food-cart rtl">
+        <header>
+            <img class="ic_close" src="images/ic_close_white.png">
+            <h5> CUSTOMER INFO </h5>
+            <h2> 81 NIS </h2>
+        </header>
+
+        <section>
+            <div class="inner-section">
+                <table>
+                    <tr>
+                        <td>
+                            <div onclick="goToConfirmOrder()" class="choice">
+                                <span>CASH</span>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="cash-div" class="choice">
+                                <span>
+                                    CREDIT
+                                    CARD
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+    </div>
+
+    <div id="creditcard-info-popup" style="display: none" class="food-cart rtl">
+        <header>
+            <img class="ic_close" src="images/ic_close_white.png">
+            <h5> PAYMENT INFO </h5>
+            <h2> 81 NIS </h2>
+        </header>
+
+        <section>
+            <div class="inner-section">
+                <div id="type-of-card">
+                    <p>Type of card </p>
+                    <span class="active">
+                        <img src="images/ic_visa.png">
+                    </span>
+                    <span>
+                        <img src="images/2.png">
+                    </span>
+                    <span>
+                        <img src="images/3.png">
+                    </span>
+                </div>
+
+                <div class="caption-input" style="margin-top: 20px">
+                    <span class="caption"> Name on card </span>
+                    <img src="images/ic_visa.png">
+                    <input type="text">
+                </div>
+                <div class="caption-input" style="margin-top: 20px">
+                    <span class="caption"> Card number </span>
+                    <img src="images/ic_visa.png">
+                    <input type="text">
+                </div>
+                <table style="border-bottom:unset; width:100%">
+                    <tr>
+                        <td style="width:50%" >
+                            <div class="caption-input" style="margin-top: 10px">
+                                <span class="caption"> Expiration date </span>
+                                <input style="width:80%" type="text">
+                            </div>
+                        </td>
+                        <td style="width:50%" >
+                            <div class="caption-input" style="margin-top: 10px">
+                                <span style="float:right" class="caption"> cvv </span>
+                                <img src="images/ic_cvs.png">
+                                <input style="border-bottom:1px solid #FEBEBC" type="text">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="caption-input">
+                    <span class="caption"> Teudat Zehut </span>
+                    <input style="border-bottom:1px solid #FEBEBC" type="text">
+                </div>
+
+            </div>
+            <div onclick="goToConfirmOrder()" class="model-footer">Next</div>
+
+        </section>
+    </div>
+
+    <div id="confirm-order-popup" style="display:block" class="food-cart rtl">
+        <header>
+            <img class="ic_close" onclick="hidePopup('confirm-order-popup')" src="images/ic_close_white.png">
+            <h5> CONFIRM ORDER </h5>
+            <h2> 81 NIS </h2>
+        </header>
+
+        <section>
+            <div class="inner-section">
+                <table>
+                    <tr>
+                        <td>
+                            <img src="images/ic_notifi.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding">
+                                <a href="#"> edit </a> <span> ORDER </span> 
+                              <br>
+                             Pizza with bacon, «Vegeterian» salad and soup. And put more tomatos, please
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/ic_location.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding">
+                                <a href="#"> edit </a> <span> CUSTOMER INFO </span> 
+                              <br>
+                             dvora@push.com <br> 054 334 7266 <br> Pickup from restaurant: Gad 14, Jerusalem
+                                 </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/ic_gift.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding">
+                                <a href="#"> edit </a> <span> COUPON CODE </span>
+                              <br>
+                             Sub Totai: 130 <br> NIS Coupon -20% <br> Total 120 NIS  
+                             </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/ic_card.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding">
+                                <a href="#"> edit </a> <span> PAYMENT  </span> 
+                              <br>
+                             **** **** **** 0207 
+                             </div>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+            <div id="confirm-footer"  class="model-footer" > Next</div>
+        </section>
+    </div>
+    <div id="footer-dots" >
+        <span id="first-dot" class="active" > </span>
+         <span id="second-dot" > </span> 
+         <span id="third-dot" > </span>
+          <span id="fourth-dot" > </span>
+           <span id="fifth-dot" > </span>
+    </div>
+
+    <div id="main-popup"  class="popup rtl">
+        <div class="body">
+            <h3 style="text-align:center" > King Angus Sandwish </h3>
+            <img class="ic_close" src="images/ic_close.png">
+            <div class="product-circle">
+                <div class="circle-img">
+                    <img class="product-img" src="images/Image.png" />
+                </div>
+                <div class="circle-badge"> 20 NIS </div>
+            </div>
+            <p class="para-detail">
+                150 grams of quality Angus entrcote meat and 80 grams of goose liver with mayonnaise , mustard, chimichuri and tomatoes
+            </p>
+            <div class="sperator"></div>
+            <h3 style="text-align: right"> Type of meat </h3>
+            <div class="custom-drop-down">
+                <input placeholder="Please choose " />
+                <img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="images/drop_down.png">
+                <div class="custom-drop-down-list">
+                    <ul>
+                        <li> Item0 </li>
+                        <li> Item0 </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="expandable">
+                <div class="sperator" style="margin-top: 30px; margin-bottom: 30px; border-color: #BFBFBF"></div>
+
+                <h3 style="text-align: right; margin-bottom: 8px"> Addons </h3>
+                <ul class="checkbox-list">
+                    <li> <input type="checkbox"  id="checkbox-id12" /> <label for="checkbox-id12">Lattuce</label></li>
+                    <li> <input type="checkbox" id="checkbox-id23" /> <label for="checkbox-id23">Onion</label></li>
+                    <li> <input type="checkbox"  id="checkbox-id34" /> <label for="checkbox-id34">Fried Onion</label></li>
+                    <li> <input type="checkbox"  id="checkbox-id45" /> <label for="checkbox-id45">Tomato</label></li>
+                </ul>
+            </div>
+        </div>
+
+        <div onclick="addOrder()" class="model-footer">ADD TO MY ORDER</div>
+    </div>
+    </div>
+
+    <div id="error_alert" style="width: 80%;text-align: center;box-shadow: 0 0 20px black; border-radius: 10px; position: absolute; top: 50%; left: 50%; padding: 30px; background: white; transform: translate(-50%,-50%)">
+        <img style="width: 45px; padding: 14px; position: absolute; left: 0px; top: 0px; " src="images/ic_close.png">
+        Min Order 75 NIS
+    </div>
+
+    <footer id="main-footer" >
+        ORDER NOW
+    </footer>
+    <script src="script/jquery.min.js"></script>
+    <script src="script/dropdown.js"></script>
+    <script src="script/app.js"></script>
+  
+</body>
+
+</html>
