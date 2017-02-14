@@ -633,8 +633,6 @@ function  guardPaymentRequest($amount,$userId,$email)
 
 function email_order_summary_english($user_order,$orderId,$todayDate)
 {
-    $server    =   $_SERVER['HTTP_HOST'];
-
     $mailbody  = '<html><head></head>';
     $mailbody .= '<body style="padding: 0; margin: 0" >';
     $mailbody .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px " >';
@@ -679,10 +677,40 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 
     $mailbody .= '<table style="width: 100%; color:black; padding:10px 30px; background: #FEF2E8; border-bottom: 1px solid #D3D3D3 " >';
-    $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
-    $mailbody .= '<td style="padding: 5px 0" > Sub total  </td>';
-    $mailbody .= '<td style="text-align: right; white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['total'].' NIS</span></td>';
-    $mailbody .= '</tr>';
+
+    if($user_order['isCoupon'] == "false")
+    {
+        $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
+        $mailbody .= '<td style="padding: 5px 0" > Total </td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['total'].' NIS</span></td>';
+        $mailbody .= '</tr>';
+    }
+    else
+    {
+        $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
+        $mailbody .= '<td style="padding: 5px 0" > Sub total  </td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['totalWithoutDiscount'].' NIS</span></td>';
+        $mailbody .= '</tr>';
+
+        if($user_order['isFixAmountCoupon'] == 'false')
+        {
+            $amountDiscount = (($user_order['totalWithoutDiscount'] * $user_order['discount']) / 100);
+
+            $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
+            $mailbody .= '<td style="padding: 5px 0" > Coupon Discount -'.$user_order['discount'].'% </td>';
+            $mailbody .= '<td style="text-align: right; white-space: nowrap"> <span style="color: #FF864C;" >'.$amountDiscount.' NIS</span></td>';
+            $mailbody .= '</tr>';
+        }
+        else
+        {
+            $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
+            $mailbody .= '<td style="padding: 5px 0" > Coupon Discount Amount </td>';
+            $mailbody .= '<td style="text-align: right; white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['discount'].' NIS</span></td>';
+            $mailbody .= '</tr>';
+
+        }
+
+    }
 
 
     $mailbody .= '</table>';
@@ -697,7 +725,17 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
     $mailbody .= '<td style="padding: 10px 0; text-align: center" > <img style=" height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
-    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['restaurantAddress'].'</td>';
+
+    if($user_order['pickFromRestaurant'] == 'false')
+    {
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"> Delivery Address : '.$user_order['deliveryAddress'].'</td>';
+    }
+    else{
+
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"> Pick From Restaurant : '.$user_order['restaurantAddress'].'</td>';
+    }
+
+
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
     $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_email.png" ></td>';
@@ -734,8 +772,7 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 //To address and name
     $mail->addAddress($user_order['email']);
     $mail->addAddress("qaorders@orderapp.com"); //Recipient name is optional
-    $mail->addAddress("orders@orderapp.com"); //Recipient name is optional
-
+    //$mail->addAddress("orders@orderapp.com"); //Recipient name is optional
 
 //Address to which recipient will reply
     $mail->addReplyTo("order@orderapp.com", "Reply");

@@ -24,7 +24,8 @@ var userObject = {
     'isFixAmountCoupon' : false,       // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
     'discount'          : 0,           // DISCOUNT ON COUPON VALUE
     'Cash_Card'         : null,        // USER WANT TO PAY CASH OR CREDIT CARD
-    'cartData'          : null         // COMPUTED CART DATA
+    'cartData'          : null,        // COMPUTED CART DATA
+    'totalWithoutDiscount' : null      // TOTAL WITHOUT DISCOUNT
 };
 
 

@@ -904,6 +904,7 @@ function CheckCouponFromServer() {
                     $('#oldTotal').html(userObject.total);
                     $('#newTotal').html(newTotal);
 
+                    userObject.totalWithoutDiscount = userObject.total;
                     userObject.total = newTotal;
 
                     $('#coupon_section').show();
