@@ -18,6 +18,8 @@
     width: 100%;
     left: 0;
     top: 42px;
+    max-height: 700%;
+    overflow-y: scroll;
     z-index: 99999;
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
