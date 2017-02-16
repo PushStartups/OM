@@ -404,28 +404,38 @@
 
 
 <!--ON ITEM SELECTED POPUP-->
-<div id="main-popup" class="popup" style="height: calc(100% - 10px) ; padding-bottom: 50px">
-    <div class="body" style="height: 100%; overflow:hidden; overflow-y: auto; position: relative">
+<div id="main-popup" class="popup">
+
+    <div class="body">
+
+        <div id="top-half">
         <h3 id="itemPopUpTitle"></h3>
         <img class="ic_close" src="img/ic_close.png">
+
         <div class="product-circle">
             <div class="product-circle">
                 <div class="circle" style="background-image: url('img/Image.png')" ></div>
             </div>
             <div id="itemPopUpPrice" class="circle-badge"> 0 NIS </div>
         </div>
-        <p class="para-detail" id="itemPopUpDesc"></p>
-        <div class="sperator"></div>
 
+        <p class="para-detail" id="itemPopUpDesc"></p>
+
+        <div class="sperator"></div>
+        </div>
+
+        <div id="mid-scroll">
         <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
         <div id="parent_type_one"></div>
 
         <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
         <div id="parent_type_multiple"></div>
+        </div>
 
     </div>
 
     <div onclick="addUserOrder();" class="model-footer">ADD TO MY ORDER</div>
+
 </div>
 
 

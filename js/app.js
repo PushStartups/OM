@@ -34,8 +34,9 @@ $(function () {
 
         $("#overlay").fadeIn();
         $("#main-popup").slideDown();
-        $(".expandable").slideUp();
-        $("#main-popup").css("transform", "translate(-50%,-50%)")
+         setTimeout(function(){
+        resize()
+    },500)
     })
 
 
@@ -43,8 +44,6 @@ $(function () {
 
         $("#overlay").fadeOut();
         $("#main-popup").slideUp();
-        $(".expandable").slideUp();
-        $("#main-popup").css("transform", "translate(-50%,-50%)");
         $("#food-cart-popup").slideUp();
         $("#coupon-popup").slideUp();
         $("#payment-choice-popup").slideUp();
@@ -193,9 +192,9 @@ function addOrder(){
     increaseCounter();
     $("#overlay").fadeOut();
     $("#main-popup").slideUp();
-    $(".expandable").slideUp();
-    $("#main-popup").css("transform", "translate(-50%,-50%)");
+
     $("#food-cart-popup").slideUp();
+
 }
 
 
@@ -230,3 +229,13 @@ function setDot(index){
     $("#footer-dots").find(".active").removeClass("active")
     $("#"+ index).addClass("active")
 }
+$(window).on("resize", function () {
+        resize()
+    });
+
+    function resize() {
+        var height = $("#main-popup .body").innerHeight();
+        var topHeight = $("#top-half").outerHeight();
+        console.log(topHeight);
+        $("#mid-scroll").css("height", height - topHeight - 82 + "px")
+    }

@@ -337,7 +337,7 @@ div.popup {
     position: absolute;
     background: #FFFFFF;
     width: 90%;
-    top: 50%;
+    top: 48%;
     max-width: 500px;
     display: none;
     left: 50%;
@@ -346,8 +346,18 @@ div.popup {
     z-index: 100;
 }
 
-
-
+#main-popup{
+    height: 95%;
+    position: fixed;
+}
+#main-popup .body{
+    height: calc(100% - 29px)
+}
+#mid-scroll {
+    height: 50%;
+    overflow: hidden;
+    overflow-y: auto;
+}
 /*Inner Section Popup*/
 
 div.food-cart#customer-popup,
@@ -513,8 +523,8 @@ div.popup p {
 
 
 div.popup .product-circle .circle-img {
-    width: 50vw;
-    height: 50vw;
+    width: 45vw;
+    height: 45vw;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
@@ -604,7 +614,7 @@ input[type="radio"] , input[type="checkbox"]   {
 }
 
 input[type="radio"] + label ,input[type="checkbox"] + label {
-    background: url('../img/uncheck.png') 0px 3px no-repeat;
+    background: url('../img/uncheck.png') 1px 0px no-repeat;
     width: 20px;
     padding-left: 30px !important;
     font-size: 13px;
@@ -612,7 +622,7 @@ input[type="radio"] + label ,input[type="checkbox"] + label {
 }
 
 input[type="radio"]:checked + label ,  input[type="checkbox"]:checked + label {
-    background: url('../img/checked.png') -1px 2px no-repeat;
+    background: url('../img/checked.png') 0px 0px no-repeat;
 }
 
 div.food-cart#customer-popup .checkbox-list div {
@@ -647,9 +657,6 @@ div.popup ul li label {
     z-index: 99;
 }
 
-.expandable {
-    display: none;
-}
 
 #error_alert {
     z-index: 999;

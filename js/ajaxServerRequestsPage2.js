@@ -639,6 +639,8 @@ function onQtyIncreaseButtonClicked(index) {
 
     $('#totalAmount').html(userObject.total + " NIS");
 
+    increaseCounter();
+
 
 }
 
@@ -679,7 +681,7 @@ function onQtyDecreasedButtonClicked(index) {
 
         }
 
-        decreaseCounter();
+
     }
 
 
@@ -689,7 +691,7 @@ function onQtyDecreasedButtonClicked(index) {
         userObject.total = parseInt(userObject.total) - parseInt(foodCartData[index].price);
     }
 
-
+    decreaseCounter();
     $('#totalAmount').html(userObject.total + " NIS");
 }
 
@@ -1011,10 +1013,7 @@ function confirmOrder(paymentChoice)
 
     for(var x=0;x< foodCartData.length ;x++)
     {
-        if( x == 0)
-            str +=      foodCartData[x].name;
-        else
-            str +=  ", "+foodCartData[x].name;
+       str += "<b>"+foodCartData[x].name+"</b>"+"<br>"+foodCartData[x].detail+"<br>";
     }
 
     $('#all_orders_str').html(str);

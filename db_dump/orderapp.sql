@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 16, 2017 at 09:30 AM
+-- Generation Time: Feb 16, 2017 at 01:46 PM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -70,7 +70,7 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `sort`) VALUES
 (27, 4, 'Roza Snacks', 'נשנושים', 126),
 (28, 4, 'Roza Kid''s meals', 'מנות ילדים\n', 127),
 (29, 4, 'Roza Drinks', 'שתייה', 128),
-(30, 5, 'JAPAN JAPAN Special sushi menu', 'תפריט סושי המיוחדים של JAPAN JAPAN', 129),
+(30, 5, 'JJ Special sushi menu', 'תפריט סושי המיוחדים של JAPAN JAPAN', 129),
 (31, 5, 'Maki', 'מאקי', 130),
 (32, 5, 'Uramaki Inside-out Roll - Thick', 'אורמאקי ', 131),
 (33, 5, 'Tempura Rolls', 'רולים טמפורה', 132),
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `name` varchar(100) NOT NULL,
   `url` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `company`
@@ -106,7 +106,9 @@ CREATE TABLE IF NOT EXISTS `company` (
 
 INSERT INTO `company` (`id`, `name`, `url`) VALUES
 (1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco'),
-(2, 'josh', 'http://dev.biz.orderapp.com/?biz=josh');
+(2, 'josh', 'http://dev.biz.orderapp.com/?biz=josh'),
+(3, 'rael', 'http://dev.biz.orderapp.com/?biz=rael'),
+(4, 'avi', 'http://dev.biz.orderapp.com/?biz=avi');
 
 -- --------------------------------------------------------
 
@@ -121,21 +123,18 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `vote_count` int(11) NOT NULL,
   `voting_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=89 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=94 ;
 
 --
 -- Dumping data for table `company_voting`
 --
 
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `voting_date`) VALUES
-(81, 1, 1, 1, '2017-02-15'),
-(82, 1, 2, 9, '2017-02-15'),
-(83, 1, 3, 2, '2017-02-15'),
-(84, 1, 4, 7, '2017-02-15'),
-(85, 1, 1, 0, '2017-02-16'),
-(86, 1, 2, 0, '2017-02-16'),
-(87, 1, 3, 1, '2017-02-16'),
-(88, 1, 4, 0, '2017-02-16');
+(89, 1, 1, 0, '2017-02-16'),
+(90, 1, 2, 0, '2017-02-16'),
+(91, 1, 3, 0, '2017-02-16'),
+(92, 1, 4, 0, '2017-02-16'),
+(93, 1, 5, 0, '2017-02-16');
 
 -- --------------------------------------------------------
 
@@ -777,7 +776,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -800,7 +799,8 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (76, 101, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
 (77, 102, 1, 'XL Pie', 66, 'Mushrooms (+5), Tomatoes (+5), '),
 (78, 102, 1, 'XL + Toppings', 75, 'Olives, Vegan Cheese, '),
-(79, 102, 1, 'Gluten Free', 45, 'Olives (+5), Corn (+5), ');
+(79, 102, 1, 'Gluten Free', 45, 'Olives (+5), Corn (+5), '),
+(80, 103, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), ');
 
 -- --------------------------------------------------------
 
@@ -2301,7 +2301,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -2318,7 +2318,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (99, 261, 3, 144, NULL, 0, '2017-02-15'),
 (100, 261, 1, 93, NULL, 0, '2017-02-15'),
 (101, 261, 1, 157, NULL, 0, '2017-02-15'),
-(102, 261, 2, 186, NULL, 0, '2017-02-15');
+(102, 261, 2, 186, NULL, 0, '2017-02-15'),
+(103, 260, 1, 93, NULL, 0, '2017-02-16');
 
 -- --------------------------------------------------------
 
@@ -2356,15 +2357,7 @@ CREATE TABLE IF NOT EXISTS `user_votes` (
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
-
---
--- Dumping data for table `user_votes`
---
-
-INSERT INTO `user_votes` (`id`, `user_id`, `company_id`, `restaurant_id`, `voting_date`) VALUES
-(20, 255, 1, 3, '2017-02-15'),
-(21, 255, 1, 3, '2017-02-16');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 -- --------------------------------------------------------
 
@@ -2387,8 +2380,8 @@ CREATE TABLE IF NOT EXISTS `vote_timings` (
 --
 
 INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 1, '11:00:00', '11:10:00', '11:55:00'),
-(2, 1, '14:10:00', '15:15:00', '16:16:00');
+(1, 1, '11:00:00', '12:10:00', '12:30:00'),
+(2, 1, '13:11:00', '13:15:00', '13:16:00');
 
 -- --------------------------------------------------------
 
@@ -2464,14 +2457,15 @@ CREATE TABLE IF NOT EXISTS `winning_restaurant` (
   `vote_count` int(11) NOT NULL,
   `voting_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `winning_restaurant`
 --
 
 INSERT INTO `winning_restaurant` (`id`, `company_id`, `restaurant_id`, `vote_timing_id`, `vote_count`, `voting_date`) VALUES
-(3, 1, 3, 1, 100, '2017-02-16');
+(4, 1, 2, 1, 100, '2017-02-16'),
+(5, 1, 3, 2, 100, '2017-02-16');
 
 --
 -- Constraints for dumped tables
