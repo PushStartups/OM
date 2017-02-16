@@ -54,7 +54,8 @@
 
 <!--ORDER SUMMARY DETAIL POPUP (FOOD CART)-->
 
-<div id="food-cart-popup" style="display: none" class="food-cart">
+<div id="food-cart-popup" style="display: none;  bottom: 10px; height: calc(100% - 20px);" class="food-cart">
+
     <header>
         <img class="ic_close" src="img/ic_close_white.png">
         <h5> FOOD CART </h5>
@@ -69,7 +70,7 @@
 </div>
 
 
-<!--TAKE CUSTOMER INFO POPUP-->
+<!-- CUSTOMER INFO POPUP-->
 <div id="customer-popup"  class="food-cart">
     <header>
         <img class="ic_close" onclick="hidePopup('customer-popup')" src="img/ic_close_white.png">
@@ -191,7 +192,7 @@
             </ul>
         </div>
 
-        <div style="position: absolute;bottom: 20px;width: 94.5%;" class="model-footer" onclick="takeNameAndEmail()" >Next</div>
+        <div style="position: absolute;bottom: 3px;width: 94.5%;" class="model-footer" onclick="takeNameAndEmail()" >Next</div>
     </section>
 </div>
 
@@ -226,7 +227,7 @@
 
 
 <!--DISPLAY COUPON RESULT -->
-<div id="check-coupon-popup" style="display: none" class="food-cart">
+<div id="check-coupon-popup"  class="food-cart" style="display: none; border-radius: 0px;">
     <header>
         <img class="ic_close" src="img/ic_close_white.png">
         <h5> COUPON CODE </h5>
@@ -302,12 +303,12 @@
 
 
 <div id="creditcard-info-popup" style="display: none" class="food-cart">
-    <header>
+    <header style="line-height: 30px;">
         <img class="ic_close" src="img/ic_close_white.png">
         <h5> PAYMENT INFO </h5>
         <h2 class="totalBill"> 0 NIS </h2>
     </header>
-    <div id="payment_guard" style="overflow: auto;  min-height: 300px; height: calc(100% - 97px);  max-height: 800px; padding: 5px; width: 100%;">
+    <div id="payment_guard" style="overflow: hidden; overflow-y: scroll; min-height: 300px; height: calc(100% - 61px);  max-height: 800px; padding: 5px; width: 100%; -webkit-overflow-scrolling: touch;">
     </div>
 
 </div>
@@ -323,51 +324,69 @@
     </header>
 
     <section>
-        <div class="inner-section" style="border-radius: 0px">
-            <table>
-                <tr>
-                    <td>
-                        <img src="img/ic_notifi.png">
-                    </td>
-                    <td>
-                        <div class="orange-haeding" id="all_orders_str">
+        <div class="inner-section">
 
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/ic_location.png">
-                    </td>
-                    <td>
-                        <div class="orange-haeding" id="userProvidedInfo">
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <td>
+                            <img style="width: 80%;" src="img/ic_notifi.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding"  id="all_orders_str">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-                        </div>
-                    </td>
-                </tr>
-                <tr id="coupon_section">
-                    <td>
-                        <img src="img/ic_gift.png">
-                    </td>
-                    <td>
-                        <div class="orange-haeding" id="coupon_detail">
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <td>
+                            <img style="width: 80%;" src="img/ic_location.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding" id="userProvidedInfo">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/ic_card.png">
-                    </td>
-                    <td>
-                        <div class="orange-haeding" id="payment_choice">
+            <div class="table-card">
+                <table>
 
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                    <tr>
+                        <td>
+                            <img  style="width: 80%;" src="img/ic_gift.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding" id="coupon_detail">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <td>
+                            <img style="width: 80%;" src="img/ic_card.png">
+                        </td>
+                        <td>
+                            <div class="orange-haeding" id="payment_choice">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
+
         <div id="confirm-footer" onclick="callPage3()"  class="model-footer" > Next</div>
+
     </section>
 </div>
 
@@ -387,7 +406,7 @@
 <!--ON ITEM SELECTED POPUP-->
 <div id="main-popup" class="popup" style="height: calc(100% - 10px) ; padding-bottom: 50px">
     <div class="body" style="height: 100%; overflow:hidden; overflow-y: auto; position: relative">
-        <h3 id="itemPopUpTitle">  </h3>
+        <h3 id="itemPopUpTitle"></h3>
         <img class="ic_close" src="img/ic_close.png">
         <div class="product-circle">
             <div class="product-circle">
@@ -395,19 +414,14 @@
             </div>
             <div id="itemPopUpPrice" class="circle-badge"> 0 NIS </div>
         </div>
-        <p class="para-detail" id="itemPopUpDesc">
-        </p>
-
+        <p class="para-detail" id="itemPopUpDesc"></p>
         <div class="sperator"></div>
 
         <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
         <div id="parent_type_one"></div>
 
         <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
-        <div id="parent_type_multiple">
-        </div>
-
-
+        <div id="parent_type_multiple"></div>
 
     </div>
 

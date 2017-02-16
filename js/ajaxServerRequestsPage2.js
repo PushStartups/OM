@@ -23,7 +23,7 @@ var currentItemIndex            = 0;                                            
 var oneTypeSubItems             = [];                                              // SUB-ITEMS TYPE ONE
 var multipleTypeSubItems        = [];                                              // SUB-ITEMS TYPE MULTIPLE
 var extras                      = null;                                            // EXTRAS FROM SERVER
-var minOrderLimit               = 75;                                              // MINIMUM ORDER LIMIT
+var minOrderLimit               = localStorage.getItem('min_order_amount');        // MINIMUM ORDER LIMIT
 
 
 // FOOD CART DATA 
@@ -261,6 +261,7 @@ function onItemSelected (y)
                             "replace_price"   : extras.extra_with_subitems[x].price_replace,
                             "subItemPrice"    : extras.extra_with_subitems[x].subitems[minY].price,
                             "subItemName"     : extras.extra_with_subitems[x].subitems[minY].name_en,
+                            "subItemNameHe"   : extras.extra_with_subitems[x].subitems[minY].name_he,
                             "qty"             : 1};   // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
                         var subItem = {};
@@ -372,6 +373,7 @@ function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, e) {
         "replace_price"   : extras.extra_with_subitems[extraIndex].price_replace,
         "subItemPrice"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
         "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+        "subItemNameHe"   : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
         "qty"             : 1};   // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
     // AS ONE TYPE EXTRA OVER RIDE TO EXISTING VALUE
@@ -397,6 +399,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
             "subItemId"      : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
             "subItemPrice"   : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
             "subItemName"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+            "subItemNameHe"  : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
             "qty"            : 1}; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
@@ -446,6 +449,7 @@ function addUserOrder()
         "itemId"             : result.categories_items[currentCategoryId].items[currentItemIndex].id,
         "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemIndex].price,
         "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
+        "itemNameHe"         : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
         "qty"                : 1 ,
         "subItemsOneType"    : oneTypeSubItems,
         "multiItemsOneType"  : multipleTypeSubItems};
@@ -475,8 +479,10 @@ function generateTotalUpdateFoodCart()
         // FOOD CARD ITEM  FOR MAIN ITEM
         var cartItem = {
             "name": order.itemName,
+            "name_he": order.itemNameHe,
             "price" : order.itemPrice ,
             "detail" : "" ,
+            "detail_he" : "" ,
             "orderIndex" : x ,
             "qty" : order.qty,
             "subItemOneIndex" : null,
@@ -501,6 +507,7 @@ function generateTotalUpdateFoodCart()
                     orderAmount = parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.qty);
                     cartItem.price = parseInt(orderAmount);
                     cartItem.detail +=  key+":"+order.subItemsOneType[y][key].subItemName+", ";
+                    cartItem.detail_he +=  key+":"+order.subItemsOneType[y][key].subItemNameHe+", ";
 
                 }
                 // SUM THE SUB ITEM AMOUNT
@@ -511,11 +518,13 @@ function generateTotalUpdateFoodCart()
 
                         sumTotalAmount = parseInt(sumTotalAmount) +( parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.subItemsOneType[y][key].qty));
                         cartItem.detail +=  order.subItemsOneType[y][key].subItemName+" (+"+order.subItemsOneType[y][key].subItemPrice+"), ";
+                        cartItem.detail_he +=  order.subItemsOneType[y][key].subItemNameHe+" (+"+order.subItemsOneType[y][key].subItemPrice+"), ";
                     }
                     else
                     {
                         // THOSE ITEMS HAVE PRICE ZERO WILL NOT DISPLAY AS CART ITEM AND DISPLAY AS
                         cartItem.detail +=  order.subItemsOneType[y][key].subItemName+", ";
+                        cartItem.detail_he +=  order.subItemsOneType[y][key].subItemNameHe+", ";
                     }
                 }
 
@@ -534,12 +543,14 @@ function generateTotalUpdateFoodCart()
                     {
                         sumTotalAmount = parseInt(sumTotalAmount) + (parseInt(order.multiItemsOneType[y][key].subItemPrice) * parseInt(order.multiItemsOneType[y][key].qty) );
                         cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+"), ";
+                        cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe+" (+"+order.multiItemsOneType[y][key].subItemPrice+"), ";
                     }
                     else
                     {
                         // THOSE ITEMS HAVE PRICE ZERO WILL NOT DISPLAY AS CART ITEM AND DISPLAY AS
 
                         cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+", ";
+                        cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe+", ";
                     }
                 }
             }
@@ -1017,6 +1028,7 @@ function confirmOrder(paymentChoice)
         str += '<span > PAYMENT </span> <a href = "#"></a> <br>'+paymentChoice;
 
         userObject['Cash_Card'] = "CASH";
+        userObject['Cash_Card_he'] = "כסף מזומן";
 
     }
     else if(paymentChoice == 'creditCard')
@@ -1024,6 +1036,7 @@ function confirmOrder(paymentChoice)
         str += '<span > PAYMENT </span> <a href = "#"> </a> <br>'+'payment received through credit card';
 
         userObject['Cash_Card'] = "Credit Card";
+        userObject['Cash_Card_he'] = "כרטיס אשראי";
     }
 
     $('#payment_choice').html(str);
@@ -1095,12 +1108,12 @@ function  callPage3() {
 
         success: function (response) {
 
-           // window.location.href = '../page3.html';
+            window.location.href = '../page3.html';
             hideLoading();
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
-          //  window.location.href = '../page3.html';
+            alert("Server Error");
             hideLoading();
         }
     });

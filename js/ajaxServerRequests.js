@@ -3,15 +3,17 @@
 var host = "http://"+window.location.hostname;
 
 
-var allRestJson = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
-
+var allRestJson     = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
+var minOrderLimit   = 0;     // MINIMUM ORDER LIMIT
 
 // USER ORDER INFORMATION
 
 var userObject = {
 
+    'language' : 'en',                 // USER LANGAGUE ENGLISH
     'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
     'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
+    'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
     'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
     'name': "",                        // USER NAME
     'email': "",                       // USER EMAIL
@@ -24,10 +26,33 @@ var userObject = {
     'isFixAmountCoupon' : false,       // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
     'discount'          : 0,           // DISCOUNT ON COUPON VALUE
     'Cash_Card'         : null,        // USER WANT TO PAY CASH OR CREDIT CARD
+    'Cash_Card_he'      : null,        // USER WANT TO PAY CASH OR CREDIT CARD
     'cartData'          : null,        // COMPUTED CART DATA
     'totalWithoutDiscount' : null      // TOTAL WITHOUT DISCOUNT
 };
 
+
+// GET MINIMUM ORDER VALUE FROM SERVER
+
+function getMinimumValue() {
+
+
+    $.ajax({
+
+        url: host + "/restapi/index.php/get_min_order_amount",
+        type: "post",
+        data: "",
+
+        success: function (response) {
+
+
+            var result = JSON.parse(response);
+            minOrderLimit = parseInt(result[0].value); // MINIMUM ORDER AMOUNT SET FROM SERVER
+
+        }
+
+    });
+}
 
 
 // GET ALL RESTAURANTS FROM SERVER
@@ -46,6 +71,7 @@ function  getAllRestaurants()
             var result = JSON.parse(response);
 
             allRestJson = result;   // MAKE SERVER RESPONSE GLOBAL FOR ACCESS IN OTHER FUNTIONS
+
 
             var allRestaurants = "";
 
@@ -184,13 +210,16 @@ $(document).on('click','.order_now',function() {
     var clickedRestId = $(this).attr('id').replace('ordernow','');
 
 
-    userObject.restaurantId      = allRestJson[clickedRestId].id;
-    userObject.restaurantTitle   = allRestJson[clickedRestId].name_en;
-    userObject.restaurantAddress = allRestJson[clickedRestId].address_en;
+    userObject.restaurantId        = allRestJson[clickedRestId].id;
+    userObject.restaurantTitle     = allRestJson[clickedRestId].name_en;
+    userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
+    userObject.restaurantAddress   = allRestJson[clickedRestId].address_en;
+
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 
     localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+    localStorage.setItem("min_order_amount", minOrderLimit);
 
    // MOVING TO PAGE 2
     window.location.href = '../page2.html';

@@ -40,6 +40,13 @@
 }
 
 
+.blur-class
+{
+    -webkit-filter: opacity(.2);
+    filter: opacity(.2);
+    pointer-events: none;
+}
+
 @font-face {
     font-family: "HelveticaNeu";
     font-weight: 400;

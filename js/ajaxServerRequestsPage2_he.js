@@ -32,7 +32,7 @@ var foodCartData                = [];                                           
 function  getCategoriesWithItems()
 {
     // SET MIN ORDER LIMIT TO ERROR POPUP
-    $('#min_order').html("Min Order "+minOrderLimit+" NIS");
+    $('#min_order').html("NIS "+minOrderLimit+" הזמנה מינימלית ");
 
     // UPDATE RESTAURANT TITLE
     $('#restName').text(restName);
@@ -60,14 +60,14 @@ function  getCategoriesWithItems()
                 //DISPLAY FIRST ELEMENT BY DEFAULT SELECTED
                 if(x == 0)
                 {
-                    $("#firstItem").attr('value', result.categories_items[x].name_en);
+                    $("#firstItem").attr('value', result.categories_items[x].name_he);
                     currentCategoryId = x;
 
                     // CALLING FIRST ELEMENT ON CHANGE TO SET CARDS FOR FIRST CATEGORY BY DEFAULT
                     onCategoryChange(x);
                 }
 
-                allCategories += '<li onclick="onCategoryChange('+x+')">'+result.categories_items[x].name_en +'</li>';
+                allCategories += '<li onclick="onCategoryChange('+x+')">'+result.categories_items[x].name_he +'</li>';
             }
 
             // UPDATE ALL CATEGORIES
@@ -94,7 +94,7 @@ function  getCategoriesWithItems()
 function onCategoryChange(x)
 {
 
-    $("#firstItem").attr('value', result.categories_items[x].name_en);
+    $("#firstItem").attr('value', result.categories_items[x].name_he);
 
     addLoading();
 
@@ -107,18 +107,22 @@ function onCategoryChange(x)
 
     for(var y=0;y<result.categories_items[x].items.length ; y = y+2)
     {
-        str += '<div class="cci-row">';
+
+        str += '<div class="cci-row rtl">';
 
         str += '<div class="cci-col-50">'+
             '<div onclick="onItemSelected ('+y+')"  class="product-card">'+
             '<img src="'+result.categories_items[x].items[y].image_url+'" />'+
             '<div class="card-body">';
 
-        str+= '<div class="header"> <span class="dark-text"> '+result.categories_items[x].items[y].name_en+' </span> <span class="cci-badge"> '+result.categories_items[x].items[y].price+' NIS </span> </div>'+
-            '<div class="dim-text"><span class="wrapDesc"> '+result.categories_items[x].items[y].desc_en+' </span> </div>'+
+        str+= '<div class="header"> <span class="dark-text"> '+result.categories_items[x].items[y].name_he+' </span> <span class="cci-badge"> '+result.categories_items[x].items[y].price+' NIS </span> </div>'+
+            '<div class="dim-text"><span class="wrapDesc"> '+result.categories_items[x].items[y].desc_he+' </span> </div>'+
             '</div>'+
             '</div>'+
             '</div>';
+
+
+
 
         if(result.categories_items[x].items[y+1] != undefined) {
 
@@ -128,8 +132,8 @@ function onCategoryChange(x)
                 '<div onclick="onItemSelected ('+temp+')" class="product-card">' +
                 '<img src="'+result.categories_items[x].items[y+1].image_url+'" />' +
                 '<div class="card-body">' +
-                '<div class="header"> <span class="dark-text"> '+result.categories_items[x].items[y+1].name_en+' </span> <span class="cci-badge"> '+result.categories_items[x].items[y+1].price+' NIS </span> </div>' +
-                '<div class="dim-text" ><span class="wrapDesc"> '+result.categories_items[x].items[y+1].desc_en+' </span></div>' +
+                '<div class="header"> <span class="dark-text"> '+result.categories_items[x].items[y+1].name_he+' </span> <span class="cci-badge"> '+result.categories_items[x].items[y+1].price+' NIS </span> </div>' +
+                '<div class="dim-text" ><span class="wrapDesc"> '+result.categories_items[x].items[y+1].desc_he+' </span></div>' +
                 '</div>' +
                 '</div>' +
                 '</div>';
@@ -165,13 +169,13 @@ function onItemSelected (y)
     $('.circle').css("background-image","url("+result.categories_items[currentCategoryId].items[y].image_url+")");
 
     // UPDATE ITEM NAME
-    $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_en);
+    $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_he);
 
     $('#itemPopUpPrice').html(result.categories_items[currentCategoryId].items[currentItemIndex].price+' NIS');
 
     // UPDATE DESCRIPTION
 
-    $('#itemPopUpDesc').html(result.categories_items[currentCategoryId].items[currentItemIndex].desc_en);
+    $('#itemPopUpDesc').html(result.categories_items[currentCategoryId].items[currentItemIndex].desc_he);
 
 
     // EXTRAS WITH SUB ITEMS AGAINST ITEM
@@ -209,14 +213,14 @@ function onItemSelected (y)
 
                     for(var y=0;y<extras.extra_with_subitems[x].subitems.length;y++)
                     {
-                        temp += '<li onclick="onOneTypeExtraSubItemSelected('+oneTypeSubItems.length+','+y+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '</li>';
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected('+oneTypeSubItems.length+','+y+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_he + '</li>';
 
                         if (extras.extra_with_subitems[x].price_replace == 1)
                         {
                             if (y ==0 || (parseInt(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
                             {
                                 minPrice = extras.extra_with_subitems[x].subitems[y].price;
-                                minSubItemName = extras.extra_with_subitems[x].subitems[y].name_en;
+                                minSubItemName = extras.extra_with_subitems[x].subitems[y].name_he;
                                 minY = y;
                             }
                         }
@@ -230,10 +234,12 @@ function onItemSelected (y)
                         first = true;
                     }
 
-                    oneTypeStr += '<h3 style="text-align: left" >' + extras.extra_with_subitems[x].name_en + '</h3>'+
+                        // <div class="custom-drop-down-list">
+
+                    oneTypeStr += '<h3 style="text-align: right" >' + extras.extra_with_subitems[x].name_he + '</h3>'+
                         '<div class="custom-drop-down">'+
                         '<input id="input'+oneTypeSubItems.length+'" value ="'+ minSubItemName +' " readonly />'+
-                        '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="../img/drop_down.png">'+
+                        '<img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="../img/drop_down.png">'+
                         '<div class="custom-drop-down-list" style=" z-index: 99999;">'+
                         '<ul>';
 
@@ -247,7 +253,7 @@ function onItemSelected (y)
                         // UPDATE VALUE FROM SUB ITEM SELECTION FROM DROP DOWN TYPE ONE
                         var subItem = {};
 
-                        subItem[extras.extra_with_subitems[x].name_en] = null;
+                        subItem[extras.extra_with_subitems[x].name_he] = null;
                         oneTypeSubItems.push(subItem);
                         isOneExist = true;
                     }
@@ -260,11 +266,11 @@ function onItemSelected (y)
                             "subItemId"       : extras.extra_with_subitems[x].subitems[minY].id,
                             "replace_price"   : extras.extra_with_subitems[x].price_replace,
                             "subItemPrice"    : extras.extra_with_subitems[x].subitems[minY].price,
-                            "subItemName"     : extras.extra_with_subitems[x].subitems[minY].name_en,
+                            "subItemName"     : extras.extra_with_subitems[x].subitems[minY].name_he,
                             "qty"             : 1};   // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
                         var subItem = {};
-                        subItem[extras.extra_with_subitems[x].name_en] = temp;
+                        subItem[extras.extra_with_subitems[x].name_he] = temp;
 
                         oneTypeSubItems.push(subItem);
                     }
@@ -288,7 +294,7 @@ function onItemSelected (y)
                             first = true;
                         }
 
-                        multipleTypeStr += '<h3 style="text-align: left; margin-bottom: 8px">'+extras.extra_with_subitems[x].name_en+'</h3>' +
+                        multipleTypeStr += '<h3 style="text-align: right; margin-bottom: 8px">'+extras.extra_with_subitems[x].name_he+'</h3>' +
                             '<ul id="subItems" class="checkbox-list">';
 
                         for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
@@ -298,14 +304,14 @@ function onItemSelected (y)
                                 // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                                 multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                                     ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                                    + extras.extra_with_subitems[x].subitems[y].name_en+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
+                                    + extras.extra_with_subitems[x].subitems[y].name_he+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
                             }
                             else
                             {
                                 // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                                 multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                                     ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                                    + extras.extra_with_subitems[x].subitems[y].name_en + '</label></li>';
+                                    + extras.extra_with_subitems[x].subitems[y].name_he + '</label></li>';
                             }
 
 
@@ -313,7 +319,7 @@ function onItemSelected (y)
                             // DEFAULT VALUE IS NULL
                             // UPDATE VALUE FROM CHECK BOX SELECTION
                             var subItem = {};
-                            subItem[extras.extra_with_subitems[x].subitems[y].name_en] = null;
+                            subItem[extras.extra_with_subitems[x].subitems[y].name_he] = null;
                             multipleTypeSubItems.push(subItem);
                         }
 
@@ -371,11 +377,11 @@ function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, e) {
         "subItemId"       : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
         "replace_price"   : extras.extra_with_subitems[extraIndex].price_replace,
         "subItemPrice"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
-        "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+        "subItemName"     : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
         "qty"             : 1};   // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
     // AS ONE TYPE EXTRA OVER RIDE TO EXISTING VALUE
-    oneTypeSubItems[extraIndex][extras.extra_with_subitems[extraIndex].name_en] =  subItem;
+    oneTypeSubItems[extraIndex][extras.extra_with_subitems[extraIndex].name_he] =  subItem;
 }
 
 
@@ -384,7 +390,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     var id = '#checkbox-id-'+extraIndex+subItemIndex;
 
-    var name = extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en;
+    var name = extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he;
 
     // IF CHECK BOX SET CHECKED ADD SUB ITEM
 
@@ -396,7 +402,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
             "subItemId"      : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
             "subItemPrice"   : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
-            "subItemName"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+            "subItemName"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
             "qty"            : 1}; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
@@ -445,7 +451,7 @@ function addUserOrder()
     var order = {
         "itemId"             : result.categories_items[currentCategoryId].items[currentItemIndex].id,
         "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemIndex].price,
-        "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
+        "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
         "qty"                : 1 ,
         "subItemsOneType"    : oneTypeSubItems,
         "multiItemsOneType"  : multipleTypeSubItems};
@@ -995,7 +1001,7 @@ function confirmOrder(paymentChoice)
     var str = "";
 
     // ALL ORDERS IN ONE STRING DISPLAY FOR USER SUMMARY
-    str += '<span> ORDER </span> <a href="#"></a> <br>';
+    str += '<span> להזמין </span> <a href="#"></a> <br>';               //ORDER
 
     for(var x=0;x< foodCartData.length ;x++)
     {
@@ -1013,28 +1019,28 @@ function confirmOrder(paymentChoice)
     // PAYMENT CHOICE
     if(paymentChoice == 'cash')
     {
-        str += '<span > PAYMENT </span> <a href = "#"></a> <br>'+paymentChoice;
+        str += '<span > תַשְׁלוּם </span> <a href = "#"></a> <br>'+'כסף מזומן';                       //PAYMENT //CAHS
     }
     else if(paymentChoice == 'creditCard')
     {
-        str += '<span > PAYMENT </span> <a href = "#"> </a> <br>'+'payment received through credit card';
+        str += '<span > תַשְׁלוּם </span> <a href = "#"> </a> <br>'+'תשלום שהתקבל דרך כרטיס אשראי';     //PAYMENT   //PAYMENT RECEIVED VIA CREDIT CARD
     }
 
     $('#payment_choice').html(str);
 
     str = "";
 
-    str = '<span> CUSTOMER INFO </span> <a href="#"> </a>'+
+    str = '<span> מידע לקוחות </span> <a href="#"> </a>'+                                            //CUSTOMER INFO
         '<br>'+
         userObject.name+'<br>'+userObject.email+'<br>'+userObject.contact+'<br>';
 
     if(userObject.pickFromRestaurant)
     {
-        str += "Pick from Restaurant : "+userObject.restaurantAddress;
+        str += "להרים ממסעדה :"+userObject.restaurantAddress;                           //PICK UP FROM RESTAURANT
     }
     else
     {
-        str += "Delivery Address : "+userObject.deliveryAddress;
+        str += "כתובת למשלוח : "+userObject.deliveryAddress;                            //DELIVERY ADDRESS
     }
 
     $('#userProvidedInfo').html(str);
@@ -1043,7 +1049,7 @@ function confirmOrder(paymentChoice)
     str = "";
 
     if(!userObject.isCoupon) {
-        str += '<span> COUPON CODE </span> <a href="#"> </a>'+
+        str += '<span> קוד קופון </span> <a href="#"> </a>'+                                        //COUPON CODE
             '<br>'+
             'N/A';
     }
@@ -1051,13 +1057,13 @@ function confirmOrder(paymentChoice)
     {
         if(userObject.isFixAmountCoupon) {
 
-            str += '<span> COUPON CODE </span> <a href="#"> </a>' +
+            str += '<span> קוד קופון </span> <a href="#"> </a>' +                                   //COUPON CODE
                 '<br>' +
                 'Discount = -'+userObject.discount;
         }
         else
         {
-            str += '<span> COUPON CODE </span> <a href="#"> </a>' +
+            str += '<span> קוד קופון </span> <a href="#"> </a>' +                                   // COUPON CODE
                 '<br>' +
                 'Discount = -'+userObject.discount+"%";
         }

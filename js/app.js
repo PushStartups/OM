@@ -49,6 +49,7 @@ $(function () {
         $("#coupon-popup").slideUp();
         $("#payment-choice-popup").slideUp();
         $("#creditcard-info-popup").slideUp();
+        $("#check-coupon-popup").slideUp();
         hideDots();
         setDot("first-dot");
 

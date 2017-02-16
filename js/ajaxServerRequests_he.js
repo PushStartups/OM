@@ -188,7 +188,7 @@ $(document).on('click','.order_now',function() {
     localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
 
     // MOVING TO PAGE 2
-    window.location.href = '../page2.html';
+   // window.location.href = '../page2_he.html';
 });
 
 

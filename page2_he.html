@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8" />
@@ -7,488 +7,433 @@
     <link href="css/Style-rtl.css" rel="stylesheet" />
     <link href="css/dropdown-rtl.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/ajaxServerRequestsPage2_he.js"></script>
 </head>
 
 <body>
-    <header class="rtl" >
-        <img id="ic_back" src="images/Back Arrow.png">
-        <img id="ic_logo" src="images/bg_logo.png">
-        <span> Bandora </span>
-        
-        <img id="ic_cart" onclick="showCartElements()" src="images/shopping-cart.png">
-        <div onclick="showCartElements()" class="count-badge">
-            0
-        </div>
+
+
+<header class="rtl" >
+    <img id="ic_back" src="img/back_arrow.png" onclick="window.location.href = 'page1_he.html';">
+    <img id="ic_logo" src="img/bg_logo.png" onclick="window.location.href = 'page1_he.html';">
+    <span id ='restName'> Res Name </span>
+
+    <img id="ic_cart" onclick="showCartElements(); updateCartElements();" src="img/shopping-cart.png">
+    <div style="display: none" onclick="showCartElements(); updateCartElements();" class="count-badge">
+        0
+    </div>
+</header>
+
+
+<img id="loader" class="loader-css" src="img/loader.gif" >
+
+
+<div id="cards-drop" dir="rtl" class="custom-drop-down">
+    <input id='firstItem' value="" style="font-size: 18px" readonly />
+    <img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">
+    <div id="list" class="custom-drop-down-list">
+        <ul id="categories_list">
+            <!--GENERATING LIST FOR CATEGORIES IN ajaxServerRequestPage2_he.js IN getCategoriesWithItem METHOD-->
+        </ul>
+    </div>
+</div>
+
+
+<div id="cards" style="height: calc(100% - 163px); width: 100%; overflow: hidden; overflow-y: auto">
+</div>
+
+
+
+<div id="overlay"></div>
+
+
+<!--ORDER SUMMARY DETAIL POPUP (FOOD CART)-->
+
+<div id="food-cart-popup" style="display: none" class="food-cart rtl">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> עגלת מזון </h5>                                                   <!--FOOD CART-->
+        <h2 id="totalAmount"> 0 NIS </h2>
     </header>
-    <div id="cards-drop" dir="rtl" class="custom-drop-down">
-        <input value="PIZZA" style="font-size: 18px" readonly />
-        <img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="images/drop_down.png">
-        <div class="custom-drop-down-list">
-            <ul>
-                <li> Item0 </li>
+
+    <section id="orderItems">
+
+    </section>
+
+    <div class="model-footer" onclick="OnOrderNowClicked();" >הזמנה</div>       <!--PLACE ORDER-->
+</div>
+
+
+<!--TAKE CUSTOMER INFO POPUP-->
+<div id="customer-popup" class="food-cart rtl">
+    <header>
+        <img class="ic_close" onclick="hidePopup('customer-popup')" src="img/ic_close_white.png">
+        <h5> פרטי לקוח </h5>                <!--CUSTOMER INFO-->
+        <h2 class="totalBill"> 0 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section" style="overflow-y: auto">
+            <div class="caption-input">
+                        <!--GETTING NAME-->
+                <span class="caption"> שֵׁם </span>
+                <input id="name" type="text">
+                <span class="error-handler" id="name-error"></span>
+                <script>
+                    // WHEN NAME FIELD CHANGES
+                    $('#name').bind('input', function() {
+                        document.getElementById("name-error").innerHTML = "";
+                        $("#name").removeClass("red-border");
+
+                    });
+                </script>
+            </div>
+            <div class="caption-input" style="margin-top: 20px">
+                        <!--GETTING EMAIL ADDRESS-->
+                <span class="caption"> כתובת דוא"ל </span>
+                <input id="email" type="text">
+                <span class="error-handler" id="email-error"></span>
+                <script>
+                    // WHEN EMAIL FIELD CHANGES
+                    $('#email').bind('input', function() {
+
+                        document.getElementById("email-error").innerHTML = "";
+                        $("#email").removeClass("red-border");
+
+                    });
+                </script>
+            </div>
+            <div class="caption-input" style="margin-top: 20px">
+                    <!--GETTING PHONE NUMBER-->
+                <span class="caption"> מספר טלפון </span>
+                <input id="contact" type="text">
+                <span class="error-handler" id="contact-error"></span>
+                <script>
+
+                    // WHEN EMAIL FIELD CHANGES
+                    $('#contact').bind('input', function() {
+
+                        document.getElementById("contact-error").innerHTML = "";
+                        $("#contact").removeClass("red-border");
+
+
+                    });
+
+                </script>
+
+            </div>
+            <ul class="checkbox-list">
+                <li>
+                    <input type="radio" name="a" id="checkbox-id11" /> <label for="checkbox-id11">
+                    <!--Pick up from resturent-->
+                    להרים ממסעדה
+                    <div id="restAddress"> </div>
+                </label>
+                </li>
+                <li id="bottom-border">
+                    <input type="radio" name="a" id="checkbox-id12" /> <label for="checkbox-id12">
+                    <!--Delivery-->
+                    מְסִירָה
+                    <br>
+                    <div class="caption-input" style="margin-top:0px">
+                        <input type="text"  id="address"/>
+
+                        <script>
+                            $('#address').on('input',function(e){
+
+                                if($("#address").val() != "")
+                                {
+                                    $("#checkbox-id12").prop('checked', true);
+                                }
+                                else
+                                {
+                                    $("#checkbox-id12").prop('checked', false);
+                                }
+                            });
+                        </script>
+
+                    </div>
+
+                </label>
+                </li>
+                <script>
+                    $(document).ready(function() {
+                        $('input[type=radio][name=a]').change(function() {
+                            document.getElementById("checkbox-error").innerHTML = "";
+                            document.getElementById("address-error").innerHTML = "";
+                        });
+
+                    });
+
+                    $('#checkbox-id11').click(function(){
+
+                        if($('#checkbox-id11').is(':checked'))
+                        {
+                            $("#address").val("");
+                        }
+                    });
+
+
+                </script>
+                <li>
+                    <span class="error-handler" id="address-error"></span>
+                    <span class="error-handler" id="checkbox-error"></span>
+                </li>
+
+                <li>
+                    <input type="checkbox" id="checkbox-id13"  /> <label for="checkbox-id13">
+                    <!--coupon code-->
+                    קוד קופון
+                    <div> קוד קופון לשימוש </div>
+                </label>
+                </li>
             </ul>
         </div>
-    </div>
-    <div id="cards" style="height: calc(100% - 163px); width: 100%; overflow: hidden; overflow-y: auto">
-        <div class="cci-row rtl">
-            <div class="cci-col-50">
-                <div class="product-card">
-                    <img src="images/image.png" />
-                    <div class="card-body">
-                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
-                        <div class="dim-text"> Freshly brewed coffee </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cci-col-50">
-                <div class="product-card">
-                    <img src="images/image.png" />
-                    <div class="card-body">
-                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
-                        <div class="dim-text"> Freshly brewed coffee </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cci-row rtl">
-            <div class="cci-col-50">
-                <div class="product-card">
-                    <img src="images/image.png" />
-                    <div class="card-body">
-                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
-                        <div class="dim-text"> Freshly brewed coffee </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cci-col-50">
-                <div class="product-card">
-                    <img src="images/image.png" />
-                    <div class="card-body">
-                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
-                        <div class="dim-text"> Freshly brewed coffee </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cci-row rtl">
-            <div class="cci-col-50">
-                <div class="product-card">
-                    <img src="images/image.png" />
-                    <div class="card-body">
-                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
-                        <div class="dim-text"> Freshly brewed coffee </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cci-col-50">
-                <div class="product-card">
-                    <img src="images/image.png" />
-                    <div class="card-body">
-                        <div class="header"> <span class="dark-text"> Cofee </span> <span class="cci-badge"> 75 NIS </span> </div>
-                        <div class="dim-text"> Freshly brewed coffee </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="overlay"></div>
 
-    <div id="food-cart-popup" style="display: none" class="food-cart rtl">
-        <header>
-            <img class="ic_close" src="images/ic_close_white.png">
-            <h5> FOOD CART </h5>
-            <h2> 110 NIS </h2>
-        </header>
+        <div style="position: absolute;bottom: 20px;width: 94.5%;" class="model-footer" onclick="takeNameAndEmail()" >הַבָּא</div>          <!--NEXT-->
+    </section>
+</div>
 
-        <section>
-            <table>
+
+
+<!--TAKE COUPON NUMBER -->
+<div id="coupon-popup" style="display: none" class="food-cart rtl">
+
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> קוד קופון </h5>                    <!--COUPON CODE-->
+        <h2 class="totalBill"> 81 NIS </h2>
+    </header>
+
+
+    <section>
+        <div style="border-radius: 0" class="inner-section">
+            <div class="centered-div">
+                <h3> הכנס קוד קופון </h3>
+                <input dir="rtl" id="coponInput" type="text" />
+                <span id="couponError" style="font-size: 8px; color: red"></span>
+            </div>
+            <a onclick="goToPaymentChoice(); hideCoupon()"> <b>לדלג</b> </a>                       <!--SKIP-->
+        </div>
+
+
+        <div id="coupon-footer" onclick="CheckCouponFromServer()" class="model-footer">הַבָּא</div>  <!--NEXT-->
+
+    </section>
+
+</div>
+
+
+<!--DISPLAY COUPON RESULT -->
+<div id="check-coupon-popup" style="display: none" class="food-cart rtl">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> קוד קופון </h5>                                                                        <!--COUPON CODE-->
+        <h2 class="totalBill"> 81 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section">
+            <div class="centered-div">
+                <h3> קוד הקופון שלך </h3>                                                           <!--YOUR COUPON CODE-->
+                <input id="code" type="text" />
+            </div>
+            <table style="width:100%; margin-top:20px">
                 <tr>
-                    <th>Cheese Ravioli</th>
-                    <th>85 NIS</th>
-                </tr>
-                <tr>
-                    <td>In a cream sauce, seasoned with garlic and fresh basil</td>
-                    <td>
-                        <div class="switch-btn">
-
-                            <img class="left-btn" src="images/ic_cancel.png">
-                            <span class="count">
-                                1
-                            </span>
-                            <img class="increase-btn" src="images/ic_plus.png">
-                        </div>
-                    </td>
+                    <td>סכום ביניים</td>                                                             <!--Subtotal-->
+                    <td id="oldTotal">80 NIS</td>
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <th>Cheese Ravioli</th>
-                    <th>85 NIS</th>
-                </tr>
-                <tr>
-                    <td>In a cream sauce, seasoned with garlic and fresh basil</td>
-                    <td>
-                        <div class="switch-btn">
 
-                            <img class="left-btn" src="images/ic_cancel.png">
-                            <span class="count">
-                                1
-                            </span>
-                            <img class="increase-btn" src="images/ic_plus.png">
-                        </div>
-                    </td>
+            <table style="width:100%;">
+                <tr>
+                    <td>קוּפּוֹן</td>                                                                   <!--COUPON-->
+                    <td id="discountAmount">-20</td>
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <th>Cheese Ravioli</th>
-                    <th>85 NIS</th>
-                </tr>
-                <tr>
-                    <td>In a cream sauce, seasoned with garlic and fresh basil</td>
-                    <td>
-                        <div class="switch-btn">
 
-                            <img class="left-btn" src="images/ic_cancel.png">
-                            <span class="count">
-                                1
-                            </span>
-                            <img class="increase-btn" src="images/ic_plus.png">
-                        </div>
-                    </td>
+            <table style="width:100%;">
+                <tr>
+                    <td>סה"כ</td>                                                                  <!--TOTAL-->
+                    <td id="newTotal">60 NIS</td>
                 </tr>
             </table>
-        </section>
+        </div>
+        <div id="confimed-footer"  class="model-footer">הַבָּא</div>                                  <!--NEXT-->
+    </section>
+</div>
 
-        <div class="model-footer" onclick="addOrder()" >ORDER NOW</div>
-    </div>
+<!--PAYMENT CHOSE POPUP-->
+<div id="payment-choice-popup" style="display: none" class="food-cart rtl">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> מידע ללקוח </h5>                                                                       <!--CUSTOMER INFO-->
+        <h2 class="totalBill"> 0 NIS </h2>
+    </header>
 
-    <div id="customer-popup"  class="food-cart rtl">
-        <header>
-            <img class="ic_close" onclick="hidePopup('customer-popup')" src="images/ic_close_white.png">
-            <h5> CUSTOMER INFO </h5>
-            <h2> 81 NIS </h2>
-        </header>
+    <section>
+        <div class="inner-section">
+            <table>
+                <tr>
+                    <td>
+                        <div onclick="goToConfirmOrder(); confirmOrder('cash')" class="choice">
+                            <span>כסף מזומן</span>                                                    <!--CASH-->
+                        </div>
+                    </td>
 
-        <section>
-            <div class="inner-section">
-                <div class="caption-input">
-                    <span class="caption"> Name </span>
-                    <input type="text">
-                </div>
-                <div class="caption-input" style="margin-top: 20px">
-                    <span class="caption"> Email address </span>
-                    <input type="text">
-                </div>
-                <ul class="checkbox-list">
-                    <li>
-                        <input type="radio" name="a" id="checkbox-id1" /> <label for="checkbox-id1">
-                            Pick up from resturent
-
-                            <div> Gad st 14, Bet Shemesh </div>
-                        </label>
-                    </li>
-                    <li id="bottom-border">
-                        <input type="radio" name="a" id="checkbox-id2" /> <label for="checkbox-id2">
-                            Delivery
-                            <br>
-                            <div> Gad st 14 Bet Shemesh </div>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio"  id="checkbox-id3" /> <label for="checkbox-id3">
-                            coupon code
-
-                            <div> Use coupen code </div>
-                        </label>
-                    </li>
-                </ul>
-            </div>
-            <div class="model-footer" onclick="goToCoupon()" >Next</div>
-
-        </section>
-
-
-    </div>
-
-    <div id="coupon-popup" style="display: none" class="food-cart rtl">
-        <header>
-            <img class="ic_close" src="images/ic_close_white.png">
-            <h5> COUPON CODE </h5>
-            <h2> 81 NIS </h2>
-        </header>
-
-        <section>
-            <div class="inner-section">
-                <div class="centered-div">
-                    <h3> ENTER COUPON CODE </h3>
-                    <input dir="rtl" id="coponInput" type="text" />
-                </div>
-                <a href="#"> Skip </a>
-            </div>
-            <div id="coupon-footer"  class="model-footer">Next</div>
-
-        </section>
-    </div>
-
-    <div id="check-coupon-popup" style="display: none" class="food-cart rtl">
-        <header>
-            <img class="ic_close" src="images/ic_close_white.png">
-            <h5> COUPON CODE </h5>
-            <h2> 81 NIS </h2>
-        </header>
-
-        <section>
-            <div class="inner-section">
-                <div class="centered-div">
-                    <h3> ENTER COUPON CODE </h3>
-                    <input  type="text" />
-                </div>
-                <table style="width:100%; margin-top:20px">
-                    <tr>
-                        <td>Sub total</td>
-                        <td>80 NIS</td>
-                    </tr>
-                </table>
-
-                <table style="width:100%;">
-                    <tr>
-                        <td>Coupon</td>
-                        <td>-20</td>
-                    </tr>
-                </table>
-
-                <table style="width:100%;">
-                    <tr>
-                        <td>Total</td>
-                        <td>60 NIS</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="confimed-footer" class="model-footer">Next</div>
-
-        </section>
-    </div>
-    <div id="payment-choice-popup" style="display: none" class="food-cart rtl">
-        <header>
-            <img class="ic_close" src="images/ic_close_white.png">
-            <h5> CUSTOMER INFO </h5>
-            <h2> 81 NIS </h2>
-        </header>
-
-        <section>
-            <div class="inner-section">
-                <table>
-                    <tr>
-                        <td>
-                            <div onclick="goToConfirmOrder()" class="choice">
-                                <span>CASH</span>
-                            </div>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="cash-div" class="choice">
-                                <span>
-                                    CREDIT
-                                    CARD
+                </tr>
+                <tr>
+                    <td>
+                        <div id="cash-div" onclick="payment_credit_card()" class="choice">
+                                <span>                                                               <!--CREDIT CARD-->
+                                    אשראי
+                                    כרטיס
                                 </span>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-        </section>
-    </div>
-
-    <div id="creditcard-info-popup" style="display: none" class="food-cart rtl">
-        <header>
-            <img class="ic_close" src="images/ic_close_white.png">
-            <h5> PAYMENT INFO </h5>
-            <h2> 81 NIS </h2>
-        </header>
-
-        <section>
-            <div class="inner-section">
-                <div id="type-of-card">
-                    <p>Type of card </p>
-                    <span class="active">
-                        <img src="images/ic_visa.png">
-                    </span>
-                    <span>
-                        <img src="images/2.png">
-                    </span>
-                    <span>
-                        <img src="images/3.png">
-                    </span>
-                </div>
-
-                <div class="caption-input" style="margin-top: 20px">
-                    <span class="caption"> Name on card </span>
-                    <img src="images/ic_visa.png">
-                    <input type="text">
-                </div>
-                <div class="caption-input" style="margin-top: 20px">
-                    <span class="caption"> Card number </span>
-                    <img src="images/ic_visa.png">
-                    <input type="text">
-                </div>
-                <table style="border-bottom:unset; width:100%">
-                    <tr>
-                        <td style="width:50%" >
-                            <div class="caption-input" style="margin-top: 10px">
-                                <span class="caption"> Expiration date </span>
-                                <input style="width:80%" type="text">
-                            </div>
-                        </td>
-                        <td style="width:50%" >
-                            <div class="caption-input" style="margin-top: 10px">
-                                <span style="float:right" class="caption"> cvv </span>
-                                <img src="images/ic_cvs.png">
-                                <input style="border-bottom:1px solid #FEBEBC" type="text">
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <div class="caption-input">
-                    <span class="caption"> Teudat Zehut </span>
-                    <input style="border-bottom:1px solid #FEBEBC" type="text">
-                </div>
-
-            </div>
-            <div onclick="goToConfirmOrder()" class="model-footer">Next</div>
-
-        </section>
-    </div>
-
-    <div id="confirm-order-popup" style="display:block" class="food-cart rtl">
-        <header>
-            <img class="ic_close" onclick="hidePopup('confirm-order-popup')" src="images/ic_close_white.png">
-            <h5> CONFIRM ORDER </h5>
-            <h2> 81 NIS </h2>
-        </header>
-
-        <section>
-            <div class="inner-section">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="images/ic_notifi.png">
-                        </td>
-                        <td>
-                            <div class="orange-haeding">
-                                <a href="#"> edit </a> <span> ORDER </span> 
-                              <br>
-                             Pizza with bacon, «Vegeterian» salad and soup. And put more tomatos, please
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="images/ic_location.png">
-                        </td>
-                        <td>
-                            <div class="orange-haeding">
-                                <a href="#"> edit </a> <span> CUSTOMER INFO </span> 
-                              <br>
-                             dvora@push.com <br> 054 334 7266 <br> Pickup from restaurant: Gad 14, Jerusalem
-                                 </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="images/ic_gift.png">
-                        </td>
-                        <td>
-                            <div class="orange-haeding">
-                                <a href="#"> edit </a> <span> COUPON CODE </span>
-                              <br>
-                             Sub Totai: 130 <br> NIS Coupon -20% <br> Total 120 NIS  
-                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="images/ic_card.png">
-                        </td>
-                        <td>
-                            <div class="orange-haeding">
-                                <a href="#"> edit </a> <span> PAYMENT  </span> 
-                              <br>
-                             **** **** **** 0207 
-                             </div>
-                        </td>
-                    </tr>
-                </table>
-            </div> 
-            <div id="confirm-footer"  class="model-footer" > Next</div>
-        </section>
-    </div>
-    <div id="footer-dots" >
-        <span id="first-dot" class="active" > </span>
-         <span id="second-dot" > </span> 
-         <span id="third-dot" > </span>
-          <span id="fourth-dot" > </span>
-           <span id="fifth-dot" > </span>
-    </div>
-
-    <div id="main-popup"  class="popup rtl">
-        <div class="body">
-            <h3 style="text-align:center" > King Angus Sandwish </h3>
-            <img class="ic_close" src="images/ic_close.png">
-            <div class="product-circle">
-                <div class="circle-img">
-                    <img class="product-img" src="images/Image.png" />
-                </div>
-                <div class="circle-badge"> 20 NIS </div>
-            </div>
-            <p class="para-detail">
-                150 grams of quality Angus entrcote meat and 80 grams of goose liver with mayonnaise , mustard, chimichuri and tomatoes
-            </p>
-            <div class="sperator"></div>
-            <h3 style="text-align: right"> Type of meat </h3>
-            <div class="custom-drop-down">
-                <input placeholder="Please choose " />
-                <img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="images/drop_down.png">
-                <div class="custom-drop-down-list">
-                    <ul>
-                        <li> Item0 </li>
-                        <li> Item0 </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="expandable">
-                <div class="sperator" style="margin-top: 30px; margin-bottom: 30px; border-color: #BFBFBF"></div>
-
-                <h3 style="text-align: right; margin-bottom: 8px"> Addons </h3>
-                <ul class="checkbox-list">
-                    <li> <input type="checkbox"  id="checkbox-id12" /> <label for="checkbox-id12">Lattuce</label></li>
-                    <li> <input type="checkbox" id="checkbox-id23" /> <label for="checkbox-id23">Onion</label></li>
-                    <li> <input type="checkbox"  id="checkbox-id34" /> <label for="checkbox-id34">Fried Onion</label></li>
-                    <li> <input type="checkbox"  id="checkbox-id45" /> <label for="checkbox-id45">Tomato</label></li>
-                </ul>
-            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
 
-        <div onclick="addOrder()" class="model-footer">ADD TO MY ORDER</div>
-    </div>
+    </section>
+</div>
+
+
+
+<div id="creditcard-info-popup" style="display: none" class="food-cart rtl">
+    <header>
+        <img class="ic_close" src="img/ic_close_white.png">
+        <h5> פרטי התשלום </h5>                                                                      <!--PAYMENT INFO-->
+        <h2 class="totalBill"> 0 NIS </h2>
+    </header>
+
+    <div id="payment_guard" style="overflow: auto;  min-height: 300px; height: calc(100% - 97px);  max-height: 800px; padding: 5px; width: 100%;">
     </div>
 
-    <div id="error_alert" style="width: 80%;text-align: center;box-shadow: 0 0 20px black; border-radius: 10px; position: absolute; top: 50%; left: 50%; padding: 30px; background: white; transform: translate(-50%,-50%)">
-        <img style="width: 45px; padding: 14px; position: absolute; left: 0px; top: 0px; " src="images/ic_close.png">
-        Min Order 75 NIS
+</div>
+
+
+
+<!--CONFIRM ORDER POPUP-->
+<div id="confirm-order-popup" style="" class="food-cart rtl">
+    <header>
+        <img class="ic_close" onclick="hidePopup('confirm-order-popup')" src="img/ic_close_white.png">
+        <h5> אשר הזמנה </h5>                                                                        <!--CONFIRM ORDER-->
+        <h2 class="totalBill"> 0 NIS </h2>
+    </header>
+
+    <section>
+        <div class="inner-section" style="border-radius: 0px">
+            <table>
+                <tr>
+                    <td>
+                        <img src="img/ic_notifi.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="all_orders_str">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/ic_location.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="userProvidedInfo">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr id="coupon_section">
+                    <td>
+                        <img src="img/ic_gift.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="coupon_detail">
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/ic_card.png">
+                    </td>
+                    <td>
+                        <div class="orange-haeding" id="payment_choice">
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="confirm-footer" onclick="callPage3()" class="model-footer" > הַבָּא</div>              <!--NEXT-->
+    </section>
+</div>
+
+
+<div id="footer-dots" >
+    <span id="first-dot" class="active" > </span>
+    <span id="second-dot" > </span>
+    <span id="third-dot" > </span>
+    <span id="fourth-dot" > </span>
+    <span id="fifth-dot" > </span>
+</div>
+
+
+
+<!--ON ITEM SELECTED POPUP-->
+<div id="main-popup" class="popup rtl" style="height: calc(100% - 10px) ; padding-bottom: 50px">
+    <div class="body" style="height: 100%; overflow:hidden; overflow-y: auto;">
+        <h3 id="itemPopUpTitle" style="text-align: center"></h3>
+        <img class="ic_close" src="img/ic_close.png">
+        <div class="product-circle">
+            <div class="circle-img">
+                <img class="product-img" src="img/Image.png" />
+            </div>
+            <div id="itemPopUpPrice" class="circle-badge"> 0 NIS </div>
+        </div>
+        <p class="para-detail" id="itemPopUpDesc">
+        </p>
+
+        <div class="sperator"></div>
+
+        <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
+        <div id="parent_type_one"></div>
+
+        <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
+        <div id="parent_type_multiple">
+        </div>
+
+
+
     </div>
 
-    <footer id="main-footer" >
-        ORDER NOW
-    </footer>
-    <script src="script/jquery.min.js"></script>
-    <script src="script/dropdown.js"></script>
-    <script src="script/app.js"></script>
-  
+    <div onclick="addUserOrder();" class="model-footer">להוסיף הזמנות שלי</div>                 <!--ADD TO MY ORDERS-->
+</div>
+
+
+
+<div id="error_alert" style="width: 80%;text-align: center;box-shadow: 0 0 20px black; border-radius: 10px; position: absolute; top: 50%; left: 50%; padding: 30px; background: white; transform: translate(-50%,-50%)">
+    <img style="width: 45px; padding: 14px; position: absolute; left: 0px; top: 0px; " src="img/ic_close.png">
+    <span id="min_order"></span>
+</div>
+
+
+<footer id="main-footer" onclick="OnOrderNowClicked()">                                        <!--PLACE ORDER-->
+    סדר במקום
+</footer>
+
+
 </body>
+
+
+<script>
+    getCategoriesWithItems();
+</script>
 
 </html>

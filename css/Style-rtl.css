@@ -740,7 +740,7 @@ div.popup.rtl ul li label {
 }
 
 
-.rtl input[type="radio"] + label, input[type="checkbox"] + label {
+.rtl input[type="radio"] + label,.rtl input[type="checkbox"] + label {
     background: url('../img/uncheck.png') 0px 3px no-repeat;
     background-position: right;
     width: 100% !important;

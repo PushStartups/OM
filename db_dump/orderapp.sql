@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 14, 2017 at 10:39 AM
+-- Generation Time: Feb 16, 2017 at 09:30 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `menu_id` (`menu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `categories`
@@ -69,7 +69,23 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `sort`) VALUES
 (26, 4, 'Roza Specials', 'מיוחדים', 125),
 (27, 4, 'Roza Snacks', 'נשנושים', 126),
 (28, 4, 'Roza Kid''s meals', 'מנות ילדים\n', 127),
-(29, 4, 'Roza Drinks', 'שתייה', 128);
+(29, 4, 'Roza Drinks', 'שתייה', 128),
+(30, 5, 'JAPAN JAPAN Special sushi menu', 'תפריט סושי המיוחדים של JAPAN JAPAN', 129),
+(31, 5, 'Maki', 'מאקי', 130),
+(32, 5, 'Uramaki Inside-out Roll - Thick', 'אורמאקי ', 131),
+(33, 5, 'Tempura Rolls', 'רולים טמפורה', 132),
+(34, 5, 'Fotomaki - 8 pieces', 'פוטומאקי  רול רחב אצה בחוץ אורז בפנים - 8 יחידות', 133),
+(35, 5, 'Tempura Sandwich - 4 pieces, deep-fried', 'טמפורה סנדוויץ  4 יח'' בטיגון עמוק', 134),
+(36, 5, 'Sushi Combination Plates', 'קומבינציות', 135),
+(37, 5, 'Happy Family - 65 pieces', '65 יחידות-  HAPPY FAMILY', 136),
+(38, 5, 'Soft Drinks', 'שתיה קלה', 137),
+(39, 5, 'Appetizers', 'מנות ראשונות', 138),
+(40, 5, 'Salads', 'סלטים', 139),
+(41, 5, 'Soups', 'מרק', 140),
+(42, 5, 'Wok Stir Fried Dishes', 'מוקפצות', 141),
+(43, 5, 'Main Dishes', 'מנות נתחי עוף / בקר מוקפצות על להבת WOK', 142),
+(44, 5, 'Children''s Menu', 'מנות ילדים\n', 143),
+(45, 5, 'Build your own Maki Roll', 'רול בהרכבה אישית', 144);
 
 -- --------------------------------------------------------
 
@@ -81,9 +97,6 @@ CREATE TABLE IF NOT EXISTS `company` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `url` text NOT NULL,
-  `voting_start` varchar(255) NOT NULL,
-  `voting_end` varchar(255) NOT NULL,
-  `ordering_end` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -91,9 +104,9 @@ CREATE TABLE IF NOT EXISTS `company` (
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`id`, `name`, `url`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco', '07:01:00', '08:03:00', '15:06:00'),
-(2, 'josh', 'http://dev.biz.orderapp.com/?biz=josh', '02:00:00', '21:00:00', '24:30:00');
+INSERT INTO `company` (`id`, `name`, `url`) VALUES
+(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco'),
+(2, 'josh', 'http://dev.biz.orderapp.com/?biz=josh');
 
 -- --------------------------------------------------------
 
@@ -108,29 +121,21 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `vote_count` int(11) NOT NULL,
   `voting_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=89 ;
 
 --
 -- Dumping data for table `company_voting`
 --
 
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `voting_date`) VALUES
-(5, 1, 1, 63, '2017-02-12'),
-(6, 1, 2, 41, '2017-02-12'),
-(7, 1, 3, 341, '2017-02-12'),
-(8, 1, 4, 16, '2017-02-12'),
-(9, 2, 1, 2, '2017-02-13'),
-(10, 2, 2, 1, '2017-02-13'),
-(11, 2, 3, 1, '2017-02-13'),
-(12, 2, 4, 0, '2017-02-13'),
-(57, 1, 1, 1, '2017-02-13'),
-(58, 1, 2, 0, '2017-02-13'),
-(59, 1, 3, 0, '2017-02-13'),
-(60, 1, 4, 0, '2017-02-13'),
-(73, 1, 1, 0, '2017-02-14'),
-(74, 1, 2, 0, '2017-02-14'),
-(75, 1, 3, 0, '2017-02-14'),
-(76, 1, 4, 1, '2017-02-14');
+(81, 1, 1, 1, '2017-02-15'),
+(82, 1, 2, 9, '2017-02-15'),
+(83, 1, 3, 2, '2017-02-15'),
+(84, 1, 4, 7, '2017-02-15'),
+(85, 1, 1, 0, '2017-02-16'),
+(86, 1, 2, 0, '2017-02-16'),
+(87, 1, 3, 1, '2017-02-16'),
+(88, 1, 4, 0, '2017-02-16');
 
 -- --------------------------------------------------------
 
@@ -159,6 +164,26 @@ INSERT INTO `coupons` (`id`, `name`, `starting_date`, `ending_date`, `discount`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `default_settings`
+--
+
+CREATE TABLE IF NOT EXISTS `default_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `default_settings`
+--
+
+INSERT INTO `default_settings` (`id`, `name`, `value`) VALUES
+(1, 'min_order', '75');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `extras`
 --
 
@@ -172,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=232 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=306 ;
 
 --
 -- Dumping data for table `extras`
@@ -360,7 +385,81 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (228, 114, 'Roza Deal', 'One', 0, 'רוזה דיל', 279),
 (229, 115, 'Roza Deal', 'One', 0, 'רוזה דיל', 280),
 (230, 116, 'Roza Deal', 'One', 0, 'רוזה דיל', 281),
-(231, 117, 'Roza Deal', 'One', 0, 'רוזה דיל', 282);
+(231, 117, 'Roza Deal', 'One', 0, 'רוזה דיל', 282),
+(232, 148, 'Sauces', 'Multiple', 0, 'רטבים', 283),
+(233, 149, 'Sauces', 'Multiple', 0, 'רטבים', 284),
+(234, 150, 'Sauces', 'Multiple', 0, 'רטבים', 285),
+(235, 151, 'Sauces', 'Multiple', 0, 'רטבים', 286),
+(236, 152, 'Sauces', 'Multiple', 0, 'רטבים', 287),
+(237, 153, 'Sauces', 'Multiple', 0, 'רטבים', 288),
+(238, 154, 'Sauces', 'Multiple', 0, 'רטבים', 289),
+(239, 155, 'Sauces', 'Multiple', 0, 'רטבים', 290),
+(240, 156, 'Sauces', 'Multiple', 0, 'רטבים', 291),
+(241, 157, 'Sauces', 'Multiple', 0, 'רטבים', 292),
+(242, 158, 'Sauces', 'Multiple', 0, 'רטבים', 293),
+(243, 159, 'Sauces', 'Multiple', 0, 'רטבים', 294),
+(244, 160, 'Sauces', 'Multiple', 0, 'רטבים', 295),
+(245, 161, 'Sauces', 'Multiple', 0, 'רטבים', 296),
+(246, 162, 'Sauces', 'Multiple', 0, 'רטבים', 297),
+(247, 163, 'Sauces', 'Multiple', 0, 'רטבים', 298),
+(248, 164, 'Sauces', 'Multiple', 0, 'רטבים', 299),
+(249, 165, 'Sauces', 'Multiple', 0, 'רטבים', 300),
+(250, 166, 'Sauces', 'Multiple', 0, 'רטבים', 301),
+(251, 167, 'Sauces', 'Multiple', 0, 'רטבים', 302),
+(252, 168, 'Sauces', 'Multiple', 0, 'רטבים', 303),
+(253, 169, 'Sauces', 'Multiple', 0, 'רטבים', 304),
+(254, 170, 'Sauces', 'Multiple', 0, 'רטבים', 305),
+(255, 171, 'Sauces', 'Multiple', 0, 'רטבים', 306),
+(256, 172, 'Sauces', 'Multiple', 0, 'רטבים', 307),
+(257, 173, 'Sauces', 'Multiple', 0, 'רטבים', 308),
+(258, 174, 'Sauces', 'Multiple', 0, 'רטבים', 309),
+(259, 175, 'Sauces', 'Multiple', 0, 'רטבים', 310),
+(260, 176, 'Sauces', 'Multiple', 0, 'רטבים', 311),
+(261, 177, 'Sauces', 'Multiple', 0, 'רטבים', 312),
+(262, 178, 'Sauces', 'Multiple', 0, 'רטבים', 313),
+(263, 179, 'Sauces', 'Multiple', 0, 'רטבים', 314),
+(264, 180, 'Sauces', 'Multiple', 0, 'רטבים', 315),
+(265, 181, 'Sauces', 'Multiple', 0, 'רטבים', 316),
+(266, 182, 'Sauces', 'Multiple', 0, 'רטבים', 317),
+(267, 183, 'Sauces', 'Multiple', 0, 'רטבים', 318),
+(268, 184, 'Sauces', 'Multiple', 0, 'רטבים', 319),
+(269, 185, 'Sauces', 'Multiple', 0, 'רטבים', 320),
+(270, 186, 'Sauces', 'Multiple', 0, 'רטבים', 321),
+(271, 187, 'Sauces', 'Multiple', 0, 'רטבים', 322),
+(272, 188, 'Sauces', 'Multiple', 0, 'רטבים', 323),
+(273, 189, 'Sauces', 'Multiple', 0, 'רטבים', 324),
+(274, 190, 'Sauces', 'Multiple', 0, 'רטבים', 325),
+(275, 191, 'Sauces', 'Multiple', 0, 'רטבים', 326),
+(276, 192, 'Sauces', 'Multiple', 0, 'רטבים', 327),
+(277, 193, 'Sauces', 'Multiple', 0, 'רטבים', 328),
+(278, 194, 'Sauces', 'Multiple', 0, 'רטבים', 329),
+(279, 195, 'Sauces', 'Multiple', 0, 'רטבים', 330),
+(280, 196, 'Sauces', 'Multiple', 0, 'רטבים', 331),
+(281, 197, 'Sauces', 'Multiple', 0, 'רטבים', 332),
+(282, 198, 'Sauces', 'Multiple', 0, 'רטבים', 333),
+(283, 199, 'Sauces', 'Multiple', 0, 'רטבים', 334),
+(284, 200, 'Sauces', 'Multiple', 0, 'רטבים', 335),
+(285, 201, 'Sauces', 'Multiple', 0, 'רטבים', 336),
+(286, 202, 'Sauces', 'Multiple', 0, 'רטבים', 337),
+(287, 203, 'Sauces', 'Multiple', 0, 'רטבים', 338),
+(288, 204, 'Sauces', 'Multiple', 0, 'רטבים', 339),
+(289, 205, 'Sauces', 'Multiple', 0, 'רטבים', 340),
+(290, 206, 'Sauces', 'Multiple', 0, 'רטבים', 341),
+(291, 207, 'Sauces', 'Multiple', 0, 'רטבים', 342),
+(292, 219, 'Sauces', 'Multiple', 0, 'רטבים', 343),
+(293, 220, 'Sauces', 'Multiple', 0, 'רטבים', 344),
+(294, 221, 'Sauces', 'Multiple', 0, 'רטבים', 345),
+(295, 222, 'Sauces', 'Multiple', 0, 'רטבים', 346),
+(296, 223, 'Sauces', 'Multiple', 0, 'רטבים', 347),
+(297, 224, 'Sauces', 'Multiple', 0, 'רטבים', 348),
+(298, 225, 'Sauces', 'Multiple', 0, 'רטבים', 349),
+(299, 226, 'Sauces', 'Multiple', 0, 'רטבים', 350),
+(300, 227, 'Sauces', 'Multiple', 0, 'רטבים', 351),
+(301, 181, 'Fish', 'One', 0, 'דג', 352),
+(302, 181, 'Vegetables', 'Two', 0, 'ירקות', 353),
+(303, 182, 'Vegetables', 'Three', 0, 'ירקות', 354),
+(304, 247, 'Addons', 'One', 0, 'תוספות', 355),
+(305, 247, 'Drinks', 'One', 0, 'שתיה', 356);
 
 -- --------------------------------------------------------
 
@@ -380,7 +479,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=148 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=248 ;
 
 --
 -- Dumping data for table `items`
@@ -533,7 +632,108 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (144, 29, 'Grape flavored water 0.5 liter', 'מים בטעם ענבים 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 243),
 (145, 29, 'Personal mineral water', 'מים מינרליים אישי', '', '', 9, 'restapi/images/test.png', 244),
 (146, 29, 'Personal soda', 'סודה אישי', '', '', 9, 'restapi/images/test.png', 245),
-(147, 29, 'Malt', 'בירה שחורה', '', '', 12, 'restapi/images/test.png', 246);
+(147, 29, 'Malt', 'בירה שחורה', '', '', 12, 'restapi/images/test.png', 246),
+(148, 30, '#87 Japan Roll', 'ג''אפן רול  #87', 'Hot denis fish, lemon fillet, avocado, green onion and crushed peanuts, wrapped in tempura and black sesame, served with yuzu cream sauce', 'דניס חם, קרם יוז''ו, פילה לימון, אבוקדו ובצל ירוק, עטוף בשבבי בוטנים, טמפורה ושומשום שחור.', 43, 'img/japan_items/test.png', 247),
+(149, 30, '#88 Grilled Denis roll', 'דניס גריל  #88', 'Grilled Denis fish, avocado, asparagus, cucumber and shiitake mushrooms wrapped in denis and yellow salmon, served with wasabi cream', 'פטריות שיטאקי, אבוקדו, אספרגוס ומלפפון, עטוף בדניס וסלמון צרוב בנגיעות קרם וואסבי.', 45, 'img/japan_items/crazy_roll.png', 248),
+(150, 30, '#89 Hot Denis roll', 'דניס הוט רול  #89', 'Denis fish, avocado, sweet potato, and tamago wrapped in hot panko crumbs, drizzled with teriyaki sauce', 'דניס, אבוקדו, בטטה וטמאגו (חביתה יפנית), עטוף בפנקו (פירורי לחם יפניים) חם וזילוף טריאקי.', 36, 'img/japan_items/crazy_roll.png', 249),
+(151, 30, '#90 Basket roll', 'סלסלה רול  #90', 'Spicy tuna, chives, and avocado, wrapped in red tuna, served with chili mayonnaise sauce', 'טונה פיקנטית, עירית ואבוקדו עטוף בטונה אדומה בזילוף קרם צ''ילי.', 43, 'img/japan_items/crazy_roll.png', 250),
+(152, 30, '#91 Samurai Roll', 'סמוראי רול  #91', 'Salmon tempura, avocado, cucumber and green onion wrapped in seared salmon shell, served with chili mayonnaise cream', 'סלמון בטמפורה, אבוקדו, מלפפון ובצל ירוק, במעטפת סלמון צרוב ובזילוף קרם צ''ילי.', 43, 'img/japan_items/crazy_roll.png', 251),
+(153, 30, '#92 Rainbow Roll', 'ריינבואו #92', 'Cucumbers, carrots, kampyo, avocado and shiitake mushrooms wrapped in a red tuna and yellowtail salmon shell, drizzled with yuzu cream sauce', 'מלפפון, גזר, קנפיו (דלעת יפנית), אבוקדו ופטריות שיטאקה במעטפת סלמון, טונה אדומה ויילוטייל בזילוף קרם יוז''ו.', 43, 'img/japan_items/crazy_roll.png', 252),
+(154, 30, '#93 Crazy Roll', 'קרייזי רול  #93', 'Hot tempura / Fotomaki roll filled with salmon, avocado, shiitake mushrooms, chives, drizzled with teriyaki sauce and creamy chili mayonnaise', 'פוטומאקי טמפורה חם במילוי סלמון, אבוקדו, פטריות שיטאקי ועירית, בזילוף טריאקי וקרם צ''ילי.', 40, 'img/japan_items/crazy_roll.png', 253),
+(155, 30, '#94 Volcano Roll', 'וולקנו רול #94', 'Spicy tuna rolled with shiitake mushrooms, asparagus and green onions wrapped in avocado, served with wasabi cream', 'ספייסי טונה אספרגוס פטריות שיטקה ובצל ירוק במעטפת אבוכדו ובזילוף קרם וואסאבי', 38, 'img/japan_items/crazy_roll.png', 254),
+(156, 30, '#95 Saki Roll', 'סאקה רול  #95', 'Salmon skin/sweet potato tempura, avocado and kampyo in a fresh Norwegian salmon shell, garnished with chopped chives, drizzled with teriyaki sauce and yuzu cream sauce', 'סלמון סקין, בטטה בטמפורה, קנפיו (דלעת יפנית) ואבוקדו במעטפת סלמון נורבי טרי ונגיעות ירית קצוצה בזילוף קרם טריאקי וקם יוזו.', 41, 'img/japan_items/crazy_roll.png', 255),
+(157, 30, '#96 Spicy Veggie Rolll', 'ספייסי ווג'' רול #96', 'Sweet potato, chives, cucumber, avocado mixed with spicy mayonnaise in a tamago shell, drizzled with teriyaki sauce', 'בטטה, עירית, מלפפון, אבוקדו, פטריות שיטאקה וספייסי מיונז במעטפת טמאגו (חביתה יפנית) וזילוף טריאקי.', 33, 'img/japan_items/crazy_roll.png', 256),
+(158, 30, '#97 Alaska Roll', 'אלסקה רול  #97', 'Salmon skin and tofu in tempura, avocado, cucumber, chives and kampyo in a shell of tempura chips and sesame, drizzled with teriyaki sauce', 'סלמון סקין, טופו טמפורה, אבוקדו, מלפפון, עירית וקנפיו (דלעת יפנית) במעטפת שבבי טמפורה, שומשום ונגיעות טריאקי.', 36, 'img/japan_items/crazy_roll.png', 257),
+(159, 31, '#100 Saki Maki', 'סאקה מאקי  #100', 'Salmon and avocado filling', 'רול במילוי סלמון ואבוקדו', 22, 'img/japan_items/maki.png', 258),
+(160, 31, '#101 Taki Maki', 'טאקה מאקי #101', 'Red tuna and avocado filling', 'רול במילוי טונה אדומה ואבוקדו', 22, 'img/japan_items/maki.png', 259),
+(161, 31, '#102 Hamachi Maki', 'המאצ''י מאקי  #102', 'Yellowtail salmon, kampyo and avocado filling', 'רול במילוי יילוטייל, קנפיו (דלעת יפנית) ואבוקדו', 22, 'img/japan_items/maki.png', 260),
+(162, 31, '#103 Spicy Saki Maki', 'ספייסי סאקה מאקי  #103', 'Spicy salmon and avocado filling', 'רול במילוי ספייסי סלמון ואבוקדו', 22, 'img/japan_items/maki.png', 261),
+(163, 31, '#104 Spicy Taki Maki', 'ספייסי טאקה מאקי  #104', 'Spicy red tuna and avocado filling', 'רול במילוי ספייסי טונה אדומה ואבוקדו', 22, 'img/japan_items/maki.png', 262),
+(164, 31, '#105 Suzuki Maki', 'סוזוקי מאקי  #105', 'Denis fish and green onions', 'רול במילוי סי בס ובצל ירוק', 22, 'img/japan_items/maki.png', 263),
+(165, 31, '#106 Kapa Maki', 'קאפה מאקי  #106', 'Cucumber filling', 'רול במילוי מלפפון', 16, 'img/japan_items/maki.png', 264),
+(166, 31, '#107 Avocado Maki', 'אבוקדו מאקי  #107', 'Avocado filling', 'רול במילוי אבוקדו', 16, 'img/japan_items/maki.png', 265),
+(167, 31, '#108 Kampyo Maki', 'קנפיו מאקי  #108', 'Slightly sweet pickled strips of squash filling', 'רול במילוי רצועות דלעת כבושה מתקתקה', 16, 'img/japan_items/maki.png', 266),
+(168, 31, '#109 Asparagus Maki', 'אספרגוס מאקי  #109', 'Asparagus filling', 'רול במילוי אספרגוס', 16, 'img/japan_items/maki.png', 267),
+(169, 31, '#110 Shiitake Maki', 'שיטאקה מאקי  #110', 'Shittaki mushroom filling', 'רול במילוי פטריות שיטאקי מתקתקות', 16, 'img/japan_items/maki.png', 268),
+(170, 31, '#111 Tamago Maki', 'טמאגו מאקי  #111', 'Japanese omelette filling', 'רול במילוי אומלט יפני', 16, 'img/japan_items/maki.png', 269),
+(171, 32, '#119 Vegetarian', 'רול טבעוני  #119', 'Avocado, cucumber, carrots and green onions wrapped in tempura chips and black sesame', 'מלפפון, אבוקדו, גזר ובצל ירוק, במעטפת שבבי טמפורה ושומשום שחור.', 27, 'img/japan_items/test.png', 270),
+(172, 32, '#120 Salmon and avocado', 'סלמון ואבוקדו  #120', 'Wrapped in tempura chips and black sesame', 'סלמון ואבוקדו במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/test.png', 271),
+(173, 32, '#121 Red tuna', 'טונה אדומה  #121', 'Cucumber and avocado wrapped in tempura chips and black sesame', 'טונה אדומה, מלפפון ואבוקדו במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/test.png', 272),
+(174, 32, '#122 Spicy salmon', 'ספייסי סלמון  #122', 'Salmon, avocado, green onion wrapped in tempura chips and black sesame', 'ספייסי סלמון, אבוקדו ובצל ירוק במעטפת שבבי טמפורה ושושמום.', 32, 'img/japan_items/test.png', 273),
+(175, 32, '#123 Spicy tuna', 'ספייסי טונה  #123', 'Tuna, avocado, green onion wrapped in tempura chips and black sesame', 'ספייסי טונה, אבוקדו ומלפפון במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/test.png', 274),
+(176, 32, '#124 Salmon Wasabi', 'סלמון וואסבי  #124', 'Salmon, avocao, kampyo and asparagus wrapped in yellowtail salmon and wasabi cream sauce', 'סלמון אספרגוס, קנפיו (דלעת יפנית) ואבוקדו במעטפת סלמון צרוב וקרם וואסבי', 34, 'img/japan_items/test.png', 275),
+(177, 32, '#125 Veggie roll', 'Vג''י רול  #125', 'Avocado, shiitake mushrooms and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'פטריות שיטאקה, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת טמאגו (חביתה יפנית) ונגיעות טריאקי', 28, 'img/japan_items/crazy_roll.png', 276),
+(178, 32, '#126 Saka Sake roll', 'סאקה סאקי רול  #126', 'Crispy salmon skin, kampyo tamago and asparagus wrapped in tempura chips drizzled with teriyaki sauce', 'קריספי סלמון סקין, אספרגוס, קנפיו (דלעת יפנית) וטמאגו (חביתה יפנית) במעטפת שבבי טמפורה וזילוף טריאקי.', 32, 'img/japan_items/crazy_roll.png', 277),
+(179, 32, '#127 Kinugushi roll', 'קינוגושי רול  #127', 'Tofu in tempura, shiitake mushrooms, cucumber and sweet potato wrapped in avocado drizzled with teriyaki sauce', 'טופו בטמפורה, מלפפון, פטריות שיטקה ובטטה בטמפורה במעטפת אבוקדו וטריאקי.', 32, 'img/japan_items/crazy_roll.png', 278),
+(180, 32, '#128 Hot Salmon', 'סלמון חם  #128', 'Salmon cooked in teriyaki sauce, avocado and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'סלמון מבושל בטריאקי, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת טמאגו (חביתה יפנית)', 35, 'crispy_salmon_salad.png', 279),
+(181, 45, '#129 Build your own Maki Roll - one type of fish and two vegetables', 'רול בהרכבה אישית - דג אחד ושתי תוספות  #129', 'Fish: Salmon / Red tuna / Yellowtail Salmon / Spicy Salmon / Spicy Tuna / Hot Salmon / Sea Bass / Tempura coated Tofu                           Vegetables: Avocado / Cucumber / Kampyo / Tempura coated sweet potato / Asparagus / Carrots / Green onion / Tamago', 'סלמון / טונה אדומה / יילוטיל / ספייסי סלמון / ספייסי טונה / סלמון חם / סייבס / טופו בטמפורה.                        תוספות: אבוכדו / מלפפון / קנפיז / שיטקה / בטטה בטמפורה / אספרגוס / גזר / בצל ירוק / טמאגו', 32, 'img/japan_items/maki.png', 280),
+(182, 45, '#129 Build your own Maki Roll - choose three vegetables', 'רול בהרכבה אישית - שלוש תוספות #129', 'Vegetables: Avocado / Cucumber / Kampyo / Tempura coated sweet potato / Asparagus / Carrots / Green onion / Tamago', 'תוספות: אבוכדו / מלפפון / קנפיז / שיטקה / בטטה בטמפורה / אספרגוס / גזר / בצל ירוק / טמאגו', 28, 'img/japan_items/maki.png', 281),
+(183, 33, '#130 Veggie Tempura Roll', 'Vג''י טמפורה  #130', 'Avocado, shiitake mushrooms and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'פטריות שיטאקה, אבוקדו, בטטה בטמפורה, אספרגוס וטמאגו (חביתה יפנית) בציפוי טמפורה ונגיעות טריאקי.', 30, 'img/japan_items/tempura.png', 282),
+(184, 33, '#131 Saki Tempura Roll', 'סאקה טמפורה  #131', 'Salmon, kampyo, avocado and green onion coated in tempura, drizzled with teriyaki sauce', 'סלמון, קנפיו (דלעת יפנית), בצל ירוק ואבוקדו בציפוי טמפורה עם נגיעות טריאקי.', 36, 'img/japan_items/tempura.png', 283),
+(185, 33, '#132 Magoro Tempura Roll', 'מאגורו טמפורה  #132', 'Red tuna, chives shiitake mushrooms and asparagus coated in tempura, drizzled with teriyaki sauce', 'טונה אדומה, אספרגוס, פטריות שיטאקה ועירית בציפוי טמפורה ונגיעות טריאקי.', 36, 'img/japan_items/tempura.png', 284),
+(186, 33, '#133 Manhattan Tempura Roll', 'מנהטן טמפורה  #133', 'Red tuna, salmon, avocado, chives and cucumber coated in tempura, drizzled with teriyaki sauce', 'סלמון, טונה אדומה, מלפפון, עירית ואבוקדו בציפוי טמפורה ונגיעות טריאקי.', 36, 'img/japan_items/tempura.png', 285),
+(187, 33, '#134 Saki Wasabi Tempura Roll', 'סאקה וואסבי טמפורה  #134', 'Salmon, kampyo, avocado, asparagus and sweet potato coated in tempura with wasabi cream sauce', 'סלמון, אספרגוס, קנפיו (דלעת יפנית), אבוקדו, בטטה בטמפורה וקרם וואסבי בציפוי טמפורה ונגיעות טריאקי.', 36, 'img/japan_items/tempura.png', 286),
+(188, 34, '#300 Salmon and avocado', 'סלמון ואבוקדו #300', '', '', 32, 'img/japan_items/crispy_salmon_salad.png', 287),
+(189, 34, '#301 Red tuna, avocado and cucumber', 'טונה אדומה מלפפון ואבוכדו #301', '', '', 32, 'img/japan_items/test.png', 288),
+(190, 34, '#302 Spicy salmon, avocado and green onion', 'ספייסי סלמון אבוקדו ובצל ירוק #302', '', '', 32, 'img/japan_items/crispy_salmon_salad.png', 289),
+(191, 34, '#303 Spicy tuna, avocado and cucumber', 'ספייסי טונה אבוקדו ומלפפון #303', '', '', 32, 'img/japan_items/test.png', 290),
+(192, 34, '#304 Salmon wasabi, salmon, asparagus, kampyo, avocado', 'סלמון וואסבי סלמון אספרגוס קנפיז ואבוקדו #304', '', '', 34, 'img/japan_items/crispy_salmon_salad.png', 291),
+(193, 34, '#305 Veggie roll: shiitake mushrooms, avocado, sweet potato in tempura and asparagus', 'V ג'' רול קריספי שיטאקה אבוקדו בטטה בטמפורה ואספרגוס #305', '', '', 28, 'img/japan_items/crazy_roll.png', 292),
+(194, 34, '#306 Sake sake roll: crispy salmon skin, asparagus, kampyo and tamago', 'סאקה סאקי רול קריספי סלמון סקין אספרגוס קנפיז וטמאגו #306', '', '', 32, 'img/japan_items/sake_roll.png', 293),
+(195, 34, '#307 Kinugushi roll: tofu in tempura, shiitake mushrooms, cucumber and sweet potato in tempura', 'קינוגשי רול טופו בטמפורה מלפפון פטריות שיטאקה ובטטה בטמפורה #307', '', '', 32, 'img/japan_items/tempura.png', 294),
+(196, 35, '#135 Salmon and Salmon Skin', 'סלמון וסלמון סקין #135', 'Salmon, salmon skin, avocado, sweet potato, coated in tempura and asparagus coated in fried tempura panko, drizzled with teriyaki sauce', 'סלמון, סלמון סקין, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת פנקו מטוגן בזילוף טריאקי.', 39, 'img/japan_items/crispy_salmon_salad.png', 295),
+(197, 35, '#136 Tuna', 'טונה רגילה #136', 'Tuna, cucumber, avocado, shiitake mushroom and green onions', 'טונה, מלפפון, אבוקדו, שיטאקי ובצל ירוק', 43, 'img/japan_items/test.png', 296),
+(198, 35, '#137 Vegetarian', 'צמחוני  #137', 'Avocado, kampyo, tamago and sweet potato coated in fried tempura panko drizzled with teriyaki sauce', 'אבוקדו, טמאגו (חביתה יפנית), בטטה וקנפיו (דלעת יפנית) במעטפת פנקו מטוגן וזילוף טריאקי.', 31, 'img/japan_items/test.png', 297),
+(199, 36, '#498 Duet Half and Half Sushi - 18 pieces', 'דואט סושי חצי חצי – 18 יח #498', 'Fried salmon 4 pieces, fried tuna 4 pieces, Saka Sake rolls 8 pieces, nigiri salmon 1 piece, nigiri hot denis 1 piece', '4 יח'' סלמון מטוגן, 4 יח'' טונה מטוגנת, 8 יח'' סאקה סאקי רול, 1 יח'' ניגירי סלמון, 1 יח'' נגירי…', 79, 'img/japan_items/test.png', 298),
+(200, 36, '#499 Natural Vegetarian Combination - 18 pieces', 'קומבו טבעוני – 18 יח  #499', 'Vegetarian Uramaki 8 pieces, maki 8 pieces, nigiri avocado 2 pieces', '8 יח'' אורומאקי טבעוני, 8 יח'' מאקי אבוקדו, 2 יח'' ניגרי אבוקדו.', 44, 'img/japan_items/combination.png', 299),
+(201, 36, '#500 Kyoto Combination - 16 pieces', 'קומבינציית קיוטו – 16 יח #500', 'Maki avocado 8 pieces, Uramaki salmon and avocado 8 pieces', '8 יח'' אורמאקי סלמון ואבוקדו, 8 יח'' מאקי אבוקדו.', 45, 'img/japan_items/combination.png', 300),
+(202, 36, '#501 Veggie Combination - 18 pieces', 'קומבינציית Vג''י – 18 יח #501', 'Uramaki veggie 8 pieces, Uramaki avocado 8 pieces, nigiri tamago 2 pieces', '8 יח'' מאקי Vג''י רול, 8 יח'' מאקי אבוקדו, 2 יח'' יגירי טמאגו (חביתה יפנית)', 41, 'img/japan_items/combination.png', 301),
+(203, 36, '#503 Saka Sake Combination - 18 pieces', 'קומבינציית סאקה סאקי – 19 יח #503', 'Uramaki salmon and avocado 4 pieces, uramaki hot salmon 4 pieces, saka maki 8 pieces, nigiri salmon 2 pieces', '4 יח'' מאקי סלמון ואבוקדו, 4 יח'' אורמאקי סלמון חם, 8 יח'' מאקי סאקה, 2 יח'' ניגירי סלמון, 1 יח''…', 68, 'img/japan_items/combination.png', 302);
+INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `image_url`, `sort`) VALUES
+(204, 36, '#504 Double Tempura Combination - 20 pieces', 'טמפורה זוגית- 20 יח #504', 'Saka tempura 8 pieces, magoro tempura 4 pieces, veggie tempura 4 pieces, salmon sandwich in hot panko crumbs 4 pieces', '8 יח'' סאקה טמפורה, 4 יח'' מאגורו טמפורה, 4 יח'' Vג''י טמפורה, 4 יח'' סנדוויץ'' סלמון בפנאקו.', 95, 'img/japan_items/combination.png', 303),
+(205, 36, '#505 Yo Tzai Combination 32 pieces', 'קומבינציית יוצ''אי – 32 יח #505', '4 pieces each: Salmon ceviche, rainbow roll, veggie roll, kinugushi roll, maki avocado, maki sweet potato, saka maki, magoro sandwich, taka maki', '4 יח'' סביצ''ה סלמון, 4 יח'' ריינבו רול, 4 יח'' ווג''י רול, 4 יח'' קינוגושי רול, 5 יח'' מאקי אבוקדו , 4 מאקי בטטה , סאקה מאקי ,  מאגורו סנדוויץ, טאקה מאקי.', 89, 'img/japan_items/combination.png', 304),
+(206, 36, '#506 Japan Japan Combination Special', 'קומבינציית ג''אפן ג''אפן ספיישל – ספינת עץ #506', 'Samurai roll 8 pieces, rainbow roll 4 pieces, hot salmon roll 4 pieces, spicy salmon sandwich 4 pieces, suzuki maki 8 pieces, sake roll 8 pieces, seviche salmon 8 pieces, hot dennis nigiri 1 piece, salmon nigiri 1 piece, tamago nigiri 1 piece, avocado nigiri 1 piece', '8 יח'' סמוראי רול,\n4 יח'' ריינבאו,\n4 יח'' רול סלמון חם,\n4 יח'' סנדוויץ'' ספייסי סלמון,\n8 יח'' מאקי סוזוקי,\n8 יח'' סאקה רול,\n8 יח'' סביצ''ה סלמון,\n1 יח'' ניגירי דניס חם,\n1 יח'' ניגירי סלמון,\n1 יח'' ניגירי טמאגו (חביתה יפנית),\n1 יח'' ניגירי אבוקדו.', 199, 'img/japan_items/combination.png', 305),
+(207, 37, 'Happy Family - 65 pieces: \nI/O (inside out) tuna roll - 8 pieces\nI/O spicy salmon roll - 8 pieces\nSpecial salmon fotomaki - 5 pieces\nAsparagus maki - 8 pieces\nSalmon nigiri - 4 pieces\nI/O salmon skin roll - 8 pices\nI/O vegetarian avocado roll - 8 pieces\nT', '65 יחידות-HAPPY FAMILY\n   רול I/O טונה - 8 יח'' #\nרול I/O ספייסי סלמון - 8 יח'' #\nפוטומאקי סלמון ספיישל - 5 יח'' #\nמאקי אספרגוס - 8 יח'' #\nניגירי סלמון - 4 יח'' #\nרול I/O סלמון סקין - 8 יח'' #\nרול I/O צמחוני אבוכדו - 8 יח'' #\nמאקי טמאגו - 8יח'' #\nמאקי אבוכדו - 8 ', '', '', 249, 'img/japan_items/happy_family.png', 306),
+(208, 38, ' Mineral water', 'מים מינרלים 0.5 ליטר ', '', '', 9, 'img/japan_items/11.png', 307),
+(209, 38, ' Soda water', 'סודה 250 מ''ל ', '', '', 9, 'img/japan_items/11.png', 308),
+(210, 38, ' Peach Iced Tea (Nestea)', 'נסטי אפרסק 330 מ''ל ', '', '', 10, 'img/japan_items/12.png', 309),
+(211, 38, ' Prigat Diet Grapefruit', 'פריגת דיאט אשכוליות 330 מ''ל ', '', '', 10, 'img/japan_items/drink.png', 310),
+(212, 38, ' Prigat Grapefruit', 'פריגת אשכוליות 330 מ''ל ', '', '', 10, 'img/japan_items/drink.png', 311),
+(213, 38, ' Prigat Lemon', 'פריגת לימונים 330 מ''ל ', '', '', 10, 'img/japan_items/drink.png', 312),
+(214, 38, ' Prigat Orange', 'פריגת תפוזים 330 מ''ל ', '', '', 10, 'img/japan_items/drink.png', 313),
+(215, 38, ' Diet Sprite', 'דיאט ספרייט 330 מ''ל ', '', '', 10, 'img/japan_items/drink.png', 314),
+(216, 38, ' Sprite', 'ספרייט 330 מ''ל ', '', '', 10, 'img/japan_items/sprite.png', 315),
+(217, 38, ' Cola Zero', 'קולה זירו 330 מ''ל ', '', '', 10, 'img/japan_items/cocacola_zero.png', 316),
+(218, 38, ' Coca Cola', 'קוקה קולה 330 מ''ל ', '', '', 10, 'img/japan_items/cocacola.png', 317),
+(219, 39, '#3 Asian Vegetable Egg Roll 2 Pieces', 'אגרול ירקות אסיאתי #3', 'Deep fried thin egg roll wrapper filled with cabbage, carrots, celery, white mushrooms, green onions and bean sprouts and our own dipping sauce, served with side of green salad tossed with Vietnamese chili vinaigrette', '2 יח'' בצק דק מטוגן במילוי כרוב, גזר, סלרי ופטריות שמפניון.', 15, 'img/japan_items/test.png', 318),
+(220, 39, '#2 Vietnamese Chicken Egg Roll 2 Pieces', 'אגרול עוף ויאטנמי #2', 'Deep fried thin egg roll wrapper filled with chicken, cabbage, ginger, bean sprouts and carrots and our own dipping sauce, served with side of green salad tossed with Vietnamese chili vinaigrette', '2 יח'' בצק דק מטוגן במילוי עוף, נבטים, כרוב, ג''ינג''ר וגזר.', 18, 'img/japan_items/test.png', 319),
+(221, 39, '#6 Tabaski Chicken', 'טאבאסקי #6', 'Fried chicken wings in hot spicy teriyaki sauce, garnished with green onion', 'כנפי עוף מטוגנים צ''ילי טריאקי ובצל ירוק.', 29, 'img/japan_items/test.png', 320),
+(222, 39, '#7 Edamame', 'אדממה #7', 'Steamed soya beans seasoned with kosher salt and lemon salt', 'פולי סויה חמים, מוגשים עם מלח גס ופלח לימון.', 18, 'img/japan_items/edamame.png', 321),
+(223, 39, '#8 Kimche', 'קימצ''י #8', 'Japanese style pickled vegetables', 'סלט חמוצים בתחמיץ יפני עם כרוב, פלפל אדום וירוק, גזר ומלפפון.', 15, 'img/japan_items/kimchi.png', 322),
+(224, 39, '#46 Gohan', 'גוהן #46', 'Japanese steamed white rice', 'אורז לבן מאודה', 17, 'img/japan_items/test.png', 323),
+(225, 39, '#47 Yaki Masi', 'יאקי מאשי #47', 'Stir fried rice with scrambled eggs and vegetables', 'אורז מוקפץ עם נטיפי ביצים וירקות.', 25, 'img/japan_items/test.png', 324),
+(226, 39, '#48 Yasai Tame', 'יאסי טאמה #48', 'Stir fried vegetables with ginger and teriyaki sauce', 'הום פרייז', 27, 'img/japan_items/test.png', 325),
+(227, 39, '#49 Home Fries', '#49', 'Cubed potatoes, deep fried and served with teriyaki and sweet chili sauce, garnished with sesame seeds', 'קוביות תפוחי אדמה מטוגנות בטריאקי, צ''ילי מתוק ושומשום.', 27, 'img/japan_items/home_fries.png', 326),
+(228, 40, '#13 Crispy Salmon Salad', 'סלט קריספי סלמון #13', 'Choice of grilled or tempura (fried batter coated) salmon strips in a creamy Yuzu sauce on a bed of baby leaf salad mix with cherry tomatoes, carrots, cucumbers, and beansprouts, tossed with lime vinaigrette and garnished with cilantro/coriander', 'מיקס עלי בייבי, גזר, מלפפון, עגבניות שרי ונבטים בויניגרט ליים כוסברה ורצועות סלמון מטוגנות בקרם יוזו.', 42, '/img/japan_items/crispy_salmon_salad.png', 327),
+(229, 40, '#14 Asian Green Salad', 'סלט ירוק אסייאתי #14', 'Baby leaf salad mix, cherry tomatoes, carrots, cucumbers, and beansprouts tossed with chili vinaigrette', 'מיקס עלים, מלפפון, גזר, נבטים ועגבניות שרי בויניגרט צ''ילי', 35, '/img/japan_items/crispy_salmon_salad.png', 328),
+(230, 41, '#18 Hot and Sour Soup', 'מרק חמוץ חריף #18', 'Thin strips of chicken, shredded cabbage, carrots, white mushrooms and Asian bean noodles, served in a large bowl of fragrant clear chicken broth', 'מציר עוף ארומטי, אטריות שעועית, כרוב, גזר ופטריות שמפניון.', 16, 'img/japan_items/test.png', 329),
+(231, 41, '#20 Thai Spicy Coconut Soup', 'מרק קוקוס #20', 'Thai soup served in a large bowl with strips of boneless chicken breast, white mushrooms, white onion, green onion, and cherry tomatoes in a rich coconut cream broth', 'מרק תאילנדי עם נתחי חזה עוף, פטריות שמפניון, בצל ירוק ולבן, עגבניות שרי וקרם קוקוס.', 21, 'img/japan_items/test.png', 330),
+(232, 41, '#21 Asian Corn Soup', 'מרק תירס #21', 'A slightly sweet egg drop soup with fresh kernel corn', 'מרק תירס אסייאתי מתקתק עם נטיפי ביצה וגרעיני תירס טריים.', 16, 'img/japan_items/test.png', 331),
+(233, 41, '#23 Tom Yam Soup', 'מרק טום יאם #23', 'A well known and popular staple of the Thai kitchen. famous for its special combination of hot and sour spices, served with strips of tender spring chicken', 'המרק הפופולארי המצויים בו עם נתחי פרגית', 21, 'img/japan_items/test.png', 332),
+(234, 42, '#30 Yasai Maki Noodles', 'יאסי מאקי נודלס #30', 'Egg noodles, shredded cabbage, beansprouts, carrots and mushrooms, stir fried in hoisin sauce', 'אטריות ביצים, כרוב, נבטים, בצל ירוק וגזר ברוטב הוי סטיר', 29, 'img/japan_items/maki.png', 333),
+(235, 42, '#31 Filipino Stir Fry', 'הפיליפינית #31', 'Choice of one: chicken, beef or tofu bean.  Stir fried with egg noodles, carrots, cabbage, beansprouts and green onion in hot spicy Chu Chu sauce', 'עוף, אטריות ביצים, גזר, כרוב, נבטים, ובצל ירוק ברוטב צ''או צ''או -לבחירה: עוף, טופו, בקר. חריף.', 42, 'img/japan_items/test.png', 334),
+(236, 42, '#32 Malaysian Stir Fry', 'המלזית #32', 'Tempura (fried batter) coated salmon, stir fried with egg noodles, white onion, carrot stips, green beans, white mushrooms and bean sprouts in Malaysian curry sauce', 'אטריות ביצים עם סלמון בטמפורה, בצל לבן, גזר, שעועית ירוקה, פטריות שמפניון, בצל ירוק ונבטים בקארי מלזי.', 45, 'img/japan_items/malaysian_stir_fry.png', 335),
+(237, 42, '#33 Vietnamese Stir Fry', 'וויאטנמית #33', 'Boneless chicken strips stir fried with udon (wheat) noodles, shredded cabbage, white onion, white mushrooms, bean sprouts, asparagus, beans and green onion in satay (peanut) sauce, garnished with coconut cream and cilantro/coriander', 'אטריות אודון (חיטה), רצועות עוף, פטריות שמפניון, בצל ירוק, בצל לבן, שעועית ירוקה ונבטים ברוטב סאטה וקרם קוקוס כוסברה.', 45, 'img/japan_items/malaysian_stir_fry.png', 336),
+(238, 42, '#34 Korean Stir Fry', 'הקוריאנית  #34', 'Pieces of aged beef stir fried with udon (wheat) noodles, white mushrooms, white onion, shiitake mushrooms, cabbage and Portobello mushrooms in shimeju mushroom sauce', 'אטריות אודון (חיטה), עם נתחי אנטריקוט, כרוב לבן, פטריות פורטבלו, בצל לבן, פטריות שיטאקה ובייבי תרד ברוטב שימאג''י.', 45, 'img/japan_items/malaysian_stir_fry.png', 337),
+(239, 42, '#35 Beef Rice Noodles', 'ביף רייס נודלס  #35', 'Pieces of aged beef stir fried with wide rice noodles (Pad Thai), scrambled eggs, white mushrooms, green onion, beansprouts, carrots and white onions in a spicy and sweet sauce, topped with chopped peanuts', 'אטריות אורז רחבות (פאד תאי), נתחי אנטריוט, נטיפי ביצים, פטריות פורטובלו, בצל לבן, נבטים, גזר ובצל ירוק ברוטב חריף מתוק…', 44, 'img/japan_items/test.png', 338),
+(240, 42, '#36 Chicken Pad Thai', 'צ''יקן פאד תאי  #36', 'Chunks of grilled spring chicken stir fried with rice noodles, scrambled eggs cabbage, carrots, green onions, beansprouts and sweet-hot sauce, topped with chopped peanuts', 'קוביות פרגית בטמפורה / בגריל, אטריות אורז, נטיפי ביצים, כרוב, גזר, בצל ירוק ונבטים ברוטב חריף מתוק ושבבי בוטנים.', 42, 'img/japan_items/test.png', 339),
+(241, 42, '#37 Chicken Fried Rice', 'צ''יקן פרייד רייס  #37', 'Chunks of grilled spring chicken stir fried with scrambled eggs, rice, cabbage, carrots, green onions, Portobello mushrooms and beansprouts in a hoisin sauce', 'קוביות פרגית בגריל / בטמפורה, נטיפי ביצה, אורז, כרוב, גזר, בצל ירוק, פטריות פורטבלו ונבטים ברוטב הוי סטיר.', 41, 'img/japan_items/rice.png', 340),
+(242, 43, '# Japan Japan Special Stir Fry. Choose one of the following:', '#', '', '', 48, 'img/japan_items/malaysian_stir_fry.png', 341),
+(243, 43, '#52 Sweet and sour lemon chicken', 'עוף דבש ולימון - נתחי עוף מצופים ברוטב חמוץ מתוק  #52', '', '', 0, 'img/japan_items/test.png', 342),
+(244, 43, '#53 Szechuan beef / chicken', 'עוף סצואן - נתחי עוף / רצועות פילה בקר מוקפצות ברוטב סצואן חריף ושלל ירקות #53', '', '', 0, 'img/japan_items/test.png', 343),
+(245, 43, '#54 Beef and white mushrooms', 'פטריות שמפניון נתחי עוף / בקר מוקפציפ ברוטב הוי סטיר. שימאג''י. פטריות שמפיונון, גזר וקישואים #54', '', '', 0, 'img/japan_items/test.png', 344),
+(246, 43, '#55 Chicken with Asian vegetable medley', 'ירקות אסיאתי נתחי עוף / רצועות פילה בקר מוקפצות ברוטב הוי סטיר וטריאקי ושלל ירקות #55', '', '', 0, 'img/japan_items/test.png', 345),
+(247, 44, '#600 Chicken Schnitzelonim', 'ארוחת שניצלוני עוף #600', 'Fried strips of chicken coated in panko crumbs. Choice of one side dish: Asian puree / white rice / chips + soft drink', 'רצועות עוף בפנקו (פירורי לחם יפניים) מטוגנות. מוגש עם תוספת לבחירה. תוספות לבחירה: פירה אסייתי/אורז לבן/צ''יפס', 42, 'img/japan_items/test.png', 346);
 
 -- --------------------------------------------------------
 
@@ -559,7 +759,8 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (1, 1, 'Lunch', 'ארוחת צהריים', 100),
 (2, 2, 'Lunch', 'ארוחת צהריים', 101),
 (3, 3, 'Lunch', 'ארוחת צהריים', 102),
-(4, 4, 'Lunch', 'ארוחת צהריים', 103);
+(4, 4, 'Lunch', 'ארוחת צהריים', 103),
+(5, 5, 'Lunch', 'ארוחת צהריים', 104);
 
 -- --------------------------------------------------------
 
@@ -576,7 +777,30 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=80 ;
+
+--
+-- Dumping data for table `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_items`) VALUES
+(63, 92, 2, 'XL Pie', 118, 'Olives (+5), Egg (+1), '),
+(64, 93, 2, 'XL ???', 118, '????? (+5), ???? (+1), '),
+(65, 94, 2, 'XL ???', 123, '?????? (+5), ???? (+5), ???? (+1), '),
+(66, 95, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18), portobello mushroom (+4), '),
+(67, 96, 2, 'Angus Salad', 118, '80 grams goose liver (+30), '),
+(68, 97, 2, 'Angus Salad', 118, '80 grams goose liver (+30), '),
+(69, 98, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(70, 98, 1, 'Chicken Salad', 46, 'egg (+4), '),
+(71, 98, 1, 'Angus Tortilla', 40, 'Egg (+4), BBQ, spicy chilli, Lettuce, onions, fried onions, '),
+(72, 99, 2, 'Super Spicy Bandora', 78, 'Bread Type:Baguette, Spring Chicken, Fried onions, Tomatoes, Techina, Chummus, Spicy, '),
+(73, 99, 2, 'Shawarma', 66, 'Bread Type:Pita, Spring Chicken, French Fries, Fried onions, Amba, Spicy, '),
+(74, 100, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(75, 101, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(76, 101, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(77, 102, 1, 'XL Pie', 66, 'Mushrooms (+5), Tomatoes (+5), '),
+(78, 102, 1, 'XL + Toppings', 75, 'Olives, Vegan Cheese, '),
+(79, 102, 1, 'Gluten Free', 45, 'Olives (+5), Corn (+5), ');
 
 -- --------------------------------------------------------
 
@@ -603,10 +827,11 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 --
 
 INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`) VALUES
-(1, 'Angus', 'אנגוס', 'http://dev.bot2.orderapp.com/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', '\nYitzhak Rabin through 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
+(1, 'Angus', 'אנגוס', 'http://dev.bot2.orderapp.com/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
 (2, 'Meshulashim', 'פיצה משולשים', 'http://dev.bot2.orderapp.com/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
 (3, 'Bandora', 'בנדורה', 'http://dev.bot2.orderapp.com/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', '\nSderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
-(4, 'Roza', 'רוזה', 'http://dev.bot2.orderapp.com/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי');
+(4, 'Roza', 'רוזה', 'http://dev.bot2.orderapp.com/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
+(5, 'Japan Japan', 'ג''אפן ג''אפן', 'http://dev.bot2.orderapp.com/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף');
 
 -- --------------------------------------------------------
 
@@ -620,7 +845,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_gallery` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
 
 --
 -- Dumping data for table `restaurant_gallery`
@@ -658,7 +883,14 @@ INSERT INTO `restaurant_gallery` (`id`, `restaurant_id`, `url`) VALUES
 (37, 4, 'img/roza_gallery/roza_6.jpg'),
 (38, 4, 'img/roza_gallery/roza_7.JPG'),
 (39, 4, 'img/roza_gallery/roza_8.JPG'),
-(40, 4, 'img/roza_gallery/roza_9.JPG');
+(40, 4, 'img/roza_gallery/roza_9.JPG'),
+(41, 5, 'img/japan_gallery/Japan_chicken_salad.jpg'),
+(42, 5, 'img/japan_gallery/Japan_sake_roll.jpg'),
+(43, 5, 'img/japan_gallery/japan_boat_combo.jpg'),
+(44, 5, 'img/japan_gallery/japan_combination.jpg'),
+(45, 5, 'img/japan_gallery/japan_crazy_roll.jpg'),
+(46, 5, 'img/japan_gallery/japan_inside_out.jpg'),
+(47, 5, 'img/japan_gallery/japan_logo.png');
 
 -- --------------------------------------------------------
 
@@ -673,21 +905,31 @@ CREATE TABLE IF NOT EXISTS `restaurant_tags` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `restaurant_tags`
 --
 
 INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
-(2, 1, 1),
-(3, 1, 2),
-(4, 1, 3),
-(5, 1, 4),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
 (6, 3, 2),
-(7, 3, 5),
-(8, 3, 6),
-(9, 2, 7);
+(7, 3, 6),
+(8, 3, 7),
+(9, 2, 8),
+(10, 2, 11),
+(11, 2, 12),
+(12, 4, 2),
+(13, 4, 3),
+(14, 4, 4),
+(15, 4, 5),
+(16, 4, 11),
+(17, 5, 9),
+(18, 5, 10),
+(19, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -704,7 +946,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=788 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1226 ;
 
 --
 -- Dumping data for table `subitems`
@@ -1497,7 +1739,446 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (784, 228, 'Roza Deal: Upgrade to a full meal including oven baked Italian ciabetta and a bottled drink', 'רוזה דיל: שדרוג לארוחת רוזה דיל הכוללת ג''בטה איטלקית בתנור + בקבוק שתייה ב 17 ₪', 17, 883),
 (785, 229, 'Roza Deal: Upgrade to a full meal including a personal salad and a bottled drink', 'רוזה דיל: שדרוג לארוחת רוזה דיל הכוללת סלט אישי + בקבוק שתייה', 21, 884),
 (786, 230, 'Roza Deal: Upgrade to a full meal including a personal salad and a bottled drink', 'רוזה דיל: שדרוג לארוחת רוזה דיל הכוללת סלט אישי + בקבוק שתייה', 21, 885),
-(787, 231, 'Roza Deal: Upgrade to a full meal including a personal salad and a bottled drink', 'רוזה דיל: שדרוג לארוחת רוזה דיל הכוללת סלט אישי + בקבוק שתייה', 21, 886);
+(787, 231, 'Roza Deal: Upgrade to a full meal including a personal salad and a bottled drink', 'רוזה דיל: שדרוג לארוחת רוזה דיל הכוללת סלט אישי + בקבוק שתייה', 21, 886),
+(788, 148, 'Soya', 'סויה', 0, 887),
+(789, 148, 'Teriyaki', 'טריאקי', 0, 888),
+(790, 148, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 889),
+(791, 148, 'Ginger', 'ג''ינג''ר', 0, 890),
+(792, 148, 'Wasabi', 'וואסבי', 0, 891),
+(793, 149, 'Soya', 'סויה', 0, 892),
+(794, 149, 'Teriyaki', 'טריאקי', 0, 893),
+(795, 149, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 894),
+(796, 149, 'Ginger', 'ג''ינג''ר', 0, 895),
+(797, 149, 'Wasabi', 'וואסבי', 0, 896),
+(798, 150, 'Soya', 'סויה', 0, 897),
+(799, 150, 'Teriyaki', 'טריאקי', 0, 898),
+(800, 150, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 899),
+(801, 150, 'Ginger', 'ג''ינג''ר', 0, 900),
+(802, 150, 'Wasabi', 'וואסבי', 0, 901),
+(803, 150, 'Soya', 'סויה', 0, 902),
+(804, 150, 'Teriyaki', 'טריאקי', 0, 903),
+(805, 150, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 904),
+(806, 150, 'Ginger', 'ג''ינג''ר', 0, 905),
+(807, 150, 'Wasabi', 'וואסבי', 0, 906),
+(808, 150, 'Soya', 'סויה', 0, 907),
+(809, 150, 'Teriyaki', 'טריאקי', 0, 908),
+(810, 150, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 909),
+(811, 150, 'Ginger', 'ג''ינג''ר', 0, 910),
+(812, 150, 'Wasabi', 'וואסבי', 0, 911),
+(813, 150, 'Soya', 'סויה', 0, 912),
+(814, 150, 'Teriyaki', 'טריאקי', 0, 913),
+(815, 150, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 914),
+(816, 150, 'Ginger', 'ג''ינג''ר', 0, 915),
+(817, 150, 'Wasabi', 'וואסבי', 0, 916),
+(818, 154, 'Soya', 'סויה', 0, 917),
+(819, 154, 'Teriyaki', 'טריאקי', 0, 918),
+(820, 154, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 919),
+(821, 154, 'Ginger', 'ג''ינג''ר', 0, 920),
+(822, 154, 'Wasabi', 'וואסבי', 0, 921),
+(823, 155, 'Soya', 'סויה', 0, 922),
+(824, 155, 'Teriyaki', 'טריאקי', 0, 923),
+(825, 155, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 924),
+(826, 155, 'Ginger', 'ג''ינג''ר', 0, 925),
+(827, 155, 'Wasabi', 'וואסבי', 0, 926),
+(828, 156, 'Soya', 'סויה', 0, 927),
+(829, 156, 'Teriyaki', 'טריאקי', 0, 928),
+(830, 156, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 929),
+(831, 156, 'Ginger', 'ג''ינג''ר', 0, 930),
+(832, 156, 'Wasabi', 'וואסבי', 0, 931),
+(833, 157, 'Soya', 'סויה', 0, 932),
+(834, 157, 'Teriyaki', 'טריאקי', 0, 933),
+(835, 157, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 934),
+(836, 157, 'Ginger', 'ג''ינג''ר', 0, 935),
+(837, 157, 'Wasabi', 'וואסבי', 0, 936),
+(838, 158, 'Soya', 'סויה', 0, 937),
+(839, 158, 'Teriyaki', 'טריאקי', 0, 938),
+(840, 158, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 939),
+(841, 158, 'Ginger', 'ג''ינג''ר', 0, 940),
+(842, 158, 'Wasabi', 'וואסבי', 0, 941),
+(843, 159, 'Soya', 'סויה', 0, 942),
+(844, 159, 'Teriyaki', 'טריאקי', 0, 943),
+(845, 159, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 944),
+(846, 159, 'Ginger', 'ג''ינג''ר', 0, 945),
+(847, 159, 'Wasabi', 'וואסבי', 0, 946),
+(848, 160, 'Soya', 'סויה', 0, 947),
+(849, 160, 'Teriyaki', 'טריאקי', 0, 948),
+(850, 160, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 949),
+(851, 160, 'Ginger', 'ג''ינג''ר', 0, 950),
+(852, 160, 'Wasabi', 'וואסבי', 0, 951),
+(853, 161, 'Soya', 'סויה', 0, 952),
+(854, 161, 'Teriyaki', 'טריאקי', 0, 953),
+(855, 161, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 954),
+(856, 161, 'Ginger', 'ג''ינג''ר', 0, 955),
+(857, 161, 'Wasabi', 'וואסבי', 0, 956),
+(858, 162, 'Soya', 'סויה', 0, 957),
+(859, 162, 'Teriyaki', 'טריאקי', 0, 958),
+(860, 162, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 959),
+(861, 162, 'Ginger', 'ג''ינג''ר', 0, 960),
+(862, 162, 'Wasabi', 'וואסבי', 0, 961),
+(863, 163, 'Soya', 'סויה', 0, 962),
+(864, 163, 'Teriyaki', 'טריאקי', 0, 963),
+(865, 163, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 964),
+(866, 163, 'Ginger', 'ג''ינג''ר', 0, 965),
+(867, 163, 'Wasabi', 'וואסבי', 0, 966),
+(868, 164, 'Soya', 'סויה', 0, 967),
+(869, 164, 'Teriyaki', 'טריאקי', 0, 968),
+(870, 164, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 969),
+(871, 164, 'Ginger', 'ג''ינג''ר', 0, 970),
+(872, 164, 'Wasabi', 'וואסבי', 0, 971),
+(873, 165, 'Soya', 'סויה', 0, 972),
+(874, 165, 'Teriyaki', 'טריאקי', 0, 973),
+(875, 165, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 974),
+(876, 165, 'Ginger', 'ג''ינג''ר', 0, 975),
+(877, 165, 'Wasabi', 'וואסבי', 0, 976),
+(878, 166, 'Soya', 'סויה', 0, 977),
+(879, 166, 'Teriyaki', 'טריאקי', 0, 978),
+(880, 166, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 979),
+(881, 166, 'Ginger', 'ג''ינג''ר', 0, 980),
+(882, 166, 'Wasabi', 'וואסבי', 0, 981),
+(883, 167, 'Soya', 'סויה', 0, 982),
+(884, 167, 'Teriyaki', 'טריאקי', 0, 983),
+(885, 167, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 984),
+(886, 167, 'Ginger', 'ג''ינג''ר', 0, 985),
+(887, 167, 'Wasabi', 'וואסבי', 0, 986),
+(888, 168, 'Soya', 'סויה', 0, 987),
+(889, 168, 'Teriyaki', 'טריאקי', 0, 988),
+(890, 168, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 989),
+(891, 168, 'Ginger', 'ג''ינג''ר', 0, 990),
+(892, 168, 'Wasabi', 'וואסבי', 0, 991),
+(893, 169, 'Soya', 'סויה', 0, 992),
+(894, 169, 'Teriyaki', 'טריאקי', 0, 993),
+(895, 169, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 994),
+(896, 169, 'Ginger', 'ג''ינג''ר', 0, 995),
+(897, 169, 'Wasabi', 'וואסבי', 0, 996),
+(898, 170, 'Soya', 'סויה', 0, 997),
+(899, 170, 'Teriyaki', 'טריאקי', 0, 998),
+(900, 170, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 999),
+(901, 170, 'Ginger', 'ג''ינג''ר', 0, 1000),
+(902, 170, 'Wasabi', 'וואסבי', 0, 1001),
+(903, 171, 'Soya', 'סויה', 0, 1002),
+(904, 171, 'Teriyaki', 'טריאקי', 0, 1003),
+(905, 171, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1004),
+(906, 171, 'Ginger', 'ג''ינג''ר', 0, 1005),
+(907, 171, 'Wasabi', 'וואסבי', 0, 1006),
+(908, 172, 'Soya', 'סויה', 0, 1007),
+(909, 172, 'Teriyaki', 'טריאקי', 0, 1008),
+(910, 172, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1009),
+(911, 172, 'Ginger', 'ג''ינג''ר', 0, 1010),
+(912, 172, 'Wasabi', 'וואסבי', 0, 1011),
+(913, 173, 'Soya', 'סויה', 0, 1012),
+(914, 173, 'Teriyaki', 'טריאקי', 0, 1013);
+INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
+(915, 173, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1014),
+(916, 173, 'Ginger', 'ג''ינג''ר', 0, 1015),
+(917, 173, 'Wasabi', 'וואסבי', 0, 1016),
+(918, 174, 'Soya', 'סויה', 0, 1017),
+(919, 174, 'Teriyaki', 'טריאקי', 0, 1018),
+(920, 174, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1019),
+(921, 174, 'Ginger', 'ג''ינג''ר', 0, 1020),
+(922, 174, 'Wasabi', 'וואסבי', 0, 1021),
+(923, 175, 'Soya', 'סויה', 0, 1022),
+(924, 175, 'Teriyaki', 'טריאקי', 0, 1023),
+(925, 175, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1024),
+(926, 175, 'Ginger', 'ג''ינג''ר', 0, 1025),
+(927, 175, 'Wasabi', 'וואסבי', 0, 1026),
+(928, 176, 'Soya', 'סויה', 0, 1027),
+(929, 176, 'Teriyaki', 'טריאקי', 0, 1028),
+(930, 176, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1029),
+(931, 176, 'Ginger', 'ג''ינג''ר', 0, 1030),
+(932, 176, 'Wasabi', 'וואסבי', 0, 1031),
+(933, 177, 'Soya', 'סויה', 0, 1032),
+(934, 177, 'Teriyaki', 'טריאקי', 0, 1033),
+(935, 177, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1034),
+(936, 177, 'Ginger', 'ג''ינג''ר', 0, 1035),
+(937, 177, 'Wasabi', 'וואסבי', 0, 1036),
+(938, 178, 'Soya', 'סויה', 0, 1037),
+(939, 178, 'Teriyaki', 'טריאקי', 0, 1038),
+(940, 178, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1039),
+(941, 178, 'Ginger', 'ג''ינג''ר', 0, 1040),
+(942, 178, 'Wasabi', 'וואסבי', 0, 1041),
+(943, 179, 'Soya', 'סויה', 0, 1042),
+(944, 179, 'Teriyaki', 'טריאקי', 0, 1043),
+(945, 179, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1044),
+(946, 179, 'Ginger', 'ג''ינג''ר', 0, 1045),
+(947, 179, 'Wasabi', 'וואסבי', 0, 1046),
+(948, 180, 'Soya', 'סויה', 0, 1047),
+(949, 180, 'Teriyaki', 'טריאקי', 0, 1048),
+(950, 180, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1049),
+(951, 180, 'Ginger', 'ג''ינג''ר', 0, 1050),
+(952, 180, 'Wasabi', 'וואסבי', 0, 1051),
+(953, 181, 'Soya', 'סויה', 0, 1052),
+(954, 181, 'Teriyaki', 'טריאקי', 0, 1053),
+(955, 181, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1054),
+(956, 181, 'Ginger', 'ג''ינג''ר', 0, 1055),
+(957, 181, 'Wasabi', 'וואסבי', 0, 1056),
+(958, 182, 'Soya', 'סויה', 0, 1057),
+(959, 182, 'Teriyaki', 'טריאקי', 0, 1058),
+(960, 182, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1059),
+(961, 182, 'Ginger', 'ג''ינג''ר', 0, 1060),
+(962, 182, 'Wasabi', 'וואסבי', 0, 1061),
+(963, 183, 'Soya', 'סויה', 0, 1062),
+(964, 183, 'Teriyaki', 'טריאקי', 0, 1063),
+(965, 183, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1064),
+(966, 183, 'Ginger', 'ג''ינג''ר', 0, 1065),
+(967, 183, 'Wasabi', 'וואסבי', 0, 1066),
+(968, 184, 'Soya', 'סויה', 0, 1067),
+(969, 184, 'Teriyaki', 'טריאקי', 0, 1068),
+(970, 184, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1069),
+(971, 184, 'Ginger', 'ג''ינג''ר', 0, 1070),
+(972, 184, 'Wasabi', 'וואסבי', 0, 1071),
+(973, 185, 'Soya', 'סויה', 0, 1072),
+(974, 185, 'Teriyaki', 'טריאקי', 0, 1073),
+(975, 185, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1074),
+(976, 185, 'Ginger', 'ג''ינג''ר', 0, 1075),
+(977, 185, 'Wasabi', 'וואסבי', 0, 1076),
+(978, 186, 'Soya', 'סויה', 0, 1077),
+(979, 186, 'Teriyaki', 'טריאקי', 0, 1078),
+(980, 186, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1079),
+(981, 186, 'Ginger', 'ג''ינג''ר', 0, 1080),
+(982, 186, 'Wasabi', 'וואסבי', 0, 1081),
+(983, 187, 'Soya', 'סויה', 0, 1082),
+(984, 187, 'Teriyaki', 'טריאקי', 0, 1083),
+(985, 187, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1084),
+(986, 187, 'Ginger', 'ג''ינג''ר', 0, 1085),
+(987, 187, 'Wasabi', 'וואסבי', 0, 1086),
+(988, 188, 'Soya', 'סויה', 0, 1087),
+(989, 188, 'Teriyaki', 'טריאקי', 0, 1088),
+(990, 188, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1089),
+(991, 188, 'Ginger', 'ג''ינג''ר', 0, 1090),
+(992, 188, 'Wasabi', 'וואסבי', 0, 1091),
+(993, 189, 'Soya', 'סויה', 0, 1092),
+(994, 189, 'Teriyaki', 'טריאקי', 0, 1093),
+(995, 189, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1094),
+(996, 189, 'Ginger', 'ג''ינג''ר', 0, 1095),
+(997, 189, 'Wasabi', 'וואסבי', 0, 1096),
+(998, 190, 'Soya', 'סויה', 0, 1097),
+(999, 190, 'Teriyaki', 'טריאקי', 0, 1098),
+(1000, 190, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1099),
+(1001, 190, 'Ginger', 'ג''ינג''ר', 0, 1100),
+(1002, 190, 'Wasabi', 'וואסבי', 0, 1101),
+(1003, 191, 'Soya', 'סויה', 0, 1102),
+(1004, 191, 'Teriyaki', 'טריאקי', 0, 1103),
+(1005, 191, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1104),
+(1006, 191, 'Ginger', 'ג''ינג''ר', 0, 1105),
+(1007, 191, 'Wasabi', 'וואסבי', 0, 1106),
+(1008, 192, 'Soya', 'סויה', 0, 1107),
+(1009, 192, 'Teriyaki', 'טריאקי', 0, 1108),
+(1010, 192, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1109),
+(1011, 192, 'Ginger', 'ג''ינג''ר', 0, 1110),
+(1012, 192, 'Wasabi', 'וואסבי', 0, 1111),
+(1013, 193, 'Soya', 'סויה', 0, 1112),
+(1014, 193, 'Teriyaki', 'טריאקי', 0, 1113),
+(1015, 193, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1114),
+(1016, 193, 'Ginger', 'ג''ינג''ר', 0, 1115),
+(1017, 193, 'Wasabi', 'וואסבי', 0, 1116),
+(1018, 194, 'Soya', 'סויה', 0, 1117),
+(1019, 194, 'Teriyaki', 'טריאקי', 0, 1118),
+(1020, 194, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1119),
+(1021, 194, 'Ginger', 'ג''ינג''ר', 0, 1120),
+(1022, 194, 'Wasabi', 'וואסבי', 0, 1121),
+(1023, 195, 'Soya', 'סויה', 0, 1122),
+(1024, 195, 'Teriyaki', 'טריאקי', 0, 1123),
+(1025, 195, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1124),
+(1026, 195, 'Ginger', 'ג''ינג''ר', 0, 1125),
+(1027, 195, 'Wasabi', 'וואסבי', 0, 1126),
+(1028, 196, 'Soya', 'סויה', 0, 1127),
+(1029, 196, 'Teriyaki', 'טריאקי', 0, 1128),
+(1030, 196, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1129),
+(1031, 196, 'Ginger', 'ג''ינג''ר', 0, 1130),
+(1032, 196, 'Wasabi', 'וואסבי', 0, 1131),
+(1033, 197, 'Soya', 'סויה', 0, 1132),
+(1034, 197, 'Teriyaki', 'טריאקי', 0, 1133),
+(1035, 197, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1134),
+(1036, 197, 'Ginger', 'ג''ינג''ר', 0, 1135),
+(1037, 197, 'Wasabi', 'וואסבי', 0, 1136),
+(1038, 198, 'Soya', 'סויה', 0, 1137),
+(1039, 198, 'Teriyaki', 'טריאקי', 0, 1138),
+(1040, 198, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1139),
+(1041, 198, 'Ginger', 'ג''ינג''ר', 0, 1140),
+(1042, 198, 'Wasabi', 'וואסבי', 0, 1141),
+(1043, 199, 'Soya', 'סויה', 0, 1142),
+(1044, 199, 'Teriyaki', 'טריאקי', 0, 1143),
+(1045, 199, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1144),
+(1046, 199, 'Ginger', 'ג''ינג''ר', 0, 1145),
+(1047, 199, 'Wasabi', 'וואסבי', 0, 1146),
+(1048, 200, 'Soya', 'סויה', 0, 1147),
+(1049, 200, 'Teriyaki', 'טריאקי', 0, 1148),
+(1050, 200, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1149),
+(1051, 200, 'Ginger', 'ג''ינג''ר', 0, 1150),
+(1052, 200, 'Wasabi', 'וואסבי', 0, 1151),
+(1053, 201, 'Soya', 'סויה', 0, 1152),
+(1054, 201, 'Teriyaki', 'טריאקי', 0, 1153),
+(1055, 201, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1154),
+(1056, 201, 'Ginger', 'ג''ינג''ר', 0, 1155),
+(1057, 201, 'Wasabi', 'וואסבי', 0, 1156),
+(1058, 202, 'Soya', 'סויה', 0, 1157),
+(1059, 202, 'Teriyaki', 'טריאקי', 0, 1158),
+(1060, 202, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1159),
+(1061, 202, 'Ginger', 'ג''ינג''ר', 0, 1160),
+(1062, 202, 'Wasabi', 'וואסבי', 0, 1161),
+(1063, 203, 'Soya', 'סויה', 0, 1162),
+(1064, 203, 'Teriyaki', 'טריאקי', 0, 1163),
+(1065, 203, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1164),
+(1066, 203, 'Ginger', 'ג''ינג''ר', 0, 1165),
+(1067, 203, 'Wasabi', 'וואסבי', 0, 1166),
+(1068, 204, 'Soya', 'סויה', 0, 1167),
+(1069, 204, 'Teriyaki', 'טריאקי', 0, 1168),
+(1070, 204, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1169),
+(1071, 204, 'Ginger', 'ג''ינג''ר', 0, 1170),
+(1072, 204, 'Wasabi', 'וואסבי', 0, 1171),
+(1073, 205, 'Soya', 'סויה', 0, 1172),
+(1074, 205, 'Teriyaki', 'טריאקי', 0, 1173),
+(1075, 205, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1174),
+(1076, 205, 'Ginger', 'ג''ינג''ר', 0, 1175),
+(1077, 205, 'Wasabi', 'וואסבי', 0, 1176),
+(1078, 206, 'Soya', 'סויה', 0, 1177),
+(1079, 206, 'Teriyaki', 'טריאקי', 0, 1178),
+(1080, 206, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1179),
+(1081, 206, 'Ginger', 'ג''ינג''ר', 0, 1180),
+(1082, 206, 'Wasabi', 'וואסבי', 0, 1181),
+(1083, 207, 'Soya', 'סויה', 0, 1182),
+(1084, 207, 'Teriyaki', 'טריאקי', 0, 1183),
+(1085, 207, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1184),
+(1086, 207, 'Ginger', 'ג''ינג''ר', 0, 1185),
+(1087, 207, 'Wasabi', 'וואסבי', 0, 1186),
+(1088, 208, 'Soya', 'סויה', 0, 1187),
+(1089, 208, 'Teriyaki', 'טריאקי', 0, 1188),
+(1090, 208, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1189),
+(1091, 208, 'Ginger', 'ג''ינג''ר', 0, 1190),
+(1092, 208, 'Wasabi', 'וואסבי', 0, 1191),
+(1093, 209, 'Soya', 'סויה', 0, 1192),
+(1094, 209, 'Teriyaki', 'טריאקי', 0, 1193),
+(1095, 209, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1194),
+(1096, 209, 'Ginger', 'ג''ינג''ר', 0, 1195),
+(1097, 209, 'Wasabi', 'וואסבי', 0, 1196),
+(1098, 210, 'Soya', 'סויה', 0, 1197),
+(1099, 210, 'Teriyaki', 'טריאקי', 0, 1198),
+(1100, 210, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1199),
+(1101, 210, 'Ginger', 'ג''ינג''ר', 0, 1200),
+(1102, 210, 'Wasabi', 'וואסבי', 0, 1201),
+(1103, 211, 'Soya', 'סויה', 0, 1202),
+(1104, 211, 'Teriyaki', 'טריאקי', 0, 1203),
+(1105, 211, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1204),
+(1106, 211, 'Ginger', 'ג''ינג''ר', 0, 1205),
+(1107, 211, 'Wasabi', 'וואסבי', 0, 1206),
+(1108, 212, 'Soya', 'סויה', 0, 1207),
+(1109, 212, 'Teriyaki', 'טריאקי', 0, 1208),
+(1110, 212, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1209),
+(1111, 212, 'Ginger', 'ג''ינג''ר', 0, 1210),
+(1112, 212, 'Wasabi', 'וואסבי', 0, 1211),
+(1113, 213, 'Soya', 'סויה', 0, 1212),
+(1114, 213, 'Teriyaki', 'טריאקי', 0, 1213),
+(1115, 213, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1214),
+(1116, 213, 'Ginger', 'ג''ינג''ר', 0, 1215),
+(1117, 213, 'Wasabi', 'וואסבי', 0, 1216),
+(1118, 214, 'Soya', 'סויה', 0, 1217),
+(1119, 214, 'Teriyaki', 'טריאקי', 0, 1218),
+(1120, 214, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1219),
+(1121, 214, 'Ginger', 'ג''ינג''ר', 0, 1220),
+(1122, 214, 'Wasabi', 'וואסבי', 0, 1221),
+(1123, 215, 'Soya', 'סויה', 0, 1222),
+(1124, 215, 'Teriyaki', 'טריאקי', 0, 1223),
+(1125, 215, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1224),
+(1126, 215, 'Ginger', 'ג''ינג''ר', 0, 1225),
+(1127, 215, 'Wasabi', 'וואסבי', 0, 1226),
+(1128, 216, 'Soya', 'סויה', 0, 1227),
+(1129, 216, 'Teriyaki', 'טריאקי', 0, 1228),
+(1130, 216, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1229),
+(1131, 216, 'Ginger', 'ג''ינג''ר', 0, 1230),
+(1132, 216, 'Wasabi', 'וואסבי', 0, 1231),
+(1133, 217, 'Soya', 'סויה', 0, 1232),
+(1134, 217, 'Teriyaki', 'טריאקי', 0, 1233),
+(1135, 217, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1234),
+(1136, 217, 'Ginger', 'ג''ינג''ר', 0, 1235),
+(1137, 217, 'Wasabi', 'וואסבי', 0, 1236),
+(1138, 218, 'Soya', 'סויה', 0, 1237),
+(1139, 218, 'Teriyaki', 'טריאקי', 0, 1238),
+(1140, 218, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1239),
+(1141, 218, 'Ginger', 'ג''ינג''ר', 0, 1240),
+(1142, 218, 'Wasabi', 'וואסבי', 0, 1241),
+(1143, 219, 'Soya', 'סויה', 0, 1242),
+(1144, 219, 'Teriyaki', 'טריאקי', 0, 1243),
+(1145, 219, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1244),
+(1146, 219, 'Ginger', 'ג''ינג''ר', 0, 1245),
+(1147, 219, 'Wasabi', 'וואסבי', 0, 1246),
+(1148, 220, 'Soya', 'סויה', 0, 1247),
+(1149, 220, 'Teriyaki', 'טריאקי', 0, 1248),
+(1150, 220, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1249),
+(1151, 220, 'Ginger', 'ג''ינג''ר', 0, 1250),
+(1152, 220, 'Wasabi', 'וואסבי', 0, 1251),
+(1153, 221, 'Soya', 'סויה', 0, 1252),
+(1154, 221, 'Teriyaki', 'טריאקי', 0, 1253),
+(1155, 221, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1254),
+(1156, 221, 'Ginger', 'ג''ינג''ר', 0, 1255),
+(1157, 221, 'Wasabi', 'וואסבי', 0, 1256),
+(1158, 222, 'Soya', 'סויה', 0, 1257),
+(1159, 222, 'Teriyaki', 'טריאקי', 0, 1258),
+(1160, 222, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1259),
+(1161, 222, 'Ginger', 'ג''ינג''ר', 0, 1260),
+(1162, 222, 'Wasabi', 'וואסבי', 0, 1261),
+(1163, 223, 'Soya', 'סויה', 0, 1262),
+(1164, 223, 'Teriyaki', 'טריאקי', 0, 1263),
+(1165, 223, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1264),
+(1166, 223, 'Ginger', 'ג''ינג''ר', 0, 1265),
+(1167, 223, 'Wasabi', 'וואסבי', 0, 1266),
+(1168, 224, 'Soya', 'סויה', 0, 1267),
+(1169, 224, 'Teriyaki', 'טריאקי', 0, 1268),
+(1170, 224, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1269),
+(1171, 224, 'Ginger', 'ג''ינג''ר', 0, 1270),
+(1172, 224, 'Wasabi', 'וואסבי', 0, 1271),
+(1173, 225, 'Soya', 'סויה', 0, 1272),
+(1174, 225, 'Teriyaki', 'טריאקי', 0, 1273),
+(1175, 225, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1274),
+(1176, 225, 'Ginger', 'ג''ינג''ר', 0, 1275),
+(1177, 225, 'Wasabi', 'וואסבי', 0, 1276),
+(1178, 226, 'Soya', 'סויה', 0, 1277),
+(1179, 226, 'Teriyaki', 'טריאקי', 0, 1278),
+(1180, 226, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1279),
+(1181, 226, 'Ginger', 'ג''ינג''ר', 0, 1280),
+(1182, 226, 'Wasabi', 'וואסבי', 0, 1281),
+(1183, 227, 'Soya', 'סויה', 0, 1282),
+(1184, 227, 'Teriyaki', 'טריאקי', 0, 1283),
+(1185, 227, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1284),
+(1186, 227, 'Ginger', 'ג''ינג''ר', 0, 1285),
+(1187, 227, 'Wasabi', 'וואסבי', 0, 1286),
+(1188, 181, 'Salmon', 'סלמון', 0, 1287),
+(1189, 181, 'Red tuna', 'טונה אדומה', 0, 1288),
+(1190, 181, 'Yellowtail Salmon', 'יילוטיל', 0, 1289),
+(1191, 181, 'Spicy Salmon', 'ספייסי סלמון', 0, 1290),
+(1192, 181, 'Spicy Tuna', 'ספייסי טונה', 0, 1291),
+(1193, 181, 'Hot Salmon', 'סלמון חם', 0, 1292),
+(1194, 181, 'Sea Bass', 'סייבס', 0, 1293),
+(1195, 181, 'Tempura coated Tofu', 'טופו בטמפורה', 0, 1294),
+(1196, 181, 'Avocado ', 'אבוכדו', 0, 1295),
+(1197, 181, 'Cucumber', 'מלפפון', 0, 1296),
+(1198, 181, 'Kampyo', 'קנפיז', 0, 1297),
+(1199, 181, 'Tempura coated sweet potato', 'בטטה בטמפורה', 0, 1298),
+(1200, 181, 'Asparagus', 'אספרגוס', 0, 1299),
+(1201, 181, 'Carrots', 'גזר', 0, 1300),
+(1202, 181, 'Green onion', 'בצל ירוק', 0, 1301),
+(1203, 181, 'Tamago', 'טמאגו', 0, 1302),
+(1204, 182, 'Avocado ', 'אבוכדו', 0, 1303),
+(1205, 182, 'Cucumber', 'מלפפון', 0, 1304),
+(1206, 182, 'Kampyo', 'קנפיז', 0, 1305),
+(1207, 182, 'Tempura coated sweet potato', 'בטטה בטמפורה', 0, 1306),
+(1208, 182, 'Asparagus', 'אספרגוס', 0, 1307),
+(1209, 182, 'Carrots', 'גזר', 0, 1308),
+(1210, 182, 'Green onion', 'בצל ירוק', 0, 1309),
+(1211, 182, 'Tamago', 'טמאגו', 0, 1310),
+(1212, 247, 'Asian puree', 'פירה אסייתי', 0, 1311),
+(1213, 247, 'White rice', 'אורז לבן', 0, 1312),
+(1214, 247, 'French fries', 'צ''יפס', 0, 1313),
+(1215, 247, ' Mineral water', 'מים מינרלים 0.5 ליטר ', 0, 1314),
+(1216, 247, ' Soda water', 'סודה 250 מ''ל ', 0, 1315),
+(1217, 247, ' Peach Iced Tea (Nestea)', 'נסטי אפרסק 330 מ''ל ', 0, 1316),
+(1218, 247, ' Prigat Diet Grapefruit', 'פריגת דיאט אשכוליות 330 מ''ל ', 0, 1317),
+(1219, 247, ' Prigat Grapefruit', 'פריגת אשכוליות 330 מ''ל ', 0, 1318),
+(1220, 247, ' Prigat Lemon', 'פריגת לימונים 330 מ''ל ', 0, 1319),
+(1221, 247, ' Prigat Orange', 'פריגת תפוזים 330 מ''ל ', 0, 1320),
+(1222, 247, ' Diet Sprite', 'דיאט ספרייט 330 מ''ל ', 0, 1321),
+(1223, 247, ' Sprite', 'ספרייט 330 מ''ל ', 0, 1322),
+(1224, 247, ' Cola Zero', 'קולה זירו 330 מ''ל ', 0, 1323),
+(1225, 247, ' Coca Cola', 'קוקה קולה 330 מ''ל ', 0, 1324);
 
 -- --------------------------------------------------------
 
@@ -1510,20 +2191,24 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `tags`
 --
 
 INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
-(1, 'Sandwiches', 'כריכים'),
-(2, 'Meat', 'בָּשָׂר'),
-(3, 'Burgers', 'בורגרס'),
-(4, 'Wraps', 'כורך'),
-(5, 'Grill', 'גְרִיל'),
-(6, 'Steak', 'סטֵייק'),
-(7, 'Pizza', 'פִּיצָה');
+(2, 'Meat', 'בשר'),
+(3, 'Burgers', 'המבורגרים'),
+(4, 'Sandwiches', 'סנדוויצים'),
+(5, 'Tortillas', 'טורטיות'),
+(6, 'Grill', 'גריל'),
+(7, 'Steak', 'סטייק'),
+(8, 'Pizza', 'פיצה'),
+(9, 'Sushi', 'סושי'),
+(10, 'Asian', 'אסייתי'),
+(11, 'Salad', 'סלט'),
+(12, 'Toast', 'טוסט');
 
 -- --------------------------------------------------------
 
@@ -1542,34 +2227,29 @@ CREATE TABLE IF NOT EXISTS `users` (
   `extras` varchar(255) DEFAULT NULL,
   `restaurant_id` int(16) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL,
+  `company_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=255 ;
+  KEY `restaurant_id` (`restaurant_id`),
+  KEY `company_id` (`company_id`),
+  KEY `role_id` (`role_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=270 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`) VALUES
-(233, 'eaba97fb7ab217e0bbe46926', '0548086730', NULL, 3, 'english', NULL, NULL, NULL, 1),
-(235, 'ahmad@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
-(236, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
-(237, 'test2@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 1),
-(238, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
-(239, 'testing@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(240, 'test555@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(241, 'rrrr@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(242, 'test33@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(243, 'rrr@gamil.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(244, 'test22@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(245, 'rael@pushstartups.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
-(246, 'josh@pushstartups.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
-(247, 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
-(248, 'shoaib.it002@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2),
-(251, 'test@gmnail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(252, 'test222@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(253, 'iftikhar_aftab@yahoo.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL),
-(254, 'rtrt@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
+(255, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
+(260, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(262, 'Tes@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(263, 'test4444@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(264, 'test43434@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(265, 'test333@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(266, 'testwwew@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(267, 'eewe@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(268, 'fdff@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(269, 'nice@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1584,25 +2264,25 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Dumping data for table `user_coupons`
 --
 
 INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
-(1, 234, 1),
-(3, 234, 2),
-(5, 235, 2),
-(6, 235, 1),
-(13, 236, 1),
-(14, 237, 1),
-(15, 240, 2),
-(16, 242, 1),
-(17, 243, 1),
-(18, 244, 1),
-(19, 252, 1),
-(20, 238, 1);
+(27, 260, 1),
+(28, 260, 2),
+(29, 261, 1),
+(30, 261, 2),
+(31, 263, 1),
+(32, 264, 1),
+(33, 265, 2),
+(34, 266, 1),
+(35, 267, 1),
+(36, 267, 2),
+(37, 268, 1),
+(38, 269, 1);
 
 -- --------------------------------------------------------
 
@@ -1621,7 +2301,24 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=81 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
+
+--
+-- Dumping data for table `user_orders`
+--
+
+INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_discount`, `discount_value`, `order_date`) VALUES
+(92, 260, 2, 118, NULL, 0, '2017-02-15'),
+(93, 260, 2, 118, NULL, 0, '2017-02-15'),
+(94, 260, 2, 86, 'fixed percentage', 30, '2017-02-15'),
+(95, 260, 1, 106, NULL, 0, '2017-02-15'),
+(96, 261, 1, 118, NULL, 0, '2017-02-15'),
+(97, 261, 1, 118, NULL, 0, '2017-02-15'),
+(98, 261, 1, 129, 'fixed value', 50, '2017-02-15'),
+(99, 261, 3, 144, NULL, 0, '2017-02-15'),
+(100, 261, 1, 93, NULL, 0, '2017-02-15'),
+(101, 261, 1, 157, NULL, 0, '2017-02-15'),
+(102, 261, 2, 186, NULL, 0, '2017-02-15');
 
 -- --------------------------------------------------------
 
@@ -1653,21 +2350,45 @@ CREATE TABLE IF NOT EXISTS `user_votes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `company_id` int(11) NOT NULL,
+  `restaurant_id` int(11) NOT NULL,
   `voting_date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
-  KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+  KEY `company_id` (`company_id`),
+  KEY `restaurant_id` (`restaurant_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `user_votes`
 --
 
-INSERT INTO `user_votes` (`id`, `user_id`, `company_id`, `voting_date`) VALUES
-(5, 238, 1, '2017-02-13'),
-(6, 245, 1, '2017-02-13'),
-(7, 248, 1, '2017-02-13'),
-(12, 238, 1, '2017-02-14');
+INSERT INTO `user_votes` (`id`, `user_id`, `company_id`, `restaurant_id`, `voting_date`) VALUES
+(20, 255, 1, 3, '2017-02-15'),
+(21, 255, 1, 3, '2017-02-16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vote_timings`
+--
+
+CREATE TABLE IF NOT EXISTS `vote_timings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `voting_start` varchar(255) NOT NULL,
+  `voting_end` varchar(255) NOT NULL,
+  `ordering_end` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `vote_timings`
+--
+
+INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`, `ordering_end`) VALUES
+(1, 1, '11:00:00', '11:10:00', '11:55:00'),
+(2, 1, '14:10:00', '15:15:00', '16:16:00');
 
 -- --------------------------------------------------------
 
@@ -1686,7 +2407,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `weekly_availibility`
@@ -1720,7 +2441,37 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (39, 4, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
 (40, 4, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
 (41, 4, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(42, 4, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
+(42, 4, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(43, 5, 'Sunday', 'יום א', '12:00', '12:00', '21:00', '21:00'),
+(44, 5, 'Monday', 'יום ב', '12:00', '12:00', '21:00', '21:00'),
+(45, 5, 'Tuesday', 'יום ג', '12:00', '12:00', '21:00', '21:00'),
+(46, 5, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
+(47, 5, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
+(48, 5, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(49, 5, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `winning_restaurant`
+--
+
+CREATE TABLE IF NOT EXISTS `winning_restaurant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `restaurant_id` int(11) NOT NULL,
+  `vote_timing_id` int(11) NOT NULL,
+  `vote_count` int(11) NOT NULL,
+  `voting_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `winning_restaurant`
+--
+
+INSERT INTO `winning_restaurant` (`id`, `company_id`, `restaurant_id`, `vote_timing_id`, `vote_count`, `voting_date`) VALUES
+(3, 1, 3, 1, 100, '2017-02-16');
 
 --
 -- Constraints for dumped tables
@@ -1773,7 +2524,9 @@ ALTER TABLE `subitems`
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`),
+  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`role_id`) REFERENCES `user_roles` (`id`);
 
 --
 -- Constraints for table `user_orders`
@@ -1786,8 +2539,15 @@ ALTER TABLE `user_orders`
 -- Constraints for table `user_votes`
 --
 ALTER TABLE `user_votes`
+  ADD CONSTRAINT `user_votes_ibfk_3` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
   ADD CONSTRAINT `user_votes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `user_votes_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
+
+--
+-- Constraints for table `vote_timings`
+--
+ALTER TABLE `vote_timings`
+  ADD CONSTRAINT `vote_timings_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 
 --
 -- Constraints for table `weekly_availibility`

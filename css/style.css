@@ -1,5 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
+﻿﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .payStyle{
 
@@ -119,9 +118,12 @@ footer {
     text-align: center;
     z-index: 0;
     line-height: 45px;
-    background: -o-linear-gradient(right, #8CD5AB,#34D760); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right,#8CD5AB,#34D760); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #8CD5AB,#34D760); /* Standard syntax (must be last) */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#34d861+0,53e590+100 */
+    background: #34d861; /* Old browsers */
+    background: -moz-linear-gradient(top, #34d861 0%, #53e590 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #34d861 0%,#53e590 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #34d861 0%,#53e590 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34d861', endColorstr='#53e590',GradientType=0 ); /* IE6-9 */
 }
 
 .product-card {
@@ -147,8 +149,8 @@ footer {
     background: white;
     color: #AAAAAA;
     font-size: 11px;
-    border-bottom-right-radius :  10px;
-    border-bottom-left-radius :  10px;
+    border-bottom-right-radius :  8px;
+    border-bottom-left-radius :  8px;
 }
 
 .product-card .card-body .header {
@@ -363,13 +365,13 @@ div.food-cart#payment-choice-popup section,
 div.food-cart#creditcard-info-popup section,
 div.food-cart#confirm-order-popup section {
     position: relative;
-    top: -25px;
+    top: -16px;
     overflow: unset;
     height: calc(100% - 104px);
     /*
     height: 70vh;
     max-height: 385px;
-    */border-radius: 10px;
+    */
 }
 
 div.food-cart#customer-popup header h2 {
@@ -386,11 +388,11 @@ div.food-cart#customer-popup .ic_close {
     width: 38px;
 }
 div.food-cart#customer-popup section {
-    height: calc(100% - 91px);
+    height: calc(100% - 77px);
 }
 
 div.food-cart section .inner-section {
-    height: calc(100% - 10px);
+    height: calc(100% - 22px);
     box-shadow: 0 0 10px rgba(136,136,136,0.50);
     background: white;
     padding: 30px 0 0 0;
@@ -486,7 +488,7 @@ div.caption-input input {
 
 
 div.popup .body {
-    padding: 15px;
+    padding: 40px;
 }
 
 div.popup h3 {
@@ -497,6 +499,7 @@ div.popup h3 {
     color: black;
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 div.popup p {
@@ -506,6 +509,7 @@ div.popup p {
     padding: 0 10px;
     color: #858585;
 }
+
 
 div.popup .product-circle .circle-img {
     width: 50vw;
@@ -542,7 +546,7 @@ div.popup .product-circle .circle-badge {
     position: absolute;
     display: inline-block;
     font-size: 14px;
-    right: 50px;
+    right: 26px;
     bottom: 0;
 }
 
@@ -556,7 +560,7 @@ div.popup .ic_close {
 
 div.popup .sperator {
     height: 1px;
-    border-bottom: 1px solid #979797;
+    border-bottom: 1px solid #ededed;
     width: 95%;
     margin: 15px auto;
 }
@@ -572,8 +576,16 @@ div.popup .custom-drop-down input {
     outline: none;
 }
 
+div.popup .custom-drop-down input:focus {
+
+    background: transparent;
+    border: 1px solid #34D760;
+    padding: 15px 17px;
+    outline: none;
+}
+
 div.popup .model-footer, div.food-cart .model-footer {
-    padding: 16px 20px;
+    padding: 17px 20px;
     color: white;
     font-size: 14px;
     text-align: center;
@@ -747,6 +759,8 @@ div.food-cart#payment-choice-popup table {
     border-bottom:none;
 }
 
+
+
 div.food-cart#payment-choice-popup table .choice {
     border-radius: 6.5px;
     background-image: linear-gradient(215deg, #34d861, #53e691);
@@ -826,41 +840,52 @@ div.food-cart#creditcard-info-popup section .inner-section div.caption-input img
 
 /*Confrim Order*/
 
-div.food-cart#confirm-order-popup section{
-    height: calc(100% - 104px);
+div.food-cart#confirm-order-popup section {
+    height: calc(100% - 81px);
+    padding: unset;
+    overflow:hidden;
 }
-div.food-cart#confirm-order-popup section .inner-section{
-    padding: 20px 10px;
+
+div.food-cart#confirm-order-popup section .inner-section {
+    padding: 25px 10px;
+    height: calc(100% - 52px);
+    background: #F0F0F0;
+    overflow:hidden;
+    overflow-y:auto;
 }
-div.food-cart#confirm-order-popup table{
+
+div.food-cart#confirm-order-popup table {
     border: none;
-    border-collapse: separate;
+    border-collapse: collapse;
+}
+
+div.food-cart#confirm-order-popup .model-footer {
+    position:relative;
 }
 div.food-cart#confirm-order-popup table tr td:last-child {
     text-align: left;
     width: 78%;
 }
 
-div.food-cart#confirm-order-popup table tr td:last-child div{
+.rtl div.food-cart#confirm-order-popup table tr td:last-child div {
     padding-right: 4vw;
 }
+div.food-cart#confirm-order-popup table tr td:last-child div {
+    padding-left: 4vw;
+}
+
 div.food-cart#confirm-order-popup table tr td:last-child div > span {
     color: #FF8416;
     font-size: 15px;
     line-height: 30px;
 }
+
 div.food-cart#confirm-order-popup table tr td:last-child div > a {
     text-decoration: unset;
     color: inherit;
     padding-left: 5px;
 }
 
-div.food-cart#confirm-order-popup table tr td:first-child {
-    vertical-align: top
-}
-div.food-cart#confirm-order-popup table tr td:first-child img {
-    width: 45px;
-}
 
 div#footer-dots{
     position: fixed;
@@ -889,6 +914,17 @@ div#footer-dots span.active {
     width: 11px;
     height: 11px;
     margin-bottom: -1px;
+}
+
+
+div.table-card {
+    background:white;
+    padding:3vh 1vh;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+div.table-card:last-child {
+    margin-bottom:0;
 }
 /*Question poup */
 
