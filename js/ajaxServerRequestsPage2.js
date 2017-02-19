@@ -754,20 +754,26 @@ function onQtyDecreasedButtonClicked(index) {
         // DECREASE THE QTY OF SUB ITEMS ONE TYPE
         for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].subItemsOneType.length;x++)
         {
-            if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
+            for (var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x])
+            {
+                if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
 
-                userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
-                    parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) - 1;
+                    userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
+                        parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) -  1;
+                }
             }
         }
 
         // DECREASE THE QTY OF SUB ITEMS MULTIPLE TYPE
         for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].multiItemsOneType.length;x++)
         {
-            if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
+            for (var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x])
+            {
+                if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
 
-                userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                    (parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
+                    userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
+                        (parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
+                }
             }
         }
 
@@ -1255,6 +1261,6 @@ function hideLoading(){
 
 function scrollToError(id) {
     $('#mid-scroll').animate({
-        scrollTop: $(id).offset().top - 30  
+        scrollTop: $(id).offset().top - 30
     }, 200);
 }
