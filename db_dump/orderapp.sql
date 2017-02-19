@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 16, 2017 at 01:46 PM
+-- Generation Time: Feb 19, 2017 at 07:44 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -105,10 +105,7 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`id`, `name`, `url`) VALUES
-(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco'),
-(2, 'josh', 'http://dev.biz.orderapp.com/?biz=josh'),
-(3, 'rael', 'http://dev.biz.orderapp.com/?biz=rael'),
-(4, 'avi', 'http://dev.biz.orderapp.com/?biz=avi');
+(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco');
 
 -- --------------------------------------------------------
 
@@ -121,20 +118,22 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `company_id` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   `vote_count` int(11) NOT NULL,
-  `voting_date` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=94 ;
+  `vote_timing_id` int(11) NOT NULL,
+  `voting_date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `vote_timing_id` (`vote_timing_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=154 ;
 
 --
 -- Dumping data for table `company_voting`
 --
 
-INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `voting_date`) VALUES
-(89, 1, 1, 0, '2017-02-16'),
-(90, 1, 2, 0, '2017-02-16'),
-(91, 1, 3, 0, '2017-02-16'),
-(92, 1, 4, 0, '2017-02-16'),
-(93, 1, 5, 0, '2017-02-16');
+INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`, `voting_date`) VALUES
+(149, 1, 1, 0, 1, '2017-02-19'),
+(150, 1, 2, 1, 1, '2017-02-19'),
+(151, 1, 3, 0, 1, '2017-02-19'),
+(152, 1, 4, 0, 1, '2017-02-19'),
+(153, 1, 5, 0, 1, '2017-02-19');
 
 -- --------------------------------------------------------
 
@@ -463,6 +462,42 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gloria_menus`
+--
+
+CREATE TABLE IF NOT EXISTS `gloria_menus` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `restaurant_id` int(11) NOT NULL,
+  `url` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `restaurant_id` (`restaurant_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `gloria_menus`
+--
+
+INSERT INTO `gloria_menus` (`id`, `restaurant_id`, `url`) VALUES
+(1, 1, 'images/angus_gloria/angus_1.JPG'),
+(2, 1, 'images/angus_gloria/angus_2.jpg'),
+(3, 1, 'images/angus_gloria/angus_4.jpg'),
+(4, 1, 'images/angus_gloria/angus_6.jpg'),
+(5, 3, 'images/bandora_gloria/Bandora_1.JPG'),
+(6, 3, 'images/bandora_gloria/Bandora_2.JPG'),
+(7, 2, 'images/meshulashim_gloria/Meshulashim_1.JPG'),
+(8, 2, 'images/meshulashim_gloria/Meshulashim_2.JPG'),
+(9, 2, 'images/meshulashim_gloria/Meshulashim_3.JPG'),
+(10, 2, 'images/meshulashim_gloria/Meshulashim_4.JPG'),
+(11, 4, 'images/roza_gloria/Roza_1.JPG'),
+(12, 4, 'images/roza_gloria/Roza_2.JPG'),
+(13, 4, 'images/roza_gloria/Roza_3.JPG'),
+(14, 4, 'images/roza_gloria/Roza_4.JPG'),
+(15, 4, 'images/roza_gloria/Roza_5.JPG'),
+(16, 4, 'images/roza_gloria/Roza_6.JPG');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `items`
 --
 
@@ -776,7 +811,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=104 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -800,7 +835,30 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (77, 102, 1, 'XL Pie', 66, 'Mushrooms (+5), Tomatoes (+5), '),
 (78, 102, 1, 'XL + Toppings', 75, 'Olives, Vegan Cheese, '),
 (79, 102, 1, 'Gluten Free', 45, 'Olives (+5), Corn (+5), '),
-(80, 103, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), ');
+(80, 103, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(81, 104, 2, 'Super Spicy Bandora', 78, 'Bread Type:Laffa, Spring Chicken, French Fries, Tomatoes, Roasted Peppers, Chummus, Amba, '),
+(82, 105, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), portobello mushroom (+4), '),
+(83, 105, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(84, 106, 3, 'Super Spicy Bandora', 105, 'Bread Type:Pita, Veal, Tomatoes, Roasted Peppers, Techina, Chummus, '),
+(85, 107, 3, 'Super Spicy Bandora', 105, 'Bread Type:Pita, Veal, Fried onions, Tomatoes, Techina, '),
+(86, 108, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, Fried onions, Tomatoes, Chummus, Spicy, '),
+(87, 108, 2, 'Shawarma', 66, 'Bread Type:Pita, Spring Chicken, Roasted Peppers, Techina, '),
+(88, 109, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, Roasted Peppers, Chummus, Spicy, '),
+(89, 109, 2, 'Super Spicy Bandora', 70, 'Bread Type:Pita, Veal, French Fries, Fried onions, '),
+(90, 110, 1, 'Shawarma', 33, 'Bread Type:Pita, Veal, Fried onions, Chummus, '),
+(91, 110, 2, 'Shawarma', 66, 'Bread Type:Pita, Spring Chicken, Fried onions, Techina, '),
+(92, 111, 1, 'Shawarma', 33, 'Bread Type:Pita, Veal, Fried onions, Techina, '),
+(93, 111, 2, 'Super Spicy Bandora', 70, 'Bread Type:Pita, Veal, French Fries, Fried onions, Techina, Chummus, '),
+(94, 112, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Spring Chicken, French Fries, Techina, '),
+(95, 112, 2, 'Shawarma', 66, 'Bread Type:Pita, Veal, French Fries, Fried onions, '),
+(96, 113, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, French Fries, Fried onions, Techina, Chummus, '),
+(97, 113, 2, 'Shawarma', 66, 'Bread Type:Pita, Spring Chicken, Fried onions, Tomatoes, Chummus, Spicy, '),
+(98, 114, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Mix, Fried onions, Chummus, '),
+(99, 114, 2, 'Shawarma', 66, 'Bread Type:Pita, Veal, French Fries, Fried onions, Techina, '),
+(100, 115, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, Roasted Peppers, Techina, '),
+(101, 115, 2, 'Shawarma', 66, 'Bread Type:Pita, Veal, Fried onions, Chummus, '),
+(102, 116, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(103, 116, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), ');
 
 -- --------------------------------------------------------
 
@@ -845,7 +903,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_gallery` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `restaurant_gallery`
@@ -2232,7 +2290,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=270 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=271 ;
 
 --
 -- Dumping data for table `users`
@@ -2249,7 +2307,8 @@ INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language
 (266, 'testwwew@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (267, 'eewe@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (268, 'fdff@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(269, 'nice@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
+(269, 'nice@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(270, 'ahmad69191@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -2301,7 +2360,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -2319,7 +2378,20 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (100, 261, 1, 93, NULL, 0, '2017-02-15'),
 (101, 261, 1, 157, NULL, 0, '2017-02-15'),
 (102, 261, 2, 186, NULL, 0, '2017-02-15'),
-(103, 260, 1, 93, NULL, 0, '2017-02-16');
+(103, 260, 1, 93, NULL, 0, '2017-02-16'),
+(104, 261, 3, 78, NULL, 0, '2017-02-19'),
+(105, 261, 1, 157, NULL, 0, '2017-02-19'),
+(106, 261, 3, 105, 'fixed percentage', 0, '2017-02-19'),
+(107, 261, 3, 105, NULL, 0, '2017-02-19'),
+(108, 261, 3, 101, NULL, 0, '2017-02-19'),
+(109, 261, 3, 105, NULL, 0, '2017-02-19'),
+(110, 261, 3, 99, NULL, 0, '2017-02-19'),
+(111, 260, 3, 103, NULL, 0, '2017-02-19'),
+(112, 260, 3, 101, NULL, 0, '2017-02-19'),
+(113, 260, 3, 101, NULL, 0, '2017-02-19'),
+(114, 260, 3, 101, NULL, 0, '2017-02-19'),
+(115, 260, 3, 101, NULL, 0, '2017-02-19'),
+(116, 260, 1, 157, NULL, 0, '2017-02-19');
 
 -- --------------------------------------------------------
 
@@ -2350,14 +2422,20 @@ INSERT INTO `user_roles` (`id`, `name`) VALUES
 CREATE TABLE IF NOT EXISTS `user_votes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `company_id` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
-  `voting_date` date NOT NULL,
+  `vote_timing_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
-  KEY `company_id` (`company_id`),
-  KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+  KEY `restaurant_id` (`restaurant_id`),
+  KEY `vote_timing_id` (`vote_timing_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `user_votes`
+--
+
+INSERT INTO `user_votes` (`id`, `user_id`, `restaurant_id`, `vote_timing_id`) VALUES
+(7, 255, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -2380,8 +2458,7 @@ CREATE TABLE IF NOT EXISTS `vote_timings` (
 --
 
 INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 1, '11:00:00', '12:10:00', '12:30:00'),
-(2, 1, '13:11:00', '13:15:00', '13:16:00');
+(1, 1, '07:00:00', '11:33:00', '11:27:00');
 
 -- --------------------------------------------------------
 
@@ -2443,39 +2520,27 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (48, 5, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (49, 5, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `winning_restaurant`
---
-
-CREATE TABLE IF NOT EXISTS `winning_restaurant` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `company_id` int(11) NOT NULL,
-  `restaurant_id` int(11) NOT NULL,
-  `vote_timing_id` int(11) NOT NULL,
-  `vote_count` int(11) NOT NULL,
-  `voting_date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `winning_restaurant`
---
-
-INSERT INTO `winning_restaurant` (`id`, `company_id`, `restaurant_id`, `vote_timing_id`, `vote_count`, `voting_date`) VALUES
-(4, 1, 2, 1, 100, '2017-02-16'),
-(5, 1, 3, 2, 100, '2017-02-16');
-
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `company_voting`
+--
+ALTER TABLE `company_voting`
+  ADD CONSTRAINT `company_voting_ibfk_1` FOREIGN KEY (`vote_timing_id`) REFERENCES `vote_timings` (`id`);
 
 --
 -- Constraints for table `extras`
 --
 ALTER TABLE `extras`
   ADD CONSTRAINT `extras_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`);
+
+--
+-- Constraints for table `gloria_menus`
+--
+ALTER TABLE `gloria_menus`
+  ADD CONSTRAINT `gloria_menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
 
 --
 -- Constraints for table `items`
@@ -2533,9 +2598,9 @@ ALTER TABLE `user_orders`
 -- Constraints for table `user_votes`
 --
 ALTER TABLE `user_votes`
-  ADD CONSTRAINT `user_votes_ibfk_3` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
   ADD CONSTRAINT `user_votes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `user_votes_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
+  ADD CONSTRAINT `user_votes_ibfk_2` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
+  ADD CONSTRAINT `user_votes_ibfk_3` FOREIGN KEY (`vote_timing_id`) REFERENCES `vote_timings` (`id`);
 
 --
 -- Constraints for table `vote_timings`
