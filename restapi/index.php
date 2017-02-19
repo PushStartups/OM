@@ -1094,7 +1094,6 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     //To address and name
     $mail->addAddress("qaorders@orderapp.com"); // SEND USER COPY TO ADMIN
-    $mail->addAddress("muhammad.iftikhar.aftab@gmail.com"); // SEND USER COPY TO ADMIN
 
     //Address to which recipient will reply
     $mail->addReplyTo("order@orderapp.com", "Reply");
