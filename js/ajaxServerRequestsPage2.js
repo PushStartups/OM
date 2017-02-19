@@ -497,9 +497,10 @@ function generateTotalUpdateFoodCart()
         foodCartData.push(cartItem);
 
         // CHECK ONE TYPE SUB ITEMS IF ANY
+        var ct = 0;
+
         for (var y = 0; y < order.subItemsOneType.length; y++)
         {
-            var ct = 0;
 
             for (var key in order.subItemsOneType[y])
             {
@@ -565,16 +566,19 @@ function generateTotalUpdateFoodCart()
                     }
                 }
 
-                ct++;
+
             }
+
+
+            ct++;
         }
 
         // CHECK MULTIPLE SELECTABLE SUB ITEMS
 
+        var ct = 0;
+
         for (var y = 0; y < order.multiItemsOneType.length; y++)
         {
-            var ct = 0;
-
             for (var key in order.multiItemsOneType[y])
             {
                 if(order.multiItemsOneType[y][key] != null)
@@ -613,8 +617,10 @@ function generateTotalUpdateFoodCart()
                     }
                 }
 
-                ct++;
+
             }
+
+            ct++;
         }
 
         // TOTAL OF ITEM WITH SUB ITEMS

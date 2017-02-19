@@ -363,7 +363,7 @@ div.popup {
 }
 #main-popup .body{
     height: calc(100% - 29px);
-    padding: 10px 40px 0 40px;
+    padding: 10px 25px 0 25px;
 }
 #mid-scroll {
     height: 50%;
@@ -659,11 +659,11 @@ div.popup ul {
 }
 
 div.popup ul li {
-    margin: 0;
+    margin: 10px 0 0;
 }
 
 div.popup ul li label {
-    padding: 5px;
+    padding: 3px;
     margin: 10px 0;
     line-height: 30px;
 }
