@@ -8,61 +8,74 @@
     <link href="css/dropdown.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <script src="js/jquery.min.js" ></script>
-    
+
     <script>
-    $(function(){
-$('#questuin-btn').on('click', function(){
-            $(this).fadeOut();
-        $("#feedback").fadeIn();
-        });
-        $("#feedback button").on("click" , function(){
-        $("#feedback p").fadeIn();
 
-        $("#feedback textarea").fadeOut();
+        var myVar =
 
-        $("#feedback button").fadeOut();
+        $(function(){
+
+            $('#questuin-btn').on('click', function(){
+                $(this).fadeOut();
+                $("#feedback").fadeIn();
+            });
+
+            $("#feedback button").on("click" , function(){
+                $("#feedback p").fadeIn();
+
+                $("#feedback textarea").fadeOut();
+
+                $("#feedback button").fadeOut();
+            })
+
+
+            var delayMillis = 3000; //1 second
+
+            myVar = setTimeout(function() {
+               window.location.href = 'page1.html';
+            }, delayMillis);
+
         })
-    })
 
     </script>
     <style>
-    div.food-cart section{
-        height: 100% !important;
-    }
-    .model-footer{
-        cursor: pointer;
-        transition: all ease-in-out .3s;
-    }
-    #feedback{
-        background: white;
-        position: absolute;
-        bottom: 0;
-        height: 45%;
-        width: 100%;
-        padding:25px 20px;
-        display:none;
-    }
-      #feedback textarea{
-        background:#F5F5F5;
-        width:100%;
-        height:calc(100% - 30px);
-        border:none;
-        outline:unset;
-        padding:20px;
-        font-size:15px;
-    font-family: 'Open Sans', sans-serif;
-    resize:none;
-    }
-      #feedback button{
-        background:transparent;
-        width:100%;
-        line-height:40px;
-        color:#FF7F00;
-        font-size:16px;
-        border:none;
-        outline:unset;
-        transition: all ease-in-out .3s;
-    }
+        div.food-cart section{
+            height: 100% !important;
+        }
+        .model-footer{
+            cursor: pointer;
+            transition: all ease-in-out .3s;
+        }
+        #feedback{
+            background: white;
+            position: absolute;
+            bottom: 0;
+            height: 45%;
+            width: 100%;
+            padding:25px 20px;
+            display:none;
+        }
+        #feedback textarea{
+            background:#F5F5F5;
+            width:100%;
+            height:calc(100% - 30px);
+            border:none;
+            outline:unset;
+            padding:20px;
+            font-size:15px;
+            font-family: 'Open Sans', sans-serif;
+            resize:none;
+        }
+        #feedback button{
+            background:transparent;
+            width:100%;
+            line-height:40px;
+            color:#FF7F00;
+            font-size:16px;
+            border:none;
+            outline:unset;
+            transition: all ease-in-out .3s;
+        }
 
         #feedback p {
             color:#FF7F00;
@@ -88,27 +101,27 @@ $('#questuin-btn').on('click', function(){
 </head>
 
 <body>
-      <div id="question-popup" style="display: block; width: 100%; height: 100% !important; border-radius: unset; bottom: 0" class="food-cart">
+<div id="question-popup" style="display: block; width: 100%; height: 100% !important; border-radius: unset; bottom: 0" class="food-cart">
 
-        <section style="border-radius: unset">
+    <section style="border-radius: unset">
 
-            <div class="centered-div" >
-                <img src="img/logo.png">
-                <br>
-                GREAT YOUR FOOD IS ON IT'S WAY TO YOU!
-            </div>
+        <div class="centered-div" >
+            <img src="img/logo.png">
+            <br>
+            GREAT YOUR FOOD IS ON IT'S WAY TO YOU!
+        </div>
 
-            <div id="feedback">
+        <div id="feedback">
 
-                <p> Thanks, We will be in touch shortly </p>
-                <textarea placeholder="How can we help you ?" ></textarea>
-                <button>Send</button>
-            </div>
+            <p> Thanks, We will be in touch shortly </p>
+            <textarea placeholder="How can we help you ?" ></textarea>
+            <button onclick="window.location.href='page1.html'">Send</button>
+        </div>
 
-            <div id="questuin-btn"  style="border-radius: 0px;" class="model-footer">Question ?</div>
+        <div id="questuin-btn" onclick="clearTimeout(myVar);"  style="border-radius: 0px;" class="model-footer">Question ?</div>
 
-        </section>
-    </div>
+    </section>
+</div>
 </body>
 
 </html>

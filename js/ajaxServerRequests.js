@@ -105,7 +105,7 @@ function  getAllRestaurants()
                         '<div class="clearfix">'+'</div>'+
                         '<div id="collapse'+x+'"class="accordion-body collapse">'+
                         '<div class="accordion-inner">'+
-                        '<p style="word-break: normal">'+ result[x].description_en +'</p>'+
+                        '<p style="word-break: normal"><b>'+ result[x].description_en +'</b></p>'+
                         '<div class="btn-group btn-group-justified">'+
                         '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">'+ result[x].address_en +'</p></div>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now<img src="img/dropdown.png"></p><span class="text-left"><b>'+result[x].today_timings+'</b></span></a>'+
@@ -140,7 +140,7 @@ function  getAllRestaurants()
                         '<div class="clearfix"></div>'+
                         '<div id="collapse'+x+'" class="accordion-body collapse">'+
                         '<div class="accordion-inner">'+
-                        '<p style="word-break: normal">'+ result[x].description_en +'</p>'+
+                        '<p style="word-break: normal"><b>'+ result[x].description_en +'</b></p>'+
                         '<div class="btn-group btn-group-justified">'+
                         '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">'+ result[x].address_en +'</p></div>'+
                         '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left"><b>Closed Now</b><img src="img/dropdown.png"></p> <span class="text-left"></span></a>'+

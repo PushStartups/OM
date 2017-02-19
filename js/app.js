@@ -1,10 +1,24 @@
-
 $(function () {
+
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (!(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
+
+    }
+
+    $('div.caption-input input.scroll').on('focus', function(){
+        var that = this;
+        $(".inner-section").animate({
+            scrollTop: $(that).offset().top
+        }, 200);
+    })
 
 
     $("#main-footer , #food-cart-popup .model-footer").on("click" , function(){
+
         orderNow()
     });
+
 
     $("#error_alert img").on("click" , function(){
 
@@ -34,9 +48,7 @@ $(function () {
 
         $("#overlay").fadeIn();
         $("#main-popup").slideDown();
-         setTimeout(function(){
-        resize()
-    },500)
+
     })
 
 
@@ -55,7 +67,7 @@ $(function () {
     })
 
     $(document).on('click','.increase-btn',function(){
-        
+
         var count = $(this).prev(".count");
         count.text(parseInt(count.text()) + 1);
 
@@ -71,20 +83,27 @@ $(function () {
             count.text(val - 1);
 
             if ((parseInt(count.text()) == 1)) {
+
                 $(this).attr("src", "img/ic_cancel.png")
+
             }
         }
         else {
+
             $(this).attr("src", "img/ic_cancel.png")
         }
 
     })
 
     function increaseCounter() {
+
         $(".count-badge").html(parseInt($(".count-badge").html()) + 1);
+
     }
 
 })
+
+
 function setUpPopup(id){
 
     $("#overlay").fadeIn();
@@ -209,7 +228,7 @@ function decreaseCounter() {
 
     if(parseInt($(".count-badge").html()) == 1)
     {
-       $(".count-badge").hide();
+        $(".count-badge").hide();
     }
 
     $(".count-badge").html(parseInt($(".count-badge").html()) - 1);
@@ -218,51 +237,50 @@ function decreaseCounter() {
 }
 
 function displayDots(){
+
+
     $("#footer-dots").show();
+
 }
 
 function hideDots(){
+
     $("#footer-dots").hide();
+
 }
 
 function setDot(index){
+
     $("#footer-dots").find(".active").removeClass("active")
     $("#"+ index).addClass("active")
 }
+
 $(window).on("resize", function () {
-        resize()
-    });
 
-    function resize() {
-        var height = $("#main-popup .body").innerHeight();
-        var topHeight = $("#top-half").outerHeight();
+    resize()
+});
 
-        $("#main-popup").css("height", "90%");
-        $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+function resize() {
 
-        setTimeout(function () {
-            if ($("#mid-scroll").find("#parent_type_multiple").text() == "" &&
-                ($("#mid-scroll").find("#parent_type_one").text() == "" ||
-                !$("#mid-scroll").find("#parent_type_one").is(":visible"))) {
+    var height = $("#main-popup .body").innerHeight();
+    var topHeight = $("#top-half").outerHeight();
 
-                $("#mid-scroll").css("height", "auto");
-                $("#main-popup").css("height", "auto");
+    $("#main-popup").css("height", "90%");
+    $("#mid-scroll").css("height", height - topHeight - 50 + "px")
 
-            } else {
-                $("#main-popup").css("height", "90%");
-                height = $("#main-popup .body").innerHeight();
-                $("#mid-scroll").css("height", height - topHeight - 50 + "px")
-            }
-        }, 700)
-        /*
-        if ($("#mid-scroll").find("#parent_type_multiple").text() == "" && $("#mid-scroll").find("#parent_type_one").text() == "") {
-            $("#mid-scroll").css("display", "none");
+    setTimeout(function () {
+        if ($("#mid-scroll").find("#parent_type_multiple").text() == "" &&
+            ($("#mid-scroll").find("#parent_type_one").text() == "" ||
+            !$("#mid-scroll").find("#parent_type_one").is(":visible"))) {
+
+            $("#mid-scroll").css("height", "auto");
             $("#main-popup").css("height", "auto");
-        }
-        else{
+
+        } else {
+            $("#main-popup").css("height", "90%");
             height = $("#main-popup .body").innerHeight();
-            $("#main-popup").css("height" , "90%");
             $("#mid-scroll").css("height", height - topHeight - 50 + "px")
         }
-        */
-    }
+    }, 700)
+
+}

@@ -3,16 +3,15 @@
 var host = "http://"+window.location.hostname;
 
 
-// RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-var userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
-
-
 // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-if(userObject == undefined || userObject == "")
+if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER_OBJECT") == "" || localStorage.getItem("USER_OBJECT") == null)
 {
     // SEND USER BACK TO HOME PAGE
     window.location.href = '../index.html';
 }
+
+// RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
+var userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
 
 var result                      = null;                                            // SERVER RESPONSE RAW
@@ -299,14 +298,14 @@ function onItemSelected (y)
                                 // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                                 multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                                     ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                                    + extras.extra_with_subitems[x].subitems[y].name_en+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
+                                    + extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
                             }
                             else
                             {
                                 // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                                 multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                                     ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                                    + extras.extra_with_subitems[x].subitems[y].name_en + '</label></li>';
+                                    + extras.extra_with_subitems[x].subitems[y].name_en.capitalize() + '</label></li>';
                             }
 
 
@@ -338,6 +337,8 @@ function onItemSelected (y)
             $('#parent_type_multiple').html(multipleTypeStr);
             $('#parent_type_multiple').show();
 
+
+            resize();
             hideLoading();
 
         },
@@ -422,17 +423,21 @@ function addUserOrder()
     // CHECK IF USER SELECTED ON TYPE SUB ITEMS OR NOT (REQUIRED)
     for(var x=0;x<oneTypeSubItems.length;x++)
     {
+
         // GET ONE TYPE SUB ITEM NAME AS KEY
         for (var key in oneTypeSubItems[x])
         {
+
             // IF ONE TYPE SUB ITEM NULL
             if(oneTypeSubItems[x][key] == null)
             {
                 // EXCEPTION HANDLING
                 var index = '#input' + x;
 
+
                 $(index).addClass("red-border-c");
                 scrollToError(index);
+
 
                 var error = '#error-one-type'+x;
                 $(error).html("Select options!");
@@ -1230,6 +1235,7 @@ function  callPage3() {
 
         success: function (response) {
 
+            userObject = null;
             window.location.href = '../page3.html';
             hideLoading();
         },
@@ -1260,7 +1266,15 @@ function hideLoading(){
 }
 
 function scrollToError(id) {
+
+
     $('#mid-scroll').animate({
-        scrollTop: $(id).offset().top - 30
+
+        scrollTop: 70
+
     }, 200);
+}
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }

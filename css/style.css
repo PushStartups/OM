@@ -5,6 +5,8 @@
    url('../fonts/HelveticaNeu.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }  
 
+* {-webkit-padding-start: 0px;}
+
 .payStyle{
     color: white;
     background: orangered;
@@ -101,8 +103,9 @@ header .count-badge {
     position: absolute;
     color: red;
     background: white;
-    line-height: 7px;
-    padding: 8px;
+    line-height: 8px;
+    padding: 9px;
+    padding-bottom: 7px;
     border-radius: 50%;
     right: 7px;
     font-size: 12px;
@@ -216,7 +219,7 @@ div.food-cart {
     bottom: 40px;
     height: calc(100% - 60px);
     border-radius: 10px;
-    z-index: 100;
+    z-index: 2000;
 }
 
 div.food-cart section {
@@ -639,13 +642,16 @@ input[type="radio"] , input[type="checkbox"]   {
 input[type="radio"] + label ,input[type="checkbox"] + label {
     background: url('../img/uncheck.png') 1px 0px no-repeat;
     width: 20px;
+    background-position: center left;
     padding-left: 30px !important;
     font-size: 13px;
     color: #A4A4A4;
 }
 
 input[type="radio"]:checked + label ,  input[type="checkbox"]:checked + label {
-    background: url('../img/checked.png') 0px 0px no-repeat;
+    background: url('../img/checked.png') 0px -1px no-repeat;
+    background-size: 25px 25px;
+    background-position: center left;
 }
 
 div.food-cart#customer-popup .checkbox-list div {
@@ -663,7 +669,7 @@ div.popup ul li {
 }
 
 div.popup ul li label {
-    padding: 3px;
+    padding: 7px;
     margin: 10px 0;
     line-height: 30px;
 }
@@ -682,7 +688,7 @@ div.popup ul li label {
 
 
 #error_alert {
-    z-index: 999;
+    z-index: 9999999;
     display: none;
 }
 
@@ -926,7 +932,7 @@ div#footer-dots{
     text-align: center;
     width: 100%;
     left: 0;
-    z-index: 99999;
+    z-index: 1000;
     display: none;
 }
 
