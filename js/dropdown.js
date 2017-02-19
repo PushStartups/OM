@@ -15,13 +15,13 @@ $(function() {
             $(this).find(".custom-drop-down-list").slideDown(200);
         }
 
-
-            if ($(document).innerHeight() - $(this).position().top < 250) /* Check if it is near bottom */ {
+        /*
+            if ($(document).innerHeight() - $(this).position().top < 250) /* Check if it is near bottom  {
                 var that = $(this);
                 setTimeout(function () {
                     that.find(".custom-drop-down-list").css("transform", 'translateY(' + (that.find(".custom-drop-down-list").height() + 43) * -1 + 'px)')
                 }, 200)
-            }
+            }*/
 
             e.stopPropagation();
     });

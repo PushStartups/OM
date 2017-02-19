@@ -236,6 +236,33 @@ $(window).on("resize", function () {
     function resize() {
         var height = $("#main-popup .body").innerHeight();
         var topHeight = $("#top-half").outerHeight();
-        console.log(topHeight);
-        $("#mid-scroll").css("height", height - topHeight - 82 + "px")
+
+        $("#main-popup").css("height", "90%");
+        $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+
+        setTimeout(function () {
+            if ($("#mid-scroll").find("#parent_type_multiple").text() == "" &&
+                ($("#mid-scroll").find("#parent_type_one").text() == "" ||
+                !$("#mid-scroll").find("#parent_type_one").is(":visible"))) {
+
+                $("#mid-scroll").css("height", "auto");
+                $("#main-popup").css("height", "auto");
+
+            } else {
+                $("#main-popup").css("height", "90%");
+                height = $("#main-popup .body").innerHeight();
+                $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+            }
+        }, 700)
+        /*
+        if ($("#mid-scroll").find("#parent_type_multiple").text() == "" && $("#mid-scroll").find("#parent_type_one").text() == "") {
+            $("#mid-scroll").css("display", "none");
+            $("#main-popup").css("height", "auto");
+        }
+        else{
+            height = $("#main-popup .body").innerHeight();
+            $("#main-popup").css("height" , "90%");
+            $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+        }
+        */
     }

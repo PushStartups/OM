@@ -839,12 +839,15 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mailbody  .= '<div style="background-image: url(http://dev.m.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >';
     $mailbody  .= '<table style="width: 100%; color: white; padding: 30px">';
     $mailbody  .= '<tr style="font-size: 30px; padding: 10px">';
-    $mailbody  .= '<td>'.$user_order['total'].' NIS</td>';
+    $mailbody  .= '<td dir="rtl" style="text-align: left">'.$user_order['total'].' ש"ח'.'</td>';
     $mailbody  .= '<td style="text-align: right;" >  סיכום הזמנה <img style="padding-top: 10px; width: 20px" src="http://dev.m.orderapp.com/restapi/images/bag.png" ></td>';
     $mailbody  .= '</tr>';
     $mailbody  .= '<tr style="font-size: 12px; padding: 10px" >';
-    $mailbody  .= ' <td >'.$user_order['Cash_Card_he'].'</td>';
-    $mailbody  .= '<td style="text-align: right"> '.$todayDate.' &nbsp; Order ID #'.$orderId.'</td>';
+    $mailbody  .= '<td>'.$user_order['Cash_Card_he'].'</td>';
+    $mailbody  .= '<td style="text-align: right" dir="rtl">';
+    $mailbody  .=  '&nbsp;'.$todayDate.'&nbsp;';
+    $mailbody  .= 'מספר הזמנה #';
+    $mailbody  .=  $orderId;
     $mailbody  .= '</tr>';
     $mailbody  .= '</table>';
     $mailbody  .= '</div>';
@@ -854,12 +857,15 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
         $mailbody.='<table style="width: 100%; color:black; padding: 30px 0; border-bottom: 1px solid #D3D3D3" >';
         $mailbody.='<tr style="font-size: 18px; padding: 10px; font-weight: bold" >';
-        $mailbody.='<td style=" white-space: nowrap"> <span style="color: #FF864C;" dir="rtl">'.(($t['price'] * $t['qty'])).'NIS</span> &nbsp;'.$t['price'].' NIS X '.$t['qty'].'</td>';
+        $mailbody.='<span style="color: #FF864C;" dir="rtl">';
+        $mailbody.=(($t['price'] * $t['qty'])).'ש"ח';
+        $mailbody.='</span> &nbsp; <span dir="rtl">ש"ח</span>';
+        $mailbody.=$t['price'].' x '.$t['qty'].'</td>';
         $mailbody.='<td style="text-align: right;" >'. $t['name_he'] .'</td>';
         $mailbody.='</tr>';
         $mailbody.='<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
         $mailbody.='<td > </td>';
-        $mailbody.='<td style="text-align: right">'.$t['detail_he'].'</td>';
+        $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].'</td>';
         $mailbody.='</tr>';
         $mailbody.='</table>';
     }
@@ -922,7 +928,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     }
     else
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap"dir="rtl"> פיק ממסעדה : '.$user_order['restaurantAddress'].'</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"dir="rtl">  איסוף עצמי ממסעדה : '.$user_order['restaurantAddress'].'</td>';
     }
 
     $mailbody .=  '<td style="padding: 10px 0; text-align: center"> <img style="height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
@@ -1000,27 +1006,34 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mailbody  .= '<div style="background-image: url(http://dev.m.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >';
     $mailbody  .= '<table style="width: 100%; color: white; padding: 30px">';
     $mailbody  .= '<tr style="font-size: 30px; padding: 10px">';
-    $mailbody  .= '<td>'.$user_order['total'].' NIS</td>';
+    $mailbody  .= '<td dir="rtl" style="text-align: left">'.$user_order['total'].' ש"ח'.'</td>';
     $mailbody  .= '<td style="text-align: right;" >  סיכום הזמנה <img style="padding-top: 10px; width: 20px" src="http://dev.m.orderapp.com/restapi/images/bag.png" ></td>';
     $mailbody  .= '</tr>';
     $mailbody  .= '<tr style="font-size: 12px; padding: 10px" >';
-    $mailbody  .= ' <td >'.$user_order['Cash_Card_he'].'</td>';
-    $mailbody  .= '<td style="text-align: right"> '.$todayDate.' &nbsp; Order ID #'.$orderId.'</td>';
+    $mailbody  .= '<td>'.$user_order['Cash_Card_he'].'</td>';
+    $mailbody  .= '<td style="text-align: right" dir="rtl">';
+    $mailbody  .=  '&nbsp;'.$todayDate.'&nbsp;';
+    $mailbody  .= 'מספר הזמנה #';
+    $mailbody  .=  $orderId;
     $mailbody  .= '</tr>';
     $mailbody  .= '</table>';
     $mailbody  .= '</div>';
     $mailbody  .= '<div  style="padding: 10px 30px 0px 30px;" >';
 
+
     foreach($user_order['cartData'] as $t) {
 
         $mailbody.='<table style="width: 100%; color:black; padding: 30px 0; border-bottom: 1px solid #D3D3D3" >';
         $mailbody.='<tr style="font-size: 18px; padding: 10px; font-weight: bold" >';
-        $mailbody.='<td style=" white-space: nowrap"> <span style="color: #FF864C;" dir="rtl">'.(($t['price'] * $t['qty'])).'NIS</span> &nbsp;'.$t['price'].' NIS X '.$t['qty'].'</td>';
+        $mailbody.='<span style="color: #FF864C;" dir="rtl">';
+        $mailbody.=(($t['price'] * $t['qty'])).'ש"ח';
+        $mailbody.='</span> &nbsp; <span dir="rtl">ש"ח</span>';
+        $mailbody.=$t['price'].' x '.$t['qty'].'</td>';
         $mailbody.='<td style="text-align: right;" >'. $t['name_he'] .'</td>';
         $mailbody.='</tr>';
         $mailbody.='<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
         $mailbody.='<td > </td>';
-        $mailbody.='<td style="text-align: right">'.$t['detail_he'].'</td>';
+        $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].'</td>';
         $mailbody.='</tr>';
         $mailbody.='</table>';
     }
@@ -1043,7 +1056,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     }
     else
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap"dir="rtl"> פיק ממסעדה : '.$user_order['restaurantAddress'].'</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"dir="rtl">  איסוף עצמי ממסעדה : '.$user_order['restaurantAddress'].'</td>';
     }
 
     $mailbody .=  '<td style="padding: 10px 0; text-align: center"> <img style="height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
@@ -1081,6 +1094,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     //To address and name
     $mail->addAddress("qaorders@orderapp.com"); // SEND USER COPY TO ADMIN
+    $mail->addAddress("muhammad.iftikhar.aftab@gmail.com"); // SEND USER COPY TO ADMIN
 
     //Address to which recipient will reply
     $mail->addReplyTo("order@orderapp.com", "Reply");

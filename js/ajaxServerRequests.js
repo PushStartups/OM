@@ -97,7 +97,7 @@ function  getAllRestaurants()
                         '<div class="resto_title" >'+
                         '<h3>'+result[x].name_en+'</h3>'+
                         '<span>'+result[x].hechsher_en+'</span>'+
-                        '<p style="font-size: 16px">'+ tagsString +'</p>'+
+                        '<p style="font-size: 14px">'+ tagsString +'</p>'+
                         '</div>'+
                         '</div>'+
                         '</a>'+
