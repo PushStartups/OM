@@ -618,7 +618,7 @@ function generateTotalUpdateFoodCart()
         }
 
         // TOTAL OF ITEM WITH SUB ITEMS
-        cartItem.price = parseInt(orderAmount) + parseInt(sumTotalAmount);
+        cartItem.price = ((parseInt(orderAmount) + parseInt(sumTotalAmount)) / parseInt(order.qty));
 
         total = parseInt(total) +  ( parseInt(orderAmount) + parseInt(sumTotalAmount));
     }
@@ -699,8 +699,11 @@ function onQtyIncreaseButtonClicked(index) {
     {
         for (var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x])
         {
-            userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
-                parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) + 1;
+            if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
+
+                userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
+                    parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) + 1;
+            }
         }
     }
 
@@ -709,8 +712,11 @@ function onQtyIncreaseButtonClicked(index) {
     {
         for (var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x])
         {
-            userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) + 1;
+            if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
+
+                userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
+                    (parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) + 1);
+            }
         }
     }
 
@@ -739,23 +745,23 @@ function onQtyDecreasedButtonClicked(index) {
 
         userObject.orders[foodCartData[index].orderIndex].qty = parseInt(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
 
-        // INCREASE THE QTY OF SUB ITEMS ONE TYPE
+        // DECREASE THE QTY OF SUB ITEMS ONE TYPE
         for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].subItemsOneType.length;x++)
         {
-            for (var key in userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x])
-            {
+            if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
+
                 userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
                     parseInt(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) - 1;
             }
         }
 
-        // INCREASE THE QTY OF SUB ITEMS MULTIPLE TYPE
+        // DECREASE THE QTY OF SUB ITEMS MULTIPLE TYPE
         for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].multiItemsOneType.length;x++)
         {
-            for (var key in userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x])
-            {
+            if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
+
                 userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                    parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1;
+                    (parseInt(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
             }
         }
 
