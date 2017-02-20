@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 20, 2017 at 09:36 AM
+-- Generation Time: Feb 20, 2017 at 12:19 PM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -811,7 +811,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=169 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=172 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -923,7 +923,10 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (165, 152, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
 (166, 153, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
 (167, 154, 1, 'Chicken Salad', 42, ''),
-(168, 154, 1, 'Chicken Salad', 42, '');
+(168, 154, 1, 'Chicken Salad', 42, ''),
+(169, 155, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(170, 155, 2, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(171, 156, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)');
 
 -- --------------------------------------------------------
 
@@ -2342,6 +2345,7 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `smooch_id` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `contact` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `state` int(16) NOT NULL DEFAULT '0',
@@ -2355,27 +2359,28 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=273 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=274 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
-(255, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, 1),
-(262, 'Tes@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(263, 'test4444@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(264, 'test43434@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(265, 'test333@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(266, 'testwwew@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(267, 'eewe@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(268, 'fdff@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(269, 'nice@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(270, 'ahmad69191@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
-(271, 'Test111@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(272, 'Klinger.micheal09@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
+(255, 'ahmadworkspace@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
+(260, 'test@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
+(262, 'Tes@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(263, 'test4444@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(264, 'test43434@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(265, 'test333@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(266, 'testwwew@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(267, 'eewe@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(268, 'fdff@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(269, 'nice@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(270, 'ahmad69191@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
+(271, 'Test111@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(272, 'Klinger.micheal09@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(273, 'rustom31122@gmail.com', 'Rustom', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2390,7 +2395,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -2400,7 +2405,8 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (39, 261, 1),
 (40, 271, 2),
 (41, 260, 1),
-(42, 260, 2);
+(42, 260, 2),
+(43, 273, 1);
 
 -- --------------------------------------------------------
 
@@ -2419,7 +2425,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=155 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=157 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -2488,7 +2494,9 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (151, 261, 1, 135, NULL, 0, '2017-02-20'),
 (152, 260, 1, 93, NULL, 0, '2017-02-20'),
 (153, 261, 1, 93, NULL, 0, '2017-02-20'),
-(154, 261, 1, 84, NULL, 0, '2017-02-20');
+(154, 261, 1, 84, NULL, 0, '2017-02-20'),
+(155, 261, 1, 221, NULL, 0, '2017-02-20'),
+(156, 273, 1, 65, 'fixed percentage', 30, '2017-02-20');
 
 -- --------------------------------------------------------
 
