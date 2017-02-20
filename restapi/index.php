@@ -387,8 +387,9 @@ $app->post('/add_order', function ($request, $response, $args) {
         // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
         DB::insert('users', array(
 
-            'smooch_id' => $user_order['email']
-
+            'smooch_id' => $user_order['email'],
+            "contact"   => $user_order['contact'],
+            "address"   => $user_order['deliveryAddress']
         ));
 
         $user_id = DB::insertId();
@@ -397,6 +398,14 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         // IF USER ALREADY EXIST IN DATABASE
         $user_id = $getUser['id'];
+
+        DB::update('users', array(
+
+            'smooch_id' => $user_order['email'],
+            "contact"   => $user_order['contact'],
+            "address"   => $user_order['deliveryAddress']
+        ),'id = %d',$user_id);
+
     }
 
 
@@ -419,7 +428,9 @@ $app->post('/add_order', function ($request, $response, $args) {
     }
 
 
+
     $todayDate = Date("d/m/Y");
+
 
     // CREATE A NEW ORDER AGAINST USER
     DB::insert('user_orders', array(
