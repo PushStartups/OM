@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 19, 2017 at 07:44 AM
+-- Generation Time: Feb 20, 2017 at 09:36 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -129,11 +129,11 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
 --
 
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`, `voting_date`) VALUES
-(149, 1, 1, 0, 1, '2017-02-19'),
-(150, 1, 2, 1, 1, '2017-02-19'),
-(151, 1, 3, 0, 1, '2017-02-19'),
-(152, 1, 4, 0, 1, '2017-02-19'),
-(153, 1, 5, 0, 1, '2017-02-19');
+(149, 1, 1, 0, 1, '2017-02-20'),
+(150, 1, 2, 1, 1, '2017-02-20'),
+(151, 1, 3, 0, 1, '2017-02-20'),
+(152, 1, 4, 0, 1, '2017-02-20'),
+(153, 1, 5, 0, 1, '2017-02-20');
 
 -- --------------------------------------------------------
 
@@ -811,7 +811,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=104 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=169 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -858,7 +858,72 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (100, 115, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, Roasted Peppers, Techina, '),
 (101, 115, 2, 'Shawarma', 66, 'Bread Type:Pita, Veal, Fried onions, Chummus, '),
 (102, 116, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
-(103, 116, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), ');
+(103, 116, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(104, 117, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(105, 117, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18), egg (+4), '),
+(106, 118, 3, 'Angus Salad', 181, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(107, 119, 2, 'Angus Salad', 137, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(108, 120, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(109, 120, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18), egg (+4), '),
+(110, 121, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(111, 121, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(112, 122, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(113, 122, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(114, 123, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(115, 123, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), portobello mushroom (+4), '),
+(116, 124, 2, 'Angus Salad', 137, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(117, 125, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(118, 125, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(119, 126, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(120, 126, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(121, 127, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(122, 127, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4), '),
+(123, 128, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19), '),
+(124, 128, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18), egg (+4), '),
+(125, 129, 1, 'Angus Salad', 93, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(126, 129, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18)egg (+4)'),
+(127, 130, 1, 'Angus Salad', 93, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(128, 130, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18)egg (+4)'),
+(129, 131, 2, 'Angus Salad', 137, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(130, 131, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18)egg (+4)'),
+(131, 131, 2, 'Small Sweet potato fries', 28, ''),
+(132, 131, 2, 'Mexican nachos', 24, ''),
+(133, 132, 1, 'Angus Salad', 93, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(134, 132, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18)egg (+4)'),
+(135, 133, 1, 'Angus Salad', 93, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(136, 133, 2, 'Chicken Salad', 106, '170 grams chicken breast (+18)egg (+4)'),
+(137, 134, 2, 'Angus Salad', 186, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(138, 135, 1, 'Angus Salad', 93, '80 grams goose liver (+30)150 grams goose breast or entrecote (+19)'),
+(139, 136, 2, 'Angus Salad', 126, '150 grams goose breast or entrecote (+19)'),
+(140, 137, 2, 'Angus Salad', 148, '80 grams goose liver (+30)'),
+(141, 138, 2, 'Angus Salad', 74, '80 grams goose liver (+30)'),
+(142, 139, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(143, 140, 2, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(144, 141, 2, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, Tomatoes, Roasted Peppers, Amba, Spicy'),
+(145, 141, 2, 'Chummus Bandora', 39, 'Veal'),
+(146, 142, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Spring Chicken, Fried onions, Chummus, Amba, Spicy'),
+(147, 142, 2, 'beef kabab', 35, 'Bread Type:Pita, Spring ChickenFrench Fries, Fried onions, Chummus, Amba, Spicy, Babaghanoush'),
+(148, 143, 1, 'Super Spicy Bandora', 35, 'Bread Type:Pita, Veal, Amba, Spicy'),
+(149, 143, 2, 'beef kabab', 35, 'Bread Type:Pita, Veal, Roasted Peppers, Spicy'),
+(150, 144, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(151, 144, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(152, 144, 1, 'Fanta', 12, ''),
+(153, 144, 1, 'Coca Cola Zero', 8, ''),
+(154, 145, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(155, 146, 2, 'XL Pie', 66, ', Mushrooms (+5), Tomatoes (+5)'),
+(156, 147, 2, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(157, 148, 1, 'XL + Toppings', 75, ', Mushrooms, Vegan Cheese'),
+(158, 148, 1, 'Gluten Free', 45, 'Onions (+5), Mushrooms (+5)'),
+(159, 148, 1, 'Bagel Toast', 40, 'Onions (+5), Mushrooms (+5), Olives (+5)'),
+(160, 149, 3, '#90 Basket roll', 43, ''),
+(161, 150, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(162, 150, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(163, 151, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(164, 151, 1, 'Chicken Salad', 42, ''),
+(165, 152, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(166, 153, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(167, 154, 1, 'Chicken Salad', 42, ''),
+(168, 154, 1, 'Chicken Salad', 42, '');
 
 -- --------------------------------------------------------
 
@@ -2290,7 +2355,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=271 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=273 ;
 
 --
 -- Dumping data for table `users`
@@ -2299,7 +2364,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
 (260, 'test@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (264, 'test43434@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -2308,7 +2373,9 @@ INSERT INTO `users` (`id`, `smooch_id`, `contact`, `address`, `state`, `language
 (267, 'eewe@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (268, 'fdff@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (269, 'nice@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(270, 'ahmad69191@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1);
+(270, 'ahmad69191@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
+(271, 'Test111@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(272, 'Klinger.micheal09@gmail.com', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2323,25 +2390,17 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
 -- Dumping data for table `user_coupons`
 --
 
 INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
-(27, 260, 1),
-(28, 260, 2),
-(29, 261, 1),
-(30, 261, 2),
-(31, 263, 1),
-(32, 264, 1),
-(33, 265, 2),
-(34, 266, 1),
-(35, 267, 1),
-(36, 267, 2),
-(37, 268, 1),
-(38, 269, 1);
+(39, 261, 1),
+(40, 271, 2),
+(41, 260, 1),
+(42, 260, 2);
 
 -- --------------------------------------------------------
 
@@ -2360,7 +2419,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=155 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -2391,7 +2450,45 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (113, 260, 3, 101, NULL, 0, '2017-02-19'),
 (114, 260, 3, 101, NULL, 0, '2017-02-19'),
 (115, 260, 3, 101, NULL, 0, '2017-02-19'),
-(116, 260, 1, 157, NULL, 0, '2017-02-19');
+(116, 260, 1, 157, NULL, 0, '2017-02-19'),
+(117, 260, 1, 199, NULL, 0, '2017-02-19'),
+(118, 260, 1, 181, NULL, 0, '2017-02-19'),
+(119, 260, 1, 137, NULL, 0, '2017-02-19'),
+(120, 260, 1, 199, NULL, 0, '2017-02-19'),
+(121, 260, 1, 157, NULL, 0, '2017-02-19'),
+(122, 260, 1, 157, NULL, 0, '2017-02-19'),
+(123, 260, 1, 157, NULL, 0, '2017-02-19'),
+(124, 260, 1, 137, NULL, 0, '2017-02-19'),
+(125, 260, 1, 157, NULL, 0, '2017-02-19'),
+(126, 260, 1, 157, NULL, 0, '2017-02-19'),
+(127, 260, 1, 157, NULL, 0, '2017-02-19'),
+(128, 261, 1, 199, NULL, 0, '2017-02-19'),
+(129, 261, 1, 157, NULL, 0, '2017-02-19'),
+(130, 261, 1, 199, 'fixed percentage', 0, '2017-02-19'),
+(131, 261, 1, 295, NULL, 0, '2017-02-19'),
+(132, 261, 1, 199, 'fixed percentage', 0, '2017-02-19'),
+(133, 261, 1, 199, NULL, 0, '2017-02-19'),
+(134, 260, 1, 186, NULL, 0, '2017-02-19'),
+(135, 260, 1, 93, NULL, 0, '2017-02-19'),
+(136, 261, 1, 126, NULL, 0, '2017-02-19'),
+(137, 261, 1, 104, 'fixed percentage', 30, '2017-02-19'),
+(138, 261, 1, 148, NULL, 0, '2017-02-19'),
+(139, 261, 1, 93, NULL, 0, '2017-02-19'),
+(140, 271, 1, 136, 'fixed value', 50, '2017-02-19'),
+(141, 260, 3, 148, NULL, 0, '2017-02-19'),
+(142, 260, 3, 105, NULL, 0, '2017-02-19'),
+(143, 260, 3, 74, 'fixed percentage', 30, '2017-02-19'),
+(144, 260, 1, 127, 'fixed value', 50, '2017-02-19'),
+(145, 260, 1, 93, NULL, 0, '2017-02-19'),
+(146, 260, 2, 132, NULL, 0, '2017-02-19'),
+(147, 261, 1, 128, NULL, 0, '2017-02-19'),
+(148, 260, 2, 160, NULL, 0, '2017-02-19'),
+(149, 272, 5, 129, NULL, 0, '2017-02-20'),
+(150, 261, 1, 157, NULL, 0, '2017-02-20'),
+(151, 261, 1, 135, NULL, 0, '2017-02-20'),
+(152, 260, 1, 93, NULL, 0, '2017-02-20'),
+(153, 261, 1, 93, NULL, 0, '2017-02-20'),
+(154, 261, 1, 84, NULL, 0, '2017-02-20');
 
 -- --------------------------------------------------------
 
@@ -2458,7 +2555,7 @@ CREATE TABLE IF NOT EXISTS `vote_timings` (
 --
 
 INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 1, '07:00:00', '11:33:00', '11:27:00');
+(1, 1, '07:00:00', '07:33:00', '07:44:00');
 
 -- --------------------------------------------------------
 

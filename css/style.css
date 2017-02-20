@@ -1,5 +1,4 @@
-﻿
-@font-face {
+﻿@font-face {
   font-family: 'HelveticaNeue';
   src: url('../fonts/HelveticaNeu.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
    url('../fonts/HelveticaNeu.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
@@ -367,6 +366,7 @@ div.popup {
 #main-popup .body{
     height: calc(100% - 29px);
     padding: 10px 25px 0 25px;
+    overflow: hidden;
 }
 #mid-scroll {
     height: 50%;
@@ -586,7 +586,11 @@ div.popup .product-circle .circle-badge {
     right: 43px;
     bottom: 0;
 }
-
+div.popup .product-circle .circle-badge.mini {
+    transform: scale(0.6);
+    right: 60px !important;
+    bottom: -8px !important;
+}
 div.popup .ic_close {
     position: absolute;
     left: 8px;

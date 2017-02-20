@@ -6,12 +6,28 @@ require      'vendor/autoload.php';
 require      'PHPMailer/PHPMailerAutoload.php';
 require_once 'inc/initDb.php';
 
+
 DB::query("set names utf8");
+
+
+// EMAIL SERVERS FOR EACH EMAIL ADDRESS
+
+// DEV SERVER
+if($_SERVER['HTTP_HOST'] == "dev.m.orderapp.com")
+    define("EMAIL","muhammad.iftikhar.aftab@gmail.com");
+
+// QA SERVER
+else if($_SERVER['HTTP_HOST'] == "qa.webclient@orderapp.com")
+    define("EMAIL","qaorders@orderapp.com");
+
+// PRODUCTION SERVER
+else
+    define("EMAIL","orders@orderapp.com");
+
 
 
 // SLIM INITIALIZATION
 $app = new \Slim\App();
-
 
 
 //  WEB HOOK GET MINIMUM ORDER AMOUNT
@@ -23,6 +39,7 @@ $app->post('/get_min_order_amount', function ($request, $response, $args)
     // RESPONSE RETURN TO REST API CALL
     return $response->withStatus(200)->write(json_encode($minOrder));
 });
+
 
 
 //  WEB HOOK GET ALL RESTAURANT
@@ -799,11 +816,7 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 //To address and name
     $mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
-    $mail->addAddress("qaorders@orderapp.com"); //SEND EMAIL TO ADMIN QA CLIENT COPY
-
-//Address to which recipient will reply
-    $mail->addReplyTo("qaorder@orderapp.com", "Reply");
-
+    $mail->addAddress(EMAIL);                    //SEND  CLIENT EMAIL COPY TO ADMIN
 
 //Send HTML or Plain Text email
     $mail->isHTML(true);
@@ -965,8 +978,8 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
 
     //To address and name
-    $mail->addAddress($user_order['email']);     // SEND EMAIL TO CLIENT
-    $mail->addAddress("qaorders@orderapp.com"); // SEND USER COPY TO ADMIN
+    $mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
+    $mail->addAddress(EMAIL);                    //SEND  CLIENT EMAIL COPY TO ADMIN
 
     //Address to which recipient will reply
     $mail->addReplyTo("order@orderapp.com", "Reply");
@@ -1038,7 +1051,31 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
         $mailbody.='</table>';
     }
 
-    $mailbody .= '</div>';
+
+    $mailbody .=  '</div>';
+
+    $mailbody .= '<table style="width: 100%; color:black; padding:10px 30px; background: #FEF2E8; border-bottom: 1px solid #D3D3D3 ">';
+
+    if($user_order['isCoupon'] == "false")
+    {
+
+        $mailbody .= '<tr style="font-size: 18px;  font-weight: bold">';
+        $mailbody .= '<td style=" white-space: nowrap"> <span style="color: #FF864C;" dir="rtl">'.$user_order['total'].' ש"ח '.'</span></td>';
+        $mailbody .= '<td style="padding: 5px 0; text-align: right; " > סה"כ </td>';
+        $mailbody .= '</tr>';
+
+    }
+    else
+    {
+        $mailbody .= '<tr style="font-size: 18px;  font-weight: bold">';
+        $mailbody .= '<td style=" white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['totalWithoutDiscount'].' ש"ח '.'</span></td>';
+        $mailbody .= '<td style="padding: 5px 0; text-align: right; " > סיכום ביניים </td>';
+        $mailbody .= '</tr>';
+
+
+    }
+
+    $mailbody .= '</table>';
 
     $mailbody .= '<table style="float: right;color:black; padding:10px 30px; width: 270px; position: relative; left: calc(100% - 270px)" cellspacing="5px">';
     $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
@@ -1073,6 +1110,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mailbody .=  '</div></div></body></html>';
 
 
+
     $mail = new PHPMailer;
 
     $mail->CharSet = 'UTF-8';
@@ -1093,7 +1131,8 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
 
     //To address and name
-    $mail->addAddress("qaorders@orderapp.com"); // SEND USER COPY TO ADMIN
+    $mail->addAddress(EMAIL);                    //SEND ADMIN EMAIL
+
 
     //Address to which recipient will reply
     $mail->addReplyTo("order@orderapp.com", "Reply");

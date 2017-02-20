@@ -15,9 +15,20 @@ $(function() {
             $(this).find(".custom-drop-down-list").slideDown(200);
         }
 
+        /*
+            if ($(document).innerHeight() - $(this).position().top < 250) /* Check if it is near bottom  {
+                var that = $(this);
+                setTimeout(function () {
+                    that.find(".custom-drop-down-list").css("transform", 'translateY(' + (that.find(".custom-drop-down-list").height() + 43) * -1 + 'px)')
+                }, 200)
+            }*/
 
-        e.stopPropagation();
+            e.stopPropagation();
     });
+
+
+
+
 
 
     function feedDropDown(it) {
@@ -30,6 +41,7 @@ $(function() {
             ul.append(li);
         }
     }
+
 
 
     //write Code onValueChange
@@ -80,7 +92,24 @@ $(function() {
         }
 
     }
+    /*var card = document.getElementById("cards");
+        var cardsArray = [];
 
+        var colcontainer = document.createElement("div");
+        colcontainer.className = "cci-col-50";
+        var row = "";
+
+        for (i = 0; i < items.length; i++) {
+            var newRow = i % 2 == 1;
+            colcontainer.appendChild(createCard("img/Image.png", items[i], "75 NIS" , datafromServer1[i]));
+            
+            if(newRow){
+                row = document.createElement("div")
+                row.className = "cci-row";
+            }
+            
+            row.appendChild(colcontainer);
+        } */
 
     function createCard(imgUrl, boldText, badge, dimDetail) {
 

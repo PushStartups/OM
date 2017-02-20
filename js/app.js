@@ -1,10 +1,62 @@
+
 $(function () {
 
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
     if (!(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
-
     }
+
+    // var lastScrollTop = 0;
+    //
+    // $("#mid-scroll").scroll(function(event)
+    // {
+    //     // IF NOT SCROLL ABLE DONT DO ANY THING
+    //     if($(this)[0].scrollHeight > $("#main-popup .body").innerHeight() - 150)
+    //     {
+    //
+    //         var st = $(this).scrollTop();
+    //
+    //         console.log(st);
+    //
+    //         if (st > lastScrollTop)
+    //         {
+    //             // downscroll code
+    //             console.log("downscroll")
+    //
+    //             if($(".circle").height() > 80){
+    //                 $(".circle").css("min-width" , "80px")
+    //                 $(".circle").css("min-height" , "80px")
+    //                 $(".circle").css("width" , $(".circle").width() - st);
+    //                 $(".circle").css("height" , $(".circle").height() - st);
+    //                 $("#mid-scroll").css("height" ,$("#mid-scroll").height() + st);
+    //                 $("div.popup .product-circle .circle-badge").addClass("mini");
+    //                 $("#itemPopUpTitle").css("margin-bottom" , "8px")
+    //                 $("#itemPopUpTitle").css("margin-top" , "8px");
+    //                 $("#itemPopUpTitle").css("font-size" , "12px");
+    //                 $("#main-popup p").css("font-size" , "9px")
+    //             }
+    //         }
+    //         else {
+    //
+    //             if (st < 5)
+    //             {
+    //
+    //                 $(".circle").css("width", "45vw");
+    //                 $(".circle").css("height", "45vw");
+    //                 $("div.popup .product-circle .circle-badge").removeClass("mini")
+    //                 var height = $("#main-popup .body").innerHeight();
+    //                 $("#itemPopUpTitle").css("margin-bottom", "20px")
+    //                 $("#itemPopUpTitle").css("margin-top", "20px")
+    //                 $("#main-popup p").css("font-size", "12px")
+    //
+    //                 $("#itemPopUpTitle").css("font-size", "15px");
+    //                 $("#mid-scroll").css("height", height - $("#top-half").outerHeight() - 50 + "px")
+    //             }
+    //
+    //         }
+    //         lastScrollTop = st;
+    //     }
+    // });
+
 
     $('div.caption-input input.scroll').on('focus', function(){
         var that = this;
@@ -13,12 +65,9 @@ $(function () {
         }, 200);
     })
 
-
     $("#main-footer , #food-cart-popup .model-footer").on("click" , function(){
-
         orderNow()
     });
-
 
     $("#error_alert img").on("click" , function(){
 
@@ -83,27 +132,20 @@ $(function () {
             count.text(val - 1);
 
             if ((parseInt(count.text()) == 1)) {
-
                 $(this).attr("src", "img/ic_cancel.png")
-
             }
         }
         else {
-
             $(this).attr("src", "img/ic_cancel.png")
         }
 
     })
 
     function increaseCounter() {
-
         $(".count-badge").html(parseInt($(".count-badge").html()) + 1);
-
     }
 
 })
-
-
 function setUpPopup(id){
 
     $("#overlay").fadeIn();
@@ -237,33 +279,27 @@ function decreaseCounter() {
 }
 
 function displayDots(){
-
-
     $("#footer-dots").show();
-
 }
 
 function hideDots(){
-
     $("#footer-dots").hide();
-
 }
 
 function setDot(index){
-
     $("#footer-dots").find(".active").removeClass("active")
     $("#"+ index).addClass("active")
 }
-
 $(window).on("resize", function () {
-
     resize()
 });
 
 function resize() {
-
     var height = $("#main-popup .body").innerHeight();
     var topHeight = $("#top-half").outerHeight();
+
+    $(".circle").css("width" , "45vw");
+    $(".circle").css("height" , "45vw");
 
     $("#main-popup").css("height", "90%");
     $("#mid-scroll").css("height", height - topHeight - 50 + "px")
@@ -282,5 +318,15 @@ function resize() {
             $("#mid-scroll").css("height", height - topHeight - 50 + "px")
         }
     }, 700)
-
+    /*
+     if ($("#mid-scroll").find("#parent_type_multiple").text() == "" && $("#mid-scroll").find("#parent_type_one").text() == "") {
+     $("#mid-scroll").css("display", "none");
+     $("#main-popup").css("height", "auto");
+     }
+     else{
+     height = $("#main-popup .body").innerHeight();
+     $("#main-popup").css("height" , "90%");
+     $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+     }
+     */
 }
