@@ -31,7 +31,7 @@ var foodCartData                = [];                                           
 function  getCategoriesWithItems()
 {
     // SET MIN ORDER LIMIT TO ERROR POPUP
-    $('#min_order').html("Min Order "+minOrderLimit+" NIS");
+    $('#min_order').html("The minimum order is "+minOrderLimit+" NIS");
 
     // UPDATE RESTAURANT TITLE
     $('#restName').text(restName);
@@ -502,7 +502,6 @@ function generateTotalUpdateFoodCart()
         foodCartData.push(cartItem);
 
         // CHECK ONE TYPE SUB ITEMS IF ANY
-        var ct = 0;
 
         for (var y = 0; y < order.subItemsOneType.length; y++)
         {
@@ -517,7 +516,7 @@ function generateTotalUpdateFoodCart()
                 {
                     orderAmount = parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.qty);
                     cartItem.price = parseInt(orderAmount);
-                    if(ct == 0)
+                    if(cartItem.detail == "")
                     {
                         cartItem.detail +=  key+":"+order.subItemsOneType[y][key].subItemName;
                         cartItem.detail_he +=  key+":"+order.subItemsOneType[y][key].subItemNameHe;
@@ -538,7 +537,7 @@ function generateTotalUpdateFoodCart()
 
                         sumTotalAmount = parseInt(sumTotalAmount) +( parseInt(order.subItemsOneType[y][key].subItemPrice) * parseInt(order.subItemsOneType[y][key].qty));
 
-                        if(ct == 0)
+                        if(cartItem.detail == "")
                         {
                             cartItem.detail +=  order.subItemsOneType[y][key].subItemName+" (+"+order.subItemsOneType[y][key].subItemPrice+")";
                             cartItem.detail_he +=  order.subItemsOneType[y][key].subItemNameHe+" (+"+order.subItemsOneType[y][key].subItemPrice+")";
@@ -557,7 +556,7 @@ function generateTotalUpdateFoodCart()
 
                         // THOSE ITEMS HAVE PRICE ZERO WILL NOT DISPLAY AS CART ITEM AND DISPLAY AS
 
-                        if(ct == 0)
+                        if(cartItem.detail == "")
                         {
                             cartItem.detail +=  order.subItemsOneType[y][key].subItemName;
                             cartItem.detail_he +=  order.subItemsOneType[y][key].subItemNameHe;
@@ -571,19 +570,16 @@ function generateTotalUpdateFoodCart()
                     }
                 }
 
-
             }
 
-
-            ct++;
         }
 
         // CHECK MULTIPLE SELECTABLE SUB ITEMS
 
-        var ct = 0;
 
         for (var y = 0; y < order.multiItemsOneType.length; y++)
         {
+
             for (var key in order.multiItemsOneType[y])
             {
                 if(order.multiItemsOneType[y][key] != null)
@@ -592,7 +588,7 @@ function generateTotalUpdateFoodCart()
                     {
                         sumTotalAmount = parseInt(sumTotalAmount) + (parseInt(order.multiItemsOneType[y][key].subItemPrice) * parseInt(order.multiItemsOneType[y][key].qty) );
 
-                        if(ct == 0)
+                        if(cartItem.detail == "")
                         {
                             cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
                             cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
@@ -609,7 +605,7 @@ function generateTotalUpdateFoodCart()
                     {
                         // THOSE ITEMS HAVE PRICE ZERO WILL NOT DISPLAY AS CART ITEM AND DISPLAY AS
 
-                        if(ct == 0)
+                        if(cartItem.detail == "")
                         {
                             cartItem.detail +=  order.multiItemsOneType[y][key].subItemName;
                             cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe;
@@ -625,7 +621,7 @@ function generateTotalUpdateFoodCart()
 
             }
 
-            ct++;
+
         }
 
         // TOTAL OF ITEM WITH SUB ITEMS

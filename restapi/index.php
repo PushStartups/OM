@@ -389,7 +389,8 @@ $app->post('/add_order', function ($request, $response, $args) {
 
             'smooch_id' => $user_order['email'],
             "contact"   => $user_order['contact'],
-            "address"   => $user_order['deliveryAddress']
+            "address"   => $user_order['deliveryAddress'],
+            "name"      => $user_order['name']
         ));
 
         $user_id = DB::insertId();
@@ -403,7 +404,8 @@ $app->post('/add_order', function ($request, $response, $args) {
 
             'smooch_id' => $user_order['email'],
             "contact"   => $user_order['contact'],
-            "address"   => $user_order['deliveryAddress']
+            "address"   => $user_order['deliveryAddress'],
+            "name"      => $user_order['name']
         ),'id = %d',$user_id);
 
     }

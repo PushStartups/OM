@@ -59,10 +59,22 @@ $(function () {
 
 
     $('div.caption-input input.scroll').on('focus', function(){
+
         var that = this;
-        $(".inner-section").animate({
-            scrollTop: $(that).offset().top
-        }, 200);
+
+        var delayMillis = 500; //1 second
+
+        setTimeout(function() {
+
+            $(".inner-section").animate({
+
+                scrollTop: 500
+
+            }, 200);
+
+
+        }, delayMillis);
+
     })
 
     $("#main-footer , #food-cart-popup .model-footer").on("click" , function(){
