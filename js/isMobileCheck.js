@@ -21,8 +21,19 @@ var isMobile = {
 };
 
 
-if(!isMobile.any()){
+if(!isMobile.any())
+{
+    var host = "http://"+window.location.hostname;
+    check =  host.includes("staging");
 
-    window.location.href = 'http://orderapp.com';
+    if(check == true)
+    {
+        window.location.href = 'http://staging.orderapp.com';
+    }
+    else
+    {
+        window.location.href = 'http://orderapp.com';
+    }
+
 
 }
