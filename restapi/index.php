@@ -574,10 +574,10 @@ function  guardPaymentRequest($amount,$userId,$email)
 {
 
     $cgConf['tid'] = '0963432';
-    $cgConf['mid'] = 10998;
+    $cgConf['mid'] = 12918;
     $cgConf['amount'] = $amount;
-    $cgConf['user'] = 'pushstartups';
-    $cgConf['password'] = 'P!dc3cg4w';
+    $cgConf['user'] = 'pushstart';
+    $cgConf['password'] = 'OE2@38sz';
     $cgConf['cg_gateway_url'] = "https://cguat2.creditguard.co.il/xpo/Relay";
 
     $poststring = 'user=' . $cgConf['user'];
@@ -591,7 +591,7 @@ function  guardPaymentRequest($amount,$userId,$email)
                             <dateTime></dateTime>
                             <command>doDeal</command>
                             <doDeal>
-                                 <terminalNumber>' . $cgConf['tid'] . '</terminalNumber>
+                                 <terminalNumber>8804324</terminalNumber>
                                  <mainTerminalNumber/>
                                  <cardNo>CGMPI</cardNo>
                                  <successUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_success?userId='.$userId.'</successUrl>
@@ -607,7 +607,6 @@ function  guardPaymentRequest($amount,$userId,$email)
                                  <firstPayment/>
                                  <periodicalPayment/>
                                  <validation>TxnSetup</validation>
-                                 <dealerNumber>7451669</dealerNumber>
                                  <user>something</user>
                                  <mid>' . $cgConf['mid'] . '</mid>
                                  <uniqueid>' . time() . rand(100, 1000) . '</uniqueid>

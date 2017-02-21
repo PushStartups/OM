@@ -77,6 +77,26 @@ $(function () {
 
     })
 
+
+    $('div.caption-input input.scroll2').on('focus', function(){
+
+        var that = this;
+
+        var delayMillis = 500; //1 second
+
+        setTimeout(function() {
+
+            $(".inner-section").animate({
+
+                scrollTop: 100
+
+            }, 200);
+
+
+        }, delayMillis);
+
+    })
+
     $("#main-footer , #food-cart-popup .model-footer").on("click" , function(){
         orderNow()
     });
@@ -313,10 +333,11 @@ function resize() {
     $(".circle").css("width" , "45vw");
     $(".circle").css("height" , "45vw");
 
-    $("#main-popup").css("height", "90%");
+    $("#main-popup").css("height", "92%");
     $("#mid-scroll").css("height", height - topHeight - 50 + "px")
 
     setTimeout(function () {
+
         if ($("#mid-scroll").find("#parent_type_multiple").text() == "" &&
             ($("#mid-scroll").find("#parent_type_one").text() == "" ||
             !$("#mid-scroll").find("#parent_type_one").is(":visible"))) {
@@ -324,8 +345,10 @@ function resize() {
             $("#mid-scroll").css("height", "auto");
             $("#main-popup").css("height", "auto");
 
-        } else {
-            $("#main-popup").css("height", "90%");
+        }
+        else
+        {
+            $("#main-popup").css("height", "92%");
             height = $("#main-popup .body").innerHeight();
             $("#mid-scroll").css("height", height - topHeight - 50 + "px")
         }

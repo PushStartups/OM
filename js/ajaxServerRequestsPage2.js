@@ -1264,9 +1264,9 @@ function hideLoading(){
 function scrollToError(id) {
 
 
-    $('#mid-scroll').animate({
+    $('#scroll_error').animate({
 
-        scrollTop: 70
+        scrollTop: 200
 
     }, 200);
 }

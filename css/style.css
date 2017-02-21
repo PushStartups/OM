@@ -350,7 +350,8 @@ div.popup {
     position: absolute;
     background: #FFFFFF;
     width: 90%;
-    top: 48%;
+    top: 46.5%;
+    height: 90%;
     max-width: 500px;
     display: none;
     left: 50%;
@@ -360,19 +361,19 @@ div.popup {
 }
 
 #main-popup{
-    height: 90%;
+    height: 92%;
     position: fixed;
 }
 #main-popup .body{
-    height: calc(100% - 29px);
+    height: calc(100% - 12px);
     padding: 10px 25px 0 25px;
     overflow: hidden;
 }
-#mid-scroll {
-    height: 50%;
-    overflow: hidden;
-    overflow-y: auto;
-}
+/*#mid-scroll {*/
+    /*height: 50%;*/
+    /*overflow: hidden;*/
+    /*overflow-y: auto;*/
+/*}*/
 /*Inner Section Popup*/
 
 div.food-cart#customer-popup,
@@ -705,7 +706,7 @@ div.food-cart#coupon-popup section .centered-div {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    top: 30%;
+    top: 24%;
     transform: translateY(-50%);
 }
 

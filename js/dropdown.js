@@ -13,6 +13,8 @@ $(function() {
         else
         {
             $(this).find(".custom-drop-down-list").slideDown(200);
+
+            scrollToError('');
         }
 
         /*

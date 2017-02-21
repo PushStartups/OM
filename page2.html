@@ -85,12 +85,14 @@
                 <input id="name" type="text">
                 <span class="error-handler" id="name-error"></span>
                 <script>
+
                     // WHEN NAME FIELD CHANGES
                     $('#name').bind('input', function() {
                         document.getElementById("name-error").innerHTML = "";
                         $("#name").removeClass("red-border");
 
                     });
+
                 </script>
             </div>
             <div class="caption-input" style="margin-top: 20px">
@@ -110,8 +112,8 @@
             <div class="caption-input" style="margin-top: 20px">
 
                 <span class="caption"> Phone Number </span>
-                <input id="contact" type="text">
-                <span class="error-handler" id="contact-error"></span>
+                <input id="contact" class="scroll2"  type="text">
+                <span class="error-handler"  id="contact-error"></span>
                 <script>
 
                     // WHEN EMAIL FIELD CHANGES
@@ -406,11 +408,12 @@
 <!--ON ITEM SELECTED POPUP-->
 <div id="main-popup" class="popup">
 
-    <div class="body">
+    <div class="body" id="scroll_error" style="overflow: hidden; overflow-y: auto;">
 
-        <div id="top-half">
-        <h3 id="itemPopUpTitle"></h3>
-        <img class="ic_close" src="img/ic_close.png">
+        <img class="ic_close" style="position: relative ; left: -25px;top: -9px;" src="img/ic_close.png">
+
+        <!--<div id="top-half">-->
+        <h3 id="itemPopUpTitle" style="margin-top: -30px"></h3>
 
         <div class="product-circle">
             <div class="product-circle">
@@ -422,14 +425,14 @@
         <p class="para-detail" id="itemPopUpDesc"></p>
 
         <div class="sperator"></div>
-        </div>
+        <!--</div>-->
 
         <div id="mid-scroll">
-        <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
-        <div id="parent_type_one"></div>
+            <!--PARENT TO DISPLAY ON TYPE SUB ITEMS -->
+            <div id="parent_type_one"></div>
 
-        <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
-        <div id="parent_type_multiple"></div>
+            <!--PARENT TO DISPLAY MULTIPLE TYPE SUB ITEMS-->
+            <div id="parent_type_multiple"></div>
         </div>
 
     </div>
@@ -450,19 +453,20 @@
     PLACE ORDER
 </footer>
 
-<div class="mini-popup">
-    <div id="mini-popup-body">
-        <ul>
-            <li>Umair</li>
-            <li>Umair</li>
-            <li>Umair</li>
-            <li>Umair</li>
-        </ul>
-    </div>
-</div>
+
+<!--<div class="mini-popup">-->
+<!--<div id="mini-popup-body">-->
+<!--<ul>-->
+<!--<li>Umair</li>-->
+<!--<li>Umair</li>-->
+<!--<li>Umair</li>-->
+<!--<li>Umair</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
 
 </body>
-
 
 <script>
     getCategoriesWithItems();
