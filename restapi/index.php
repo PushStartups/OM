@@ -37,7 +37,10 @@ $app->post('/get_min_order_amount', function ($request, $response, $args)
     $minOrder = DB::query("select * from default_settings where name = 'min_order'");
 
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write(json_encode($minOrder));
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($minOrder));
+    return $response;
+
 });
 
 
@@ -47,9 +50,9 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 {
     $restaurants = Array();
 
-    $results = DB::query("select * from restaurants");
-    $count = 0;
+    $results = DB::query('select * from restaurants');
 
+    $count = 0;
 
     foreach ($results as $result)
     {
@@ -141,13 +144,13 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
         $count++;
     }
 
+
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write(json_encode($restaurants));
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($restaurants));
+    return $response;
 
 });
-
-
-
 
 
 //  WEB HOOK GET DATA OF CATEGORIES WITH ITEMS
@@ -212,8 +215,10 @@ $app->post('/categories_with_items', function ($request, $response, $args)
 
 
 
-    // RESPONSE RETURN TO REST API CALL FROM SMOOCH
-    return $response->withStatus(200)->write(json_encode($data));
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($data));
+    return $response;
 
 });
 
@@ -245,7 +250,9 @@ $app->post('/extras_with_subitems', function ($request, $response, $args) {
 
 
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write(json_encode($data));
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($data));
+    return $response;
 
 });
 
@@ -364,8 +371,11 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         ];
     }
 
+
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write(json_encode($data));
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($data));
+    return $response;
 
 });
 
@@ -482,8 +492,14 @@ $app->post('/add_order', function ($request, $response, $args) {
     email_order_summary_hebrew_admin($user_order,$orderId,$todayDate);
 
 
+
+
+    ob_end_clean();
+
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write(json_encode($todayDate));
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode('success'));
+    return $response;
 
 });
 
@@ -517,7 +533,9 @@ $app->post('/get_credit_card_payment_url', function ($request, $response, $args)
     $url = urlencode(guardPaymentRequest(($amount * 100),$user_id,$email));
 
     // RESPONSE RETURN TO REST API CALL
-    return $response->withStatus(200)->write(json_encode($url));
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($url));
+    return $response;
 
 });
 
@@ -531,7 +549,7 @@ $app->get('/payment_cancel', function ($request, $response, $args)
         'window.top.onPaymentCancel();'.
         '</script>';
 
-    return $response->withStatus(200)->write($str);
+    echo $str;
 });
 
 
@@ -545,7 +563,7 @@ $app->get('/payment_success', function ($request, $response, $args)
         'window.top.onPaymentSuccess();'.
         '</script>';
 
-    return $response->withStatus(200)->write($str);
+    echo $str;
 });
 
 
@@ -558,7 +576,8 @@ $app->get('/payment_error', function ($request, $response, $args)
         'window.top.onPaymentCancel();'.
         '</script>';
 
-    return $response->withStatus(200)->write($str);
+
+    echo $str;
 });
 
 
@@ -578,7 +597,7 @@ function  guardPaymentRequest($amount,$userId,$email)
     $cgConf['amount'] = $amount;
     $cgConf['user'] = 'pushstart';
     $cgConf['password'] = 'OE2@38sz';
-    $cgConf['cg_gateway_url'] = "https://cguat2.creditguard.co.il/xpo/Relay";
+    $cgConf['cg_gateway_url'] = "https://cgpay5.creditguard.co.il/xpo/Relay";
 
     $poststring = 'user=' . $cgConf['user'];
     $poststring .= '&password=' . $cgConf['password'];
@@ -1152,7 +1171,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     //Send HTML or Plain Text email
     $mail->isHTML(true);
-    $mail->Subject = 'הזמנה חדשה'." ".$user_order['restaurantTitleHe'];
+    $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
     $mail->Body = "<i>$mailbody</i>";
     $mail->AltBody = "OrderApp";
 
