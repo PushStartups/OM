@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 20, 2017 at 12:19 PM
+-- Generation Time: Feb 28, 2017 at 02:40 PM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -32,9 +32,8 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `name_en` varchar(255) DEFAULT NULL,
   `name_he` varchar(255) DEFAULT NULL,
   `sort` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `menu_id` (`menu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
 -- Dumping data for table `categories`
@@ -85,7 +84,43 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `sort`) VALUES
 (42, 5, 'Wok Stir Fried Dishes', 'מוקפצות', 141),
 (43, 5, 'Main Dishes', 'מנות נתחי עוף / בקר מוקפצות על להבת WOK', 142),
 (44, 5, 'Children''s Menu', 'מנות ילדים\n', 143),
-(45, 5, 'Build your own Maki Roll', 'רול בהרכבה אישית', 144);
+(45, 5, 'Build your own Maki Roll', 'רול בהרכבה אישית', 144),
+(46, 6, 'Appetizers', '???? ?????', 145),
+(47, 6, 'Sushi Nigiri', '????', 146),
+(48, 6, 'Sushi', '????', 147),
+(49, 6, 'Sushi specials', '???? ????????', 148),
+(50, 6, 'Sushi Maki', '???? ????', 149),
+(51, 6, 'Fotomaki', '????????', 150),
+(52, 6, 'Inside out', '??????????', 151),
+(53, 6, 'Cones', '???????', 152),
+(54, 6, 'Sashimi', '?????', 153),
+(55, 6, 'Deep fried sushi', '???????', 154),
+(56, 6, 'Sushi Sandwiches', '???? ???????''', 155),
+(57, 6, 'Sushi Combinations', '???? ??????????', 156),
+(58, 6, 'Stir fry', '???????', 157),
+(59, 6, 'Sushi party platters', '???? ??????', 158),
+(60, 6, 'Drinks', '?????', 159);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cities`
+--
+
+CREATE TABLE IF NOT EXISTS `cities` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_en` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `name_he` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `cities`
+--
+
+INSERT INTO `cities` (`id`, `name_en`, `name_he`) VALUES
+(1, 'Beit Shemesh', 'בית שמש'),
+(2, 'Modiin', 'מודיעין');
 
 -- --------------------------------------------------------
 
@@ -129,11 +164,11 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
 --
 
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`, `voting_date`) VALUES
-(149, 1, 1, 0, 1, '2017-02-20'),
-(150, 1, 2, 1, 1, '2017-02-20'),
-(151, 1, 3, 0, 1, '2017-02-20'),
-(152, 1, 4, 0, 1, '2017-02-20'),
-(153, 1, 5, 0, 1, '2017-02-20');
+(149, 1, 1, 1, 1, '2017-02-22'),
+(150, 1, 2, 0, 1, '2017-02-22'),
+(151, 1, 3, 0, 1, '2017-02-22'),
+(152, 1, 4, 0, 1, '2017-02-22'),
+(153, 1, 5, 0, 1, '2017-02-22');
 
 -- --------------------------------------------------------
 
@@ -177,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `default_settings` (
 --
 
 INSERT INTO `default_settings` (`id`, `name`, `value`) VALUES
-(1, 'min_order', '75');
+(1, 'min_order', '50');
 
 -- --------------------------------------------------------
 
@@ -513,7 +548,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=248 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=380 ;
 
 --
 -- Dumping data for table `items`
@@ -522,17 +557,17 @@ CREATE TABLE IF NOT EXISTS `items` (
 INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `image_url`, `sort`) VALUES
 (1, 2, 'Angus Burger', 'אנגוס בורגר', 'Angus Burger\n250 grams of quality entrecote beef with mayonnaise, mustard, barbecue, lettuce, onions, fried onions, pickles and tomatoes.', 'אנגוס בורגר\n250 גרם בשר אנטריקוט איכותי.  בתוספת מיונז, חרדל, ברביקיו, חסה, בצל, בצל מטוגן, מלפפון חמוץ ועגבניה.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪ | 50 גר'' חזה אווז 8 ₪', 40, 'img/angus_items/angus_burger.png', 100),
 (2, 3, 'Angus Tortilla', 'טורטיה אנגוס', 'Angus Tortilla: 150 grams of quality Angus entrecote beef with mayonnaise, mustard, chimichurri, lettuce and tomato.', 'טורטיה אנגוס\n150 גרם נתחי אנטריקוט אנגוס איכותיים. בתוספת מיונז, חרדל, צ''ימיצ''ורי, חסה ועגבניה.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪', 36, 'img/angus_items/tortilla.png', 101),
-(3, 3, 'Pargit Tortilla', 'טורטיה פרגית', 'Spring Chicken Tortilla: \n150 grams of chicken marinated in Moroccan spices with mayonnaise, mustard, chimichurri, lettuce and tomato.', 'טורטיה פרגית\n150 גרם פרגיות במרינדה של תבלינים מרוקאים.  בתוספת מיונז, חרדל, צ''ימיצ''ורי, חסה ועגבניה.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪', 34, 'restapi/images/test.png', 102),
-(4, 3, 'Chicken Tortilla', 'טורטיה עוף', 'Chicken Tortilla\n150 grams of chicken in honey sauce marunade with mayonnaise, mustard, chipotle pepper, lettuce and tomato.\n', 'טורטיה עוף\n150 גרם נתחי חזה עוף במרינדת דבש.  בתוספת מיונז, חרדל, צ''יפוטלה, חסה ועגבניה.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪', 32, 'restapi/images/test.png', 103),
+(3, 3, 'Pargit Tortilla', 'טורטיה פרגית', 'Spring Chicken Tortilla: \n150 grams of chicken marinated in Moroccan spices with mayonnaise, mustard, chimichurri, lettuce and tomato.', 'טורטיה פרגית\n150 גרם פרגיות במרינדה של תבלינים מרוקאים.  בתוספת מיונז, חרדל, צ''ימיצ''ורי, חסה ועגבניה.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪', 34, 'img/angus_items/angus_wm.png', 102),
+(4, 3, 'Chicken Tortilla', 'טורטיה עוף', 'Chicken Tortilla\n150 grams of chicken in honey sauce marunade with mayonnaise, mustard, chipotle pepper, lettuce and tomato.\n', 'טורטיה עוף\n150 גרם נתחי חזה עוף במרינדת דבש.  בתוספת מיונז, חרדל, צ''יפוטלה, חסה ועגבניה.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪', 32, 'img/angus_items/angus_wm.png', 103),
 (5, 1, 'Angus Salad', 'סלט אנגוס', 'Angus salad\n150 gram entrecote/spring chicken/goose breast.\nLettuce, baby greens, tomatoes, sacks, onion and mushrooms. Served with bread, chimmichuri,  and plenty of sauces to choose from.', 'סלט אנגוס\n150 גרם נתחי אנטריקוט | פרגית | חזה אווז.\nעלי חסה, עלי בייבי, עגבניות שקי, בצל סגול ופטריות. מוגש בתוספת לחם צי''מיצ''ורי ורטבים לבחירה. \nתוספות בתשלום לבחירה: 150 גרם חזה אווז או אטנריקוט 19 ₪ | 80 גר'' כבד אווז 30 ₪', 44, 'img/angus_items/angus_salad.png', 104),
 (6, 1, 'Chicken Salad', 'סלט עוף', 'Chicken Salad\n170 grams of sweet chicken breast. Chopped lettuce, mesculin, cucumber, cherry tomatoes, red onion and mushrooms. Served with garlic bread and sauces.', 'סלט עוף\n170 גרם חזה חות מתוק. עלי חסה קצוצים, עלי בייבי, רצועות מלפפון, עגבניות שרי, בצל סגול ופטריות. מוגש בתוספת לחם שום ורטבים.\nתוספות בתשלום לבחירה: פורטובלו 4 ₪ | ביצה 4 ₪ | 170 גר'' חזה עוף 18 ₪', 42, 'img/angus_items/chicken_salad.png', 105),
-(7, 6, 'Angus Sandwich', 'אנגוס סנדוויץ', 'Angus Sandwich: 150 grams of quality Angus entrecote meat with mustard, chimichuri, lettuce, and tomatoes', 'סנדוויץ'' אנגוס\n150 גרם נתחי אנטריקוט אנגוס איכותיים. בתוספת חרדל, צ''ימיצ''ורי , חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪ | 150 גר'' חזה אווז או אנטריקוט 19 ₪ | ביצה 4 ₪ | פורטובלו 4 ₪', 37, 'restapi/images/test.png', 106),
-(8, 6, 'Double angus sandwich', 'דאבל אנגוס סנדוויץ', 'Double Angus Sandwich: 300 grams of quality Angus entrecote meat with mayonaise, mustard, chimichuri, lettuce, and tomatoes ', 'סנדוויץ'' דאבל אנגוס\n300 גרם נתחי אנטריקוט אנגוס איכותיים. בתוספת מיונז, חרדל, צ''ימיצ''ורי , חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪  | ביצה 4 ₪ | פורטובלו 4 ₪\n', 56, 'restapi/images/test.png', 107),
-(9, 6, 'King angus sandwich', 'קינג אנגוס סנדוויץ', 'King Angus Sandwich: 150 grams of quality Angus entrecote meat and 80 grams of goose liver with mayonaise, mustard, chimichuri, lettuce, and tomatoes ', 'סנדוויץ'' קינג אנגוס\n150 גרם נתחי אנטריקוט + 80 גר'' כבד אווז. בתוספת מיונז, חרדל, צ''ימיצ''ורי , חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪  | ביצה 4 ₪ | פורטובלו 4 ₪', 67, 'restapi/images/test.png', 108),
+(7, 6, 'Angus Sandwich', 'אנגוס סנדוויץ', 'Angus Sandwich: 150 grams of quality Angus entrecote meat with mustard, chimichuri, lettuce, and tomatoes', 'סנדוויץ'' אנגוס\n150 גרם נתחי אנטריקוט אנגוס איכותיים. בתוספת חרדל, צ''ימיצ''ורי , חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪ | 150 גר'' חזה אווז או אנטריקוט 19 ₪ | ביצה 4 ₪ | פורטובלו 4 ₪', 37, 'img/angus_items/angus_wm.png', 106),
+(8, 6, 'Double angus sandwich', 'דאבל אנגוס סנדוויץ', 'Double Angus Sandwich: 300 grams of quality Angus entrecote meat with mayonaise, mustard, chimichuri, lettuce, and tomatoes ', 'סנדוויץ'' דאבל אנגוס\n300 גרם נתחי אנטריקוט אנגוס איכותיים. בתוספת מיונז, חרדל, צ''ימיצ''ורי , חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪  | ביצה 4 ₪ | פורטובלו 4 ₪\n', 56, 'img/angus_items/angus_wm.png', 107),
+(9, 6, 'King angus sandwich', 'קינג אנגוס סנדוויץ', 'King Angus Sandwich: 150 grams of quality Angus entrecote meat and 80 grams of goose liver with mayonaise, mustard, chimichuri, lettuce, and tomatoes ', 'סנדוויץ'' קינג אנגוס\n150 גרם נתחי אנטריקוט + 80 גר'' כבד אווז. בתוספת מיונז, חרדל, צ''ימיצ''ורי , חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪  | ביצה 4 ₪ | פורטובלו 4 ₪', 67, 'img/angus_items/angus_wm.png', 108),
 (10, 6, 'chicken sandwich', 'סנדוויץ עוף', 'Chicken Sandwich: 170 grams of sweet chicken breast with mayonaise, sweet chilli sauce, garlic, lettuce, and tomatoes.', 'סנדוויץ'' עוף\n170 גרם חזה עוף מתוק.  בתוספת מיונז, צ''ילי מתוק, שום, חסה ועגבניה.\nתוספות בתשלום לבחירה: 170 גר'' חזה עוף 18 ₪ | פורטובלו 4 ₪', 33, 'img/angus_items/chicken_sandwich.png', 109),
-(11, 6, 'mallard sandwich', 'סנדוויץ'' מולארד', 'Mallard Sandwich: 150 grams of quality goose breast with mayonaise, mustard, chimichuri, lettuce, and tomatoes ', 'סנדוויץ'' מולארד\n150 גר'' נתחי חזה אווז איכותיים.  בתוספת מיונז, חרדל, צ''ימיצ''ורי, חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪ | ביצה 4 ₪ | פורטובלו 4 ₪', 37, 'restapi/images/test.png', 110),
-(12, 6, 'mediterranean sandwich', 'סנדוויץ ים תיכוני', 'Mediterranean Sandwich: 150 grams spring chicken with our special home made spice blend. Comes with mayonaise, tehina, spicy chilli sauce, lettuce, and tomatoes', 'סנדוויץ'' ים תיכוני\n150 גר'' פרגיות בתיבול הבית.  בתוספת מיונז, טחינה, צ''ילי חריף, חסה ועגבניה.\nתוספות בתשלום לבחירה:  פורטובלו 4 ₪', 35, 'restapi/images/test.png', 111),
-(13, 6, 'Vegetarian sandwich', 'סנדוויץ'' צמחוני', 'Vegetarian Sandwich: Mesclun leaves, red onion, tomatoes, portobello mushroom, lettuce, onion rings, and a fried egg.', 'סנדוויץ'' צמחוני\nעלי בייבי, בצל סגול, עגבניות, פורטובלו, חסה, טבעות בצל, ביצת עין ועגבניות טריות.\nרטבים לבחירה: מיונז|  פסטו | ברביקיו | צ''ילי מתוק\n', 33, 'restapi/images/test.png', 112),
+(11, 6, 'mallard sandwich', 'סנדוויץ'' מולארד', 'Mallard Sandwich: 150 grams of quality goose breast with mayonaise, mustard, chimichuri, lettuce, and tomatoes ', 'סנדוויץ'' מולארד\n150 גר'' נתחי חזה אווז איכותיים.  בתוספת מיונז, חרדל, צ''ימיצ''ורי, חסה ועגבניה.\nתוספות בתשלום לבחירה: 50 גר'' חזה אווז 8 ₪ | ביצה 4 ₪ | פורטובלו 4 ₪', 37, 'img/angus_items/angus_wm.png', 110),
+(12, 6, 'mediterranean sandwich', 'סנדוויץ ים תיכוני', 'Mediterranean Sandwich: 150 grams spring chicken with our special home made spice blend. Comes with mayonaise, tehina, spicy chilli sauce, lettuce, and tomatoes', 'סנדוויץ'' ים תיכוני\n150 גר'' פרגיות בתיבול הבית.  בתוספת מיונז, טחינה, צ''ילי חריף, חסה ועגבניה.\nתוספות בתשלום לבחירה:  פורטובלו 4 ₪', 35, 'img/angus_items/angus_wm.png', 111),
+(13, 6, 'Vegetarian sandwich', 'סנדוויץ'' צמחוני', 'Vegetarian Sandwich: Mesclun leaves, red onion, tomatoes, portobello mushroom, lettuce, onion rings, and a fried egg.', 'סנדוויץ'' צמחוני\nעלי בייבי, בצל סגול, עגבניות, פורטובלו, חסה, טבעות בצל, ביצת עין ועגבניות טריות.\nרטבים לבחירה: מיונז|  פסטו | ברביקיו | צ''ילי מתוק\n', 33, 'img/angus_items/angus_wm.png', 112),
 (14, 5, 'Coca Cola Zero', 'קוקה קולה', '', '', 8, 'img/drinks/download.png', 113),
 (15, 5, 'Fuze Tea', 'פיוז טה', '', '', 8, 'img/drinks/CC063.png', 114),
 (16, 5, 'Prigat Grape', 'פריגת ענבים', '', '', 8, 'img/drinks/Prigan_grapefruit.png', 115),
@@ -543,10 +578,10 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (21, 5, 'Large Coca Cola Zero', 'בקבוק פיוז טה גדול', '', '', 12, 'img/drinks/download.png', 120),
 (22, 4, 'Small Sweet potato fries', 'צ''יפס בטטה- קטן\n', '', '', 14, 'img/angus_items/sweet_potato_fries.png', 121),
 (23, 4, 'American fries', 'צ''יפס אמריקאי', '', '', 14, 'img/angus_items/american_fries.png', 122),
-(24, 4, 'onion rings', 'טבעות בצל', '', '', 14, 'restapi/images/test.png', 123),
-(25, 4, 'Mexican nachos', 'נאצ''וס מקסיקני מטוגן', '', '', 12, 'restapi/images/test.png', 124),
-(26, 4, 'crispy chicken wings', 'כנפי עוף קריספיות ברוטב', '', '', 25, 'restapi/images/test.png', 125),
-(27, 4, 'Large Sweet Potato fries', 'צ''יפס בטטה- גדול', '', '', 25, 'restapi/images/test.png', 126),
+(24, 4, 'onion rings', 'טבעות בצל', '', '', 14, 'img/angus_items/angus_wm.png', 123),
+(25, 4, 'Mexican nachos', 'נאצ''וס מקסיקני מטוגן', '', '', 12, 'img/angus_items/angus_wm.png', 124),
+(26, 4, 'crispy chicken wings', 'כנפי עוף קריספיות ברוטב', '', '', 25, 'img/angus_items/angus_wm.png', 125),
+(27, 4, 'Large Sweet Potato fries', 'צ''יפס בטטה- גדול', '', '', 25, 'img/angus_items/angus_wm.png', 126),
 (28, 7, 'XL Pie', 'XL פאי', '', '', 56, 'img/mesh_items/XL_pie.png', 127),
 (29, 7, 'XL + Toppings', 'XL + תוספות', '', '', 75, 'img/mesh_items/XL_toppings.png', 128),
 (30, 7, 'Meshulashim Pie', 'פאי משלושים', 'Tomato sauce, mozzarella, garlic confit, sun-dried tomatoes and spicy peppers', 'רוטב עגבניות, מוצרלה, שום קונפי, עגבניות מיובשות ופלפלים חריפים', 32, 'img/mesh_items/meshulashim_pie.png', 129),
@@ -565,9 +600,9 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (43, 10, 'Cheese Ravioli', 'רביולי גבינה', 'In a cream sauce, seasoned with garlic and fresh basil', 'שמנת, שום, ובזיליקום טרי', 32, 'img/mesh_items/ravioli.png', 142),
 (44, 10, 'Sweet Potato Ravioli', 'רביולי בטטה', 'Creamy sauce ', 'רוטב שמנת', 32, 'img/mesh_items/sweet_potato_ravioli.png', 143),
 (45, 11, 'Cheese Bureka', 'בורקס גבינה', '', '', 10, 'img/mesh_items/borekas.png', 144),
-(46, 11, 'Potato Bureka', 'בורקס תפו״א', '', '', 10, 'restapi/images/test.png', 145),
-(47, 11, 'Deluxe Bureka', 'בורקס פינוק', 'Deluxe Borekas - tehina, tomato, pickles, harisa, hard boiled egg', 'בורקס פינוק - טחינה, עגבנייה, מלפפון, חמוץ, אריסה, ביצה קשה', 18, 'restapi/images/test.png', 146),
-(48, 11, 'Edamame', 'אדממה', 'Seasoned with salt and lemon juice', 'בתיבול מלח ולימון', 15, 'restapi/images/test.png', 147),
+(46, 11, 'Potato Bureka', 'בורקס תפו״א', '', '', 10, 'img/mesh_items/mesh_wm.png', 145),
+(47, 11, 'Deluxe Bureka', 'בורקס פינוק', 'Deluxe Borekas - tehina, tomato, pickles, harisa, hard boiled egg', 'בורקס פינוק - טחינה, עגבנייה, מלפפון, חמוץ, אריסה, ביצה קשה', 18, 'img/mesh_items/mesh_wm.png', 146),
+(48, 11, 'Edamame', 'אדממה', 'Seasoned with salt and lemon juice', 'בתיבול מלח ולימון', 15, 'img/mesh_items/mesh_wm.png', 147),
 (49, 11, 'Home Fries', 'הום פרייז', '', '', 28, 'img/mesh_items/home_fries.png', 148),
 (50, 11, 'Fries', 'צ''פס', '', '', 18, 'img/mesh_items/fries.png', 149),
 (51, 12, 'Coca Cola', 'קוקה קולה', '', '', 10, 'img/drinks/1-100x100.png', 150),
@@ -585,11 +620,11 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (63, 14, 'chicken skewers', 'שיפודי עוף', 'Jumbo Marakesh Spring Chicken Skewers: skewers spiced with harissa, cumin, hawaij, garlic, and herbs', 'שיפוד פרגית ג׳מבו מרקש: שיפוד פרגית מתובלת בתבלין אריסה, כמון, שום ועשבי תבול', 0, 'img/bandora_items/chicken_skewers.png', 162),
 (64, 14, 'chicken breast', 'חזה עוף', 'Marinated Chicken Breast: chicken breast spiced with paprika, cumin, hawaij, and coarse black pepper', 'חזה עוף במרינדה של תבליני שוק: פרוסות חזה עוף מתובל בפפריקה, כמון, חוואייג׳ ופלפל שחור גרוס. ', 0, 'img/bandora_items/chicken_breasts.png', 163),
 (65, 15, 'Bandora Express', 'סלט נדורה', 'Bandora Express: green salad dressed with olive oil and lemon, pieces of shawarma/spring chicken/turkey strips, grilled onion, tehina, sumak, and parsley ', 'בנדורה אקספרס: סלט ירקות חתוך דק מתובל בשמן זית ולימון, נתחי שווארמה פרגית או רצועות חזה עוף, בצל שרוף, טחינה של סעיד, סומק ופטרוזיליה', 42, 'img/bandora_items/bandora_express.png', 164),
-(66, 15, 'Amami Salad', 'סלט עממי', 'Ammami Salad: green salad dressed with za''atar and lemon, pita chips, pieces of shawarma/spring chicken, grilled onion, pinenuts, and tehina', 'סלט עממי שיושב טוב בבטן: סלט ירקות חתוך דק מתובל בזעתר ולימון, שברי פיתה צלויה, נתחי שווארמה עגל או רצועות חזה עוף, בצל שרוף, צנוברים, טחינה של סעיד, סומק ופטרוזיליה', 42, 'restapi/images/test.png', 165),
-(67, 15, 'Medura', 'מדורה', 'Medura Plate: Tomatoes, onions, hot peppers, and tehina, garnished with a sprig of parsley', 'צלחת מדורה: עגבניות, בצלים ופלפ אש שרופים, בים של טחינה וקצת פטרוזיליה לפינוק', 19, 'restapi/images/test.png', 166),
+(66, 15, 'Amami Salad', 'סלט עממי', 'Ammami Salad: green salad dressed with za''atar and lemon, pita chips, pieces of shawarma/spring chicken, grilled onion, pinenuts, and tehina', 'סלט עממי שיושב טוב בבטן: סלט ירקות חתוך דק מתובל בזעתר ולימון, שברי פיתה צלויה, נתחי שווארמה עגל או רצועות חזה עוף, בצל שרוף, צנוברים, טחינה של סעיד, סומק ופטרוזיליה', 42, 'img/bandora_items/bandora_wm.png', 165),
+(67, 15, 'Medura', 'מדורה', 'Medura Plate: Tomatoes, onions, hot peppers, and tehina, garnished with a sprig of parsley', 'צלחת מדורה: עגבניות, בצלים ופלפ אש שרופים, בים של טחינה וקצת פטרוזיליה לפינוק', 19, 'img/bandora_items/bandora_wm.png', 166),
 (68, 16, 'Chummus and Techina', 'חומוס עם טחינה', 'Chummus, tehina, olive oil, and pinenuts', 'חומוס, טחינה, שמן זית וסחרחורת של צנוברים', 25, 'img/bandora_items/chummus_and _techina.png', 167),
-(69, 16, 'Mixed meat chummus', 'חומוס עם בשר מעורב', 'Mixed Grill Chummus', 'חומוס מעורב (בתקרית בטחונית) בתוספת רצועות הודו, טחול, ללבות ובצל שרוף על פחמים', 39, 'restapi/images/test.png', 168),
-(70, 16, 'Chummus Bandora', 'חומוס בנדורה', 'Chummus Bandora', 'חומוס בנדורה - חומוס, נתחי שווארמה עגל/פרגיות עסיסיים בתוספת בצל שרוף וצנוברים', 39, 'restapi/images/test.png', 169),
+(69, 16, 'Mixed meat chummus', 'חומוס עם בשר מעורב', 'Mixed Grill Chummus', 'חומוס מעורב (בתקרית בטחונית) בתוספת רצועות הודו, טחול, ללבות ובצל שרוף על פחמים', 39, 'img/bandora_items/bandora_wm.png', 168),
+(70, 16, 'Chummus Bandora', 'חומוס בנדורה', 'Chummus Bandora', 'חומוס בנדורה - חומוס, נתחי שווארמה עגל/פרגיות עסיסיים בתוספת בצל שרוף וצנוברים', 39, 'img/bandora_items/bandora_wm.png', 169),
 (71, 17, 'Coca Cola', 'קוקה קולה', '', '', 10, 'img/drinks/1-100x100.png', 170),
 (72, 17, 'Fuze Tea', 'פיוז טה', '', '', 10, 'img/drinks/CC063.png', 171),
 (73, 17, 'Prigat Grape', 'פריגת ענבים', '', '', 10, 'img/drinks/Prigan_grapefruit.png', 172),
@@ -597,77 +632,77 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (75, 17, 'Diet Coke', 'דייט קוקה קולה', '', '', 10, 'img/drinks/coca-cola-diet-1-75-litre.png', 174),
 (76, 17, 'Fanta', 'פנטה', '', '', 10, 'img/drinks/download (1).png', 175),
 (77, 17, 'Large Coca Cola', 'בקבוק קוקה קולה גדול', '', '', 14, 'img/drinks/PDP_Coca-Cola-HFCS-1.25-Liter-Bottle.png', 176),
-(78, 17, 'Large Fuze Tea', 'בקבוק פיוז טי גדול', '', '', 14, 'restapi/images/test.png', 177),
-(79, 18, 'Baladi eggplant in tahini', 'חציל בלאדי בטחינה ירוקה', 'Plus salsa and olive oil', 'בתוספת סלסה ושמן זית', 22, 'restapi/images/test.png', 178),
-(80, 18, 'Cauliflower tahini', 'כרובית בטחינה', 'With sweet chili', 'בליווי צ''ילי מתוק', 26, 'restapi/images/test.png', 179),
-(81, 18, 'Sourdough bread and four homemade dips', 'לחם מחמצת וארבעה מטבלי הבית', '', '', 18, 'restapi/images/test.png', 180),
+(78, 17, 'Large Fuze Tea', 'בקבוק פיוז טי גדול', '', '', 14, 'img/bandora_items/bandora_wm.png', 177),
+(79, 18, 'Baladi eggplant in tahini', 'חציל בלאדי בטחינה ירוקה', 'Plus salsa and olive oil', 'בתוספת סלסה ושמן זית', 22, 'img/roza_items/roza_wm.png', 178),
+(80, 18, 'Cauliflower tahini', 'כרובית בטחינה', 'With sweet chili', 'בליווי צ''ילי מתוק', 26, 'img/roza_items/roza_wm.png', 179),
+(81, 18, 'Sourdough bread and four homemade dips', 'לחם מחמצת וארבעה מטבלי הבית', '', '', 18, 'img/roza_items/roza_wm.png', 180),
 (82, 18, 'Focaccias', 'פוקצ''ה מתבלים', 'Comes with five types of dips', 'חמישה סוגי מטבלים משתנים', 28, 'img/roza_items/roza_foccacia.JPG', 181),
-(83, 18, 'Sweet potato fries with a touch of maple', 'צ''יפס בטטה בנגיעות מייפל', '', '', 22, 'restapi/images/test.png', 182),
-(84, 18, 'Soup of the day', 'מרק היום- שאל את הטלפן', '', '', 22, 'restapi/images/test.png', 183),
-(85, 18, 'Tempura chicken fillet', 'פילה עוף טמפורה', 'Drizzled with sweet chili', 'על מצע צ''ילי מתוק', 28, 'restapi/images/test.png', 184),
-(86, 18, 'Stir fried mushrooms', 'פטריות מוקפצות', 'Portobello Mushrooms and teriyaki sauce', 'שמפיניון ופורטובלו ברוטב טריאקי', 33, 'restapi/images/test.png', 185),
+(83, 18, 'Sweet potato fries with a touch of maple', 'צ''יפס בטטה בנגיעות מייפל', '', '', 22, 'img/roza_items/roza_wm.png', 182),
+(84, 18, 'Soup of the day', 'מרק היום- שאל את הטלפן', '', '', 22, 'img/roza_items/roza_wm.png', 183),
+(85, 18, 'Tempura chicken fillet', 'פילה עוף טמפורה', 'Drizzled with sweet chili', 'על מצע צ''ילי מתוק', 28, 'img/roza_items/roza_wm.png', 184),
+(86, 18, 'Stir fried mushrooms', 'פטריות מוקפצות', 'Portobello Mushrooms and teriyaki sauce', 'שמפיניון ופורטובלו ברוטב טריאקי', 33, 'img/roza_items/roza_wm.png', 185),
 (87, 19, 'Sandwich chicken', 'סנדוויץ'' עוף', 'Chicken strips grilled with fried onion spread with guacamole and roasted peppers', 'נתחי עוף בגריל עם בצל מטוגן, ממרח גוואקאמולי ופלפל קלוי', 45, 'img/roza_items/roza_chicken_sandwich.JPG', 186),
-(88, 19, 'Steak sandwich', 'סטייק סנדוויץ''', 'Entrecote strips stirfried together with fried onion and Dijonnaise sauce', 'נתחי אנטריקוט מוקפצים עם בצל מטוגן בממרח דיז''ונז''', 48, 'restapi/images/test.png', 187),
-(89, 19, 'Sandwich sloppy joe', 'סנדוויץ'' סלופי ג''ו', 'Chopped lamb pieces in a salsa and Dijonnaise sauce', 'נתחי טלה קצוצים ברוטב סלסה וממרח דיז''ונז''', 45, 'restapi/images/test.png', 188),
-(90, 19, 'Sandwich Schnitzel Rosa', 'סנדוויץ'' שניצל רוזה', 'Shnitzel with house blend spices served wiht a choice of sauces and green vegetables', 'שניצל בתיבול ביתי מוגש עם מבחר רטבים בליווי ירקות טריים', 43, 'restapi/images/test.png', 189),
-(91, 20, 'House burger 150g', 'המבורגר הבית 150 גרם', '100% fresh beef from select cuts', '100% בשר בקר טרי מחלקים מובחרים', 34, 'restapi/images/test.png', 190),
-(92, 20, 'The house burger 250g', 'המבורגר הבית 250 גרם', '100% fresh beef from select cuts', '100% בשר בקר טרי מחלקים מובחרים', 42, 'restapi/images/test.png', 191),
+(88, 19, 'Steak sandwich', 'סטייק סנדוויץ''', 'Entrecote strips stirfried together with fried onion and Dijonnaise sauce', 'נתחי אנטריקוט מוקפצים עם בצל מטוגן בממרח דיז''ונז''', 48, 'img/roza_items/roza_wm.png', 187),
+(89, 19, 'Sandwich sloppy joe', 'סנדוויץ'' סלופי ג''ו', 'Chopped lamb pieces in a salsa and Dijonnaise sauce', 'נתחי טלה קצוצים ברוטב סלסה וממרח דיז''ונז''', 45, 'img/roza_items/roza_wm.png', 188),
+(90, 19, 'Sandwich Schnitzel Rosa', 'סנדוויץ'' שניצל רוזה', 'Shnitzel with house blend spices served wiht a choice of sauces and green vegetables', 'שניצל בתיבול ביתי מוגש עם מבחר רטבים בליווי ירקות טריים', 43, 'img/roza_items/roza_wm.png', 189),
+(91, 20, 'House burger 150g', 'המבורגר הבית 150 גרם', '100% fresh beef from select cuts', '100% בשר בקר טרי מחלקים מובחרים', 34, 'img/roza_items/roza_burger.jpg', 190),
+(92, 20, 'The house burger 250g', 'המבורגר הבית 250 גרם', '100% fresh beef from select cuts', '100% בשר בקר טרי מחלקים מובחרים', 42, 'img/roza_items/roza_burger.jpg', 191),
 (93, 20, 'Rosa Burger 220 grams', 'המבורגר רוזה 220 גרם', '100% lamb meat with house blend spices', '100% בשר טלה משובח בתיבות הבית', 42, 'img/roza_items/roza_burger.jpg', 192),
-(94, 20, '220 gram entrecote hamburger', 'המבורגר אנטריקוט 220 גרם', '', '', 44, 'restapi/images/test.png', 193),
-(95, 21, 'Tortilla Chicken', 'טורטיה עוף', 'Chicken strips stirfried with onion and tehina', 'נתחי חזה עוף מוקפצים עם בצל וטחינה', 45, 'img/roza_items/roza_chicken_tortilla.JPG', 194),
-(96, 21, 'Tortilla Chicken liver', 'טורטיה כבד עוף', 'Chicken liver stirfried with onion and our house sauces', 'כבדי עוף מוקפצים עם בצל ברטבי הבית', 41, 'restapi/images/test.png', 195),
-(97, 21, 'Tortilla kebab', 'טורטיה קבב', 'Small kebabs with tehina and salsa', 'קבבונים בטחינה ביתית וסלסה', 46, 'restapi/images/test.png', 196),
-(98, 21, 'Tortilla entrecote', 'טורטיה אנטריקוט', 'Entrecote strips stirfried with onion and Dijonnaise sauce', 'נתחי אנטריקוט מוקפצים עם בצל מטוגן בממרח דיז''ונז''', 48, 'restapi/images/test.png', 197),
-(99, 21, 'Tortilla lamb', 'טורטיה טלה', 'Spicy lamb sausages spread with guacamole', 'נקניקיות טלה פיקנטיות וממרח גוואקמולי', 44, 'restapi/images/test.png', 198),
-(100, 22, 'Satay Chicken Salad', 'סלט סאטה עוף', 'Chicken breast coated in peanut sauce on a base of green salad', 'חזה עוף מושרה בחמאת בוטנים על מצע סלט ירוק', 47, 'restapi/images/test.png', 199),
-(101, 22, 'Veal Salad', 'סלט נתחי עגל', 'Stirfried veal pieces with onion on a bed of greens with peanut sauce and gourmet tehina', 'נתחי עגל מוקפצים עם בצל על מצע סלט ירוק ברוטב חמאת בוטנים וטחינה גולמית', 49, 'restapi/images/test.png', 200),
-(102, 22, 'Chicken and Goose Breast Salad', 'סלט עוף עם חזה אווז', 'Stirfried pieces of chicken and aged goose breast on a green salad base, mixed with roasted peppers', 'נתחי עוף מוקפצים עם חזה אווז מעושן על מצע סלט ירוק ופלפל קלוי', 49, 'restapi/images/test.png', 201),
-(103, 22, 'Roast beef salad', 'סלט רוסטביף', 'Hot roast beef on a bed of greens, roast peppers, topped with a fried egg, croutons and Dijonnaise sauce', 'רוסטביף חם על מצע סלט ירוק ופלפל קלוי בתוספת ביצת עין , קרוטונים ודיזו''נז''', 47, 'restapi/images/test.png', 202),
-(104, 22, 'Chicken liver salad', 'סלט כבדי עוף', 'Chicken livers in maple sauce, pears, walnuts and cranberries on a bed of greens', 'כבדי עוף בניחוח מייפל, אגסים, אגוזי מלך וחמוציות על מצע של סלט ירוק', 44, 'restapi/images/test.png', 203),
-(105, 22, 'green salad', 'סלט ירוק', 'Lettuce, baby leaves, purple onion, cherry tomatoes, cucumber, avocado (when in season) in a mustard vinaigrette sauce', 'חסה, עלי בייבי, בצל סגול, עגבניות שרי, מלפפון, אבוקדו (בעונה)', 27, 'restapi/images/test.png', 204),
-(106, 22, 'Israeli salad', 'סלט ערבי', 'Cucumbers, tomatoes, parsley, onoin in olive oil and lemon sauce', 'מלפפון, עגבניות, פטרוזיליה, בצל ברוטב שמן זית ולימון', 32, 'restapi/images/test.png', 205),
-(107, 23, 'Fettuccini in Tomato Sauce', 'פטוצ''יני עגבניות', 'Made with grilled plum tomatoes and garlic with olive oil and fresh herbs.', 'עגבניות תמר צלויות בגריל עם שום, שמן זית וריחן טרי', 38, 'restapi/images/test.png', 206),
-(108, 23, 'Chicken Fettuccini ', 'פטוצ''יני עוף', 'Stirfried chicken pieces in olive oil, seasoned with green herbs', 'נתחי עוף מוקפצים בעשבי תיבול ושמן זית', 49, 'restapi/images/test.png', 207),
-(109, 23, 'Bolognese', 'בולונז', 'Fettuccini with minced lamb meat in a roasted plum tomato sauce', 'בשר טלה טחון במקום, פטוצ''יני ברוטב עגבניות תמר צלויות', 49, 'restapi/images/test.png', 208),
-(110, 23, 'Fettuccini with Chicken Livers', 'פטוצ''יני כבד עוף', 'Chicken Livers, Mirin sauce, fresh herbs and mushrooms', 'כבד עוף, מירין, עשבי תיבול ופטריות', 49, 'restapi/images/test.png', 209),
-(111, 23, 'Fettuccini Entrecote', 'פטוצ''יני אנטריקוט', 'With pan-seared entrecot pieces and shallots, champignon mushrooms and Mirin sauce', 'נתחי אנטריקוט צרובים במחבת לצד בצלי שאלוט, פטריות שמפניון ומירין', 52, 'restapi/images/test.png', 210),
-(112, 24, 'Vegetarian Noodles', 'נודלס צמחוני', 'Egg noodles stirfried with carrot, variety of peppers and soya sauce', 'אטריות ביצים מוקפצות עם גזר, בצל ופלפלים צבעוניים ברוטב סויה', 39, 'restapi/images/test.png', 211),
+(94, 20, '220 gram entrecote hamburger', 'המבורגר אנטריקוט 220 גרם', '', '', 44, 'img/roza_items/roza_wm.png', 193),
+(95, 21, 'Tortilla Chicken', 'טורטיה עוף', 'Chicken strips stirfried with onion and tehina', 'נתחי חזה עוף מוקפצים עם בצל וטחינה', 45, 'img/roza_items/roza_wm.png', 194),
+(96, 21, 'Tortilla Chicken liver', 'טורטיה כבד עוף', 'Chicken liver stirfried with onion and our house sauces', 'כבדי עוף מוקפצים עם בצל ברטבי הבית', 41, 'img/roza_items/roza_wm.png', 195),
+(97, 21, 'Tortilla kebab', 'טורטיה קבב', 'Small kebabs with tehina and salsa', 'קבבונים בטחינה ביתית וסלסה', 46, 'img/roza_items/roza_wm.png', 196),
+(98, 21, 'Tortilla entrecote', 'טורטיה אנטריקוט', 'Entrecote strips stirfried with onion and Dijonnaise sauce', 'נתחי אנטריקוט מוקפצים עם בצל מטוגן בממרח דיז''ונז''', 48, 'img/roza_items/roza_wm.png', 197),
+(99, 21, 'Tortilla lamb', 'טורטיה טלה', 'Spicy lamb sausages spread with guacamole', 'נקניקיות טלה פיקנטיות וממרח גוואקמולי', 44, 'img/roza_items/roza_wm.png', 198),
+(100, 22, 'Satay Chicken Salad', 'סלט סאטה עוף', 'Chicken breast coated in peanut sauce on a base of green salad', 'חזה עוף מושרה בחמאת בוטנים על מצע סלט ירוק', 47, 'img/roza_items/roza_salad.JPG', 199),
+(101, 22, 'Veal Salad', 'סלט נתחי עגל', 'Stirfried veal pieces with onion on a bed of greens with peanut sauce and gourmet tehina', 'נתחי עגל מוקפצים עם בצל על מצע סלט ירוק ברוטב חמאת בוטנים וטחינה גולמית', 49, 'img/roza_items/roza_salad.JPG', 200),
+(102, 22, 'Chicken and Goose Breast Salad', 'סלט עוף עם חזה אווז', 'Stirfried pieces of chicken and aged goose breast on a green salad base, mixed with roasted peppers', 'נתחי עוף מוקפצים עם חזה אווז מעושן על מצע סלט ירוק ופלפל קלוי', 49, 'img/roza_items/roza_salad.JPG', 201),
+(103, 22, 'Roast beef salad', 'סלט רוסטביף', 'Hot roast beef on a bed of greens, roast peppers, topped with a fried egg, croutons and Dijonnaise sauce', 'רוסטביף חם על מצע סלט ירוק ופלפל קלוי בתוספת ביצת עין , קרוטונים ודיזו''נז''', 47, 'img/roza_items/roza_salad.JPG', 202),
+(104, 22, 'Chicken liver salad', 'סלט כבדי עוף', 'Chicken livers in maple sauce, pears, walnuts and cranberries on a bed of greens', 'כבדי עוף בניחוח מייפל, אגסים, אגוזי מלך וחמוציות על מצע של סלט ירוק', 44, 'img/roza_items/roza_salad.JPG', 203),
+(105, 22, 'green salad', 'סלט ירוק', 'Lettuce, baby leaves, purple onion, cherry tomatoes, cucumber, avocado (when in season) in a mustard vinaigrette sauce', 'חסה, עלי בייבי, בצל סגול, עגבניות שרי, מלפפון, אבוקדו (בעונה)', 27, 'img/roza_items/roza_salad.JPG', 204),
+(106, 22, 'Israeli salad', 'סלט ערבי', 'Cucumbers, tomatoes, parsley, onoin in olive oil and lemon sauce', 'מלפפון, עגבניות, פטרוזיליה, בצל ברוטב שמן זית ולימון', 32, 'img/roza_items/roza_salad.JPG', 205),
+(107, 23, 'Fettuccini in Tomato Sauce', 'פטוצ''יני עגבניות', 'Made with grilled plum tomatoes and garlic with olive oil and fresh herbs.', 'עגבניות תמר צלויות בגריל עם שום, שמן זית וריחן טרי', 38, 'img/roza_items/roza_wm.png', 206),
+(108, 23, 'Chicken Fettuccini ', 'פטוצ''יני עוף', 'Stirfried chicken pieces in olive oil, seasoned with green herbs', 'נתחי עוף מוקפצים בעשבי תיבול ושמן זית', 49, 'img/roza_items/roza_wm.png', 207),
+(109, 23, 'Bolognese', 'בולונז', 'Fettuccini with minced lamb meat in a roasted plum tomato sauce', 'בשר טלה טחון במקום, פטוצ''יני ברוטב עגבניות תמר צלויות', 49, 'img/roza_items/roza_wm.png', 208),
+(110, 23, 'Fettuccini with Chicken Livers', 'פטוצ''יני כבד עוף', 'Chicken Livers, Mirin sauce, fresh herbs and mushrooms', 'כבד עוף, מירין, עשבי תיבול ופטריות', 49, 'img/roza_items/roza_wm.png', 209),
+(111, 23, 'Fettuccini Entrecote', 'פטוצ''יני אנטריקוט', 'With pan-seared entrecot pieces and shallots, champignon mushrooms and Mirin sauce', 'נתחי אנטריקוט צרובים במחבת לצד בצלי שאלוט, פטריות שמפניון ומירין', 52, 'img/roza_items/roza_wm.png', 210),
+(112, 24, 'Vegetarian Noodles', 'נודלס צמחוני', 'Egg noodles stirfried with carrot, variety of peppers and soya sauce', 'אטריות ביצים מוקפצות עם גזר, בצל ופלפלים צבעוניים ברוטב סויה', 39, 'img/roza_items/roza_wm.png', 211),
 (113, 24, 'Chicken Noodles', 'נודלס עוף', 'Egg noodles stirfried with carrot, variety of peppers, soya sauce and chicken pieces', 'אטריות ביצים מוקפצות עם גזר, בצל, פלפלים צבעוניים ברוטב סויה עם נתחי עוף', 49, 'img/roza_items/roza_chicken_noodles.jpg', 212),
-(114, 24, 'Beef Noodles', 'נודלס בקר', 'Egg noodles stirfried with carrot, variety of peppers, soya sauce and beef pieces', 'אטריות ביצים מוקפצות עם גזר, בצל ופלפלים צבעוניים ברוטב סויה עם נתחי בקר', 52, 'restapi/images/test.png', 213),
-(115, 25, 'Jerusalem Foccaccia', 'פוקצ''ה ירושלמית', 'Jerusalem Mix with tehina, amba sauce and parsley', 'מעורב ירושלמי בתוספת טחינה, עמבה ופטרוזיליה', 52, 'restapi/images/test.png', 214),
-(116, 25, 'Lamb sausage Foccaccia (spicy)', 'פוקצ''ה נקניקיות טלה (חריף)', 'Lamb sausage, baby leaves, onion and Dijonnaise sauce', 'נקניקיות טלה, עלי בייבי, שרי, בצל וממרח דיז''ונז''', 52, 'restapi/images/test.png', 215),
-(117, 25, 'Kebab Foccaccia', 'פוקצ''ה קבב', 'Kebab on a bed of baladi eggplant, salsa and parsley', 'קבב על מצע חציל באלדי, סלסה ופטרוזיליה', 52, 'restapi/images/test.png', 216),
-(118, 26, 'Spring Chicken with Green Herbs', 'פרגיות בעשבי תיבול', 'One a bed of green rice ', 'על מצע אורז ירוק', 58, 'restapi/images/test.png', 217),
-(119, 26, 'Spring Chicken with Peanut Butter Sauce', 'פרגיות בחמאת בוטנים', 'On a bed of noodles', 'על מצע נודלס', 58, 'restapi/images/test.png', 218),
-(120, 26, 'Home Style Schnitzel', 'שניצל הבית', 'Chicken breast fried with panko and breadcrumbs and herbs on a bed of mashed potato ', 'חזה עוף מטוגן מציפוי פירורי לחם ופנקו בתיבול הבית. מוגש עם פירה וסלט אישי', 56, 'restapi/images/test.png', 219),
-(121, 26, 'Entrecote skewer', 'שיפוד אנטריקוט', 'With a side of potato salad and chimichurri sauce', 'צוגש בתוספת פוטטו וסלט אישי בליווי רוטב צ''ימיצ''ורי', 48, 'restapi/images/test.png', 220),
-(122, 26, 'Entrecote', 'סטייק אנטריקוט', 'Comes with potatos and salad', 'בתוספת פוטטו וסלט אישי', 95, 'restapi/images/test.png', 221),
-(123, 27, 'Chicken nuggets', 'שניצלונים', '', '', 35, 'restapi/images/test.png', 222),
-(124, 27, 'Wings', 'כנפיים', '', '', 28, 'restapi/images/test.png', 223),
-(125, 27, 'Home fries (Potatoes)', 'צ''יפס הבית (פוטטוס)', '', '', 15, 'restapi/images/test.png', 224),
-(126, 27, 'Onion rings', 'טבעות בצל', '', '', 17, 'restapi/images/test.png', 225),
-(127, 27, 'American fries', 'צ''יפס אמריקאי', '', '', 17, 'restapi/images/test.png', 226),
-(128, 28, 'American fries + chicken nuggets', 'שניצלונים + צ''יפס אמריקאי', '', '', 41, 'restapi/images/test.png', 227),
-(129, 28, 'American Burger + Chips', 'בורגר + צ''יפס אמריקאי', '', '', 41, 'restapi/images/test.png', 228),
-(130, 28, 'Fettuccine Tomato', 'פטוצ''יני עגבניות', '', '', 31, 'restapi/images/test.png', 229),
-(131, 29, 'Coca-Cola 0.5 liters', 'קוקה קולה 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 230),
-(132, 29, '0.5 liters of Diet Coke', 'דיאט קולה 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 231),
-(133, 29, 'Coke Zero 0.5 liters', 'קולה זירו 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 232),
-(134, 29, 'Sprite 0.5 liters', 'ספרייט 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 233),
-(135, 29, 'Diet Sprite 0.5 liters', 'דיאט ספרייט 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 234),
-(136, 29, 'Diet Sprite 0.5 liters', 'דיאט ספרייט 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 235),
-(137, 29, 'Fanta 0.5 liters', 'פאנטה 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 236),
-(138, 29, 'Prigat 0.5 liters of orange', 'פריגת תפוזים 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 237),
-(139, 29, 'Prigat grapes 0.5 liters', 'פריגת ענבים 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 238),
-(140, 29, 'Prigat grapefruit 0.5 liters', 'פריגת אשכוליות 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 239),
-(141, 29, 'Nestea peach 0.5 l', 'נסטי אפרסק 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 240),
-(142, 29, 'Peach flavored water 0.5 liter', 'מים בטעם אפרסק 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 241),
-(143, 29, 'Apple flavored water 0.5 liter', 'מים בטעם תפוח 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 242),
-(144, 29, 'Grape flavored water 0.5 liter', 'מים בטעם ענבים 0.5 ליטר', '', '', 11, 'restapi/images/test.png', 243),
-(145, 29, 'Personal mineral water', 'מים מינרליים אישי', '', '', 9, 'restapi/images/test.png', 244),
-(146, 29, 'Personal soda', 'סודה אישי', '', '', 9, 'restapi/images/test.png', 245),
-(147, 29, 'Malt', 'בירה שחורה', '', '', 12, 'restapi/images/test.png', 246),
-(148, 30, '#87 Japan Roll', 'ג''אפן רול  #87', 'Hot denis fish, lemon fillet, avocado, green onion and crushed peanuts, wrapped in tempura and black sesame, served with yuzu cream sauce', 'דניס חם, קרם יוז''ו, פילה לימון, אבוקדו ובצל ירוק, עטוף בשבבי בוטנים, טמפורה ושומשום שחור.', 43, 'img/japan_items/test.png', 247),
+(114, 24, 'Beef Noodles', 'נודלס בקר', 'Egg noodles stirfried with carrot, variety of peppers, soya sauce and beef pieces', 'אטריות ביצים מוקפצות עם גזר, בצל ופלפלים צבעוניים ברוטב סויה עם נתחי בקר', 52, 'img/roza_items/roza_wm.png', 213),
+(115, 25, 'Jerusalem Foccaccia', 'פוקצ''ה ירושלמית', 'Jerusalem Mix with tehina, amba sauce and parsley', 'מעורב ירושלמי בתוספת טחינה, עמבה ופטרוזיליה', 52, 'img/roza_items/roza_wm.png', 214),
+(116, 25, 'Lamb sausage Foccaccia (spicy)', 'פוקצ''ה נקניקיות טלה (חריף)', 'Lamb sausage, baby leaves, onion and Dijonnaise sauce', 'נקניקיות טלה, עלי בייבי, שרי, בצל וממרח דיז''ונז''', 52, 'img/roza_items/roza_wm.png', 215),
+(117, 25, 'Kebab Foccaccia', 'פוקצ''ה קבב', 'Kebab on a bed of baladi eggplant, salsa and parsley', 'קבב על מצע חציל באלדי, סלסה ופטרוזיליה', 52, 'img/roza_items/roza_kebab_foccacia.JPG', 216),
+(118, 26, 'Spring Chicken with Green Herbs', 'פרגיות בעשבי תיבול', 'One a bed of green rice ', 'על מצע אורז ירוק', 58, 'img/roza_items/roza_wm.png', 217),
+(119, 26, 'Spring Chicken with Peanut Butter Sauce', 'פרגיות בחמאת בוטנים', 'On a bed of noodles', 'על מצע נודלס', 58, 'img/roza_items/roza_wm.png', 218),
+(120, 26, 'Home Style Schnitzel', 'שניצל הבית', 'Chicken breast fried with panko and breadcrumbs and herbs on a bed of mashed potato ', 'חזה עוף מטוגן מציפוי פירורי לחם ופנקו בתיבול הבית. מוגש עם פירה וסלט אישי', 56, 'img/roza_items/roza_wm.png', 219),
+(121, 26, 'Entrecote skewer', 'שיפוד אנטריקוט', 'With a side of potato salad and chimichurri sauce', 'צוגש בתוספת פוטטו וסלט אישי בליווי רוטב צ''ימיצ''ורי', 48, 'img/roza_items/roza_wm.png', 220),
+(122, 26, 'Entrecote', 'סטייק אנטריקוט', 'Comes with potatos and salad', 'בתוספת פוטטו וסלט אישי', 95, 'img/roza_items/roza_wm.png', 221),
+(123, 27, 'Chicken nuggets', 'שניצלונים', '', '', 35, 'img/roza_items/roza_wm.png', 222),
+(124, 27, 'Wings', 'כנפיים', '', '', 28, 'img/roza_items/roza_wm.png', 223),
+(125, 27, 'Home fries (Potatoes)', 'צ''יפס הבית (פוטטוס)', '', '', 15, 'img/roza_items/roza_wm.png', 224),
+(126, 27, 'Onion rings', 'טבעות בצל', '', '', 17, 'img/roza_items/roza_wm.png', 225),
+(127, 27, 'American fries', 'צ''יפס אמריקאי', '', '', 17, 'img/roza_items/roza_wm.png', 226),
+(128, 28, 'American fries + chicken nuggets', 'שניצלונים + צ''יפס אמריקאי', '', '', 41, 'img/roza_items/roza_wm.png', 227),
+(129, 28, 'American Burger + Chips', 'בורגר + צ''יפס אמריקאי', '', '', 41, 'img/roza_items/roza_wm.png', 228),
+(130, 28, 'Fettuccine Tomato', 'פטוצ''יני עגבניות', '', '', 31, 'img/roza_items/roza_wm.png', 229),
+(131, 29, 'Coca-Cola 0.5 liters', 'קוקה קולה 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 230),
+(132, 29, '0.5 liters of Diet Coke', 'דיאט קולה 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 231),
+(133, 29, 'Coke Zero 0.5 liters', 'קולה זירו 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 232),
+(134, 29, 'Sprite 0.5 liters', 'ספרייט 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 233),
+(135, 29, 'Diet Sprite 0.5 liters', 'דיאט ספרייט 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 234),
+(136, 29, 'Diet Sprite 0.5 liters', 'דיאט ספרייט 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 235),
+(137, 29, 'Fanta 0.5 liters', 'פאנטה 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 236),
+(138, 29, 'Prigat 0.5 liters of orange', 'פריגת תפוזים 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 237),
+(139, 29, 'Prigat grapes 0.5 liters', 'פריגת ענבים 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 238),
+(140, 29, 'Prigat grapefruit 0.5 liters', 'פריגת אשכוליות 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 239),
+(141, 29, 'Nestea peach 0.5 l', 'נסטי אפרסק 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 240),
+(142, 29, 'Peach flavored water 0.5 liter', 'מים בטעם אפרסק 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 241),
+(143, 29, 'Apple flavored water 0.5 liter', 'מים בטעם תפוח 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 242),
+(144, 29, 'Grape flavored water 0.5 liter', 'מים בטעם ענבים 0.5 ליטר', '', '', 11, 'img/roza_items/roza_wm.png', 243),
+(145, 29, 'Personal mineral water', 'מים מינרליים אישי', '', '', 9, 'img/roza_items/roza_wm.png', 244),
+(146, 29, 'Personal soda', 'סודה אישי', '', '', 9, 'img/roza_items/roza_wm.png', 245),
+(147, 29, 'Malt', 'בירה שחורה', '', '', 12, 'img/roza_items/roza_wm.png', 246),
+(148, 30, '#87 Japan Roll', 'ג''אפן רול  #87', 'Hot denis fish, lemon fillet, avocado, green onion and crushed peanuts, wrapped in tempura and black sesame, served with yuzu cream sauce', 'דניס חם, קרם יוז''ו, פילה לימון, אבוקדו ובצל ירוק, עטוף בשבבי בוטנים, טמפורה ושומשום שחור.', 43, 'img/japan_items/japan_wm.png', 247),
 (149, 30, '#88 Grilled Denis roll', 'דניס גריל  #88', 'Grilled Denis fish, avocado, asparagus, cucumber and shiitake mushrooms wrapped in denis and yellow salmon, served with wasabi cream', 'פטריות שיטאקי, אבוקדו, אספרגוס ומלפפון, עטוף בדניס וסלמון צרוב בנגיעות קרם וואסבי.', 45, 'img/japan_items/crazy_roll.png', 248),
 (150, 30, '#89 Hot Denis roll', 'דניס הוט רול  #89', 'Denis fish, avocado, sweet potato, and tamago wrapped in hot panko crumbs, drizzled with teriyaki sauce', 'דניס, אבוקדו, בטטה וטמאגו (חביתה יפנית), עטוף בפנקו (פירורי לחם יפניים) חם וזילוף טריאקי.', 36, 'img/japan_items/crazy_roll.png', 249),
 (151, 30, '#90 Basket roll', 'סלסלה רול  #90', 'Spicy tuna, chives, and avocado, wrapped in red tuna, served with chili mayonnaise sauce', 'טונה פיקנטית, עירית ואבוקדו עטוף בטונה אדומה בזילוף קרם צ''ילי.', 43, 'img/japan_items/crazy_roll.png', 250),
@@ -690,16 +725,16 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (168, 31, '#109 Asparagus Maki', 'אספרגוס מאקי  #109', 'Asparagus filling', 'רול במילוי אספרגוס', 16, 'img/japan_items/maki.png', 267),
 (169, 31, '#110 Shiitake Maki', 'שיטאקה מאקי  #110', 'Shittaki mushroom filling', 'רול במילוי פטריות שיטאקי מתקתקות', 16, 'img/japan_items/maki.png', 268),
 (170, 31, '#111 Tamago Maki', 'טמאגו מאקי  #111', 'Japanese omelette filling', 'רול במילוי אומלט יפני', 16, 'img/japan_items/maki.png', 269),
-(171, 32, '#119 Vegetarian', 'רול טבעוני  #119', 'Avocado, cucumber, carrots and green onions wrapped in tempura chips and black sesame', 'מלפפון, אבוקדו, גזר ובצל ירוק, במעטפת שבבי טמפורה ושומשום שחור.', 27, 'img/japan_items/test.png', 270),
-(172, 32, '#120 Salmon and avocado', 'סלמון ואבוקדו  #120', 'Wrapped in tempura chips and black sesame', 'סלמון ואבוקדו במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/test.png', 271),
-(173, 32, '#121 Red tuna', 'טונה אדומה  #121', 'Cucumber and avocado wrapped in tempura chips and black sesame', 'טונה אדומה, מלפפון ואבוקדו במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/test.png', 272),
-(174, 32, '#122 Spicy salmon', 'ספייסי סלמון  #122', 'Salmon, avocado, green onion wrapped in tempura chips and black sesame', 'ספייסי סלמון, אבוקדו ובצל ירוק במעטפת שבבי טמפורה ושושמום.', 32, 'img/japan_items/test.png', 273),
-(175, 32, '#123 Spicy tuna', 'ספייסי טונה  #123', 'Tuna, avocado, green onion wrapped in tempura chips and black sesame', 'ספייסי טונה, אבוקדו ומלפפון במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/test.png', 274),
-(176, 32, '#124 Salmon Wasabi', 'סלמון וואסבי  #124', 'Salmon, avocao, kampyo and asparagus wrapped in yellowtail salmon and wasabi cream sauce', 'סלמון אספרגוס, קנפיו (דלעת יפנית) ואבוקדו במעטפת סלמון צרוב וקרם וואסבי', 34, 'img/japan_items/test.png', 275),
+(171, 32, '#119 Vegetarian', 'רול טבעוני  #119', 'Avocado, cucumber, carrots and green onions wrapped in tempura chips and black sesame', 'מלפפון, אבוקדו, גזר ובצל ירוק, במעטפת שבבי טמפורה ושומשום שחור.', 27, 'img/japan_items/japan_wm.png', 270),
+(172, 32, '#120 Salmon and avocado', 'סלמון ואבוקדו  #120', 'Wrapped in tempura chips and black sesame', 'סלמון ואבוקדו במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/japan_wm.png', 271),
+(173, 32, '#121 Red tuna', 'טונה אדומה  #121', 'Cucumber and avocado wrapped in tempura chips and black sesame', 'טונה אדומה, מלפפון ואבוקדו במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/japan_wm.png', 272),
+(174, 32, '#122 Spicy salmon', 'ספייסי סלמון  #122', 'Salmon, avocado, green onion wrapped in tempura chips and black sesame', 'ספייסי סלמון, אבוקדו ובצל ירוק במעטפת שבבי טמפורה ושושמום.', 32, 'img/japan_items/japan_wm.png', 273),
+(175, 32, '#123 Spicy tuna', 'ספייסי טונה  #123', 'Tuna, avocado, green onion wrapped in tempura chips and black sesame', 'ספייסי טונה, אבוקדו ומלפפון במעטפת שבבי טמפורה ושומשום', 32, 'img/japan_items/japan_wm.png', 274),
+(176, 32, '#124 Salmon Wasabi', 'סלמון וואסבי  #124', 'Salmon, avocao, kampyo and asparagus wrapped in yellowtail salmon and wasabi cream sauce', 'סלמון אספרגוס, קנפיו (דלעת יפנית) ואבוקדו במעטפת סלמון צרוב וקרם וואסבי', 34, 'img/japan_items/japan_wm.png', 275),
 (177, 32, '#125 Veggie roll', 'Vג''י רול  #125', 'Avocado, shiitake mushrooms and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'פטריות שיטאקה, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת טמאגו (חביתה יפנית) ונגיעות טריאקי', 28, 'img/japan_items/crazy_roll.png', 276),
 (178, 32, '#126 Saka Sake roll', 'סאקה סאקי רול  #126', 'Crispy salmon skin, kampyo tamago and asparagus wrapped in tempura chips drizzled with teriyaki sauce', 'קריספי סלמון סקין, אספרגוס, קנפיו (דלעת יפנית) וטמאגו (חביתה יפנית) במעטפת שבבי טמפורה וזילוף טריאקי.', 32, 'img/japan_items/crazy_roll.png', 277),
 (179, 32, '#127 Kinugushi roll', 'קינוגושי רול  #127', 'Tofu in tempura, shiitake mushrooms, cucumber and sweet potato wrapped in avocado drizzled with teriyaki sauce', 'טופו בטמפורה, מלפפון, פטריות שיטקה ובטטה בטמפורה במעטפת אבוקדו וטריאקי.', 32, 'img/japan_items/crazy_roll.png', 278),
-(180, 32, '#128 Hot Salmon', 'סלמון חם  #128', 'Salmon cooked in teriyaki sauce, avocado and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'סלמון מבושל בטריאקי, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת טמאגו (חביתה יפנית)', 35, 'crispy_salmon_salad.png', 279),
+(180, 32, '#128 Hot Salmon', 'סלמון חם  #128', 'Salmon cooked in teriyaki sauce, avocado and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'סלמון מבושל בטריאקי, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת טמאגו (חביתה יפנית)', 35, 'img/japan_items/crispy_salmon_salad.png', 279),
 (181, 45, '#129 Build your own Maki Roll - one type of fish and two vegetables', 'רול בהרכבה אישית - דג אחד ושתי תוספות  #129', 'Fish: Salmon / Red tuna / Yellowtail Salmon / Spicy Salmon / Spicy Tuna / Hot Salmon / Sea Bass / Tempura coated Tofu                           Vegetables: Avocado / Cucumber / Kampyo / Tempura coated sweet potato / Asparagus / Carrots / Green onion / Tamago', 'סלמון / טונה אדומה / יילוטיל / ספייסי סלמון / ספייסי טונה / סלמון חם / סייבס / טופו בטמפורה.                        תוספות: אבוכדו / מלפפון / קנפיז / שיטקה / בטטה בטמפורה / אספרגוס / גזר / בצל ירוק / טמאגו', 32, 'img/japan_items/maki.png', 280),
 (182, 45, '#129 Build your own Maki Roll - choose three vegetables', 'רול בהרכבה אישית - שלוש תוספות #129', 'Vegetables: Avocado / Cucumber / Kampyo / Tempura coated sweet potato / Asparagus / Carrots / Green onion / Tamago', 'תוספות: אבוכדו / מלפפון / קנפיז / שיטקה / בטטה בטמפורה / אספרגוס / גזר / בצל ירוק / טמאגו', 28, 'img/japan_items/maki.png', 281),
 (183, 33, '#130 Veggie Tempura Roll', 'Vג''י טמפורה  #130', 'Avocado, shiitake mushrooms and sweet potato in tempura and asparagus wrapped in tamago drizzled with teriyaki sauce', 'פטריות שיטאקה, אבוקדו, בטטה בטמפורה, אספרגוס וטמאגו (חביתה יפנית) בציפוי טמפורה ונגיעות טריאקי.', 30, 'img/japan_items/tempura.png', 282),
@@ -708,22 +743,22 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (186, 33, '#133 Manhattan Tempura Roll', 'מנהטן טמפורה  #133', 'Red tuna, salmon, avocado, chives and cucumber coated in tempura, drizzled with teriyaki sauce', 'סלמון, טונה אדומה, מלפפון, עירית ואבוקדו בציפוי טמפורה ונגיעות טריאקי.', 36, 'img/japan_items/tempura.png', 285),
 (187, 33, '#134 Saki Wasabi Tempura Roll', 'סאקה וואסבי טמפורה  #134', 'Salmon, kampyo, avocado, asparagus and sweet potato coated in tempura with wasabi cream sauce', 'סלמון, אספרגוס, קנפיו (דלעת יפנית), אבוקדו, בטטה בטמפורה וקרם וואסבי בציפוי טמפורה ונגיעות טריאקי.', 36, 'img/japan_items/tempura.png', 286),
 (188, 34, '#300 Salmon and avocado', 'סלמון ואבוקדו #300', '', '', 32, 'img/japan_items/crispy_salmon_salad.png', 287),
-(189, 34, '#301 Red tuna, avocado and cucumber', 'טונה אדומה מלפפון ואבוכדו #301', '', '', 32, 'img/japan_items/test.png', 288),
+(189, 34, '#301 Red tuna, avocado and cucumber', 'טונה אדומה מלפפון ואבוכדו #301', '', '', 32, 'img/japan_items/japan_wm.png', 288),
 (190, 34, '#302 Spicy salmon, avocado and green onion', 'ספייסי סלמון אבוקדו ובצל ירוק #302', '', '', 32, 'img/japan_items/crispy_salmon_salad.png', 289),
-(191, 34, '#303 Spicy tuna, avocado and cucumber', 'ספייסי טונה אבוקדו ומלפפון #303', '', '', 32, 'img/japan_items/test.png', 290),
+(191, 34, '#303 Spicy tuna, avocado and cucumber', 'ספייסי טונה אבוקדו ומלפפון #303', '', '', 32, 'img/japan_items/japan_wm.png', 290),
 (192, 34, '#304 Salmon wasabi, salmon, asparagus, kampyo, avocado', 'סלמון וואסבי סלמון אספרגוס קנפיז ואבוקדו #304', '', '', 34, 'img/japan_items/crispy_salmon_salad.png', 291),
 (193, 34, '#305 Veggie roll: shiitake mushrooms, avocado, sweet potato in tempura and asparagus', 'V ג'' רול קריספי שיטאקה אבוקדו בטטה בטמפורה ואספרגוס #305', '', '', 28, 'img/japan_items/crazy_roll.png', 292),
 (194, 34, '#306 Sake sake roll: crispy salmon skin, asparagus, kampyo and tamago', 'סאקה סאקי רול קריספי סלמון סקין אספרגוס קנפיז וטמאגו #306', '', '', 32, 'img/japan_items/sake_roll.png', 293),
 (195, 34, '#307 Kinugushi roll: tofu in tempura, shiitake mushrooms, cucumber and sweet potato in tempura', 'קינוגשי רול טופו בטמפורה מלפפון פטריות שיטאקה ובטטה בטמפורה #307', '', '', 32, 'img/japan_items/tempura.png', 294),
 (196, 35, '#135 Salmon and Salmon Skin', 'סלמון וסלמון סקין #135', 'Salmon, salmon skin, avocado, sweet potato, coated in tempura and asparagus coated in fried tempura panko, drizzled with teriyaki sauce', 'סלמון, סלמון סקין, אבוקדו, בטטה בטמפורה ואספרגוס במעטפת פנקו מטוגן בזילוף טריאקי.', 39, 'img/japan_items/crispy_salmon_salad.png', 295),
-(197, 35, '#136 Tuna', 'טונה רגילה #136', 'Tuna, cucumber, avocado, shiitake mushroom and green onions', 'טונה, מלפפון, אבוקדו, שיטאקי ובצל ירוק', 43, 'img/japan_items/test.png', 296),
-(198, 35, '#137 Vegetarian', 'צמחוני  #137', 'Avocado, kampyo, tamago and sweet potato coated in fried tempura panko drizzled with teriyaki sauce', 'אבוקדו, טמאגו (חביתה יפנית), בטטה וקנפיו (דלעת יפנית) במעטפת פנקו מטוגן וזילוף טריאקי.', 31, 'img/japan_items/test.png', 297),
-(199, 36, '#498 Duet Half and Half Sushi - 18 pieces', 'דואט סושי חצי חצי – 18 יח #498', 'Fried salmon 4 pieces, fried tuna 4 pieces, Saka Sake rolls 8 pieces, nigiri salmon 1 piece, nigiri hot denis 1 piece', '4 יח'' סלמון מטוגן, 4 יח'' טונה מטוגנת, 8 יח'' סאקה סאקי רול, 1 יח'' ניגירי סלמון, 1 יח'' נגירי…', 79, 'img/japan_items/test.png', 298),
+(197, 35, '#136 Tuna', 'טונה רגילה #136', 'Tuna, cucumber, avocado, shiitake mushroom and green onions', 'טונה, מלפפון, אבוקדו, שיטאקי ובצל ירוק', 43, 'img/japan_items/japan_wm.png', 296),
+(198, 35, '#137 Vegetarian', 'צמחוני  #137', 'Avocado, kampyo, tamago and sweet potato coated in fried tempura panko drizzled with teriyaki sauce', 'אבוקדו, טמאגו (חביתה יפנית), בטטה וקנפיו (דלעת יפנית) במעטפת פנקו מטוגן וזילוף טריאקי.', 31, 'img/japan_items/japan_wm.png', 297),
+(199, 36, '#498 Duet Half and Half Sushi - 18 pieces', 'דואט סושי חצי חצי – 18 יח #498', 'Fried salmon 4 pieces, fried tuna 4 pieces, Saka Sake rolls 8 pieces, nigiri salmon 1 piece, nigiri hot denis 1 piece', '4 יח'' סלמון מטוגן, 4 יח'' טונה מטוגנת, 8 יח'' סאקה סאקי רול, 1 יח'' ניגירי סלמון, 1 יח'' נגירי…', 79, 'img/japan_items/japan_wm.png', 298),
 (200, 36, '#499 Natural Vegetarian Combination - 18 pieces', 'קומבו טבעוני – 18 יח  #499', 'Vegetarian Uramaki 8 pieces, maki 8 pieces, nigiri avocado 2 pieces', '8 יח'' אורומאקי טבעוני, 8 יח'' מאקי אבוקדו, 2 יח'' ניגרי אבוקדו.', 44, 'img/japan_items/combination.png', 299),
 (201, 36, '#500 Kyoto Combination - 16 pieces', 'קומבינציית קיוטו – 16 יח #500', 'Maki avocado 8 pieces, Uramaki salmon and avocado 8 pieces', '8 יח'' אורמאקי סלמון ואבוקדו, 8 יח'' מאקי אבוקדו.', 45, 'img/japan_items/combination.png', 300),
-(202, 36, '#501 Veggie Combination - 18 pieces', 'קומבינציית Vג''י – 18 יח #501', 'Uramaki veggie 8 pieces, Uramaki avocado 8 pieces, nigiri tamago 2 pieces', '8 יח'' מאקי Vג''י רול, 8 יח'' מאקי אבוקדו, 2 יח'' יגירי טמאגו (חביתה יפנית)', 41, 'img/japan_items/combination.png', 301),
-(203, 36, '#503 Saka Sake Combination - 18 pieces', 'קומבינציית סאקה סאקי – 19 יח #503', 'Uramaki salmon and avocado 4 pieces, uramaki hot salmon 4 pieces, saka maki 8 pieces, nigiri salmon 2 pieces', '4 יח'' מאקי סלמון ואבוקדו, 4 יח'' אורמאקי סלמון חם, 8 יח'' מאקי סאקה, 2 יח'' ניגירי סלמון, 1 יח''…', 68, 'img/japan_items/combination.png', 302);
+(202, 36, '#501 Veggie Combination - 18 pieces', 'קומבינציית Vג''י – 18 יח #501', 'Uramaki veggie 8 pieces, Uramaki avocado 8 pieces, nigiri tamago 2 pieces', '8 יח'' מאקי Vג''י רול, 8 יח'' מאקי אבוקדו, 2 יח'' יגירי טמאגו (חביתה יפנית)', 41, 'img/japan_items/combination.png', 301);
 INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `image_url`, `sort`) VALUES
+(203, 36, '#503 Saka Sake Combination - 18 pieces', 'קומבינציית סאקה סאקי – 19 יח #503', 'Uramaki salmon and avocado 4 pieces, uramaki hot salmon 4 pieces, saka maki 8 pieces, nigiri salmon 2 pieces', '4 יח'' מאקי סלמון ואבוקדו, 4 יח'' אורמאקי סלמון חם, 8 יח'' מאקי סאקה, 2 יח'' ניגירי סלמון, 1 יח''…', 68, 'img/japan_items/combination.png', 302),
 (204, 36, '#504 Double Tempura Combination - 20 pieces', 'טמפורה זוגית- 20 יח #504', 'Saka tempura 8 pieces, magoro tempura 4 pieces, veggie tempura 4 pieces, salmon sandwich in hot panko crumbs 4 pieces', '8 יח'' סאקה טמפורה, 4 יח'' מאגורו טמפורה, 4 יח'' Vג''י טמפורה, 4 יח'' סנדוויץ'' סלמון בפנאקו.', 95, 'img/japan_items/combination.png', 303),
 (205, 36, '#505 Yo Tzai Combination 32 pieces', 'קומבינציית יוצ''אי – 32 יח #505', '4 pieces each: Salmon ceviche, rainbow roll, veggie roll, kinugushi roll, maki avocado, maki sweet potato, saka maki, magoro sandwich, taka maki', '4 יח'' סביצ''ה סלמון, 4 יח'' ריינבו רול, 4 יח'' ווג''י רול, 4 יח'' קינוגושי רול, 5 יח'' מאקי אבוקדו , 4 מאקי בטטה , סאקה מאקי ,  מאגורו סנדוויץ, טאקה מאקי.', 89, 'img/japan_items/combination.png', 304),
 (206, 36, '#506 Japan Japan Combination Special', 'קומבינציית ג''אפן ג''אפן ספיישל – ספינת עץ #506', 'Samurai roll 8 pieces, rainbow roll 4 pieces, hot salmon roll 4 pieces, spicy salmon sandwich 4 pieces, suzuki maki 8 pieces, sake roll 8 pieces, seviche salmon 8 pieces, hot dennis nigiri 1 piece, salmon nigiri 1 piece, tamago nigiri 1 piece, avocado nigiri 1 piece', '8 יח'' סמוראי רול,\n4 יח'' ריינבאו,\n4 יח'' רול סלמון חם,\n4 יח'' סנדוויץ'' ספייסי סלמון,\n8 יח'' מאקי סוזוקי,\n8 יח'' סאקה רול,\n8 יח'' סביצ''ה סלמון,\n1 יח'' ניגירי דניס חם,\n1 יח'' ניגירי סלמון,\n1 יח'' ניגירי טמאגו (חביתה יפנית),\n1 יח'' ניגירי אבוקדו.', 199, 'img/japan_items/combination.png', 305),
@@ -739,35 +774,167 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (216, 38, ' Sprite', 'ספרייט 330 מ''ל ', '', '', 10, 'img/japan_items/sprite.png', 315),
 (217, 38, ' Cola Zero', 'קולה זירו 330 מ''ל ', '', '', 10, 'img/japan_items/cocacola_zero.png', 316),
 (218, 38, ' Coca Cola', 'קוקה קולה 330 מ''ל ', '', '', 10, 'img/japan_items/cocacola.png', 317),
-(219, 39, '#3 Asian Vegetable Egg Roll 2 Pieces', 'אגרול ירקות אסיאתי #3', 'Deep fried thin egg roll wrapper filled with cabbage, carrots, celery, white mushrooms, green onions and bean sprouts and our own dipping sauce, served with side of green salad tossed with Vietnamese chili vinaigrette', '2 יח'' בצק דק מטוגן במילוי כרוב, גזר, סלרי ופטריות שמפניון.', 15, 'img/japan_items/test.png', 318),
-(220, 39, '#2 Vietnamese Chicken Egg Roll 2 Pieces', 'אגרול עוף ויאטנמי #2', 'Deep fried thin egg roll wrapper filled with chicken, cabbage, ginger, bean sprouts and carrots and our own dipping sauce, served with side of green salad tossed with Vietnamese chili vinaigrette', '2 יח'' בצק דק מטוגן במילוי עוף, נבטים, כרוב, ג''ינג''ר וגזר.', 18, 'img/japan_items/test.png', 319),
-(221, 39, '#6 Tabaski Chicken', 'טאבאסקי #6', 'Fried chicken wings in hot spicy teriyaki sauce, garnished with green onion', 'כנפי עוף מטוגנים צ''ילי טריאקי ובצל ירוק.', 29, 'img/japan_items/test.png', 320),
+(219, 39, '#3 Asian Vegetable Egg Roll 2 Pieces', 'אגרול ירקות אסיאתי #3', 'Deep fried thin egg roll wrapper filled with cabbage, carrots, celery, white mushrooms, green onions and bean sprouts and our own dipping sauce, served with side of green salad tossed with Vietnamese chili vinaigrette', '2 יח'' בצק דק מטוגן במילוי כרוב, גזר, סלרי ופטריות שמפניון.', 15, 'img/japan_items/japan_wm.png', 318),
+(220, 39, '#2 Vietnamese Chicken Egg Roll 2 Pieces', 'אגרול עוף ויאטנמי #2', 'Deep fried thin egg roll wrapper filled with chicken, cabbage, ginger, bean sprouts and carrots and our own dipping sauce, served with side of green salad tossed with Vietnamese chili vinaigrette', '2 יח'' בצק דק מטוגן במילוי עוף, נבטים, כרוב, ג''ינג''ר וגזר.', 18, 'img/japan_items/japan_wm.png', 319),
+(221, 39, '#6 Tabaski Chicken', 'טאבאסקי #6', 'Fried chicken wings in hot spicy teriyaki sauce, garnished with green onion', 'כנפי עוף מטוגנים צ''ילי טריאקי ובצל ירוק.', 29, 'img/japan_items/japan_wm.png', 320),
 (222, 39, '#7 Edamame', 'אדממה #7', 'Steamed soya beans seasoned with kosher salt and lemon salt', 'פולי סויה חמים, מוגשים עם מלח גס ופלח לימון.', 18, 'img/japan_items/edamame.png', 321),
 (223, 39, '#8 Kimche', 'קימצ''י #8', 'Japanese style pickled vegetables', 'סלט חמוצים בתחמיץ יפני עם כרוב, פלפל אדום וירוק, גזר ומלפפון.', 15, 'img/japan_items/kimchi.png', 322),
-(224, 39, '#46 Gohan', 'גוהן #46', 'Japanese steamed white rice', 'אורז לבן מאודה', 17, 'img/japan_items/test.png', 323),
-(225, 39, '#47 Yaki Masi', 'יאקי מאשי #47', 'Stir fried rice with scrambled eggs and vegetables', 'אורז מוקפץ עם נטיפי ביצים וירקות.', 25, 'img/japan_items/test.png', 324),
-(226, 39, '#48 Yasai Tame', 'יאסי טאמה #48', 'Stir fried vegetables with ginger and teriyaki sauce', 'הום פרייז', 27, 'img/japan_items/test.png', 325),
+(224, 39, '#46 Gohan', 'גוהן #46', 'Japanese steamed white rice', 'אורז לבן מאודה', 17, 'img/japan_items/japan_wm.png', 323),
+(225, 39, '#47 Yaki Masi', 'יאקי מאשי #47', 'Stir fried rice with scrambled eggs and vegetables', 'אורז מוקפץ עם נטיפי ביצים וירקות.', 25, 'img/japan_items/japan_wm.png', 324),
+(226, 39, '#48 Yasai Tame', 'יאסי טאמה #48', 'Stir fried vegetables with ginger and teriyaki sauce', 'הום פרייז', 27, 'img/japan_items/japan_wm.png', 325),
 (227, 39, '#49 Home Fries', '#49', 'Cubed potatoes, deep fried and served with teriyaki and sweet chili sauce, garnished with sesame seeds', 'קוביות תפוחי אדמה מטוגנות בטריאקי, צ''ילי מתוק ושומשום.', 27, 'img/japan_items/home_fries.png', 326),
 (228, 40, '#13 Crispy Salmon Salad', 'סלט קריספי סלמון #13', 'Choice of grilled or tempura (fried batter coated) salmon strips in a creamy Yuzu sauce on a bed of baby leaf salad mix with cherry tomatoes, carrots, cucumbers, and beansprouts, tossed with lime vinaigrette and garnished with cilantro/coriander', 'מיקס עלי בייבי, גזר, מלפפון, עגבניות שרי ונבטים בויניגרט ליים כוסברה ורצועות סלמון מטוגנות בקרם יוזו.', 42, '/img/japan_items/crispy_salmon_salad.png', 327),
 (229, 40, '#14 Asian Green Salad', 'סלט ירוק אסייאתי #14', 'Baby leaf salad mix, cherry tomatoes, carrots, cucumbers, and beansprouts tossed with chili vinaigrette', 'מיקס עלים, מלפפון, גזר, נבטים ועגבניות שרי בויניגרט צ''ילי', 35, '/img/japan_items/crispy_salmon_salad.png', 328),
-(230, 41, '#18 Hot and Sour Soup', 'מרק חמוץ חריף #18', 'Thin strips of chicken, shredded cabbage, carrots, white mushrooms and Asian bean noodles, served in a large bowl of fragrant clear chicken broth', 'מציר עוף ארומטי, אטריות שעועית, כרוב, גזר ופטריות שמפניון.', 16, 'img/japan_items/test.png', 329),
-(231, 41, '#20 Thai Spicy Coconut Soup', 'מרק קוקוס #20', 'Thai soup served in a large bowl with strips of boneless chicken breast, white mushrooms, white onion, green onion, and cherry tomatoes in a rich coconut cream broth', 'מרק תאילנדי עם נתחי חזה עוף, פטריות שמפניון, בצל ירוק ולבן, עגבניות שרי וקרם קוקוס.', 21, 'img/japan_items/test.png', 330),
-(232, 41, '#21 Asian Corn Soup', 'מרק תירס #21', 'A slightly sweet egg drop soup with fresh kernel corn', 'מרק תירס אסייאתי מתקתק עם נטיפי ביצה וגרעיני תירס טריים.', 16, 'img/japan_items/test.png', 331),
-(233, 41, '#23 Tom Yam Soup', 'מרק טום יאם #23', 'A well known and popular staple of the Thai kitchen. famous for its special combination of hot and sour spices, served with strips of tender spring chicken', 'המרק הפופולארי המצויים בו עם נתחי פרגית', 21, 'img/japan_items/test.png', 332),
+(230, 41, '#18 Hot and Sour Soup', 'מרק חמוץ חריף #18', 'Thin strips of chicken, shredded cabbage, carrots, white mushrooms and Asian bean noodles, served in a large bowl of fragrant clear chicken broth', 'מציר עוף ארומטי, אטריות שעועית, כרוב, גזר ופטריות שמפניון.', 16, 'img/japan_items/japan_wm.png', 329),
+(231, 41, '#20 Thai Spicy Coconut Soup', 'מרק קוקוס #20', 'Thai soup served in a large bowl with strips of boneless chicken breast, white mushrooms, white onion, green onion, and cherry tomatoes in a rich coconut cream broth', 'מרק תאילנדי עם נתחי חזה עוף, פטריות שמפניון, בצל ירוק ולבן, עגבניות שרי וקרם קוקוס.', 21, 'img/japan_items/japan_wm.png', 330),
+(232, 41, '#21 Asian Corn Soup', 'מרק תירס #21', 'A slightly sweet egg drop soup with fresh kernel corn', 'מרק תירס אסייאתי מתקתק עם נטיפי ביצה וגרעיני תירס טריים.', 16, 'img/japan_items/japan_wm.png', 331),
+(233, 41, '#23 Tom Yam Soup', 'מרק טום יאם #23', 'A well known and popular staple of the Thai kitchen. famous for its special combination of hot and sour spices, served with strips of tender spring chicken', 'המרק הפופולארי המצויים בו עם נתחי פרגית', 21, 'img/japan_items/japan_wm.png', 332),
 (234, 42, '#30 Yasai Maki Noodles', 'יאסי מאקי נודלס #30', 'Egg noodles, shredded cabbage, beansprouts, carrots and mushrooms, stir fried in hoisin sauce', 'אטריות ביצים, כרוב, נבטים, בצל ירוק וגזר ברוטב הוי סטיר', 29, 'img/japan_items/maki.png', 333),
-(235, 42, '#31 Filipino Stir Fry', 'הפיליפינית #31', 'Choice of one: chicken, beef or tofu bean.  Stir fried with egg noodles, carrots, cabbage, beansprouts and green onion in hot spicy Chu Chu sauce', 'עוף, אטריות ביצים, גזר, כרוב, נבטים, ובצל ירוק ברוטב צ''או צ''או -לבחירה: עוף, טופו, בקר. חריף.', 42, 'img/japan_items/test.png', 334),
+(235, 42, '#31 Filipino Stir Fry', 'הפיליפינית #31', 'Choice of one: chicken, beef or tofu bean.  Stir fried with egg noodles, carrots, cabbage, beansprouts and green onion in hot spicy Chu Chu sauce', 'עוף, אטריות ביצים, גזר, כרוב, נבטים, ובצל ירוק ברוטב צ''או צ''או -לבחירה: עוף, טופו, בקר. חריף.', 42, 'img/japan_items/japan_wm.png', 334),
 (236, 42, '#32 Malaysian Stir Fry', 'המלזית #32', 'Tempura (fried batter) coated salmon, stir fried with egg noodles, white onion, carrot stips, green beans, white mushrooms and bean sprouts in Malaysian curry sauce', 'אטריות ביצים עם סלמון בטמפורה, בצל לבן, גזר, שעועית ירוקה, פטריות שמפניון, בצל ירוק ונבטים בקארי מלזי.', 45, 'img/japan_items/malaysian_stir_fry.png', 335),
 (237, 42, '#33 Vietnamese Stir Fry', 'וויאטנמית #33', 'Boneless chicken strips stir fried with udon (wheat) noodles, shredded cabbage, white onion, white mushrooms, bean sprouts, asparagus, beans and green onion in satay (peanut) sauce, garnished with coconut cream and cilantro/coriander', 'אטריות אודון (חיטה), רצועות עוף, פטריות שמפניון, בצל ירוק, בצל לבן, שעועית ירוקה ונבטים ברוטב סאטה וקרם קוקוס כוסברה.', 45, 'img/japan_items/malaysian_stir_fry.png', 336),
 (238, 42, '#34 Korean Stir Fry', 'הקוריאנית  #34', 'Pieces of aged beef stir fried with udon (wheat) noodles, white mushrooms, white onion, shiitake mushrooms, cabbage and Portobello mushrooms in shimeju mushroom sauce', 'אטריות אודון (חיטה), עם נתחי אנטריקוט, כרוב לבן, פטריות פורטבלו, בצל לבן, פטריות שיטאקה ובייבי תרד ברוטב שימאג''י.', 45, 'img/japan_items/malaysian_stir_fry.png', 337),
-(239, 42, '#35 Beef Rice Noodles', 'ביף רייס נודלס  #35', 'Pieces of aged beef stir fried with wide rice noodles (Pad Thai), scrambled eggs, white mushrooms, green onion, beansprouts, carrots and white onions in a spicy and sweet sauce, topped with chopped peanuts', 'אטריות אורז רחבות (פאד תאי), נתחי אנטריוט, נטיפי ביצים, פטריות פורטובלו, בצל לבן, נבטים, גזר ובצל ירוק ברוטב חריף מתוק…', 44, 'img/japan_items/test.png', 338),
-(240, 42, '#36 Chicken Pad Thai', 'צ''יקן פאד תאי  #36', 'Chunks of grilled spring chicken stir fried with rice noodles, scrambled eggs cabbage, carrots, green onions, beansprouts and sweet-hot sauce, topped with chopped peanuts', 'קוביות פרגית בטמפורה / בגריל, אטריות אורז, נטיפי ביצים, כרוב, גזר, בצל ירוק ונבטים ברוטב חריף מתוק ושבבי בוטנים.', 42, 'img/japan_items/test.png', 339),
+(239, 42, '#35 Beef Rice Noodles', 'ביף רייס נודלס  #35', 'Pieces of aged beef stir fried with wide rice noodles (Pad Thai), scrambled eggs, white mushrooms, green onion, beansprouts, carrots and white onions in a spicy and sweet sauce, topped with chopped peanuts', 'אטריות אורז רחבות (פאד תאי), נתחי אנטריוט, נטיפי ביצים, פטריות פורטובלו, בצל לבן, נבטים, גזר ובצל ירוק ברוטב חריף מתוק…', 44, 'img/japan_items/japan_wm.png', 338),
+(240, 42, '#36 Chicken Pad Thai', 'צ''יקן פאד תאי  #36', 'Chunks of grilled spring chicken stir fried with rice noodles, scrambled eggs cabbage, carrots, green onions, beansprouts and sweet-hot sauce, topped with chopped peanuts', 'קוביות פרגית בטמפורה / בגריל, אטריות אורז, נטיפי ביצים, כרוב, גזר, בצל ירוק ונבטים ברוטב חריף מתוק ושבבי בוטנים.', 42, 'img/japan_items/japan_wm.png', 339),
 (241, 42, '#37 Chicken Fried Rice', 'צ''יקן פרייד רייס  #37', 'Chunks of grilled spring chicken stir fried with scrambled eggs, rice, cabbage, carrots, green onions, Portobello mushrooms and beansprouts in a hoisin sauce', 'קוביות פרגית בגריל / בטמפורה, נטיפי ביצה, אורז, כרוב, גזר, בצל ירוק, פטריות פורטבלו ונבטים ברוטב הוי סטיר.', 41, 'img/japan_items/rice.png', 340),
 (242, 43, '# Japan Japan Special Stir Fry. Choose one of the following:', '#', '', '', 48, 'img/japan_items/malaysian_stir_fry.png', 341),
-(243, 43, '#52 Sweet and sour lemon chicken', 'עוף דבש ולימון - נתחי עוף מצופים ברוטב חמוץ מתוק  #52', '', '', 0, 'img/japan_items/test.png', 342),
-(244, 43, '#53 Szechuan beef / chicken', 'עוף סצואן - נתחי עוף / רצועות פילה בקר מוקפצות ברוטב סצואן חריף ושלל ירקות #53', '', '', 0, 'img/japan_items/test.png', 343),
-(245, 43, '#54 Beef and white mushrooms', 'פטריות שמפניון נתחי עוף / בקר מוקפציפ ברוטב הוי סטיר. שימאג''י. פטריות שמפיונון, גזר וקישואים #54', '', '', 0, 'img/japan_items/test.png', 344),
-(246, 43, '#55 Chicken with Asian vegetable medley', 'ירקות אסיאתי נתחי עוף / רצועות פילה בקר מוקפצות ברוטב הוי סטיר וטריאקי ושלל ירקות #55', '', '', 0, 'img/japan_items/test.png', 345),
-(247, 44, '#600 Chicken Schnitzelonim', 'ארוחת שניצלוני עוף #600', 'Fried strips of chicken coated in panko crumbs. Choice of one side dish: Asian puree / white rice / chips + soft drink', 'רצועות עוף בפנקו (פירורי לחם יפניים) מטוגנות. מוגש עם תוספת לבחירה. תוספות לבחירה: פירה אסייתי/אורז לבן/צ''יפס', 42, 'img/japan_items/test.png', 346);
+(243, 43, '#52 Sweet and sour lemon chicken', 'עוף דבש ולימון - נתחי עוף מצופים ברוטב חמוץ מתוק  #52', '', '', 0, 'img/japan_items/japan_wm.png', 342),
+(244, 43, '#53 Szechuan beef / chicken', 'עוף סצואן - נתחי עוף / רצועות פילה בקר מוקפצות ברוטב סצואן חריף ושלל ירקות #53', '', '', 0, 'img/japan_items/japan_wm.png', 343),
+(245, 43, '#54 Beef and white mushrooms', 'פטריות שמפניון נתחי עוף / בקר מוקפציפ ברוטב הוי סטיר. שימאג''י. פטריות שמפיונון, גזר וקישואים #54', '', '', 0, 'img/japan_items/japan_wm.png', 344),
+(246, 43, '#55 Chicken with Asian vegetable medley', 'ירקות אסיאתי נתחי עוף / רצועות פילה בקר מוקפצות ברוטב הוי סטיר וטריאקי ושלל ירקות #55', '', '', 0, 'img/japan_items/japan_wm.png', 345),
+(247, 44, '#600 Chicken Schnitzelonim', 'ארוחת שניצלוני עוף #600', 'Fried strips of chicken coated in panko crumbs. Choice of one side dish: Asian puree / white rice / chips + soft drink', 'רצועות עוף בפנקו (פירורי לחם יפניים) מטוגנות. מוגש עם תוספת לבחירה. תוספות לבחירה: פירה אסייתי/אורז לבן/צ''יפס', 42, 'img/japan_items/japan_wm.png', 346),
+(248, 46, 'Dim Sum with meat', 'דים סאם בשרי', '4 pieces of your choosing', '4 יחידות לבחירה', 29, 'img/oshi_items/Dim_Sam_Meat.jpg', 347),
+(249, 46, 'Chicken in tempura', 'עוף בטמפורה', 'Chicken pieces coated with tempura, served with the house sauce', 'נתחי חזה עוף במעטפת טמפורה. מוגש עם רוטב הבית', 33, 'img/oshi_items/tempura_chicken-1.jpg', 348),
+(250, 46, 'Chicken eggroll', 'אגרול עוף', '2 pieces', '2 יח', 25, 'img/oshi_items/Egrol-1.jpg', 349),
+(251, 46, 'Miso noodle soup', 'מיסו נודל סופ', 'Glass noodles, tamago, asparagus, chilli and scallions', 'אטריות זכוכית, טמאגו, אספרגוס, צ’ילי ובצל ירוק', 19, 'img/oshi_items/Misu_Noodle_Soup-300X300.jpg', 350),
+(252, 46, 'Miso Shiro soup', 'מיסו שירו', 'Miso soup with tofu, scallions and mushrooms', 'מרק מיסו עם טופו, בצל ירוק ופטריות', 17, 'img/oshi_items/Misu_Shiru_Soup.jpg', 351),
+(253, 46, 'Tofu salad', 'סלט טופו', 'Tofu in teriyaki, cucumbers, avocado and baby mix leaves with our chef dressing', 'טופו בטריאקי, מלפפון, אבוקדו ובייבי מיקס עם רוטב השף מעל.', 32, 'img/oshi_items/Tofu_Salad.jpg', 352),
+(254, 46, 'Tataki tuna salad', 'טטאקי טונה', 'Seared tuna slices served on a bed of baby greens, bean noodles and shredded carrots with Asian sauce', 'נתחי טונה צרובה מוגש על מצע עלי בייבי, אטריות שעועית ושערות גזר ברוטב אסייתי', 45, 'img/oshi_items/TakiTunaSalad.jpg', 353),
+(255, 46, 'Sashimi salad', 'סלט סשימי', '3 pieces of fish of your choosing on a bed of baby greens, bean noodles and shredded carrots with Asian sauce', '3 פרוסות דג לבחירה על מצע עלי בייבי, אטריות שעועית ושערות גזר ברוטב אסייתי', 42, 'img/oshi_items/Sashimi_Salmon_Salad.jpg', 354),
+(256, 46, 'Schezhuan salad', 'סלט סנצ’אי', 'Green salad with carrot, white and red cabbage, peanuts and crispy sweet potato in a coriander and mirin vinaigrette sauce', 'סלט חסות, גזר, כרוב לבן, כרוב אדום, בוטנים וקריספי בטטה בויניגרייט כוסברה וחומץ מירין', 39, 'img/oshi_items/Sanchai_salad2.jpg', 355),
+(257, 46, 'Mushrooms in tempura', 'פטריות בטמפורה', 'Fresh mushrooms coated in tempura and panko, served with Asian vinaigrette sauce', 'פטריות טריות במעטפת טמפורה ופנקו מוגש ברוטב ויניגרייט אסייתי', 22, 'img/oshi_items/oshi_wm.png', 356),
+(258, 46, 'Fish and chips', 'פיש אנד צ’יפס', 'Strips of salmon coated in panko, accompanied by potatoes in aioli, mayonnaise and spicy sweet chili sauce', 'אצבעות סלמון בפנקו לצד פוטטוס עם איולי, ספייסי מיונז וצ’ילי מתוק', 43, 'img/oshi_items/fish_chips1.jpg', 357),
+(259, 46, 'Kachi salad', 'סלט קאצ’י', 'Carrot and cucumber strips, red chili, mint, cabbage and roasted peanuts, with soy sauce, sesame oil and lemon sauce', 'רצועות גזר, רצועות מלפפון, צ’ילי אדום, נענע, כרוב לבן ובוטנים קלויים ברוטב סויה, שמן שומשום ולימון', 32, 'img/oshi_items/Kachi.jpg', 358),
+(260, 46, 'Dim Sum (vegetable)', 'דים סאם צמחוני', '2 shiitake, 1 sweet potato, 1 spinach', '2 שיטאקי, 1 בטטה, 1 תרד', 29, 'img/oshi_items/Dim_Sam_Vegan.jpg', 359),
+(261, 46, 'White rice', 'צלחת אורז לבן', '', '', 14, 'img/oshi_items/Rice.jpg', 360),
+(262, 46, 'Eggroll vegetable', 'אגרול צמחוני', '', '', 25, 'img/oshi_items/Egrol2.jpg', 361),
+(263, 46, 'Chicken salad', 'צ’יקן סלט', 'Cubes of chicken breast with avocado, cherry tomatoes, carrots, red onion, scallions, baby greens and crispy sweet potato', 'קוביות חזה עוף עם אבוקדו, עגבניות שרי, גזר, בצל סגול וירוק, עלי בייבי וקריספי בטטה', 39, 'img/oshi_items/Chicken_Salad.jpg', 362),
+(264, 46, 'Gyoza (meat)', 'גיוזה בשרית', '', '', 31, 'img/oshi_items/Gioza-1.jpg', 363),
+(265, 46, 'Gyoza (vegetable)', 'גיוזה צמחונית', '', '2 פטריות, 1 בטטה, 1 תרד', 31, 'img/oshi_items/Gioza.jpg', 364),
+(266, 46, 'Kimche', 'קימצ’י', 'Asian pickles', 'חמוצים אסיאתיים', 15, 'img/oshi_items/Kimchi.jpg', 365),
+(267, 46, 'Edamame', 'אדממה', 'With sea salt', 'עם מלח גס ', 18, 'img/oshi_items/Adamame.jpg', 366),
+(268, 47, 'Nigiri Denis', 'ניגירי דניס', '', '', 21, 'img/oshi_items/Nigeri_Denis.jpg', 367),
+(269, 47, 'Nigiri Tuna', 'ניגירי טונה', '', '', 24, 'img/oshi_items/Nigeri_Tuna.jpg', 368),
+(270, 47, 'Nigiri Avocado', 'ניגירי אבוקדו', '', '', 21, 'img/oshi_items/Nigeri_Avocado.jpg', 369),
+(271, 47, 'Nigiri Salmon', 'ניגירי סלמון', '', '', 23, 'img/oshi_items/Nigeri_Salmon.jpg', 370),
+(272, 47, 'Nigiri Tamago', 'ניגירי טמאגו', '', '', 19, 'img/oshi_items/Nigeri_Tamago.jpg', 371),
+(273, 48, 'Oshi Canape', 'אושי קאנאפי', 'Asparagus, avocado and cucumber coated with sesame seeds, with a mixture of spicy salmon, chives, ikura and sprinkled with chives', 'אספרגוס, אבוקדו ומלפפון בציפוי שומשום קלוי עם תערובת ספייסי סלמון, איקורה צמחית ועירית מעל', 46, 'img/oshi_items/oshi_wm.png', 372),
+(274, 48, 'Veggie Sunset', 'וג’י סאנסט', 'Sweet potato, tamago, cucumber and avocado with kanpyo coated with tempura sweet potato chips, chives, sesame with spicy mayonnaise and teriyaki', 'בטטה, טמגו, מלפפון וקנפיו בציפוי אבוקדו עם שבבי בטטה טמפורה, עירית, שומשום עם ספייסי מיונז וטריאקי', 42, 'img/oshi_items/oshi_wm.png', 373),
+(275, 48, 'Rio Roll', 'ריו רול', 'Salmon baked with teriyaki sauce, tamago, kanpyo and cucumber, topped with chives with avocado chili mixture, lemon and green onions', 'סלמון אפוי בטריאקי, טמגו, קנפיו ומלפפון בציפוי עירית עם תערובת צ’ילי אבוקדו, לימון ובצל ירוק', 46, 'img/oshi_items/oshi_wm.png', 374),
+(276, 48, 'Shaokan', 'שאוקן', 'Red tuna, salmon, tamago and avocado, wrapped in seared red tuna, vegetable tobiko and creme wasabi', 'טונה אדומה, סלמון, טמגו ואבוקדו במעטפת טונה אדומה צרובה, טוביקו צמחי וקרם וואסבי', 49, 'img/oshi_items/oshi_wm.png', 375),
+(277, 48, 'Rainbow', 'ריינבואו', 'Spicy salmon, cucumber and avocado, wrapped in salmon, denis, sweet potato and avocado', 'ספייסי סלמון, מלפפון ואבוקדו עטוף בסלמון, דניס טונה, בטטה ואבוקדו', 45, 'img/oshi_items/oshi_wm.png', 376),
+(278, 48, 'Philadelphia', 'פילדלפיה', 'Creamy tofu, avocado, cucumbers and scallions, topped with smoked salmon', 'קרם טופו, אבוקדו, מלפפון ובצל ירוק בציפוי סלמון מעושן', 39, 'img/oshi_items/oshi_wm.png', 377),
+(279, 48, 'California', 'קליפורניה', 'Raw salmon, denis, avocado and scallion topped with tobiko vegetables', 'סלמון נא, דניס, אבוקדו ובצל ירוק בציפוי טוביקו צמחי', 42, 'img/oshi_items/oshi_wm.png', 378),
+(280, 48, 'Alaska', 'אלסקה', 'Raw salmon, creamy tofu, avocado, tempura with denis and creme wasabi, topped with chives', 'סלמון נא, קרם טופו, אבוקדו, טמפורה בציפוי דניס וקרם וואסבי עם עירית מעל', 39, 'img/oshi_items/oshi_wm.png', 379),
+(281, 48, 'Salmon Ikura', 'סלמון איקורה', 'Raw salmon, avocado and cucumbers, wrapped in avocado and topped with ikra', 'סלמון נא, אבוקדו ומלפפון בציפוי אבוקדו ואיקורה צמחית מעל', 41, 'img/oshi_items/oshi_wm.png', 380),
+(282, 48, 'Shaggy roll (spicy)', 'שאגי רול חריף', 'Salmon, cucumbers, scallions and mint with a tuna, avocado and red Asian chili topping', 'סלמון, מלפפון, בצל ירוק ונענע בציפוי טונה, אבוקדו צ’ילי אדום ורוטב אסייתי', 46, 'img/oshi_items/oshi_wm.png', 381),
+(283, 48, 'Charlie''s Angels (spicy)', 'צ’רליז אנג’לס חריף', 'Not spicy - NIS 3 extra. Spicy red tuna, cucumber and avocado, topped with salmon, tuna and denis', 'לא ספייסי - תוספת של 3 ₪   ספייסי טונה אדומה, מלפפון ואבוקדו, בציפוי סלמון, טונה ודניס', 39, 'img/oshi_items/oshi_wm.png', 382),
+(284, 48, 'Sunset (spicy)', 'סאנסט חריף', 'Spicy salmon, avocado and sweet potato, topped with seared salmon with sweet sweet potato chips, tempura, chives, sesame seasoned with spicy mayonnaise and teriyaki', 'ספייסי סלמון, אבוקדו ובטטה, בציפוי סלמון צרוב עם שבבי בטטה, טמפורה, עירית, שומשום עם ספייסי מיונז וטריאקי מעל', 46, 'img/oshi_items/oshi_wm.png', 383),
+(285, 48, 'Red dragon (spicy)', 'רד דרגון חריף', 'Tamago, avocado, cucumber and scallions topped with seared salmon, chives, sesame seeds and spicy chili', 'טמגו, אבוקדו, מלפפון ובצל ירוק בציפוי סלמון צרוב, עירית, שומשום וצילי חריף', 46, 'img/oshi_items/oshi_wm.png', 384),
+(286, 48, 'Volcano roll (spicy)', 'וולקנו רול חריף', 'Avocado, cucumber topped with a mixture of salmon with chives, red pepper, chili, lemon, green onions and sesame seeds', 'אבוקדו, מלפפון בציפוי עירית עם תערובת סלמון, גמבה אדומה, צילי, לימון, בצל ירוק ושומשום', 46, 'img/oshi_items/oshi_wm.png', 385),
+(287, 48, 'Chucky (spicy)', 'צ’אקי חריף', 'Spicy denis, avocado and cucumber wrapped with denis and tobiko (orange vegetable) and fresh chili', 'ספייסי דניס, אבוקדו ומלפפון עטוף בדניס צרוב עם טוביקו צמחי כתום וצילי טרי מעל', 0, 'img/oshi_items/oshi_wm.png', 386),
+(288, 48, 'Kennedy roll', 'קנדי רול', 'Avocado, sweet potato, sugared kanpyo and pecan, wrapped in teriyaki and tamago', 'אבוקדו, בטטה, קנפיו ופאקן מסוכר במעטפת טמגו וטריאקי', 49, 'img/oshi_items/oshi_wm.png', 387),
+(289, 48, 'Rusty', 'ראסטי', 'Baked salmon teriyaki, tamago, kanpyo, avocado and cucumber wrapped with crispy sweet potato', 'סלמון אפוי בטריאקי, טמגו,קנפיו, אבוקדו ומלפפון במעטפת בטטה קריספי', 39, 'img/oshi_items/oshi_wm.png', 388),
+(290, 48, 'Spicy tobiko (spicy)', 'ספייסי טוביקו חריף', 'Spicy salmon, avocado and cucumber topped with tobiko (orange vegetable)', 'ספייסי סלמון, אבוקדו ומלפפון בציפוי טוביקו צמחי כתום', 39, 'img/oshi_items/oshi_wm.png', 389),
+(291, 48, 'Shogun', 'שוגון', 'Tuna, denis, salmon and avocado, coated in chives', 'טונה, דניס, סלמון אבוקדו במעטפת עירית', 41, 'img/oshi_items/oshi_wm.png', 390),
+(292, 48, 'Funkyroll', 'פנקירול', 'Tamago, kampyo, avocado and cucumber, wrapped in sweet potato', 'טמגו, קנפיו, אבוקדו ומלפפון, במעטפת בטטה', 36, 'img/oshi_items/oshi_wm.png', 391),
+(293, 49, 'Sunset (spicy)', 'סאנסטחריף', 'Spicy salmon, avocado and sweet potato, topped with seared salmon with sweet potato chips, tempura, chives, sesame with spicy mayonnaise and teriyaki', 'ספייסי סלמון, אבוקדו ובטטה, בציפוי סלמון צרוב עם שבבי בטטה, טמפורה, עירית, שומשום עם ספייסי מיונז וטריאקי מעל', 46, 'img/oshi_items/oshi_wm.png', 392),
+(294, 49, 'Alaska', 'אלסקה', 'Raw salmon, creamy tofu, avocado, tempura with surimi fish and creme wasabi', 'סלמון נא, קרם טופו, אבוקדו, טמפורה בציפוי סורימי דג וקרם וואסבי', 39, 'img/oshi_items/oshi_wm.png', 393),
+(295, 50, 'Maki kanpyo', 'מאקי קנפיו', '', '', 20, 'img/oshi_items/oshi_wm.png', 394),
+(296, 50, 'Maki carrot', 'מאקי גזר', '', '', 20, 'img/oshi_items/oshi_wm.png', 395),
+(297, 50, 'Maki salmon', 'מאקי סלמון', '', '', 25, 'img/oshi_items/oshi_wm.png', 396),
+(298, 50, 'Maki tuna', 'מאקי טונה', '', '', 25, 'img/oshi_items/oshi_wm.png', 397),
+(299, 50, 'Maki denis', 'מאקי דניס', '', '', 25, 'img/oshi_items/oshi_wm.png', 398),
+(300, 50, 'Maki avocado', 'מאקי אבוקדו', '', '', 20, 'img/oshi_items/oshi_wm.png', 399),
+(301, 50, 'Maki cucumber', 'מאקי מלפפון', '', '', 20, 'img/oshi_items/oshi_wm.png', 400),
+(302, 50, 'Maki sweet potato', 'מאקי בטטה', '', '', 20, 'img/oshi_items/oshi_wm.png', 401),
+(303, 50, 'Maki asparagus', 'מאקי אספרגוס', '', '', 20, 'img/oshi_items/oshi_wm.png', 402),
+(304, 50, 'Maki smoked salmon', 'מאקי סלמון מעושן', '', '', 25, 'img/oshi_items/oshi_wm.png', 403),
+(305, 50, 'Maki tamago', 'מאקי טמגו', '', '', 20, 'img/oshi_items/oshi_wm.png', 404),
+(306, 51, 'Sakura', 'סאקורה', 'Wide roll with smoked salmon, tamago, avocado, cucumber, tofu creme, sprinled with sesame seeds', 'רול רחב עם סלמון מעושן, טמגו, אבוקדו, מלפפון וקרם טופו ושומשום מעל', 42, 'img/oshi_items/oshi_wm.png', 405),
+(307, 51, 'Yakuza', 'יאקוזה', 'Wide roll with denis, ikura, avocado, cucumber and scallions', 'רול רחב עם דניס, איקורה, אבוקדו, מלפפון ובצל ירוק', 37, 'img/oshi_items/oshi_wm.png', 406),
+(308, 51, 'Bonzai', 'בונזאי', 'Wide roll with tamago, kanpyo, avocado, carrot and cucumber', 'רול רחב עם טמגו, קנפיו, אבוקדו, גזר ומלפפון', 29, 'img/oshi_items/oshi_wm.png', 407),
+(309, 51, 'Fresh Rolls Royce', 'פרש רולס רויס', 'Wide roll with tuna, salmon, denis, tamago, avocado, carrots and scallions', 'רול רחב עם טונה, סלמון, דניס, טמגו, אבוקדו, גזר ובצל ירוק', 42, 'img/oshi_items/oshi_wm.png', 408),
+(310, 52, 'Rock N''Roll', 'רוק&רול', 'Crispy salmon skin, avocado, creme tofu and scallions, wrapped in crispy sweet potato', 'קריספי סלמון סקין, אבוקדו, קרם טופו ובצל ירוק בציפוי בטטה קריספי.', 39, 'img/oshi_items/oshi_wm.png', 409),
+(311, 52, 'Tsunami', '??????', 'Tuna in mayonnaise, scallions and avocado, coated with toasted sesame', '??? ???? ??????, ??? ???? ??????? ?????? ?????? ????', 34, 'img/oshi_items/oshi_wm.png', 410),
+(312, 52, 'Papa San (spicy)', '???? ??? ????', 'Not spicy - NIS 3 extra.     Spicy salmon, avocado and cucumber, sprinkled with toasted sesame seeds', '?? ?????? - ????? ?? 3 ?\n?????? ?????, ?????? ??????? ?? ?????? ???? ???', 29, 'img/oshi_items/oshi_wm.png', 411),
+(313, 52, 'Mamma San (spicy)', '???? ??? ????', 'Not spicy - NIS 3 extra.     Spicy tuna, avocado and cucumber, sprinkled with toasted sesame seeds', '?? ?????? - ????? ?? 3 ?\n?????? ???? ????? ?????? ??????? ?? ?????? ???? ???', 29, 'img/oshi_items/oshi_wm.png', 412),
+(314, 52, 'Yasahi roll', '????? ???', 'Asparagus, avocado, cucumber and carrots, sprinkled with toasted sesame seeds', '????????, ??????, ?????? ???? ?? ?????? ???? ???', 28, 'img/oshi_items/oshi_wm.png', 413),
+(315, 52, 'Spicy denis', '?????? ????', 'Spicy seasoned denis with avocado and cucumber, sprinkled with toasted sesame seeds', '?? ???? ?????? ??????, ?????? ??????? ?? ?????? ???? ???', 29, 'img/oshi_items/oshi_wm.png', 414),
+(316, 52, 'Salmon tempura', '????? ??????', 'Raw salmon and avocado, topped with tempura pieces', '????? ?? ???????, ?????? ???? ??????', 34, 'img/oshi_items/oshi_wm.png', 415),
+(317, 52, 'Dynamite', '????????', 'Salmon baked in teriyaki with cucumber, wrapped in avocado', '????? ???? ??????? ???????, ?????? ??????', 34, 'img/oshi_items/oshi_wm.png', 416),
+(318, 52, 'Tamagochi', '?????', 'Tamago, creme tofu, avocado and cucumber with a sprinkling of toasted sesame seeds', '????, ???? ????, ?????? ??????? ?????? ?????? ????', 27, 'img/oshi_items/oshi_wm.png', 417),
+(319, 53, 'Sakamuri Tamaki', '??????? ?????', 'Salmon, salmon skin, cucumber, avocado and scallion', '?????,????? ????, ??????, ?????? ???? ????', 27, 'img/oshi_items/oshi_wm.png', 418),
+(320, 53, 'Shogun Tamaki', '????? ?????', 'Tuna, denis, salmon, avocado, cucumber, scallions', '????, ????, ????? ?? ??????, ?????? ???? ????', 27, 'img/oshi_items/oshi_wm.png', 419),
+(321, 53, 'Yasahi Tamaki', '????? ?????', 'Asparagus, avocado, carrot, cucumber', '???????, ??????, ??? ???????', 23, 'img/oshi_items/oshi_wm.png', 420),
+(322, 53, 'Taka Tamaki', '???? ?????', 'Tuna, avocado, cucumber', '????, ?????? ???????', 25, 'img/oshi_items/oshi_wm.png', 421),
+(323, 53, 'Saka Tamaki', '???? ?????', 'Salmon, avocado, cucumber', '?????, ?????? ???????', 24, 'img/oshi_items/oshi_wm.png', 422),
+(324, 54, 'Sashimi tuna', '????? ????', '5 pc', '5 ??????', 42, 'img/oshi_items/oshi_wm.png', 423),
+(325, 54, 'Sashimi tuna', '????? ????', '3 pc', '3 ??????', 33, 'img/oshi_items/oshi_wm.png', 424),
+(326, 54, 'Sashimi denis', '????? ????', '5 pc', '5 ??????', 39, 'img/oshi_items/oshi_wm.png', 425),
+(327, 54, 'Sashimi denis', '????? ????', '3 pc', '3 ??????', 31, 'img/oshi_items/oshi_wm.png', 426),
+(328, 54, 'Sashimi salmon', '????? ?????', '5 pc', '5 ??????', 39, 'img/oshi_items/oshi_wm.png', 427),
+(329, 54, 'Sashimi salmon', '????? ?????', '3 pc', '3 ??????', 31, 'img/oshi_items/oshi_wm.png', 428),
+(330, 55, 'Pekanko roll', '?????? ???', 'Deep fried roll filled with creme tofu, sugared pecan, sweet potato and tamago', '??? ????? ?????? ??? ????, ???? ?????, ???? ?????', 39, 'img/oshi_items/oshi_wm.png', 429),
+(331, 55, 'Vincent special', '?????? ??????', 'Deep fried roll with salmon, avocado, salmon, scallion, toasted sesame seeds, creme tofu, topped with tempura and panko', '??? ????? ?????? ????? ?? ??????, ?????, ??? ????, ?????? ???? ???? ???? ?????? ?????? ?????', 39, 'img/oshi_items/oshi_wm.png', 430),
+(332, 55, 'Desert roll', '???? ???', 'Inside-out with tofu, sweet potato, kanpyo, avocaodo and asparagus, coated with tempura and panko', '??????????? ?? ????, ????, ?????, ?????? ???????? ?????? ?????? ?????', 39, 'img/oshi_items/oshi_wm.png', 431),
+(333, 55, 'Hot chicken', '??? ?', 'Fried chicken roll filled with avocado and sweet potato, coated with tempura and panko', '??? ????? ?????? ???, ?????? ????? ?????? ?????? ?????', 39, 'img/oshi_items/oshi_wm.png', 432),
+(334, 55, 'Rolls Royce', '???? ????', 'Fried fotomaki filled with salmon, tuna, denis, carrots, avocado, scallions and tamago, with a tempura coating', '???????? ????? ?????? ?????, ????, ????, ???, ??????, ??? ???? ????? ?????? ??????', 39, 'img/oshi_items/oshi_wm.png', 433),
+(335, 55, 'Hot salmon', '??? ?????', 'Fried roll filled with salmon, avocado, sweet potato and scallion, coated with tempura and panko', '??? ????? ?????? ?????, ???? ?????? ???? ???? ?????? ?????? ?????', 39, 'img/oshi_items/oshi_wm.png', 434),
+(336, 55, 'Leo roll', '??? ???', 'Fried roll with baked salmon, kanpyo, sweet potato and avocado, with a tempura and panko coating', '??? ????? ?? ????? ????, ?????, ???? ??????? ?????? ?????? ?????', 39, 'img/oshi_items/oshi_wm.png', 435),
+(337, 55, 'Tiger sandwich (spicy)', '????? ??????? ????', 'Sushi sandwich with spicy tuna, avocado, scallion and kanpyo, with a tempura and panko coating', '???? ??????? ?????? ?????? ????, ??????, ??? ???? ?????? ?? ????? ?????? ?????', 39, 'img/oshi_items/oshi_wm.png', 436),
+(338, 56, 'Spicy salmon and avocado', '?????? ????? ??????? ????', 'Not spicy for NIS 3 extra', '?? ?????? ?????? ?? 3 ?', 35, 'img/oshi_items/oshi_wm.png', 437),
+(339, 56, 'Spicy tuna and avocado', '?????? ???? ??????? ????', 'Not spicy for NIS 3 extra', '?? ?????? ?????? ?? 3 ?', 36, 'img/oshi_items/oshi_wm.png', 438),
+(340, 56, 'Grilled salmon and avocado', '????? ???? ???????', '', '', 35, 'img/oshi_items/oshi_wm.png', 439),
+(341, 56, 'Grilled tuna and avocado', '???? ???? ???????', '', '', 35, 'img/oshi_items/oshi_wm.png', 440),
+(342, 56, 'Tamago and avocado', '????? ???????', '', '', 32, 'img/oshi_items/oshi_wm.png', 441),
+(343, 56, 'Avocado sandwich', '???????', '', '', 31, 'img/oshi_items/oshi_wm.png', 442),
+(344, 57, 'Sushitrian', '?????????', '4 x bonzai, 4 x maki avocado, 4 x avocado, 1 x yashao tamaki', '4 ?????? ??????\n4 ?????? ???? ??????\n4 ?????? ??????\n1 ?????? ????? ?????', 60, 'img/oshi_items/oshi_wm.png', 443),
+(345, 57, 'Japan Combination', '?????????? ???', '8 x rock n''roll, 2 x nigiri tuna, 2 x nigiri salmon, 3 x sashimi tuna, 3 x sashimi denis', '8 ?????????&???\n2 ?????? ????? ????\n2 ?????? ????? ?????\n3 ?????? ????? ????\n3 ?????? ????? ????', 127, 'img/oshi_items/oshi_wm.png', 444),
+(346, 57, 'Crispy', '??????', '', '8 ?? ??? ???\n8 ?????? ??????\n8 ?????? ??????', 115, 'img/oshi_items/oshi_wm.png', 445),
+(347, 57, 'Fujiama', '???', '8 x salmon tempura, 8 x maki cucumber, 4 x salmon sandwich, 4 x bonzai', '8 ?????? ????? ??????\n8 ?????? ???? ??????\n4 ?????? ???????', 97, 'img/oshi_items/Fujiama.jpg', 446),
+(348, 57, 'Happy family spicy', '??? ????  ????', '8 x mamma san, 8 x papa san, 1 x nigiri salmon, 1 x nigiri tuna ', '8 ?????? ???? ???\n8 ?????? ???? ???\n1 ?????? ?????\n1 ?????? ????', 75, 'img/oshi_items/Happy_Family.jpg', 447),
+(349, 57, 'Vegetarian', '???????', '4 x avocado sandwich, 4 x maki cucumber, 4 x maki tamago', '4 ?????? ?????? ???????\n4 ?????? ???? ??????\n4 ?????? ???? ????', 44, 'img/oshi_items/Vegiterian.jpg', 448),
+(350, 57, 'Okinawa', '?????????', '8 x yahasi roll, 8 x dynamite, 8 x maki sweet potato, 4 x spicy salmon sandwich', '8 ?????? ????? ???\n8 ?????? ???????\n8 ?????? ???? ????\n4 ?????? ??????? ?????? ?????', 97, 'img/oshi_items/Okinoama.jpg', 449),
+(351, 57, 'Veggie Combo', '??', '4 x tamago and avocado sandwixh, 4 x maki cucumber,  4 x maki carrot, 8 x funkyroll', '4 ??'' ??????? ???? ???????\n4 ??'' ???? ??????\n4 ??'' ???? ???\n8 ??'' ???????', 77, 'img/oshi_items/Veggie_Combo.jpg', 450),
+(352, 57, 'Special Combo', 'קומבינציית ספיישל', '8 x funkyroll, 8 x red dragon, 8 x salmon tempura, 8 x tsunami, 4 x grilled salmon sandwich', '"8 יחידות פנקירול\n8 יחידות רד דרגון\n8 יחידות סלמון טמפורה\n8 יחידות צונאמי\n4 יחידות סנדוויץ סלמון גריל"', 159, 'img/oshi_items/combogrande.jpg', 451),
+(353, 57, 'Oshi Oshi', '???? ????', '8 x shogun, 8 x taki maki, 2 x nigiri salmon', '8 ?????? ?????\n8 ?????? ???? ????\n2 ?????? ?????? ?????', 78, 'img/oshi_items/oshi_wm.png', 452),
+(354, 58, 'Pad Thai', '??? ??? ', 'Chicken/tofu with rice noodles, egg, broccoli, scallions, and black soya', '???/???? ?? ???? ?????? ????, ????, ???????, ??? ???? ????? ?????', 47, 'img/oshi_items/oshi_wm.png', 453),
+(355, 58, 'Chicken Teriyaki', '?', 'Chicken breast strips on a bed of white rice with diced fresh tomato and onion', '???? ??? ?? ??? ???? ???, ?????? ??????? ????? ????', 45, 'img/oshi_items/oshi_wm.png', 454),
+(356, 58, 'Curry Wok (spicy)', '???? ???  ????', 'Egg noodles, broccoli, onions, cabbage and chicken breast in a curry sauce', '?????? ?????, ???????, ???, ???? ????? ??? ??? ????? ????', 49, 'img/oshi_items/oshi_wm.png', 455),
+(357, 58, 'Oshi Wok', '???? ???', 'Tempura coated cubes of salmon stir-fried with rice noodles, peppers, carrot, scallions and mushrooms', '?????? ????? ?????? ??????, ??????? ?? ?????? ????, ??????, ???, ??? ???? ???????', 49, 'img/oshi_items/Oshi_Oshi.jpg', 456),
+(358, 58, 'Chicken chili (spicy)', 'צ’יקן צ’ילי  חריף', 'Egg noodles, green and purple onion, corn, carrot, beansprouts, yellow, red and green peppers, with chicken ', 'אטריות ביצים, בצל ירוק וסגול, תירס, גזר, נבטים, פלפל צהוב, אדום וירוק בשילוב עוף', 46, 'img/oshi_items/Chicken_Chilli-1.jpg', 457),
+(359, 58, 'Chicken fried rice', '????? ???? ?', 'Thai stir-fried rice with chicken, egg, carrots, peas and corn', '???? ??????? ????? ?? ???? ??? ???, ????, ???, ????? ?????', 43, 'img/oshi_items/Fride_Rice_Chicken.jpg', 458),
+(360, 58, 'Vegetable noodles', '??', 'Egg noodles, eggs, carrots, corn bean sprouts, peppers, cabbage and mushrooms, sauted with soy sauce', '?????? ?????, ????, ???, ????, ?????, ????, ???? ??????? ??????? ?? ????', 42, 'img/oshi_items/Vegtable_Noodels.jpg', 459),
+(361, 58, 'Pad Thai', '??? ???', 'Rice noodles, egg, carrots, cabbage, bean sprouts, tofu, scallions and peanuts', '?????? ????, ????, ???, ????, ?????, ????, ??? ???? ???????', 45, 'img/oshi_items/Padthai_Oshi.jpg', 460),
+(362, 59, 'Combo Grande  ', 'Combo Grande', '8 x Tuna Maki\n8 x avocado maki\n8 x Salmon\n2 x salmon nigiri\n2 x tuna nigiri\n2 x avocado nigiri\n8 x tsunami\n8 x Yasaho\n8 x salmon tempura\n8 x dynamite\n8 x Charlie''s Angels\n4 x spicy salmon sandwich\n8 x Mamma San wrapped in chives\n8 x Papa San wrappedin crispy potato\n8 x Pankirol wrapped in avocado\n8 x Pankirol', '8 ?????? ???? ????\n8 ?????? ???? ??????\n8 ?????? ???? ?????\n2 ?????? ?????? ?????\n2 ?????? ?????? ????\n2 ?????? ?????? ??????\n8 ?????? ??????\n8 ?????? ?????\n8 ?????? ????? ??????\n8 ?????? ???????\n8 ?????? ?', 399, 'img/oshi_items/oshi_wm.png', 461),
+(363, 59, 'Combo Grande 2', 'Combo Grande 2', '8 x tsunami\n8 x yasahu roll\n8 x  funkyroll\n16 x dynamite\n8 x salmon tempura\n8 x avocado maki\n8 x Salmon\n8 x Mamma San wrapped in chives\n8 x Mamma San wrapped in sweet potato\n8 x Papa San wrapped  in crispy sweet potato\n8 x salmon tempura wrapped in crispy sweet potato ', '8 ?????? ??????\n8 ?????? ????? ???\n8 ?????? ???????\n16 ?????? ???????\n8 ?????? ????? ??????\n8 ?????? ???? ??????\n8 ?????? ???? ?????\n8 ?????? ???? ??? ?????? ?????\n8 ?????? ???? ??? ?????? ????\n8 ?????? ???? ??? ?????? ?????? ????\n8 ?????? ????? ?????? ?????? ?????? ????\n\n ', 315, 'img/oshi_items/oshi_wm.png', 462),
+(364, 60, 'Fanta', '?????', '', '', 10, 'img/oshi_items/Fanta.jpg', 463),
+(365, 60, 'Carlsberg', 'קרלסברג', '', '', 20, 'img/oshi_items/Carlberg.jpg', 464),
+(366, 60, 'Appe juice', 'תפוחים', '', '', 10, 'img/oshi_items/Apple.jpg', 465),
+(367, 60, 'Grape juice', '?????', '', '', 10, 'img/oshi_items/grape.jpg', 466),
+(368, 60, 'Orange juice', '??????', '', '', 10, 'img/oshi_items/Orange.jpg', 467),
+(369, 60, 'Grapefruit juice', '????????', '', '', 10, 'img/oshi_items/Grapefruit.jpg', 468),
+(370, 60, 'Fuze tea', '???? ??', '', '', 10, 'img/oshi_items/FuzeTea.jpg', 469),
+(371, 60, 'Flavored water', '??? ??????', '', '', 10, 'img/oshi_items/oshi_wm.png', 470),
+(372, 60, 'Soda water', '????', '', '', 10, 'img/oshi_items/Soda.jpg', 471),
+(373, 60, 'Diet Sprite', '???? ??????', '', '', 10, 'img/oshi_items/Sprite_Zero.jpg', 472),
+(374, 60, 'Sprite ', '??????', '', '', 10, 'img/oshi_items/Sprite.jpg', 473),
+(375, 60, 'Cola Zero', 'קולה זירו', '', '', 10, 'img/oshi_items/Cola_Bottle.jpg', 474),
+(376, 60, 'Diet Cola', 'דיאט קולה', '', '', 10, 'img/oshi_items/Diet_Coke_Bottle.jpg', 475),
+(377, 60, 'Coca cola', 'קולה', '', '', 10, 'img/oshi_items/Cola_Bottle.jpg', 476),
+(378, 60, 'Sake', '????', '', '', 29, 'img/oshi_items/oshi_wm.png', 477),
+(379, 60, 'Tuborg', '??????', '', '', 20, 'img/oshi_items/oshi_wm.png', 478);
 
 -- --------------------------------------------------------
 
@@ -794,7 +961,8 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (2, 2, 'Lunch', 'ארוחת צהריים', 101),
 (3, 3, 'Lunch', 'ארוחת צהריים', 102),
 (4, 4, 'Lunch', 'ארוחת צהריים', 103),
-(5, 5, 'Lunch', 'ארוחת צהריים', 104);
+(5, 5, 'Lunch', 'ארוחת צהריים', 104),
+(6, 6, 'Lunch', 'ארוחת צהריים', 105);
 
 -- --------------------------------------------------------
 
@@ -811,7 +979,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=172 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=195 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -926,7 +1094,30 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (168, 154, 1, 'Chicken Salad', 42, ''),
 (169, 155, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
 (170, 155, 2, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
-(171, 156, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)');
+(171, 156, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(172, 157, 1, 'Angus Salad', 74, '80 grams goose liver (+30)'),
+(173, 158, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)'),
+(174, 159, 1, 'Chicken Salad', 68, '170 grams chicken breast (+18), egg (+4), portobello mushroom (+4)'),
+(175, 160, 1, 'Chicken Salad', 68, '170 grams chicken breast (+18), egg (+4), portobello mushroom (+4)'),
+(176, 161, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(177, 162, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(178, 163, 1, 'Chicken Salad', 68, '170 grams chicken breast (+18), egg (+4), portobello mushroom (+4)'),
+(179, 164, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(180, 165, 2, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(181, 166, 2, 'Chicken Salad', 46, 'egg (+4)'),
+(182, 167, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(183, 167, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(184, 168, 1, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(185, 168, 1, 'Chicken Salad', 46, 'egg (+4)'),
+(186, 169, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(187, 170, 2, 'Dim Sum with meat', 29, ''),
+(188, 170, 1, 'Miso Shiro soup', 17, ''),
+(189, 171, 2, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(190, 172, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), egg (+4)'),
+(191, 173, 8, 'Crispy Capricci', 35, 'Mushrooms (+5), Tomatoes (+5)'),
+(192, 174, 2, 'Angus Salad', 93, '80 grams goose liver (+30), 150 grams goose breast or entrecote (+19)'),
+(193, 174, 1, 'Chicken Salad', 64, '170 grams chicken breast (+18), portobello mushroom (+4)'),
+(194, 175, 1, 'XL Pie', 56, '');
 
 -- --------------------------------------------------------
 
@@ -938,6 +1129,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
+  `city_id` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `description_en` text NOT NULL,
   `description_he` text NOT NULL,
@@ -946,18 +1138,19 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `hechsher_en` varchar(255) NOT NULL,
   `hechsher_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `restaurants`
 --
 
-INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`) VALUES
-(1, 'Angus', 'אנגוס', 'http://dev.bot2.orderapp.com/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
-(2, 'Meshulashim', 'פיצה משולשים', 'http://dev.bot2.orderapp.com/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
-(3, 'Bandora', 'בנדורה', 'http://dev.bot2.orderapp.com/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', '\nSderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
-(4, 'Roza', 'רוזה', 'http://dev.bot2.orderapp.com/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
-(5, 'Japan Japan', 'ג''אפן ג''אפן', 'http://dev.bot2.orderapp.com/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף');
+INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `city_id`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`) VALUES
+(1, 'Angus', 'אנגוס', 1, 'http://dev.bot2.orderapp.com/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
+(2, 'Meshulashim', 'פיצה משולשים', 1, 'http://dev.bot2.orderapp.com/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
+(3, 'Bandora', 'בנדורה', 1, 'http://dev.bot2.orderapp.com/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
+(4, 'Roza', 'רוזה', 1, 'http://dev.bot2.orderapp.com/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
+(5, 'Japan Japan', 'ג''אפן ג''אפן', 1, 'http://dev.bot2.orderapp.com/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
+(6, 'OSHI OSHI', 'אושי אושי', 2, 'http://dev.bot2.orderapp.com/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף');
 
 -- --------------------------------------------------------
 
@@ -971,7 +1164,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_gallery` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
 
 --
 -- Dumping data for table `restaurant_gallery`
@@ -1016,7 +1209,10 @@ INSERT INTO `restaurant_gallery` (`id`, `restaurant_id`, `url`) VALUES
 (44, 5, 'img/japan_gallery/japan_combination.jpg'),
 (45, 5, 'img/japan_gallery/japan_crazy_roll.jpg'),
 (46, 5, 'img/japan_gallery/japan_inside_out.jpg'),
-(47, 5, 'img/japan_gallery/japan_logo.png');
+(47, 5, 'img/japan_gallery/japan_logo.png'),
+(52, 6, 'img/oshi_gallery/oshi_1.png'),
+(53, 6, 'img/oshi_gallery/oshi_2.png'),
+(54, 6, 'img/oshi_gallery/oshi_3.png');
 
 -- --------------------------------------------------------
 
@@ -1031,7 +1227,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_tags` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `restaurant_tags`
@@ -1055,7 +1251,9 @@ INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
 (16, 4, 11),
 (17, 5, 9),
 (18, 5, 10),
-(19, 5, 2);
+(19, 5, 2),
+(20, 6, 13),
+(21, 6, 2);
 
 -- --------------------------------------------------------
 
@@ -2317,7 +2515,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `tags`
@@ -2334,7 +2532,11 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 (9, 'Sushi', 'סושי'),
 (10, 'Asian', 'אסייתי'),
 (11, 'Salad', 'סלט'),
-(12, 'Toast', 'טוסט');
+(12, 'Toast', 'טוסט'),
+(13, 'Asian Food', ' אוכל אסייתי'),
+(14, 'Pastries', 'מאפים'),
+(15, 'Pastas', 'פסטות'),
+(16, 'Desserts', 'וקינוחים');
 
 -- --------------------------------------------------------
 
@@ -2359,15 +2561,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=274 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=285 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
-(255, 'ahmadworkspace@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(255, 'ahmadworkspace@gmail.com', 'asad  gt', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
+(260, 'test@gmail.com', 'Muhammad', '23232', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (261, 'muhammad.iftikhar.aftab@gmail.com', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -2380,7 +2582,18 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `
 (270, 'ahmad69191@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
 (271, 'Test111@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (272, 'Klinger.micheal09@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(273, 'rustom31122@gmail.com', 'Rustom', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
+(273, 'rustom31122@gmail.com', 'Rustom', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(274, 'Avi@pushstartups.com', 'Avi', '1', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(275, 'test@test.com', 'Noam', '1', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(276, 'rael@pushstartups.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
+(277, '47ae2bc6dec29ba24f07a3fe', NULL, NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL),
+(278, 'umair.khalid786@outlook.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(279, 'Dvora@pushstartups.com', 'Dvora', '0543047266', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(280, 'ahmadworkuuspace@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(281, 'test@gmai.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(282, 'Fdh@hdh.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(283, 'Ch@hch.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(284, 'asdf@asdf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2395,7 +2608,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -2406,7 +2619,9 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (40, 271, 2),
 (41, 260, 1),
 (42, 260, 2),
-(43, 273, 1);
+(43, 273, 1),
+(44, 275, 2),
+(45, 275, 1);
 
 -- --------------------------------------------------------
 
@@ -2425,7 +2640,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=157 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=176 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -2496,7 +2711,26 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (153, 261, 1, 93, NULL, 0, '2017-02-20'),
 (154, 261, 1, 84, NULL, 0, '2017-02-20'),
 (155, 261, 1, 221, NULL, 0, '2017-02-20'),
-(156, 273, 1, 65, 'fixed percentage', 30, '2017-02-20');
+(156, 273, 1, 65, 'fixed percentage', 30, '2017-02-20'),
+(157, 274, 1, 74, NULL, 0, '2017-02-21'),
+(158, 255, 1, 60, NULL, 0, '2017-02-22'),
+(159, 260, 1, 68, NULL, 0, '2017-02-22'),
+(160, 260, 1, 68, NULL, 0, '2017-02-22'),
+(161, 260, 1, 64, NULL, 0, '2017-02-23'),
+(162, 260, 1, 64, NULL, 0, '2017-02-23'),
+(163, 260, 1, 68, NULL, 0, '2017-02-23'),
+(164, 260, 1, 64, NULL, 0, '2017-02-23'),
+(165, 260, 1, 128, NULL, 0, '2017-02-24'),
+(166, 255, 1, 92, NULL, 0, '2017-02-25'),
+(167, 275, 1, 157, NULL, 0, '2017-02-26'),
+(168, 275, 1, 139, NULL, 0, '2017-02-27'),
+(169, 274, 1, 64, NULL, 0, '2017-02-27'),
+(170, 275, 6, 75, NULL, 0, '2017-02-28'),
+(171, 275, 1, 128, NULL, 0, '2017-02-28'),
+(172, 274, 1, 64, NULL, 0, '2017-02-28'),
+(173, 279, 2, 280, NULL, 0, '2017-02-28'),
+(174, 274, 1, 250, NULL, 0, '2017-02-28'),
+(175, 274, 2, 56, NULL, 0, '2017-02-28');
 
 -- --------------------------------------------------------
 
@@ -2533,14 +2767,15 @@ CREATE TABLE IF NOT EXISTS `user_votes` (
   KEY `user_id` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `vote_timing_id` (`vote_timing_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `user_votes`
 --
 
 INSERT INTO `user_votes` (`id`, `user_id`, `restaurant_id`, `vote_timing_id`) VALUES
-(7, 255, 2, 1);
+(9, 255, 2, 1),
+(10, 276, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -2556,14 +2791,14 @@ CREATE TABLE IF NOT EXISTS `vote_timings` (
   `ordering_end` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `vote_timings`
 --
 
 INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 1, '07:00:00', '07:33:00', '07:44:00');
+(1, 1, '09:57:00', '12:53:00', '12:59:00');
 
 -- --------------------------------------------------------
 
@@ -2582,7 +2817,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `weekly_availibility`
@@ -2623,7 +2858,14 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (46, 5, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
 (47, 5, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
 (48, 5, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(49, 5, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
+(49, 5, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(50, 6, 'Sunday', 'יום א', '12:00', '12:00', '21:00', '21:00'),
+(51, 6, 'Monday', 'יום ב', '12:00', '12:00', '21:00', '21:00'),
+(52, 6, 'Tuesday', 'יום ג', '12:00', '12:00', '21:00', '21:00'),
+(53, 6, 'Wednesday', 'יום ד', '12:00', '12:00', '21:00', '21:00'),
+(54, 6, 'Thursday', 'יום ה', '12:00', '12:00', '21:00', '21:00'),
+(55, 6, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(56, 6, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
 
 --
 -- Constraints for dumped tables

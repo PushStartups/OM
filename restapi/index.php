@@ -30,6 +30,25 @@ else
 $app = new \Slim\App();
 
 
+
+
+//  GET LIST OF CITIES
+//  WEB HOOK GET LIST OF CITIES AVAILABLE
+$app->post('/get_all_cities', function ($request, $response, $args)
+{
+    // MINIMUM ORDER AMOUNT
+    $cities = DB::query("select * from cities");
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($cities));
+    return $response;
+
+
+});
+
+
+
 //  WEB HOOK GET MINIMUM ORDER AMOUNT
 $app->post('/get_min_order_amount', function ($request, $response, $args)
 {
@@ -48,9 +67,12 @@ $app->post('/get_min_order_amount', function ($request, $response, $args)
 //  WEB HOOK GET ALL RESTAURANT
 $app->post('/get_all_restaurants', function ($request, $response, $args)
 {
+    $id = $request->getParam('city_id');
+
+
     $restaurants = Array();
 
-    $results = DB::query('select * from restaurants');
+    $results = DB::query("select * from restaurants where city_id = '$id'");
 
     $count = 0;
 
@@ -506,10 +528,11 @@ $app->post('/add_order', function ($request, $response, $args) {
 
 
 //  RETURN PAYMENT URL OF GUARD API AGAINST PAYMENT OF USER ORDER
-$app->post('/get_credit_card_payment_url', function ($request, $response, $args) {
+$app->post('/stripe_payment_request', function ($request, $response, $args) {
 
     $email   =  $request->getParam('email');
     $amount  =  $request->getParam('amount');
+    $token   =  $request->getParam('token');
 
     $user_id  = 0;
 
@@ -530,54 +553,13 @@ $app->post('/get_credit_card_payment_url', function ($request, $response, $args)
     }
 
 
-    $url = urlencode(guardPaymentRequest(($amount * 100),$user_id,$email));
+    $result =  stripePaymentRequest(($amount * 100),$user_id,$email,$token);
 
     // RESPONSE RETURN TO REST API CALL
     $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($url));
+    $response = $response->withJson($result);
     return $response;
 
-});
-
-
-// WEB HOOK FOR PAYMENT CANCEL BY USER DO APPROPRIATE ACTION
-$app->get('/payment_cancel', function ($request, $response, $args)
-{
-    $email = $request->getParam('userId');
-
-    $str =  '<script type="text/javascript">'.
-        'window.top.onPaymentCancel();'.
-        '</script>';
-
-    echo $str;
-});
-
-
-
-// WEB HOOK FOR PAYMENT SUCCESS
-$app->get('/payment_success', function ($request, $response, $args)
-{
-    $email = $request->getParam('userId');
-
-    $str =  '<script type="text/javascript">'.
-        'window.top.onPaymentSuccess();'.
-        '</script>';
-
-    echo $str;
-});
-
-
-// WEB HOOK FOR PAYMENT SUCCESS
-$app->get('/payment_error', function ($request, $response, $args)
-{
-    $email = $request->getParam('userId');
-
-    $str =  '<script type="text/javascript">'.
-        'window.top.onPaymentCancel();'.
-        '</script>';
-
-
-    echo $str;
 });
 
 
@@ -586,121 +568,94 @@ $app->run();
 
 
 // SUPPORT METHODS
-// GUARD API PAYMENT REQUEST
+// STRIPE API PAYMENT REQUEST
 // AMOUNT DIVIDED BY 100 FROM API
 
-function  guardPaymentRequest($amount,$userId,$email)
+function  stripePaymentRequest($amount, $userId, $email, $token)
 {
+    $str = '';
 
-    $cgConf['tid'] = '0963432';
-    $cgConf['mid'] = 12918;
-    $cgConf['amount'] = $amount;
-    $cgConf['user'] = 'pushstart';
-    $cgConf['password'] = 'OE2@38sz';
-    $cgConf['cg_gateway_url'] = "https://cgpay5.creditguard.co.il/xpo/Relay";
-
-    $poststring = 'user=' . $cgConf['user'];
-    $poststring .= '&password=' . $cgConf['password'];
-
-    /*Build Ashrait XML to post*/
-    $poststring .= '&int_in=<ashrait>
-                           <request>
-                            <version>1000</version>
-                            <language>ENG</language>
-                            <dateTime></dateTime>
-                            <command>doDeal</command>
-                            <doDeal>
-                                 <terminalNumber>8804324</terminalNumber>
-                                 <mainTerminalNumber/>
-                                 <cardNo>CGMPI</cardNo>
-                                 <successUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_success?userId='.$userId.'</successUrl>
-                                 <errorUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_error?userId='.$userId.'</errorUrl>
-                                 <cancelUrl>http://'.$_SERVER['HTTP_HOST'].'/restapi/index.php/payment_cancel?userId='.$userId.'</cancelUrl>
-                                 <total>' . $cgConf['amount'] . '</total>
-                                 <transactionType>Debit</transactionType>
-                                 <creditType>RegularCredit</creditType>
-                                 <currency>ILS</currency>
-                                 <transactionCode>Phone</transactionCode>
-                                 <authNumber/>
-                                 <numberOfPayments/>
-                                 <firstPayment/>
-                                 <periodicalPayment/>
-                                 <validation>TxnSetup</validation>
-                                 <user>something</user>
-                                 <mid>' . $cgConf['mid'] . '</mid>
-                                 <uniqueid>' . time() . rand(100, 1000) . '</uniqueid>
-                                 <mpiValidation>autoComm</mpiValidation>
-                                 <email>'.$email.'</email>
-                                 <clientIP/>
-                                 <customerData>
-                                  <userData1/>
-                                  <userData2/>
-                                  <userData3/>
-                                  <userData4/>
-                                  <userData5/>
-                                  <userData6/>
-                                  <userData7/>
-                                  <userData8/>
-                                  <userData9/>
-                                  <userData10/>
-                                 </customerData>
-                            </doDeal>
-                           </request>
-                          </ashrait>';
-
-    //init curl connection
-    if (function_exists("curl_init")) {
-        $CR = curl_init();
-        curl_setopt($CR, CURLOPT_URL, $cgConf['cg_gateway_url']);
-        curl_setopt($CR, CURLOPT_POST, 1);
-        curl_setopt($CR, CURLOPT_FAILONERROR, true);
-        curl_setopt($CR, CURLOPT_POSTFIELDS, $poststring);
-        curl_setopt($CR, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($CR, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($CR, CURLOPT_FAILONERROR, true);
-
-
-        //actual curl execution perfom
-        $result = curl_exec($CR);
-        $error = curl_error($CR);
-
-        // on error - die with error message
-        if (!empty($error)) {
-            die($error);
-        }
-
-        curl_close($CR);
-    }
-
-    if (function_exists("simplexml_load_string")) {
-        if (strpos(strtoupper($result), 'HEB')) {
-
-            $result = iconv("utf-8", "iso-8859-8", $result);
-        }
-        $xmlObj = simplexml_load_string($result);
-        if (isset($xmlObj->response->doDeal->mpiHostedPageUrl)) {
-
-            // print out the url which we should redirect our customers to
-            return $xmlObj->response->doDeal->mpiHostedPageUrl;
-
-        }
-        else
-        {
-            die('<strong>Can\'t Create Transaction</strong> <br />' .
-                'Error Code: ' . $xmlObj->response->result . '<br />' .
-                'Message: ' . $xmlObj->response->message . '<br />' .
-                'Addition Info: ' . $xmlObj->response->additionalInfo);
-        }
-    }
-    else
+    try
     {
-        die("simplexml_load_string function is not support, upgrade PHP version!");
+        require_once('stripe/init.php');
+        \Stripe\Stripe::setApiKey("sk_live_2ecjCMMKGtiuQgA3tAcq83t5"); //Replace with your Secret Key
+
+
+        // Charge the user's card:
+        $charge = \Stripe\Charge::create(array(
+            "amount" => $amount,
+            "currency" => "ILS",
+            "description" => "Food Order",
+            "source" => $token,
+        ));
+
+
+        // RETURN PAYMENT SUCCESS
+        $str   =  'success';
     }
 
+
+    catch (\Stripe\Error\Card $e) {
+
+        // Card was declined.
+        $e_json = $e->getJsonBody();
+        $error = $e_json['error'];
+        $str =  $error['message'];
+
+    }
+
+
+    catch(Stripe_CardError $e) {
+
+        $str =  $e;
+
+    }
+
+
+    catch (Stripe_InvalidRequestError $e) {
+
+        // Invalid parameters were supplied to Stripe's API
+
+        $str =  $e;
+
+
+    }
+
+    catch (Stripe_AuthenticationError $e) {
+
+        // Authentication with Stripe's API failed
+        // (maybe you changed API keys recently)
+
+        $str =  $e;
+
+
+    }
+    catch (Stripe_ApiConnectionError $e) {
+
+        // Network communication with Stripe failed
+
+        $str =  $e;
+
+    }
+    catch (Stripe_Error $e) {
+
+        // Display a very generic error to the user, and maybe send
+        // yourself an email
+
+        $str =  $e;
+    }
+
+
+    catch (Exception $e) {
+
+        // Something else happened, completely unrelated to Stripe
+
+        $str =  $e;
+
+    }
+
+    return $str;
 }
-
-
-
 
 // CLIENT EMAILS
 

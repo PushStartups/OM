@@ -1,6 +1,7 @@
 
 $(function () {
 
+
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (!(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
     }
@@ -58,6 +59,11 @@ $(function () {
     // });
 
 
+    $("input").on("click", function () {
+       
+    })
+
+
     $('div.caption-input input.scroll').on('focus', function(){
 
         var that = this;
@@ -78,7 +84,7 @@ $(function () {
     })
 
 
-    $('div.caption-input input.scroll2').on('focus', function(){
+    $('input.scroll2').on('focus', function(){
 
         var that = this;
 
@@ -91,7 +97,6 @@ $(function () {
                 scrollTop: 100
 
             }, 200);
-
 
         }, delayMillis);
 
@@ -233,7 +238,9 @@ function goToPaymentChoice(){
 function goToCards(){
 
     $("#payment-choice-popup").slideUp();
+
     setUpPopup("creditcard-info-popup");
+    $("#user_name").val(userObject.name);
     setTimeout(function(){
         $("#overlay").fadeIn();
     } , 100)
@@ -333,8 +340,7 @@ function resize() {
     $(".circle").css("width" , "45vw");
     $(".circle").css("height" , "45vw");
 
-    $("#main-popup").css("height", "92%");
-    $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+    $("#main-popup").css("height", "89%");
 
     setTimeout(function () {
 
@@ -342,26 +348,14 @@ function resize() {
             ($("#mid-scroll").find("#parent_type_one").text() == "" ||
             !$("#mid-scroll").find("#parent_type_one").is(":visible"))) {
 
-            $("#mid-scroll").css("height", "auto");
             $("#main-popup").css("height", "auto");
 
         }
         else
         {
-            $("#main-popup").css("height", "92%");
-            height = $("#main-popup .body").innerHeight();
-            $("#mid-scroll").css("height", height - topHeight - 50 + "px")
+            $("#main-popup").css("height", "89%");
         }
     }, 700)
-    /*
-     if ($("#mid-scroll").find("#parent_type_multiple").text() == "" && $("#mid-scroll").find("#parent_type_one").text() == "") {
-     $("#mid-scroll").css("display", "none");
-     $("#main-popup").css("height", "auto");
-     }
-     else{
-     height = $("#main-popup .body").innerHeight();
-     $("#main-popup").css("height" , "90%");
-     $("#mid-scroll").css("height", height - topHeight - 50 + "px")
-     }
-     */
+
+
 }

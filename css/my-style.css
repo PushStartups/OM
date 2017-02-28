@@ -1,5 +1,14 @@
 /* Regular */
 
+#ic_back_arrow {
+    position:absolute;
+    top:40%;
+    left:10px;
+    width:30px;
+    padding:10px;
+    transform:translateY(-50%);
+}
+
 
 .top_notification {
     font-family: "HelveticaNeu";

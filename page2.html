@@ -14,7 +14,6 @@
     <script src="js/dropdown.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="js/ajaxServerRequestsPage2.js"></script>
-
 </head>
 
 <body>
@@ -37,6 +36,8 @@
 
 <div id="cards-drop" class="custom-drop-down">
     <input id='firstItem' value="" style="font-size: 18px" readonly />
+
+
     <img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">
     <div id="list" class="custom-drop-down-list">
         <ul id="categories_list">
@@ -187,7 +188,7 @@
 
                 <li>
                     <input type="checkbox" id="checkbox-id13"  /> <label for="checkbox-id13">
-                    coupon code
+                    Coupon code
                     <div>Use coupon code</div>
                 </label>
                 </li>
@@ -288,7 +289,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div id="cash-div" onclick="payment_credit_card()" class="choice">
+                        <div onclick="goToCards()" class="choice">
                                 <span>
                                     CREDIT
                                     CARD
@@ -303,17 +304,195 @@
 </div>
 
 
+<!--STRIPE CLIENT SIDE -->
 
 <div id="creditcard-info-popup" style="display: none" class="food-cart">
-    <header style="line-height: 30px;">
+    <header style="line-height: 20px;">
         <img class="ic_close" src="img/ic_close_white.png">
         <h5> PAYMENT INFO </h5>
-        <h2 class="totalBill"> 0 NIS </h2>
+        <h2 style="margin-bottom: 7px;padding-bottom:5px" class="totalBill"> 0 NIS </h2>
     </header>
-    <div id="payment_guard" style="overflow: hidden; overflow-y: scroll; min-height: 300px; height: calc(100% - 61px);  max-height: 800px; padding: 5px; width: 100%; -webkit-overflow-scrolling: touch;">
-    </div>
+    <form name="payment-form" id="payment-form" style="height:100%"  method="POST">
+
+        <section id="creditSection" style="overflow: auto; min-height: 300px;">
+
+            <div style="padding: 8px 15px; border-radius: 0;height: calc(100% - 42px);" class="inner-section" >
+                <div id="type-of-card">
+                    <p>Type of card </p>
+                    <span class="active">
+                        <img src="img/ic_visa.png">
+                    </span>
+                    <span>
+                        <img src="img/2.png">
+                    </span>
+                    <span>
+                        <img src="img/3.png">
+                    </span>
+                </div>
+
+                <div class="caption-input" style="margin-top: 13px; margin-bottom: 15px;">
+                    <span class="caption"> Name on card </span>
+                    <input style="line-height: 20px;" type="text" id="user_name" value="" size="20">
+                </div>
+
+
+                <div class="caption-input">
+                    <span class="caption"> Card number </span>
+                    <img src="img/ic_visa.png">
+                    <input maxlength="16" class="scroll2" style="line-height: 20px;" type="text" id="card_no" value="" size="20" data-stripe="number">
+                    <span style="color: red" class="error_card_num add-font"></span>
+                    <!--VALIDATE CARD NUMBER-->
+                    <script>
+                        $('#card_no').bind('input', function() {
+                            //alert($("#price").val());
+
+                            document.getElementsByClassName("error_card_num")[0].innerHTML = "";
+                            $("#card_no").removeClass("red-border");
+                            if((!this.value.match(/^\d+$/)))
+                            {
+                                if($("#card_no").val() == ''){
+
+                                    $("#card_no").removeClass("red-border");
+                                    document.getElementsByClassName("error_card_num")[0].innerHTML = "";
+                                }else {
+                                    $("#card_no").addClass("red-border");
+                                    document.getElementsByClassName("error_card_num")[0].innerHTML = "Invalid Card Number!";
+                                }
+                            }
+                            else
+                            {
+                                $("#card_no").removeClass("red-border");
+                            }
+                        });
+                    </script>
+                </div>
+
+
+                <table style="border-bottom:unset; width:100%">
+                    <tr>
+                        <td style="width:50%" >
+                            <div class="caption-input" style="margin-top: 10px">
+                                <div class="form-row">
+                                    <label>
+                                        <span style="width: 100%; font-size:11px; display:block">Expiration (MM/YY)</span>
+                                        <input style="width: 25%; line-height: 20px;" id="month"  type="number" size="2" data-stripe="exp_month">
+                                        <script>
+                                            $('#month').bind('input', function(e) {
+                                                //alert($("#price").val());
+                                                if ($(this).val() > 12) {
+                                                    e.preventDefault();
+                                                    $(this).val(12);
+
+                                                }
+                                            });
+                                        </script>
+                                    </label>
+                                    <span> / </span>
+                                    <input  maxlength="2" class="scroll2" style="width: 25%;  line-height: 20px;" id="year" type="number" size="2" data-stripe="exp_year">
+                                    <script>
+                                        $('#year').bind('input', function(e) {
+                                            //alert($("#price").val());
+
+
+                                            $("#year").removeClass("red-border");
+
+                                            if ($(this).val() > 99) {
+                                                e.preventDefault();
+                                                $(this).val(17);
+
+                                            }
+
+
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width:50%" >
+                            <div class="caption-input" style="margin-top: 10px">
+                                <span class="caption"> cvv </span>
+                                <img src="img/ic_cvs.png">
+                                <input class="scroll2"  style="line-height: 20px; border-bottom:1px solid #FEBEBC" size="4" data-stripe="cvc">
+                            </div>
+                        </td>
+                    </tr>
+                    <span style="color: red;font-size: 10px;" class="payment-errors"></span>
+
+                </table>
+
+
+                <div class="form-row" style="display: none">
+                    <label>
+                        <span>Billing ZIP Code</span>
+                        <input type="text" size="6" data-stripe="address_zip" value="5">
+                    </label>
+                </div>
+
+
+
+
+            </div>
+
+            <div onclick="$('#payment-form').submit();"  class="model-footer">Next</div>
+
+        </section>
+        
+    </form>
 
 </div>
+
+<!--STRIPE PAYMENT -->
+<script>
+
+    $(document).ready(function() {
+
+        $("#payment-form").submit(function(e){
+
+            addLoading();
+
+            var $form = $('#payment-form');
+
+            // Request a token from Stripe:
+            Stripe.card.createToken($form, stripeResponseHandler);
+
+            e.preventDefault(e);
+            return false;
+        });
+
+        function stripeResponseHandler(status, response) {
+            // Grab the form:
+            var $form = $('#payment-form');
+
+            if (response.error) { // Problem!
+
+                // Show the errors on the form:
+                $form.find('.payment-errors').text(response.error.message);
+
+                console.log(response.error.message);
+
+                hideLoading();
+
+            }
+            else
+            { // Token was created!
+
+                // Get the token ID:
+                var token = response.id;
+
+                console.log(token);
+
+                payment_credit_card(token);
+
+
+            }
+        };
+
+    });
+
+
+</script>
+<!--STRIPE PAYMENT ENDS-->
+
 
 
 
@@ -454,16 +633,10 @@
 </footer>
 
 
-<!--<div class="mini-popup">-->
-<!--<div id="mini-popup-body">-->
-<!--<ul>-->
-<!--<li>Umair</li>-->
-<!--<li>Umair</li>-->
-<!--<li>Umair</li>-->
-<!--<li>Umair</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    Stripe.setPublishableKey('pk_live_CnJ0Jj3sAkBcHi8K037WpyAC');
+</script>
 
 
 </body>
@@ -471,5 +644,6 @@
 <script>
     getCategoriesWithItems();
 </script>
+
 
 </html>

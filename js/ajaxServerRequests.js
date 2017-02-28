@@ -3,6 +3,17 @@
 var host = "http://"+window.location.hostname;
 
 
+// EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
+if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
+{
+    // SEND USER BACK TO HOME PAGE
+    window.location.href = '../index.html';
+}
+
+// RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
+var selectedCityId  = JSON.parse(localStorage.getItem("USER_CITY_ID"));
+
+
 var allRestJson     = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
 var minOrderLimit   = 0;     // MINIMUM ORDER LIMIT
 
@@ -64,7 +75,7 @@ function  getAllRestaurants()
 
         url: host+"/restapi/index.php/get_all_restaurants",
         type: "post",
-        data: "",
+        data: {'city_id':selectedCityId},
 
         success: function (response)
         {
@@ -78,81 +89,80 @@ function  getAllRestaurants()
             for(var x=0 ;x <result.length;x++)
             {
 
-                var temp = "";
-                var tagsString  =  fromTagsToString (result[x]);
+                    var temp = "";
+                    var tagsString = fromTagsToString(result[x]);
 
-                // RESTAURANT CURRENTLY ACTIVE 
-                if(result[x].availability)
-                {
+                    // RESTAURANT CURRENTLY ACTIVE
+                    if (result[x].availability) {
 
-                    temp +=  '<div class="accordion-group animate-box fadeInUp animated">'+
-                        '<div class="accordion-heading">'+
-                        '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+x+'">'+
-                        '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
-                        '<div class="status_online">'+'</div>'+
-                        '<div class="img_cernter_crop">'+
-                        '<img src='+ result[x].logo +' class="picture-src">'+
-                        '</div>'+
-                        '<div id="right-triangle">'+'</div>'+
-                        '<div class="resto_title" >'+
-                        '<h3><b>'+result[x].name_en+'</b></h3>'+
-                        '<span><b>'+result[x].hechsher_en+'</b></span>'+
-                        '<p style="font-size: 14px"><b>'+ tagsString +'</b></p>'+
-                        '</div>'+
-                        '</div>'+
-                        '</a>'+
-                        '</div>'+
-                        '<div class="clearfix">'+'</div>'+
-                        '<div id="collapse'+x+'"class="accordion-body collapse">'+
-                        '<div class="accordion-inner">'+
-                        '<p style="word-break: normal"><b>'+ result[x].description_en +'</b></p>'+
-                        '<div class="btn-group btn-group-justified">'+
-                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">'+ result[x].address_en +'</p></div>'+
-                        '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now<img src="img/dropdown.png"></p><span class="text-left"><b>'+result[x].today_timings+'</b></span></a>'+
-                        '<a href="#" onClick="return false;" onClick="return false;" id="pop'+x+'" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p><span>View Gallery</span></a>'+
-                        '</div>'+
-                        '<a href="#" id="ordernow'+x+'" class="order_now">Order Now</a>'+
-                        '</div>'+
-                        '</div>'+
-                        '</div>';
+                        temp += '<div class="accordion-group animate-box fadeInUp animated">' +
+                            '<div class="accordion-heading">' +
+                            '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' + x + '">' +
+                            '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
+                            '<div class="status_online">' + '</div>' +
+                            '<div class="img_cernter_crop">' +
+                            '<img src=' + result[x].logo + ' class="picture-src">' +
+                            '</div>' +
+                            '<div id="right-triangle">' + '</div>' +
+                            '<div class="resto_title" >' +
+                            '<h3><b>' + result[x].name_en + '</b></h3>' +
+                            '<span><b>' + result[x].hechsher_en + '</b></span>' +
+                            '<p style="font-size: 14px"><b>' + tagsString + '</b></p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</a>' +
+                            '</div>' +
+                            '<div class="clearfix">' + '</div>' +
+                            '<div id="collapse' + x + '"class="accordion-body collapse">' +
+                            '<div class="accordion-inner">' +
+                            '<p style="word-break: normal"><b>' + result[x].description_en + '</b></p>' +
+                            '<div class="btn-group btn-group-justified">' +
+                            '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">' + result[x].address_en + '</p></div>' +
+                            '<a href="#" onClick="return false;" onClick="return false;" id="timings' + x + '" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now<img src="img/dropdown.png"></p><span class="text-left"><b>' + result[x].today_timings + '</b></span></a>' +
+                            '<a href="#" onClick="return false;" onClick="return false;" id="pop' + x + '" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p><span>View Gallery</span></a>' +
+                            '</div>' +
+                            '<a href="#" id="ordernow' + x + '" class="order_now">Order Now</a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
 
-                }
-                // CURRENTLY NOT AVAILABLE 
-                else {
+                    }
+                    // CURRENTLY NOT AVAILABLE
+                    else {
 
-                    temp += '<div class="accordion-group animate-box fadeInUp animated">'+
-                        '<div class="accordion-heading">'+
-                        '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse'+x+'">'+
-                        '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
-                        '<div class="status_offline"><span class="close_arrow" aria-hidden="true">×</span></div>'+
-                        '<div class="img_cernter_crop">'+
-                        '<img src='+ result[x].logo +' class="picture-src">'+
-                        '</div>'+
-                        '<div id="right-triangle"></div>'+
-                        '<div class="resto_title" >'+
-                        '<h3><b>'+result[x].name_en+'</b></h3>'+
-                        '<span><b>'+result[x].hechsher_en+'</b></span>'+
-                        '<h3 style="font-size: 16px"><b>'+ tagsString +'</b></h3>'+
-                        '</div>'+
-                        '</div>'+
-                        '</a>'+
-                        '</div>'+
-                        '<div class="clearfix"></div>'+
-                        '<div id="collapse'+x+'" class="accordion-body collapse">'+
-                        '<div class="accordion-inner">'+
-                        '<p style="word-break: normal"><b>'+ result[x].description_en +'</b></p>'+
-                        '<div class="btn-group btn-group-justified">'+
-                        '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">'+ result[x].address_en +'</p></div>'+
-                        '<a href="#" onClick="return false;" onClick="return false;" id="timings'+x+'" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left"><b>Closed Now</b><img src="img/dropdown.png"></p> <span class="text-left"></span></a>'+
-                        '<a href="#" onClick="return false;" onClick="return false;" id="pop'+x+'" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>'+
-                        '</div>'+
-                        '<a href="#" id="ordernow'+x+'" class="order_now_gray">Order Now <p>'+result[x].hours_left_to_open+'</p></a>'+
-                        '</div>'+
-                        '</div>'+
-                        '</div>';
-                }
+                        temp += '<div class="accordion-group animate-box fadeInUp animated">' +
+                            '<div class="accordion-heading">' +
+                            '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' + x + '">' +
+                            '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
+                            '<div class="status_offline"><span class="close_arrow" aria-hidden="true">×</span></div>' +
+                            '<div class="img_cernter_crop">' +
+                            '<img src=' + result[x].logo + ' class="picture-src">' +
+                            '</div>' +
+                            '<div id="right-triangle"></div>' +
+                            '<div class="resto_title" >' +
+                            '<h3><b>' + result[x].name_en + '</b></h3>' +
+                            '<span><b>' + result[x].hechsher_en + '</b></span>' +
+                            '<h3 style="font-size: 16px"><b>' + tagsString + '</b></h3>' +
+                            '</div>' +
+                            '</div>' +
+                            '</a>' +
+                            '</div>' +
+                            '<div class="clearfix"></div>' +
+                            '<div id="collapse' + x + '" class="accordion-body collapse">' +
+                            '<div class="accordion-inner">' +
+                            '<p style="word-break: normal"><b>' + result[x].description_en + '</b></p>' +
+                            '<div class="btn-group btn-group-justified">' +
+                            '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">' + result[x].address_en + '</p></div>' +
+                            '<a href="#" onClick="return false;" onClick="return false;" id="timings' + x + '" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left"><b>Closed Now</b><img src="img/dropdown.png"></p> <span class="text-left"></span></a>' +
+                            '<a href="#" onClick="return false;" onClick="return false;" id="pop' + x + '" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>' +
+                            '</div>' +
+                            '<a href="#" id="ordernow' + x + '" class="order_now_gray">Order Now <p>' + result[x].hours_left_to_open + '</p></a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
 
-                allRestaurants += temp;
+                    allRestaurants += temp;
 
 
             }

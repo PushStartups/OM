@@ -23,17 +23,16 @@ var isMobile = {
 
 if(!isMobile.any())
 {
-    var host = "http://"+window.location.hostname;
-    check =  host.includes("staging");
-
-    if(check == true)
-    {
-        window.location.href = 'http://staging.orderapp.com';
-    }
-    else
+     if(window.location.hostname == "dev.m.orderapp.com")
+     {
+         window.location.href = 'http://dev.landing.orderapp.com';
+     }
+     else if(window.location.hostname == "staging.m.orderapp.com")
+     {
+         window.location.href = 'http://staging.orderapp.com';
+     }
+     else
     {
         window.location.href = 'http://orderapp.com';
     }
-
-
 }

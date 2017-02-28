@@ -1079,32 +1079,68 @@ function CheckCouponFromServer() {
 
 
 // CREDIT CARD PAYMENT
-function payment_credit_card() {
+function payment_credit_card(token) {
 
-    addLoading();
-
-    //  REQUEST COUPON VALIDATION
+    //  REQUEST PAYMENT
     $.ajax({
 
-        url: host + "/restapi/index.php/get_credit_card_payment_url",
+        url: host + "/restapi/index.php/stripe_payment_request",
         type: "post",
+
         data: {
-            "amount": userObject.total,
-            "email": userObject.email
+
+            "amount" : userObject.total,
+            "email"  : userObject.email,
+            "token"  : token
+
         }, //  AMOUNT OF ORDER AND USER EMAIL
+
 
         // RESPONSE RECEIVE SUCCESSFULLY
 
         success: function (response) {
 
-            var resp = decodeURIComponent(JSON.parse(response));
-            console.log(resp);
+            var resp = '';
 
-            $('#payment_guard').html("<iframe src='"+resp+"' width='100%' height='100%' frameBorder='0'/>");
+            try {
 
-            goToCards();
+                resp = JSON.parse(response);
+            }
+            catch (e)
+            {
+                resp = response;
+                console.log(resp);
+            }
+
+            if(response == "success")
+            {
+                onPaymentSuccess();
+                hideLoading();
+            }
+            else
+            {
+               $(".payment-errors").html(resp);
+               $(".payment-errors").show();
+                hideLoading();
+
+                var delayMillis = 500; //1 second
+
+                setTimeout(function() {
+
+                    $("#creditSection").animate({
+
+                        scrollTop: 500
+
+                    }, 200);
+
+
+                }, delayMillis);
+
+
+            }
+
+
             hideLoading();
-
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -1137,7 +1173,7 @@ function confirmOrder(paymentChoice)
 
     for(var x=0;x< foodCartData.length ;x++)
     {
-       str += "<b>"+foodCartData[x].name+"</b>"+"<br>"+foodCartData[x].detail+"<br>";
+        str += "<b>"+foodCartData[x].name+" X "+foodCartData[x].qty+"</b>"+"<br>"+foodCartData[x].detail+"<br>";
     }
 
     $('#all_orders_str').html(str);

@@ -1,0 +1,112 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="script/jquery.bpopup.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="style/index.css" rel="stylesheet" />
+
+    <script src="script/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="rtl">
+    <nav>
+        <ul>
+            <li id="about" class="desktop-only"><a dir="rtl" href="#">אודות</a></li>
+            <li><a href="#">EN</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="center-div">
+            <span id="logo">
+                <img src="images/logo.png">
+                <span> Order App </span>
+            </span>
+
+            <p dir="rtl"> הזמן חכם <br> הזמן מהר </p>
+
+<div style="height: 62px; position: relative" >
+            <div class="dropdown custom-drop" style="height: 100%" >
+
+                <button class="btn btn-primary dropdown-toggle" style="height: 100%" id="menu1" type="button" data-toggle="dropdown">
+                    <span id="text-span"> Choose a city </span>
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="items">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+                <div id="error-field" dir="rtl">
+                    *נדרש
+                </div>
+           
+            </div>
+             <button class="btn-start"> התחל עכשיו </button>
+             </div>
+        </div>
+    </div>
+
+    <img class="mobile-bike" src="images/scoter-m-he.png">
+    <img class="desktop-bike" src="images/scoter-desk-he.png">
+
+
+    <!--ABOUT US -->
+    <div id="popup" class="aboutMsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+        <div class="modal-dialog">
+            <img onclick="$('.b-modal').click()"  data-dismiss="modal" style="width:50px; padding:13px; margin-bottom:-10px;" src="images/close.png" >
+            <div class="modal-dialog gallery_digonal">
+                <div class="modal-content">
+                    <div class="modal-body text-right">
+                        <h1 align="center">OrderApp, order fast.</h1>
+                        <p dir="rtl">
+                            "מה יש לארוחת ערב?"
+                            <br>
+                            "אתה תבחר"
+                            <br>
+                            "אני יבחר אבל אתה תזמין בטלפון"
+                            <br>
+                            "אוקיי, שכח מזה. אני יבחר ואתה תזמין בטלפון"
+                            <br>
+                            <br>
+                            נשמע מוכר? כולנו שונאים את השיחה המייגעת הזו של 8 עד 10 דקות, צועקים כדי להישמע ברור במקביל לרעשי הרקע , כאשר כל מה שאתה בסך הכל רוצה לעשות זה להזמין איזה המבורגר.
+                            <br><br>
+                            היכנס ל- OrderApp! אם כמה לחיצות על המסך אתה יכול למצוא רשימה כוללת של מסעדות באזור שלך המציעות הזמנות בכל זמן שתרצה. תוכל לבחור מסעדה, לראות תפריט כולל ואז לשלוח את ההזמנה שלך דרך צ'אט , ללא צורך לדבר עם בן אדם שלא מבין אותך. ההזמנה שלך תישמר בצ'אט ובכך יצומצם משמעותית  הסיכוי שהמסעדה תשבש את ההזמנה שלך.
+                            <br><br>
+                            אין צורך לסבול ולהתווכח יותר על הזמנות מתישות בטלפון. עם OrderApp תוכל לבצע בפשטות הזמנה שתישלח ישירות אליך ללא מאבקים או דמעות בטלפון.
+                            <br><br>
+                            * בחסות Push Startups
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    $(function () {
+
+        $('#about').click(function () {
+
+            $('.aboutMsg').bPopup({
+
+                speed: 1050,
+                transition: 'slideDown'
+            });
+        });
+    });
+
+</script>
+
+</html>
