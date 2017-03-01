@@ -11,7 +11,7 @@ var currentItemIndex            = null;                                         
 var oneTypeSubItems             = null;                                           // SUB-ITEMS TYPE ONE
 var multipleTypeSubItems        = null;                                           // SUB-ITEMS TYPE MULTIPLE
 var extras                      = null;                                           // EXTRAS FROM SERVER
-var minOrderLimit               = localStorage.getItem('min_order_amount');       // MINIMUM ORDER LIMIT
+var minOrderLimit               = null;                                           // MINIMUM ORDER LIMIT
 
 
 //SERVER HOST DETAIL
