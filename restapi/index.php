@@ -514,6 +514,9 @@ $app->post('/add_order', function ($request, $response, $args) {
     email_order_summary_hebrew_admin($user_order,$orderId,$todayDate);
 
 
+    // SEND EMAIL TO KETCHES
+
+    email_for_kitchen($user_order,$orderId,$todayDate);
 
 
     ob_end_clean();
@@ -1148,5 +1151,131 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     }
 
 }
+
+
+
+
+// ADMIN EMAIL
+// EMAIL ORDER SUMMARY HEBREW VERSION FOR ADMIN
+function email_for_kitchen($user_order,$orderId,$todayDate)
+{
+
+    $mailbody  = '<html>
+                  <head>
+                  <meta charset="UTF-8">
+                  </head>
+                  <body style="padding: 15px; margin: 15px;font-size: 16px" dir="rtl" >';
+
+    $mailbody .= ' <span dir="rtl">
+        שם הלקוח :  
+        '.$user_order['name'].'
+    </span>';
+
+    $mailbody .= '<br>';
+
+    $mailbody .= ' <span dir="rtl">
+       מספר :  
+  '.$user_order['contact'].'
+    </span>';
+
+    $mailbody .= '<br>';
+
+
+
+    if($user_order['pickFromRestaurant'] == 'false')
+    {
+        $mailbody .= ' <span dir="rtl">
+       כתובת:  
+    '.$user_order['deliveryAddress'].'
+    </span>';
+
+    }
+    else
+    {
+        $mailbody .= ' <span dir="rtl">
+       כתובת:  
+    '.$user_order['restaurantAddress'].'
+    </span>';
+    }
+
+    $mailbody .= '<br>';
+
+    $mailbody .= ' <span dir="rtl">
+       כתובת:  
+   '.substr($user_order['contact'],-4).'
+    </span>';
+
+    $mailbody .= '<br>';
+    $mailbody .= '<br>';
+    $mailbody .= '<br>';
+
+    foreach($user_order['cartData'] as $t) {
+
+
+        $mailbody .= '<span dir="rtl">'.$t['qty'].'  '.$t['name_he'].'</span>';
+        $mailbody .= '<br>';
+        $mailbody .= '<span dir="rtl">'.preg_replace("/\([^)]+\)/","",$t['detail_he']).'</span>';
+        $mailbody .= '<br>';
+        $mailbody .= '<br>';
+
+    }
+
+    $mail = new PHPMailer;
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
+    //From email address and name
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
+
+
+    //To address and name
+    $mail->addAddress(EMAIL);                    //SEND ADMIN EMAIL
+
+
+    //Address to which recipient will reply
+    $mail->addReplyTo("order@orderapp.com", "Reply");
+
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(true);
+    $mail->Subject =  substr($user_order['contact'],-4)." #".$user_order['restaurantTitleHe'];
+    $mail->Body = "<i>$mailbody</i>";
+    $mail->AltBody = "OrderApp";
+
+    if (!$mail->send())
+    {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+    else
+    {
+        echo "Message has been sent successfully";
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
