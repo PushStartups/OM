@@ -48,6 +48,11 @@ $(document).ready(function() {
         'totalWithoutDiscount': null       // TOTAL WITHOUT DISCOUNT
     };
 
+
+    getMinimumValue();   // GET MINIMUM ORDER VALUE
+    getAllRestaurants(); // GET LIST OF ALL RESTAURANTS
+
+
 });
 
 

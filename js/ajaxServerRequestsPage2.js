@@ -3,37 +3,49 @@ var host             = null;
 var userObject       = null; // MAIN USER OBJECT
 var foodCartData     = [];   // DISPLAY DATA FOR FOOD CART
 
+var result                      = null;                                           // SERVER RESPONSE RAW
+var restName                    = null;                                           // SELECTED RESTAURANT NAME
+var restId                      = null;                                           // SELECTED RESTAURANT ID
+var currentCategoryId           = null;                                           // CURRENT SELECTED CATEGORY
+var currentItemIndex            = null;                                           // CURRENT ITEM SELECTED
+var oneTypeSubItems             = null;                                           // SUB-ITEMS TYPE ONE
+var multipleTypeSubItems        = null;                                           // SUB-ITEMS TYPE MULTIPLE
+var extras                      = null;                                           // EXTRAS FROM SERVER
+var minOrderLimit               = localStorage.getItem('min_order_amount');       // MINIMUM ORDER LIMIT
+
 
 //SERVER HOST DETAIL
 $(document).ready(function() {
 
- host = "http://"+window.location.hostname;
+    host = "http://"+window.location.hostname;
 
 
 // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER_OBJECT") == "" || localStorage.getItem("USER_OBJECT") == null)
-{
-    // SEND USER BACK TO HOME PAGE
-    window.location.href = '../index.html';
-}
+    if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER_OBJECT") == "" || localStorage.getItem("USER_OBJECT") == null)
+    {
+        // SEND USER BACK TO HOME PAGE
+        window.location.href = '../index.html';
+    }
 
 // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
+    userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
 
-var result                      = null;                                            // SERVER RESPONSE RAW
-var restName                    = userObject.restaurantTitle;                      // SELECTED RESTAURANT NAME
-var restId                      = userObject.restaurantId;                         // SELECTED RESTAURANT ID
-var currentCategoryId           = 0;                                               // CURRENT SELECTED CATEGORY
-var currentItemIndex            = 0;                                               // CURRENT ITEM SELECTED
-var oneTypeSubItems             = [];                                              // SUB-ITEMS TYPE ONE
-var multipleTypeSubItems        = [];                                              // SUB-ITEMS TYPE MULTIPLE
-var extras                      = null;                                            // EXTRAS FROM SERVER
-var minOrderLimit               = localStorage.getItem('min_order_amount');        // MINIMUM ORDER LIMIT
+
+     result                      = null;                                            // SERVER RESPONSE RAW
+     restName                    = userObject.restaurantTitle;                      // SELECTED RESTAURANT NAME
+     restId                      = userObject.restaurantId;                         // SELECTED RESTAURANT ID
+     currentCategoryId           = 0;                                               // CURRENT SELECTED CATEGORY
+     currentItemIndex            = 0;                                               // CURRENT ITEM SELECTED
+     oneTypeSubItems             = [];                                              // SUB-ITEMS TYPE ONE
+     multipleTypeSubItems        = [];                                              // SUB-ITEMS TYPE MULTIPLE
+     extras                      = null;                                            // EXTRAS FROM SERVER
+     minOrderLimit               = localStorage.getItem('min_order_amount');        // MINIMUM ORDER LIMIT
+
+
+    getCategoriesWithItems();
 
 });
-
-
 
 // GET ALL CATEGORIES WITH ITEMS FROM SERVER AGAINST RESTAURANT SELECTED
 function  getCategoriesWithItems()
@@ -1127,8 +1139,8 @@ function payment_credit_card(token) {
             }
             else
             {
-               $(".payment-errors").html(resp);
-               $(".payment-errors").show();
+                $(".payment-errors").html(resp);
+                $(".payment-errors").show();
                 hideLoading();
 
                 var delayMillis = 500; //1 second
