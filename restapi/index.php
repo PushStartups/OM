@@ -496,6 +496,12 @@ $app->post('/add_order', function ($request, $response, $args) {
     }
 
 
+    // SEND EMAIL TO KETCHES
+
+    email_for_kitchen($user_order,$orderId,$todayDate);
+
+    ob_end_clean();
+
     // CLIENT EMAIL
     // EMAIL ORDER SUMMARY
 
@@ -508,15 +514,13 @@ $app->post('/add_order', function ($request, $response, $args) {
         email_order_summary_hebrew($user_order,$orderId,$todayDate);
     }
 
+    ob_end_clean();
 
     // SEND ADMIN COPY EMAIL ORDER SUMMARY
 
     email_order_summary_hebrew_admin($user_order,$orderId,$todayDate);
 
 
-    // SEND EMAIL TO KETCHES
-
-    email_for_kitchen($user_order,$orderId,$todayDate);
 
 
     ob_end_clean();
@@ -1160,7 +1164,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 function email_for_kitchen($user_order,$orderId,$todayDate)
 {
 
-    $mailbody  = '<html>
+    $mailbody = '<html>
                   <head>
                   <meta charset="UTF-8">
                   </head>
@@ -1168,25 +1172,23 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
     $mailbody .= ' <span dir="rtl">
         שם הלקוח :  
-        '.$user_order['name'].'
+        ' . $user_order['name'] . '
     </span>';
 
     $mailbody .= '<br>';
 
     $mailbody .= ' <span dir="rtl">
        מספר :  
-  '.$user_order['contact'].'
+  ' . $user_order['contact'] . '
     </span>';
 
     $mailbody .= '<br>';
 
 
-
-    if($user_order['pickFromRestaurant'] == 'false')
-    {
+    if ($user_order['pickFromRestaurant'] == 'false') {
         $mailbody .= ' <span dir="rtl">
        כתובת:  
-    '.$user_order['deliveryAddress'].'
+    ' . $user_order['deliveryAddress'] . '
     </span>';
 
     }
@@ -1194,27 +1196,27 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     {
         $mailbody .= ' <span dir="rtl">
        כתובת:  
-    '.$user_order['restaurantAddress'].'
+    איסוף עצמי
     </span>';
     }
 
     $mailbody .= '<br>';
 
     $mailbody .= ' <span dir="rtl">
-       כתובת:  
-   '.substr($user_order['contact'],-4).'
+      הזמנה:  
+   ' . substr($user_order['contact'], -4) . '
     </span>';
 
     $mailbody .= '<br>';
     $mailbody .= '<br>';
     $mailbody .= '<br>';
 
-    foreach($user_order['cartData'] as $t) {
+    foreach ($user_order['cartData'] as $t) {
 
 
-        $mailbody .= '<span dir="rtl">'.$t['qty'].'  '.$t['name_he'].'</span>';
+        $mailbody .= '<span dir="rtl">' . $t['qty'] . '  ' . $t['name_he'] . '</span>';
         $mailbody .= '<br>';
-        $mailbody .= '<span dir="rtl">'.preg_replace("/\([^)]+\)/","",$t['detail_he']).'</span>';
+        $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']) . '</span>';
         $mailbody .= '<br>';
         $mailbody .= '<br>';
 
@@ -1249,33 +1251,16 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
     //Send HTML or Plain Text email
     $mail->isHTML(true);
-    $mail->Subject =  substr($user_order['contact'],-4)." #".$user_order['restaurantTitleHe'];
+    $mail->Subject = " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     $mail->Body = "<i>$mailbody</i>";
     $mail->AltBody = "OrderApp";
 
-    if (!$mail->send())
-    {
+    if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
-    }
-    else
-    {
+    } else {
         echo "Message has been sent successfully";
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
 
