@@ -813,11 +813,12 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 //To address and name
     $mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
-    $mail->addAddress(EMAIL);                    //SEND  CLIENT EMAIL COPY TO ADMIN
+
+    $mail->AddCC(EMAIL);                        //SEND  CLIENT EMAIL COPY TO ADMIN
 
 //Send HTML or Plain Text email
     $mail->isHTML(true);
-    $mail->Subject = 'New Order '.$user_order['restaurantTitle'];
+    $mail->Subject = $user_order['restaurantTitle'].' Order# '.$orderId;
     $mail->Body = "<i>$mailbody</i>";
     $mail->AltBody = "OrderApp";
 
