@@ -17,7 +17,7 @@ if($_SERVER['HTTP_HOST'] == "dev.m.orderapp.com")
     define("EMAIL","muhammad.iftikhar.aftab@gmail.com");
 
 // QA SERVER
-else if($_SERVER['HTTP_HOST'] == "qa.webclient@orderapp.com")
+else if($_SERVER['HTTP_HOST'] == "qa.m.orderapp.com")
     define("EMAIL","qaorders@orderapp.com");
 
 // PRODUCTION SERVER
