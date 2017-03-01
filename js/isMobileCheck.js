@@ -23,15 +23,19 @@ var isMobile = {
 
 if(!isMobile.any())
 {
-     if(window.location.hostname == "dev.m.orderapp.com")
-     {
-         window.location.href = 'http://dev.landing.orderapp.com';
-     }
-     else if(window.location.hostname == "staging.m.orderapp.com")
-     {
-         window.location.href = 'http://staging.orderapp.com';
-     }
-     else
+    if(window.location.hostname == "dev.m.orderapp.com")
+    {
+        window.location.href = 'http://dev.landing.orderapp.com';
+    }
+    else if(window.location.hostname == "qa.m.orderapp.com")
+    {
+        window.location.href = 'http://qa.landing.orderapp.com';
+    }
+    else if(window.location.hostname == "staging.m.orderapp.com")
+    {
+        window.location.href = 'http://staging.orderapp.com';
+    }
+    else
     {
         window.location.href = 'http://orderapp.com';
     }

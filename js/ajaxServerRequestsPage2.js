@@ -1,6 +1,13 @@
 //SERVER HOST DETAIL
+var host             = null;
+var userObject       = null; // MAIN USER OBJECT
+var foodCartData     = [];   // DISPLAY DATA FOR FOOD CART
 
-var host = "http://"+window.location.hostname;
+
+//SERVER HOST DETAIL
+$(document).ready(function() {
+
+ host = "http://"+window.location.hostname;
 
 
 // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
@@ -11,7 +18,7 @@ if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER
 }
 
 // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-var userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
+userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
 
 var result                      = null;                                            // SERVER RESPONSE RAW
@@ -24,9 +31,10 @@ var multipleTypeSubItems        = [];                                           
 var extras                      = null;                                            // EXTRAS FROM SERVER
 var minOrderLimit               = localStorage.getItem('min_order_amount');        // MINIMUM ORDER LIMIT
 
+});
 
-// FOOD CART DATA 
-var foodCartData                = [];                                              // DISPLAY DATA FOR FOOD CART
+
+
 // GET ALL CATEGORIES WITH ITEMS FROM SERVER AGAINST RESTAURANT SELECTED
 function  getCategoriesWithItems()
 {

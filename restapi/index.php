@@ -109,7 +109,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
         $dayOfWeek             =    date('l', strtotime( $tempDate));
 
         // RESTAURANT AVAILABILITY ACCORDING TO TIME
-        $currentStatus = true;
+        $currentStatus = false;
 
         $today_timings = "";
 
@@ -750,6 +750,10 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
     $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png" ></td>';
+    $mailbody .= '<td style="text-align: left; white-space: nowrap"> '.$user_order['name'].' </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
+    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png" ></td>';
     $mailbody .= '<td style="text-align: left; white-space: nowrap"> '.$user_order['contact'].' </td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
@@ -1066,6 +1070,10 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mailbody .= '<table style="float: right;color:black; padding:10px 30px; width: 270px; position: relative; left: calc(100% - 270px)" cellspacing="5px">';
     $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
     $mailbody .= '<td colspan="2" style="padding: 10px 0; text-align: right" dir="rtl" > מידע ללקוחות   </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['name'].' </td>';
+    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png"></td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['contact'].' </td>';

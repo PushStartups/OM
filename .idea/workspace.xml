@@ -2,268 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/helveticaneue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/delivery-desktop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/delivery-mobile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/home-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/ic_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/scoter-desk-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/scoter-m-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/angus_items/angus_wm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/bandora_items/bandora_wm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/japan_items/japan_wm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/ken_gallery/ken_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/ken_gallery/ken_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/mesh_items/mesh_wm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_gallery/oshi_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_gallery/oshi_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_gallery/oshi_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Adamame.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Apple.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Carlberg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Chicken_Chilli-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Chicken_Salad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Chicken_Tariaki.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Cola_Bottle.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Curry_Wok.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Diet_Coke_Bottle.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Dim_Sam_Meat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Dim_Sam_Vegan.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Egrol-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Egrol2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Fanta.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Fride_Rice_Chicken.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Fujiama.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/FuzeTea.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Gioza-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Gioza.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Grapefruit.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Happy_Family.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Japan.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Kachi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Kimchi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Krispi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Misu_Noodle_Soup-300X300.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Misu_Shiru_Soup.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Nigeri_Avocado.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Nigeri_Denis.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Nigeri_Salmon.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Nigeri_Tamago.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Nigeri_Tuna.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Okinoama.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Orange.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Oshi_Oshi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Oshi_Wok.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Padthai.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Padthai_Oshi.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Product_pic487225-300x218.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Rice.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Sanchai_salad2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Sashimi_Salmon_Salad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Soda.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Specail.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Sprite.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Sprite_Zero.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Sushitrian.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/TakiTunaSalad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Tampura_Mush1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Tofu_Salad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Veggie_Combo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Vegiterian.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Vegtable_Noodels.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Water_Grape.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/Zero_bottle.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/combogrande.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/combogrande2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/fish_chips1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/grape.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/oshi_wm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/product_pic487222-300x218.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/tempura_chicken-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/tempura_chicken-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/oshi_items/test.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/roza_items/roza_wm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/data/test.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gloria_lading_city_page.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/Helvetica Neu Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue BlackCond.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue Medium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue Thin.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueBd.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueHv.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueIt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueLt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueMed.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/lobster/Lobster.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/lobster/Lobster.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index_he.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/ajaxServerRequestsIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.coveralls.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.github/ISSUE_TEMPLATE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/stripe.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/VERSION" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/build.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/charge.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/data/ca-certificates.crt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/init.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Account.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/AlipayAccount.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ApiRequestor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ApiResource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ApiResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ApplePayDomain.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ApplicationFee.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ApplicationFeeRefund.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/AttachedObject.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Balance.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/BalanceTransaction.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/BankAccount.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/BitcoinReceiver.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/BitcoinTransaction.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Card.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Charge.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Collection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/CountrySpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Coupon.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Customer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Dispute.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/Api.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/ApiConnection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/Authentication.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/Base.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/Card.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/InvalidRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/Permission.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Error/RateLimit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Event.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ExternalAccount.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/FileUpload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/HttpClient/ClientInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/HttpClient/CurlClient.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Invoice.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/InvoiceItem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/JsonSerializable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Order.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/OrderReturn.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Plan.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Product.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Recipient.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Refund.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/SKU.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/SingletonApiResource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Source.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Stripe.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/StripeObject.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Subscription.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/SubscriptionItem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/ThreeDSecure.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Token.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Transfer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/TransferReversal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Util/AutoPagingIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Util/RequestOptions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Util/Set.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/lib/Util/Util.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/phpunit.no_autoload.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/phpunit.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/AccountTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ApiRequestorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ApplePayDomainTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ApplicationFeeRefundTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ApplicationFeeTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/AuthenticationErrorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/BalanceTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/BalanceTransactionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/BankAccountTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/BitcoinReceiverTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/CardErrorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ChargeTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/CollectionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/CountrySpecTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/CouponTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/CurlClientTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/CustomerTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/DiscountTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/DisputeTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ErrorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ExternalAccountTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/FileUploadTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/InvalidRequestErrorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/InvoiceTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/PermissionsErrorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/PlanTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ProductTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/RateLimitErrorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/RecipientTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/RefundTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/RequestOptionsTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/SourceTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/StripeObjectTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/SubscriptionItemTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/SubscriptionTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/TestCase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/ThreeDSecureTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/TokenTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/TransferReversalTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/TransferTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/UtilTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/bootstrap.no_autoload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/stripe/tests/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/jquery.bpopup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_burger.jpg" afterPath="$PROJECT_DIR$/img/roza_items/roza_burger.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_noodles.jpg" afterPath="$PROJECT_DIR$/img/roza_items/roza_chicken_noodles.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_pasta.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_chicken_pasta.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_sandwich.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_chicken_sandwich.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_saute_salad.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_chicken_saute_salad.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_special.jpg" afterPath="$PROJECT_DIR$/img/roza_items/roza_chicken_special.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_tortilla.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_chicken_tortilla.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_entrecote_pasta.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_entrecote_pasta.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_foccacia.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_foccacia.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_fries.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_fries.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_kebab_foccacia.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_kebab_foccacia.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_kids_shnitzel.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_kids_shnitzel.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_noodles.jpg" afterPath="$PROJECT_DIR$/img/roza_items/roza_meat_noodles.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_salad.jpg" afterPath="$PROJECT_DIR$/img/roza_items/roza_meat_salad.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_sandwich.jpg" afterPath="$PROJECT_DIR$/img/roza_items/roza_meat_sandwich.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_tortilla.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_meat_tortilla.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_pasta_bolognase.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_pasta_bolognase.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_salad.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_salad.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/roza_items/roza_shnitzelonim.JPG" afterPath="$PROJECT_DIR$/img/roza_items/roza_shnitzelonim.JPG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/images/ic_user.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/my-style.css" afterPath="$PROJECT_DIR$/css/my-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajaxServerRequests.js" afterPath="$PROJECT_DIR$/js/ajaxServerRequests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajaxServerRequestsPage2.js" afterPath="$PROJECT_DIR$/js/ajaxServerRequestsPage2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/isMobileCheck.js" afterPath="$PROJECT_DIR$/js/isMobileCheck.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page1.html" afterPath="$PROJECT_DIR$/page1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page2.html" afterPath="$PROJECT_DIR$/page2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
@@ -284,7 +28,7 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -310,15 +54,15 @@
         <option value="$PROJECT_DIR$/Index-rtl.html" />
         <option value="$PROJECT_DIR$/Index-rtl(1).html" />
         <option value="$PROJECT_DIR$/js/ajaxServerRequestsIndex.js" />
-        <option value="$PROJECT_DIR$/js/ajaxServerRequests.js" />
-        <option value="$PROJECT_DIR$/page1.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/page2.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/page1.html" />
+        <option value="$PROJECT_DIR$/js/isMobileCheck.js" />
         <option value="$PROJECT_DIR$/restapi/index.php" />
         <option value="$PROJECT_DIR$/js/ajaxServerRequestsPage2.js" />
-        <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/isMobileCheck.js" />
+        <option value="$PROJECT_DIR$/js/ajaxServerRequests.js" />
       </list>
     </option>
   </component>
@@ -363,8 +107,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -385,7 +129,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,6 +143,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\orderapp\website_2.0\restapi\images" />
       <recent name="C:\wamp64\www\orderapp\website_2.0\db_dump" />
       <recent name="D:\Upwork Drive\PushStartUps\Order App\Front End\gloria_lading_city_page" />
       <recent name="D:\Upwork Drive\PushStartUps\Order App\Front End\gloria_lading_city_page\script" />
@@ -846,12 +591,23 @@
       <workItem from="1488196645268" duration="1013000" />
       <workItem from="1488197765389" duration="9025000" />
       <workItem from="1488271022221" duration="14125000" />
-      <workItem from="1488293443035" duration="78000" />
+      <workItem from="1488293443035" duration="420000" />
+      <workItem from="1488298153840" duration="586000" />
+      <workItem from="1488341110697" duration="8000" />
+      <workItem from="1488359333413" duration="3179000" />
     </task>
+    <task id="LOCAL-00001" summary="Final Production Release 28 Feb 2017">
+      <created>1488293548112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1488293548112</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34123000" />
+    <option name="totallyTimeSpent" value="38238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -868,7 +624,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17397882" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15960665" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -894,16 +650,114 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Final Production Release" />
+    <MESSAGE value="Final Production Release 28 Feb 2017" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Production Release 28 Feb 2017" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsPage2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18904">
+          <caret line="1112" column="12" selection-start-line="1112" selection-start-column="12" selection-end-line="1112" selection-end-column="12" />
+          <folding>
+            <marker date="1488362203123" expanded="true" signature="8426:8442" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="8707:8758" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="8854:8870" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="9009:9034" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="11014:11074" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="11266:11302" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <marker date="1488362456007" expanded="true" signature="4222:4237" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4653:4671" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4853:4931" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4944:4962" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5159:5248" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5538:5555" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5592:5606" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="6920:6935" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7347:7365" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7547:7625" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7637:7655" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7852:7941" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8203:8220" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8257:8271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsPage2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18904">
+          <caret line="1112" column="12" selection-start-line="1112" selection-start-column="12" selection-end-line="1112" selection-end-column="12" />
+          <folding>
+            <marker date="1488362203123" expanded="true" signature="8426:8442" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="8707:8758" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="8854:8870" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="9009:9034" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="11014:11074" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="11266:11302" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <marker date="1488362456007" expanded="true" signature="4222:4237" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4653:4671" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4853:4931" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4944:4962" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5159:5248" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5538:5555" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5592:5606" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="6920:6935" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7347:7365" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7547:7625" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7637:7655" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7852:7941" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8203:8220" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8257:8271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2329">
           <caret line="137" column="35" selection-start-line="137" selection-start-column="35" selection-end-line="137" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -911,6 +765,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -918,6 +773,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
           <caret line="77" column="23" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="23" />
+          <folding>
+            <marker date="1488362456007" expanded="true" signature="4222:4237" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4653:4671" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4853:4931" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4944:4962" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5159:5248" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5538:5555" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5592:5606" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="6920:6935" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7347:7365" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7547:7625" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7637:7655" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7852:7941" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8203:8220" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8257:8271" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -932,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,11 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="27" column="26" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -973,18 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="27" column="26" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsIndex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -992,21 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsPage2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="1112" column="12" selection-start-line="1112" selection-start-column="12" selection-end-line="1112" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="605" column="0" selection-start-line="605" selection-start-column="0" selection-end-line="605" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1021,42 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="624" column="15" selection-start-line="624" selection-start-column="9" selection-end-line="624" selection-end-column="15" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#header#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#2;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#label#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#section#0;n#form#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#div#1;n#div#0;n#section#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#div#0;n#section#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#div#3;n#div#0;n#section#0;n#div#9;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#12;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#12;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,25 +876,279 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequests.js">
+    <entry file="file://$PROJECT_DIR$/js/isMobileCheck.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3586">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        <state relative-caret-position="389">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/isMobileCheck.js">
+    <entry file="file://$PROJECT_DIR$/page1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="133" column="60" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="527">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="1074" column="89" selection-start-line="1074" selection-start-column="89" selection-end-line="1074" selection-end-column="89" />
+          <folding>
+            <marker date="1488361228542" expanded="true" signature="860:880" ph="select * fro... cities" />
+            <marker date="1488361228542" expanded="true" signature="1228:1283" ph="select * fro... default_settings" />
+            <marker date="1488361228542" expanded="true" signature="1668:1715" ph="select * fro... restaurants" />
+            <marker date="1488361228542" expanded="true" signature="1861:1937" ph="select tag_i... restaurant_tags" />
+            <marker date="1488361228542" expanded="true" signature="2097:2146" ph="select * fro... tags" />
+            <marker date="1488361228542" expanded="true" signature="2294:2370" ph="select url f... restaurant_gallery" />
+            <marker date="1488361228542" expanded="true" signature="2506:2581" ph="select * fro... weekly_availibility" />
+            <marker date="1488361228542" expanded="true" signature="5819:5870" ph="select * fro... menus" />
+            <marker date="1488361228542" expanded="true" signature="5971:6029" ph="select * fro... categories" />
+            <marker date="1488361228542" expanded="true" signature="6121:6182" ph="select * fro... items" />
+            <marker date="1488361228542" expanded="true" signature="6377:6468" ph="select * fro... extras" />
+            <marker date="1488361228542" expanded="true" signature="6638:6696" ph="select * fro... subitems" />
+            <marker date="1488361228542" expanded="true" signature="8045:8092" ph="select * fro... extras" />
+            <marker date="1488361228542" expanded="true" signature="8248:8311" ph="select * fro... subitems" />
+            <marker date="1488361228542" expanded="true" signature="9099:9156" ph="select id,sm... users" />
+            <marker date="1488361228542" expanded="true" signature="9793:9829" ph="select * fro... coupons" />
+            <marker date="1488361228542" expanded="true" signature="10710:10773" ph="select * fro... user_coupons" />
+            <marker date="1488361228542" expanded="true" signature="12340:12415" ph="select id,sm... users" />
+            <marker date="1488361228542" expanded="true" signature="15350:15407" ph="select id,sm... users" />
+            <marker date="1488361228542" expanded="true" signature="17794:17815" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="17851:17931" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="17967:17989" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18085:18243" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18280:18320" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18355:18385" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18427:18457" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18567:18584" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18677:18707" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18751:18757" ph="&amp;nbsp;" />
+            <marker date="1488361228542" expanded="true" signature="18818:18835" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="18988:19016" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19105:19180" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19220:19269" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19390:19428" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19468:19474" ph="&amp;nbsp;" />
+            <marker date="1488361228542" expanded="true" signature="19488:19502" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19639:19689" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19784:19801" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="19945:20044" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20133:20168" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20207:20221" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20272:20310" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20326:20341" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20471:20506" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20545:20559" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20615:20653" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20669:20684" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="20983:21018" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21061:21075" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21170:21208" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21224:21239" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21384:21419" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21462:21476" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21548:21586" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21602:21617" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21784:21831" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21883:21918" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="21965:21980" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22070:22120" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22155:22170" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22186:22197" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22297:22334" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22424:22474" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22509:22524" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22540:22551" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22651:22688" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22781:22831" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22866:22901" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="22917:22930" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23097:23134" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23248:23285" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23418:23468" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23503:23518" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23534:23545" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23645:23682" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23773:23823" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23858:23873" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="23889:23901" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="24000:24037" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="25761:25782" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="25819:25899" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26085:26107" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26143:26301" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26340:26380" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26415:26445" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26490:26506" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26577:26595" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26624:26654" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26777:26807" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="26905:26922" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27166:27194" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27281:27356" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27393:27442" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27481:27496" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27593:27599" ph="&amp;nbsp;" />
+            <marker date="1488361228542" expanded="true" signature="27716:27734" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27823:27873" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="27944:27975" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28139:28238" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28327:28362" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28400:28420" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28436:28451" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28530:28565" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28667:28702" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28740:28760" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28776:28791" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="28885:28920" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29183:29217" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29259:29278" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29294:29309" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29388:29421" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29589:29623" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29665:29684" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29700:29715" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29802:29835" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="29986:30089" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30141:30176" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30223:30257" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30349:30399" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30433:30471" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30538:30553" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30567:30578" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30703:30753" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="30851:30889" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31013:31051" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31165:31200" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31215:31227" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31358:31408" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31443:31481" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31545:31561" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31575:31586" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31714:31764" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31799:31837" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31908:31924" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="31940:31952" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="33795:33816" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="33853:33933" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34119:34141" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34177:34335" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34374:34414" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34449:34479" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34524:34540" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34611:34629" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34658:34688" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34811:34841" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="34939:34956" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35200:35228" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35316:35391" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35428:35477" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35516:35531" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35628:35634" ph="&amp;nbsp;" />
+            <marker date="1488361228542" expanded="true" signature="35751:35769" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35858:35908" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="35979:36010" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36177:36276" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36365:36400" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36438:36458" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36474:36489" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36581:36616" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36718:36753" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36791:36811" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36827:36842" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="36940:36975" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37101:37204" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37256:37291" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37338:37372" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37464:37514" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37548:37586" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37650:37665" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37679:37690" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37815:37865" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="37899:37937" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38004:38019" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38033:38044" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38169:38219" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38317:38355" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38479:38517" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38631:38666" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38681:38693" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38824:38874" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="38909:38947" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="39011:39027" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="39041:39052" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="39180:39230" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="39265:39303" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="39374:39390" ph="..." />
+            <marker date="1488361228542" expanded="true" signature="39406:39418" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/my-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-262">
+          <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequestsPage2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1488362203123" expanded="true" signature="8426:8442" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="8707:8758" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="8854:8870" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="9009:9034" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="11014:11074" ph="..." />
+            <marker date="1488362203123" expanded="true" signature="11266:11302" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajaxServerRequests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="147" column="34" selection-start-line="147" selection-start-column="34" selection-end-line="147" selection-end-column="34" />
+          <folding>
+            <marker date="1488362456007" expanded="true" signature="4222:4237" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4653:4671" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4853:4931" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="4944:4962" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5159:5248" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5538:5555" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="5592:5606" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="6920:6935" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7347:7365" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7547:7625" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7637:7655" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="7852:7941" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8203:8220" ph="..." />
+            <marker date="1488362456007" expanded="true" signature="8257:8271" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
