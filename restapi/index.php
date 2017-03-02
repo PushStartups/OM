@@ -104,7 +104,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
         // CURRENT TIME OF ISRAEL
         date_default_timezone_set("Asia/Jerusalem");
-        $currentTime           =    date("H:i:s");
+        $currentTime           =    date("H:i");
         $tempDate              =    date("d/m/Y");
         $dayOfWeek             =    date('l');
 
