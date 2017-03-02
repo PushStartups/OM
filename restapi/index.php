@@ -106,7 +106,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
         date_default_timezone_set("Asia/Jerusalem");
         $currentTime           =    date("H:i:s");
         $tempDate              =    date("d/m/Y");
-        $dayOfWeek             =    date('l', strtotime( $tempDate));
+        $dayOfWeek             =    date('l');
 
         // RESTAURANT AVAILABILITY ACCORDING TO TIME
         $currentStatus = false;
@@ -121,7 +121,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
                 $openingTime = DateTime::createFromFormat('H:i', $singleTime['opening_time']);
                 $closingTime = DateTime::createFromFormat('H:i', $singleTime['closing_time']);
-                $currentTime = DateTime::createFromFormat('H:i:s', $currentTime);
+                $currentTime = DateTime::createFromFormat('H:i', $currentTime);
 
 
                 if ($currentTime >= $openingTime && $currentTime <= $closingTime) {
