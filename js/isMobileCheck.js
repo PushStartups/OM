@@ -53,4 +53,6 @@ if(!isMobile.any())
         window.location.href = 'http://orderapp.com';
 
     }
+
+    // test
 }
