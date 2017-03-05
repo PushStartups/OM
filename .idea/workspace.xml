@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/animate.css" afterPath="$PROJECT_DIR$/css/animate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/my-style.css" afterPath="$PROJECT_DIR$/css/my-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dropdown.js" afterPath="$PROJECT_DIR$/js/dropdown.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/isMobileCheck.js" afterPath="$PROJECT_DIR$/js/isMobileCheck.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.bpopup.min.js" afterPath="$PROJECT_DIR$/js/jquery.bpopup.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.easing.1.3.js" afterPath="$PROJECT_DIR$/js/jquery.easing.1.3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="$PROJECT_DIR$/js/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.min.js" afterPath="$PROJECT_DIR$/js/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page2.html" afterPath="$PROJECT_DIR$/page2.html" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +24,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restapi/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="470">
@@ -242,6 +230,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="isMobileCheck.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/isMobileCheck.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -271,12 +269,12 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/isMobileCheck.js" />
         <option value="$PROJECT_DIR$/page2.html" />
         <option value="$PROJECT_DIR$/page1.html" />
         <option value="$PROJECT_DIR$/js/ajaxServerRequests.js" />
         <option value="$PROJECT_DIR$/js/ajaxServerRequestsPage2.js" />
         <option value="$PROJECT_DIR$/restapi/index.php" />
+        <option value="$PROJECT_DIR$/js/isMobileCheck.js" />
       </list>
     </option>
   </component>
@@ -338,6 +336,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0-old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0-old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0-old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -811,7 +823,7 @@
       <workItem from="1488359333413" duration="7795000" />
       <workItem from="1488374314521" duration="88000" />
       <workItem from="1488377229512" duration="6787000" />
-      <workItem from="1488697027048" duration="204000" />
+      <workItem from="1488697027048" duration="531000" />
     </task>
     <task id="LOCAL-00001" summary="Final Production Release 28 Feb 2017">
       <created>1488293548112</created>
@@ -869,15 +881,29 @@
       <option name="project" value="LOCAL" />
       <updated>1488384256704</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Image for Items hide">
+      <created>1488697249995</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1488697249997</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Image for Items hide">
+      <created>1488697406800</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1488697406800</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49933000" />
+    <option name="totallyTimeSpent" value="50260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -890,7 +916,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279879" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15279879" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -922,7 +948,8 @@
     <MESSAGE value="Final Production Release" />
     <MESSAGE value="Final Production Release 28 Feb 2017" />
     <MESSAGE value="Final Production Release 29 Feb 2017 Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Production Release 29 Feb 2017 Fixes" />
+    <MESSAGE value="Image for Items hide" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image for Items hide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1145,6 +1172,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,6 +1188,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1335,13 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="901">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/isMobileCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1561,6 +1583,14 @@
             <marker date="1488697004537" expanded="true" signature="41876:41919" ph="..." />
             <marker date="1488697004537" expanded="true" signature="41990:42063" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/isMobileCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

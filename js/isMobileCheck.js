@@ -54,5 +54,4 @@ if(!isMobile.any())
 
     }
 
-    // test
 }
