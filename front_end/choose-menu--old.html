@@ -1,0 +1,444 @@
+<!Doctype html>
+<html>
+
+<head>
+    <link href="style/main.css" rel="stylesheet" />
+    <link href="style/choose-menu--old.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".collapse-handler").on("click", function () {
+                $(this).next(".collapsible").slideToggle();
+                var that = this;
+
+                $(this).find("img").toggleClass("rotate")
+            });
+
+            $("div#add-order-popup .ic_close").on("click", function(){
+                $("div#add-order-popup").slideUp();
+                $(".overlay").fadeOut();
+            })
+
+            $(".right-section #footer-with-cart").on("click" , function(){
+                $(".overlay").fadeIn();
+                $("div#add-order-popup").slideDown();
+                
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="about"><a href="#">ABOUT</a></li>
+                <li><a href="#">HE</a></li>
+            </ul>
+        </nav>
+
+        <span>
+            <span id="logo">
+                <img src="images/logo.png">
+                <span> Order App </span>
+        </span>
+
+        <p> CHOOSE YOUR MENU </p>
+        </span>
+    </header>
+
+    <div id="top-container">
+        <img id="left_top" src="images/pizza.png">
+        <img id="left_bottom" src="images/left_bottom.png">
+        <img id="right_top" src="images/top_right.png">
+        <img id="right_bottom" src="images/right_bottom.png">
+
+        <div class="container">
+            <div class="row" id="header-row">
+                <div class="col-md-12">
+                    <p>BANDORA</p>
+                    <ul>
+                        <li>
+                            <a href="">Pizza </a>
+                        </li>
+                        <li>
+                            <a href=""> Tortillas</a>
+                        </li>
+                        <li>
+                            <a href="">Salads</a>
+                        </li>
+                        <li>
+                            <a href="">Drinks</a>
+                        </li>
+                    </ul>
+                    <img id="ic-alert" src="images/alert.png">
+                </div>
+            </div>
+
+            <div class="row" style="height:calc(100% - 82px)">
+
+                <div class="col-md-8 left-section">
+                    <div class="row collapse-row">
+                        <div class="col-md-12">
+
+                            <div class="collapse-handler">
+                                PIZZA
+                                <img class="rotate" style="width:13px; position:absolute; right:0px; bottom:10px" src="images/drop_down.png">
+                            </div>
+                            <div class="collapsible active">
+                                <div class="row product-row">
+
+                                    <div class="col-md-3 col-sm-4 col-xs-4" style="background-image: url(images/onion.png);">
+
+                                    </div>
+
+                                    <div class="col-md-7 col-sm-6 col-xs-6 ">
+                                        <h2>Coffee <span class="badge">75 NIS</span></h2>
+                                        <p>Freshly brewed coffee Freshly brewed coffee Freshly brewed coffee Freshly brewed
+                                            coffee
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <img class="add-img" src="images/add.png">
+                                    </div>
+
+                                </div>
+                                <div class="row product-row">
+
+                                    <div class="col-md-3 col-sm-4 col-xs-4" style="background-image: url(images/onion.png);">
+
+                                    </div>
+
+                                    <div class="col-md-7 col-sm-6 col-xs-6 ">
+                                        <h2>Coffee <span class="badge">75 NIS</span></h2>
+                                        <p>Freshly brewed coffee Freshly brewed coffee Freshly brewed coffee Freshly brewed
+                                            coffee
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <img class="add-img" src="images/add.png">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="collapse-handler">
+                                SALAD
+                                <img style="width:13px; position:absolute; right:0px; bottom:10px" src="images/drop_down.png">
+                            </div>
+                            <div class="collapsible">
+                                <div class="row product-row">
+
+                                    <div class="col-md-3 col-sm-4 col-xs-4" style="background-image: url(images/onion.png);">
+
+                                    </div>
+
+                                    <div class="col-md-7 col-sm-6 col-xs-6 ">
+                                        <h2>Coffee <span class="badge">75 NIS</span></h2>
+                                        <p>Freshly brewed coffee Freshly brewed coffee Freshly brewed coffee Freshly brewed
+                                            coffee
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <img class="add-img" src="images/add.png">
+                                    </div>
+
+                                </div>
+                                <div class="row product-row">
+
+                                    <div class="col-md-3 col-sm-4 col-xs-4" style="background-image: url(images/onion.png);">
+
+                                    </div>
+
+                                    <div class="col-md-7 col-sm-6 col-xs-6 ">
+                                        <h2>Coffee <span class="badge">75 NIS</span></h2>
+                                        <p>Freshly brewed coffee Freshly brewed coffee Freshly brewed coffee Freshly brewed
+                                            coffee
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <img class="add-img" src="images/add.png">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 right-section ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3> FOOD CART <span class="badge"> 1 </span> </h3>
+                            <div id="nested-section">
+                                <!-- ROW Start -->
+                                <div class="row header-row">
+                                    <div class="col-md-8">
+                                        <h2> Cheese Ravioli </h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="dim"> 62 NIS </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="detail"> In a cream sauce, seasoned with garlic and fresh basil 
+                                            <br>
+                                            <span class="more" > More info </span>
+                                        <span class="more"> + </span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="switch-btn">
+
+                                            <img class="left-btn" src="images/ic_cancel.png">
+                                            <span class="count">
+                                                1
+                                            </span>
+                                            <img class="increase-btn" src="images/ic_plus.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row header-row">
+                                    <div class="col-md-8">
+                                        <h2> Cheese Ravioli </h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="dim"> 62 NIS </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="detail"> In a cream sauce, seasoned with garlic and fresh basil 
+                                            <br>
+                                            <span class="more" > More info </span>
+                                        <span class="more"> + </span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="switch-btn">
+
+                                            <img class="left-btn" src="images/ic_cancel.png">
+                                            <span class="count">
+                                                1
+                                            </span>
+                                            <img class="increase-btn" src="images/ic_plus.png">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ROw end -->
+                                <!-- ROW Start -->
+                                <div class="row header-row">
+                                    <div class="col-md-8">
+                                        <h2> Cheese Ravioli </h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="dim"> 62 NIS </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="detail"> In a cream sauce, seasoned with garlic and fresh basil 
+                                            <br>
+                                            <span class="more" > More info </span>
+                                        <span class="more"> + </span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="switch-btn">
+
+                                            <img class="left-btn" src="images/ic_cancel.png">
+                                            <span class="count">
+                                                1
+                                            </span>
+                                            <img class="increase-btn" src="images/ic_plus.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row header-row">
+                                    <div class="col-md-8">
+                                        <h2> Cheese Ravioli </h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="dim"> 62 NIS </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="detail"> In a cream sauce, seasoned with garlic and fresh basil 
+                                            <br>
+                                            <span class="more" > More info </span>
+                                        <span class="more"> + </span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="switch-btn">
+
+                                            <img class="left-btn" src="images/ic_cancel.png">
+                                            <span class="count">
+                                                1
+                                            </span>
+                                            <img class="increase-btn" src="images/ic_plus.png">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ROw end -->
+                                <!-- ROW Start -->
+                                <div class="row header-row">
+                                    <div class="col-md-8">
+                                        <h2> Cheese Ravioli </h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="dim"> 62 NIS </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="detail"> In a cream sauce, seasoned with garlic and fresh basil 
+                                            <br>
+                                            <span class="more" > More info </span>
+                                        <span class="more"> + </span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="switch-btn">
+
+                                            <img class="left-btn" src="images/ic_cancel.png">
+                                            <span class="count">
+                                                1
+                                            </span>
+                                            <img class="increase-btn" src="images/ic_plus.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row header-row">
+                                    <div class="col-md-8">
+                                        <h2> Cheese Ravioli </h2>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="dim"> 62 NIS </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="detail"> In a cream sauce, seasoned with garlic and fresh basil 
+                                            <br>
+                                            <span class="more" > More info </span>
+                                        <span class="more"> + </span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="switch-btn">
+
+                                            <img class="left-btn" src="images/ic_cancel.png">
+                                            <span class="count">
+                                                1
+                                            </span>
+                                            <img class="increase-btn" src="images/ic_plus.png">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ROw end -->
+                            </div>
+
+                            <div class="devider"></div>
+                            <h1> 130 NIS </h1>
+                            <h3 class="mini"> Min 100 NIS </h3>
+                            <div id="footer-with-cart">
+                                <img src="images/shopping-cart.png" /> ORDER NOW
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div id="add-order-popup" >
+            <h3>King Angus Sandwich</h3>
+            <img class="ic_close" src="images/ic_close_black.png">
+            <div class="half-divs">
+                <div id="circle-img">
+                    <div class="img">
+                    </div>
+                    <span> 20 NIS </span>
+                </div>
+                <p>150 grams of quality Angus entrecote meat and 80 grams of goose liver with mayonnaise, mustard, chimichurri,
+                    lettuce, and tomatoes</p>
+            </div>
+            <div class="half-divs" id="orde-addons">
+                <h3>Type of meat</h3>
+                <div class="custom-drop-down">
+                    <input placeholder="Please choose ">
+                    <img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="images/drop_down.png">
+                    <div class="custom-drop-down-list">
+                        <ul>
+                            <li> Item0 </li>
+                            <li> Item0 </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="expandable" style="display: block;">
+                    <div class="sperator" style="margin-top: 30px; margin-bottom: 30px; border-color: #BFBFBF"></div>
+
+                    <h3 style="text-align: left; margin-bottom: 8px;"> Addons </h3>
+                    <ul class="checkbox-list">
+                        <li> <input type="checkbox" id="checkbox-id12"> <label for="checkbox-id12">Lattuce</label></li>
+                        <li> <input type="checkbox" id="checkbox-id23"> <label for="checkbox-id23">Onion</label></li>
+                        <li> <input type="checkbox" id="checkbox-id34"> <label for="checkbox-id34">Fried Onion</label></li>
+                        <li> <input type="checkbox" id="checkbox-id45"> <label for="checkbox-id45">Tomato</label></li>
+                    </ul>
+                    <h3 style="text-align: left; margin-bottom: 8px; margin-top:15px"> Addons </h3>
+                    <ul class="checkbox-list">
+                        <li> <input type="checkbox" id="checkbox-id12"> <label for="checkbox-id12">Lattuce</label></li>
+                        <li> <input type="checkbox" id="checkbox-id23"> <label for="checkbox-id23">Onion</label></li>
+                        <li> <input type="checkbox" id="checkbox-id34"> <label for="checkbox-id34">Fried Onion</label></li>
+                        <li> <input type="checkbox" id="checkbox-id45"> <label for="checkbox-id45">Tomato</label></li>
+                    </ul>
+                    <h3 style="text-align: left; margin-bottom: 8px; margin-top:15px;"> Addons </h3>
+                    <ul class="checkbox-list">
+                        <li> <input type="checkbox" id="checkbox-id12"> <label for="checkbox-id12">Lattuce</label></li>
+                        <li> <input type="checkbox" id="checkbox-id23"> <label for="checkbox-id23">Onion</label></li>
+                        <li> <input type="checkbox" id="checkbox-id34"> <label for="checkbox-id34">Fried Onion</label></li>
+                        <li> <input type="checkbox" id="checkbox-id45"> <label for="checkbox-id45">Tomato</label></li>
+                    </ul>
+                </div>
+                
+                <hr>
+                <div class="expandable" style="display: block;">
+                     <h3 style="text-align: left; margin-bottom: 8px; margin-top:15px;"> Special Request </h3>
+                     <textarea></textarea>
+                </div>
+            </div>
+            <footer>ADD TO MY ORDER</footer>
+        </div>
+
+        <div class="overlay " ></div>
+        
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+        </script>
+</body>
+
+</html>

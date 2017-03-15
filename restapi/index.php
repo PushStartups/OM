@@ -13,11 +13,11 @@ DB::query("set names utf8");
 // EMAIL SERVERS FOR EACH EMAIL ADDRESS
 
 // DEV SERVER
-if($_SERVER['HTTP_HOST'] == "dev.m.orderapp.com")
-    define("EMAIL","muhammad.iftikhar.aftab@gmail.com");
+if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
+    define("EMAIL","devorders@orderapp.com");
 
 // QA SERVER
-else if($_SERVER['HTTP_HOST'] == "qa.m.orderapp.com")
+else if($_SERVER['HTTP_HOST'] == "qa.orderapp.com")
     define("EMAIL","qaorders@orderapp.com");
 
 // PRODUCTION SERVER
@@ -28,6 +28,7 @@ else
 
 // SLIM INITIALIZATION
 $app = new \Slim\App();
+$app = new \Slim\App();
 
 
 
@@ -36,14 +37,25 @@ $app = new \Slim\App();
 //  WEB HOOK GET LIST OF CITIES AVAILABLE
 $app->post('/get_all_cities', function ($request, $response, $args)
 {
-    // MINIMUM ORDER AMOUNT
-    $cities = DB::query("select * from cities");
+    try{
 
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($cities));
-    return $response;
+        // MINIMUM ORDER AMOUNT
+        $cities = DB::query("select * from cities");
 
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($cities));
+        return $response;
+
+
+    }
+    catch(MeekroDBException $e) {
+
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
+    }
 
 });
 
@@ -52,14 +64,23 @@ $app->post('/get_all_cities', function ($request, $response, $args)
 //  WEB HOOK GET MINIMUM ORDER AMOUNT
 $app->post('/get_min_order_amount', function ($request, $response, $args)
 {
-    // MINIMUM ORDER AMOUNT
-    $minOrder = DB::query("select * from default_settings where name = 'min_order'");
+    try {
 
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($minOrder));
-    return $response;
+        // MINIMUM ORDER AMOUNT
+        $minOrder = DB::query("select * from default_settings where name = 'min_order'");
 
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($minOrder));
+        return $response;
+    }
+    catch(MeekroDBException $e) {
+
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
+    }
 });
 
 
@@ -67,110 +88,139 @@ $app->post('/get_min_order_amount', function ($request, $response, $args)
 //  WEB HOOK GET ALL RESTAURANT
 $app->post('/get_all_restaurants', function ($request, $response, $args)
 {
-    $id = $request->getParam('city_id');
+
+    try {
+
+        $id = $request->getParam('city_id');
 
 
-    $restaurants = Array();
+        $restaurants = Array();
 
-    $results = DB::query("select * from restaurants where city_id = '$id'");
+        $results = DB::query("select * from restaurants where city_id = '$id'");
 
-    $count = 0;
+        $count = 0;
 
-    foreach ($results as $result)
-    {
-        // GET TAGS OF RESTAURANT i.e BURGER , PIZZA
+        foreach ($results as $result) {
+            // GET TAGS OF RESTAURANT i.e BURGER , PIZZA
 
-        $tagsIds = DB::query("select tag_id from restaurant_tags where restaurant_id = '".$result['id']."'");
+            $tagsIds = DB::query("select tag_id from restaurant_tags where restaurant_id = '" . $result['id'] . "'");
 
-        $tags = Array();
-        $count2 = 0;
-        $hoursLeftToOpen = null;
+            $tags = Array();
+            $count2 = 0;
+            $hoursLeftToOpen = null;
 
-        foreach ($tagsIds as $id) {
+            foreach ($tagsIds as $id) {
 
-            $tag = DB::queryFirstRow("select * from tags where id = '".$id["tag_id"]."'");
-            $tags[$count2] = $tag;
-            $count2++;
-        };
+                $tag = DB::queryFirstRow("select * from tags where id = '" . $id["tag_id"] . "'");
+                $tags[$count2] = $tag;
+                $count2++;
+            };
 
-        // GET GALLERY OF RESTAURANT
+            // GET GALLERY OF RESTAURANT
 
-        $galleryImages = DB::query("select url from restaurant_gallery where restaurant_id = '".$result['id']."'");
-
-
-        // RETRIEVING RESTAURANT TIMINGS i.e SUNDAY   STAT_TIME : 12:00  END_TIME 21:00;
-
-        $restaurantTimings = DB::query("select * from weekly_availibility where restaurant_id = '".$result['id']."'");
-
-        // CURRENT TIME OF ISRAEL
-        date_default_timezone_set("Asia/Jerusalem");
-        $currentTime           =    date("H:i");
-        $tempDate              =    date("d/m/Y");
-        $dayOfWeek             =    date('l');
-
-        // RESTAURANT AVAILABILITY ACCORDING TO TIME
-        $currentStatus = false;
-
-        $today_timings = "";
-
-        foreach ($restaurantTimings as $singleTime) {
-
-            if($singleTime['week_en'] == $dayOfWeek) {
-
-                $today_timings = $singleTime['opening_time']." - ". $singleTime['closing_time'];
-
-                $openingTime = DateTime::createFromFormat('H:i', $singleTime['opening_time']);
-                $closingTime = DateTime::createFromFormat('H:i', $singleTime['closing_time']);
-                $currentTime = DateTime::createFromFormat('H:i', $currentTime);
+            $galleryImages = DB::query("select url from restaurant_gallery where restaurant_id = '" . $result['id'] . "'");
 
 
-                if ($currentTime >= $openingTime && $currentTime <= $closingTime) {
+            // RETRIEVING RESTAURANT TIMINGS i.e SUNDAY   STAT_TIME : 12:00  END_TIME 21:00;
 
-                    $currentStatus = true;
+            $restaurantTimings = DB::query("select * from weekly_availibility where restaurant_id = '" . $result['id'] . "'");
 
-                    break;
+            // CURRENT TIME OF ISRAEL
+            date_default_timezone_set("Asia/Jerusalem");
+            $currentTime = date("H:i");
+            $tempDate = date("d/m/Y");
+            $dayOfWeek = date('l');
+
+            // RESTAURANT AVAILABILITY ACCORDING TO TIME
+            $currentStatus = true;
+
+            $today_timings = "";
+
+
+            foreach ($restaurantTimings as $singleTime) {
+
+
+                if ($singleTime['week_en'] == $dayOfWeek) {
+
+
+                    $today_timings = $singleTime['opening_time'] . " - " . $singleTime['closing_time'];
+                    $openingTime = DateTime::createFromFormat('H:i', $singleTime['opening_time']);
+                    $closingTime = DateTime::createFromFormat('H:i', $singleTime['closing_time']);
+                    $currentTime = DateTime::createFromFormat('H:i', $currentTime);
+
+
+                    if ($currentTime >= $openingTime && $currentTime <= $closingTime) {
+
+                        $currentStatus = true;
+
+                        break;
+                    } else {
+
+                        $hoursLeftToOpen = "Open On Sunday";
+
+
+                    }
+
                 }
-                else
-                {
-
-                    $hoursLeftToOpen = "Open On Sunday";
-
-
-                }
-
             }
+
+            $delivery_fee = DB::query("select * from delivery_fee where restaurant_id = '".$result['id']."'");
+
+            $min = $delivery_fee[0]["fee"];
+            $max = $delivery_fee[0]["fee"];
+
+            // CALCULATING MINIMUM AND MAXIMUM DELIVERY FEE
+            foreach ($delivery_fee as $fee) {
+                if ($fee['fee'] > $max)
+                    $max = $fee['fee'];
+                else if ($fee['fee'] < $min)
+                    $min = $fee['fee'];
+            }
+
+
+            // CREATE DEFAULT RESTAURANT OBJECT;
+            $restaurant = [
+
+                "min_delivery"         => $min,                         // MINIMUM DELIVERY FEE
+                "max_delivery"         => $max,                         // MAXIMUM DELIVERY FEE
+                "id"                   => $result["id"],                // RESTAURANT ID
+                "name_en"              => $result["name_en"],           // RESTAURANT NAME
+                "name_he"              => $result["name_he"],           // RESTAURANT NAME
+                "min_amount"           => $result["min_amount"],        // RESTAURANT MINIMUM AMOUNT
+                "logo"                 => $result["logo"],              // RESTAURANT LOGO
+                "description_en"       => $result["description_en"],    // RESTAURANT DESCRIPTION
+                "description_he"       => $result["description_he"],    // RESTAURANT DESCRIPTION
+                "address_en"           => $result["address_en"],        // RESTAURANT ADDRESS
+                "address_he"           => $result["address_he"],        // RESTAURANT ADDRESS
+                "hechsher_en"          => $result["hechsher_en"],       // RESTAURANT HECHSHER
+                "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
+                "tags"                 => $tags,                        // RESTAURANT TAGS
+                "gallery"              => $galleryImages,               // RESTAURANT GALLERY
+                "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
+                "availability"         => $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
+                "today_timings"        => $today_timings,               // TODAY TIMINGS
+                "hours_left_to_open"   => $hoursLeftToOpen,             // HOURS LEFT TO OPEN FROM CURRENT TIME
+                "delivery_fee"         => $delivery_fee                // DELIVERY FEE AREA WISE
+            ];
+
+            $restaurants[$count] = $restaurant;
+            $count++;
         }
 
 
-        // CREATE DEFAULT RESTAURANT OBJECT;
-        $restaurant = [
-            "id"                   =>  $result["id"],                // RESTAURANT ID
-            "name_en"              =>  $result["name_en"],           // RESTAURANT NAME
-            "name_he"              =>  $result["name_he"],           // RESTAURANT NAME
-            "logo"                 =>  $result["logo"],              // RESTAURANT LOGO
-            "description_en"       =>  $result["description_en"],    // RESTAURANT DESCRIPTION
-            "description_he"       =>  $result["description_he"],    // RESTAURANT DESCRIPTION
-            "address_en"           =>  $result["address_en"],        // RESTAURANT ADDRESS
-            "address_he"           =>  $result["address_he"],        // RESTAURANT ADDRESS
-            "hechsher_en"          =>  $result["hechsher_en"],       // RESTAURANT HECHSHER
-            "hechsher_he"          =>  $result["hechsher_he"],       // RESTAURANT HECHSHER
-            "tags"                 =>  $tags,                        // RESTAURANT TAGS
-            "gallery"              =>  $galleryImages,               // RESTAURANT GALLERY
-            "timings"              =>  $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
-            "availability"         =>  $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
-            "today_timings"        =>  $today_timings,               // TODAY TIMINGS
-            "hours_left_to_open"   =>  $hoursLeftToOpen,             // HOURS LEFT TO OPEN FROM CURRENT TIME
-        ];
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($restaurants));
+        return $response;
 
-        $restaurants[$count] = $restaurant;
-        $count++;
     }
+    catch(MeekroDBException $e) {
 
-
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($restaurants));
-    return $response;
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
+    }
 
 });
 
@@ -180,67 +230,71 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 $app->post('/categories_with_items', function ($request, $response, $args)
 {
 
-    $id = $request->getParam('restaurantId');
+    try {
 
-    // GET MENUS FOR RESTAURANT i.e LUNCH
-    $menu = DB::queryFirstRow("select * from menus where restaurant_id = '".$id."'");
+        $id = $request->getParam('restaurantId');
 
-    // GET CATEGORIES OF RESTAURANT i.e ANGUS SALAD , ANGUS BURGER
-    $categories = DB::query("select * from categories where menu_id = '".$menu['id']."'");
+        // GET MENUS FOR RESTAURANT i.e LUNCH
+        $menu = DB::queryFirstRow("select * from menus where restaurant_id = '" . $id . "'");
 
-    $count2 = 0;
-    foreach ($categories as $category) {
+        // GET CATEGORIES OF RESTAURANT i.e ANGUS SALAD , ANGUS BURGER
+        $categories = DB::query("select * from categories where menu_id = '" . $menu['id'] . "'");
 
-        $items = DB::query("select * from items where category_id = '".$category["id"]."'");
+        $count2 = 0;
+        foreach ($categories as $category) {
 
-        $count3 = 0;
-        // CHECK FOR ITEMS PRICE ZERO
-        foreach ($items as $item)
-        {
-            if($item['price'] == 0)
-            {
-                $extras = DB::query("select * from extras where item_id = '".$item["id"]."' AND type = 'One' AND price_replace=1");
-                // EXTRAS WITH TYPE OME AND PRICE REPLACE 1
+            $items = DB::query("select * from items where category_id = '" . $category["id"] . "'");
 
-                foreach ($extras as $extra)
-                {
-                    $subItems = DB::query("select * from subitems where extra_id = '".$extra["id"]."'");
-                    $lowestPrice = $subItems[0]['price'];
-                    foreach ($subItems as $subitem)
-                    {
-                        if ($subitem['price'] < $lowestPrice)
-                        {
-                            $lowestPrice = $subitem['price'];
+            $count3 = 0;
+            // CHECK FOR ITEMS PRICE ZERO
+            foreach ($items as $item) {
+                if ($item['price'] == 0) {
+                    $extras = DB::query("select * from extras where item_id = '" . $item["id"] . "' AND type = 'One' AND price_replace=1");
+                    // EXTRAS WITH TYPE OME AND PRICE REPLACE 1
+
+                    foreach ($extras as $extra) {
+                        $subItems = DB::query("select * from subitems where extra_id = '" . $extra["id"] . "'");
+                        $lowestPrice = $subItems[0]['price'];
+                        foreach ($subItems as $subitem) {
+                            if ($subitem['price'] < $lowestPrice) {
+                                $lowestPrice = $subitem['price'];
+                            }
                         }
+
+                        $items[$count3]['price'] = $lowestPrice;
+
                     }
-
-                    $items[$count3]['price'] = $lowestPrice;
-
+                    //break;
                 }
-                //break;
+                $count3++;
             }
-            $count3++;
+
+
+            $categories[$count2]['items'] = $items;
+            $count2++;
         }
 
+        // CREATE DEFAULT OBJECT FOR ITEMS AND CATEGORIES;
+        $data = [
+            "menu_name_en" => $menu['name_en'],               // MENU NAME EN
+            "menu_name_he" => $menu['name_he'],               // MENU NAME HE
+            "categories_items" => $categories                    // CATEGORIES AND ITEMS
+        ];
 
 
-        $categories[$count2]['items'] = $items;
-        $count2++;
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($data));
+        return $response;
+
     }
+    catch(MeekroDBException $e) {
 
-    // CREATE DEFAULT OBJECT FOR ITEMS AND CATEGORIES;
-    $data = [
-        "menu_name_en"              => $menu['name_en'],               // MENU NAME EN
-        "menu_name_he"              => $menu['name_he'],               // MENU NAME HE
-        "categories_items"          =>  $categories                    // CATEGORIES AND ITEMS
-    ];
-
-
-
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($data));
-    return $response;
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
+    }
 
 });
 
@@ -249,32 +303,43 @@ $app->post('/categories_with_items', function ($request, $response, $args)
 
 // GET EXTRAS WITH SUBITEMS
 $app->post('/extras_with_subitems', function ($request, $response, $args) {
-    //GETTING ITEM_ID FROM CLIENT SIDE
-    $item_id = $request->getParam('itemId');
 
-    //GETTING EXTRAS OF ITEMS i,e ADDONS,SAUCES ETC
-    $extra = DB::query("select * from extras where item_id = '$item_id'");
+    try {
 
-    $countExtra = 0;
+        //GETTING ITEM_ID FROM CLIENT SIDE
+        $item_id = $request->getParam('itemId');
 
-    foreach ($extra as $extras) {
-        //GETTING SUNITEMS OF EXTRAS i,e KETCHUP,AMERICAN FRIES
-        $subItems = DB::query("select * from subitems where extra_id = '" . $extras["id"] . "'");
+        //GETTING EXTRAS OF ITEMS i,e ADDONS,SAUCES ETC
+        $extra = DB::query("select * from extras where item_id = '$item_id'");
 
-        $extra[$countExtra]['subitems'] = $subItems;
+        $countExtra = 0;
 
-        $countExtra++;
+        foreach ($extra as $extras) {
+            //GETTING SUNITEMS OF EXTRAS i,e KETCHUP,AMERICAN FRIES
+            $subItems = DB::query("select * from subitems where extra_id = '" . $extras["id"] . "'");
 
+            $extra[$countExtra]['subitems'] = $subItems;
+
+            $countExtra++;
+
+        }
+        $data = [
+            "extra_with_subitems" => $extra                           // EXTRA AND ITEMS
+        ];
+
+
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($data));
+        return $response;
     }
-    $data = [
-        "extra_with_subitems" => $extra                           // EXTRA AND ITEMS
-    ];
+    catch(MeekroDBException $e) {
 
-
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($data));
-    return $response;
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
+    }
 
 });
 
@@ -283,121 +348,125 @@ $app->post('/extras_with_subitems', function ($request, $response, $args) {
 
 $app->post('/coupon_validation', function ($request, $response, $args) {
 
-    $email = $request->getParam('email');        //  GET USER EMAIL
-    $coupon_code = $request->getParam('code');   //  COUPON CODE ENTER BY USER
-    $success_validation = "false";               //  SUCCESS VALIDATION RESPONSE FOR USER
+
+    try {
+
+        $email = $request->getParam('email');        //  GET USER EMAIL
+        $coupon_code = $request->getParam('code');   //  COUPON CODE ENTER BY USER
+        $success_validation = "false";               //  SUCCESS VALIDATION RESPONSE FOR USER
 
 
-    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
-    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
+        //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
 
-    if(DB::count() == 0){
+        if (DB::count() == 0) {
 
-        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
-        DB::insert('users', array(
-            'smooch_id' => $email
-        ));
-        $user_id = DB::insertId();
-    }
-    else{
+            // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+            DB::insert('users', array(
+                'smooch_id' => $email
+            ));
+            $user_id = DB::insertId();
+        } else {
 
-        // IF USER ALREADY EXIST IN DATABASE
-        $user_id = $getUser['id'];
-    }
-
-
-    // COUPON VALIDATION
-    $coupon_code = strtolower($coupon_code);
-
-
-    //EXACT TIMEZONE OF ISRAEL
-    date_default_timezone_set("Asia/Jerusalem");
-    $current_date_time = date('Y-m-d H:i:s');
-
-
-    $arr = explode(" ",$current_date_time);
-    $current_date_time = $arr[0];
-    $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $coupon_code);
-
-
-    if(!empty($getCouponCode)){
-
-        $coupon_id = $getCouponCode['id'];
-        $getStartingTime = $getCouponCode['starting_date'];
-        $getEndingTime = $getCouponCode['ending_date'];
-        $discount = $getCouponCode['discount'];
-        $type = $getCouponCode['type'];
-
-        if($type == "amount"){
-
-            $isFixAmountCoupon = true;
-        }
-        else
-        {
-            $isFixAmountCoupon = false;
+            // IF USER ALREADY EXIST IN DATABASE
+            $user_id = $getUser['id'];
         }
 
 
-        // GETTING START DATE AND END DATE OF COUPON FROM DATABASE
-        $arr1 = explode(" ",$getStartingTime);
-        $start_date = $arr1[0];
+        // COUPON VALIDATION
+        $coupon_code = strtolower($coupon_code);
 
 
-        $arr2 = explode(" ",$getEndingTime);
-        $end_date = $arr2[0];
+        //EXACT TIMEZONE OF ISRAEL
+        date_default_timezone_set("Asia/Jerusalem");
+        $current_date_time = date('Y-m-d H:i:s');
 
 
-        if ((($current_date_time >= $start_date) && ($current_date_time <= $end_date))) {
+        $arr = explode(" ", $current_date_time);
+        $current_date_time = $arr[0];
+        $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $coupon_code);
 
-            //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
-            $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id,$coupon_id);
-            if(DB::count() == 0){
 
-                DB::insert('user_coupons', array(
-                    'user_id'     =>  $user_id,
-                    'coupon_id'   =>  $coupon_id
-                ));
+        if (!empty($getCouponCode)) {
 
-                $success_validation = "true";
+            $coupon_id = $getCouponCode['id'];
+            $getStartingTime = $getCouponCode['starting_date'];
+            $getEndingTime = $getCouponCode['ending_date'];
+            $discount = $getCouponCode['discount'];
+            $type = $getCouponCode['type'];
 
+            if ($type == "amount") {
+
+                $isFixAmountCoupon = true;
+            } else {
+                $isFixAmountCoupon = false;
             }
-            else{
 
+
+            // GETTING START DATE AND END DATE OF COUPON FROM DATABASE
+            $arr1 = explode(" ", $getStartingTime);
+            $start_date = $arr1[0];
+
+
+            $arr2 = explode(" ", $getEndingTime);
+            $end_date = $arr2[0];
+
+
+            if ((($current_date_time >= $start_date) && ($current_date_time <= $end_date))) {
+
+                //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
+                $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id, $coupon_id);
+                if (DB::count() == 0) {
+
+                    DB::insert('user_coupons', array(
+                        'user_id' => $user_id,
+                        'coupon_id' => $coupon_id
+                    ));
+
+                    $success_validation = "true";
+
+                } else {
+
+                    $success_validation = "false";
+                }
+
+            } else {
                 $success_validation = "false";
             }
 
         }
-        else
-        {
-            $success_validation = "false";
+        if ($success_validation == "true") {
+
+            $data = [
+
+                "success" => true,                                          // COUPON VALID OR NOT (TRUE OR FALSE)
+                "amount" => $discount,                                     // DISCOUNT ON COUPON
+                "isFixAmountCoupon" => $isFixAmountCoupon                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
+
+            ];
+        } else {
+
+            $data = [
+
+                "success" => false                                          // SUCCESS FALSE WRONG CODE
+
+            ];
         }
 
+
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($data));
+        return $response;
+
     }
-    if($success_validation == "true"){
+    catch(MeekroDBException $e) {
 
-        $data = [
-
-            "success"               =>    true,                                          // COUPON VALID OR NOT (TRUE OR FALSE)
-            "amount"                =>    $discount,                                     // DISCOUNT ON COUPON
-            "isFixAmountCoupon"     =>    $isFixAmountCoupon                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
-
-        ];
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
     }
-    else
-    {
-
-        $data = [
-
-            "success"               =>    false                                          // SUCCESS FALSE WRONG CODE
-
-        ];
-    }
-
-
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($data));
-    return $response;
 
 });
 
@@ -406,129 +475,132 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 //  STORE USER ORDER IN DATABASE
 $app->post('/add_order', function ($request, $response, $args) {
 
-    // GET ORDER RESPONSE FROM USER (CLIENT SIDE)
-    $user_order  =  $request->getParam('user_order');
-    $user_id     =  null;
+    try {
+
+        // GET ORDER RESPONSE FROM USER (CLIENT SIDE)
+        $user_order = $request->getParam('user_order');
+        $user_id = null;
 
 
-    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
-    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '".$user_order['email']."'");
+        //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_order['email'] . "'");
 
-    if(DB::count() == 0){
+        if (DB::count() == 0) {
 
-        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
-        DB::insert('users', array(
+            // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+            DB::insert('users', array(
 
-            'smooch_id' => $user_order['email'],
-            "contact"   => $user_order['contact'],
-            "address"   => $user_order['deliveryAddress'],
-            "name"      => $user_order['name']
-        ));
+                'smooch_id' => $user_order['email'],
+                "contact" => $user_order['contact'],
+                "address" => $user_order['deliveryAddress'],
+                "name" => $user_order['name']
+            ));
 
-        $user_id = DB::insertId();
-    }
-    else{
+            $user_id = DB::insertId();
+        } else {
 
-        // IF USER ALREADY EXIST IN DATABASE
-        $user_id = $getUser['id'];
+            // IF USER ALREADY EXIST IN DATABASE
+            $user_id = $getUser['id'];
 
-        DB::update('users', array(
+            DB::update('users', array(
 
-            'smooch_id' => $user_order['email'],
-            "contact"   => $user_order['contact'],
-            "address"   => $user_order['deliveryAddress'],
-            "name"      => $user_order['name']
-        ),'id = %d',$user_id);
+                'smooch_id' => $user_order['email'],
+                "contact" => $user_order['contact'],
+                "address" => $user_order['deliveryAddress'],
+                "name" => $user_order['name']
+            ), 'id = %d', $user_id);
 
-    }
-
-
-    // CHECK IF DISCOUNT GIVEN TO USER ADD IN DB
-    $discountType = null;
-    $discountValue = 0;
-
-    if($user_order['isCoupon'] == 'true') {
-
-        if ($user_order['isFixAmountCoupon'] == 'true') {
-
-            $discountType = "fixed value";
-        }
-        else {
-
-            $discountType = "fixed percentage";
         }
 
-        $discountValue = $user_order['discount'];
-    }
+
+        // CHECK IF DISCOUNT GIVEN TO USER ADD IN DB
+        $discountType = null;
+        $discountValue = 0;
+
+        if ($user_order['isCoupon'] == 'true') {
+
+            if ($user_order['isFixAmountCoupon'] == 'true') {
+
+                $discountType = "fixed value";
+            } else {
+
+                $discountType = "fixed percentage";
+            }
+
+            $discountValue = $user_order['discount'];
+        }
 
 
-
-    $todayDate = Date("d/m/Y");
-
-
-    // CREATE A NEW ORDER AGAINST USER
-    DB::insert('user_orders', array(
-
-        'user_id'          =>  $user_id,
-        'restaurant_id'    =>  $user_order['restaurantId'],
-        'total'            =>  $user_order['total'],
-        'coupon_discount'  =>  $discountType,
-        'discount_value'   =>  $discountValue,
-        "order_date"       =>  DB::sqleval("NOW()")
-    ));
+        $todayDate = Date("d/m/Y");
 
 
-    $orderId = DB::insertId();
+        // CREATE A NEW ORDER AGAINST USER
+        DB::insert('user_orders', array(
 
-    foreach($user_order['cartData'] as  $orders)
-    {
-
-        // ADD ORDER DETAIL AGAINST USER
-        DB::insert('order_detail', array(
-
-            'order_id'          => $orderId,
-            'qty'               => $orders['qty'],
-            'item'              => $orders['name'],
-            'sub_total'         => $orders['price'],
-            'sub_items'         => $orders['detail']
+            'user_id' => $user_id,
+            'restaurant_id' => $user_order['restaurantId'],
+            'total' => $user_order['total'],
+            'coupon_discount' => $discountType,
+            'discount_value' => $discountValue,
+            "order_date" => DB::sqleval("NOW()")
         ));
 
+
+        $orderId = DB::insertId();
+
+        foreach ($user_order['cartData'] as $orders) {
+
+            // ADD ORDER DETAIL AGAINST USER
+            DB::insert('order_detail', array(
+
+                'order_id' => $orderId,
+                'qty' => $orders['qty'],
+                'item' => $orders['name'],
+                'sub_total' => $orders['price'],
+                'sub_items' => $orders['detail']
+            ));
+
+        }
+
+
+        // SEND EMAIL TO KETCHES
+
+        email_for_kitchen($user_order, $orderId, $todayDate);
+
+        ob_end_clean();
+
+        // CLIENT EMAIL
+        // EMAIL ORDER SUMMARY
+
+        if ($user_order['language'] == 'en') {
+            email_order_summary_english($user_order, $orderId, $todayDate);
+        } else {
+
+            email_order_summary_hebrew($user_order, $orderId, $todayDate);
+        }
+
+        ob_end_clean();
+
+        // SEND ADMIN COPY EMAIL ORDER SUMMARY
+
+        email_order_summary_hebrew_admin($user_order, $orderId, $todayDate);
+
+
+        ob_end_clean();
+
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode('success'));
+        return $response;
+
     }
+    catch(MeekroDBException $e) {
 
-
-    // SEND EMAIL TO KETCHES
-
-    email_for_kitchen($user_order,$orderId,$todayDate);
-
-    ob_end_clean();
-
-    // CLIENT EMAIL
-    // EMAIL ORDER SUMMARY
-
-    if($user_order['language'] == 'en')
-    {
-        email_order_summary_english($user_order,$orderId,$todayDate);
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
     }
-    else{
-
-        email_order_summary_hebrew($user_order,$orderId,$todayDate);
-    }
-
-    ob_end_clean();
-
-    // SEND ADMIN COPY EMAIL ORDER SUMMARY
-
-    email_order_summary_hebrew_admin($user_order,$orderId,$todayDate);
-
-
-
-
-    ob_end_clean();
-
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode('success'));
-    return $response;
 
 });
 
@@ -537,35 +609,44 @@ $app->post('/add_order', function ($request, $response, $args) {
 //  RETURN PAYMENT URL OF GUARD API AGAINST PAYMENT OF USER ORDER
 $app->post('/stripe_payment_request', function ($request, $response, $args) {
 
-    $email   =  $request->getParam('email');
-    $amount  =  $request->getParam('amount');
-    $token   =  $request->getParam('token');
+    try {
 
-    $user_id  = 0;
+        $email = $request->getParam('email');
+        $amount = $request->getParam('amount');
+        $token = $request->getParam('token');
 
-    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
+        $user_id = 0;
 
-    if(DB::count() == 0){
+        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
 
-        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
-        DB::insert('users', array(
-            'smooch_id' => $email
-        ));
-        $user_id = DB::insertId();
+        if (DB::count() == 0) {
+
+            // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+            DB::insert('users', array(
+                'smooch_id' => $email
+            ));
+            $user_id = DB::insertId();
+        } else {
+
+            // IF USER ALREADY EXIST IN DATABASE
+            $user_id = $getUser['id'];
+        }
+
+
+        $result = stripePaymentRequest(($amount * 100), $user_id, $email, $token);
+
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson($result);
+        return $response;
     }
-    else{
+    catch(MeekroDBException $e) {
 
-        // IF USER ALREADY EXIST IN DATABASE
-        $user_id = $getUser['id'];
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
     }
-
-
-    $result =  stripePaymentRequest(($amount * 100),$user_id,$email,$token);
-
-    // RESPONSE RETURN TO REST API CALL
-    $response = $response->withStatus(202);
-    $response = $response->withJson($result);
-    return $response;
 
 });
 
@@ -585,7 +666,7 @@ function  stripePaymentRequest($amount, $userId, $email, $token)
     try
     {
         require_once('stripe/init.php');
-        \Stripe\Stripe::setApiKey("sk_live_2ecjCMMKGtiuQgA3tAcq83t5"); //Replace with your Secret Key
+        \Stripe\Stripe::setApiKey("sk_live_bOEx3vR2HgwAMMmYumsmO6TW"); //Replace with your Secret Key
 
 
         // Charge the user's card:
@@ -673,10 +754,10 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mailbody .= '<body style="padding: 0; margin: 0" >';
     $mailbody .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px " >';
     $mailbody .= '<div style="font-family: Open Sans" src="https://fonts.googleapis.com/css?family=Open+Sans:300">';
-    $mailbody .= '<div  style="background-image: url(http://dev.m.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;">';
+    $mailbody .= '<div  style="background-image: url(http://dev.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;">';
     $mailbody .= '<table style="width: 100%; color: white; padding: 30px" >';
     $mailbody .= '<tr style="font-size: 30px; padding: 10px" >';
-    $mailbody .= '<td > <img style="padding-top: 10px; width: 20px" src="http://dev.m.orderapp.com/restapi/images/bag.png" > Order Summary </td>';
+    $mailbody .= '<td > <img style="padding-top: 10px; width: 20px" src="http://dev.orderapp.com/restapi/images/bag.png" > Order Summary </td>';
     $mailbody .= '<td style="text-align: right">'.$user_order['total'].' NIS</td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 10px" >';
@@ -756,15 +837,15 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mailbody .= '<td colspan="2" style="padding: 10px 0" > Customer information   </td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
-    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_user.png" ></td>';
+    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_user.png" ></td>';
     $mailbody .= '<td style="text-align: left; white-space: nowrap"> '.$user_order['name'].' </td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
-    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png" ></td>';
+    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_phone.png" ></td>';
     $mailbody .= '<td style="text-align: left; white-space: nowrap"> '.$user_order['contact'].' </td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
-    $mailbody .= '<td style="padding: 10px 0; text-align: center" > <img style=" height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
+    $mailbody .= '<td style="padding: 10px 0; text-align: center" > <img style=" height: 24px" src="http://dev.orderapp.com/restapi/images/ic_location.png" ></td>';
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
@@ -778,11 +859,11 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
-    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_email.png" ></td>';
+    $mailbody .= '<td style="padding: 10px 0" > <img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_email.png" ></td>';
     $mailbody .= '<td style="text-align: left; white-space: nowrap"> '.$user_order['email'].' </td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
-    $mailbody .= '<td style="padding: 10px 0" > <img style=" width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_card.png" ></td>';
+    $mailbody .= '<td style="padding: 10px 0" > <img style=" width: 20px" src="http://dev.orderapp.com/restapi/images/ic_card.png" ></td>';
     $mailbody .= '<td style="text-align: left; white-space: nowrap"> '.$user_order['Cash_Card'].' </td>';
     $mailbody .= '</tr>';
     $mailbody .= '</table>';
@@ -847,11 +928,11 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mailbody  .= '@import url("https://fonts.googleapis.com/css?family=Open+Sans:300");';
     $mailbody  .= '</style>';
     $mailbody  .= '<div style="font-family: Open Sans">';
-    $mailbody  .= '<div style="background-image: url(http://dev.m.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >';
+    $mailbody  .= '<div style="background-image: url(http://dev.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >';
     $mailbody  .= '<table style="width: 100%; color: white; padding: 30px">';
     $mailbody  .= '<tr style="font-size: 30px; padding: 10px">';
     $mailbody  .= '<td dir="rtl" style="text-align: left">'.$user_order['total'].' ש"ח'.'</td>';
-    $mailbody  .= '<td style="text-align: right;" >  סיכום הזמנה <img style="padding-top: 10px; width: 20px" src="http://dev.m.orderapp.com/restapi/images/bag.png" ></td>';
+    $mailbody  .= '<td style="text-align: right;" >  סיכום הזמנה <img style="padding-top: 10px; width: 20px" src="http://dev.orderapp.com/restapi/images/bag.png" ></td>';
     $mailbody  .= '</tr>';
     $mailbody  .= '<tr style="font-size: 12px; padding: 10px" >';
     $mailbody  .= '<td>'.$user_order['Cash_Card_he'].'</td>';
@@ -929,7 +1010,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['contact'].' </td>';
-    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png"></td>';
+    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_phone.png"></td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
 
@@ -942,15 +1023,15 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
         $mailbody .= '<td style="text-align: right; white-space: nowrap"dir="rtl">  איסוף עצמי ממסעדה : '.$user_order['restaurantAddress'].'</td>';
     }
 
-    $mailbody .=  '<td style="padding: 10px 0; text-align: center"> <img style="height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
+    $mailbody .=  '<td style="padding: 10px 0; text-align: center"> <img style="height: 24px" src="http://dev.orderapp.com/restapi/images/ic_location.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .=  '<td style="text-align: right; white-space: nowrap">'.$user_order['email'].'</td>';
-    $mailbody .=  '<td style="padding: 10px 0;"><img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_email.png" ></td>';
+    $mailbody .=  '<td style="padding: 10px 0;"><img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_email.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .=  '<td style="text-align: right; white-space: nowrap">'.$user_order['Cash_Card_he'].'</td>';
-    $mailbody .=  '<td style="padding: 10px 0;" > <img style=" width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_card.png" ></td>';
+    $mailbody .=  '<td style="padding: 10px 0;" > <img style=" width: 20px" src="http://dev.orderapp.com/restapi/images/ic_card.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '</table>';
     $mailbody .=  '</div></div></body></html>';
@@ -1014,11 +1095,11 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mailbody  .= '@import url("https://fonts.googleapis.com/css?family=Open+Sans:300");';
     $mailbody  .= '</style>';
     $mailbody  .= '<div style="font-family: Open Sans">';
-    $mailbody  .= '<div style="background-image: url(http://dev.m.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >';
+    $mailbody  .= '<div style="background-image: url(http://dev.orderapp.com/restapi/images/header.png); background-repeat: no-repeat; background-position: center; background-size: cover;" >';
     $mailbody  .= '<table style="width: 100%; color: white; padding: 30px">';
     $mailbody  .= '<tr style="font-size: 30px; padding: 10px">';
     $mailbody  .= '<td dir="rtl" style="text-align: left">'.$user_order['total'].' ש"ח'.'</td>';
-    $mailbody  .= '<td style="text-align: right;" >  סיכום הזמנה <img style="padding-top: 10px; width: 20px" src="http://dev.m.orderapp.com/restapi/images/bag.png" ></td>';
+    $mailbody  .= '<td style="text-align: right;" >  סיכום הזמנה <img style="padding-top: 10px; width: 20px" src="http://dev.orderapp.com/restapi/images/bag.png" ></td>';
     $mailbody  .= '</tr>';
     $mailbody  .= '<tr style="font-size: 12px; padding: 10px" >';
     $mailbody  .= '<td>'.$user_order['Cash_Card_he'].'</td>';
@@ -1081,11 +1162,11 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['name'].' </td>';
-    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_user.png"></td>';
+    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_user.png"></td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['contact'].' </td>';
-    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_phone.png"></td>';
+    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_phone.png"></td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
 
@@ -1098,15 +1179,15 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
         $mailbody .= '<td style="text-align: right; white-space: nowrap"dir="rtl">  איסוף עצמי ממסעדה : '.$user_order['restaurantAddress'].'</td>';
     }
 
-    $mailbody .=  '<td style="padding: 10px 0; text-align: center"> <img style="height: 24px" src="http://dev.m.orderapp.com/restapi/images/ic_location.png" ></td>';
+    $mailbody .=  '<td style="padding: 10px 0; text-align: center"> <img style="height: 24px" src="http://dev.orderapp.com/restapi/images/ic_location.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .=  '<td style="text-align: right; white-space: nowrap">'.$user_order['email'].'</td>';
-    $mailbody .=  '<td style="padding: 10px 0;"><img style="width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_email.png" ></td>';
+    $mailbody .=  '<td style="padding: 10px 0;"><img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_email.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .=  '<td style="text-align: right; white-space: nowrap">'.$user_order['Cash_Card_he'].'</td>';
-    $mailbody .=  '<td style="padding: 10px 0;" > <img style=" width: 20px" src="http://dev.m.orderapp.com/restapi/images/ic_card.png" ></td>';
+    $mailbody .=  '<td style="padding: 10px 0;" > <img style=" width: 20px" src="http://dev.orderapp.com/restapi/images/ic_card.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '</table>';
     $mailbody .=  '</div></div></body></html>';

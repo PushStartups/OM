@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OrderApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/all.css">
+    <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
+
+
+    <script src="script/jquery.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/script.js"> </script>
+    <script src="script/ajaxServerRequestsIndex.js"></script>
+    <script src="script/alertify.min.js"></script>
+    <script src="script/commonAjaxCall.js"></script>
+
+
+    <!--GOOGLE ANALYTICS HEADER CODE-->
+    <script>
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+                    (i[r].q=i[r].q||[]).push(arguments)
+                },i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<script>
+
+    // ON DOCUMENT READY CALL TO DISPLAY ALL CITIES
+    // FOR USER SELECTION
+
+    $(document).ready(function() {
+
+        commonAjaxCall("/restapi/index.php/get_all_cities", "",displayAllCities); // CALL AJAX DATA FROM SERVER
+
+    });
+
+</script>
+
+
+
+<body>
+
+<div id="wrapper">
+    <!-- carousel slider -->
+    <div class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <section class="jumbotron vertical-center img-block">
+        <div class="container">
+            <nav id="nav">
+                <ul>
+                    <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
+                    <!--<li><a class="active" href="#">HE</a></li>-->
+                </ul>
+            </nav>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 add">
+                    <header id="header">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="images description">
+                                <strong>Order App</strong>
+                            </a>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 add">
+                    <form class="form" action="#">
+                        <h1>ORDER SMART <br>ORDER FAST</h1>
+                        <div class="row no-gutters add">
+                            <div class="col-md-6 col-sm-6 col-xs-12 box">
+                                <div class="dropdown error">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="text-span">Dropdown Example</span>
+                                        <span class="caret"></span></button>
+                                    <ul id="city_list"  class="dropdown-menu scrollable-menu" role="menu">
+                                    </ul>
+                                    <span id="error-field" class="fild-title">*Required field</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12 box">
+                                <button class="btn-submit" onclick="start_ordering()" type="button" >Start Ordering</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="img visible-lg visible-md">
+        <img src="img/delivery-desktop.png" alt="images description">
+    </div>
+    <div class="img visible-sm visible-xs">
+        <img src="img/delivery-mobile.png" alt="images description">
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade"  id="about" role="dialog">
+    <div class="modal-dialog modal-md">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3> ORDERAPP, ORDER FAST </h3>
+            <p>
+                "What's for dinner?" <br>
+                "You choose" </br>
+                "I'll choose, but you're calling in the order" </br>
+                "Ok, never mind. I'll choose, you call" </br></br>
+                Sound familiar? We all hate making that dreaded 8-10 min takeout call,
+                shouting to be heard over the din of background noise, when all you want to do is order some burgers. </br></br>
+                Enter OrderApp! With a few clicks on your screen you can find a comprehensive list of restaurants in your area that are offering food takeout delivery at any given time.
+                You can choose a restaurant, browse their online menu and then send your order via chat, without having to try and speak to a live human being.
+                Your order for delivery will be recorded in the chat, thereby minimizing the likelihood of the restaurant messing up your order. </br></br>
+                No need to procrastinate and argue over that frustrating phone call any longer. With OrderApp, you can place your online takeout order to be delivered to you with no hassle and no tears.</br>
+                <br />
+                *Powered by Push Startups
+            </p>
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="#"><img src="img/fb.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/tw.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/gp.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/insta.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/pin.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/link.png"></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    $('.carousel').carousel();
+
+</script>
+
+
+<script type="text/javascript">
+
+
+    var selectedCityName = null;
+
+
+    $(".dropdown").removeClass("error");
+    $("#error-field").hide();
+
+
+    // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
+    if(!isCitySelected())
+    {
+
+        $('.btn-primary > span#text-span').text('Choose a city');
+
+    }
+    else
+    {
+        // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
+        selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+        $('.btn-primary > span#text-span').text(selectedCityName);
+    }
+
+
+
+    // CLICK ON START ORDERING BUTTON
+    function start_ordering()
+    {
+
+        if( isCitySelected() == true)
+        {
+
+            $(".dropdown").removeClass("error");
+            $("#error-field").hide();
+
+            selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+            selectedCityName = selectedCityName.replace(/\s/g, '');
+            window.location.href = 'restaurants/'+selectedCityName;
+
+        }
+        else
+        {
+
+            // THROW ERROR
+            $(".dropdown").addClass("error");
+            $("#error-field").show();
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

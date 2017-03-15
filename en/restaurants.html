@@ -1,0 +1,233 @@
+<!Doctype html>
+<html>
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Choose a city</title>
+        <!--STYLE SHEETS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/en/style/rest-list-new.css">
+        <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
+    </head>
+</head>
+
+<body>
+<img id="loader" class="loader-css" src="/en/img/loader.gif" >
+<div id="wrapper">
+    <section class="jumbotron jumbotron-fluid">
+        <header id="header">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-auto">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="/en/img/logo.png" alt="images description">
+                                <strong>Order App</strong>
+                            </a>
+                        </div>
+                        <span> CHOOSE YOUR RESTAURANT</span>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="content dropdown">
+        <div class="parent" style="position: relative;width:100%; height:100%;">
+            <img src="/en/img/pizza.png" style="left: -10px"/>
+            <img src="/en/img/img1.png" style="right: 0"/>
+        </div>
+
+        <div class="parent-bottom" style="position: relative;width:100%;height:100%;">
+            <img src="/en/img/left_bottom.png" style="left: -10px;bottom: 0"/>
+            <img src="/en/img/right_bottom.png" style="right: 0"/>
+        </div>
+        <div class="container new height-box" >
+
+            <!--ALL RESTAURANTS-->
+            <div class="scrollable-area height-box" id="restaurants-ajax">
+            </div>
+
+        </div>
+    </section>
+    <a class="btn-top" ><img src="/en/img/icon01.png"></a>
+    <a class="btn-left" href="../index.html"></a>
+</div>
+
+
+<div class="modal fade"  id="slider-popup" role="dialog">
+
+    <div class="modal-dialog modal-md">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+
+            <div id="menu-carousel" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators" style="display:none">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+
+                <!-- ALL GALLERY IMAGES FORM GETALLESTAURANTS -->
+                <div class="carousel-inner" role="listbox" id="gallery-imgs">
+                </div>
+
+                <a class="left carousel-control" href="#menu-carousel" role="button" data-slide="prev">
+                    <span class="sr-only">Previous</span>
+                    <img src="/en/img/prev.png">
+                </a>
+                <a class="right carousel-control" href="#menu-carousel" role="button" data-slide="next">
+                    <span class="sr-only">Next</span>
+                    <img src="/en/img/next.png">
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- POPUP SHOWING TIME -->
+<div class="time-popup new">
+    <div class="header">
+        <img src="/en/img/popup-bg.png">
+        <h3>Opening Hours</h3>
+        <h4>Until half an hour before closing</h4>
+    </div>
+
+    <!-- TIME IS SET FROM GETALLRESTAURANTS METHOD -->
+    <table style="width:100%; padding:20px 15px; border-collapse: unset" id="rest-time">
+    </table>
+
+</div>
+
+
+<!-- POPUP SHOWING DISCOUNT -->
+<div class="discount-popup new">
+    <div class="header">
+        <h3>Delivery Fee</h3>
+        <h4>Delivery price according <br>to Area</h4>
+    </div>
+
+
+    <!-- POPUP SHOWING FREE DELIVERY -->
+    <div class="txt" id="discount-pop">
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade"  id="about" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3> ORDERAPP, ORDER FAST </h3>
+
+            <p>
+                "What's for dinner?" <br>
+                "You choose" </br>
+                "I'll choose, but you're calling in the order" </br>
+                "Ok, never mind. I'll choose, you call" </br></br>
+                Sound familiar? We all hate making that dreaded 8-10 min takeout call,
+                shouting to be heard over the din of background noise, when all you want to do is order some burgers. </br></br>
+                Enter OrderApp! With a few clicks on your screen you can find a comprehensive list of restaurants in your area that are offering food takeout delivery at any given time.
+                You can choose a restaurant, browse their online menu and then send your order via chat, without having to try and speak to a live human being.
+                Your order for delivery will be recorded in the chat, thereby minimizing the likelihood of the restaurant messing up your order. </br></br>
+                No need to procrastinate and argue over that frustrating phone call any longer. With OrderApp, you can place your online takeout order to be delivered to you with no hassle and no tears.</br>
+                <br />
+                *Powered by Push Startups
+            </p>
+
+            <!-- SOCIAL LINKS FOR ORDER APP -->
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/theorderapp/"><img src="/en/img/fb.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/OrderAppTeam"><img src="/en/img/tw.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/106974163137537901922"><img src="/en/img/gp.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/theorderapp/"><img src="/en/img/insta.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/orderapp/"><img src="/en/img/pin.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="/en/img/link.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/en/script/jcf.js"></script>
+<script type="text/javascript" src="/en/script/jcf.scrollable.js"></script>
+
+<script type="text/javascript">
+
+    // replace custom forms
+    jcf.lib.domReady(function(){
+
+        jcf.customForms.replaceAll();
+
+    });
+
+
+</script>
+
+<script src="/en/script/script.js"> </script>
+<script type="text/javascript" src="/en/script/ajaxServerRequestsRestaurants.js"></script>
+<script src="/en/script/commonAjaxCall.js"></script>
+<script src="/en/script/alertify.min.js"></script>
+
+<script>
+
+
+
+    // TOP BUTTON CLICK LISTENER
+    $( ".btn-top" ).click(function() {
+
+        $('.height-box').stop().animate({ scrollTop: 0 }, 500);
+
+        $('.vscroll-slider').css('top','0');
+    });
+
+
+    // ON SCROLL HIDE POPUPS
+    $('.height-box').scroll(function() {
+
+        $(".time-popup").fadeOut();
+        $(".discount-popup").fadeOut();
+
+    });
+
+
+</Script>
+</body>
+</html>
