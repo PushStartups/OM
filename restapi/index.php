@@ -898,9 +898,9 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mail->AddCC(EMAIL);                        //SEND  CLIENT EMAIL COPY TO ADMIN
 
 //Send HTML or Plain Text email
-    $mail->isHTML(true);
+    $mail->isHTML(false);
     $mail->Subject = $user_order['restaurantTitle'].' Order# '.$orderId;
-    $mail->Body = "<i>$mailbody</i>";
+    $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
     if (!$mail->send())
@@ -1065,9 +1065,9 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
 
     //Send HTML or Plain Text email
-    $mail->isHTML(true);
+    $mail->isHTML(false);
     $mail->Subject = 'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
-    $mail->Body = "<i>$mailbody</i>";
+    $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
     if (!$mail->send())
@@ -1222,9 +1222,9 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
 
     //Send HTML or Plain Text email
-    $mail->isHTML(true);
+    $mail->isHTML(false);
     $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
-    $mail->Body = "<i>$mailbody</i>";
+    $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
     if (!$mail->send())
@@ -1332,9 +1332,9 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
 
     //Send HTML or Plain Text email
-    $mail->isHTML(true);
+    $mail->isHTML(false);
     $mail->Subject = " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
-    $mail->Body = "<i>$mailbody</i>";
+    $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
     if (!$mail->send()) {
