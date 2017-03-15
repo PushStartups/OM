@@ -1,1068 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="Image for Items hide">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/Nav_bar_back_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/Path 2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/Shopping-Cart-10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/add-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/bg-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/bg-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/bg-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/bg-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/bg-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/cart-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/check.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/check02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/checked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/checked01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/delivery line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/drop-down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/drop_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/gallery-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/gallery.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/header--.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/header-bg-rtl.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/header-sm-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_status.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_timer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/icon01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/left_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/logo-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/logo-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/new-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ok_active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/onion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/pizza1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/popup-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/rest1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/restaurants-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/right_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/salad1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/top_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/uncheck01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/winner-badge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/helveticaneue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/Image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/Nav_bar_back_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/Shopping-Cart-10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/add-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/bg-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/bg-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/bg-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/bg-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/bg-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/cart-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/check.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/check02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/checked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/checked01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/delivery-desktop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/delivery-mobile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/drop-down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/drop_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/gallery.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/header-bg-rtl.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/home-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_close_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_cvs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_reduce.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_status.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_visa_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ic_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/icon01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/images/new-bg_01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/images/new-bg_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/images/new-bg_03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/left_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/new-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/ok_active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/onion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/pizza1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/popup-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/rest1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/restaurants-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/right_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/salad1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/scoter-desk-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/scoter-m-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/shopping-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/small_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/top_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/uncheck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/uncheck01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/images/winner-badge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/helveticaneue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/Shopping-Cart-10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/add-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/arrow-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-popup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/delivery line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/delivery-desktop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/delivery-mobile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/gallery-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/ic_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/logo---.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/logo-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/pizza1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/popup-header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/salad1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/scoter-desk-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/scoter-m-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/shopping-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/Roza_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/Shopping-Cart-10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/add-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angos_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/arrow-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/arrow_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/back_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bandora_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-boder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg-popup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bg_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Chinese food .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Dessert .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Hummus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Starters.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Sushi1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Sushi12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Sushi3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/Tortilla.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/drink1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/drink2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/fish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/hamburger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/kids.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/pasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/pasta2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/sandwich.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/sushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/test.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/categories/tost.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/cs_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/delivery line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/delivery-desktop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/delivery-mobile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/gallery-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/home-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/ic_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/Japan_chicken_salad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/ken_logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/logo---.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/logo-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/logo01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/meshulashim_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/oshi_logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pc_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pizza1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/popup-header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/salad1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/scoter-desk-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/scoter-m-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/shopping-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/helveticaneue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/-.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/Combined Shape.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/Image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/X.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/add-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angos_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/angus_gallery/ang_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/arrow_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/back_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bandora_gallery/band_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bandora_gallery/band_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bandora_gallery/band_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bandora_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bg-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bg-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bg-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bg-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bg_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Chinese food .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Dessert .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Hummus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Starters.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Sushi1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Sushi12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Sushi3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Tortilla.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/drink1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/drink2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/fish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hamburger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kids.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pasta2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sandwich.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/tost.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/crispy_sendwich_gallery/cs_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/crispy_sendwich_gallery/cs_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/crispy_sendwich_gallery/cs_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/crispy_sendwich_gallery/cs_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/crispy_sendwich_gallery/cs_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/cs_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/delivery-desktop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/delivery-mobile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/12191438_1207784905905562_6667840069913494798_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/13615342_1380350981982286_3000246857297291030_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/16472960_1619704218046960_2386538188138892890_n.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Antipasto Shakshuka.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Baked Salmon Fillet with vegitables.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Bass Fillet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Breakfast for two.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Breakfast.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Breakfastt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Cheese Filo Burreka.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Cheese Tortilla.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Double Veggie Burger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Falafel Tortilla.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Feta cheese.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Fetta _ Eggplant Shakshuka.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Fetuccini with Salmon in Lemon Assian Sauce.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Fried Rice with tuna.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Gyoza Sichuan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Open Bagel with cheese.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Potato _ Corn Balls with chips _ vegitables.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Salmon Burger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Salmon Cigar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Salmon in Lemon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Scandinavian Morning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_gallery/Vegitables in Curry.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/greg_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/home-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ic_cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ic_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ic_cvs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ic_plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ic_reduce.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ic_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/Japan_chicken _salad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/Japan_chicken_salad.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/Japan_sake_roll.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/japan_boat_combo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/japan_combination.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/japan_crazy_roll.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/japan_inside_out.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/japan_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ken_gallery/ken_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ken_gallery/ken_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ken_logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/meal_vector.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/mesh_gallery/mesh_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/mesh_gallery/mesh_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/meshulashim_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/oshi_gallery/oshi_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/oshi_gallery/oshi_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/oshi_gallery/oshi_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/oshi_logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pc_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza_cheese_gallery/pc_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza_cheese_gallery/pc_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza_cheese_gallery/pc_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza_cheese_gallery/pc_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/resto_logo_02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_10.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_11.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_12.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_16.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_17.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_18.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_19.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_3.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_4.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_5.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_7.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_8.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_9.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/roza_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/salad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/salad1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/scoter-desk-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/scoter-m-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shopping-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/small_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/uncheck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/PHPMailer/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/container-interop/container-interop/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/psr7/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/nikic/fast-route/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/nikic/fast-route/._.hhconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/._.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/fonts/OpenSansHebrew/OpenSansHebrew-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/fonts/OpenSansHebrew/OpenSansHebrew-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/fonts/OpenSansHebrew/OpenSansHebrew.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/fonts/OpenSansHebrew/OpenSansHebrew.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/restaurants.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/alertify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/alertify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/commonAjaxCall.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/jcf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/jcf.scrollable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/script/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/alertify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/alertify.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/alertify.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/alertify.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/choose-menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/index-he.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/interface.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/rest-list-new.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/restaurants.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/bootstrap.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/bootstrap.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/default.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/default.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/semantic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/semantic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/semantic.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/style/themes/semantic.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/choose-menu--old.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/choose-menu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/OpenSansHebrew/OpenSansHebrew-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/OpenSansHebrew/OpenSansHebrew-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/OpenSansHebrew/OpenSansHebrew.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/OpenSansHebrew/OpenSansHebrew.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/Helvetica Neu Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeue BlackCond.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeue Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeue Medium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeue Thin.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeue.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeueBd.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeueHv.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeueIt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeueLt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeueMed.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/lobster/Lobster.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/fonts/lobster/Lobster.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/index-he.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/rest-list-new.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/rest-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jcf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jcf.scrollable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jquery.easing.1.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/script/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/choose-menu--old.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/choose-menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/index-he.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/interface.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/rest-list-new.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front_end/style/restaurants.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/OpenSansHebrew/OpenSansHebrew-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/OpenSansHebrew/OpenSansHebrew-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/OpenSansHebrew/OpenSansHebrew.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/OpenSansHebrew/OpenSansHebrew.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/Helvetica Neu Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeue BlackCond.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeue Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeue Medium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeue Thin.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeue.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeue.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeueBd.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeueHv.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeueIt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeueLt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/HelveticaNeueMed.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/lobster/Lobster.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/fonts/lobster/Lobster.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/menu-page.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/restaurants.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/ajaxServerRequestsIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/ajaxServerRequestsRestaurants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/alertify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/commonAjaxCall.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/jquery.bpopup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/jquery.easing.1.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/style/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/style/menu-page.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/style/restaurants.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/HelveticaNeu.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/OpenSansHebrew/OpenSansHebrew-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/OpenSansHebrew/OpenSansHebrew-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/OpenSansHebrew/OpenSansHebrew.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/OpenSansHebrew/OpenSansHebrew.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/Helvetica Neu Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeue BlackCond.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeue Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeue Medium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeue Thin.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeue.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeue.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeueBd.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeueHv.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeueIt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeueLt.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/HelveticaNeueMed.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/lobster/Lobster.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/fonts/lobster/Lobster.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/order.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/page3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/restaurants.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/alertify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/alertify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/commonAjaxCall.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/isMobileCheck.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery.bpopup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery.easing.1.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/jquery.mobile.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/script/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/alertify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/alertify.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/alertify.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/alertify.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/all.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/game.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/bootstrap.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/bootstrap.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/default.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/default.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/default.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/semantic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/semantic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/semantic.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/style/themes/semantic.rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/PHPMailer/._.scrutinizer.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/PHPMailer/._.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/._.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/._.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/._.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/psr7/._.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/nikic/fast-route/._.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/._.travis.yml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/Style-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/dropdown-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/interface.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/my-style-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/he.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index_he.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/ajaxServerRequests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/ajaxServerRequestsIndex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/ajaxServerRequestsPage2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/ajaxServerRequestsPage2_he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/ajaxServerRequests_he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/isMobileCheck.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page1_he.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page2_he.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/page3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/script/script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/style/index.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/animate.css" afterPath="$PROJECT_DIR$/m/en/style/animate.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/m/en/style/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/dropdown.css" afterPath="$PROJECT_DIR$/m/en/style/dropdown.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/font-awesome.css" afterPath="$PROJECT_DIR$/m/en/fonts/font-awesome.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/my-style.css" afterPath="$PROJECT_DIR$/m/en/style/my-style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/m/en/fonts/FontAwesome.otf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/HelveticaNeu.ttf" afterPath="$PROJECT_DIR$/m/en/fonts/HelveticaNeu.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/HelveticaNeu.woff" afterPath="$PROJECT_DIR$/front_end/fonts/helveticaneue/HelveticaNeue.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/HelveticaNeue-Regular.ttf" afterPath="$PROJECT_DIR$/m/en/fonts/HelveticaNeue-Regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/Lobster_1_4.ttf" afterPath="$PROJECT_DIR$/m/en/fonts/Lobster_1_4.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/m/en/fonts/fontawesome-webfont.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/m/en/fonts/fontawesome-webfont.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/m/en/fonts/fontawesome-webfont.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/m/en/fonts/fontawesome-webfont.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/m/en/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/m/en/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/m/en/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/m/en/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/Helvetica Neu Bold.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/Helvetica Neu Bold.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue BlackCond.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeue BlackCond.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue Light.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeue Light.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue Medium.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeue Medium.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue Thin.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeue Thin.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeue.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeue.woff" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeue.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueBd.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeueBd.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueHv.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeueHv.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueIt.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeueIt.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueLt.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeueLt.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/HelveticaNeueMed.ttf" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/HelveticaNeueMed.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/freefontsdownload.txt" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/helveticaneue/helveticaneue.png" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/helveticaneue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/lobster/Lobster.ttf" afterPath="$PROJECT_DIR$/en/fonts/lobster/Lobster.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/lobster/Lobster.woff" afterPath="$PROJECT_DIR$/en/fonts/lobster/Lobster.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts/sfns.ttf" afterPath="$PROJECT_DIR$/m/en/fonts/sfns.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/close.png" afterPath="$PROJECT_DIR$/en/img/close.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/delivery-desktop.png" afterPath="$PROJECT_DIR$/en/img/delivery-desktop.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/delivery-mobile.png" afterPath="$PROJECT_DIR$/en/img/delivery-mobile.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/home-bg.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/home-bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/ic_close.png" afterPath="$PROJECT_DIR$/en/img/ic_close.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/logo.png" afterPath="$PROJECT_DIR$/en/img/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/scoter-desk-he.png" afterPath="$PROJECT_DIR$/en/img/scoter-desk-he.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/scoter-m-he.png" afterPath="$PROJECT_DIR$/en/img/scoter-m-he.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/-.png" afterPath="$PROJECT_DIR$/front_end/images/ic_plus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/00.png" afterPath="$PROJECT_DIR$/m/en/img/00.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/2.png" afterPath="$PROJECT_DIR$/en/img/2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/3.png" afterPath="$PROJECT_DIR$/en/img/3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/AVA.png" afterPath="$PROJECT_DIR$/m/en/img/AVA.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/AVA_1.png" afterPath="$PROJECT_DIR$/m/en/img/AVA_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Blutooth.png" afterPath="$PROJECT_DIR$/m/en/img/Blutooth.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Blutooth1.png" afterPath="$PROJECT_DIR$/m/en/img/Blutooth1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Blutooth2.png" afterPath="$PROJECT_DIR$/m/en/img/Blutooth2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Button gray border-radius.png" afterPath="$PROJECT_DIR$/m/en/img/Button gray border-radius.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Button gray.png" afterPath="$PROJECT_DIR$/m/en/img/Button gray.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Button green no border radius.png" afterPath="$PROJECT_DIR$/m/en/img/Button green no border radius.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Button green.png" afterPath="$PROJECT_DIR$/m/en/img/Button green.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Combined Shape.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg-boder.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Green Background.png" afterPath="$PROJECT_DIR$/m/en/img/Green Background.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Group 2.png" afterPath="$PROJECT_DIR$/m/en/img/Group 2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Group 4.png" afterPath="$PROJECT_DIR$/m/en/img/Group 4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/HE Copy.png" afterPath="$PROJECT_DIR$/m/en/img/HE Copy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ICON CART.png" afterPath="$PROJECT_DIR$/m/en/img/ICON CART.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Image.png" afterPath="$PROJECT_DIR$/en/img/Image.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Image2.png" afterPath="$PROJECT_DIR$/m/en/img/Image2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Image3.png" afterPath="$PROJECT_DIR$/m/en/img/Image3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Image4.png" afterPath="$PROJECT_DIR$/m/en/img/Image4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Knob.png" afterPath="$PROJECT_DIR$/m/en/img/Knob.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/NO NEXT.png" afterPath="$PROJECT_DIR$/m/en/img/NO NEXT.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/NO NEXT1.png" afterPath="$PROJECT_DIR$/m/en/img/NO NEXT1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Nav_bar_back_icon.png" afterPath="$PROJECT_DIR$/m/en/img/Nav_bar_back_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Off Switch.png" afterPath="$PROJECT_DIR$/m/en/img/Off Switch.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Oval 3.png" afterPath="$PROJECT_DIR$/m/en/img/Oval 3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Oval 41 Copy.png" afterPath="$PROJECT_DIR$/m/en/img/Oval 41 Copy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Oval 6.png" afterPath="$PROJECT_DIR$/m/en/img/Oval 6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Oval 7.png" afterPath="$PROJECT_DIR$/m/en/img/Oval 7.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 12.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 12.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 2.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 37 Copy.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 37 Copy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 5.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 6.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 60.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 60.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 600.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 600.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 69.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 69.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Rectangle 9.png" afterPath="$PROJECT_DIR$/m/en/img/Rectangle 9.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Shape.png" afterPath="$PROJECT_DIR$/m/en/img/Shape.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Shape1.png" afterPath="$PROJECT_DIR$/m/en/img/Shape1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Shape3.png" afterPath="$PROJECT_DIR$/m/en/img/Shape3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Shape5.png" afterPath="$PROJECT_DIR$/m/en/img/Shape5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Shape6.png" afterPath="$PROJECT_DIR$/m/en/img/Shape6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Signal.png" afterPath="$PROJECT_DIR$/m/en/img/Signal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Slider.png" afterPath="$PROJECT_DIR$/m/en/img/Slider.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Spacebar.png" afterPath="$PROJECT_DIR$/m/en/img/Spacebar.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Switch on.png" afterPath="$PROJECT_DIR$/m/en/img/Switch on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/TOTAL 3.png" afterPath="$PROJECT_DIR$/m/en/img/TOTAL 3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/TOTAL Copy.png" afterPath="$PROJECT_DIR$/m/en/img/TOTAL Copy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/TOTAL Copy0.png" afterPath="$PROJECT_DIR$/m/en/img/TOTAL Copy0.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/TOTAL.png" afterPath="$PROJECT_DIR$/m/en/img/TOTAL.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Thumbs.db" afterPath="$PROJECT_DIR$/m/en/img/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/Wifi.png" afterPath="$PROJECT_DIR$/m/en/img/Wifi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/X.png" afterPath="$PROJECT_DIR$/en/img/X.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_3.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_4.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_5.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_6.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_6.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_gallery/ang_7.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/angus_gallery/ang_7.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/american_fries.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/american_fries.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/angus_burger.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/angus_burger.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/angus_salad.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/angus_salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/angus_wm.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/angus_wm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/chicken_salad.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/chicken_salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/chicken_sandwich.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/chicken_sandwich.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/sweet_potato_fries.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/sweet_potato_fries.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/angus_items/tortilla.png" afterPath="$PROJECT_DIR$/m/en/img/angus_items/tortilla.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/arrow_icon.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/arrow_icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/back_arrow.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/back_arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_gallery/band_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bandora_gallery/band_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_gallery/band_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bandora_gallery/band_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_gallery/band_3.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/bandora_gallery/band_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/bandora_express.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/bandora_express.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/bandora_wm.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/bandora_wm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/bandura_mixed_grill.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/bandura_mixed_grill.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/beef_kabob.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/beef_kabob.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/chicken_breasts.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/chicken_breasts.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/chicken_skewers.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/chicken_skewers.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/chummus_and _techina.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/chummus_and _techina.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/food-chicken-meat-outdoors.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/food-chicken-meat-outdoors.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/food-salad-healthy-vegetables.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/food-salad-healthy-vegetables.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/merguez_sausage.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/merguez_sausage.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/shawarma.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/shawarma.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bandora_items/super_spicy_bandora.png" afterPath="$PROJECT_DIR$/m/en/img/bandora_items/super_spicy_bandora.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bg.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bg_logo.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/bg_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bt order_now.png" afterPath="$PROJECT_DIR$/m/en/img/bt order_now.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/checked.png" afterPath="$PROJECT_DIR$/m/en/img/checked.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/close.png" afterPath="$PROJECT_DIR$/front_end/images/close.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/crispy_sendwich_gallery/cs_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/crispy_sendwich_gallery/cs_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/crispy_sendwich_gallery/cs_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/crispy_sendwich_gallery/cs_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/crispy_sendwich_gallery/cs_3.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/crispy_sendwich_gallery/cs_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/crispy_sendwich_gallery/cs_4.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/crispy_sendwich_gallery/cs_4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/crispy_sendwich_gallery/cs_logo.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/crispy_sendwich_gallery/cs_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/1-100x100.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/1-100x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/10.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/10.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/11.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/11.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/2-100x100.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/2-100x100.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/3-1.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/3-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/4-1.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/4-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/5-1.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/5-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/6-1.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/6-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/7.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/7.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/8.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/8.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/9.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/9.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/CC063.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/CC063.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/PDP_Coca-Cola-HFCS-1.25-Liter-Bottle.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/PDP_Coca-Cola-HFCS-1.25-Liter-Bottle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/Prigan_grapefruit.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/Prigan_grapefruit.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/coca-cola-diet-1-75-litre.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/coca-cola-diet-1-75-litre.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/download (1).png" afterPath="$PROJECT_DIR$/m/en/img/drinks/download (1).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drinks/download.png" afterPath="$PROJECT_DIR$/m/en/img/drinks/download.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/drop_down.png" afterPath="$PROJECT_DIR$/m/en/img/drop_down.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/dropdown.png" afterPath="$PROJECT_DIR$/m/en/img/dropdown.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/favicon.png" afterPath="$PROJECT_DIR$/m/en/img/favicon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/gallery_01.png" afterPath="$PROJECT_DIR$/m/en/img/gallery_01.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/gallery_02.png" afterPath="$PROJECT_DIR$/m/en/img/gallery_02.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/12191438_1207784905905562_6667840069913494798_n.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/12191438_1207784905905562_6667840069913494798_n.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/13615342_1380350981982286_3000246857297291030_n.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/13615342_1380350981982286_3000246857297291030_n.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/16472960_1619704218046960_2386538188138892890_n.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/16472960_1619704218046960_2386538188138892890_n.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Antipasto Shakshuka.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Antipasto Shakshuka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Baked Salmon Fillet with vegitables.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Baked Salmon Fillet with vegitables.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Bass Fillet.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Bass Fillet.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Breakfast for two.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Breakfast for two.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Breakfast.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Breakfast.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Breakfastt.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Breakfastt.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Cheese Filo Burreka.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Cheese Filo Burreka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Cheese Tortilla.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Cheese Tortilla.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Double Veggie Burger.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Double Veggie Burger.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Falafel Tortilla.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Falafel Tortilla.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Feta cheese.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Feta cheese.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Fetta _ Eggplant Shakshuka.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Fetta _ Eggplant Shakshuka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Fetuccini with Salmon in Lemon Assian Sauce.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Fetuccini with Salmon in Lemon Assian Sauce.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Fried Rice with tuna.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Fried Rice with tuna.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Gyoza Sichuan.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Gyoza Sichuan.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Open Bagel with cheese.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Open Bagel with cheese.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Potato _ Corn Balls with chips _ vegitables.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Potato _ Corn Balls with chips _ vegitables.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Salmon Burger.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Salmon Burger.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Salmon Cigar.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Salmon Cigar.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Salmon in Lemon.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Salmon in Lemon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Scandinavian Morning.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Scandinavian Morning.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/greg_gallery/Vegitables in Curry.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/greg_gallery/Vegitables in Curry.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/he.png" afterPath="$PROJECT_DIR$/m/en/img/he.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/header address.png" afterPath="$PROJECT_DIR$/m/en/img/header address.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/header copy.png" afterPath="$PROJECT_DIR$/m/en/img/header copy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/header-cart1.png" afterPath="$PROJECT_DIR$/m/en/img/header-cart1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/header.png" afterPath="$PROJECT_DIR$/m/en/img/header.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/home-bg.png" afterPath="$PROJECT_DIR$/en/img/home-bg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_cancel.png" afterPath="$PROJECT_DIR$/en/img/ic_cancel.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_card.png" afterPath="$PROJECT_DIR$/m/en/img/ic_card.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_close.png" afterPath="$PROJECT_DIR$/en/img/ic_close_black.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_close_white.png" afterPath="$PROJECT_DIR$/m/en/img/ic_close_white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_cvs.png" afterPath="$PROJECT_DIR$/en/img/ic_cvs.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_gift.png" afterPath="$PROJECT_DIR$/m/en/img/ic_gift.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_location.png" afterPath="$PROJECT_DIR$/m/en/img/ic_location.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_notifi.png" afterPath="$PROJECT_DIR$/m/en/img/ic_notifi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_plus.png" afterPath="$PROJECT_DIR$/en/img/ic_plus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_reduce.png" afterPath="$PROJECT_DIR$/en/img/ic_reduce.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ic_visa.png" afterPath="$PROJECT_DIR$/en/img/ic_visa_small.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/Japan_chicken_salad.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/Japan_chicken _salad.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/Japan_sake_roll.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/Japan_sake_roll.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/japan_boat_combo.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/japan_boat_combo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/japan_combination.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/japan_combination.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/japan_crazy_roll.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/japan_crazy_roll.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/japan_inside_out.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/japan_inside_out.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_gallery/japan_logo.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/japan_gallery/japan_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/11.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/11.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/12.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/12.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/chicken _salad.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/chicken _salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/chicken_with_asian_vegetable.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/chicken_with_asian_vegetable.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/cocacola.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/cocacola.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/cocacola_zero.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/cocacola_zero.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/combination.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/combination.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/crazy_roll.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/crazy_roll.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/crispy_salmon_salad.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/crispy_salmon_salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/drink.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/drink.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/edamame.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/edamame.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/happy_family.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/happy_family.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/home_fries.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/home_fries.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/japan_logo.png" afterPath="$PROJECT_DIR$/m/en/img/japan_gallery/japan_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/japan_wm.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/japan_wm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/kimchi.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/kimchi.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/maki.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/maki.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/malaysian_stir_fry.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/malaysian_stir_fry.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/miso.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/miso.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/rice.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/rice.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/rice2.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/rice2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/rice3.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/rice3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/sake_roll.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/sake_roll.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/sprite.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/sprite.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/tempura.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/tempura.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/test.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/test.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_items/uramaki_inside_out.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/uramaki_inside_out.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/japan_logo.png" afterPath="$PROJECT_DIR$/m/en/img/japan_items/japan_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ken_gallery/ken_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/ken_gallery/ken_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/ken_gallery/ken_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/ken_gallery/ken_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/loader.gif" afterPath="$PROJECT_DIR$/en/img/loader.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/logo 2.png" afterPath="$PROJECT_DIR$/m/en/img/logo 2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/logo1.png" afterPath="$PROJECT_DIR$/m/en/img/logo1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/logo_without_text.png" afterPath="$PROJECT_DIR$/m/en/img/logo_without_text.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/main total.png" afterPath="$PROJECT_DIR$/m/en/img/main total.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_gallery/mesh_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/mesh_gallery/mesh_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_gallery/mesh_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/mesh_gallery/mesh_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/XL_pie.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/XL_pie.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/XL_toppings.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/XL_toppings.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/alfredo.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/alfredo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/arrabiata.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/arrabiata.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/bagel_toast.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/bagel_toast.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/borekas.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/borekas.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/crispy_capricci.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/crispy_capricci.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/edamame.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/edamame.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/fries.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/fries.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/gluten_free.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/gluten_free.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/greek_salad.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/greek_salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/home_fries.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/home_fries.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/kids_meal.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/kids_meal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/margarita.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/margarita.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/meshBanner.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/meshBanner.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/mesh_wm.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/mesh_wm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/meshulashim_pasta.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/meshulashim_pasta.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/meshulashim_pie.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/meshulashim_pie.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/meshulashim_salad.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/meshulashim_salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/meshulashim_toast.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/meshulashim_toast.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/pasta_roza.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/pasta_roza.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/ravioli.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/ravioli.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/sweet_potato_ravioli.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/sweet_potato_ravioli.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mesh_items/tuna_salad.png" afterPath="$PROJECT_DIR$/m/en/img/mesh_items/tuna_salad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/mobile_logo.png" afterPath="$PROJECT_DIR$/m/en/img/mobile_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/next.png" afterPath="$PROJECT_DIR$/m/en/img/next.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/offline.png" afterPath="$PROJECT_DIR$/m/en/img/offline.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/online.png" afterPath="$PROJECT_DIR$/m/en/img/online.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_gallery/oshi_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/oshi_gallery/oshi_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_gallery/oshi_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/oshi_gallery/oshi_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_gallery/oshi_3.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/oshi_gallery/oshi_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Adamame.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Adamame.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Apple.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Apple.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Carlberg.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Carlberg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Chicken_Chilli-1.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Chicken_Chilli-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Chicken_Salad.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Chicken_Salad.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Chicken_Tariaki.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Chicken_Tariaki.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Cola_Bottle.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Cola_Bottle.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Curry_Wok.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Curry_Wok.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Diet_Coke_Bottle.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Diet_Coke_Bottle.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Dim_Sam_Meat.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Dim_Sam_Meat.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Dim_Sam_Vegan.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Dim_Sam_Vegan.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Egrol-1.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Egrol-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Egrol2.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Egrol2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Fanta.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Fanta.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Fride_Rice_Chicken.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Fride_Rice_Chicken.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Fujiama.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Fujiama.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/FuzeTea.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/FuzeTea.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Gioza-1.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Gioza-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Gioza.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Gioza.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Grapefruit.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Grapefruit.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Happy_Family.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Happy_Family.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Japan.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Japan.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Kachi.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Kachi.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Kimchi.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Kimchi.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Krispi.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Krispi.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Misu_Noodle_Soup-300X300.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Misu_Noodle_Soup-300X300.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Misu_Shiru_Soup.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Misu_Shiru_Soup.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Nigeri_Avocado.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Nigeri_Avocado.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Nigeri_Denis.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Nigeri_Denis.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Nigeri_Salmon.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Nigeri_Salmon.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Nigeri_Tamago.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Nigeri_Tamago.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Nigeri_Tuna.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Nigeri_Tuna.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Okinoama.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Okinoama.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Orange.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Orange.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Oshi_Oshi.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Oshi_Oshi.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Oshi_Wok.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Oshi_Wok.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Padthai.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Padthai.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Padthai_Oshi.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Padthai_Oshi.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Product_pic487225-300x218.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Product_pic487225-300x218.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Rice.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Rice.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Sanchai_salad2.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Sanchai_salad2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Sashimi_Salmon_Salad.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Sashimi_Salmon_Salad.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Soda.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Soda.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Specail.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Specail.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Sprite.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Sprite.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Sprite_Zero.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Sprite_Zero.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Sushitrian.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Sushitrian.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/TakiTunaSalad.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/TakiTunaSalad.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Tampura_Mush1.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Tampura_Mush1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Tofu_Salad.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Tofu_Salad.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Veggie_Combo.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Veggie_Combo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Vegiterian.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Vegiterian.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Vegtable_Noodels.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Vegtable_Noodels.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Water_Grape.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Water_Grape.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/Zero_bottle.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/Zero_bottle.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/combogrande.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/combogrande.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/combogrande2.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/combogrande2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/fish_chips1.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/fish_chips1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/grape.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/grape.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/logo.png" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/oshi_wm.png" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/oshi_wm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/product_pic487222-300x218.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/product_pic487222-300x218.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/tempura_chicken-1.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/tempura_chicken-1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/tempura_chicken-1.png" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/tempura_chicken-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/oshi_items/test.jpg" afterPath="$PROJECT_DIR$/m/en/img/oshi_items/test.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pizza_cheese_gallery/pc_1.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pizza_cheese_gallery/pc_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pizza_cheese_gallery/pc_2.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pizza_cheese_gallery/pc_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pizza_cheese_gallery/pc_3.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pizza_cheese_gallery/pc_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pizza_cheese_gallery/pc_logo.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/pizza_cheese_gallery/pc_logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pop NEXT.png" afterPath="$PROJECT_DIR$/m/en/img/pop NEXT.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/pop NEXT1.png" afterPath="$PROJECT_DIR$/m/en/img/pop NEXT1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/previous.png" afterPath="$PROJECT_DIR$/m/en/img/previous.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/resto_logo_01.png" afterPath="$PROJECT_DIR$/m/en/img/resto_logo_01.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/resto_logo_02.png" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/images/logo01.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/resto_logo_03.png" afterPath="$PROJECT_DIR$/m/en/img/resto_logo_03.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/resto_logo_04.png" afterPath="$PROJECT_DIR$/m/en/img/resto_logo_04.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/resto_logo_05.png" afterPath="$PROJECT_DIR$/m/en/img/resto_logo_05.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_1.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_1.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_10.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_10.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_11.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_11.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_12.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_12.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_13.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_13.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_14.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_14.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_15.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_15.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_16.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_16.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_17.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_17.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_18.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_18.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_19.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_19.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_2.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_2.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_20.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_20.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_3.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_3.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_4.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_4.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_5.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_5.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_6.jpg" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_6.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_7.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_7.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_8.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_8.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_gallery/roza_9.JPG" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/img/roza_gallery/roza_9.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza-logo.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_gallery/roza_20.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_burger.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_burger.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_noodles.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_chicken_noodles.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_pasta.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_chicken_pasta.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_sandwich.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_chicken_sandwich.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_saute_salad.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_chicken_saute_salad.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_special.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_chicken_special.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_chicken_tortilla.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_chicken_tortilla.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_entrecote_pasta.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_entrecote_pasta.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_foccacia.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_foccacia.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_fries.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_fries.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_kebab_foccacia.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_kebab_foccacia.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_kids_shnitzel.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_kids_shnitzel.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_logo2.png" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_logo2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_noodles.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_meat_noodles.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_salad.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_meat_salad.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_sandwich.jpg" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_meat_sandwich.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_meat_tortilla.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_meat_tortilla.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_pasta_bolognase.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_pasta_bolognase.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_salad.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_salad.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_shnitzelonim.JPG" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_shnitzelonim.JPG" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_items/roza_wm.png" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza_wm.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/roza_logo.png" afterPath="$PROJECT_DIR$/m/en/img/roza_items/roza-logo.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/search copy.png" afterPath="$PROJECT_DIR$/m/en/img/search copy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/shopping-cart.png" afterPath="$PROJECT_DIR$/en/img/shopping-cart.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/small_visa.png" afterPath="$PROJECT_DIR$/en/img/small_visa.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/status bar white-1.png" afterPath="$PROJECT_DIR$/m/en/img/status bar white-1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/status bar white.png" afterPath="$PROJECT_DIR$/m/en/img/status bar white.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/status bar white3.png" afterPath="$PROJECT_DIR$/m/en/img/status bar white3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/status bar white4.png" afterPath="$PROJECT_DIR$/m/en/img/status bar white4.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/status bar white5.png" afterPath="$PROJECT_DIR$/m/en/img/status bar white5.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/uncheck.png" afterPath="$PROJECT_DIR$/en/img/uncheck.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/video.png" afterPath="$PROJECT_DIR$/m/en/img/video.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/m/en/script/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.bpopup.min.js" afterPath="$PROJECT_DIR$/en/script/jquery.bpopup.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.easing.1.3.js" afterPath="$PROJECT_DIR$/en/script/jquery.easing.1.3.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="$PROJECT_DIR$/en/script/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.min.js" afterPath="$PROJECT_DIR$/en/script/jquery.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.mobile.custom.min.js" afterPath="$PROJECT_DIR$/m/en/back_up_new_mobile_client/script/jquery.mobile.custom.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/script/jquery.bpopup.min.js" afterPath="$PROJECT_DIR$/front_end/script/jquery.bpopup.min.js" />
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1082,7 +23,25 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ajaxServerRequestsOrder.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="574">
+              <caret line="1286" column="28" selection-start-line="1286" selection-start-column="28" selection-end-line="1286" selection-end-column="28" />
+              <folding>
+                <marker date="1489585041653" expanded="true" signature="8711:8727" ph="..." />
+                <marker date="1489585041653" expanded="true" signature="8968:9019" ph="..." />
+                <marker date="1489585041653" expanded="true" signature="9113:9129" ph="..." />
+                <marker date="1489585041653" expanded="true" signature="9244:9270" ph="..." />
+                <marker date="1489585041653" expanded="true" signature="10978:11038" ph="..." />
+                <marker date="1489585041653" expanded="true" signature="11190:11226" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1118,6 +77,7 @@
         <option value="$PROJECT_DIR$/restapi/index.php" />
         <option value="$PROJECT_DIR$/js/isMobileCheck.js" />
         <option value="$PROJECT_DIR$/m/en/style/style.css" />
+        <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
       </list>
     </option>
   </component>
@@ -1233,7 +193,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
+              <option name="myItemId" value="script" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1708,7 +668,7 @@
       <workItem from="1488377229512" duration="6787000" />
       <workItem from="1488697027048" duration="552000" />
       <workItem from="1488731666251" duration="215000" />
-      <workItem from="1489579858883" duration="333000" />
+      <workItem from="1489579858883" duration="4659000" />
     </task>
     <task id="LOCAL-00001" summary="Final Production Release 28 Feb 2017">
       <created>1488293548112</created>
@@ -1787,15 +747,22 @@
       <option name="project" value="LOCAL" />
       <updated>1488697562861</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Structure change + Desktop + Mobile">
+      <created>1489580233114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1489580233114</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50829000" />
+    <option name="totallyTimeSpent" value="55155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1808,7 +775,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120469086" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11940298" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1841,7 +808,8 @@
     <MESSAGE value="Final Production Release 28 Feb 2017" />
     <MESSAGE value="Final Production Release 29 Feb 2017 Fixes" />
     <MESSAGE value="Image for Items hide" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image for Items hide" />
+    <MESSAGE value="Structure change + Desktop + Mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Structure change + Desktop + Mobile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2109,6 +1077,21 @@
         <state relative-caret-position="-187">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="1286" column="28" selection-start-line="1286" selection-start-column="28" selection-end-line="1286" selection-end-column="28" />
+          <folding>
+            <marker date="1489585041653" expanded="true" signature="8711:8727" ph="..." />
+            <marker date="1489585041653" expanded="true" signature="8968:9019" ph="..." />
+            <marker date="1489585041653" expanded="true" signature="9113:9129" ph="..." />
+            <marker date="1489585041653" expanded="true" signature="9244:9270" ph="..." />
+            <marker date="1489585041653" expanded="true" signature="10978:11038" ph="..." />
+            <marker date="1489585041653" expanded="true" signature="11190:11226" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -138,7 +138,7 @@ function onItemSelected (x,y)
 
 
     // DISPLAY ITEM IMAGE ROUND
-  //  $('.circle').css("background-image","url("+result.categories_items[currentCategoryId].items[y].image_url+")");
+    //  $('.circle').css("background-image","url("+result.categories_items[currentCategoryId].items[y].image_url+")");
 
     // UPDATE ITEM NAME
     $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_en);
@@ -186,7 +186,7 @@ function onItemSelectedCallBack(response)
             {
                 if (extras.extra_with_subitems[x].price_replace == 1)
                 {
-                    if(parseFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
+                    if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
 
                         temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '  (' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
                     }
@@ -195,7 +195,7 @@ function onItemSelectedCallBack(response)
                         temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length + ',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en +'</li>';
                     }
 
-                    if (y ==0 || (parseFloat(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
+                    if (y ==0 || (convertFloat(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
                     {
                         minPrice = extras.extra_with_subitems[x].subitems[y].price;
                         minSubItemName = extras.extra_with_subitems[x].subitems[y].name_en;
@@ -205,7 +205,7 @@ function onItemSelectedCallBack(response)
                 else
                 {
 
-                    if(parseFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
+                    if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
 
                         temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+oneTypeSubItems.length+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '  (+' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
                     }
@@ -293,7 +293,7 @@ function onItemSelectedCallBack(response)
 
                 for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
                 {
-                    if(parseFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
+                    if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                         multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
@@ -348,15 +348,15 @@ function onItemSelectedCallBack(response)
 // ON ONE TYPE EXTRA SELECTED BY USER
 function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , e) {
 
-    if(parseFloat(extras.extra_with_subitems[extraIndex].price_replace) == 1)
+    if(convertFloat(extras.extra_with_subitems[extraIndex].price_replace) == 1)
     {
         $('#itemPopUpPrice').html(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price+' NIS');
     }
     else
     {
-        if(parseFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
         {
-            var temp = parseFloat(selectedItemPrice) + parseFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price);
+            var temp = convertFloat(convertFloat(selectedItemPrice) + convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
             $('#itemPopUpPrice').html(temp+' NIS');
         }
     }
@@ -410,9 +410,9 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
         multipleTypeSubItems[index][name] = subItem;
 
-        if(parseFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
         {
-            selectedItemPrice = parseFloat(selectedItemPrice) + parseFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price);
+            selectedItemPrice = convertFloat(convertFloat(selectedItemPrice) + convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
             $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
         }
 
@@ -423,9 +423,9 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
     else
     {
         multipleTypeSubItems[index][name] = null;
-        if(parseFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
         {
-            selectedItemPrice = parseFloat(selectedItemPrice) - parseFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price);
+            selectedItemPrice = convertFloat(convertFloat(selectedItemPrice) - convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
             $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
         }
     }
@@ -497,7 +497,7 @@ function generateTotalUpdateFoodCart()
     {
 
         var order          = userObject.orders[x]; // GET USER ORDERS ONE BY ONE
-        var orderAmount    = parseFloat(order.itemPrice) * parseFloat(order.qty); // SET DEFAULT ITEM PRICE FOR ORDER
+        var orderAmount    = convertFloat(convertFloat(order.itemPrice) * convertFloat(order.qty)); // SET DEFAULT ITEM PRICE FOR ORDER
         var sumTotalAmount = 0;  // TOTAL AMOUNT
 
         // FOOD CARD ITEM  FOR MAIN ITEM
@@ -528,10 +528,10 @@ function generateTotalUpdateFoodCart()
                 // ITEM PRICE DEPENDS ON SUB ITEM CHOICE
                 // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
 
-                if (parseFloat(order.subItemsOneType[y][key].replace_price) != 0)
+                if (convertFloat(order.subItemsOneType[y][key].replace_price) != 0)
                 {
-                    orderAmount = parseFloat(order.subItemsOneType[y][key].subItemPrice) * parseFloat(order.qty);
-                    cartItem.price = parseFloat(orderAmount);
+                    orderAmount = convertFloat(convertFloat(order.subItemsOneType[y][key].subItemPrice) * convertFloat(order.qty));
+                    cartItem.price = convertFloat(orderAmount);
                     if(cartItem.detail == "")
                     {
                         cartItem.detail +=  key+":"+order.subItemsOneType[y][key].subItemName;
@@ -549,9 +549,9 @@ function generateTotalUpdateFoodCart()
                 // SUM THE AMOUNT
                 else
                 {
-                    if(parseFloat(order.subItemsOneType[y][key].subItemPrice) != 0) {
+                    if(convertFloat(order.subItemsOneType[y][key].subItemPrice) != 0) {
 
-                        sumTotalAmount = parseFloat(sumTotalAmount) +( parseFloat(order.subItemsOneType[y][key].subItemPrice) * parseFloat(order.subItemsOneType[y][key].qty));
+                        sumTotalAmount = convertFloat(convertFloat(sumTotalAmount) +( convertFloat(order.subItemsOneType[y][key].subItemPrice) * convertFloat(order.subItemsOneType[y][key].qty)));
 
                         if(cartItem.detail == "")
                         {
@@ -600,9 +600,9 @@ function generateTotalUpdateFoodCart()
             {
                 if(order.multiItemsOneType[y][key] != null)
                 {
-                    if(parseFloat(order.multiItemsOneType[y][key].subItemPrice) != 0)
+                    if(convertFloat(order.multiItemsOneType[y][key].subItemPrice) != 0)
                     {
-                        sumTotalAmount = parseFloat(sumTotalAmount) + (parseFloat(order.multiItemsOneType[y][key].subItemPrice) * parseFloat(order.multiItemsOneType[y][key].qty) );
+                        sumTotalAmount = convertFloat(convertFloat(sumTotalAmount) + (convertFloat(order.multiItemsOneType[y][key].subItemPrice) * convertFloat(order.multiItemsOneType[y][key].qty)));
 
                         if(cartItem.detail == "")
                         {
@@ -641,9 +641,9 @@ function generateTotalUpdateFoodCart()
         }
 
         // TOTAL OF ITEM WITH SUB ITEMS
-        cartItem.price = ((parseFloat(orderAmount) + parseFloat(sumTotalAmount)) / parseFloat(order.qty));
+        cartItem.price = convertFloat(((convertFloat(orderAmount) + convertFloat(sumTotalAmount)) / convertFloat(order.qty)));
 
-        total = parseFloat(total) +  ( parseFloat(orderAmount) + parseFloat(sumTotalAmount));
+        total = convertFloat(convertFloat(total) +  ( convertFloat(orderAmount) + convertFloat(sumTotalAmount)));
     }
 
 
@@ -681,7 +681,7 @@ function updateCartElements()
 
 
             // BUTTON DECREASE OR CANCEL DEPENDS ON QUANTITY
-            if (parseFloat(foodCartData[x].qty) == 1) {
+            if (convertFloat(foodCartData[x].qty) == 1) {
 
                 str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="/m/en/img/ic_cancel.png">';
             }
@@ -715,7 +715,7 @@ function updateCartElements()
 function onQtyIncreaseButtonClicked(index) {
 
     // UPDATE ITEM MAIN
-    userObject.orders[foodCartData[index].orderIndex].qty = parseFloat(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
+    userObject.orders[foodCartData[index].orderIndex].qty = convertFloat(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
 
     // INCREASE THE QTY OF SUB ITEMS ONE TYPE
     for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].subItemsOneType.length;x++)
@@ -725,7 +725,7 @@ function onQtyIncreaseButtonClicked(index) {
             if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
 
                 userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
-                    parseFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) + 1;
+                    convertFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) + 1;
             }
         }
     }
@@ -738,14 +738,14 @@ function onQtyIncreaseButtonClicked(index) {
             if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
 
                 userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                    (parseFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) + 1);
+                    (convertFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) + 1);
             }
         }
     }
 
-    foodCartData[index].qty = parseFloat(foodCartData[index].qty) + 1;
+    foodCartData[index].qty = convertFloat(foodCartData[index].qty) + 1;
 
-    userObject.total = parseFloat(userObject.total) + parseFloat(foodCartData[index].price);
+    userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
 
     $('#totalAmount').html(userObject.total + " NIS");
@@ -763,10 +763,10 @@ function onQtyDecreasedButtonClicked(index) {
     // UPDATE ITEM MAIN
 
     // DECREASE QUANTITY
-    if(parseFloat(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
+    if(convertFloat(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
     {
 
-        userObject.orders[foodCartData[index].orderIndex].qty = parseFloat(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
+        userObject.orders[foodCartData[index].orderIndex].qty = convertFloat(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
 
         // DECREASE THE QTY OF SUB ITEMS ONE TYPE
         for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].subItemsOneType.length;x++)
@@ -776,7 +776,7 @@ function onQtyDecreasedButtonClicked(index) {
                 if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
 
                     userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
-                        parseFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) -  1;
+                        convertFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) -  1;
                 }
             }
         }
@@ -789,7 +789,7 @@ function onQtyDecreasedButtonClicked(index) {
                 if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
 
                     userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                        (parseFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
+                        (convertFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
                 }
             }
         }
@@ -801,7 +801,7 @@ function onQtyDecreasedButtonClicked(index) {
     {
         // IF MAIN ITEM DELETED ALL SUB ITEMS ALSO DELETED
 
-        userObject.total = parseFloat(userObject.total) - parseFloat(foodCartData[index].price);
+        userObject.total = convertFloat(convertFloat(userObject.total) - convertFloat(foodCartData[index].price));
 
         userObject.orders.splice(foodCartData[index].orderIndex, 1);
 
@@ -823,10 +823,10 @@ function onQtyDecreasedButtonClicked(index) {
     }
 
 
-    if(foodCartData.length != 0 && foodCartData[index] != undefined  && (parseFloat(foodCartData[index].qty) != 1))
+    if(foodCartData.length != 0 && foodCartData[index] != undefined  && (convertFloat(foodCartData[index].qty) != 1))
     {
-        foodCartData[index].qty = parseFloat(foodCartData[index].qty) - 1;
-        userObject.total = parseFloat(userObject.total) - parseFloat(foodCartData[index].price);
+        foodCartData[index].qty = convertFloat(foodCartData[index].qty) - 1;
+        userObject.total = convertFloat(convertFloat(userObject.total) - convertFloat(foodCartData[index].price));
     }
 
     decreaseCounter();
@@ -1040,9 +1040,9 @@ function checkCouponCallBack(response)
 
             userObject.isFixAmountCoupon = true;
 
-            discountedAmount = parseFloat(userObject.discount);
+            discountedAmount = convertFloat(userObject.discount);
 
-            newTotal = parseFloat(userObject.total) - parseFloat(userObject.discount);
+            newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(userObject.discount));
 
             $('#discountAmount').html("-" + discountedAmount);
         }
@@ -1050,7 +1050,7 @@ function checkCouponCallBack(response)
 
             userObject.isFixAmountCoupon = false;
 
-            discountedAmount = ((parseFloat(userObject.total) * parseFloat(userObject.discount)) / 100);
+            discountedAmount = convertFloat(((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100));
 
             newTotal = userObject.total - discountedAmount;
 
@@ -1296,4 +1296,10 @@ function scrollToError(id) {
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+function convertFloat(num)
+{
+    console.log(parseFloat(parseFloat(num).toFixed(2)));
+    return parseFloat(parseFloat(num).toFixed(2));
 }
