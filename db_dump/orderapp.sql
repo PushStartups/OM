@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 19, 2017 at 05:50 AM
+-- Generation Time: Mar 19, 2017 at 06:49 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -297,7 +297,11 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (15, 'Ramat Beit Shemesh C', '', 25, 5),
 (16, 'Ramat Beit Shemesh A', '', 25, 7),
 (17, 'Ramat Beit Shemesh B', '', 25, 7),
-(18, 'Ramat Beit Shemesh C', '', 25, 7);
+(18, 'Ramat Beit Shemesh C', '', 25, 7),
+(19, 'Modiin', '', 15, 9),
+(20, 'Modiin', '', 15, 10),
+(21, 'Modiin', '', 15, 11),
+(22, 'Modiin', '', 15, 6);
 
 -- --------------------------------------------------------
 
