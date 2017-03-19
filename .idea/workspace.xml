@@ -2,11 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/burger.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/cs/Baguette.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/cs/Drink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/cs/Laffa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/cs/Plate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/cs/Salad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/cs/Sides.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Appetizers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Build your own Maki Roll.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Children's Menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Fotomaki - 8 pieces.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Happy Family - 65 pieces.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/JJ SPECIAL SUSHI MENU.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Main Dishes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Maki.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Soft Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Soups.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Sushi Combination Plates.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Tempura Rolls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Tempura Sandwich - 4 pieces.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Uramaki Inside-out Roll - Thick.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/Wok Stir Fried Dishes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ken/Desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ken/Pastries.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ken/drink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ken/pasta.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ken/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ken/salad .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Appetizers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Cones.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Deep fried sushi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Fotomaki.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Inside out.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sashimi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Stir fry.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi Combinations.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi Maki.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi Nigiri.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi Sandwiches.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi party platters.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi specials.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/oshi/Sushi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pc/PASTRIES.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pc/drink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pc/pasts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pc/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pc/salad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/cola.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/cola2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/fries.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/juice.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza_pie.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizza_slice.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_caviar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_sashimi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_sashimi2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_six.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_tamago.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_two.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/sushi_two2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/roza_logo.png" afterPath="$PROJECT_DIR$/m/en/img/roza_logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/choose-menu.css" afterPath="$PROJECT_DIR$/en/style/choose-menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/index.html" afterPath="$PROJECT_DIR$/m/en/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/order.html" afterPath="$PROJECT_DIR$/m/en/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/page3.html" afterPath="$PROJECT_DIR$/m/en/page3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/restaurants.html" afterPath="$PROJECT_DIR$/m/en/restaurants.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/app.js" afterPath="$PROJECT_DIR$/m/en/script/app.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,36 +95,22 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ajaxServerRequestsOrder.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="backup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-              <folding>
-                <marker date="1489907927933" expanded="true" signature="11567:11582" ph="..." />
-                <marker date="1489907927933" expanded="true" signature="11628:11706" ph="..." />
-                <marker date="1489907927933" expanded="true" signature="11808:11822" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/en/order.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="100" column="45" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+            <state relative-caret-position="-28">
+              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="choose-menu.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/en/style/choose-menu.css">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="555" column="0" selection-start-line="555" selection-start-column="0" selection-end-line="555" selection-end-column="0" />
+            <state relative-caret-position="397">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +142,6 @@
         <option value="$PROJECT_DIR$/Index-rtl.html" />
         <option value="$PROJECT_DIR$/Index-rtl(1).html" />
         <option value="$PROJECT_DIR$/js/ajaxServerRequestsIndex.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/page2.html" />
@@ -115,6 +169,7 @@
         <option value="$PROJECT_DIR$/en/confirm-order.html" />
         <option value="$PROJECT_DIR$/en/style/choose-menu.css" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -159,7 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -179,41 +233,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -226,15 +249,15 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en\img" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en\style" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en" />
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en\script" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en" />
     </key>
   </component>
   <component name="RunManager">
@@ -693,7 +716,8 @@
       <workItem from="1489759541683" duration="2813000" />
       <workItem from="1489859821600" duration="1263000" />
       <workItem from="1489870817762" duration="3747000" />
-      <workItem from="1489901369080" duration="4746000" />
+      <workItem from="1489901369080" duration="4763000" />
+      <workItem from="1489922559956" duration="846000" />
     </task>
     <task id="LOCAL-00001" summary="Final Production Release 28 Feb 2017">
       <created>1488293548112</created>
@@ -828,15 +852,22 @@
       <option name="project" value="LOCAL" />
       <updated>1489906414547</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Final Update Desktop And Mobile Client">
+      <created>1489907960333</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1489907960333</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117874000" />
+    <option name="totallyTimeSpent" value="118737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -844,18 +875,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1505295" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14145234" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -893,14 +924,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/restapi/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/backup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -933,13 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1054,24 +1071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="496" column="27" selection-start-line="496" selection-start-column="27" selection-end-line="496" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#header#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#header#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#label#0;n#div#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#table#0;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#section#0;n#form#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1080,12 +1079,12 @@
         <state relative-caret-position="355">
           <caret line="1255" column="2" selection-start-line="1255" selection-start-column="2" selection-end-line="1255" selection-end-column="2" />
           <folding>
-            <marker date="1489647989564" expanded="true" signature="8708:8724" ph="..." />
-            <marker date="1489647989564" expanded="true" signature="8965:9016" ph="..." />
-            <marker date="1489647989564" expanded="true" signature="9110:9126" ph="..." />
-            <marker date="1489647989564" expanded="true" signature="9241:9267" ph="..." />
-            <marker date="1489647989564" expanded="true" signature="10975:11035" ph="..." />
-            <marker date="1489647989564" expanded="true" signature="11187:11223" ph="..." />
+            <marker date="1489922943854" expanded="true" signature="8708:8724" ph="..." />
+            <marker date="1489922943854" expanded="true" signature="8965:9016" ph="..." />
+            <marker date="1489922943854" expanded="true" signature="9110:9126" ph="..." />
+            <marker date="1489922943854" expanded="true" signature="9241:9267" ph="..." />
+            <marker date="1489922943854" expanded="true" signature="10975:11035" ph="..." />
+            <marker date="1489922943854" expanded="true" signature="11187:11223" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1101,7 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="63" column="16" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="946" column="0" selection-start-line="946" selection-start-column="0" selection-end-line="964" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,7 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="601" column="15" selection-start-line="601" selection-start-column="15" selection-end-line="601" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,7 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="285" column="1" selection-start-line="285" selection-start-column="1" selection-end-line="285" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,9 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1168,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,7 +1193,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/en/style/choose-menu.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="9435">
           <caret line="555" column="0" selection-start-line="555" selection-start-column="0" selection-end-line="555" selection-end-column="0" />
           <folding />
         </state>
@@ -1211,7 +1201,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/en/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
+        <state relative-caret-position="1700">
           <caret line="100" column="45" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
           <folding />
         </state>
@@ -1219,13 +1209,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="476">
           <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
           <folding>
             <marker date="1489907927933" expanded="true" signature="11567:11582" ph="..." />
             <marker date="1489907927933" expanded="true" signature="11628:11706" ph="..." />
             <marker date="1489907927933" expanded="true" signature="11808:11822" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-28">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

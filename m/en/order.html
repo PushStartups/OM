@@ -298,7 +298,7 @@
             <table>
                 <tr>
                     <td>
-                        <div onclick="goToConfirmOrder(); confirmOrder('cash')" class="choice">
+                        <div onclick="goToConfirmOrder(); $('#payment-choice-popup').slideUp(); confirmOrder('cash')" class="choice">
                             <span>CASH</span>
                         </div>
                     </td>
@@ -512,7 +512,7 @@
 <!--CONFIRM ORDER POPUP-->
 <div id="confirm-order-popup" style="" class="food-cart">
     <header>
-        <img class="ic_close" onclick="hidePopup('confirm-order-popup')" src="/m/en/img/ic_close_white.png">
+        <img style=" width: 40px;position: absolute;left: 0px;top: 0px;padding: 12px;"  onclick="$('#confirm-order-popup').slideUp(); $('#payment-choice-popup').slideDown();" src="/m/en/img/ic_close_white.png">
         <h5> CONFIRM ORDER </h5>
         <h2 class="totalBill"> 0 NIS </h2>
     </header>

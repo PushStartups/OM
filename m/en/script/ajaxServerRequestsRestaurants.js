@@ -45,7 +45,7 @@ $(document).ready(function() {
     };
 
 
-    commonAjaxCall("/restapi/index.php/get_min_order_amount","",getMinimumValue);  // GET MINIMUM ORDER VALUE
+    //commonAjaxCall("/restapi/index.php/get_min_order_amount","",getMinimumValue);  // GET MINIMUM ORDER VALUE
     commonAjaxCall("/restapi/index.php/get_all_restaurants", {'city_id':selectedCityId},getAllRestaurants); // GET LIST OF ALL RESTAURANTS
 
 });
@@ -189,12 +189,12 @@ $(document).on('click','.order_now',function() {
     // RESTAURANT CLICKED BY USER
     var clickedRestId = $(this).attr('id').replace('ordernow','');
 
-
     userObject.restaurantId        = allRestJson[clickedRestId].id;
     userObject.restaurantTitle     = allRestJson[clickedRestId].name_en;
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
     userObject.restaurantAddress   = allRestJson[clickedRestId].address_en;
 
+    minOrderLimit = allRestJson[clickedRestId].min_amount;
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 

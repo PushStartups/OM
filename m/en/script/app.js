@@ -147,6 +147,7 @@ $(function () {
         $("#payment-choice-popup").slideUp();
         $("#creditcard-info-popup").slideUp();
         $("#check-coupon-popup").slideUp();
+        userObject.isCoupon = false;
         hideDots();
         setDot("first-dot");
 
