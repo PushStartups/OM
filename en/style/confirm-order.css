@@ -266,15 +266,16 @@ a:hover, a:focus {text-decoration: none;}
 	z-index: 999999;
 }
 #about p {
-	font-size: 16px;
-	font-weight: 300;
+	font-size: 20px;
+	font-weight: 900;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: 19px;
-	letter-spacing: 1px;
+	line-height: 20px;
+	letter-spacing: 2px;
 	text-align: center;
 	color: #797979;
 }
+
 #about h3 {
 	font-size: 27px;
 	line-height: 30px;
