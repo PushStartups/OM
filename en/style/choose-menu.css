@@ -917,7 +917,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	width:937px !important;
 }
 .info .first-col{
-	padding: 21px;
+	padding: 40px;
 	position: relative;
 	-webkit-border-radius:13px 0 0 13px;
 	-moz-border-radius:13px 0 0 13px;

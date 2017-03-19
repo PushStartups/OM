@@ -648,6 +648,8 @@ function generateTotalUpdateFoodCart()
                         cartItem.detail_he +=  ", "+key+":"+order.subItemsOneType[y][key].subItemNameHe;
                     }
 
+                    cartItem.price_without_subItems = convertFloat(order.subItemsOneType[y][key].subItemPrice);
+
 
                 }
                 // SUM THE SUB ITEM AMOUNT
@@ -689,6 +691,8 @@ function generateTotalUpdateFoodCart()
                         }
 
                     }
+
+
                 }
 
             }
