@@ -508,3 +508,12 @@ function convertFloat(num)
 }
 
 
+function goBack()
+{
+    var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
+    var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+    selectedCityName        =   selectedCityName.replace(/\s/g, '');
+
+    // MOVING TO ORDER PAGE
+    window.location.href = '/en/'+selectedCityName+"/"+ restaurantTitle+"/order";
+}

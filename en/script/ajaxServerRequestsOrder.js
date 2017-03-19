@@ -53,6 +53,19 @@ $(document).ready(function() {
 
     displayRestDetail();
 
+    if(userObject.orders.length != 0)
+    {
+        $('.col-second').css("visibility","visible");
+        $('.col-one').css("visibility","hidden");
+        generateTotalUpdateFoodCart();
+        updateCartElements();
+    }
+    else
+    {
+        $('.col-second').css("visibility","hidden");
+        $('.col-one').css("visibility","visible");
+    }
+
 });
 
 
