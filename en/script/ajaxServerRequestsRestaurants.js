@@ -69,14 +69,23 @@ function  getAllRestaurants(response)
         var temp = "";
         var tagsString = fromTagsToString(result[x]);
 
-        var str2  = '';
+        var str2  = ' ';
         var str1  = result[x].description_en;
 
         // RESTAURANTS DESCRIPTION LENGTH CHECK
         if (result[x].description_en.length > 200)
         {
-            str1  = result[x].description_en.substring(0, 200);
-            str2  = result[x].description_en.substring(201, result[x].description_en.length);
+            var yourString = result[x].description_en ; //replace with your string.
+            var maxLength = 200 // maximum number of characters to extract
+
+            //trim the string to the maximum length
+            var trimmedString = yourString.substr(0, maxLength);
+
+            //re-trim if we are in the middle of a word
+            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+
+            str1  = trimmedString;
+            str2  += result[x].description_en.replace(trimmedString,"");
         }
 
         // RESTAURANT CURRENTLY ACTIVE

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 19, 2017 at 06:49 AM
+-- Generation Time: Mar 19, 2017 at 01:12 PM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -228,17 +228,18 @@ CREATE TABLE IF NOT EXISTS `coupons` (
   `discount` int(11) DEFAULT NULL,
   `type` varchar(222) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `coupons`
 --
 
 INSERT INTO `coupons` (`id`, `name`, `starting_date`, `ending_date`, `discount`, `type`) VALUES
-(1, 'alex20', '2017-02-12 13:58:00', '2017-03-09 00:00:00', 30, 'percentage'),
-(2, 'alex50', '2017-02-12 13:58:06', '2017-03-21 00:00:00', 50, 'amount'),
-(5, 'bsoa15', '2017-03-02 10:28:20', '2017-03-17 12:52:17', 15, 'percentage'),
-(6, 'BETA20', '2017-03-02 10:47:50', '2017-03-17 12:52:17', 20, 'percentage');
+(7, 'BSOA15', '2017-03-01 00:00:00', '2017-05-31 00:00:00', 15, 'percentage'),
+(8, 'BETA20', '2017-02-27 00:00:00', '2017-05-31 00:00:00', 20, 'percentage'),
+(9, 'OSHI40', '2017-03-02 00:00:00', '2017-05-31 00:00:00', 40, 'amount'),
+(10, '10APP', '2017-03-01 00:00:00', '2017-06-30 00:00:00', 10, 'percentage'),
+(11, 'TEST25', '2017-03-19 00:00:00', '2017-03-20 00:00:00', 25, 'percentage');
 
 -- --------------------------------------------------------
 
@@ -273,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -298,10 +299,14 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (16, 'Ramat Beit Shemesh A', '', 25, 7),
 (17, 'Ramat Beit Shemesh B', '', 25, 7),
 (18, 'Ramat Beit Shemesh C', '', 25, 7),
-(19, 'Modiin', '', 15, 9),
-(20, 'Modiin', '', 15, 10),
-(21, 'Modiin', '', 15, 11),
-(22, 'Modiin', '', 15, 6);
+(19, 'Within Modiin', '', 17, 9),
+(20, 'Within Modiin', '', 18, 10),
+(21, 'Within Modiin', '', 17, 11),
+(22, 'Within Modiin', '', 17, 6),
+(23, 'Outside Modiin', '', 25, 6),
+(24, 'Outside Modiin', '', 25, 11),
+(25, 'Outside Modiin', '', 30, 10),
+(26, 'Outside Modiin', '', 25, 9);
 
 -- --------------------------------------------------------
 
@@ -1617,7 +1622,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=267 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=269 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -1827,7 +1832,9 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (263, 223, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
 (264, 224, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
 (265, 224, 1, 'Pargit Tortilla', 42, 'Egg (+4), Portobello Mushroom (+4)'),
-(266, 225, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)');
+(266, 225, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(267, 226, 1, 'Dim Sum with meat', 29, ''),
+(268, 226, 1, 'Chicken in tempura', 33, '');
 
 -- --------------------------------------------------------
 
@@ -4756,7 +4763,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'asad  gt', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'Muhammad', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(260, 'test@gmail.com', 'Muhammad ', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -4866,7 +4873,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=226 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=227 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -5006,7 +5013,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (222, 261, 1, 186, NULL, 0, '2017-03-18'),
 (223, 261, 1, 93, NULL, 0, '2017-03-18'),
 (224, 261, 1, 135, NULL, 0, '2017-03-18'),
-(225, 260, 1, 93, NULL, 0, '2017-03-19');
+(225, 260, 1, 93, NULL, 0, '2017-03-19'),
+(226, 260, 6, 62, NULL, 0, '2017-03-19');
 
 -- --------------------------------------------------------
 
