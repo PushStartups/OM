@@ -35,6 +35,7 @@ $(document).ready(function() {
         'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
         'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
         'isCoupon': false,                 // USER HAVE COUPON CODE ?
+        'couponCode': '',                  // COUPON CODE OF USER
         'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
         'discount': 0,                     // DISCOUNT ON COUPON VALUE
         'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD

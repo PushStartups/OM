@@ -1,6 +1,8 @@
 // page init
 jQuery(function(){
+
 	initAccordion();
+
 });
 
 // accordion init
@@ -23,7 +25,9 @@ function initAccordion() {
  * jQuery Accordion plugin
  */
 ;(function($){
+
 	$.fn.slideAccordion = function(opt){
+
 		// default options
 		var options = $.extend({
 			addClassBeforeAnimation: false,
@@ -32,10 +36,12 @@ function initAccordion() {
 			slider:'.slide',
 			animSpeed: 300,
 			collapsible:true,
-			event:'click'
+			event:''
 		},opt);
 
+
 		return this.each(function(){
+
 			// options
 			var accordion = $(this);
 			var items = accordion.find(':has('+options.slider+')');
@@ -44,23 +50,29 @@ function initAccordion() {
 				var item = $(this);
 				var opener = item.find(options.opener);
 				var slider = item.find(options.slider);
-				opener.bind(options.event, function(e){
-					if(!slider.is(':animated'))
-					{if(item.hasClass(options.activeClass)) {
-							if(options.collapsible) {
-								slider.slideUp(options.animSpeed, function(){
 
-										hideSlide(slider);
+
+				opener.bind(options.event, function(e){
+					if(!slider.is(':animated')) {
+
+						if(item.hasClass(options.activeClass)) {
+
+								if(options.collapsible) {
+
+									slider.slideUp(options.animSpeed, function(){
+									hideSlide(slider);
 									item.removeClass(options.activeClass);
-								});
+									});
 							}
-						} else {
+						}
+						else
+					   {
 							// show active
 							var levelItems = item.siblings('.'+options.activeClass);
 							var sliderElements = levelItems.find(options.slider);
 							item.addClass(options.activeClass);
 							showSlide(slider).hide().slideDown(options.animSpeed);
-						
+
 							// collapse others
 							sliderElements.slideUp(options.animSpeed, function(){
 								levelItems.removeClass(options.activeClass);
@@ -70,10 +82,14 @@ function initAccordion() {
 					}
 					e.preventDefault();
 				});
+
+
+
 				if(item.hasClass(options.activeClass)) showSlide(slider); else hideSlide(slider);
 			});
 		});
 	};
+
 
 	// accordion slide visibility
 	var showSlide = function(slide) {
@@ -83,4 +99,3 @@ function initAccordion() {
 		return slide.show().css({position:'absolute', top: -9999, left: -9999, width: slide.width() });
 	};
 }(jQuery));
-

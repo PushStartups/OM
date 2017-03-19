@@ -416,21 +416,21 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
                 //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
                 $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id, $coupon_id);
-                if (DB::count() == 0) {
 
-                    DB::insert('user_coupons', array(
-                        'user_id' => $user_id,
-                        'coupon_id' => $coupon_id
-                    ));
+                if (DB::count() == 0) {
 
                     $success_validation = "true";
 
-                } else {
+                }
+                else
+                {
 
                     $success_validation = "false";
                 }
 
-            } else {
+            }
+            else
+            {
                 $success_validation = "false";
             }
 
@@ -439,12 +439,14 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
             $data = [
 
-                "success" => true,                                          // COUPON VALID OR NOT (TRUE OR FALSE)
+                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
                 "amount" => $discount,                                     // DISCOUNT ON COUPON
-                "isFixAmountCoupon" => $isFixAmountCoupon                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
+                "isFixAmountCoupon" => $isFixAmountCoupon                  // COUPON TYPE (AMOUNT OR PERCENTAGE)
 
             ];
-        } else {
+        }
+        else
+        {
 
             $data = [
 
@@ -522,17 +524,28 @@ $app->post('/add_order', function ($request, $response, $args) {
             if ($user_order['isFixAmountCoupon'] == 'true') {
 
                 $discountType = "fixed value";
-            } else {
+            }
+            else
+            {
 
                 $discountType = "fixed percentage";
             }
 
+            // EXPIRE USERS COUPON CODE
+
+            $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $user_order['couponCode']);
+
+            DB::insert('user_coupons', array(
+
+                'user_id' => $user_id,
+                'coupon_id' => $getCouponCode['id']
+
+            ));
+
             $discountValue = $user_order['discount'];
         }
 
-
         $todayDate = Date("d/m/Y");
-
 
         // CREATE A NEW ORDER AGAINST USER
         DB::insert('user_orders', array(
@@ -563,7 +576,7 @@ $app->post('/add_order', function ($request, $response, $args) {
         }
 
 
-        // SEND EMAIL TO KETCHES
+        // SEND EMAIL TO KITCHEN
 
         email_for_kitchen($user_order, $orderId, $todayDate);
 

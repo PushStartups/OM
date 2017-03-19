@@ -35,14 +35,19 @@ $(document).ready(function() {
         'orders': [],                      // USER ORDERS
         'total': 0,                        // TOTAL AMOUNT OF ORDER
         'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
+        'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
         'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
         'isCoupon': false,                 // USER HAVE COUPON CODE ?
+        'couponCode': '',                  // COUPON CODE OF USER
         'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
         'discount': 0,                     // DISCOUNT ON COUPON VALUE
         'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
         'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
         'cartData': null,                  // COMPUTED CART DATA
-        'totalWithoutDiscount': null       // TOTAL WITHOUT DISCOUNT
+        'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
+        'deliveryArea':null,               // DELIVERY AREA
+        'deliveryCharges':null,            // DELIVERY CHARGES
+        'specialRequest':""                // SPECIAL REQUEST FROM USER
     };
 
     commonAjaxCall("/restapi/index.php/get_all_restaurants",{'city_id':selectedCityId},getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER

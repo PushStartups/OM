@@ -7,10 +7,9 @@
     <link href="/m/en/style/style.css" rel="stylesheet" />
     <link href="/m/en/style/dropdown.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <script src="/m/en/js/jquery.min.js" ></script>
+    <script src="/m/en/script/jquery.min.js" ></script>
     <script>
 
-        var myVar =
 
         $(function(){
 
@@ -20,19 +19,21 @@
             });
 
             $("#feedback button").on("click" , function(){
+
                 $("#feedback p").fadeIn();
 
                 $("#feedback textarea").fadeOut();
 
                 $("#feedback button").fadeOut();
-            })
+
+            });
 
 
-            var delayMillis = 3000; //1 second
-
-            myVar = setTimeout(function() {
-               window.location.href = '/';
-            }, delayMillis);
+//            var delayMillis = 3000; //1 second
+//
+//            myVar = setTimeout(function() {
+//               window.location.href = '/';
+//            }, delayMillis);
 
         })
 
@@ -117,10 +118,17 @@
             <button onclick="window.location.href='/'">Send</button>
         </div>
 
-        <div id="questuin-btn" onclick="clearTimeout(myVar);"  style="border-radius: 0px;" class="model-footer">Question ?</div>
+        <!--<div id="questuin-btn" onclick="clearTimeout(myVar);"  style="border-radius: 0px;" class="model-footer">Question ?</div>-->
 
     </section>
 </div>
+
+<script src="https://cdn.smooch.io/smooch.min.js"></script>
+<script>
+    Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
+</script>
+
+
 </body>
 
 </html>

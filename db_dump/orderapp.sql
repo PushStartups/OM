@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2017 at 03:18 PM
+-- Generation Time: Mar 19, 2017 at 05:50 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -70,37 +70,37 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (27, 4, 'Roza Snacks', 'נשנושים', '/m/en/img/categories/roza/SNACKS.png', 126),
 (28, 4, 'Roza Kid''s meals', 'מנות ילדים\n', '/m/en/img/categories/roza/KID''S MEALS.png', 127),
 (29, 4, 'Roza Drinks', 'שתייה', '/m/en/img/categories/roza/DRINKS.png', 128),
-(30, 5, 'JJ Special sushi menu', 'תפריט סושי המיוחדים של JAPAN JAPAN', '/m/en/img/categories/sushi.png', 129),
-(31, 5, 'Maki', 'מאקי', '/m/en/img/categories/test.png', 130),
-(32, 5, 'Uramaki Inside-out Roll - Thick', 'אורמאקי ', '/m/en/img/categories/test.png', 131),
-(33, 5, 'Tempura Rolls', 'רולים טמפורה', '/m/en/img/categories/test.png', 132),
-(34, 5, 'Fotomaki - 8 pieces', 'פוטומאקי  רול רחב אצה בחוץ אורז בפנים - 8 יחידות', '/m/en/img/categories/test.png', 133),
-(35, 5, 'Tempura Sandwich - 4 pieces, deep-fried', 'טמפורה סנדוויץ  4 יח'' בטיגון עמוק', '/m/en/img/categories/sandwich.png', 134),
-(36, 5, 'Sushi Combination Plates', 'קומבינציות', '/m/en/img/categories/sushi.png', 135),
-(37, 5, 'Happy Family - 65 pieces', '65 יחידות-  HAPPY FAMILY', '/m/en/img/categories/test.png', 136),
-(38, 5, 'Soft Drinks', 'שתיה קלה', '/m/en/img/categories/drink2.png', 137),
-(39, 5, 'Appetizers', 'מנות ראשונות', '/m/en/img/categories/test.png', 138),
-(40, 5, 'Salads', 'סלטים', '/m/en/img/categories/salads.png', 139),
-(41, 5, 'Soups', 'מרק', '/m/en/img/categories/test.png', 140),
-(42, 5, 'Wok Stir Fried Dishes', 'מוקפצות', '/m/en/img/categories/test.png', 141),
-(43, 5, 'Main Dishes', 'מנות נתחי עוף / בקר מוקפצות על להבת WOK', '/m/en/img/categories/test.png', 142),
-(44, 5, 'Children''s Menu', 'מנות ילדים\n', '/m/en/img/categories/kids.png', 143),
-(45, 5, 'Build your own Maki Roll', 'רול בהרכבה אישית', '/m/en/img/categories/test.png', 144),
-(46, 6, 'Appetizers', '???? ?????', '/m/en/img/categories/test.png', 145),
-(47, 6, 'Sushi Nigiri', '????', '/m/en/img/categories/Sushi3.png', 146),
-(48, 6, 'Sushi', '????', '/m/en/img/categories/sushi.png', 147),
-(49, 6, 'Sushi specials', '???? ????????', '/m/en/img/categories/Sushi1.png', 148),
-(50, 6, 'Sushi Maki', '???? ????', '/m/en/img/categories/Sushi3.png', 149),
-(51, 6, 'Fotomaki', '????????', '/m/en/img/categories/test.png', 150),
-(52, 6, 'Inside out', '??????????', '/m/en/img/categories/test.png', 151),
-(53, 6, 'Cones', '???????', '/m/en/img/categories/test.png', 152),
-(54, 6, 'Sashimi', '?????', '/m/en/img/categories/test.png', 153),
-(55, 6, 'Deep fried sushi', '???????', '/m/en/img/categories/Sushi12.png', 154),
-(56, 6, 'Sushi Sandwiches', '???? ???????''', '/m/en/img/categories/sandwich.png', 155),
-(57, 6, 'Sushi Combinations', '???? ??????????', '/m/en/img/categories/sushi.png', 156),
-(58, 6, 'Stir fry', '???????', '/m/en/img/categories/test.png', 157),
-(59, 6, 'Sushi party platters', '???? ??????', '/m/en/img/categories/sushi.png', 158),
-(60, 6, 'Drinks', '?????', '/m/en/img/categories/drink2.png', 159),
+(30, 5, 'JJ Special sushi menu', 'תפריט סושי המיוחדים של JAPAN JAPAN', '/m/en/img/categories/japan/JJ SPECIAL SUSHI MENU.png', 129),
+(31, 5, 'Maki', 'מאקי', '/m/en/img/categories/japan/Maki.png', 130),
+(32, 5, 'Uramaki Inside-out Roll - Thick', 'אורמאקי ', '/m/en/img/categories/japan/Uramaki Inside-out Roll - Thick.png', 131),
+(33, 5, 'Tempura Rolls', 'רולים טמפורה', '/m/en/img/categories/japan/Tempura Rolls.png', 132),
+(34, 5, 'Fotomaki - 8 pieces', 'פוטומאקי  רול רחב אצה בחוץ אורז בפנים - 8 יחידות', '/m/en/img/categories/japan/Fotomaki - 8 pieces.png', 133),
+(35, 5, 'Tempura Sandwich - 4 pieces, deep-fried', 'טמפורה סנדוויץ  4 יח'' בטיגון עמוק', '/m/en/img/categories/japan/Tempura Sandwich - 4 pieces.png', 134),
+(36, 5, 'Sushi Combination Plates', 'קומבינציות', '/m/en/img/categories/japan/Sushi Combination Plates.png', 135),
+(37, 5, 'Happy Family - 65 pieces', '65 יחידות-  HAPPY FAMILY', '/m/en/img/categories/japan/Happy Family - 65 pieces.png', 136),
+(38, 5, 'Soft Drinks', 'שתיה קלה', '/m/en/img/categories/japan/Soft Drinks.png', 137),
+(39, 5, 'Appetizers', 'מנות ראשונות', '/m/en/img/categories/japan/Appetizers.png', 138),
+(40, 5, 'Salads', 'סלטים', '/m/en/img/categories/japan/Salads.png', 139),
+(41, 5, 'Soups', 'מרק', '/m/en/img/categories/japan/Soups.png', 140),
+(42, 5, 'Wok Stir Fried Dishes', 'מוקפצות', '/m/en/img/categories/japan/Wok Stir Fried Dishes.png', 141),
+(43, 5, 'Main Dishes', 'מנות נתחי עוף / בקר מוקפצות על להבת WOK', '/m/en/img/categories/japan/Main Dishes.png', 142),
+(44, 5, 'Children''s Menu', 'מנות ילדים\n', '/m/en/img/categories/japan/Children''s Menu.png', 143),
+(45, 5, 'Build your own Maki Roll', 'רול בהרכבה אישית', '/m/en/img/categories/japan/Build your own Maki Roll.png', 144),
+(46, 6, 'Appetizers', '???? ?????', '/m/en/img/categories/oshi/Appetizers.png', 145),
+(47, 6, 'Sushi Nigiri', '????', '/m/en/img/categories/oshi/Sushi Nigiri.png', 146),
+(48, 6, 'Sushi', '????', '/m/en/img/categories/oshi/Sushi.png', 147),
+(49, 6, 'Sushi specials', '???? ????????', '/m/en/img/categories/oshi/Sushi specials.png', 148),
+(50, 6, 'Sushi Maki', '???? ????', '/m/en/img/categories/oshi/Sushi Maki.png', 149),
+(51, 6, 'Fotomaki', '????????', '/m/en/img/categories/oshi/Fotomaki.png', 150),
+(52, 6, 'Inside out', '??????????', '/m/en/img/categories/oshi/Inside out.png', 151),
+(53, 6, 'Cones', '???????', '/m/en/img/categories/oshi/Cones.png', 152),
+(54, 6, 'Sashimi', '?????', '/m/en/img/categories/oshi/Sashimi.png', 153),
+(55, 6, 'Deep fried sushi', '???????', '/m/en/img/categories/oshi/Deep fried sushi.png', 154),
+(56, 6, 'Sushi Sandwiches', '???? ???????''', '/m/en/img/categories/oshi/Sushi Sandwiches.png', 155),
+(57, 6, 'Sushi Combinations', '???? ??????????', '/m/en/img/categories/oshi/Sushi Combinations.png', 156),
+(58, 6, 'Stir fry', '???????', '/m/en/img/categories/oshi/Stir fry.png', 157),
+(59, 6, 'Sushi party platters', '???? ??????', '/m/en/img/categories/oshi/Sushi party platters.png', 158),
+(60, 6, 'Drinks', '?????', '/m/en/img/categories/oshi/Drinks.png', 159),
 (61, 7, 'Breakfast', 'ארוחות בוקר', '/m/en/img/categories/greg/Breakfast.png', 160),
 (62, 7, 'Salads', 'סלטים ', '/m/en/img/categories/greg/Salads.png', 161),
 (63, 7, 'Italiano', 'איטליאנו', '/m/en/img/categories/greg/Italiano.png', 162),
@@ -120,23 +120,23 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (77, 8, 'Plate', 'חמגשית', '/m/en/img/categories/test.png', 177),
 (78, 8, 'Burgers', 'בורגרים', '/m/en/img/categories/hamburger.png', 178),
 (79, 8, 'Business', 'עסקיות', '/m/en/img/categories/test.png', 179),
-(80, 9, 'Pizza', 'פיצה', '/m/en/img/categories/test.png', 180),
-(81, 9, 'Pasta', 'פסטה', '/m/en/img/categories/pasta.png', 181),
-(82, 9, 'Pastries', 'מאפים', '/m/en/img/categories/test.png', 182),
-(83, 9, 'Salad', 'סלט ', '/m/en/img/categories/salads.png', 183),
-(84, 9, 'Drink', 'שתיה', '/m/en/img/categories/drink2.png', 184),
-(85, 10, 'Baguette', 'בגט', '/m/en/img/categories/test.png', 185),
-(86, 10, 'Laffa', 'לאפה', '/m/en/img/categories/test.png', 186),
-(87, 10, 'Plate', 'צלחת', '/m/en/img/categories/test.png', 187),
-(88, 10, 'Salad', 'סלט', '/m/en/img/categories/salads.png', 188),
-(89, 10, 'Drink', 'שתייה', '/m/en/img/categories/drink2.png', 189),
-(90, 10, 'Sides', 'נשנושים', '/m/en/img/categories/sides.png', 190),
-(91, 11, 'Pizzas', 'פיצות', '/m/en/img/categories/test.png', 191),
-(92, 11, 'Pastries', 'מאפים', '/m/en/img/categories/test.png', 192),
-(93, 11, 'Pastas', 'פסטות', '/m/en/img/categories/pasta.png', 193),
-(94, 11, 'Salads', 'סלטים', '/m/en/img/categories/salads.png', 194),
-(95, 11, 'Desserts', 'קינוחים', '/m/en/img/categories/Dessert .png', 195),
-(96, 11, 'Drinks', 'שתיה', '/m/en/img/categories/drink2.png', 196),
+(80, 9, 'Pizza', 'פיצה', '/m/en/img/categories/pc/pizza.png', 180),
+(81, 9, 'Pasta', 'פסטה', '/m/en/img/categories/pc/pasts.png', 181),
+(82, 9, 'Pastries', 'מאפים', '/m/en/img/categories/pc/PASTRIES.png', 182),
+(83, 9, 'Salad', 'סלט ', '/m/en/img/categories/pc/salad.png', 183),
+(84, 9, 'Drink', 'שתיה', '/m/en/img/categories/pc/drink.png', 184),
+(85, 10, 'Baguette', 'בגט', '/m/en/img/categories/cs/Baguette.png', 185),
+(86, 10, 'Laffa', 'לאפה', '/m/en/img/categories/cs/Laffa.png', 186),
+(87, 10, 'Plate', 'צלחת', '/m/en/img/categories/cs/Plate.png', 187),
+(88, 10, 'Salad', 'סלט', '/m/en/img/categories/cs/Salad.png', 188),
+(89, 10, 'Drink', 'שתייה', '/m/en/img/categories/cs/Drink.png', 189),
+(90, 10, 'Sides', 'נשנושים', '/m/en/img/categories/cs/Sides.png', 190),
+(91, 11, 'Pizzas', 'פיצות', '/m/en/img/categories/ken/pizza.png', 191),
+(92, 11, 'Pastries', 'מאפים', '/m/en/img/categories/ken/Pastries.png', 192),
+(93, 11, 'Pastas', 'פסטות', '/m/en/img/categories/ken/pasta.png', 193),
+(94, 11, 'Salads', 'סלטים', '/m/en/img/categories/ken/salad .png', 194),
+(95, 11, 'Desserts', 'קינוחים', '/m/en/img/categories/ken/Desserts.png', 195),
+(96, 11, 'Drinks', 'שתיה', '/m/en/img/categories/ken/drink.png', 196),
 (97, 12, 'Chicken Sandwiches', 'עוף סנדוויץ׳', '/m/en/img/categories/sandwich.png', 197),
 (98, 12, 'Chicken Meals', 'מנת עוף', '/m/en/img/categories/test.png', 198),
 (99, 12, 'Beef Sandwiches', 'בקר סנדוויץ׳', '/m/en/img/categories/sandwich.png', 199),
@@ -1613,7 +1613,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=258 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=267 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -1814,7 +1814,16 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (254, 214, 1, 'Angus Burger', 52, '50G Goose Breast (+8), Egg (+4)'),
 (255, 215, 1, 'Angus Salad', 63, '150 Grams Goose Breast Or Entrecote (+19)'),
 (256, 216, 2, 'Angus Salad', 44, ''),
-(257, 217, 2, 'Meshulashim Pasta', 28, '');
+(257, 217, 2, 'Meshulashim Pasta', 28, ''),
+(258, 218, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(259, 219, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(260, 220, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(261, 221, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(262, 222, 2, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(263, 223, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(264, 224, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(265, 224, 1, 'Pargit Tortilla', 42, 'Egg (+4), Portobello Mushroom (+4)'),
+(266, 225, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)');
 
 -- --------------------------------------------------------
 
@@ -1851,7 +1860,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, 
 (6, 'OSHI OSHI', 'אושי אושי', 50, 2, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (7, 'Greg Cafe', 'גרג קפה', 50, 1, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
 (9, 'Pizza Cheese', 'פיצה צ׳יז', 50, 2, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', 'פיצה מעולה עם כל התוסות, מכחר פסטות וסלטים, שירות נהדר, רוחב לב,  מחיר כמו שאין בשום מקום. מה עוד צריך?!', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
-(10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\r\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \r\nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \r\nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
+(10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
 (11, 'Ken LePizza', 'כן לפיצה', 50, 2, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף');
 
 -- --------------------------------------------------------
@@ -4735,7 +4744,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=299 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=313 ;
 
 --
 -- Dumping data for table `users`
@@ -4743,8 +4752,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'asad  gt', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'test', '03066481938', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
+(260, 'test@gmail.com', 'Muhammad', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (264, 'test43434@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -4781,7 +4790,21 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `
 (295, 'test10@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (296, 'test1110@gmail.com', 'test', '032289697998', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (297, 'test110@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(298, 'shoaib@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
+(298, 'shoaib@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(299, 'roza@gmail.com', 'roza', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(300, 'japan@gmail.com', 'japan', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(301, 'shery@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(302, 'sdfdsf@dfdf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(303, 'm@g.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(304, 'sdf@dfdf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(305, 'dfd@df.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(306, 'dfdf@fgfg.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(307, 'testdf@gmaildf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(308, 'tefdf@fgfg.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(309, 'dfdsf@hjhj.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(310, 'dfdfdf@sdfsdfdsf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(311, 'testsdsdsd@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(312, 'testasdf@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4796,7 +4819,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -4819,7 +4842,8 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (52, 295, 2),
 (53, 296, 2),
 (54, 297, 2),
-(55, 298, 2);
+(55, 298, 2),
+(56, 300, 2);
 
 -- --------------------------------------------------------
 
@@ -4838,7 +4862,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=218 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=226 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -4970,7 +4994,15 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (214, 276, 1, 52, NULL, 0, '2017-03-11'),
 (215, 294, 1, 63, NULL, 0, '2017-03-15'),
 (216, 260, 1, 88, NULL, 0, '2017-03-15'),
-(217, 296, 2, 56, 'fixed value', 50, '2017-03-15');
+(217, 296, 2, 56, 'fixed value', 50, '2017-03-15'),
+(218, 299, 1, 43, 'fixed value', 50, '2017-03-15'),
+(219, 300, 1, 43, 'fixed value', 50, '2017-03-15'),
+(220, 261, 1, 93, NULL, 0, '2017-03-15'),
+(221, 261, 1, 93, NULL, 0, '2017-03-15'),
+(222, 261, 1, 186, NULL, 0, '2017-03-18'),
+(223, 261, 1, 93, NULL, 0, '2017-03-18'),
+(224, 261, 1, 135, NULL, 0, '2017-03-18'),
+(225, 260, 1, 93, NULL, 0, '2017-03-19');
 
 -- --------------------------------------------------------
 

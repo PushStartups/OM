@@ -1,0 +1,717 @@
+<!Doctype html>
+<html>
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>OrderApp</title>
+        <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/en/style/confirm-order.css">
+        <link href="/en/style/dropdown.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open +Sans:300,400,600,700" rel="stylesheet">
+    </head>
+</head>
+
+<img id="loader" class="loader-css" src="/en/img/loader.gif" >
+<body style="overflow: hidden">
+<div id="wrapper">
+    <section class="jumbotron jumbotron-fluid">
+        <header id="header">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-auto">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="img description">
+                                <strong>Order App</strong>
+                            </a>
+                        </div>
+                        <span>ordering information</span>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
+                    <li><a class="active" href="#">HE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="content dropdown">
+        <div class="parent" style="position: relative;width:100%; height:100%;">
+            <img src="img/pizza.png" style="left: -10px"/>
+            <img src="img/img1.png" style="right: 0"/>
+        </div>
+        <div class="parent-bottom" style="position: relative;width:100%;height:100%;">
+            <img src="img/left_bottom.png" style="left: -10px;bottom: 0"/>
+            <img src="img/right_bottom.png" style="right: 0"/>
+        </div>
+        <div class="container new height-box">
+            <header class="header-box">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>BANDORA</h1>
+                        <span class="title-add">Delivery services is available</span>
+                    </div>
+                </div>
+            </header>
+            <div class=" height-box">
+                <div class="row no-gutters">
+                    <div class="col-sm-8 col-md-8 col-xs-8 add">
+                        <div class="scrollable-area">
+                            <div class="left-content">
+                                <ul class="accordion multilevel-accordion">
+                                    <li id="customerInfoParent" class="active">
+                                        <a href="#" class="opener" >
+                                            <h3>Customer info</h3>
+                                        </a>
+                                        <div class="slide" id="customerSlider">
+                                            <div class="slide-holder">
+                                                <div class="error-field">
+                                                    <div class="text-holder row no-gutters" id="name">
+                                                        <div class="col-xs-1">
+                                                            <img class="edit" src="img/ic_profile.png">
+                                                        </div>
+                                                        <div class="col-xs-11">
+                                                            <input type="text" id="name_text" placeholder="Name of customer">
+                                                        </div>
+                                                    </div>
+                                                    <span class="error-span" id="error-name">error in field</span>
+                                                </div>
+
+                                                <div class="error-field">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="text-holder row no-gutters" id="email">
+                                                                <div class="col-xs-2">
+                                                                    <img class="edit" src="img/ic_message.png">
+                                                                </div>
+                                                                <div class="col-xs-10">
+                                                                    <input type="email" id="email_text" placeholder="Email address">
+                                                                </div>
+                                                            </div>
+                                                            <span class="error-span" id="error-email">error in field</span>
+                                                        </div>
+
+
+                                                        <div class="col-sm-6">
+                                                            <div class="text-holder row no-gutters" id="contact">
+                                                                <div class="col-xs-2">
+                                                                    <img class="edit" src="img/ic_phone.png">
+                                                                </div>
+                                                                <div class="col-xs-10">
+                                                                    <input type="tel" placeholder="Phone number" id="contact_text">
+                                                                </div>
+                                                            </div>
+                                                            <span class="error-span" id="error-contact">error in field</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <button  onclick="saveUserInfo()"   type="button" class="btn-add-submit">Save</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="deliveryInfoParent">
+                                        <a href="#" class="opener">
+                                            <h3>Delivery</h3>
+                                        </a>
+                                        <div class="slide" id="deliverySlider">
+                                            <div class="slide-holder">
+                                                <ul class="checkbox-list">
+                                                    <li> <input type="checkbox" id="checkbox-id-12"> <label for="checkbox-id-12"> Pickup from restaurant <span id="address-text"></span></label></li>
+                                                    <li> <input type="checkbox" id="checkbox-id-23"> <label for="checkbox-id-23"> Delivery</label></li>
+                                                </ul>
+                                                <div class="show-box" id="deliveryFieldsParent" style="display: none">
+                                                    <div class="error-field">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <div class="text-holder row no-gutters">
+                                                                    <div class="col-xs-4">
+                                                                        <img class="edit" src="img/ic_home.png">
+                                                                    </div>
+                                                                    <div class="col-xs-8">
+                                                                        <input id="appt-no" type="text" placeholder="Apt. No.">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-appt-no">error in field</span>
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <div class="text-holder row no-gutters">
+                                                                    <div class="col-xs-2">
+                                                                        <img class="edit" src="img/ic_checkin.png">
+                                                                    </div>
+                                                                    <div class="col-xs-10">
+                                                                        <input type="text" id="address">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-address">error in field</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="error-field">
+                                                        <div class="text-holder row no-gutters" id="area">
+                                                            <div class="col-xs-12">
+                                                                <select id="delivery-areas">
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <span class="error-span" id="error-area">error in field</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" onclick="deliveryAddress()" class="btn-add-submit">Save</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="opener">
+                                            <h3>Payment</h3>
+                                        </a>
+                                        <div class="slide" id="paymentSlider">
+                                            <div class="slide-holder">
+                                                <ul class="checkbox-list">
+                                                    <li> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> Cash <span>124 NIS</span></label></li>
+                                                    <li> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> Credit card <span><a href="#"><img src="img/cards.png"></a></span></label></li>
+                                                </ul>
+
+
+                                                <div class="show-box" id="show_credit_card">
+
+                                                    <form name="payment-form" id="payment-form" style="height:100%"  method="POST">
+                                                        <div class="error-field">
+                                                            <div class="text-holder row no-gutters">
+                                                                <div class="col-xs-12">
+                                                                    <input class="add-box" id="user_name" type="text" placeholder="Name on card">
+                                                                </div>
+                                                            </div>
+                                                            <span class="error-span">error in field</span>
+                                                        </div>
+                                                        <div class="error-field">
+                                                            <div class="text-holder row no-gutters">
+                                                                <div class="col-xs-12">
+                                                                    <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" class="add-box" type="text" placeholder="Card Number">
+                                                                </div>
+                                                            </div>
+                                                            <span class="error-span" id="error-card-no"></span>
+                                                        </div>
+                                                        <div class="error-field">
+                                                            <div class="row">
+                                                                <div class="col-sm-5">
+                                                                    <div class="text-holder add row no-gutters">
+                                                                        <div class="col-xs-2">
+                                                                            <img class="edit" src="img/ic_calender.png">
+                                                                        </div>
+                                                                        <div class="col-xs-10">
+                                                                            <div class="row no-gutters">
+                                                                                <div class="col-xs-5">
+                                                                                    <input class="left-field"  placeholder="MM"  id="month"  type="number" size="2" data-stripe="exp_month">
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <span class="devider"> / </span>
+                                                                                </div>
+                                                                                <div class="col-xs-5">
+                                                                                    <input class="right-field" placeholder="YY" maxlength="2" id="year" type="number" size="2" data-stripe="exp_year">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="error-span" id="error-month"></span>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <div class="text-holder row no-gutters">
+                                                                        <div class="col-xs-4">
+                                                                            <img class="edit" src="img/cvs-icon.png">
+                                                                        </div>
+                                                                        <div class="col-xs-8">
+                                                                            <input type="number" placeholder="cvv" size="4" data-stripe="cvc">
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="error-span">error in field</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <span style="color: red;font-size: 15px;" class="payment-errors"></span>
+
+                                                        <div class="form-row" style="display: none">
+                                                            <label>
+                                                                <span>Billing ZIP Code</span>
+                                                                <input type="text" size="6" data-stripe="address_zip" value="5">
+                                                            </label>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+
+                                                <div class="error-field" id="coupon_parent">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <label class="new-label">Use Coupon</label>
+                                                        </div>
+                                                        <div class="show-text" id="isCoupon">
+                                                            <div class="col-xs-8">
+                                                                <div class="text-holder row no-gutters" id="coupon">
+                                                                    <input class="add-box" type="text" id="coupon-txt" placeholder="Coupon No.">
+                                                                </div>
+                                                                <span class="error-span" id="error-coupon"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <button type="button" onclick="saveCashDetail()" class="btn-add-submit">Save</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="opener">
+                                            <h3>Special Requests</h3>
+                                        </a>
+                                        <div class="slide" id="specialRequest">
+                                            <div class="slide-holder">
+                                                <div class="error-field">
+                                                    <div class="text-holder row no-gutters">
+                                                        <div class="col-xs-1">
+                                                            <img class="edit" src="img/ic_edit.png">
+                                                        </div>
+                                                        <div class="col-xs-11">
+                                                            <textarea id="specialRequestText" placeholder="Type here"></textarea>
+                                                            <img class="resize" src="img/Path 2.png">
+                                                        </div>
+                                                    </div>
+                                                    <span class="error-span">error in field</span>
+                                                </div>
+                                                <button type="button" onclick="specialRequestSave()"  class="btn-add-submit">Save</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="button" id="submitOrder" onclick="callPage3()" class="btn-submit">order now</button>
+                                <div class="empty-height"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-xs-4">
+                        <aside id="sidebar">
+                            <div class="col-second">
+                                <h3> FOOD CART <span class="badge"> 1 </span> </h3>
+                                <div class="scrollable-area right">
+                                    <div id="nested-section">
+                                    </div>
+                                </div>
+                                <div class=" col-xs-12">
+                                    <div class="minimum-item add">
+                                        <div class="row no-gutters">
+                                            <div  class="col-md-8 col-xs-8">
+                                                <h3>Total</h3>
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                                <span id="totalAmountWithoutDiscount" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                        <div id="showDiscount" class="row no-gutters">
+                                            <div  class="col-md-8 col-xs-8">
+                                                <h3>Coupon Discount</h3>
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                                <span id="discountValue" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                        <div id="deliveryDetail" class="row no-gutters">
+                                            <div class="col-md-8 col-xs-8">
+                                                <h3>Delivery</h3>
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                                <span id="area-charges" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="minimum-item">
+                                        <h2 id="totalAmount"> 130 NIS </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a class="btn-left" href="#"></a>
+</div>
+<!-- Modal -->
+<div class="modal fade"  id="about" role="dialog">
+    <div class="modal-dialog modal-md">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <!--<img class="ic_close" src="img/ic_close.png" onclick="$('#detail-popup').fadeOut(); $('.overlay').fadeOut()">-->
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3> ORDERAPP, ORDER FAST </h3>
+
+            <p>
+                "What's for dinner?" <br>
+                "You choose" </br>
+                "I'll choose, but you're calling in the order" </br>
+                "Ok, never mind. I'll choose, you call" </br></br>
+                Sound familiar? We all hate making that dreaded 8-10 min takeout call,
+                shouting to be heard over the din of background noise, when all you want to do is order some burgers. </br></br>
+                Enter OrderApp! With a few clicks on your screen you can find a comprehensive list of restaurants in your area that are offering food takeout delivery at any given time.
+                You can choose a restaurant, browse their online menu and then send your order via chat, without having to try and speak to a live human being.
+                Your order for delivery will be recorded in the chat, thereby minimizing the likelihood of the restaurant messing up your order. </br></br>
+                No need to procrastinate and argue over that frustrating phone call any longer. With OrderApp, you can place your online takeout order to be delivered to you with no hassle and no tears.</br>
+                <br />
+                *Powered by Push Startups
+            </p>
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="#"><img src="img/fb.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/tw.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/gp.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/insta.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/pin.png"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/link.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/en/script/jquery.accordion.without.click.js"></script>
+<script type="text/javascript" src="/en/script/jcf.js"></script>
+<script type="text/javascript" src="/en/script/jcf.scrollable.js"></script>
+<script type="text/javascript">
+    // replace custom forms
+    jcf.lib.domReady(function(){
+        jcf.customForms.replaceAll();
+    });
+</script>
+<script src="/en/script/bootstrap.min.js"></script>
+<script src="/en/script/script.js"> </script>
+<script src="/en/script/dropdown.js"></script>
+<script src="/en/script/ajaxServerRequestConfirmOrder.js"></script>
+<script>
+    $('.checkbox-list li').click(function(e){
+        $('.show-box').toggleClass('show');
+    });
+    $('.new-label').click(function(e){
+        $('.show-text').toggleClass('show');
+    });
+    // header height function
+    $(document).on("scroll", function(){
+        if
+        ($(document).scrollTop() > 100){
+            $("header").addClass("shrink");
+        }
+        else
+        {
+            $("header").removeClass("shrink");
+        }
+    });
+    $('.scrollable-area').scroll(function (event) {
+
+        var scroll = $('.scrollable-area').scrollTop();
+        if(scroll == 0)
+        {
+            $("header").removeClass("shrink");
+
+        }
+        else
+        {
+            $("header").addClass("shrink");
+
+        }
+    });
+    $(function() {
+        function reposition() {
+            var modal = $(this),
+                    dialog = modal.find('.modal-dialog');
+            modal.css('display', 'block');
+
+            // Dividing by two centers the modal exactly, but dividing by three
+            // or four works better for larger screens.
+            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+        }
+        // Reposition when a modal is shown
+        $('.modal').on('show.bs.modal', reposition);
+        // Reposition when the window is resized
+        $(window).on('resize', function() {
+            $('.modal:visible').each(reposition);
+        });
+    });
+
+
+</Script>
+
+<script>
+
+    // WHEN NAME FIELD CHANGES
+    $('#name_text').bind('input', function() {
+        document.getElementById("error-name").innerHTML = "";
+        $("#name").removeClass("error");
+    });
+
+</script>
+
+<script>
+
+    // WHEN NAME FIELD CHANGES
+    $('#email_text').bind('input', function() {
+        document.getElementById("error-email").innerHTML = "";
+        $("#email").removeClass("error");
+    });
+
+</script>
+
+
+<script>
+
+    // WHEN NAME FIELD CHANGES
+    $('#contact_text').bind('input', function() {
+        document.getElementById("error-contact").innerHTML = "";
+        $("#contact").removeClass("error");
+    });
+
+</script>
+
+<script>
+
+    $('#checkbox-id-23').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#deliveryFieldsParent').addClass('show');
+            $('#checkbox-id-12').prop('checked', false);
+
+            userObject.pickFromRestaurant = false;
+
+        }
+        else {
+
+            $('#deliveryFieldsParent').removeClass('show');
+            $('#checkbox-id-12').prop('checked', true);
+
+            userObject.pickFromRestaurant = true;
+        }
+
+    });
+
+
+    $('#checkbox-id-12').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#deliveryFieldsParent').removeClass('show');
+            $('#checkbox-id-23').prop('checked', false);
+
+            userObject.pickFromRestaurant = true;
+        }
+        else {
+
+            $('#deliveryFieldsParent').addClass('show');
+            $('#checkbox-id-23').prop('checked', true);
+
+            userObject.pickFromRestaurant = false;
+        }
+
+    });
+
+
+</script>
+
+<script>
+
+    // WHEN NAME FIELD CHANGES
+    $('#appt-no').bind('input', function() {
+
+        document.getElementById("error-appt-no").innerHTML = "";
+        $("#appt-no").removeClass("error");
+
+    });
+
+</script>
+
+
+<script>
+
+    // WHEN NAME FIELD CHANGES
+    $('#address').bind('input', function() {
+
+        document.getElementById("error-address").innerHTML = "";
+        $("#address").removeClass("error");
+
+    });
+
+</script>
+
+<script>
+
+    $('#checkbox-id-13').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#show_credit_card').removeClass('show');
+            $('#checkbox-id-24').prop('checked', false);
+
+            userObject['Cash_Card'] = "CASH";
+
+        }
+        else {
+
+            $('#show_credit_card').addClass('show');
+            $('#checkbox-id-24').prop('checked', true);
+            userObject['Cash_Card'] = "Credit Card";
+        }
+
+    });
+
+
+    $('#checkbox-id-24').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#show_credit_card').addClass('show');
+            $('#checkbox-id-13').prop('checked', false);
+
+            userObject['Cash_Card'] = "Credit Card";
+        }
+        else {
+
+
+            $('#show_credit_card').removeClass('show');
+            $('#checkbox-id-13').prop('checked', true);
+
+
+            userObject['Cash_Card'] = "CASH";
+        }
+
+    });
+
+
+</script>
+
+
+
+<!--VALIDATE CARD NUMBER-->
+<script>
+
+    $('#card_no').bind('input', function() {
+
+        $('#error-card-no').html("");
+        $("#card_no").removeClass("error");
+
+        if((!this.value.match(/^\d+$/)))
+        {
+            if($("#card_no").val() == ''){
+
+                $("#card_no").removeClass("error");
+                $('#error-card-no').html("");
+            }
+            else
+            {
+                $("#card_no").addClass("error");
+                $('#error-card-no').html("Invalid Card Number!");
+            }
+        }
+        else
+        {
+            $("#card_no").removeClass("error");
+        }
+    });
+
+</script>
+
+
+<script>
+    $('#month').bind('input', function(e) {
+        //alert($("#price").val());
+        if ($(this).val() > 12) {
+            e.preventDefault();
+            $(this).val(12);
+
+        }
+    });
+</script>
+
+<!--STRIPE PAYMENT -->
+<script>
+
+    $(document).ready(function() {
+
+        $("#payment-form").submit(function(e){
+
+            var $form = $('#payment-form');
+
+            // Request a token from Stripe:
+            Stripe.card.createToken($form, stripeResponseHandler);
+
+            e.preventDefault(e);
+            return false;
+        });
+
+        function stripeResponseHandler(status, response) {
+
+            // Grab the form:
+            var $form = $('#payment-form');
+
+            if (response.error) { // Problem!
+
+                // Show the errors on the form:
+                $form.find('.payment-errors').text(response.error.message);
+
+                console.log(response.error.message);
+
+            }
+            else
+            { // Token was created!
+
+                // Get the token ID:
+                var token = response.id;
+
+                console.log(token);
+
+                payment_credit_card(token);
+            }
+        };
+
+    });
+
+
+</script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<script type="text/javascript">
+
+    Stripe.setPublishableKey('pk_live_CnJ0Jj3sAkBcHi8K037WpyAC');
+
+</script>
+
+
+<script type="text/javascript" src="/en/script/commonAjaxCall.js"></script>
+
+
+</body>
+</html>

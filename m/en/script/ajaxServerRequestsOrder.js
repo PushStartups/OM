@@ -126,16 +126,13 @@ function  getCategoriesWithItems(response)
 
 function onItemSelected (x,y)
 {
-
     currentCategoryId     = x;
     currentItemIndex      = y;                         // SELECTED ITEM INDEX
     oneTypeSubItems       = [];                       // REINITIALIZE ALL SUB ITEMS SELECTED BY USER TYPE ONE (SINGLE SELECTION)
     multipleTypeSubItems  = [];                       // REINITIALIZE ALL SUB ITEMS SELECTED BY USER TYPE MULTIPLE (MULTIPLE SELECTION)
     itemPrice             = result.categories_items[currentCategoryId].items[currentItemIndex].price;
 
-
     // DISPLAY ITEM (PRODUCT) DETAIL CARD
-
 
     // DISPLAY ITEM IMAGE ROUND
     //  $('.circle').css("background-image","url("+result.categories_items[currentCategoryId].items[y].image_url+")");
@@ -747,7 +744,6 @@ function onQtyIncreaseButtonClicked(index) {
 
     userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
-
     $('#totalAmount').html(userObject.total + " NIS");
 
     increaseCounter();
@@ -827,12 +823,12 @@ function onQtyDecreasedButtonClicked(index) {
     {
         foodCartData[index].qty = convertFloat(foodCartData[index].qty) - 1;
         userObject.total = convertFloat(convertFloat(userObject.total) - convertFloat(foodCartData[index].price));
+
     }
 
-    decreaseCounter();
     $('#totalAmount').html(userObject.total + " NIS");
-}
 
+}
 
 
 // USER CLICKED ORDER NOW
@@ -1023,7 +1019,10 @@ function CheckCouponFromServer() {
 function checkCouponCallBack(response)
 {
     var responseCoupon = JSON.parse(response);
+
     var code = $("#coponInput").val();
+
+    userObject.couponCode = code;
 
     console.log(responseCoupon);
 

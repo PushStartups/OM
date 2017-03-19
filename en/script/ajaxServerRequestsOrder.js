@@ -3,7 +3,6 @@
 var userObject                  = null;                                           // MAIN USER OBJECT
 var foodCartData                = [];                                             // DISPLAY DATA FOR FOOD CART
 var selectedRest                = null;                                           // SELECTED RESTAURANT RESPONSE FROM SERVER
-
 var result                      = null;                                           // SERVER RESPONSE RAW
 var restName                    = null;                                           // SELECTED RESTAURANT NAME
 var restId                      = null;                                           // SELECTED RESTAURANT ID
@@ -13,6 +12,7 @@ var oneTypeSubItems             = null;                                         
 var multipleTypeSubItems        = null;                                           // SUB-ITEMS TYPE MULTIPLE
 var extras                      = null;                                           // EXTRAS FROM SERVER
 var minOrderLimit               = null;                                           // MINIMUM ORDER LIMIT
+var selectedItemPrice           = 0;
 
 
 //SERVER HOST DETAIL
@@ -50,7 +50,6 @@ $(document).ready(function() {
 
     // // REQUEST SERVER GET CATEGORIES WITH ITEMS
      commonAjaxCall("/restapi/index.php/categories_with_items", {"restaurantId" :  restId }, getCategoriesWithItems);
-
 
     displayRestDetail();
 
@@ -230,7 +229,6 @@ function openSlide(index) {
 
 function onItemSelected (x,y)
 {
-
     currentCategoryId     = x;
     currentItemIndex      = y;                         // SELECTED ITEM INDEX
     oneTypeSubItems       = [];                       // REINITIALIZE ALL SUB ITEMS SELECTED BY USER TYPE ONE (SINGLE SELECTION)
@@ -248,7 +246,10 @@ function onItemSelected (x,y)
     $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_en);
 
 
-    $('#itemPopUpPrice').html(result.categories_items[currentCategoryId].items[currentItemIndex].price+' NIS');
+
+    selectedItemPrice = result.categories_items[currentCategoryId].items[currentItemIndex].price;
+
+    $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
 
 
     // UPDATE DESCRIPTION
@@ -290,7 +291,7 @@ function onItemSelectedCallBack(response)
                 if (extras.extra_with_subitems[x].price_replace == 1)
                 {
 
-                    if(parseFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
+                    if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
 
                         temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '  (' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
                     }
@@ -299,7 +300,7 @@ function onItemSelectedCallBack(response)
                         temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length + ',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en +'</li>';
                     }
 
-                    if (y ==0 || (parseFloat(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
+                    if (y ==0 || (convertFloat(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
                     {
                         minPrice = extras.extra_with_subitems[x].subitems[y].price;
                         minSubItemName = extras.extra_with_subitems[x].subitems[y].name_en;
@@ -309,7 +310,7 @@ function onItemSelectedCallBack(response)
                 else
                 {
 
-                    if(parseFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
+                    if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
 
                         temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+oneTypeSubItems.length+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '  (+' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
                     }
@@ -382,7 +383,7 @@ function onItemSelectedCallBack(response)
 
                 for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
                 {
-                    if(parseFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
+                    if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                         multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
@@ -437,10 +438,17 @@ function onItemSelectedCallBack(response)
 // ON ONE TYPE EXTRA SELECTED BY USER
 function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , e) {
 
-
-    if(parseFloat(extras.extra_with_subitems[extraIndex].price_replace) == 1)
+    if(convertFloat(extras.extra_with_subitems[extraIndex].price_replace) == 1)
     {
         $('#itemPopUpPrice').html(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price+' NIS');
+    }
+    else
+    {
+        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+        {
+            var temp = convertFloat(convertFloat(selectedItemPrice) + convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
+            $('#itemPopUpPrice').html(temp+' NIS');
+        }
     }
 
 
@@ -492,6 +500,11 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
         multipleTypeSubItems[index][name] = subItem;
 
+        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+        {
+            selectedItemPrice = convertFloat(convertFloat(selectedItemPrice) + convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
+            $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
+        }
     }
 
     // IF CHECK BOX NOT CHECKED REMOVE SUB ITEM
@@ -499,6 +512,11 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
     else
     {
         multipleTypeSubItems[index][name] = null;
+        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+        {
+            selectedItemPrice = convertFloat(convertFloat(selectedItemPrice) - convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
+            $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
+        }
     }
 }
 
@@ -569,7 +587,7 @@ function generateTotalUpdateFoodCart()
     {
 
         var order          = userObject.orders[x]; // GET USER ORDERS ONE BY ONE
-        var orderAmount    = parseFloat(order.itemPrice) * parseFloat(order.qty); // SET DEFAULT ITEM PRICE FOR ORDER
+        var orderAmount    = convertFloat(convertFloat(order.itemPrice) * convertFloat(order.qty)); // SET DEFAULT ITEM PRICE FOR ORDER
         var sumTotalAmount = 0;  // TOTAL AMOUNT
 
 
@@ -579,6 +597,7 @@ function generateTotalUpdateFoodCart()
             "name": order.itemName,
             "name_he": order.itemNameHe,
             "price" : order.itemPrice ,
+            "price_without_subItems" : order.itemPrice,
             "detail" : "" ,
             "detail_he" : "" ,
             "orderIndex" : x ,
@@ -601,10 +620,10 @@ function generateTotalUpdateFoodCart()
                 // ITEM PRICE DEPENDS ON SUB ITEM CHOICE
                 // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
 
-                if (parseFloat(order.subItemsOneType[y][key].replace_price) != 0)
+                if (convertFloat(order.subItemsOneType[y][key].replace_price) != 0)
                 {
-                    orderAmount = parseFloat(order.subItemsOneType[y][key].subItemPrice) * parseFloat(order.qty);
-                    cartItem.price = parseFloat(orderAmount);
+                    orderAmount = convertFloat(convertFloat(order.subItemsOneType[y][key].subItemPrice) * convertFloat(order.qty));
+                    cartItem.price = convertFloat(orderAmount);
                     if(cartItem.detail == "")
                     {
                         cartItem.detail +=  key+":"+order.subItemsOneType[y][key].subItemName;
@@ -622,9 +641,9 @@ function generateTotalUpdateFoodCart()
                 // SUM THE AMOUNT
                 else
                 {
-                    if(parseFloat(order.subItemsOneType[y][key].subItemPrice) != 0) {
+                    if(convertFloat(order.subItemsOneType[y][key].subItemPrice) != 0) {
 
-                        sumTotalAmount = parseFloat(sumTotalAmount) +( parseFloat(order.subItemsOneType[y][key].subItemPrice) * parseFloat(order.subItemsOneType[y][key].qty));
+                        sumTotalAmount = convertFloat(convertFloat(sumTotalAmount) +( convertFloat(order.subItemsOneType[y][key].subItemPrice) * convertFloat(order.subItemsOneType[y][key].qty)));
 
                         if(cartItem.detail == "")
                         {
@@ -673,9 +692,9 @@ function generateTotalUpdateFoodCart()
             {
                 if(order.multiItemsOneType[y][key] != null)
                 {
-                    if(parseFloat(order.multiItemsOneType[y][key].subItemPrice) != 0)
+                    if(convertFloat(order.multiItemsOneType[y][key].subItemPrice) != 0)
                     {
-                        sumTotalAmount = parseFloat(sumTotalAmount) + (parseFloat(order.multiItemsOneType[y][key].subItemPrice) * parseFloat(order.multiItemsOneType[y][key].qty) );
+                        sumTotalAmount = convertFloat(convertFloat(sumTotalAmount) + (convertFloat(order.multiItemsOneType[y][key].subItemPrice) * convertFloat(order.multiItemsOneType[y][key].qty)));
 
                         if(cartItem.detail == "")
                         {
@@ -714,9 +733,9 @@ function generateTotalUpdateFoodCart()
         }
 
         // TOTAL OF ITEM WITH SUB ITEMS
-        cartItem.price = ((parseFloat(orderAmount) + parseFloat(sumTotalAmount)) / parseFloat(order.qty));
+        cartItem.price = convertFloat(((convertFloat(orderAmount) + convertFloat(sumTotalAmount)) / convertFloat(order.qty)));
 
-        total = parseFloat(total) +  ( parseFloat(orderAmount) + parseFloat(sumTotalAmount));
+        total = convertFloat(convertFloat(total) +  ( convertFloat(orderAmount) + convertFloat(sumTotalAmount)));
     }
 
 
@@ -748,7 +767,7 @@ function updateCartElements()
                 '<h2>' + foodCartData[x].name + '</h2>' +
                 '</div>'+
                 '<div class="col-md-4 col-xs-4">'+
-                '<span class="dim">' + foodCartData[x].price + ' NIS</span>'+
+                '<span class="dim">' + foodCartData[x].price_without_subItems  + ' NIS</span>'+
                 '</div>'+
                 '</div>'+
                 '<div class="row">' +
@@ -759,7 +778,7 @@ function updateCartElements()
                 '<div class="switch-btn">';
 
             // BUTTON DECREASE OR CANCEL DEPENDS ON QUANTITY
-            if (parseFloat(foodCartData[x].qty) == 1) {
+            if (convertFloat(foodCartData[x].qty) == 1) {
 
                 str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="/en/img/ic_cancel.png">';
             }
@@ -809,7 +828,7 @@ function updateCartElements()
 function onQtyIncreaseButtonClicked(index) {
 
     // UPDATE ITEM MAIN
-    userObject.orders[foodCartData[index].orderIndex].qty = parseFloat(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
+    userObject.orders[foodCartData[index].orderIndex].qty = convertFloat(userObject.orders[foodCartData[index].orderIndex].qty) + 1;
 
     // INCREASE THE QTY OF SUB ITEMS ONE TYPE
     for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].subItemsOneType.length;x++)
@@ -819,7 +838,7 @@ function onQtyIncreaseButtonClicked(index) {
             if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
 
                 userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
-                    parseFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) + 1;
+                    convertFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) + 1;
             }
         }
     }
@@ -832,14 +851,14 @@ function onQtyIncreaseButtonClicked(index) {
             if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
 
                 userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                    (parseFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) + 1);
+                    (convertFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) + 1);
             }
         }
     }
 
-    foodCartData[index].qty = parseFloat(foodCartData[index].qty) + 1;
+    foodCartData[index].qty = convertFloat(foodCartData[index].qty) + 1;
 
-    userObject.total = parseFloat(userObject.total) + parseFloat(foodCartData[index].price);
+    userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
     $('#totalAmount').html(userObject.total + " NIS");
 
@@ -848,6 +867,8 @@ function onQtyIncreaseButtonClicked(index) {
     $(itemCountId).html(foodCartData[index].qty.toString());
 
     $('.badge').html(parseInt($('.badge').html()) + 1);
+
+    $('.left-btn').attr("src","/m/en/img/ic_reduce.png");
 
 }
 
@@ -859,10 +880,10 @@ function onQtyDecreasedButtonClicked(index) {
     // UPDATE ITEM MAIN
 
     // DECREASE QUANTITY
-    if(parseFloat(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
+    if(convertFloat(userObject.orders[foodCartData[index].orderIndex].qty) != 1)
     {
 
-        userObject.orders[foodCartData[index].orderIndex].qty = parseFloat(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
+        userObject.orders[foodCartData[index].orderIndex].qty = convertFloat(userObject.orders[foodCartData[index].orderIndex].qty) - 1;
 
         // DECREASE THE QTY OF SUB ITEMS ONE TYPE
         for(var x=0;x<userObject.orders[foodCartData[index].orderIndex].subItemsOneType.length;x++)
@@ -872,7 +893,7 @@ function onQtyDecreasedButtonClicked(index) {
                 if(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key] != null) {
 
                     userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty =
-                        parseFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) -  1;
+                        convertFloat(userObject.orders[foodCartData[index].orderIndex].subItemsOneType[x][key].qty) -  1;
                 }
             }
         }
@@ -885,7 +906,7 @@ function onQtyDecreasedButtonClicked(index) {
                 if(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key] != null) {
 
                     userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty =
-                        (parseFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
+                        (convertFloat(userObject.orders[foodCartData[index].orderIndex].multiItemsOneType[x][key].qty) - 1);
                 }
             }
         }
@@ -897,7 +918,7 @@ function onQtyDecreasedButtonClicked(index) {
     {
         // IF MAIN ITEM DELETED ALL SUB ITEMS ALSO DELETED
 
-        userObject.total = parseFloat(userObject.total) - parseFloat(foodCartData[index].price);
+        userObject.total = convertFloat(convertFloat(userObject.total) - convertFloat(foodCartData[index].price));
 
         userObject.orders.splice(foodCartData[index].orderIndex, 1);
 
@@ -918,480 +939,487 @@ function onQtyDecreasedButtonClicked(index) {
 
     }
 
-    if(foodCartData.length != 0 && foodCartData[index] != undefined  && (parseFloat(foodCartData[index].qty) != 1))
+    if(foodCartData.length != 0 && foodCartData[index] != undefined  && (convertFloat(foodCartData[index].qty) != 1))
     {
-        foodCartData[index].qty = parseFloat(foodCartData[index].qty) - 1;
-        userObject.total = parseFloat(userObject.total) - parseFloat(foodCartData[index].price);
+        foodCartData[index].qty = convertFloat(foodCartData[index].qty) - 1;
+        userObject.total = convertFloat(convertFloat(userObject.total) - convertFloat(foodCartData[index].price));
 
         var itemCountId = "#count"+index;
         $(itemCountId).html(foodCartData[index].qty.toString());
         $('.badge').html(parseInt($('.badge').html()) - 1);
+
+        if(foodCartData[index].qty == 1)
+        {
+            $('.left-btn').attr("src","/m/en/img/ic_cancel.png");
+        }
+
     }
-
-
 
     $('#totalAmount').html(userObject.total + " NIS");
 }
 
 
-
 // USER CLICKED ORDER NOW
-
 function OnOrderNowClicked() {
-
 
     generateTotalUpdateFoodCart();
 
-    $('.totalBill').html(userObject.total + " NIS");
-    $('#restAddress').html(userObject.restaurantAddress);
-
-
-    orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
-}
-
-
-
-// VALIDATE EMAIL ADDRESS
-
-function validateEmail(email) {
-
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-
-}
-
-
-
-// SAVE USER INFORMATION
-function takeNameAndEmail()
-{
-    // EXCEPTION HANDLING
-
-    // NAME CANNOT BE EMPTY
-
-    $("#email").removeClass("red-border");
-    $("#contact").removeClass("red-border");
-    $("#checkbox-id11").removeClass("red-border");
-    $("#address").removeClass("red-border");
-
-    if($("#name").val() == "")
+    if(convertFloat(userObject.total) < convertFloat(minOrderLimit) )
     {
-        document.getElementById("name-error").innerHTML = "*Required Field";
-        $("#name").addClass("red-border");
-        return;
-    }
-
-
-    // EMAIL CANNOT BE EMPTY
-    if($("#email").val() == ""){
-
-        document.getElementById("email-error").innerHTML = "*Required Field";
-        $("#email").addClass("red-border");
-        return;
-    }
-
-    if( !validateEmail($("#email").val())){
-        document.getElementById("email-error").innerHTML = "Invalid Email!";
-        $("#email").addClass("red-border");
-        return;
-    }
-
-    // CONTACT NO CANNOT BE EMPTY
-
-    if($("#contact").val() == ""){
-
-        document.getElementById("contact-error").innerHTML = "*Required Field";
-        $("#contact").addClass("red-border");
-        return;
-    }
-
-
-    // VALIDATION OF CONTACT NO NOT CONTAIN CHAR EXCEPT +
-
-    var contact = $("#contact").val().replace('+','');
-
-    if(!(/^\d+$/.test(contact)))
-    {
-        document.getElementById("contact-error").innerHTML = "Invalid Phone Number!";
-        $("#contact").addClass("red-border");
-        return;
-    }
-
-
-    // NEED TO CHECK ATLEAST ONE CHECK BOX
-    if(!$('#checkbox-id11').is(':checked') &&  !$('#checkbox-id12').is(':checked'))
-    {
-        $("#checkbox-id11").addClass("red-border");
-        document.getElementById("checkbox-error").innerHTML = "Please select at least one checkbox!";
-        document.getElementById("address-error").innerHTML = "";
-        return;
-    }
-
-
-    // DELIVER ADDRESS EMPTY
-    if($('#checkbox-id12').is(':checked') && $("#address").val() == "")
-    {
-        $("#address").addClass("red-border");
-
-        if($("#address").val() == ""){
-            document.getElementById("address-error").innerHTML = "Empty Address!";
-            document.getElementById("checkbox-error").innerHTML = "";
-        }
-        else
-        {
-            document.getElementById("address-error").innerHTML = "Empty Checkbox!";
-        }
-
-        return;
-    }
-
-
-    userObject.name       =  $("#name").val();
-    userObject.email      =  $("#email").val();
-    userObject.contact    =  $("#contact").val();
-
-
-    // PICK FROM RESTAURANT
-    if($('#checkbox-id11').is(':checked')) {
-
-        userObject.pickFromRestaurant = true;
-    }
-    // DELIVERY
-    else
-    {
-        userObject.deliveryAddress =  $('#address').val();
-    }
-
-
-    $("#customer-popup").slideUp();
-
-
-    // COUPON CODE
-    if($('#checkbox-id13').is(':checked'))
-    {
-
-        $('#coupon_section').show();
-        userObject.isCoupon = true;
-        $("#coponInput").removeClass('red-border-c');
-        $('#couponError').html('');
-        goToCoupon();    // MOVE USER TO TAKE COUPON CODE
+          $("#minAmount").css("color","red");
     }
     else
     {
-        $('#coupon_section').hide();
-        goToPaymentChoice();   // MOVE USER DIRECT TO PAYMENTS SKIP COUPON
-    }
+        localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+        localStorage.setItem("FOOD_CARD_DATA", JSON.stringify(foodCartData));
 
-
-    console.log(userObject);
-}
-
-
-
-function hideCoupon() {
-
-    userObject.isCoupon = false;
-    $('#coupon_section').hide();
-}
-
-
-function CheckCouponFromServer() {
-
-
-    $("#couponError").html("");
-
-    var code = $("#coponInput").val();
-
-    if (code != "") {
-
-        commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
-    }
-    else
-    {
-        // EXCEPTION EMPTY COUPON CODE
-
-        $("#couponError").html("Enter Coupon Code!");
-        $("#coponInput").addClass('red-border-c');
-    }
-
-};
-
-
-
-function checkCouponCallBack(response)
-{
-    var responseCoupon = JSON.parse(response);
-    var code = $("#coponInput").val();
-
-    console.log(responseCoupon);
-
-    // COUPON IS VALID
-    if (responseCoupon.success == true)
-    {
-
-        var newTotal = 0;
-
-        userObject.discount = responseCoupon.amount;
-        var discountedAmount = 0;
-
-        if (responseCoupon.isFixAmountCoupon) {
-
-            userObject.isFixAmountCoupon = true;
-
-            discountedAmount = parseFloat(userObject.discount);
-
-            newTotal = parseFloat(userObject.total) - parseFloat(userObject.discount);
-
-            $('#discountAmount').html("-" + discountedAmount);
-        }
-        else {
-
-            userObject.isFixAmountCoupon = false;
-
-            discountedAmount = ((parseFloat(userObject.total) * parseFloat(userObject.discount)) / 100);
-
-            newTotal = userObject.total - discountedAmount;
-
-            $('#discountAmount').html("-" + userObject.discount+"%");
-
-        }
-
-        $('.totalBill').html(newTotal + " NIS");
-        $('#code').val(code);
-        $('#oldTotal').html(userObject.total);
-        $('#newTotal').html(newTotal);
-
-        userObject.totalWithoutDiscount = userObject.total;
-        userObject.total = newTotal;
-
-        $('#coupon_section').show();
-        goToConfirmCoupon();  // COUPON IS VALID GO TO NEXT POPUP TO DISPLAY COUPON DETAIL
-
-    }
-    // INVALID COUPON CODE
-    else
-    {
-
-        $('#coupon_section').hide();
-        $("#coponInput").addClass('red-border-c');
-        $("#couponError").html("Oops, this Coupons wrong, Try Again!");
-        $("#coponInput").val('');
+         $("#minAmount").css("color","black");
+         window.location.href = '/en/confirm-order.html';
     }
 }
 
 
 
-// CREDIT CARD PAYMENT
-function payment_credit_card(token) {
-
-
-    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : userObject.total, "email"  : userObject.email, "token"  : token},paymentCreditCardCallBack);
-
-}
-
-
-function paymentCreditCardCallBack(response) {
-
-    var resp = '';
-
-    try {
-
-        resp = JSON.parse(response);
-    }
-    catch (e)
-    {
-        resp = response;
-        console.log(resp);
-    }
-
-    if(response == "success")
-    {
-        onPaymentSuccess();
-        hideLoading();
-    }
-    else
-    {
-        $(".payment-errors").html(resp);
-        $(".payment-errors").show();
-        hideLoading();
-
-        var delayMillis = 500; //1 second
-
-        setTimeout(function() {
-
-            $("#creditSection").animate({
-
-                scrollTop: 500
-
-            }, 200);
-
-
-        }, delayMillis);
-
-
-    }
-
-}
-
-
-function onPaymentCancel() {
-
-    goToPaymentChoice();
-}
-
-
-
-function onPaymentSuccess()
-{
-    confirmOrder('creditCard');
-    goToConfirmOrder();
-}
-
-
-// PAYMENT OPTION WHAT USER CHOOSE CASH OR CREDIT
-function confirmOrder(paymentChoice)
-{
-    var str = "";
-
-    // ALL ORDERS IN ONE STRING DISPLAY FOR USER SUMMARY
-    str += '<span> ORDER </span> <a href="#"></a> <br>';
-
-    for(var x=0;x< foodCartData.length ;x++)
-    {
-        str += "<b>"+foodCartData[x].name+" X "+foodCartData[x].qty+"</b>"+"<br>"+foodCartData[x].detail+"<br>";
-    }
-
-    $('#all_orders_str').html(str);
-
-
-
-    str = "";
-    // PAYMENT CHOICE
-    if(paymentChoice == 'cash')
-    {
-        str += '<span > PAYMENT </span> <a href = "#"></a> <br> Cash';
-
-        userObject['Cash_Card'] = "CASH";
-        userObject['Cash_Card_he'] = "כסף מזומן";
-
-    }
-    else if(paymentChoice == 'creditCard')
-    {
-        str += '<span > PAYMENT </span> <a href = "#"> </a> <br>'+'payment received through credit card';
-
-        userObject['Cash_Card'] = "Credit Card";
-        userObject['Cash_Card_he'] = "כרטיס אשראי";
-    }
-
-    $('#payment_choice').html(str);
-
-    str = "";
-
-    str = '<span> CUSTOMER INFO </span> <a href="#"> </a>'+
-        '<br>'+
-        userObject.name+'<br>'+userObject.email+'<br>'+userObject.contact+'<br>';
-
-    if(userObject.pickFromRestaurant)
-    {
-        str += "Pick from Restaurant : "+userObject.restaurantAddress;
-    }
-    else
-    {
-        str += "Delivery Address : "+userObject.deliveryAddress;
-    }
-
-    $('#userProvidedInfo').html(str);
-
-
-    str = "";
-
-    if(!userObject.isCoupon) {
-
-        // str += '<span> COUPON CODE </span> <a href="#"> </a>'+
-        //     '<br>'+
-        //     'N/A';
-
-        $('#couponParent').css("display","none");
-
-    }
-    else
-    {
-
-        $('#couponParent').css("display","block");
-
-
-        if(userObject.isFixAmountCoupon) {
-
-
-            str += '<span> COUPON CODE </span> <a href="#"> </a>' +
-                '<br>' +
-                'Discount = -'+userObject.discount;
-        }
-        else
-        {
-
-            str += '<span> COUPON CODE </span> <a href="#"> </a>' +
-                '<br>' +
-                'Discount = -'+userObject.discount+"%";
-        }
-    }
-
-    $('#coupon_detail').html(str);
-}
-
-
-
-
-// SEND ORDER USER TO SERVER & CALL PAGE 3
-
-function  callPage3() {
-
-    userObject.cartData = foodCartData;
-
-    localStorage.setItem("USER_OBJECT", "");
-
-    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
-
-};
-
-
-function callPage3CallBack(response) {
-
-
-    userObject = null;
-    window.location.href = '/m/en/wait';
-    hideLoading();
-
-
-}
-
-
-//SHOW LOADER ON AJAX CALLS
-function addLoading(){
-
-    $("body").addClass("blur-class");
-    $("#loader").css("display" , "block");
-}
-
-// HIDE LOADING ON AJAX CALLS
-
-function hideLoading(){
-    setTimeout(function() {
-        $("body").removeClass("blur-class");
-        $("#loader").css("display" , "none");
-    }, 1000);
-}
-
-function scrollToError(id) {
-
-
-    $('#scroll_error').animate({
-
-        scrollTop: 200
-
-    }, 200);
-}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// // VALIDATE EMAIL ADDRESS
+//
+// function validateEmail(email) {
+//
+//     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     return re.test(email);
+//
+// }
+//
+//
+//
+// // SAVE USER INFORMATION
+// function takeNameAndEmail()
+// {
+//     // EXCEPTION HANDLING
+//
+//     // NAME CANNOT BE EMPTY
+//
+//     $("#email").removeClass("red-border");
+//     $("#contact").removeClass("red-border");
+//     $("#checkbox-id11").removeClass("red-border");
+//     $("#address").removeClass("red-border");
+//
+//     if($("#name").val() == "")
+//     {
+//         document.getElementById("name-error").innerHTML = "*Required Field";
+//         $("#name").addClass("red-border");
+//         return;
+//     }
+//
+//
+//     // EMAIL CANNOT BE EMPTY
+//     if($("#email").val() == ""){
+//
+//         document.getElementById("email-error").innerHTML = "*Required Field";
+//         $("#email").addClass("red-border");
+//         return;
+//     }
+//
+//     if( !validateEmail($("#email").val())){
+//         document.getElementById("email-error").innerHTML = "Invalid Email!";
+//         $("#email").addClass("red-border");
+//         return;
+//     }
+//
+//     // CONTACT NO CANNOT BE EMPTY
+//
+//     if($("#contact").val() == ""){
+//
+//         document.getElementById("contact-error").innerHTML = "*Required Field";
+//         $("#contact").addClass("red-border");
+//         return;
+//     }
+//
+//
+//     // VALIDATION OF CONTACT NO NOT CONTAIN CHAR EXCEPT +
+//
+//     var contact = $("#contact").val().replace('+','');
+//
+//     if(!(/^\d+$/.test(contact)))
+//     {
+//         document.getElementById("contact-error").innerHTML = "Invalid Phone Number!";
+//         $("#contact").addClass("red-border");
+//         return;
+//     }
+//
+//
+//     // NEED TO CHECK ATLEAST ONE CHECK BOX
+//     if(!$('#checkbox-id11').is(':checked') &&  !$('#checkbox-id12').is(':checked'))
+//     {
+//         $("#checkbox-id11").addClass("red-border");
+//         document.getElementById("checkbox-error").innerHTML = "Please select at least one checkbox!";
+//         document.getElementById("address-error").innerHTML = "";
+//         return;
+//     }
+//
+//
+//     // DELIVER ADDRESS EMPTY
+//     if($('#checkbox-id12').is(':checked') && $("#address").val() == "")
+//     {
+//         $("#address").addClass("red-border");
+//
+//         if($("#address").val() == ""){
+//             document.getElementById("address-error").innerHTML = "Empty Address!";
+//             document.getElementById("checkbox-error").innerHTML = "";
+//         }
+//         else
+//         {
+//             document.getElementById("address-error").innerHTML = "Empty Checkbox!";
+//         }
+//
+//         return;
+//     }
+//
+//
+//     userObject.name       =  $("#name").val();
+//     userObject.email      =  $("#email").val();
+//     userObject.contact    =  $("#contact").val();
+//
+//
+//     // PICK FROM RESTAURANT
+//     if($('#checkbox-id11').is(':checked')) {
+//
+//         userObject.pickFromRestaurant = true;
+//     }
+//     // DELIVERY
+//     else
+//     {
+//         userObject.deliveryAddress =  $('#address').val();
+//     }
+//
+//
+//     $("#customer-popup").slideUp();
+//
+//
+//     // COUPON CODE
+//     if($('#checkbox-id13').is(':checked'))
+//     {
+//
+//         $('#coupon_section').show();
+//         userObject.isCoupon = true;
+//         $("#coponInput").removeClass('red-border-c');
+//         $('#couponError').html('');
+//         goToCoupon();    // MOVE USER TO TAKE COUPON CODE
+//     }
+//     else
+//     {
+//         $('#coupon_section').hide();
+//         goToPaymentChoice();   // MOVE USER DIRECT TO PAYMENTS SKIP COUPON
+//     }
+//
+//
+//     console.log(userObject);
+// }
+//
+//
+//
+// function hideCoupon() {
+//
+//     userObject.isCoupon = false;
+//     $('#coupon_section').hide();
+// }
+//
+//
+// function CheckCouponFromServer() {
+//
+//
+//     $("#couponError").html("");
+//
+//     var code = $("#coponInput").val();
+//
+//     if (code != "") {
+//
+//         commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+//     }
+//     else
+//     {
+//         // EXCEPTION EMPTY COUPON CODE
+//
+//         $("#couponError").html("Enter Coupon Code!");
+//         $("#coponInput").addClass('red-border-c');
+//     }
+//
+// };
+//
+//
+//
+// function checkCouponCallBack(response)
+// {
+//     var responseCoupon = JSON.parse(response);
+//     var code = $("#coponInput").val();
+//
+//     console.log(responseCoupon);
+//
+//     // COUPON IS VALID
+//     if (responseCoupon.success == true)
+//     {
+//
+//         var newTotal = 0;
+//
+//         userObject.discount = responseCoupon.amount;
+//         var discountedAmount = 0;
+//
+//         if (responseCoupon.isFixAmountCoupon) {
+//
+//             userObject.isFixAmountCoupon = true;
+//
+//             discountedAmount = convertFloat(userObject.discount);
+//
+//             newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
+//
+//             $('#discountAmount').html("-" + discountedAmount);
+//         }
+//         else {
+//
+//             userObject.isFixAmountCoupon = false;
+//
+//             discountedAmount = ((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100);
+//
+//             newTotal = userObject.total - discountedAmount;
+//
+//             $('#discountAmount').html("-" + userObject.discount+"%");
+//
+//         }
+//
+//         $('.totalBill').html(newTotal + " NIS");
+//         $('#code').val(code);
+//         $('#oldTotal').html(userObject.total);
+//         $('#newTotal').html(newTotal);
+//
+//         userObject.totalWithoutDiscount = userObject.total;
+//         userObject.total = newTotal;
+//
+//         $('#coupon_section').show();
+//         goToConfirmCoupon();  // COUPON IS VALID GO TO NEXT POPUP TO DISPLAY COUPON DETAIL
+//
+//     }
+//     // INVALID COUPON CODE
+//     else
+//     {
+//
+//         $('#coupon_section').hide();
+//         $("#coponInput").addClass('red-border-c');
+//         $("#couponError").html("Oops, this Coupons wrong, Try Again!");
+//         $("#coponInput").val('');
+//     }
+// }
+//
+//
+//
+// // CREDIT CARD PAYMENT
+// function payment_credit_card(token) {
+//
+//
+//     commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : userObject.total, "email"  : userObject.email, "token"  : token},paymentCreditCardCallBack);
+//
+// }
+//
+//
+// function paymentCreditCardCallBack(response) {
+//
+//     var resp = '';
+//
+//     try {
+//
+//         resp = JSON.parse(response);
+//     }
+//     catch (e)
+//     {
+//         resp = response;
+//         console.log(resp);
+//     }
+//
+//     if(response == "success")
+//     {
+//         onPaymentSuccess();
+//         hideLoading();
+//     }
+//     else
+//     {
+//         $(".payment-errors").html(resp);
+//         $(".payment-errors").show();
+//         hideLoading();
+//
+//         var delayMillis = 500; //1 second
+//
+//         setTimeout(function() {
+//
+//             $("#creditSection").animate({
+//
+//                 scrollTop: 500
+//
+//             }, 200);
+//
+//
+//         }, delayMillis);
+//
+//
+//     }
+//
+// }
+//
+//
+// function onPaymentCancel() {
+//
+//     goToPaymentChoice();
+// }
+//
+//
+//
+// function onPaymentSuccess()
+// {
+//     confirmOrder('creditCard');
+//     goToConfirmOrder();
+// }
+//
+//
+// // PAYMENT OPTION WHAT USER CHOOSE CASH OR CREDIT
+// function confirmOrder(paymentChoice)
+// {
+//     var str = "";
+//
+//     // ALL ORDERS IN ONE STRING DISPLAY FOR USER SUMMARY
+//     str += '<span> ORDER </span> <a href="#"></a> <br>';
+//
+//     for(var x=0;x< foodCartData.length ;x++)
+//     {
+//         str += "<b>"+foodCartData[x].name+" X "+foodCartData[x].qty+"</b>"+"<br>"+foodCartData[x].detail+"<br>";
+//     }
+//
+//     $('#all_orders_str').html(str);
+//
+//
+//
+//     str = "";
+//     // PAYMENT CHOICE
+//     if(paymentChoice == 'cash')
+//     {
+//         str += '<span > PAYMENT </span> <a href = "#"></a> <br> Cash';
+//
+//         userObject['Cash_Card'] = "CASH";
+//         userObject['Cash_Card_he'] = "כסף מזומן";
+//
+//     }
+//     else if(paymentChoice == 'creditCard')
+//     {
+//         str += '<span > PAYMENT </span> <a href = "#"> </a> <br>'+'payment received through credit card';
+//
+//         userObject['Cash_Card'] = "Credit Card";
+//         userObject['Cash_Card_he'] = "כרטיס אשראי";
+//     }
+//
+//     $('#payment_choice').html(str);
+//
+//     str = "";
+//
+//     str = '<span> CUSTOMER INFO </span> <a href="#"> </a>'+
+//         '<br>'+
+//         userObject.name+'<br>'+userObject.email+'<br>'+userObject.contact+'<br>';
+//
+//     if(userObject.pickFromRestaurant)
+//     {
+//         str += "Pick from Restaurant : "+userObject.restaurantAddress;
+//     }
+//     else
+//     {
+//         str += "Delivery Address : "+userObject.deliveryAddress;
+//     }
+//
+//     $('#userProvidedInfo').html(str);
+//
+//
+//     str = "";
+//
+//     if(!userObject.isCoupon) {
+//
+//         // str += '<span> COUPON CODE </span> <a href="#"> </a>'+
+//         //     '<br>'+
+//         //     'N/A';
+//
+//         $('#couponParent').css("display","none");
+//
+//     }
+//     else
+//     {
+//
+//         $('#couponParent').css("display","block");
+//
+//
+//         if(userObject.isFixAmountCoupon) {
+//
+//
+//             str += '<span> COUPON CODE </span> <a href="#"> </a>' +
+//                 '<br>' +
+//                 'Discount = -'+userObject.discount;
+//         }
+//         else
+//         {
+//
+//             str += '<span> COUPON CODE </span> <a href="#"> </a>' +
+//                 '<br>' +
+//                 'Discount = -'+userObject.discount+"%";
+//         }
+//     }
+//
+//     $('#coupon_detail').html(str);
+// }
+//
+//
+//
+//
+// // SEND ORDER USER TO SERVER & CALL PAGE 3
+//
+// function  callPage3() {
+//
+//     userObject.cartData = foodCartData;
+//
+//     localStorage.setItem("USER_OBJECT", "");
+//
+//     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
+//
+// };
+//
+//
+// function callPage3CallBack(response) {
+//
+//
+//     userObject = null;
+//     window.location.href = '/m/en/wait';
+//     hideLoading();
+//
+//
+// }
+//
+// function scrollToError(id) {
+//
+//
+//     $('#scroll_error').animate({
+//
+//         scrollTop: 200
+//
+//     }, 200);
+// }
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+function convertFloat(num)
+{
+    return parseFloat(parseFloat(num).toFixed(2));
 }
