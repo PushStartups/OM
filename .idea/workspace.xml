@@ -761,7 +761,7 @@
       <workItem from="1489991327191" duration="10228000" />
       <workItem from="1490028908868" duration="2302000" />
       <workItem from="1490087063183" duration="8565000" />
-      <workItem from="1490106922284" duration="3797000" />
+      <workItem from="1490106922284" duration="3808000" />
     </task>
     <task id="LOCAL-00001" summary="Final Production Release 28 Feb 2017">
       <created>1488293548112</created>
@@ -1008,11 +1008,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490110739220</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Final Update Desktop And Mobile Client">
+      <created>1490110962121</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1490110962121</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155721000" />
+    <option name="totallyTimeSpent" value="155732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="780" extended-state="0" />
