@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 19, 2017 at 01:12 PM
+-- Generation Time: Mar 21, 2017 at 09:30 AM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,41 @@ SET time_zone = "+00:00";
 --
 -- Database: `orderapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `b2b_orders`
+--
+
+CREATE TABLE IF NOT EXISTS `b2b_orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `discount` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `b2b_order_detail`
+--
+
+CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `item` varchar(255) NOT NULL,
+  `sub_total` int(11) NOT NULL,
+  `sub_items` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `order_id` (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -47,13 +82,13 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (4, 1, 'Angus Sides', 'תוספות', '/m/en/img/categories/angus/Angus Sides.png', 105),
 (5, 1, 'Angus Drinks', 'שתיה', '/m/en/img/categories/angus/Angus Drinks.png', 104),
 (6, 1, 'Angus Sandwiches', 'סנדוויצים', '/m/en/img/categories/angus/Angus Sandwiches.png', 103),
-(7, 2, 'Meshulashim Pizza', 'פיצה', '/m/en/img/categories/mesh/Pizza.png', 106),
-(8, 2, 'Meshulashim Toasts', 'טוסטים', '/m/en/img/categories/mesh/Toast.png', 107),
-(9, 2, 'Meshulashim Salads', 'סלטים', '/m/en/img/categories/mesh/Salads.png', 108),
-(10, 2, 'Meshulashim Pastas', 'פסטות', '/m/en/img/categories/mesh/Pastas.png', 109),
-(11, 2, 'Meshulashim Extras', 'תוספות', '/m/en/img/categories/mesh/Extras.png', 110),
-(12, 2, 'Meshulashim Drinks', 'שתיה', '/m/en/img/categories/mesh/Drinks.png', 111),
-(13, 2, 'Meshulashim Kid''s Meal', 'ארוחת ילדים', '/m/en/img/categories/mesh/Kid''s Meal.png', 112),
+(7, 2, 'Pizza', 'פיצה', '/m/en/img/categories/mesh/Pizza.png', 106),
+(8, 2, 'Toasts', 'טוסטים', '/m/en/img/categories/mesh/Toast.png', 107),
+(9, 2, 'Salads', 'סלטים', '/m/en/img/categories/mesh/Salads.png', 108),
+(10, 2, 'Pastas', 'פסטות', '/m/en/img/categories/mesh/Pastas.png', 109),
+(11, 2, 'Extras', 'תוספות', '/m/en/img/categories/mesh/Extras.png', 110),
+(12, 2, 'Drinks', 'שתיה', '/m/en/img/categories/mesh/Drinks.png', 111),
+(13, 2, 'Kid''s Meal', 'ארוחת ילדים', '/m/en/img/categories/mesh/Kid''s Meal.png', 112),
 (14, 3, 'Bandora Grill', 'על הגריל', '/m/en/img/categories/bandora/BANDORA GRILL.png', 113),
 (15, 3, 'Bandora Salad', 'סלטים', '/m/en/img/categories/bandora/Bandora Salad.png', 114),
 (16, 3, 'Bandora Chummus', 'צלחת חומוס', '/m/en/img/categories/bandora/Bandora Chummus.png', 115),
@@ -83,7 +118,7 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (40, 5, 'Salads', 'סלטים', '/m/en/img/categories/japan/Salads.png', 139),
 (41, 5, 'Soups', 'מרק', '/m/en/img/categories/japan/Soups.png', 140),
 (42, 5, 'Wok Stir Fried Dishes', 'מוקפצות', '/m/en/img/categories/japan/Wok Stir Fried Dishes.png', 141),
-(43, 5, 'Main Dishes', 'מנות נתחי עוף / בקר מוקפצות על להבת WOK', '/m/en/img/categories/japan/Main Dishes.png', 142),
+(43, 5, 'Japan Japan Special Stir Fry', 'מנות נתחי עוף / בקר מוקפצות על להבת WOK', '/m/en/img/categories/japan/Main Dishes.png', 142),
 (44, 5, 'Children''s Menu', 'מנות ילדים\n', '/m/en/img/categories/japan/Children''s Menu.png', 143),
 (45, 5, 'Build your own Maki Roll', 'רול בהרכבה אישית', '/m/en/img/categories/japan/Build your own Maki Roll.png', 144),
 (46, 6, 'Appetizers', '???? ?????', '/m/en/img/categories/oshi/Appetizers.png', 145),
@@ -156,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `cities` (
   `name_en` varchar(255) CHARACTER SET utf8 NOT NULL,
   `name_he` varchar(255) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `cities`
@@ -175,16 +210,86 @@ INSERT INTO `cities` (`id`, `name_en`, `name_he`) VALUES
 CREATE TABLE IF NOT EXISTS `company` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
+  `delivery_address` varchar(255) NOT NULL,
+  `discount` int(11) NOT NULL,
   `url` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`id`, `name`, `url`) VALUES
-(1, 'cisco', 'http://dev.biz.orderapp.com/?biz=cisco');
+INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `url`) VALUES
+(1, 'cisco', '', 0, 'http://dev.biz.orderapp.com/?biz=cisco'),
+(2, 'test company', 'beit semish gali no 4', 35, 'www.googlesol.com'),
+(3, 'company 2', 'Nishat colony delecia bakery k uper', 35, 'www.experintSol.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company_rest`
+--
+
+CREATE TABLE IF NOT EXISTS `company_rest` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `rest_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `company_id` (`company_id`),
+  KEY `rest_id` (`rest_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `company_rest`
+--
+
+INSERT INTO `company_rest` (`id`, `company_id`, `rest_id`) VALUES
+(1, 2, 1),
+(2, 2, 2),
+(3, 2, 3),
+(4, 3, 2),
+(5, 3, 4),
+(6, 3, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company_timing`
+--
+
+CREATE TABLE IF NOT EXISTS `company_timing` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `week_en` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `week_he` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `opening_time` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `closing_time` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `opening_time_he` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `closing_time_he` varchar(255) CHARACTER SET latin1 NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `company_timing`
+--
+
+INSERT INTO `company_timing` (`id`, `company_id`, `week_en`, `week_he`, `opening_time`, `closing_time`, `opening_time_he`, `closing_time_he`) VALUES
+(1, 2, 'Monday', '', '11:00', '21:00', '', ''),
+(2, 2, 'Tuesday', '', '11:00', '21:00', '', ''),
+(3, 2, 'Wednesday', '', '11:00', '21:00', '', ''),
+(4, 2, 'Thursday', '', '11:00', '21:00', '', ''),
+(5, 2, 'Friday', '', '11:00', '21:00', '', ''),
+(6, 2, 'Saturday', '', 'Closed', 'Closed', '', ''),
+(7, 2, 'Sunday', '', 'Closed', 'Closed', '', ''),
+(8, 3, 'Monday', '', '11:00', '21:00', '', ''),
+(9, 3, 'Tuesday', '', '11:00', '21:00', '', ''),
+(10, 3, 'Wednesday', '', '11:00', '21:00', '', ''),
+(11, 3, 'Thursday', '', '11:00', '21:00', '', ''),
+(12, 3, 'Friday', '', '11:00', '21:00', '', ''),
+(13, 3, 'Saturday', '', 'Closed', 'Closed', '', ''),
+(14, 3, 'Sunday', '', 'Closed', 'Closed', '', '');
 
 -- --------------------------------------------------------
 
@@ -432,87 +537,85 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (144, 66, 'Meat Type', 'One', 0, 'בשר', 199),
 (145, 66, 'Addons', 'Multiple', 0, 'תוספות', 200),
 (146, 66, 'Sauces', 'Multiple', 0, 'רטבים', 201),
-(148, 67, 'Meat Type', 'One', 0, 'בשר', 202),
-(149, 67, 'Addons', 'Multiple', 0, 'תוספות', 203),
 (150, 67, 'Sauces', 'Multiple', 0, 'רטבים', 204),
 (154, 70, 'Meat Type', 'One', 0, 'בשר', 205),
 (155, 87, 'Vegetables', 'Multiple', 0, 'ירקות', 206),
 (156, 87, 'Sauces', 'Multiple', 0, 'רטבים', 207),
 (157, 87, 'Addons', 'Multiple', 0, 'תוספות', 208),
-(158, 87, 'Roza Deal', 'One', 0, 'רוזה דיל', 209),
+(158, 87, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 209),
 (159, 88, 'Vegetables', 'Multiple', 0, 'ירקות', 210),
 (160, 88, 'Sauces', 'Multiple', 0, 'רטבים', 211),
 (161, 88, 'Addons', 'Multiple', 0, 'תוספות', 212),
-(162, 88, 'Roza Deal', 'One', 0, 'רוזה דיל', 213),
+(162, 88, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 213),
 (163, 89, 'Vegetables', 'Multiple', 0, 'ירקות', 214),
 (164, 89, 'Sauces', 'Multiple', 0, 'רטבים', 215),
 (165, 89, 'Addons', 'Multiple', 0, 'תוספות', 216),
-(166, 89, 'Roza Deal', 'One', 0, 'רוזה דיל', 217),
+(166, 89, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 217),
 (167, 90, 'Vegetables', 'Multiple', 0, 'ירקות', 218),
 (168, 90, 'Sauces', 'Multiple', 0, 'רטבים', 219),
 (169, 90, 'Addons', 'Multiple', 0, 'תוספות', 220),
-(170, 90, 'Roza Deal', 'One', 0, 'רוזה דיל', 221),
+(170, 90, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 221),
 (171, 91, 'Vegetables', 'Multiple', 0, 'ירקות', 222),
 (172, 91, 'Sauces', 'Multiple', 0, 'רטבים', 223),
 (173, 91, 'Addons', 'Multiple', 0, 'תוספות', 224),
-(174, 91, 'Roza Deal', 'One', 0, 'רוזה דיל', 225),
+(174, 91, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 225),
 (175, 92, 'Vegetables', 'Multiple', 0, 'ירקות', 226),
 (176, 92, 'Sauces', 'Multiple', 0, 'רטבים', 227),
 (177, 92, 'Addons', 'Multiple', 0, 'תוספות', 228),
-(178, 92, 'Roza Deal', 'One', 0, 'רוזה דיל', 229),
+(178, 92, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 229),
 (179, 93, 'Vegetables', 'Multiple', 0, 'ירקות', 230),
 (180, 93, 'Sauces', 'Multiple', 0, 'רטבים', 231),
 (181, 93, 'Addons', 'Multiple', 0, 'תוספות', 232),
-(182, 93, 'Roza Deal', 'One', 0, 'רוזה דיל', 233),
+(182, 93, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 233),
 (183, 94, 'Vegetables', 'Multiple', 0, 'ירקות', 234),
 (184, 94, 'Sauces', 'Multiple', 0, 'רטבים', 235),
 (185, 94, 'Addons', 'Multiple', 0, 'תוספות', 236),
-(186, 94, 'Roza Deal', 'One', 0, 'רוזה דיל', 237),
+(186, 94, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 237),
 (187, 95, 'Vegetables', 'Multiple', 0, 'ירקות', 238),
 (188, 95, 'Sauces', 'Multiple', 0, 'רטבים', 239),
 (189, 95, 'Addons', 'Multiple', 0, 'תוספות', 240),
-(190, 95, 'Roza Deal', 'One', 0, 'רוזה דיל', 241),
+(190, 95, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 241),
 (191, 96, 'Vegetables', 'Multiple', 0, 'ירקות', 242),
 (192, 96, 'Sauces', 'Multiple', 0, 'רטבים', 243),
 (193, 96, 'Addons', 'Multiple', 0, 'תוספות', 244),
-(194, 96, 'Roza Deal', 'One', 0, 'רוזה דיל', 245),
+(194, 96, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 245),
 (195, 97, 'Vegetables', 'Multiple', 0, 'ירקות', 246),
 (196, 97, 'Sauces', 'Multiple', 0, 'רטבים', 247),
 (197, 97, 'Addons', 'Multiple', 0, 'תוספות', 248),
-(198, 97, 'Roza Deal', 'One', 0, 'רוזה דיל', 249),
+(198, 97, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 249),
 (199, 98, 'Vegetables', 'Multiple', 0, 'ירקות', 250),
 (200, 98, 'Sauces', 'Multiple', 0, 'רטבים', 251),
 (201, 98, 'Addons', 'Multiple', 0, 'תוספות', 252),
-(202, 98, 'Roza Deal', 'One', 0, 'רוזה דיל', 253),
+(202, 98, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 253),
 (203, 99, 'Vegetables', 'Multiple', 0, 'ירקות', 254),
 (204, 99, 'Sauces', 'Multiple', 0, 'רטבים', 255),
 (205, 99, 'Addons', 'Multiple', 0, 'תוספות', 256),
-(206, 99, 'Roza Deal', 'One', 0, 'רוזה דיל', 257),
+(206, 99, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 257),
 (207, 100, 'Bread', 'One', 0, 'לחם לתשלום', 258),
-(208, 100, 'Roza Deal', 'One', 0, 'רוזה דיל', 259),
+(208, 100, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 259),
 (209, 101, 'Bread', 'One', 0, 'לחם לתשלום', 260),
-(210, 101, 'Roza Deal', 'One', 0, 'רוזה דיל', 261),
+(210, 101, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 261),
 (211, 102, 'Bread', 'One', 0, 'לחם לתשלום', 262),
-(212, 102, 'Roza Deal', 'One', 0, 'רוזה דיל', 263),
+(212, 102, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 263),
 (213, 103, 'Bread', 'One', 0, 'לחם לתשלום', 264),
-(214, 103, 'Roza Deal', 'One', 0, 'רוזה דיל', 265),
+(214, 103, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 265),
 (215, 104, 'Bread', 'One', 0, 'לחם לתשלום', 266),
-(216, 104, 'Roza Deal', 'One', 0, 'רוזה דיל', 267),
+(216, 104, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 267),
 (217, 105, 'Bread', 'One', 0, 'לחם לתשלום', 268),
-(218, 105, 'Roza Deal', 'One', 0, 'רוזה דיל', 269),
+(218, 105, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 269),
 (219, 106, 'Bread', 'One', 0, 'לחם לתשלום', 270),
-(220, 106, 'Roza Deal', 'One', 0, 'רוזה דיל', 271),
-(221, 107, 'Roza Deal', 'One', 0, 'רוזה דיל', 272),
-(222, 108, 'Roza Deal', 'One', 0, 'רוזה דיל', 273),
-(223, 109, 'Roza Deal', 'One', 0, 'רוזה דיל', 274),
-(224, 110, 'Roza Deal', 'One', 0, 'רוזה דיל', 275),
-(225, 111, 'Roza Deal', 'One', 0, 'רוזה דיל', 276),
-(226, 112, 'Roza Deal', 'One', 0, 'רוזה דיל', 277),
-(227, 113, 'Roza Deal', 'One', 0, 'רוזה דיל', 278),
-(228, 114, 'Roza Deal', 'One', 0, 'רוזה דיל', 279),
-(229, 115, 'Roza Deal', 'One', 0, 'רוזה דיל', 280),
-(230, 116, 'Roza Deal', 'One', 0, 'רוזה דיל', 281),
-(231, 117, 'Roza Deal', 'One', 0, 'רוזה דיל', 282),
+(220, 106, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 271),
+(221, 107, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 272),
+(222, 108, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 273),
+(223, 109, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 274),
+(224, 110, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 275),
+(225, 111, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 276),
+(226, 112, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 277),
+(227, 113, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 278),
+(228, 114, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 279),
+(229, 115, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 280),
+(230, 116, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 281),
+(231, 117, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 282),
 (232, 148, 'Sauces', 'Multiple', 0, 'רטבים', 283),
 (233, 149, 'Sauces', 'Multiple', 0, 'רטבים', 284),
 (234, 150, 'Sauces', 'Multiple', 0, 'רטבים', 285),
@@ -652,51 +755,51 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (368, 555, 'Addons', 'One', 0, 'תוספות', 419),
 (369, 556, 'Addons', 'One', 0, 'תוספות', 420),
 (370, 557, 'Addons', 'Multiple', 0, 'תוספות', 421),
-(371, 558, 'Addons', 'One', 0, 'תוספות', 422),
-(372, 559, 'Addons', 'One', 0, 'תוספות', 423),
-(373, 560, 'Addons', 'One', 0, 'תוספות', 424),
+(371, 558, 'Addons', 'Multiple', 0, 'תוספות', 422),
+(372, 559, 'Addons', 'Multiple', 0, 'תוספות', 423),
+(373, 560, 'Addons', 'Multiple', 0, 'תוספות', 424),
 (374, 565, 'Addons', 'Multiple', 0, 'תוספות', 425),
 (375, 558, 'Pasta Type', 'One', 0, 'סוג פסטה', 426),
 (376, 559, 'Pasta Type', 'One', 0, 'סוג פסטה', 427),
 (377, 560, 'Pasta Type', 'One', 0, 'סוג פסטה', 428),
-(388, 570, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 429),
-(389, 571, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 430),
-(390, 572, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 431),
-(391, 573, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 432),
-(392, 574, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 433),
-(393, 575, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 434),
-(394, 576, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 435),
-(395, 577, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 436),
-(396, 578, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 437),
-(397, 579, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 438),
-(398, 580, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 439),
-(399, 581, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 440),
-(400, 582, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 441),
-(401, 583, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 442),
-(402, 584, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 443),
-(403, 585, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 444),
-(404, 586, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 445),
-(405, 587, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 446),
-(406, 588, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 447),
-(407, 589, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 448),
-(408, 590, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 449),
-(409, 591, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 450),
-(410, 592, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 451),
-(411, 593, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 452),
-(412, 594, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 453),
-(413, 595, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 454),
-(414, 596, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 455),
-(415, 597, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 456),
-(416, 598, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 457),
-(417, 599, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 458),
-(418, 600, 'Upgrade meal', 'One', 0, 'שידרג לארוחה', 459),
+(388, 570, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 429),
+(389, 571, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 430),
+(390, 572, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 431),
+(391, 573, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 432),
+(392, 574, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 433),
+(393, 575, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 434),
+(394, 576, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 435),
+(395, 577, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 436),
+(396, 578, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 437),
+(397, 579, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 438),
+(398, 580, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 439),
+(399, 581, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 440),
+(400, 582, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 441),
+(401, 583, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 442),
+(402, 584, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 443),
+(403, 585, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 444),
+(404, 586, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 445),
+(405, 587, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 446),
+(406, 588, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 447),
+(407, 589, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 448),
+(408, 590, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 449),
+(409, 591, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 450),
+(410, 592, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 451),
+(411, 593, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 452),
+(412, 594, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 453),
+(413, 595, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 454),
+(414, 596, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 455),
+(415, 597, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 456),
+(416, 598, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 457),
+(417, 599, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 458),
+(418, 600, 'Upgrade meal', 'Multiple', 0, 'שידרג לארוחה', 459),
 (419, 608, 'Addons', 'Multiple', 0, 'תוספות', 460),
 (420, 609, 'Addons', 'Multiple', 0, 'תוספות', 461),
 (421, 610, 'Addons', 'Multiple', 0, 'תוספות', 462),
 (422, 611, 'Addons', 'Multiple', 0, 'תוספות', 463),
-(423, 618, 'Addons', 'One', 0, 'תוספות', 464),
-(424, 619, 'Addons', 'One', 0, 'תוספות', 465),
-(425, 620, 'Addons', 'One', 0, 'תוספות', 466),
+(423, 618, 'Addons', 'Multiple', 0, 'תוספות', 464),
+(424, 619, 'Addons', 'Multiple', 0, 'תוספות', 465),
+(425, 620, 'Addons', 'Multiple', 0, 'תוספות', 466),
 (426, 637, 'Sauces', 'Multiple', 0, 'רטבים', 467),
 (427, 638, 'Sauces', 'Multiple', 0, 'רטבים', 468),
 (428, 639, 'Sauces', 'Multiple', 0, 'רטבים', 469),
@@ -1126,14 +1229,13 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (239, 42, '#35 Beef Rice Noodles', 'ביף רייס נודלס  #35', 'Pieces of aged beef stir fried with wide rice noodles (Pad Thai), scrambled eggs, white mushrooms, green onion, beansprouts, carrots and white onions in a spicy and sweet sauce, topped with chopped peanuts', 'אטריות אורז רחבות (פאד תאי), נתחי אנטריוט, נטיפי ביצים, פטריות פורטובלו, בצל לבן, נבטים, גזר ובצל ירוק ברוטב חריף מתוק…', 44, 338),
 (240, 42, '#36 Chicken Pad Thai', 'צ''יקן פאד תאי  #36', 'Chunks of grilled spring chicken stir fried with rice noodles, scrambled eggs cabbage, carrots, green onions, beansprouts and sweet-hot sauce, topped with chopped peanuts', 'קוביות פרגית בטמפורה / בגריל, אטריות אורז, נטיפי ביצים, כרוב, גזר, בצל ירוק ונבטים ברוטב חריף מתוק ושבבי בוטנים.', 42, 339),
 (241, 42, '#37 Chicken Fried Rice', 'צ''יקן פרייד רייס  #37', 'Chunks of grilled spring chicken stir fried with scrambled eggs, rice, cabbage, carrots, green onions, Portobello mushrooms and beansprouts in a hoisin sauce', 'קוביות פרגית בגריל / בטמפורה, נטיפי ביצה, אורז, כרוב, גזר, בצל ירוק, פטריות פורטבלו ונבטים ברוטב הוי סטיר.', 41, 340),
-(242, 43, '# Japan Japan Special Stir Fry. Choose one of the following:', '#', '', '', 48, 341),
 (243, 43, '#52 Sweet and sour lemon chicken', 'עוף דבש ולימון - נתחי עוף מצופים ברוטב חמוץ מתוק  #52', '', '', 48, 342),
 (244, 43, '#53 Szechuan beef / chicken', 'עוף סצואן - נתחי עוף / רצועות פילה בקר מוקפצות ברוטב סצואן חריף ושלל ירקות #53', '', '', 48, 343),
 (245, 43, '#54 Beef and white mushrooms', 'פטריות שמפניון נתחי עוף / בקר מוקפציפ ברוטב הוי סטיר. שימאג''י. פטריות שמפיונון, גזר וקישואים #54', '', '', 48, 344),
 (246, 43, '#55 Chicken with Asian vegetable medley', 'ירקות אסיאתי נתחי עוף / רצועות פילה בקר מוקפצות ברוטב הוי סטיר וטריאקי ושלל ירקות #55', '', '', 48, 345),
 (247, 44, '#600 Chicken Schnitzelonim', 'ארוחת שניצלוני עוף #600', 'Fried strips of chicken coated in panko crumbs. Choice of one side dish: Asian puree / white rice / chips + soft drink', 'רצועות עוף בפנקו (פירורי לחם יפניים) מטוגנות. מוגש עם תוספת לבחירה. תוספות לבחירה: פירה אסייתי/אורז לבן/צ''יפס', 42, 346),
 (248, 46, 'Dim Sum with meat', 'דים סאם בשרי', '4 pieces of your choosing', '4 יחידות לבחירה', 29, 347),
-(249, 46, 'Chicken in tempura', 'עוף בטמפורה', 'Chicken pieces coated with tempura, served with the house sauce', 'נתחי חזה עוף במעטפת טמפורה. מוגש עם רוטב הבית', 33, 348),
+(249, 46, 'Chicken in tempura', 'עוף בטמפורה', 'Chicken pieces coated with tempura, served with the house sauce', 'נתחי חזה עוף במעטפת טמפורה. מוגש עם רוטב הבית', 23, 348),
 (250, 46, 'Chicken eggroll', 'אגרול עוף', '2 pieces', '2 יח', 25, 349),
 (251, 46, 'Miso noodle soup', 'מיסו נודל סופ', 'Glass noodles, tamago, asparagus, chilli and scallions', 'אטריות זכוכית, טמאגו, אספרגוס, צ’ילי ובצל ירוק', 19, 350),
 (252, 46, 'Miso Shiro soup', 'מיסו שירו', 'Miso soup with tofu, scallions and mushrooms', 'מרק מיסו עם טופו, בצל ירוק ופטריות', 17, 351),
@@ -1314,9 +1416,9 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (431, 66, 'Masala Fish', 'דג מסאלה', 'Garden peas, potatoes, onions, green beans, cherry tomatoes, green onions and diced salmon in a garam masala and yogurt sauce. Served with white rice', 'אפונה גינה, תפו''''א, בצל, שעועית ירוקה, עגבניות שרי, בצל ירוק וקוביות סלמון ברוטב גראם מסאלה ויוגורט.  מוגש עם אורז לבן', 69, 530),
 (432, 66, 'Indian Thali', 'טאלי הודי', 'Lentils cooked in dahl, chickpeas, spicy spinach, potatoes and green peas, served with rice, yogurt masala, raita, pumpkin chutney and chapati', 'תבשילים של דאל עדשים כתומות, חומוס ותרד פיקנטי, תפו''''א ואפונת גינה, מוגשים עם אורז, יוגורט מסעלה, ראיטה, צ''אטני דלעת וצ''פאטי', 58, 531),
 (433, 66, 'Stir Fried Noodles', 'מוקפץ נודלס', 'Strips of onion, pepper, cabbage, mushrooms, green beans, carrots, sprouts, peas and onions, stir-fried noodles with teriyaki sauce. Dressed with crushed peanuts.', 'רצועות בצל, פלפל, כרוב, פטריות, שעועית ירוקה, גזר, נבטים, אפונה ובצל ירוק, מוקפצים עם נודלס ברוטב טריאקי. מוגש עם בוטנים גרוסים מעל', 56, 532),
-(434, 66, 'Salmon Pad Thai', 'פאד תאי סלמון', 'Wide rice noodles and stir fried salmon cubes with strips of onion, pepper, cabbage, mushrooms, carrots, green beans, sprouts, peas, onions and peanut sauce shredded spicy Pad Thai sauce. Served with a lemon quarter, sunflower sprouts and black sesame. Spicy.', 'אטריות אורז רחבות וקוביות סלמון מוקפצות עם רצועות בצל, פלפל, כרוב, פטריות, גזר, שעועית ירוקה, נבטים, אפונה, בצל ירוק ובוטנים גרוסים ברוטב פאד תאי פיקנטי. מוגש עם רבע לימון, נבטי חמנייה ושומשום שחור. חריף.', 69, 533);
+(434, 66, 'Salmon Pad Thai', 'פאד תאי סלמון', 'Wide rice noodles and stir fried salmon cubes with strips of onion, pepper, cabbage, mushrooms, carrots, green beans, sprouts, peas, onions and peanut sauce shredded spicy Pad Thai sauce. Served with a lemon quarter, sunflower sprouts and black sesame. Spicy.', 'אטריות אורז רחבות וקוביות סלמון מוקפצות עם רצועות בצל, פלפל, כרוב, פטריות, גזר, שעועית ירוקה, נבטים, אפונה, בצל ירוק ובוטנים גרוסים ברוטב פאד תאי פיקנטי. מוגש עם רבע לימון, נבטי חמנייה ושומשום שחור. חריף.', 69, 533),
+(435, 67, 'Fish & Chips', 'פיש אנד צ''יפס', 'Crispy fish, served with aioli sauce, herbs and a helping of thin chips. Served with a side salad.', 'דג פריך, מוגש עם רוטב איולי, עשבי תיבול וערימה של צ''יפס דק.\r מוגש עם סלט אישי ', 69, 534);
 INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `sort`) VALUES
-(435, 67, 'Fish & Chips', 'פיש אנד צ''יפס', 'Crispy fish, served with aioli sauce, herbs and a helping of thin chips. Served with a side salad.', 'דג פריך, מוגש עם רוטב איולי, עשבי תיבול וערימה של צ''יפס דק.\r מוגש עם סלט אישי ', 69, 534),
 (436, 67, 'Salmon in Lemon', 'סלמון בלימון', 'Norwegian salmon fillet baked in a stone oven lemon with herbs on a bed of peas, beans, onions, mushrooms, cherry tomatoes and olives sauteed in olive oil, parsley, garlic and lemon. Served with salad.', 'פילה סלמון נורווגי אשוי בתנור אבן בלימון ועשבי תיבול על מצע אפונה, שעועית, בצל, פטריות, עגבניות שרי וזיתי קלמטה מוקפצים בשמן זית, פטרוזיליה, שום ולימון. מוגש עם סלט אישי.', 84, 535),
 (437, 67, 'Sea Bass Fillet', 'פילה לברק', 'Pan seared sea bass fillet, on a bed of spaghetti with olive oil, olives, tomatoes, peas and almonds. Served with salad.', 'פילה לברק צרוב במחבת, מונח על ספגטי בשמן זית, זיתי קלמטה, עגבניות, אפונה ושקדים קלויים. מוגש עם סלט אישי.', 98, 536),
 (438, 68, 'Double Felafel Burger', 'דאבל פלאפל בורגר', 'Falafel patties, fried eggplant, tahini, jalapeno, pickles and tomato on a hamburger bun. Served with a stack of thin chips', 'קציצות פלאפל, חציל מטוגן, טחינה, חלפיניו, מלפפון חמוץ ועגבנייה בלחמניית המבורגר נימוחה. מוגש בליווי ערימה של צ''יפס דק', 49, 537),
@@ -1622,7 +1724,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=269 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=284 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -1834,7 +1936,22 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (265, 224, 1, 'Pargit Tortilla', 42, 'Egg (+4), Portobello Mushroom (+4)'),
 (266, 225, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
 (267, 226, 1, 'Dim Sum with meat', 29, ''),
-(268, 226, 1, 'Chicken in tempura', 33, '');
+(268, 226, 1, 'Chicken in tempura', 33, ''),
+(269, 227, 1, 'Angus Salad', 74, '80 Grams Goose Liver (+30)'),
+(270, 227, 1, 'Chicken Salad', 46, 'Egg (+4)'),
+(271, 228, 8, 'Xl Pie', 66, 'Tomatoes (+5), Corn (+5)'),
+(272, 228, 1, 'Tuna Salad', 28, ''),
+(273, 228, 1, 'Meshulashim Salad', 28, ''),
+(274, 228, 1, 'Crispy Capricci', 25, ''),
+(275, 228, 1, 'Pasta Roza', 33, 'Linguine, Tomatoes (+5)'),
+(276, 228, 1, 'Kid''s Meal', 25, ''),
+(277, 229, 2, 'Chicken Salad', 46, 'Egg (+4)'),
+(278, 230, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(279, 231, 1, 'Angus Salad', 63, '150 Grams Goose Breast Or Entrecote (+19)'),
+(280, 232, 2, 'Angus Salad', 74, '80 Grams Goose Liver (+30)'),
+(281, 232, 1, 'Diet Coke', 8, ''),
+(282, 232, 1, 'Chicken Salad', 46, 'Portobello Mushroom (+4)'),
+(283, 232, 1, 'Small Sweet Potato Fries', 14, '');
 
 -- --------------------------------------------------------
 
@@ -1848,6 +1965,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `name_he` varchar(255) NOT NULL,
   `min_amount` int(11) NOT NULL,
   `city_id` int(11) NOT NULL,
+  `hide` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `description_en` text NOT NULL,
   `description_he` text NOT NULL,
@@ -1862,17 +1980,17 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 -- Dumping data for table `restaurants`
 --
 
-INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`) VALUES
-(1, 'Angus', 'אנגוס', 50, 1, '/m/en/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
-(2, 'Meshulashim', 'פיצה משולשים', 50, 1, '/m/en/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
-(3, 'Bandora', 'בנדורה', 50, 1, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
-(4, 'Roza', 'רוזה', 50, 1, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
-(5, 'Japan Japan', 'ג''אפן ג''אפן', 50, 1, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
-(6, 'OSHI OSHI', 'אושי אושי', 50, 2, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
-(7, 'Greg Cafe', 'גרג קפה', 50, 1, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
-(9, 'Pizza Cheese', 'פיצה צ׳יז', 50, 2, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', 'פיצה מעולה עם כל התוסות, מכחר פסטות וסלטים, שירות נהדר, רוחב לב,  מחיר כמו שאין בשום מקום. מה עוד צריך?!', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
-(10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
-(11, 'Ken LePizza', 'כן לפיצה', 50, 2, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף');
+INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, `hide`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`) VALUES
+(1, 'Angus', 'אנגוס', 50, 1, 0, '/m/en/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
+(2, 'Meshulashim', 'פיצה משולשים', 50, 1, 0, '/m/en/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
+(3, 'Bandora', 'בנדורה', 50, 1, 0, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
+(4, 'Roza', 'רוזה', 50, 1, 0, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
+(5, 'Japan Japan', 'ג''אפן ג''אפן', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
+(6, 'OSHI OSHI', 'אושי אושי', 50, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
+(7, 'Greg Cafe', 'גרג קפה', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
+(9, 'Pizza Cheese', 'פיצה צ׳יז', 50, 2, 0, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', 'פיצה מעולה עם כל התוסות, מכחר פסטות וסלטים, שירות נהדר, רוחב לב,  מחיר כמו שאין בשום מקום. מה עוד צריך?!', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
+(10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, 1, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
+(11, 'Ken LePizza', 'כן לפיצה', 50, 2, 0, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף');
 
 -- --------------------------------------------------------
 
@@ -2022,7 +2140,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2666 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3327 ;
 
 --
 -- Dumping data for table `subitems`
@@ -2535,13 +2653,6 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (504, 146, 'Amba', 'אמבה', 0, 603),
 (505, 146, 'Spicy', 'חריף', 0, 604),
 (506, 146, 'Babaghanoush', 'באבא גנוש', 0, 605),
-(507, 148, 'Veal', 'בשר עגל', 0, 606),
-(508, 148, 'Spring Chicken', 'פרגיות', 0, 607),
-(509, 148, 'Mix', 'מעורב', 0, 608),
-(510, 149, 'French Fries', 'צ''יפס', 0, 609),
-(511, 149, 'Fried Onions', 'בצל מטוגן', 0, 610),
-(512, 149, 'Tomatoes', 'עגבניות', 0, 611),
-(513, 149, 'Roasted Peppers', 'פלפל על האש', 0, 612),
 (514, 150, 'Techina', 'טחינה', 0, 613),
 (515, 150, 'Chummus', 'חומוס', 0, 614),
 (516, 150, 'Amba', 'אמבה', 0, 615),
@@ -2942,14 +3053,14 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (911, 256, 'Ginger', 'ג''ינג''ר', 0, 1010),
 (912, 256, 'Wasabi', 'וואסבי', 0, 1011),
 (913, 257, 'Soya', 'סויה', 0, 1012),
-(914, 257, 'Teriyaki', 'טריאקי', 0, 1013);
-INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
+(914, 257, 'Teriyaki', 'טריאקי', 0, 1013),
 (915, 257, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1014),
 (916, 257, 'Ginger', 'ג''ינג''ר', 0, 1015),
 (917, 257, 'Wasabi', 'וואסבי', 0, 1016),
 (918, 258, 'Soya', 'סויה', 0, 1017),
 (919, 258, 'Teriyaki', 'טריאקי', 0, 1018),
-(920, 258, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1019),
+(920, 258, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1019);
+INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
 (921, 258, 'Ginger', 'ג''ינג''ר', 0, 1020),
 (922, 258, 'Wasabi', 'וואסבי', 0, 1021),
 (923, 259, 'Soya', 'סויה', 0, 1022),
@@ -3524,12 +3635,12 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (1494, 373, 'Creamy sauce', 'הקרמה', 3, 1593),
 (1495, 374, 'Lebane', 'ליווני ', 3, 1594),
 (1496, 374, 'Tuna', 'תוספת טונה', 3, 1595),
-(1497, 375, 'Pasta penne', 'פסטה פנה', 0, 1596),
-(1498, 375, 'Spaghetti', 'ספגטי', 0, 1597),
-(1499, 376, 'Pasta penne', 'פסטה פנה', 0, 1598),
-(1500, 376, 'Spaghetti', 'ספגטי', 0, 1599),
-(1501, 377, 'Pasta penne', 'פסטה פנה', 0, 1600),
-(1502, 377, 'Spaghetti', 'ספגטי', 0, 1601),
+(1497, 375, 'פסטה פנה', 'Pasta penne', 0, 1596),
+(1498, 375, 'ספגטי', 'Spaghetti', 0, 1597),
+(1499, 376, 'פסטה פנה', 'Pasta penne', 0, 1598),
+(1500, 376, 'ספגטי', 'Spaghetti', 0, 1599),
+(1501, 377, 'פסטה פנה', 'Pasta penne', 0, 1600),
+(1502, 377, 'ספגטי', 'Spaghetti', 0, 1601),
 (1503, 388, 'Upgrade your meal with chips and a drink', 'שידרג לארוחה - צ''יפס + שתיה', 12, 1602),
 (1504, 388, 'Upgrade your meal with onion rings and a drink', 'שידרג לארוחה - טבעות בצל + שתיה', 15, 1603),
 (1505, 389, 'Upgrade your meal with chips and a drink', 'שידרג לארוחה - צ''יפס + שתיה', 12, 1604),
@@ -3783,14 +3894,14 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (1753, 441, 'Sweet Chili', 'צ''ילי מתוק', 0, 1852),
 (1754, 441, 'Hot chili', 'צ''ילי חריף', 0, 1853),
 (1755, 441, 'Chimichurri', 'צ''ימיצ''ורי', 0, 1854),
-(1756, 442, 'Ketchup', 'קטשופ', 0, 1855);
-INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
+(1756, 442, 'Ketchup', 'קטשופ', 0, 1855),
 (1757, 442, 'Mayonnaise', 'מיונז', 0, 1856),
 (1758, 442, 'Garlic mayonnaise', 'מיונז שום', 0, 1857),
 (1759, 442, 'Mustard', 'חרדל', 0, 1858),
 (1760, 442, 'BBQ', 'ברביקיו', 0, 1859),
 (1761, 442, '1016 Island', 'אלף האיים', 0, 1860),
-(1762, 442, 'Sweet Chili', 'צ''ילי מתוק', 0, 1861),
+(1762, 442, 'Sweet Chili', 'צ''ילי מתוק', 0, 1861);
+INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
 (1763, 442, 'Hot chili', 'צ''ילי חריף', 0, 1862),
 (1764, 442, 'Chimichurri', 'צ''ימיצ''ורי', 0, 1863),
 (1765, 443, 'Ketchup', 'קטשופ', 0, 1864),
@@ -4742,6 +4853,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `smooch_id` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `contact` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `state` int(16) NOT NULL DEFAULT '0',
@@ -4755,67 +4868,71 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=313 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=317 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `name`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
-(255, 'ahmadworkspace@gmail.com', 'asad  gt', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'Muhammad ', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
-(262, 'Tes@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(263, 'test4444@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(264, 'test43434@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(265, 'test333@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(266, 'testwwew@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(267, 'eewe@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(268, 'fdff@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(269, 'nice@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(270, 'ahmad69191@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
-(271, 'Test111@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(272, 'Klinger.micheal09@gmail.com', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(273, 'rustom31122@gmail.com', 'Rustom', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(274, 'Avi@pushstartups.com', 'Test', '000000000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(275, 'test@test.com', 'Noam', '1', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(276, 'Rael@pushstartups.com', 'Raek', '0679', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(277, '47ae2bc6dec29ba24f07a3fe', NULL, NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL),
-(278, 'umair.khalid786@outlook.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(279, 'Dvora@pushstartups.com', 'Dvora', '0543047266', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(280, 'ahmadworkuuspace@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(281, 'test@gmai.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(282, 'Fdh@hdh.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(283, 'Ch@hch.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(284, 'asdf@asdf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(285, 'josh@pushstartups.com', 'Josh', '132', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(286, 'test3434@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(287, 'test223@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(288, 'test6565@gmail.com', 'Muhammad', '454534545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(289, 'test@gmailc.om', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(290, 'test6666@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(291, 'rael@pushstarups.com', 'RaEL;', '05455155', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(292, 'fa@cd.vom', 'rlda32', '05424501', '05', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(293, 'rad@dad.com', 'arra', '041', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(294, 'rae@sda.com', 'rare', '054', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(295, 'test10@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(296, 'test1110@gmail.com', 'test', '032289697998', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(297, 'test110@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(298, 'shoaib@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(299, 'roza@gmail.com', 'roza', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(300, 'japan@gmail.com', 'japan', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(301, 'shery@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(302, 'sdfdsf@dfdf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(303, 'm@g.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(304, 'sdf@dfdf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(305, 'dfd@df.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(306, 'dfdf@fgfg.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(307, 'testdf@gmaildf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(308, 'tefdf@fgfg.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(309, 'dfdsf@hjhj.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(310, 'dfdfdf@sdfsdfdsf.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(311, 'testsdsdsd@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(312, 'testasdf@gmail.com', NULL, NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
+(255, 'ahmadworkspace@gmail.com', 'asad  gt', '', '', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
+(260, 'test@gmail.com', 'Kdsf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
+(262, 'Tes@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(263, 'test4444@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(264, 'test43434@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(265, 'test333@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(266, 'testwwew@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(267, 'eewe@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(268, 'fdff@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(269, 'nice@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(270, 'ahmad69191@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
+(271, 'Test111@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(272, 'Klinger.micheal09@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(273, 'rustom31122@gmail.com', 'Rustom', '', '', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(274, 'avi@pushstartups.com', 'avi', '', '', '0548086730', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(275, 'test@test.com', 'Mark Test', '', '', '0000000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(276, 'Rael@pushstartups.com', 'Raek', '', '', '0679', '', 0, 'english', NULL, NULL, NULL, 2, 1),
+(277, '47ae2bc6dec29ba24f07a3fe', NULL, '', '', NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL),
+(278, 'umair.khalid786@outlook.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(279, 'Dvora@pushstartups.com', 'Dvora', '', '', '0543047266', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(280, 'ahmadworkuuspace@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(281, 'test@gmai.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(282, 'Fdh@hdh.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(283, 'Ch@hch.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(284, 'asdf@asdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(285, 'josh@pushstartups.com', 'Josh', '', '', '132', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(286, 'test3434@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(287, 'test223@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(288, 'test6565@gmail.com', 'Muhammad', '', '', '454534545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(289, 'test@gmailc.om', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(290, 'test6666@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(291, 'rael@pushstarups.com', 'RaEL;', '', '', '05455155', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(292, 'fa@cd.vom', 'rlda32', '', '', '05424501', '05', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(293, 'rad@dad.com', 'arra', '', '', '041', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(294, 'rae@sda.com', 'rare', '', '', '054', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(295, 'test10@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(296, 'test1110@gmail.com', 'test', '', '', '032289697998', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(297, 'test110@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(298, 'shoaib@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(299, 'roza@gmail.com', 'roza', '', '', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(300, 'japan@gmail.com', 'japan', '', '', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(301, 'shery@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(302, 'sdfdsf@dfdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(303, 'm@g.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(304, 'sdf@dfdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(305, 'dfd@df.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(306, 'dfdf@fgfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(307, 'testdf@gmaildf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(308, 'tefdf@fgfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(309, 'dfdsf@hjhj.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(310, 'dfdfdf@sdfsdfdsf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(311, 'testsdsdsd@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(312, 'testasdf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(313, 'avi@psushstartups.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(314, 'shoaib.it002@gmail.com', 'shoaib', '', '', '03066481938', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(315, 'shoaibasdfa@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(316, 'rael@psu.com', 'Rael Olwyn', '', '', '00000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4830,7 +4947,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -4854,7 +4971,8 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (53, 296, 2),
 (54, 297, 2),
 (55, 298, 2),
-(56, 300, 2);
+(56, 300, 2),
+(57, 274, NULL);
 
 -- --------------------------------------------------------
 
@@ -4873,7 +4991,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=227 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=233 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -5014,7 +5132,13 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (223, 261, 1, 93, NULL, 0, '2017-03-18'),
 (224, 261, 1, 135, NULL, 0, '2017-03-18'),
 (225, 260, 1, 93, NULL, 0, '2017-03-19'),
-(226, 260, 6, 62, NULL, 0, '2017-03-19');
+(226, 260, 6, 62, NULL, 0, '2017-03-19'),
+(227, 274, 1, 108, 'fixed percentage', 10, '2017-03-19'),
+(228, 274, 2, 667, NULL, 0, '2017-03-19'),
+(229, 314, 1, 92, NULL, 0, '2017-03-20'),
+(230, 260, 1, 93, NULL, 0, '2017-03-20'),
+(231, 316, 1, 63, NULL, 0, '2017-03-21'),
+(232, 275, 1, 216, NULL, 0, '2017-03-21');
 
 -- --------------------------------------------------------
 
@@ -5182,6 +5306,32 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `b2b_orders`
+--
+ALTER TABLE `b2b_orders`
+  ADD CONSTRAINT `b2b_orders_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`),
+  ADD CONSTRAINT `b2b_orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `b2b_order_detail`
+--
+ALTER TABLE `b2b_order_detail`
+  ADD CONSTRAINT `b2b_order_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `b2b_orders` (`id`);
+
+--
+-- Constraints for table `company_rest`
+--
+ALTER TABLE `company_rest`
+  ADD CONSTRAINT `company_rest_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`),
+  ADD CONSTRAINT `company_rest_ibfk_2` FOREIGN KEY (`rest_id`) REFERENCES `restaurants` (`id`);
+
+--
+-- Constraints for table `company_timing`
+--
+ALTER TABLE `company_timing`
+  ADD CONSTRAINT `company_timing_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 
 --
 -- Constraints for table `company_voting`
