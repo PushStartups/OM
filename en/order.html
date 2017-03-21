@@ -11,7 +11,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/en/style/choose-menu.css">
         <link href="/en/style/dropdown.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Open +Sans:300,400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     </head>
 </head>
 
@@ -382,55 +382,6 @@
         $(this).toggleClass('active');
 
     });
-
-    //
-    // header height function
-    $(document).on("scroll", function(){
-        if
-        ($(document).scrollTop() > 100){
-            $("header").addClass("shrink");
-        }
-        else
-        {
-            $("header").removeClass("shrink");
-        }
-    });
-
-
-    $('.scrollable-area').scroll(function (event) {
-
-        var scroll = $('.scrollable-area').scrollTop();
-
-
-        if(scroll == 0)
-        {
-            $("header").removeClass("shrink");
-
-        }
-        else
-        {
-            $("header").addClass("shrink");
-
-        }
-
-
-    });
-
-
-    $( window ).resize(function() {
-
-
-       // window.location.reload();
-
-    });
-
-    var div = document.getElementById('scrollable');
-
-    div.setAttribute('ss-container', true);
-
-    SimpleScrollbar.initAll();
-
-
 
 </Script>
 </body>

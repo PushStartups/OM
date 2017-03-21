@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'HelveticaNeue';
-    src: url('../fonts/helveticaneue/HelveticaNeue.woff') format('woff'), 
-    url('../fonts/helveticaneue/HelveticaNeue Thin.ttf') format('truetype'),
-	url('../fonts/helveticaneue/HelveticaNeue Thin.eot') format('eot');
+    src: url('/en/fonts/helveticaneue/HelveticaNeue.woff') format('woff'),
+    url('/en/fonts/helveticaneue/HelveticaNeue Thin.ttf') format('truetype'),
+	url('/en/fonts/helveticaneue/HelveticaNeue Thin.eot') format('eot');
 }
 @font-face {
     font-family: 'Lobster';
-    src: url('../fonts/lobster/Lobster.woff') format('woff'), 
-    url('../fonts/lobster/Lobster.ttf') format('truetype'); 
+    src: url('/en/fonts/lobster/Lobster.woff') format('woff'),
+    url('/en/fonts/lobster/Lobster.ttf') format('truetype');
 }
 html,  body {
   height: 100%;

@@ -196,10 +196,7 @@ function  getCategoriesWithItems(response)
 
 
         catItem +=  '<a  id="slideItem'+i+'"  href="#" class="opener">'+
-                    '<img src="/en/img/meshulashim-salads.png">'+
-                    '<div class="text">'+
                     '<h3>'+result.categories_items[i].name_en+'</h3>'+
-                    '</div>'+
                     '</a>'+
                     '<div class="slide">';
 
@@ -234,6 +231,19 @@ function  getCategoriesWithItems(response)
     initAccordion();
 
 }
+
+function hideShowMinAmount( total )
+{
+    if ( total >= minOrderLimit )
+    {
+        $('#minAmount').hide();
+    }
+    else
+    {
+        $('#minAmount').show();
+    }
+}
+
 
 function openSlide(index) {
 
@@ -826,6 +836,7 @@ function updateCartElements()
         $('#nested-section').html(str);
 
         $('#totalAmount').html(userObject.total + " NIS");
+        hideShowMinAmount(userObject.total);
 
         $('#minAmount').html("Minimum "+minOrderLimit + " NIS");
 
@@ -884,6 +895,7 @@ function onQtyIncreaseButtonClicked(index) {
     userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
     $('#totalAmount').html(userObject.total + " NIS");
+    hideShowMinAmount(userObject.total);
 
     var itemCountId = "#count"+index;
 
@@ -979,6 +991,7 @@ function onQtyDecreasedButtonClicked(index) {
     }
 
     $('#totalAmount').html(userObject.total + " NIS");
+    hideShowMinAmount(userObject.total);
 }
 
 

@@ -2,6 +2,10 @@
 <html lang="en">
 <script>
 
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
 
     var isMobile = {
 
@@ -46,6 +50,10 @@
         else if(window.location.hostname == "dev.m.orderapp.com")
         {
 
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
             window.location.href = 'https://dev.m.orderapp.com/m/en/';
 
         }
@@ -94,6 +102,7 @@
         }
 
     }
+
 
 </script>
 </html>
