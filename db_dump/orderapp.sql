@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2017 at 03:10 PM
+-- Generation Time: Mar 21, 2017 at 03:41 PM
 -- Server version: 5.5.52
 -- PHP Version: 5.6.28
 
@@ -1716,7 +1716,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=303 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=306 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -1962,7 +1962,10 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (299, 248, 1, 'Xl Pie', 61, 'Tomatoes (+5)'),
 (300, 249, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
 (301, 250, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
-(302, 251, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)');
+(302, 251, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(303, 252, 1, 'Family sized pizza', 25, 'onion (+5)'),
+(304, 252, 1, 'Family sized pizza', 20, ''),
+(305, 252, 1, 'Family sized pizza', 25, 'tuna (+5)');
 
 -- --------------------------------------------------------
 
@@ -3646,12 +3649,12 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (1494, 373, 'Creamy sauce', 'הקרמה', 3, 1593),
 (1495, 374, 'Lebane', 'ליווני', 3, 1594),
 (1496, 374, 'Tuna', 'תוספת טונה', 3, 1595),
-(1497, 375, 'פסטה פנה', 'Pasta penne', 0, 1596),
-(1498, 375, 'ספגטי', 'Spaghetti', 0, 1597),
-(1499, 376, 'פסטה פנה', 'Pasta penne', 0, 1598),
-(1500, 376, 'ספגטי', 'Spaghetti', 0, 1599),
-(1501, 377, 'פסטה פנה', 'Pasta penne', 0, 1600),
-(1502, 377, 'ספגטי', 'Spaghetti', 0, 1601),
+(1497, 375, 'Pasta penne', 'פסטה פנה', 0, 1596),
+(1498, 375, 'Spaghetti', 'ספגטי', 0, 1597),
+(1499, 376, 'Pasta penne', 'פסטה פנה', 0, 1598),
+(1500, 376, 'Spaghetti', 'ספגטי', 0, 1599),
+(1501, 377, 'Pasta penne', 'פסטה פנה', 0, 1600),
+(1502, 377, 'Spaghetti', 'ספגטי', 0, 1601),
 (1503, 388, 'Upgrade your meal with chips and a drink', 'שידרג לארוחה - צ''יפס + שתיה', 12, 1602),
 (1504, 388, 'Upgrade your meal with onion rings and a drink', 'שידרג לארוחה - טבעות בצל + שתיה', 15, 1603),
 (1505, 389, 'Upgrade your meal with chips and a drink', 'שידרג לארוחה - צ''יפס + שתיה', 12, 1604),
@@ -4888,7 +4891,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'asad  gt', '', '', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
 (260, 'test@gmail.com', 'Muhammad', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', '543454', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
+(261, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad', '', '', '3434454545', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (264, 'test43434@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -4961,7 +4964,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -4986,7 +4989,8 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (54, 297, 2),
 (55, 298, 2),
 (56, 300, 2),
-(57, 274, NULL);
+(57, 274, NULL),
+(58, 261, 8);
 
 -- --------------------------------------------------------
 
@@ -5005,7 +5009,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=252 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=253 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -5171,7 +5175,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (248, 319, 2, 61, NULL, 0, '2017-03-21'),
 (249, 260, 1, 93, NULL, 0, '2017-03-21'),
 (250, 261, 1, 93, NULL, 0, '2017-03-21'),
-(251, 261, 1, 93, NULL, 0, '2017-03-21');
+(251, 261, 1, 93, NULL, 0, '2017-03-21'),
+(252, 261, 9, 56, 'fixed percentage', 20, '2017-03-21');
 
 -- --------------------------------------------------------
 
