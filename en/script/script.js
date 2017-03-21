@@ -32,92 +32,133 @@ $(function () {
     var scrollTopDiff = 0;
 
     $('body').on('click', '.time-drop-down', function(e) {
-        var pop = $(this).offset().top;
-        var bottomOfVisibleWindow = $(window).height();
-        var bottom = bottomOfVisibleWindow - pop - 250;
 
-        if (bottom < 0) {
-            autoScroll = true;
+        var container = $('.ss-content');
+        var scrollTo = $(this);
 
-            scrollTop = $('.container').scrollTop();
+        setTimeout(function(){
 
-            $('.container').animate({ scrollTop: $('.container').scrollTop() + (bottom * -1) + 50 }, 300);
-            setTimeout(function () {
-                scrollTopDiff = $('.container').scrollTop() - scrollTop;
-            }, 300)
-        }
-        else
-            scrollTopDiff = 0;
+            // Or you can animate the scrolling:
+            container.animate({
+
+                scrollTop: ((scrollTo.offset().top - container.offset().top + container.scrollTop() ) - 225)
+
+            },500)
+
+        }, 300);
+
 
         var that = this;
 
+
         setTimeout(function () {
 
-            $(".time-popup").css("bottom", "unset")
+            try {
 
-            if (!$(".time-popup").is(":visible"))
-                $(".time-popup").fadeToggle();
-            else
-                $(".time-popup").fadeOut();
+                if (!$(".time-popup").is(":visible"))
 
-            if ($(that).closest('.separator').is(':last-child') && bottom < 50) {
-                $(".time-popup").css("top", "unset")
-                $(".time-popup").css("bottom", 0)
-                $(".time-popup").css("left", e.clientX - ($(".time-popup").outerWidth() / 2));
+                    $(".time-popup").fadeToggle();
+
+                else
+
+                    $(".time-popup").fadeOut();
+
+
+                //show the menu directly over the placeholder
+                $(".time-popup").css({
+
+                    position: "absolute",
+                    top: (scrollTo.offset().top + 50) + "px",
+                    left : (scrollTo.offset().left - 20) + "px"
+
+                }).show();
+
+                var offset = (($(".time-popup").height() +  $(".time-popup").offset().top) -   $(window).height());
+
+                if(offset > 0)
+                {
+                    console.log(offset);
+                    $(".time-popup").css({ top: ($(".time-popup").offset().top - offset) + "px"
+                    });
+
+                }
+
             }
-            else {
-                $(".time-popup").css("top", e.clientY + 10 - scrollTopDiff)
-                $(".time-popup").css("left", e.clientX - ($(".time-popup").outerWidth() / 2));
+            catch (e)
+            {
+                console.log(e);
             }
 
-
-        }, 500)
+        }, 900);
 
         e.stopPropagation();
+
     });
 
 
-
     $('body').on('click', '.discount-drop-down', function(e) {
-        var pop = $(this).offset().top;
-        var bottomOfVisibleWindow = $(window).height();
-        var bottom = bottomOfVisibleWindow - pop - 250;
 
-        if (bottom < 0) {
-            autoScroll = true;
 
-            scrollTop = $('.container').scrollTop();
+        var container = $('.ss-content');
+        var scrollTo = $(this);
 
-            $('.container').animate({ scrollTop: $('.container').scrollTop() + (bottom * -1) + 50 }, 300);
-            setTimeout(function () {
-                scrollTopDiff = $('.container').scrollTop() - scrollTop;
-            }, 300)
-        }
-        else
-            scrollTopDiff = 0;
+        setTimeout(function(){
+
+            // Or you can animate the scrolling:
+            container.animate({
+
+                scrollTop: ((scrollTo.offset().top - container.offset().top + container.scrollTop() ) - 225)
+
+            },500)
+
+        }, 300);
+
 
         var that = this;
 
+
         setTimeout(function () {
-            $(".discount-popup").css("bottom", "unset")
-            if (!$(".discount-popup").is(":visible"))
-                $(".discount-popup").fadeToggle();
-            else
-                $(".discount-popup").fadeOut();
 
-            if ($(that).closest('.separator').is(':last-child') && bottom < 50) {
-                $(".discount-popup").css("top", "unset")
-                $(".discount-popup").css("bottom", 0)
-                $(".discount-popup").css("left", e.clientX - ($(".discount-popup").outerWidth() / 2));
+            try {
+
+                if (!$(".discount-popup").is(":visible"))
+
+                    $(".discount-popup").fadeToggle();
+
+                else
+
+                    $(".discount-popup").fadeOut();
+
+
+                //show the menu directly over the placeholder
+                $(".discount-popup").css({
+
+                    position: "absolute",
+                    top: (scrollTo.offset().top + 50) + "px",
+                    left : (scrollTo.offset().left - 20) + "px"
+
+                }).show();
+
+                var offset = (($(".discount-popup").height() +  $(".discount-popup").offset().top) -   $(window).height());
+
+                if(offset > 0)
+                {
+                    console.log(offset);
+                    $(".discount-popup").css({ top: ($(".discount-popup").offset().top - offset) + "px"
+                    });
+
+                }
+
             }
-            else {
-                $(".discount-popup").css("top", e.clientY + 10 - scrollTopDiff)
-                $(".discount-popup").css("left", e.clientX - ($(".discount-popup").outerWidth() / 2));
+            catch (e)
+            {
+                console.log(e);
             }
 
-        }, 500)
+        }, 900);
 
         e.stopPropagation();
+
     });
 
 

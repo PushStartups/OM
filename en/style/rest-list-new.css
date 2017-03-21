@@ -19,9 +19,10 @@ body {
 	height: 100%;
 	background-color: #fff;
 	font: 15px/18px 'HelveticaNeue', Arial, sans-serif, Helvetica;
-	background: url('restaurants-bg.png') center center no-repeat;
+	background: url('../img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	overflow: hidden;
+	min-width: 1024px;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -198,11 +199,18 @@ a:hover, a:focus {text-decoration: none;}
 	overflow:hidden;
 	padding: 50px 0 120px;
 	text-align: center;
-	background-image: url("/en/img/header.png");
+	background-image: url("../img/header.png");
 	background-size: cover;
 	background-repeat: no-repeat;
-
 }
+#header.shrink{
+	min-height: 190px;
+	padding: 40px 0 90px;
+	background-image: url("../img/header-sm-bg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.shrink .logo{display: none;}
 #header span{
 	display: block;
 	font-size: 25px;
@@ -533,7 +541,8 @@ a:hover, a:focus {text-decoration: none;}
 .row-heading {
 	width: 50%;
 	letter-spacing: 0.4px;
-	font-size: 33px;
+	font-size: 25px;
+	line-height: 28px;
 	color: #797979;
 	display: inline-block;
 	vertical-align: middle;
@@ -609,8 +618,8 @@ img.gallery {
 
 .time-drop-down {
 	cursor: pointer;
-	font-size: 20px;
-	line-height: 34px;
+	font-size: 16px;
+	line-height: 20px;
 	padding-top: 17px;
 	white-space: nowrap;
 	color: #797979;
@@ -628,7 +637,8 @@ img.gallery {
 }
 
 .rest-address {
-	font-size: 20px;
+	font-size: 16px;
+	line-height: 20px;
 	color: #797979;
 	display: block;
 	width: 276px;
@@ -711,13 +721,13 @@ img.gallery {
 .time-popup.new .header{
 	overflow: hidden;
 	padding: 18px 10px;
-	background: url(/en/img/popup-bg.png) no-repeat;
+	background: url(../img/popup-bg.png) no-repeat;
 }
 
 .discount-popup.new .header{
 	overflow: hidden;
 	padding: 18px 10px;
-	background: url(/en/img/popup-bg.png) no-repeat;
+	background: url(../img/popup-bg.png) no-repeat;
 }
 
 .time-popup .header img {
@@ -1038,7 +1048,7 @@ img.gallery {
 	line-height:58px;
 	line-height:52px;
 	text-align: center;*/
-	background: url("/en/img/Nav_bar_back_icon.png") no-repeat;
+	background: url("../img/Nav_bar_back_icon.png") no-repeat;
 	-webkit-border-radius:0 50px 50px 0;
 	-moz-border-radius:0 50px 50px 0;
 	border-radius:0 50px 50px 0;
@@ -1047,61 +1057,4 @@ img.gallery {
 }
 .btn-left:focus,
 .btn-left:hover{opacity: 0.7;}
-@media only screen and (max-width: 1024px){
-	body{
-		min-width: 740px;
-		overflow-x: auto;
-	}
-	.content{
-		padding: 0 10px;
-	}
-	.scrollable-area-wrapper,
-	.container.new{width: 100% !important;}
-	/*.container.new {*/
-	/*padding: 0 15px 210px !important;*/
-	/*}*/
-	.scrollable-area-wrapper .hscrollbar, .scrollable-area-wrapper .vscrollbar{right: -37px; }
-	.circular-logo .rest_img{
-		width: 100%;
-		height: auto;
-		display: block;
-	}
-	.circular-logo .logo-container{
-		width: 90px;
-		height: 90px;
-	}
-	.order-now-box .header{
-		font-size: 15px;
-		line-height: 18px;
-		padding: 13px 5px;
-	}
-	.order-now-box{
-		width: 65px;
-		height: 60px;
-	}
-
-	.time-drop-down,
-	.rest-address{
-		font-size: 17px;
-	}
-
-	.discount-drop-down,
-	.rest-address{
-		font-size: 17px;
-	}
-
-	content {
-		padding: 0 15px;
-		width: 100%;
-	}
-	.container .col-sm-1{width: 11.333%;}
-	.container .col-sm-6{width: 47%;}
-	.circular-logo .arrow{
-		bottom: 0;
-		right: 3px;
-	}
-	#nav{
-		right: 20px;
-		top:20px;
-	}
-}
+@media only screen and (max-width: 1199px){	.btn-top{display: none;}}

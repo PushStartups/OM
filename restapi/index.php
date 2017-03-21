@@ -96,7 +96,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
         $restaurants = Array();
 
-        $results = DB::query("select * from restaurants where city_id = '$id'");
+        $results = DB::query("select * from restaurants where city_id = '$id' and hide = 0");
 
         $count = 0;
 

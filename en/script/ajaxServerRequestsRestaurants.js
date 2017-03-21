@@ -55,7 +55,7 @@ $(document).ready(function() {
 });
 
 
-// GET ALL RESTAURANTS FROM COMMON AJAXCALL
+// GET ALL RESTAURANTS FROM COMMON AJAX CALL
 function  getAllRestaurants(response)
 {
     var result = JSON.parse(response);
