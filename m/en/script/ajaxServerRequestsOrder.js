@@ -1036,7 +1036,7 @@ function checkCouponCallBack(response)
 
         var newTotal = 0;
 
-        userObject.discount = responseCoupon.amount;
+        userObject.discount = convertFloat(responseCoupon.amount);
         var discountedAmount = 0;
 
         if (responseCoupon.isFixAmountCoupon) {
@@ -1055,7 +1055,7 @@ function checkCouponCallBack(response)
 
             discountedAmount = convertFloat(((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100));
 
-            newTotal = userObject.total - discountedAmount;
+            newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
 
             $('#discountAmount').html("-" + userObject.discount+"%");
 
@@ -1066,8 +1066,8 @@ function checkCouponCallBack(response)
         $('#oldTotal').html(userObject.total);
         $('#newTotal').html(newTotal);
 
-        userObject.totalWithoutDiscount = userObject.total;
-        userObject.total = newTotal;
+        userObject.totalWithoutDiscount = convertFloat(userObject.total);
+        userObject.total = convertFloat(newTotal);
 
         $('#coupon_section').show();
         goToConfirmCoupon();  // COUPON IS VALID GO TO NEXT POPUP TO DISPLAY COUPON DETAIL
