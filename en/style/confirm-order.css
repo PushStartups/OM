@@ -53,48 +53,58 @@ a:hover, a:focus {text-decoration: none;}
 	position:relative;
 }
 #header{
-	min-height: 213px;
+	height: 220px;
 	overflow:hidden;
-	padding: 50px 0 120px;
+	padding: 70px 0 40px;
 	text-align: center;
-	background-image: url("../img/header.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-#header.shrink{
-	min-height: 190px;
-	padding: 40px 0 90px;
+	margin: -30px 0 0;
 	background-image: url("../img/header-sm-bg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.shrink .logo{display: none;}
+/*#header.shrink{*/
+	/*min-height: 190px;*/
+	/*padding: 40px 0 90px;*/
+	/*background-image: url("../img/header-sm-bg.png");*/
+	/*background-size: cover;*/
+	/*background-repeat: no-repeat;*/
+/*}*/
+/*.shrink .logo{display: none;}*/
+
 #header span{
-	display: block;
-	font-size: 25px;
-	line-height: 28px;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 23px;
+	line-height: 26px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 600;
 	color: #fff;
 }
 .jumbotron.jumbotron-fluid{
 	overflow: hidden;
 	padding:0;
+
 }
 .logo{
-	width: 150px;
-	height: 72px;
-	margin:0 auto 20px;
-	text-align: center;
+	width: 60px;
+	height: 40px;
+	margin:0 11px;
+	display: inline-block;
+	vertical-align: middle;
 }
+
+
 .logo a{
 	display:block;
 	height:100%;
 }
 .logo a img{
 	display:block;
-	width:70px;
-	margin:0 auto;
+	width:100%;
+	height: auto;
 }
 .logo a strong {
   font-size: 20px;
@@ -160,7 +170,7 @@ a:hover, a:focus {text-decoration: none;}
 #nav ul li a:hover{color:#ff7f00;}
 .content{
 	position: relative;
-	top: -115px;
+	top: -111px;
 	margin: 0 auto;
 }
 .content:after{
@@ -332,11 +342,16 @@ a:hover, a:focus {text-decoration: none;}
 	border-radius: 18px 18px 0 0;
 	background-color: #ffaf5f;
 	border: solid 1px rgba(255, 251, 251, 0.04);
-	padding: 10px 38px;
+	padding: 15px 38px 10px;
 	font-family: "HelveticaNeue";
 	position: relative;
 	z-index: 99;
+	color: #fff;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 300;
 }
+.header-box p{margin: 0;}
 .alert-img{
 	float: right;
 	margin: 12px 0 0;
@@ -346,7 +361,7 @@ a:hover, a:focus {text-decoration: none;}
 	font-weight: 700;
 	line-height: 27px;
 	color: #fff;
-	margin: 0 0 11px;
+	margin: 0 0 4px;
 	text-transform: uppercase;
 }
 .header-box ul{
@@ -637,8 +652,8 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 }
 #sidebar h3{
 	margin: 0 0 20px;
-	font-size: 24px;
-	line-height: 27px;
+	font-size: 22px;
+	line-height: 25px;
 	font-weight: 300;
 }
 .minimum-item{
@@ -669,16 +684,16 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 .row-holder{
 	overflow: hidden;
 	color: #797979;
-	font-size: 20px;
-	line-height: 24px;
-	padding: 0 0 40px;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 0 0 30px;
 }
 #sidebar .header-row{padding: 0 0 10px;}
 #sidebar h2{
 	margin: 0 0 5px;
 	color: #000;
-	font-size: 27px;
-	line-height: 30px;
+	font-size: 24px;
+	line-height: 27px;
 	font-weight: 300;
 }
 #nested-section{
@@ -686,10 +701,11 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	margin: 0 10px 38px 0;
 }
 #sidebar .dim{
-	text-align: right;
-	padding: 10px 10px 10px 0;
-	font-size: 15px;
-	line-height: 17px;
+	display: block;
+	text-align: center;
+	padding: 10px 0 0;
+	font-size: 12px;
+	line-height: 15px;
 	white-space: nowrap;
 	color: #797979;
 }

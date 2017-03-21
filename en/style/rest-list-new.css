@@ -195,28 +195,33 @@ a:hover, a:focus {text-decoration: none;}
 	position:relative;
 }
 #header{
-	min-height: 213px;
+	height: 220px;
 	overflow:hidden;
-	padding: 50px 0 120px;
+	padding: 80px 0 40px;
 	text-align: center;
-	background-image: url("../img/header.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-#header.shrink{
-	min-height: 190px;
-	padding: 40px 0 90px;
+	margin: -30px 0 0;
 	background-image: url("../img/header-sm-bg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.shrink .logo{display: none;}
+/*#header.shrink{*/
+	/*min-height: 190px;*/
+	/*padding: 40px 0 90px;*/
+	/*background-image: url("../img/header-sm-bg.png");*/
+	/*background-size: cover;*/
+	/*background-repeat: no-repeat;*/
+/*}*/
+/*.shrink .logo{display: none;}*/
 #header span{
-	display: block;
-	font-size: 25px;
-	line-height: 28px;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 23px;
+	line-height: 26px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 600;
 	color: #fff;
 }
 .jumbotron.jumbotron-fluid{
@@ -225,10 +230,11 @@ a:hover, a:focus {text-decoration: none;}
 
 }
 .logo{
-	width: 150px;
-	height: 72px;
-	margin:0 auto 20px;
-	text-align: center;
+	width: 60px;
+	height: 40px;
+	margin:0 11px;
+	display: inline-block;
+	vertical-align: middle;
 }
 .logo a{
 	display:block;
@@ -541,8 +547,8 @@ a:hover, a:focus {text-decoration: none;}
 .row-heading {
 	width: 50%;
 	letter-spacing: 0.4px;
-	font-size: 25px;
-	line-height: 28px;
+	font-size: 33px;
+	line-height: 36px;
 	color: #797979;
 	display: inline-block;
 	vertical-align: middle;
@@ -583,7 +589,7 @@ a:hover, a:focus {text-decoration: none;}
 	padding: 59px 0 25px 0;
 	position: relative;
 }
-
+.separator:first-child{padding: 0 0 25px;}
 .separator .custom-hr {
 	border-bottom: 1px solid #cacaca;
 	width: calc(100% - 50px);
@@ -629,11 +635,12 @@ img.gallery {
 
 .discount-drop-down {
 	cursor: pointer;
-	font-size: 20px;
-	line-height: 34px;
+	font-size: 16px;
+	line-height: 20px;
 	white-space: nowrap;
 	color: #797979;
 	padding-right: 10px;
+	display: block;
 }
 
 .rest-address {
@@ -955,21 +962,21 @@ img.gallery {
 	vertical-align: middle;
 }
 #about p {
-	font-size: 20px;
-	font-weight: 900;
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 600;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: 20px;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	text-align: center;
 	color: #797979;
 }
 
 #about h3 {
-	font-size: 27px;
-	line-height: 30px;
+	font-size: 22px;
+	line-height: 25px;
 	letter-spacing: 0.2px;
-	margin:0 0 25px;
+	margin:0 0 20px;
 	font-weight: bold;
 	color: #797979;
 }
@@ -1042,12 +1049,7 @@ img.gallery {
 	height:72px;
 	position: fixed;
 	left:0;
-	top:80px;
-	/*padding:10px;
-	font-size: 35px;
-	line-height:58px;
-	line-height:52px;
-	text-align: center;*/
+	top:72px;
 	background: url("../img/Nav_bar_back_icon.png") no-repeat;
 	-webkit-border-radius:0 50px 50px 0;
 	-moz-border-radius:0 50px 50px 0;

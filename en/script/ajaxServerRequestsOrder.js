@@ -176,14 +176,17 @@ function  getCategoriesWithItems(response)
 
     // SETTING RESTAURANT NAME AND CATEGORIES
     temp =  '<h1>'+selectedRest.name_en+'</h1>'+
-            '<ul>';
+            '<p>Yitzhak Rabin Road 5, Beit Shemesh</p>'+
+        '<ul>';
+
 
     catItem += '<ul class="accordion multilevel-accordion">';
 
     for(var i = 0; i < result.categories_items.length; i++)
     {
 
-        temp +=  '<li> <a href="#" onclick="openSlide('+i+')">'+ result.categories_items[i].name_en +'</a></li>';
+        // temp +=  '<li> <a href="#" onclick="openSlide('+i+')">'+ result.categories_items[i].name_en +'</a></li>';
+
 
 
         if (i == 0)
@@ -193,7 +196,10 @@ function  getCategoriesWithItems(response)
 
 
         catItem +=  '<a  id="slideItem'+i+'"  href="#" class="opener">'+
+                    '<img src="/en/img/meshulashim-salads.png">'+
+                    '<div class="text">'+
                     '<h3>'+result.categories_items[i].name_en+'</h3>'+
+                    '</div>'+
                     '</a>'+
                     '<div class="slide">';
 
@@ -779,19 +785,19 @@ function updateCartElements()
             countItems = countItems +  foodCartData[x].qty;
 
             str += '<div class="row-holder">' +
-                '<div class="row header-row">' +
-                '<div class="col-md-8 col-xs-8">' +
+                '<div class="row header-row  no-gutters">' +
+                '<div class="col-md-9 col-xs-9">' +
                 '<h2>' + foodCartData[x].name + '</h2>' +
                 '</div>'+
-                '<div class="col-md-4 col-xs-4">'+
+                '<div class="col-md-3 col-xs-3">'+
                 '<span class="dim">' + foodCartData[x].price_without_subItems  + ' NIS</span>'+
                 '</div>'+
                 '</div>'+
-                '<div class="row">' +
-                '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                '<div class="row no-gutters">' +
+                '<div class="col-md-9 col-sm-9 col-xs-9">' +
                 '<p>' + foodCartData[x].detail + '</p>' +
                 '</div>' +
-                '<div class="col-md-4 col-sm-4 col-xs-4">' +
+                '<div class="col-md-3 col-sm-3 col-xs-3">' +
                 '<div class="switch-btn">';
 
             // BUTTON DECREASE OR CANCEL DEPENDS ON QUANTITY

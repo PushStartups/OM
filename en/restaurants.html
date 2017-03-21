@@ -12,6 +12,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/en/style/rest-list-new.css">
         <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
+        <link rel="stylesheet" type="text/css" href="/en/style/simple-scrollbar.css">
     </head>
 </head>
 
@@ -26,7 +27,6 @@
                         <div class="logo">
                             <a href="#">
                                 <img src="/en/img/logo.png" alt="images description">
-                                <strong>Order App</strong>
                             </a>
                         </div>
                         <span> CHOOSE YOUR RESTAURANT</span>
@@ -36,6 +36,7 @@
             <nav id="nav">
                 <ul>
                     <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
+                    <!--<li><a class="active" href="#">HE</a></li>-->
                 </ul>
             </nav>
         </header>
@@ -53,7 +54,7 @@
         <div class="container new height-box" >
 
             <!--ALL RESTAURANTS-->
-            <div class="scrollable-area height-box" id="restaurants-ajax">
+            <div id="scrollable">
             </div>
 
         </div>
@@ -185,47 +186,34 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/en/script/jcf.js"></script>
-<script type="text/javascript" src="/en/script/jcf.scrollable.js"></script>
-
-<script type="text/javascript">
-
-    // replace custom forms
-    jcf.lib.domReady(function(){
-
-        jcf.customForms.replaceAll();
-
-    });
-
-
-</script>
-
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>->
+<script src="/en/script/bootstrap.min.js"></script>
+<script type="text/javascript" src="/en/script/simple-scrollbar.min.js"></script>
+<script type="text/javascript" src="/en/script/simple-scrollbar.js"></script>
 <script src="/en/script/script.js"> </script>
-<script type="text/javascript" src="/en/script/ajaxServerRequestsRestaurants.js"></script>
-<script src="/en/script/commonAjaxCall.js"></script>
-<script src="/en/script/alertify.min.js"></script>
+<script src="/en/script/commonAjaxCall.js"> </script>
+<script src="/en/script/ajaxServerRequestsRestaurants.js"> </script>
+
+
 
 <script>
 
-    // TOP BUTTON CLICK LISTENER
     $( ".btn-top" ).click(function() {
 
-        $('.height-box').stop().animate({ scrollTop: 0 }, 500);
+        $('.ss-content').stop().animate({ scrollTop: 0 }, 500);
 
-        $('.vscroll-slider').css('top','0');
     });
 
 
-    // ON SCROLL HIDE POPUPS
     $('.height-box').scroll(function() {
 
         $(".time-popup").fadeOut();
-        $(".discount-popup").fadeOut();
 
     });
-    
+
+
+
 </Script>
 </body>
 </html>

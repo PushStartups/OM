@@ -17,13 +17,20 @@ html {box-sizing: border-box;}
 body {
 	margin: 0;
 	color: #fff;
-	font: 15px/18px 'HelveticaNeue', Arial, sans-serif, Helvetica;
-	min-width: 320px;
-	background-image:url("/en/img/home-bg.png");
-	background-size:cover;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
+	min-width: 320px;
+	height: 100%;
+	background-color: #fff;
+	font: 15px/18px 'HelveticaNeue', Arial, sans-serif, Helvetica;
+	background: url('/en/img/restaurants-bg.png') center center no-repeat;
+	position: relative;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 }
+
 * {max-height: 1000000px;}
 article,
 aside,
@@ -169,12 +176,30 @@ button {
 	padding:40px;
 }
 #header{overflow:hidden;}
+.frame-box{
+	overflow: hidden;
+	width: 940px;
+	height: 572px;
+	-webkit-border-radius:14px;
+	-moz-border-radius:14px;
+	border-radius:14px;
+	position: absolute;
+	top:50%;
+	left: 0;
+	right: 0;
+	margin: -286px auto 0;
+	background-image:url("/en/img/home-bg.png");
+	background-size:cover;
+	-webkit-box-shadow: 0 0 100px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0 0 100px rgba(0,0,0,0.4);
+	box-shadow: 0 0 100px rgba(0,0,0,0.4);
+}
 .first-section{
 	position: absolute;
 	top: 0;
 	left: 0;
 	right:0;
-	height: 50vh;
+	height: 50%;
 	display: flex;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -186,23 +211,24 @@ button {
 	-webkit-align-items: center;
 	align-items: center;
 	text-align: center;
+
 }
 .section h2,
 .first-section h1{
-	font-size: 50px;
-	line-height:53px;
+	font-size: 33px;
+	line-height:36px;
 	font-weight: 600;
 	font-style: normal;
 	color: #fff;
-	margin:0 0 40px;
+	margin:0;
 }
-.section h2{margin:40px 0;}
+.section h2{margin:25px 0;}
 .section{
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right:0;
-	height: 50vh;
+	height: 50%;
 	display: flex;
 	background: url(/en/img/bg-new-img.png) no-repeat;
 	background-size:  cover;

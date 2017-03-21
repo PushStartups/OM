@@ -1,8 +1,10 @@
+
 // GET ALL CITIES
 var allCitiesResp = null;
 
-function displayAllCities(response)
-{
+
+function displayAllCities(response) {
+
     // DISPLAY ALL CITIES TO USER FROM SERVER
     var result = JSON.parse(response);
     allCitiesResp = result;
@@ -21,7 +23,9 @@ function displayAllCities(response)
 // STORE SELECTED CITY IN CACHE
 function storeUserSelectedCity(index) {
 
+
     $('.btn-primary > span#text-span').text(allCitiesResp[index].name_en);
+
 
     localStorage.setItem("USER_CITY_ID", JSON.stringify(allCitiesResp[index].id));
     localStorage.setItem("USER_CITY_NAME", JSON.stringify(allCitiesResp[index].name_en));
@@ -29,7 +33,9 @@ function storeUserSelectedCity(index) {
 
 }
 
+
 // CITY AVAILABLE IN CACHE ?
+
 function isCitySelected()
 {
     if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
@@ -41,4 +47,6 @@ function isCitySelected()
     {
         return true;
     }
+
+
 }

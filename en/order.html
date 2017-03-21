@@ -26,7 +26,6 @@
                         <div class="logo">
                             <a href="#">
                                 <img src="/en/img/logo.png" alt="images description">
-                                <strong>Order App</strong>
                             </a>
                         </div>
                         <span> CHOOSE YOUR ORDER</span>
@@ -111,7 +110,7 @@
                                                     <span class="dim"> 62 NIS </span>
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row no-gutters">
                                                 <div class="col-md-8 col-sm-8 col-xs-8">
                                                     <p> In a cream sauce, seasoned with garlic and fresh basil <br><span class="more" > More info </span><span class="more"> + </span></p>
                                                 </div>
@@ -125,7 +124,7 @@
                                             </div>
                                         </div>
                                         <div class="row-holder">
-                                            <div class="row header-row">
+                                            <div class="row header-row  no-gutters">
                                                 <div class="col-md-8 col-xs-8">
                                                     <h2> Cheese Ravioli </h2>
                                                 </div>
@@ -133,7 +132,7 @@
                                                     <span class="dim"> 62 NIS </span>
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row no-gutters">
                                                 <div class="col-md-8 col-sm-8 col-xs-8">
                                                     <p> In a cream sauce, seasoned with garlic and fresh basil <br><span class="more" > More info </span><span class="more"> + </span></p>
                                                 </div>
@@ -211,8 +210,8 @@
                         </div>
                     </div>
                 </div>
+                <button  onclick="addUserOrder()"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
             </div>
-            <button  onclick="addUserOrder()"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
         </div>
 
     </div>
@@ -424,6 +423,12 @@
        // window.location.reload();
 
     });
+
+    var div = document.getElementById('scrollable');
+
+    div.setAttribute('ss-container', true);
+
+    SimpleScrollbar.initAll();
 
 
 

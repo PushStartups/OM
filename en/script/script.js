@@ -134,7 +134,7 @@ $(function () {
                 $(".discount-popup").css({
 
                     position: "absolute",
-                    top: (scrollTo.offset().top + 50) + "px",
+                    top: (scrollTo.offset().top + 30) + "px",
                     left : (scrollTo.offset().left - 20) + "px"
 
                 }).show();

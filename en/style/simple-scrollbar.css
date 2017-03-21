@@ -1,5 +1,6 @@
 #scrollable{
   height: 88vh;
+  padding: 70px 0 0;
 }
 .ss-wrapper {
   overflow: hidden;
