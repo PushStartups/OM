@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>OrderApp</title>
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
     <link href="/m/en/style/style.css" rel="stylesheet" />
     <link href="/m/en/style/dropdown.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <script src="/m/en/script/jquery.min.js" ></script>
     <script>
 
+        if (location.protocol != 'https:')
+        {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
         
         $(function(){
 
