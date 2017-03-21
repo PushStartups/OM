@@ -8,7 +8,7 @@ function commonAjaxCall(url,data,callback)
 
     //SERVER HOST DETAIL
 
-    var host = "https://"+window.location.hostname;
+    var host = "http://"+window.location.hostname;
 
     $.ajax({
 
