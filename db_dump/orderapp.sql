@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.18
+-- version 4.0.10.19
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2017 at 03:41 PM
--- Server version: 5.5.52
--- PHP Version: 5.6.28
+-- Generation Time: Mar 23, 2017 at 08:39 AM
+-- Server version: 5.5.54
+-- PHP Version: 5.6.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -1716,7 +1716,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=306 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=332 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -1965,7 +1965,33 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (302, 251, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
 (303, 252, 1, 'Family sized pizza', 25, 'onion (+5)'),
 (304, 252, 1, 'Family sized pizza', 20, ''),
-(305, 252, 1, 'Family sized pizza', 25, 'tuna (+5)');
+(305, 252, 1, 'Family sized pizza', 25, 'tuna (+5)'),
+(306, 253, 1, 'Meshulashim Pie', 37, 'Corn (+5)'),
+(307, 253, 1, 'Xl Pie', 71, 'Mushrooms (+5), Olives (+5), Tomatoes (+5)'),
+(308, 254, 1, 'Meshulashim Pie', 47, 'Onions (+5), Olives (+5), Corn (+5)'),
+(309, 254, 1, 'Gluten Free', 50, 'Mushrooms (+5), Olives (+5), Corn (+5)'),
+(310, 255, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(311, 256, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(312, 256, 1, 'Chicken Salad', 68, '170 Grams Chicken Breast (+18), Egg (+4), Portobello Mushroom (+4)'),
+(313, 257, 1, 'Xl Pie', 61, 'Corn (+5)'),
+(314, 257, 1, 'Meshulashim Pie', 37, 'Olives (+5)'),
+(315, 258, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(316, 258, 2, 'Pargit Tortilla', 38, 'Portobello Mushroom (+4), Garlic Mayo'),
+(317, 258, 1, 'Fuze Tea', 8, ''),
+(318, 259, 1, 'Family sized pizza', 25, 'tuna (+5)'),
+(319, 259, 1, 'Family sized pizza', 20, ''),
+(320, 259, 1, 'Family sized pizza', 25, 'sweetcorn (+5)'),
+(321, 260, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(322, 261, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(323, 262, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(324, 263, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(325, 264, 1, 'Angus Salad', 93, '80 Grams Goose Liver (+30), 150 Grams Goose Breast Or Entrecote (+19)'),
+(326, 264, 1, 'Chicken Salad', 64, '170 Grams Chicken Breast (+18), Egg (+4)'),
+(327, 265, 4, 'Shawarma', 33, 'Bread Type:Pita, Veal, Tomatoes, Roasted Peppers, Techina, Chummus'),
+(328, 266, 3, 'Nigiri Denis', 21, ''),
+(329, 267, 2, 'Angus Salad', 74, '80 Grams Goose Liver (+30)'),
+(330, 268, 3, 'Assorted Pastries', 17, ''),
+(331, 269, 2, 'Chicken Salad', 46, 'Egg (+4)');
 
 -- --------------------------------------------------------
 
@@ -2002,6 +2028,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, 
 (5, 'Japan Japan', 'ג''אפן ג''אפן', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
 (6, 'OSHI OSHI', 'אושי אושי', 50, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (7, 'Greg Cafe', 'גרג קפה', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
+(8, 'Grill 443', 'גריל 443', 50, 2, 1, '/m/en/img/grill443_logo.png', 'People come from far and wide to eat at the charcoal grilled, expertly chosen meats in Grill 443.  Now you can enjoy their amazing quality at home. There is a large selection of options, including two budget-friendly family meals.  Choose from an abundance of home style dishes, a dozen types of salad, accompanied by laffa straight from the taboun. ', '"""מסעדה מקומית אהובה עם בשרים ושיפודים נבחרים על גריל הפחמים, המדהימים בטעמם האיכותי.\r\n\r\nבצד תוכלו להזמין כמה סוגי סלטים טריים, חומוס הבית עם גרגירים חמים ונעימים לחיך, וקבב הבית הידוע בטעמו.\r\n\r\nבמקום שפע מאכלים ביתיים, לאפות היישר מהטבון. \r\n\r\nארוחות עסקיות ניתן להזמין בכל יום ובכל שעות היום, ואוכל מוכן לשבת לקחת הביתה."""', '443 - on road 443, beside the Sonol gas station at Shilat junction', 'צומת שילת (ת. דלק סונול), מודיעין', 'Rabbanut.    Meat is Chalak, chicken is rabbanut mehadrin', 'רבנות.  העוף מהדרין, והבשר חלק'),
 (9, 'Pizza Cheese', 'פיצה צ׳יז', 50, 2, 0, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', 'פיצה מעולה עם כל התוסות, מכחר פסטות וסלטים, שירות נהדר, רוחב לב,  מחיר כמו שאין בשום מקום. מה עוד צריך?!', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, 1, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
 (11, 'Ken LePizza', 'כן לפיצה', 50, 2, 0, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף');
@@ -4882,7 +4909,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=320 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=326 ;
 
 --
 -- Dumping data for table `users`
@@ -4890,8 +4917,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'asad  gt', '', '', '121212', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'Muhammad', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad', '', '', '3434454545', '', 0, 'english', NULL, NULL, NULL, NULL, 1),
+(260, 'test@gmail.com', 'Muhammad', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', '923324277819', 'Lahore Pakistan', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (264, 'test43434@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -4914,8 +4941,8 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contac
 (281, 'test@gmai.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (282, 'Fdh@hdh.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (283, 'Ch@hch.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(284, 'asdf@asdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(285, 'josh@pushstartups.com', 'Josh', '', '', '132', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(284, 'asdf@asdf.com', 'asdf', '', '', '123', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(285, 'josh@pushstartups.com', 'Josh Test 3', '', '', '00000000', 'Shimon St', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (286, 'test3434@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (287, 'test223@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (288, 'test6565@gmail.com', 'Muhammad', '', '', '454534545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -4949,7 +4976,13 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contac
 (316, 'rael@psu.com', 'Rael Olwyn', '', '', '00000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (317, 'ewrt@sdf.com', 'wert', '', '', '23452345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (318, 'fdgs@sd.com', 'ewrgw', '', '', '1342345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(319, 'sdfg@sdf.com', 'fsdg', '', '', '345665', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
+(319, 'sdfg@sdf.com', 'fsdg', '', '', '345665', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(320, 'mark@pushstartups.com', 'Mark', '', '', '0000000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(321, 'dsfdsf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(322, 'test@gmaik.com', 'Muhammad', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(323, 'test233@gmail.com', 'Muhammad ', '', '', '343434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(324, 'sdfsdf@fsdf.com', 'sdfsdf', '', '', '13215643215', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(325, 'test@tester.com', 'test', '', '', '0507665524', 'hahar street', 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4964,7 +4997,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `coupon_id` (`coupon_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=59 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
 
 --
 -- Dumping data for table `user_coupons`
@@ -4990,7 +5023,11 @@ INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
 (55, 298, 2),
 (56, 300, 2),
 (57, 274, NULL),
-(58, 261, 8);
+(58, 261, 8),
+(59, 260, NULL),
+(60, 260, NULL),
+(61, 323, NULL),
+(62, 285, NULL);
 
 -- --------------------------------------------------------
 
@@ -5009,7 +5046,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=253 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=270 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -5176,7 +5213,24 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (249, 260, 1, 93, NULL, 0, '2017-03-21'),
 (250, 261, 1, 93, NULL, 0, '2017-03-21'),
 (251, 261, 1, 93, NULL, 0, '2017-03-21'),
-(252, 261, 9, 56, 'fixed percentage', 20, '2017-03-21');
+(252, 261, 9, 56, 'fixed percentage', 20, '2017-03-21'),
+(253, 320, 2, 108, NULL, 0, '2017-03-21'),
+(254, 320, 2, 97, NULL, 0, '2017-03-21'),
+(255, 260, 1, 74, 'fixed percentage', 20, '2017-03-22'),
+(256, 322, 1, 161, NULL, 0, '2017-03-22'),
+(257, 260, 2, 78, 'fixed percentage', 20, '2017-03-22'),
+(258, 323, 1, 142, 'fixed percentage', 20, '2017-03-22'),
+(259, 261, 9, 70, NULL, 0, '2017-03-22'),
+(260, 261, 1, 93, NULL, 0, '2017-03-22'),
+(261, 261, 1, 93, NULL, 0, '2017-03-22'),
+(262, 261, 1, 93, NULL, 0, '2017-03-22'),
+(263, 261, 1, 93, NULL, 0, '2017-03-22'),
+(264, 260, 1, 157, NULL, 0, '2017-03-23'),
+(265, 324, 3, 132, NULL, 0, '2017-03-23'),
+(266, 285, 6, 50, 'fixed percentage', 20, '2017-03-23'),
+(267, 284, 1, 148, NULL, 0, '2017-03-23'),
+(268, 284, 7, 51, NULL, 0, '2017-03-23'),
+(269, 325, 1, 92, NULL, 0, '2017-03-23');
 
 -- --------------------------------------------------------
 

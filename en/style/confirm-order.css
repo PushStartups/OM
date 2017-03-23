@@ -47,7 +47,11 @@ a {
 	color: #92278f;
 	transition: all 1s;
 }
-a:hover, a:focus {text-decoration: none;}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
+}
 #wrapper{
 	overflow:hidden;
 	position:relative;
@@ -285,6 +289,22 @@ a:hover, a:focus {text-decoration: none;}
 	text-align: center;
 	color: #797979;
 }
+
+.loader-css{
+
+	z-index:9999;
+	width: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	margin:auto;
+	height: auto;
+	display: none;
+}
+
+
 
 #about h3 {
 	font-size: 27px;

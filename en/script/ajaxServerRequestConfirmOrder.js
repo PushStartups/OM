@@ -6,6 +6,13 @@ var restName                    = null;                                         
 var restId                      = null;                                           // SELECTED RESTAURANT ID
 var selectedRest                = null;
 
+
+var customerInfoFlag            = false;
+var addressInfoFlag             = false;
+var paymentInfoFlag             = false;
+
+var couponApplied               = false;
+
 //SERVER HOST DETAIL
 
 $(document).ready(function() {
@@ -61,6 +68,7 @@ $(document).ready(function() {
 
     updateCartElements();
 
+    initAccordion();
 });
 
 
@@ -159,16 +167,14 @@ function updateCartElements()
         $('#deliveryDetail').show();
     }
 
-    $('#totalAmount').html(newTotal);
+    $('#totalAmount').html(newTotal + " NIS");
 
 }
 
 
 function saveUserInfo() {
 
-
     // EXCEPTION HANDLING
-
     // NAME CANNOT BE EMPTY
 
     $("#email").removeClass("error");
@@ -178,11 +184,13 @@ function saveUserInfo() {
     $("#error-email").hide();
     $("#error-contact").hide();
 
+
     if($("#name_text").val() == "")
     {
         $("#name").addClass("error");
         $("#error-name").html('*Required Field');
         $("#error-name").show();
+
         return;
     }
 
@@ -192,6 +200,7 @@ function saveUserInfo() {
         $("#email").addClass("error");
         $("#error-email").html('*Required Field');
         $("#error-email").show();
+
         return;
     }
 
@@ -231,8 +240,22 @@ function saveUserInfo() {
     userObject.contact    =  $("#contact_text").val();
 
 
+    customerInfoFlag = true;
+
+    if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
+    {
+        $('#submitOrder').show();
+    }
+    else
+    {
+        $('#submitOrder').hide();
+    }
+
     $('#deliveryInfoParent').addClass("active");
     $('#customerInfoParent').removeClass("active");
+    $('#paymentParent').removeClass("active");
+    $('#specialRequestParent').removeClass("active");
+
 
     showSlide($('#deliverySlider')).hide().slideDown(300);
     hideSlide($('#customerSlider'));
@@ -242,6 +265,7 @@ function saveUserInfo() {
 
 function deliveryAddress()
 {
+
 
     $("#appt-no").removeClass("error");
     $("#address").removeClass("error");
@@ -254,6 +278,28 @@ function deliveryAddress()
     if($('#checkbox-id-12').is(':checked'))
     {
         userObject.pickFromRestaurant = true;
+
+        $('#deliveryInfoParent').removeClass("active");
+        $('#customerInfoParent').removeClass("active");
+        $('#paymentParent').addClass("active");
+        $('#specialRequestParent').removeClass("active");
+
+        addressInfoFlag = true;
+
+        if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
+        {
+            $('#submitOrder').show();
+        }
+        else
+        {
+            $('#submitOrder').hide();
+        }
+
+        $("#user_name").val(userObject.name);
+
+        showSlide($('#paymentSlider')).hide().slideDown(300);
+        hideSlide($('#deliverySlider'));
+
     }
     else
     {
@@ -281,10 +327,36 @@ function deliveryAddress()
             $("#error-area").show();
             return;
         }
+
+        userObject.pickFromRestaurant = false;
+
+        userObject.deliveryAddress = $("#address").val();
+        userObject.deliveryAptNo = $("#appt-no").val();
+
+
+        $('#deliveryInfoParent').removeClass("active");
+        $('#customerInfoParent').removeClass("active");
+        $('#paymentParent').addClass("active");
+        $('#specialRequestParent').removeClass("active");
+
+        $("#user_name").val(userObject.name);
+
+        addressInfoFlag = true;
+
+        if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
+        {
+            $('#submitOrder').show();
+        }
+        else
+        {
+            $('#submitOrder').hide();
+        }
+
+        showSlide($('#paymentSlider')).hide().slideDown(300);
+        hideSlide($('#deliverySlider'));
     }
 
-    showSlide($('#paymentSlider')).hide().slideDown(300);
-    hideSlide($('#deliverySlider'));
+
 
     console.log(userObject);
 }
@@ -293,7 +365,7 @@ function deliveryAddress()
 function saveCashDetail()
 {
 
-    $("#user_name").val(userObject.name);
+
 
     $('#coupon').removeClass('error');
     $("#error-coupon").html("");
@@ -303,7 +375,12 @@ function saveCashDetail()
     if($('#coupon-txt').val() != "")
     {
         var code  = $('#coupon-txt').val();
-        commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+
+        if(!couponApplied)
+        {
+            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+        }
+
     }
     else
     {
@@ -345,9 +422,9 @@ function checkCouponCallBack(response)
 
             userObject.isFixAmountCoupon = false;
 
-            discountedAmount = ((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100);
+            discountedAmount = convertFloat((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100);
 
-            newTotal = userObject.total - discountedAmount;
+            newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
 
             $('#discountValue').html("-" + discountedAmount +" NIS");
 
@@ -362,6 +439,10 @@ function checkCouponCallBack(response)
 
         $('#coupon_parent').hide();
         processPayments();
+
+        couponApplied = true;
+        $('#coupon-txt').val("");
+
     }
     // INVALID COUPON CODE
     else
@@ -390,9 +471,7 @@ function processPayments()
     if ($('#checkbox-id-13').is(':checked')) {
 
         userObject.Cash_Card = "CASH";
-
-        showSlide($('#specialRequest')).hide().slideDown(300);
-        hideSlide($('#paymentSlider'));
+        onPaymentSuccess();
     }
     else
     {
@@ -427,6 +506,7 @@ function paymentCreditCardCallBack(response) {
 
     if(response == "success")
     {
+        userObject.Cash_Card = "Credit Card";
         onPaymentSuccess();
     }
     else
@@ -441,6 +521,25 @@ function paymentCreditCardCallBack(response) {
 
 function onPaymentSuccess()
 {
+    sectionPayment = true;
+
+    $('#deliveryInfoParent').removeClass("active");
+    $('#customerInfoParent').removeClass("active");
+    $('#paymentParent').removeClass("active");
+    $('#specialRequestParent').addClass("active");
+
+
+    paymentInfoFlag = true;
+
+    if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
+    {
+        $('#submitOrder').show();
+    }
+    else
+    {
+        $('#submitOrder').hide();
+    }
+
     showSlide($('#specialRequest')).hide().slideDown(300);
     hideSlide($('#paymentSlider'));
 }
@@ -457,7 +556,12 @@ function specialRequestSave()
 
     hideSlide($('#specialRequest'));
 
-    $('#submitOrder').show();
+
+    $('#deliveryInfoParent').removeClass("active");
+    $('#customerInfoParent').removeClass("active");
+    $('#paymentParent').removeClass("active");
+    $('#specialRequestParent').removeClass("active");
+
 }
 
 

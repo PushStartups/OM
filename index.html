@@ -41,30 +41,45 @@
     if(isMobile.any())
     {
 
-        if(window.location.hostname == "m.orderapp.com")
+        if(window.location.hostname == "orderapp.com")
         {
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
 
-            window.location.href = 'https://m.orderapp.com/m/en/';
+            window.location.href = 'https://orderapp.com/m/en/';
 
         }
-        else if(window.location.hostname == "dev.m.orderapp.com")
+        else if(window.location.hostname == "dev.orderapp.com")
         {
 
             if (location.protocol != 'https:')
             {
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
-            window.location.href = 'https://dev.m.orderapp.com/m/en/';
+
+            window.location.href = 'https://dev.orderapp.com/m/en/';
 
         }
-        else if(window.location.hostname == "qa.m.orderapp.com")
+        else if(window.location.hostname == "qa.orderapp.com")
         {
 
-            window.location.href = 'https://qa.m.orderapp.com/m/en/';
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            window.location.href = 'https://qa.orderapp.com/m/en/';
 
         }
         else if(window.location.hostname == "stagingm.orderapp.com")
         {
+
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
 
             window.location.href = 'https://stagingm.orderapp.com/m/en/';
         }
@@ -76,30 +91,55 @@
 
     else {
 
-        if(window.location.hostname == "m.orderapp.com")
+
+        if(window.location.hostname == "orderapp.com")
+        {
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            window.location.href = 'https://orderapp.com/en/';
+        }
+
+
+        else if(window.location.hostname == "dev.orderapp.com")
         {
 
-            window.location.href = 'https://orderapp.com';
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+
+            window.location.href = 'https://dev.orderapp.com/en/';
 
         }
-        else if(window.location.hostname == "dev.m.orderapp.com")
+
+        else if(window.location.hostname == "qa.orderapp.com")
         {
 
-            window.location.href = 'https://dev.orderapp.com';
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            window.location.href = 'https://qa.orderapp.com/en/';
 
         }
-        else if(window.location.hostname == "qa.m.orderapp.com")
-        {
 
-            window.location.href = 'https://qa.orderapp.com';
-
-        }
         else if(window.location.hostname == "stagingm.orderapp.com")
         {
 
-            window.location.href = 'https://staging.orderapp.com';
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            window.location.href = 'https://stagingm.orderapp.com/en/';
 
         }
+
 
     }
 

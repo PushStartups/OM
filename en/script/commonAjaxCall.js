@@ -9,7 +9,7 @@ function commonAjaxCall(url,data,callBcak)
     addLoading();
 
     //SERVER HOST DETAIL
-    var host = "http://"+window.location.hostname;
+    var host = "https://"+window.location.hostname;
 
     $.ajax({
 
@@ -76,7 +76,7 @@ function commonAjaxCall(url,data,callBcak)
 // SHOW LOADER ON AJAX CALLS
 function addLoading(){
 
-    $("body").addClass("blur-class");
+    $("#Loader_bg").css("display" , "block");
     $("#loader").css("display" , "block");
 }
 
@@ -85,8 +85,13 @@ function addLoading(){
 
 // HIDE LOADING ON AJAX CALLS
 function hideLoading(){
+
     setTimeout(function() {
-        $("body").removeClass("blur-class");
+
         $("#loader").css("display" , "none");
+        $("#Loader_bg").css("display" , "none");
+
     }, 1000);
+
+
 }

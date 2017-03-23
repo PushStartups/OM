@@ -19,7 +19,7 @@ body {
 	height: 100%;
 	background-color: #fff;
 	font: 15px/18px 'HelveticaNeue', Arial, sans-serif, Helvetica;
-	background: url('../img/restaurants-bg.png') center center no-repeat;
+	background: url('/en/img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	overflow: hidden;
 	min-width: 1024px;
@@ -188,7 +188,11 @@ a {
 	color: #92278f;
 	transition: all 1s;
 }
-a:hover, a:focus {text-decoration: none;}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
+}
 
 #wrapper{
 	overflow:hidden;
@@ -200,7 +204,7 @@ a:hover, a:focus {text-decoration: none;}
 	padding: 80px 0 40px;
 	text-align: center;
 	margin: -30px 0 0;
-	background-image: url("../img/header-sm-bg.png");
+	background-image: url("/en/img/header-sm-bg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	-webkit-box-sizing: border-box;
@@ -210,7 +214,7 @@ a:hover, a:focus {text-decoration: none;}
 /*#header.shrink{*/
 	/*min-height: 190px;*/
 	/*padding: 40px 0 90px;*/
-	/*background-image: url("../img/header-sm-bg.png");*/
+	/*background-image: url("/en/img/header-sm-bg.png");*/
 	/*background-size: cover;*/
 	/*background-repeat: no-repeat;*/
 /*}*/
@@ -728,13 +732,13 @@ img.gallery {
 .time-popup.new .header{
 	overflow: hidden;
 	padding: 18px 10px;
-	background: url(../img/popup-bg.png) no-repeat;
+	background: url(/en/img/popup-bg.png) no-repeat;
 }
 
 .discount-popup.new .header{
 	overflow: hidden;
 	padding: 18px 10px;
-	background: url(../img/popup-bg.png) no-repeat;
+	background: url(/en/img/popup-bg.png) no-repeat;
 }
 
 .time-popup .header img {
@@ -1050,7 +1054,7 @@ img.gallery {
 	position: fixed;
 	left:0;
 	top:72px;
-	background: url("../img/Nav_bar_back_icon.png") no-repeat;
+	background: url("/en/img/Nav_bar_back_icon.png") no-repeat;
 	-webkit-border-radius:0 50px 50px 0;
 	-moz-border-radius:0 50px 50px 0;
 	border-radius:0 50px 50px 0;

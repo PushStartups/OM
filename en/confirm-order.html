@@ -5,18 +5,78 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>OrderApp</title>
+        <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+        <title>Orderapp | Order from restaurants online</title>
         <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/en/style/confirm-order.css">
         <link href="/en/style/dropdown.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+        <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-89656592-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+        <!-- End Google Analytics -->
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                }; if (!f._fbq) f._fbq = n;
+                n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+            }(window,
+                    document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2198328787059300'); // Insert your pixel ID here.
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none"
+                 src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- DO NOT MODIFY -->
+        <!-- End Facebook Pixel Code -->
+
+        <!-- Facebook/Twitter Open Graph -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@orderappteam" />
+        <meta property="og:url" content="http://orderapp.com" />
+        <meta property="og:title" content="OrderApp - Order delivery online today." />
+        <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
+
     </head>
 </head>
 
-<img id="loader" class="loader-css" src="/en/img/loader.gif" >
+
+<script>
+
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+</script>
+
 <body style="overflow: hidden">
+
+<img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
+
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: white ;opacity: 0.9;"></div>
+
 <div id="wrapper">
     <section class="jumbotron jumbotron-fluid">
         <header id="header">
@@ -65,7 +125,7 @@
                             <div class="left-content">
                                 <ul class="accordion multilevel-accordion">
                                     <li id="customerInfoParent" class="active">
-                                        <a href="#" class="opener" >
+                                        <a href="#" class="opener"  id="personalInfoOpener">
                                             <h3>Customer info</h3>
                                         </a>
                                         <div class="slide" id="customerSlider">
@@ -116,7 +176,7 @@
                                         </div>
                                     </li>
                                     <li id="deliveryInfoParent">
-                                        <a href="#" class="opener">
+                                        <a href="#" class="opener" id="addressOpener">
                                             <h3>Delivery</h3>
                                         </a>
                                         <div class="slide" id="deliverySlider">
@@ -166,8 +226,8 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <a href="#" class="opener">
+                                    <li id="paymentParent">
+                                        <a href="#" class="opener" id="paymentOpener">
                                             <h3>Payment</h3>
                                         </a>
                                         <div class="slide" id="paymentSlider">
@@ -269,8 +329,8 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <a href="#" class="opener">
+                                    <li id="specialRequestParent">
+                                        <a href="#" class="opener" id="specialRequestOpener">
                                             <h3>Special Requests</h3>
                                         </a>
                                         <div class="slide" id="specialRequest">
@@ -399,7 +459,6 @@
 </div>
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/en/script/jquery.accordion.without.click.js"></script>
 <script type="text/javascript" src="/en/script/jcf.js"></script>
 <script type="text/javascript" src="/en/script/jcf.scrollable.js"></script>
 <script type="text/javascript">
@@ -412,40 +471,28 @@
 <script src="/en/script/script.js"> </script>
 <script src="/en/script/dropdown.js"></script>
 <script src="/en/script/ajaxServerRequestConfirmOrder.js"></script>
+<script type="text/javascript" src="/en/script/jquery.accordion.without.click.js"></script>
+<script src="/en/script/alertify.min.js"></script>
 <script>
+
+
     $('.checkbox-list li').click(function(e){
+
         $('.show-box').toggleClass('show');
+
     });
+
     $('.new-label').click(function(e){
+
         $('.show-text').toggleClass('show');
-    });
-    // header height function
-    $(document).on("scroll", function(){
-        if
-        ($(document).scrollTop() > 100){
-            $("header").addClass("shrink");
-        }
-        else
-        {
-            $("header").removeClass("shrink");
-        }
-    });
-    $('.scrollable-area').scroll(function (event) {
 
-        var scroll = $('.scrollable-area').scrollTop();
-        if(scroll == 0)
-        {
-            $("header").removeClass("shrink");
-
-        }
-        else
-        {
-            $("header").addClass("shrink");
-
-        }
     });
+
+
     $(function() {
+
         function reposition() {
+
             var modal = $(this),
                     dialog = modal.find('.modal-dialog');
             modal.css('display', 'block');
@@ -454,12 +501,17 @@
             // or four works better for larger screens.
             dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
         }
+
         // Reposition when a modal is shown
         $('.modal').on('show.bs.modal', reposition);
+
         // Reposition when the window is resized
         $(window).on('resize', function() {
+
             $('.modal:visible').each(reposition);
+
         });
+
     });
 
 
@@ -469,8 +521,12 @@
 
     // WHEN NAME FIELD CHANGES
     $('#name_text').bind('input', function() {
+
         document.getElementById("error-name").innerHTML = "";
+
         $("#name").removeClass("error");
+
+
     });
 
 </script>
@@ -479,8 +535,12 @@
 
     // WHEN NAME FIELD CHANGES
     $('#email_text').bind('input', function() {
+
         document.getElementById("error-email").innerHTML = "";
+
         $("#email").removeClass("error");
+
+
     });
 
 </script>
@@ -505,7 +565,7 @@
             $('#deliveryFieldsParent').addClass('show');
             $('#checkbox-id-12').prop('checked', false);
 
-            userObject.pickFromRestaurant = false;
+
 
         }
         else {
@@ -513,7 +573,7 @@
             $('#deliveryFieldsParent').removeClass('show');
             $('#checkbox-id-12').prop('checked', true);
 
-            userObject.pickFromRestaurant = true;
+
         }
 
     });
@@ -526,14 +586,14 @@
             $('#deliveryFieldsParent').removeClass('show');
             $('#checkbox-id-23').prop('checked', false);
 
-            userObject.pickFromRestaurant = true;
+
         }
         else {
 
             $('#deliveryFieldsParent').addClass('show');
             $('#checkbox-id-23').prop('checked', true);
 
-            userObject.pickFromRestaurant = false;
+
         }
 
     });
@@ -575,14 +635,14 @@
             $('#show_credit_card').removeClass('show');
             $('#checkbox-id-24').prop('checked', false);
 
-            userObject['Cash_Card'] = "CASH";
+
 
         }
         else {
 
             $('#show_credit_card').addClass('show');
             $('#checkbox-id-24').prop('checked', true);
-            userObject['Cash_Card'] = "Credit Card";
+
         }
 
     });
@@ -595,7 +655,6 @@
             $('#show_credit_card').addClass('show');
             $('#checkbox-id-13').prop('checked', false);
 
-            userObject['Cash_Card'] = "Credit Card";
         }
         else {
 
@@ -603,8 +662,6 @@
             $('#show_credit_card').removeClass('show');
             $('#checkbox-id-13').prop('checked', true);
 
-
-            userObject['Cash_Card'] = "CASH";
         }
 
     });

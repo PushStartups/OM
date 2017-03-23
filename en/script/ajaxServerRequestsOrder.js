@@ -176,8 +176,8 @@ function  getCategoriesWithItems(response)
 
     // SETTING RESTAURANT NAME AND CATEGORIES
     temp =  '<h1>'+selectedRest.name_en+'</h1>'+
-            '<p>Yitzhak Rabin Road 5, Beit Shemesh</p>'+
-        '<ul>';
+            '<p>'+selectedRest.address_en+'</p>'+
+            '<ul>';
 
 
     catItem += '<ul class="accordion multilevel-accordion">';

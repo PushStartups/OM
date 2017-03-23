@@ -70,7 +70,11 @@ a {
 	color: #92278f;
 	transition: all 1s;
 }
-a:hover, a:focus {text-decoration: none;}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
+}
 input,
 textarea,
 select {

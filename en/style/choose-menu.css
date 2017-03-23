@@ -54,7 +54,28 @@ a {
 	color: #92278f;
 	transition: all 1s;
 }
-a:hover, a:focus {text-decoration: none;}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
+}
+
+
+.loader-css{
+
+	z-index:9999;
+	width: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	margin:auto;
+	height: auto;
+	display: none;
+}
+
+
 
 #wrapper{
 	overflow:hidden;
@@ -66,7 +87,7 @@ a:hover, a:focus {text-decoration: none;}
 	padding: 70px 0 40px;
 	text-align: center;
 	margin: -30px 0 0;
-	background-image: url("../img/header-sm-bg.png");
+	background-image: url("/en/img/header-sm-bg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	-webkit-box-sizing: border-box;
@@ -370,6 +391,7 @@ a:hover, a:focus {text-decoration: none;}
 .alert-img{
 	float: right;
 	margin: 6px 0 0;
+	outline: none;
 }
 .header-box h1{
 	font-size: 24px;
@@ -887,7 +909,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	border-radius:0 0 13px 13px;
 	background-image: linear-gradient(249deg, #ffae5e, #ff7f00);
 	font-family: 'Open Sans', sans-serif;
-	font-size: 33px;
+	font-size: 24px;
 	line-height: 36px;
 	letter-spacing: 0.4px;
 	text-align: center;

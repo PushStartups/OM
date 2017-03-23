@@ -601,6 +601,20 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         ob_end_clean();
 
+
+
+        $delivery_time  = date('H:i:s');
+
+        $delivery_time = strtotime($delivery_time) + 60*60;
+
+        $delivery_time = date('H:i:s',$delivery_time);
+
+        createBringgTask($user_order, $todayDate, $delivery_time) ;
+
+        ob_end_clean();
+
+
+
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
         $response = $response->withJson(json_encode('success'));
@@ -616,6 +630,7 @@ $app->post('/add_order', function ($request, $response, $args) {
     }
 
 });
+
 
 
 
@@ -1357,5 +1372,87 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     }
 
 }
+
+
+
+function createBringgTask($user_order, $todayDate, $delivery_time) {
+
+    $url = 'https://admin-api.bringg.com//services/6f15901b/caa8a0ea-0b7a-4bd6-87cb-f07c77d66c48/27e666d2-e7cd-4917-988b-aa109829f0c4/';
+
+    if ($user_order['pickFromRestaurant'] == 'true'){
+        return;
+    }
+
+    date_default_timezone_set('Asia/Jerusalem');
+    $ScheduledAt = print_r($todayDate . 'T' . $delivery_time . ':00z',true);
+
+    $order_text = '';
+    $order_text .= $user_order['restaurantTitleHe'] .'\n';
+
+    foreach ($user_order['cartData'] as $t) {
+        $order_text .= $t['qty'] . '  ' . $t['name_he'] .'\n';
+        $order_text .= preg_replace("/\([^)]+\)/", "", $t['detail_he']).'\n\n';
+    }
+
+    $jason = print_r('{
+       "company_id": 666,
+       "title": "Delivery",      // Title for the Task being created.
+       "scheduled_at": "' . $ScheduledAt . '",   // Here the  $ScheduledAt variable is an example for the date and time format.
+       "note": "' . $order_text . '",
+       "customer": {
+          "name": "' . $user_order['name'] . '",
+          "address": "' . $user_order['deliveryAddress'] . '",
+          "phone": "' . $user_order['contact'] . '"
+       },
+       "way_points":[
+          {
+             "customer":{
+                "name": "' . $user_order['restaurantTitleHe'] . '",
+                "phone": "026222862"
+             },
+             "address":"Yigal Alon Ave 6, Beit Shemesh, Israel",
+            "allow_editing_inventory": "true", // Allow driver to edit the Inventory e.g. change quantities?
+            "must_approve_inventory": "true",   // Driver must approve pick up inventory e.g. by scanning it. The driver won\'t be allowed to leave location without doing this.
+            "allow_scanning_inventory": "true"  // Allow to scan inventory via phone camera (on the Driver App)
+          },
+          {
+             "customer":{
+                "name":"' . $user_order['name'] . '",
+                "phone":"' . $user_order['contact'] . '"
+             },
+             "address":"' . $user_order['deliveryAddress'] . '",
+            "allow_editing_inventory": "true",    // Allow driver to edit the Inventory e.g. change quantities?
+            "must_approve_inventory": "true",   // Driver must approve drop off inventory e.g. by scanning it. The driver won\'t be allowed to leave location and finish the task without doing this.
+            "allow_scanning_inventory": "true" // Allow to scan inventory via phone camera (on the Driver App)
+          }
+       ]
+    }',true);
+
+
+
+    $ch=curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $jason);
+    curl_setopt($ch, CURLOPT_HTTPHEADER,
+        array('Content-Type:application/json',
+            'Content-Length: ' . strlen($jason))
+    );
+
+    $json_response = curl_exec($ch);
+
+    $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if ( $status != 200 ) {
+
+        //die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
+
+    }
+
+    curl_close($ch);
+
+}
+
 ?>
 
