@@ -384,9 +384,6 @@ function deliveryAddress()
 
 function saveCashDetail()
 {
-    $("#Loader_bg").css("display" , "block");
-    $("#loader").css("display" , "block");
-
     $('#coupon').removeClass('error');
     $("#error-coupon").html("");
     $("#error-coupon").hide();
