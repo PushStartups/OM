@@ -70,12 +70,25 @@ function initAccordion() {
 						var id = opener.attr("id");
 
 						if (id == "personalInfoOpener") {
-							$("#name_text").val(userObject.name);
-
-							$("#email_text").val(userObject.email);
 
 
-							$("#contact_text").val(userObject.contact);
+							if(userObject.name != "") {
+
+								$("#name_text").val(userObject.name);
+
+							}
+
+							if(userObject.email != "") {
+
+								$("#email_text").val(userObject.email);
+
+							}
+
+							if(userObject.contact != "")
+							{
+								$("#contact_text").val(userObject.contact);
+							}
+
 
 							$("#email").removeClass("error");
 							$("#name").removeClass("error");
@@ -95,9 +108,18 @@ function initAccordion() {
 								$('#checkbox-id-12').prop('checked', false);
 								$('#deliveryFieldsParent').addClass('show');
 
-								$("#address").val(userObject.deliveryAddress);
 
-								$("#appt-no").val(userObject.deliveryAptNo);
+								if (userObject.deliveryAddress != "") {
+
+									$("#address").val(userObject.deliveryAddress);
+								}
+
+								if (userObject.deliveryAptNo != "")
+								{
+									$("#appt-no").val(userObject.deliveryAptNo);
+
+								}
+
 
 								$("#appt-no").removeClass("error");
 								$("#address").removeClass("error");

@@ -265,6 +265,9 @@ function onItemSelected (x,y)
     itemPrice             = result.categories_items[currentCategoryId].items[currentItemIndex].price;
 
 
+    $('#special_request').val("");
+
+
     // DISPLAY ITEM (PRODUCT) DETAIL CARD
 
 
@@ -591,7 +594,8 @@ function addUserOrder()
         "itemNameHe"         : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
         "qty"                : 1 ,
         "subItemsOneType"    : oneTypeSubItems,
-        "multiItemsOneType"  : multipleTypeSubItems};
+        "multiItemsOneType"  : multipleTypeSubItems,
+        "specialRequest"     : $('#special_request').val()};
 
 
     userObject.orders.push(order);
@@ -631,6 +635,7 @@ function generateTotalUpdateFoodCart()
             "detail_he" : "" ,
             "orderIndex" : x ,
             "qty" : order.qty,
+            "specialRequest" : order.specialRequest ,
             "subItemOneIndex" : null,
             "subItemMultipleIndex" : null};
 
@@ -804,9 +809,27 @@ function updateCartElements()
                 '</div>'+
                 '</div>'+
                 '<div class="row no-gutters">' +
-                '<div class="col-md-9 col-sm-9 col-xs-9">' +
-                '<p>' + foodCartData[x].detail + '</p>' +
-                '</div>' +
+                '<div class="col-md-9 col-sm-9 col-xs-9">';
+
+            if(foodCartData[x].specialRequest != "")
+            {
+
+                if(foodCartData[x].detail == "" ) {
+
+                    str += '<p>' + foodCartData[x].detail + ', special request : ' + foodCartData[x].specialRequest + '</p>';
+                }
+                else
+                {
+                    str += '<p>' + foodCartData[x].detail + ' special request : ' + foodCartData[x].specialRequest + '</p>';
+                }
+            }
+            else {
+
+                str += '<p>' + foodCartData[x].detail +'</p>';
+
+            }
+
+            str += '</div>'+
                 '<div class="col-md-3 col-sm-3 col-xs-3">' +
                 '<div class="switch-btn">';
 

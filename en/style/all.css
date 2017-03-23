@@ -640,7 +640,9 @@ and (orientation : portrait){
 	line-height:45px;
 	color:#fff;
 	opacity:1;
+	outline: none !important;
 }
+#about .close:focus{outline: none !important;}
 
 #about .social-icons {
 	overflow:hidden;

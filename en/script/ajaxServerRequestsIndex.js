@@ -31,6 +31,8 @@ function storeUserSelectedCity(index) {
     localStorage.setItem("USER_CITY_NAME", JSON.stringify(allCitiesResp[index].name_en));
 
 
+    start_ordering();
+
 }
 
 

@@ -324,6 +324,7 @@ a:hover, a:focus {
 	line-height:45px;
 	color:#fff;
 	opacity:1;
+	outline: none;
 }
 #about .social-icons {overflow:hidden;}
 #about .social-icons ul {
@@ -593,11 +594,16 @@ a:hover, a:focus {
 	display: block;
 	transition: all 1s;
 	border:1px solid transparent;
+	outline: none;
 }
 .btn-add-submit:hover{
 	border-color: #63df7e;
 	background:#fff ;
 	color: #63df7e;
+}
+.btn-add-submit:hover:focus {
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
 }
 .checkbox-list{
 	padding:0 0 0 20px;
@@ -651,6 +657,11 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	font-weight: 300;
 	text-transform: uppercase;
 	background-image: linear-gradient(246deg, #ffae5e, #ff7f00);
+	outline:none;
+}
+.btn-submit:hover:focus {
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
 }
 .btn-submit:hover{background-image: linear-gradient(246deg, #ff7f00, #ffae5e);}
 .minimum-item.add h3,

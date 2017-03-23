@@ -996,12 +996,19 @@ img.gallery {
 	line-height:45px;
 	color:#fff;
 	opacity:1;
+	outline: none;
+}
+#about .close:focus,
+#slider-popup .close:focus {
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
 }
 #slider-popup .close{
 	top: -85px;
 	left: -5px;
 	font-size:65px;
 	line-height:65px;
+	outline: none;
 }
 
 #about .social-icons {

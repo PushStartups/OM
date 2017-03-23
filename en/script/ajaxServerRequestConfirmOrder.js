@@ -12,6 +12,7 @@ var addressInfoFlag             = false;
 var paymentInfoFlag             = false;
 
 var couponApplied               = false;
+var paymentReceived             = false;
 
 //SERVER HOST DETAIL
 
@@ -124,9 +125,28 @@ function updateCartElements()
             '</div>'+
             '</div>'+
             '<div class="row no-gutters">' +
-            '<div class="col-md-9 col-sm-9 col-xs-9">' +
-            '<p>' + foodCartData[x].detail + '</p>' +
-            '</div>'+
+            '<div class="col-md-9 col-sm-9 col-xs-9">';
+
+        if(foodCartData[x].specialRequest != "")
+        {
+
+            if(foodCartData[x].detail == "" ) {
+
+                str += '<p>' + foodCartData[x].detail + ', special request : ' + foodCartData[x].specialRequest + '</p>';
+            }
+            else
+            {
+                str += '<p>' + foodCartData[x].detail + ' special request : ' + foodCartData[x].specialRequest + '</p>';
+            }
+        }
+        else {
+
+            str += '<p>' + foodCartData[x].detail +'</p>';
+
+        }
+
+
+        str += '</div>'+
             '</div>'+
             '</div>';
 
@@ -163,7 +183,7 @@ function updateCartElements()
     else
     {
         $('#area-charges').html(userObject.deliveryCharges+" NIS");
-        newTotal = convertFloat(newTotal) + convertFloat(userObject.deliveryCharges);
+        newTotal = convertFloat(convertFloat(newTotal) + convertFloat(userObject.deliveryCharges));
         $('#deliveryDetail').show();
     }
 
@@ -364,8 +384,8 @@ function deliveryAddress()
 
 function saveCashDetail()
 {
-
-
+    $("#Loader_bg").css("display" , "block");
+    $("#loader").css("display" , "block");
 
     $('#coupon').removeClass('error');
     $("#error-coupon").html("");
@@ -428,6 +448,8 @@ function checkCouponCallBack(response)
 
             $('#discountValue').html("-" + discountedAmount +" NIS");
 
+            $('#discountTitle').html("Coupon Discount " + userObject.discount+"%");
+
         }
 
 
@@ -448,15 +470,10 @@ function checkCouponCallBack(response)
     else
     {
 
-        // $('#coupon_section').hide();
-        // $("#coponInput").addClass('red-border-c');
-        // $("#couponError").html("Oops, this Coupons wrong, Try Again!");
-        // $("#coponInput").val('');
-
         userObject.isCoupon = false;
         $('#coupon').addClass('error');
         $("#coupon-txt").val("");
-        $("#error-coupon").html("Oops, this Coupons wrong, Try Again!");
+        $("#error-coupon").html("Error - this coupon is not valid.");
         $("#error-coupon").show();
         updateCartElements();
 
@@ -475,8 +492,10 @@ function processPayments()
     }
     else
     {
-
-        $('#payment-form').submit();
+        if(!paymentReceived)
+        {
+            $('#payment-form').submit();
+        }
     }
 }
 
@@ -506,6 +525,7 @@ function paymentCreditCardCallBack(response) {
 
     if(response == "success")
     {
+        paymentReceived = true;
         userObject.Cash_Card = "Credit Card";
         onPaymentSuccess();
     }
@@ -573,8 +593,6 @@ function  callPage3() {
 
     userObject.cartData = foodCartData;
 
-    localStorage.setItem("USER_OBJECT", "");
-
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
 
 };
@@ -582,8 +600,17 @@ function  callPage3() {
 
 function callPage3CallBack(response) {
 
+
+    var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
+    var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+    selectedCityName        =   selectedCityName.replace(/\s/g, '');
+
     userObject = null;
-    window.location.href = '/en/feedback.html';
+    localStorage.setItem("USER_OBJECT", "");
+
+    // MOVING TO ORDER PAGE
+    window.location.href = '/en/'+selectedCityName+"/"+ restaurantTitle+"/complete-order";
+
 }
 
 

@@ -693,8 +693,19 @@ function  stripePaymentRequest($amount, $userId, $email, $token)
 
     try
     {
-        require_once('stripe/init.php');
-        \Stripe\Stripe::setApiKey("sk_live_bOEx3vR2HgwAMMmYumsmO6TW"); //Replace with your Secret Key
+
+        if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
+        {
+            require_once('stripe/init.php');
+            \Stripe\Stripe::setApiKey("sk_test_g5tJMLPIVIRobeNktobgy4oZ"); //Replace with your Secret Key
+
+        }
+        else{
+
+            require_once('stripe/init.php');
+            \Stripe\Stripe::setApiKey("sk_live_bOEx3vR2HgwAMMmYumsmO6TW"); //Replace with your Secret Key
+
+        }
 
 
         // Charge the user's card:
