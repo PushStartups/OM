@@ -127,10 +127,11 @@ function updateCartElements()
             '<div class="row no-gutters">' +
             '<div class="col-md-9 col-sm-9 col-xs-9">';
 
+
         if(foodCartData[x].specialRequest != "")
         {
 
-            if(foodCartData[x].detail == "" ) {
+            if(foodCartData[x].detail != "") {
 
                 str += '<p>' + foodCartData[x].detail + ', special request : ' + foodCartData[x].specialRequest + '</p>';
             }
@@ -149,8 +150,6 @@ function updateCartElements()
         str += '</div>'+
             '</div>'+
             '</div>';
-
-
 
     }
 
@@ -175,16 +174,22 @@ function updateCartElements()
     }
 
 
-    if(userObject.deliveryArea == null)
+    if($('#checkbox-id-12').is(":checked"))
     {
         $('#deliveryDetail').hide();
-
     }
     else
     {
-        $('#area-charges').html(userObject.deliveryCharges+" NIS");
-        newTotal = convertFloat(convertFloat(newTotal) + convertFloat(userObject.deliveryCharges));
-        $('#deliveryDetail').show();
+        if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
+
+            $('#area-charges').html(userObject.deliveryCharges + " NIS");
+            newTotal = convertFloat(convertFloat(newTotal) + convertFloat(userObject.deliveryCharges));
+            $('#deliveryDetail').show();
+        }
+        else
+        {
+            $('#deliveryDetail').hide();
+        }
     }
 
     $('#totalAmount').html(newTotal + " NIS");
@@ -589,6 +594,11 @@ function specialRequestSave()
 function  callPage3() {
 
     userObject.cartData = foodCartData;
+
+    if(userObject.deliveryArea == null)
+    {
+        userObject.deliveryArea = '';
+    }
 
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
 

@@ -821,7 +821,25 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
         // subitems
         $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
-        $mailbody .= '<td >' . $t['detail'] . ' </td>';
+
+
+        if($t['specialRequest'] != "") {
+
+            if ($t['detail'] != '') {
+
+                $mailbody .= '<td >' . $t['detail'] .', Special Request : '.$t['specialRequest']. '</td>';
+            }
+            else {
+
+                $mailbody .= '<td >' . $t['detail'].' Special Request : '.$t['specialRequest'].' </td>';
+            }
+        }
+        else
+        {
+            $mailbody .= '<td >' . $t['detail'] . ' </td>';
+        }
+
+
         $mailbody .= '<td style="text-align: right"> </td>';
         $mailbody .= '</tr>';
 
@@ -871,6 +889,15 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
     $mailbody .= '</table>';
 
+
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailbody .= '<br><span style="color: #000000; padding:10px 30px;">Special Request : <span style="color: #808080">'.$user_order["specialRequest"].'</span></span><br>';
+
+    }
+
+
     $mailbody .= '<table style=" color:black; padding:10px 30px; width: 270px; " cellspacing="5px">';
     $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
     $mailbody .= '<td colspan="2" style="padding: 10px 0" > Customer information   </td>';
@@ -888,7 +915,7 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: left; white-space: nowrap"> Delivery Address : '.$user_order['deliveryAddress'].'</td>';
+        $mailbody .= '<td style="text-align: left; white-space: nowrap"> Delivery Address : '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')'.'</td>';
     }
     else{
 
@@ -996,7 +1023,32 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
         $mailbody.='</tr>';
         $mailbody.='<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
         $mailbody.='<td > </td>';
-        $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].'</td>';
+
+
+
+        if($t['specialRequest'] != "") {
+
+            if ($t['detail_he'] == '') {
+
+
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].' Special Request : '.$t['specialRequest'].'</td>';
+
+            }
+            else {
+
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].', Special Request : '.$t['specialRequest'].'</td>';
+
+            }
+        }
+        else
+        {
+            $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].'</td>';
+
+        }
+
+
+
+
         $mailbody.='</tr>';
         $mailbody.='</table>';
     }
@@ -1043,6 +1095,14 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     $mailbody .= '</table>';
 
+
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailbody .= '<br><span style="color: #000000; padding:10px 30px;">Special Request : <span style="color: #808080">'.$user_order["specialRequest"].'</span></span><br>';
+
+    }
+
     $mailbody .= '<table style="float: right;color:black; padding:10px 30px; width: 270px; position: relative; left: calc(100% - 270px)" cellspacing="5px">';
     $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
     $mailbody .= '<td colspan="2" style="padding: 10px 0; text-align: right" dir="rtl" > מידע ללקוחות   </td>';
@@ -1055,7 +1115,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAddress'].'</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')'.'</td>';
     }
     else
     {
@@ -1164,13 +1224,46 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
         $mailbody.='</tr>';
         $mailbody.='<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
         $mailbody.='<td > </td>';
-        $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].'</td>';
+
+
+
+        if($t['specialRequest'] != "") {
+
+            if ($t['detail_he'] == '') {
+
+
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].' Special Request : '.$t['specialRequest'].'</td>';
+
+            }
+            else {
+
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].', Special Request : '.$t['specialRequest'].'</td>';
+
+            }
+        }
+        else
+        {
+            $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].'</td>';
+
+        }
+
+
+
+
+
         $mailbody.='</tr>';
         $mailbody.='</table>';
     }
 
 
     $mailbody .=  '</div>';
+
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailbody .= '<br><span style="color: #000000">Special Request : <span style="color: #808080; padding:10px 30px;">'.$user_order["specialRequest"].'</span></span><br>';
+
+    }
 
     $mailbody .= '<table style="width: 100%; color:black; padding:10px 30px; background: #FEF2E8; border-bottom: 1px solid #D3D3D3 ">';
 
@@ -1211,7 +1304,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAddress'].'</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')</td>';
     }
     else
     {
@@ -1309,7 +1402,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     if ($user_order['pickFromRestaurant'] == 'false') {
         $mailbody .= ' <span dir="rtl">
        כתובת:  
-    ' . $user_order['deliveryAddress'] . '
+    ' . $user_order['deliveryAddress'] .' ('.$user_order['deliveryArea'].')'.'
     </span>';
 
     }
@@ -1337,7 +1430,37 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
         $mailbody .= '<span dir="rtl">' . $t['qty'] . '  ' . $t['name_he'] . '</span>';
         $mailbody .= '<br>';
-        $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']) . '</span>';
+
+
+
+        if($t['specialRequest'] != "") {
+
+            if ($t['detail_he'] == '') {
+
+
+                $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']).' Special Request : '.$t['specialRequest'].'</span>';
+
+
+            }
+            else {
+
+
+                $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']).', Special Request : '.$t['specialRequest'].'</span>';
+
+
+            }
+        }
+        else
+        {
+            $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']) . '</span>';
+
+        }
+
+
+
+
+
+
         $mailbody .= '<br>';
         $mailbody .= '<br>';
 

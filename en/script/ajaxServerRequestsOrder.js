@@ -814,7 +814,7 @@ function updateCartElements()
             if(foodCartData[x].specialRequest != "")
             {
 
-                if(foodCartData[x].detail == "" ) {
+                if(foodCartData[x].detail != "") {
 
                     str += '<p>' + foodCartData[x].detail + ', special request : ' + foodCartData[x].specialRequest + '</p>';
                 }

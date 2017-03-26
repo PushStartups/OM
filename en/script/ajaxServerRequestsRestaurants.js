@@ -45,7 +45,7 @@ $(document).ready(function() {
         'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
         'cartData': null,                  // COMPUTED CART DATA
         'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
-        'deliveryArea':null,               // DELIVERY AREA
+        'deliveryArea':'',                 // DELIVERY AREA
         'deliveryCharges':null,            // DELIVERY CHARGES
         'specialRequest':""                // SPECIAL REQUEST FROM USER
     };

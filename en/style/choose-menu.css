@@ -209,7 +209,7 @@ a:hover, a:focus {
 
 .add .scrollable-area-wrapper{background: #f7f7f7;}
 #sidebar .scrollable-area-wrapper,
-.scrollable-area.right{height: 290px !important; overflow: hidden;}
+.scrollable-area.right{max-height: 52vh !important; overflow: hidden;}
 .scrollable-area-wrapper .hscrollbar,
 .scrollable-area-wrapper .vscrollbar {
 	position: absolute;
@@ -576,7 +576,7 @@ a:hover, a:focus {
 #sidebar{
 	overflow: hidden;
 	padding: 32px 15px;
-	height: 700px;
+	height: 100%;
 }
 #sidebar h3{
 	margin: 0 0 20px;
@@ -605,8 +605,9 @@ a:hover, a:focus {
 
 
 #sidebar h3 span{
-	width: 24px;
-	height: 24px;
+	width: 30px;
+	height: 30px;
+	padding:2px;
 	-webkit-border-radius:50%;
 	-moz-border-radius:50%;
 	border-radius:50%;
@@ -615,7 +616,7 @@ a:hover, a:focus {
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 16px;
-	line-height: 19px;
+	line-height: 26px;
 	font-weight: 300;
 	letter-spacing: 0.2px;
 	text-align: center;
@@ -1168,14 +1169,18 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 .mypopup.info .scrollable-area.add{height: 570px !important;}
 
 
-@media screen and ( max-height: 829px ){#sidebar .scrollable-area-wrapper, .scrollable-area.right{height: 220px !important;}}
+@media screen and ( max-height: 829px ){
+	#sidebar .scrollable-area-wrapper,
+	.scrollable-area.right{
+	max-height: 38vh !important;}
+}
 @media screen and ( max-height: 767px ){
-	#sidebar .scrollable-area-wrapper, .scrollable-area.right{height: 140px !important;}
+	/*#sidebar .scrollable-area-wrapper, .scrollable-area.right{height: 140px !important;}*/
 	.mypopup .scrollable-area-wrapper, .scrollable-area.popup{max-height: 40vh !important; padding: 0;}
 	.info .img-frame{
-		width: 195px;
-		height: 195px;
-		padding: 15px;
+		width: 170px;
+		height: 170px;
+		padding: 0;
 	}
 	.info .cart{margin:  0 0 30px;}
 	.mypopup.info .scrollable-area-wrapper, .mypopup.info .scrollable-area.add{max-height: 80vh !important;}
@@ -1192,11 +1197,11 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	.content{
 		padding: 0 10px;
 	}
-	.scrollable-area-wrapper,
-	/*.container.new{width: 100% !important;}*/
-	#header{padding: 30px 0 100px;}
+	/*.scrollable-area-wrapper,*/
+	/*!*.container.new{width: 100% !important;}*!*/
+	/*#header{padding: 30px 0 100px;}*/
 	#sidebar .minimum-item h2{
-		margin: 0;
+		margin: 0 0 5px;
 		font-size: 23px;
 		line-height: 24px;
 	}
