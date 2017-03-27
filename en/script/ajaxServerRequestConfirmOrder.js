@@ -54,6 +54,7 @@ $(document).ready(function() {
     $('#checkbox-id-13').prop('checked', true);
 
     userObject.Cash_Card = "CASH";
+    userObject.Cash_Card_he = "מזומן";
 
 
     $('#address-text').html(userObject.restaurantAddress);
@@ -490,6 +491,7 @@ function processPayments()
     if ($('#checkbox-id-13').is(':checked')) {
 
         userObject.Cash_Card = "CASH";
+        userObject.Cash_Card_he = "מזומן";
         onPaymentSuccess();
     }
     else
@@ -529,6 +531,7 @@ function paymentCreditCardCallBack(response) {
     {
         paymentReceived = true;
         userObject.Cash_Card = "Credit Card";
+        userObject.Cash_Card_he = "כרטיס אשראי";
         onPaymentSuccess();
     }
     else
@@ -598,6 +601,11 @@ function  callPage3() {
     if(userObject.deliveryArea == null)
     {
         userObject.deliveryArea = '';
+    }
+
+    if(userObject.specialRequest == null)
+    {
+        userObject.specialRequest = '';
     }
 
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);

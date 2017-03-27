@@ -14,7 +14,7 @@ DB::query("set names utf8");
 
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
-    define("EMAIL","devorders@orderapp.com");
+     define("EMAIL","devorders@orderapp.com");
 
 // QA SERVER
 else if($_SERVER['HTTP_HOST'] == "qa.orderapp.com")
@@ -578,12 +578,12 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         // SEND EMAIL TO KITCHEN
 
-        email_for_kitchen($user_order, $orderId, $todayDate);
+          email_for_kitchen($user_order, $orderId, $todayDate);
 
-        ob_end_clean();
-
-        // CLIENT EMAIL
-        // EMAIL ORDER SUMMARY
+          ob_end_clean();
+//
+//         CLIENT EMAIL
+//         EMAIL ORDER SUMMARY
 
         if ($user_order['language'] == 'en') {
             email_order_summary_english($user_order, $orderId, $todayDate);
@@ -915,7 +915,7 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: left; white-space: nowrap"> Delivery Address : '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')'.'</td>';
+        $mailbody .= '<td style="text-align: left; white-space: nowrap"> Delivery Address : '.$user_order['deliveryAptNo'].'  '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')'.'</td>';
     }
     else{
 
@@ -989,7 +989,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     $mailbody  = '<html><head><meta charset="UTF-8"></head>';
     $mailbody  .= '<body style="padding: 0; margin: 0" >';
-    $mailbody  .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px ">';
+    $mailbody  .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px; overflow: hidden; ">';
     $mailbody  .= '<style>';
     $mailbody  .= '@import url("https://fonts.googleapis.com/css?family=Open+Sans:300");';
     $mailbody  .= '</style>';
@@ -1011,15 +1011,16 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mailbody  .= '</div>';
     $mailbody  .= '<div  style="padding: 10px 30px 0px 30px;" >';
 
+
     foreach($user_order['cartData'] as $t) {
 
         $mailbody.='<table style="width: 100%; color:black; padding: 30px 0; border-bottom: 1px solid #D3D3D3" >';
         $mailbody.='<tr style="font-size: 18px; padding: 10px; font-weight: bold" >';
         $mailbody.='<span style="color: #FF864C;" dir="rtl">';
-        $mailbody.=(($t['price'] * $t['qty'])).'ש"ח';
+        $mailbody.=(($t['price'] * $t['qty'])).'  ש"ח ';
         $mailbody.='</span> &nbsp; <span dir="rtl">ש"ח</span>';
         $mailbody.=$t['price'].' x '.$t['qty'].'</td>';
-        $mailbody.='<td style="text-align: right;" >'. $t['name_he'] .'</td>';
+        $mailbody.='<td style="text-align: right;width: 60%" >'. $t['name_he'] .'</td>';
         $mailbody.='</tr>';
         $mailbody.='<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
         $mailbody.='<td > </td>';
@@ -1031,12 +1032,12 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
             if ($t['detail_he'] == '') {
 
 
-                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].' Special Request : '.$t['specialRequest'].'</td>';
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].' הערות : '.$t['specialRequest'].'</td>';
 
             }
             else {
 
-                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].', Special Request : '.$t['specialRequest'].'</td>';
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].', הערות : '.$t['specialRequest'].'</td>';
 
             }
         }
@@ -1049,18 +1050,28 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
 
 
+
         $mailbody.='</tr>';
         $mailbody.='</table>';
     }
 
-    $mailbody .= '</div>';
+
+    $mailbody .=  '</div>';
+
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailbody .= '<br><span style="color: #000000;text-align: right;float: right;" dir="rtl"> <span style="color: #808080; padding:10px 30px;">בקשה מיוחדת :</span>'.$user_order["specialRequest"].'</span><br>';
+
+    }
+
     $mailbody .= '<table style="width: 100%; color:black; padding:10px 30px; background: #FEF2E8; border-bottom: 1px solid #D3D3D3 ">';
 
     if($user_order['isCoupon'] == "false")
     {
 
         $mailbody .= '<tr style="font-size: 18px;  font-weight: bold">';
-        $mailbody .= '<td style=" white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['total'].' NIS</span></td>';
+        $mailbody .= '<td style=" white-space: nowrap"> <span style="color: #FF864C;" dir="rtl">'.$user_order['total'].' ש"ח '.'</span></td>';
         $mailbody .= '<td style="padding: 5px 0; text-align: right; " > סה"כ </td>';
         $mailbody .= '</tr>';
 
@@ -1068,44 +1079,22 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     else
     {
         $mailbody .= '<tr style="font-size: 18px;  font-weight: bold">';
-        $mailbody .= '<td style=" white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['totalWithoutDiscount'].' NIS</span></td>';
+        $mailbody .= '<td style=" white-space: nowrap"> <span style="color: #FF864C;" >'.$user_order['totalWithoutDiscount'].' ש"ח '.'</span></td>';
         $mailbody .= '<td style="padding: 5px 0; text-align: right; " > סיכום ביניים </td>';
         $mailbody .= '</tr>';
 
-        if($user_order['isFixAmountCoupon'] == 'false')
-        {
-            $amountDiscount = (($user_order['totalWithoutDiscount'] * $user_order['discount']) / 100);
-
-            $mailbody .= '<tr style="font-size: 18px; font-weight: bold">';
-            $mailbody .= '<td style="white-space: nowrap"> <span style="color: #FF864C;"> -'.$amountDiscount.' NIS</span></td>';
-            $mailbody .= '<td style="padding: 5px 0;text-align: right;" dir="rtl" > הנחת קופון -'.$user_order['discount'].'% </td>';
-            $mailbody .= '</tr>';
-        }
-        else
-        {
-
-            $mailbody .= '<tr style="font-size: 18px; font-weight: bold">';
-            $mailbody .= '<td style="white-space: nowrap"> <span style="color: #FF864C;" >-'.$user_order['discount'].' NIS</span></td>';
-            $mailbody .= '<td style="padding: 5px 0;text-align: right;" dir="rtl"> סכום הנחת קופון</td>';
-            $mailbody .= '</tr>';
-
-        }
 
     }
 
     $mailbody .= '</table>';
 
-
-    if($user_order['specialRequest'] != '')
-    {
-
-        $mailbody .= '<br><span style="color: #000000; padding:10px 30px;">Special Request : <span style="color: #808080">'.$user_order["specialRequest"].'</span></span><br>';
-
-    }
-
     $mailbody .= '<table style="float: right;color:black; padding:10px 30px; width: 270px; position: relative; left: calc(100% - 270px)" cellspacing="5px">';
     $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
     $mailbody .= '<td colspan="2" style="padding: 10px 0; text-align: right" dir="rtl" > מידע ללקוחות   </td>';
+    $mailbody .= '</tr>';
+    $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
+    $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['name'].' </td>';
+    $mailbody .= '<td style="padding: 10px 0"><img style="width: 20px" src="http://dev.orderapp.com/restapi/images/ic_user.png"></td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr style="font-size: 12px; padding: 5px 10px; color: #808080">';
     $mailbody .= '<td style="text-align: right; white-space: nowrap"> '.$user_order['contact'].' </td>';
@@ -1115,7 +1104,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')'.'</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAptNo'].'  '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')</td>';
     }
     else
     {
@@ -1133,7 +1122,10 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mailbody .=  '<td style="padding: 10px 0;" > <img style=" width: 20px" src="http://dev.orderapp.com/restapi/images/ic_card.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '</table>';
+
     $mailbody .=  '</div></div></body></html>';
+
+
 
 
     $mail = new PHPMailer;
@@ -1189,7 +1181,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     $mailbody  = '<html><head><meta charset="UTF-8"></head>';
     $mailbody  .= '<body style="padding: 0; margin: 0" >';
-    $mailbody  .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px ">';
+    $mailbody  .= '<div style="max-width: 600px; margin: 0 auto; border: 1px solid #D3D3D3; border-radius: 5px; overflow: hidden; ">';
     $mailbody  .= '<style>';
     $mailbody  .= '@import url("https://fonts.googleapis.com/css?family=Open+Sans:300");';
     $mailbody  .= '</style>';
@@ -1217,10 +1209,10 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
         $mailbody.='<table style="width: 100%; color:black; padding: 30px 0; border-bottom: 1px solid #D3D3D3" >';
         $mailbody.='<tr style="font-size: 18px; padding: 10px; font-weight: bold" >';
         $mailbody.='<span style="color: #FF864C;" dir="rtl">';
-        $mailbody.=(($t['price'] * $t['qty'])).'ש"ח';
+        $mailbody.=(($t['price'] * $t['qty'])).'  ש"ח ';
         $mailbody.='</span> &nbsp; <span dir="rtl">ש"ח</span>';
         $mailbody.=$t['price'].' x '.$t['qty'].'</td>';
-        $mailbody.='<td style="text-align: right;" >'. $t['name_he'] .'</td>';
+        $mailbody.='<td style="text-align: right;width: 60%" >'. $t['name_he'] .'</td>';
         $mailbody.='</tr>';
         $mailbody.='<tr style="font-size: 12px; padding: 5px 10px; color: #808080" >';
         $mailbody.='<td > </td>';
@@ -1232,12 +1224,12 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
             if ($t['detail_he'] == '') {
 
 
-                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].' Special Request : '.$t['specialRequest'].'</td>';
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].' הערות : '.$t['specialRequest'].'</td>';
 
             }
             else {
 
-                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].', Special Request : '.$t['specialRequest'].'</td>';
+                $mailbody.='<td style="text-align: right; padding: 5px" dir="rtl">'.$t['detail_he'].', הערות : '.$t['specialRequest'].'</td>';
 
             }
         }
@@ -1261,7 +1253,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     if($user_order['specialRequest'] != '')
     {
 
-        $mailbody .= '<br><span style="color: #000000">Special Request : <span style="color: #808080; padding:10px 30px;">'.$user_order["specialRequest"].'</span></span><br>';
+        $mailbody .= '<br><span style="color: #000000;text-align: right;float: right;" dir="rtl"> <span style="color: #808080; padding:10px 30px;">בקשה מיוחדת :</span>'.$user_order["specialRequest"].'</span><br>';
 
     }
 
@@ -1304,7 +1296,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAptNo'].'  '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')</td>';
     }
     else
     {
@@ -1322,8 +1314,8 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mailbody .=  '<td style="padding: 10px 0;" > <img style=" width: 20px" src="http://dev.orderapp.com/restapi/images/ic_card.png" ></td>';
     $mailbody .=  '</tr>';
     $mailbody .=  '</table>';
-    $mailbody .=  '</div></div></body></html>';
 
+    $mailbody .=  '</div></div></body></html>';
 
 
     $mail = new PHPMailer;
@@ -1402,7 +1394,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     if ($user_order['pickFromRestaurant'] == 'false') {
         $mailbody .= ' <span dir="rtl">
        כתובת:  
-    ' . $user_order['deliveryAddress'] .' ('.$user_order['deliveryArea'].')'.'
+    '. $user_order['deliveryAptNo'] .' '. $user_order['deliveryAddress'] .' ('.$user_order['deliveryArea'].')'.'
     </span>';
 
     }
@@ -1438,14 +1430,14 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
             if ($t['detail_he'] == '') {
 
 
-                $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']).' Special Request : '.$t['specialRequest'].'</span>';
+                $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']).' הערות : '.$t['specialRequest'].'</span>';
 
 
             }
             else {
 
 
-                $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']).', Special Request : '.$t['specialRequest'].'</span>';
+                $mailbody .= '<span dir="rtl">' . preg_replace("/\([^)]+\)/", "", $t['detail_he']).', הערות : '.$t['specialRequest'].'</span>';
 
 
             }
