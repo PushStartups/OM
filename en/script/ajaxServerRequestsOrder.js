@@ -27,7 +27,6 @@ $(document).ready(function() {
 
     }
 
-
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
     userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
@@ -148,7 +147,7 @@ function displayRestDetail() {
 
     // SETTING MINIMUM ORDER
 
-    temp = '<p>Minimum '+ selectedRest.min_amount +' NIS</p>';
+    temp = '<p>Minimum Order '+ selectedRest.min_amount +' NIS</p>';
 
     $('#min-order').html(temp);
 
@@ -329,7 +328,7 @@ function onItemSelectedCallBack(response)
                     }
                     else
                     {
-                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length + ',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en +'</li>';
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en +'</li>';
                     }
 
                     if (y ==0 || (convertFloat(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
@@ -355,10 +354,10 @@ function onItemSelectedCallBack(response)
             }
 
 
-            oneTypeStr += '<div id="oneTypeDD'+x+'" class="add-row">'+
+            oneTypeStr += '<div id="oneTypeDD'+oneTypeSubItems.length+'" class="add-row">'+
                 '<label>' + extras.extra_with_subitems[x].name_en + '</label>'+
                 '<div id="cards-drop" class="custom-drop-down">'+
-                '<input id="input'+x+'" placeholder="Please Choose"  value ="'+ minSubItemName +'"  style="font-size: 18px" readonly="">'+
+                '<input id="input'+oneTypeSubItems.length+'" placeholder="Please Choose"  value ="'+ minSubItemName +'"  style="font-size: 18px" readonly="">'+
                 '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="/en/img/drop_down.png">'+
                 '<div id="list" class="custom-drop-down-list" style="display: none;">'+
                 '<ul id="categories_list">';
@@ -375,7 +374,7 @@ function onItemSelectedCallBack(response)
 
                 subItem[extras.extra_with_subitems[x].name_en] = null;
                 oneTypeSubItems.push(subItem);
-                isOneExist = true;
+
             }
             else
             {
@@ -398,6 +397,8 @@ function onItemSelectedCallBack(response)
 
             }
 
+            isOneExist = true;
+
         }
 
         // // EXTRAS WITH TYPE MULTIPLE (MULTIPLE SELECTABLE)
@@ -409,8 +410,8 @@ function onItemSelectedCallBack(response)
             {
                 // SUB ITEMS WITH MULTIPLE SELECTABLE OPTIONS
 
-
                 multipleTypeStr += '<div class="add-row">' +
+                    '<label style="text-align: left; margin-bottom: 20px">' + extras.extra_with_subitems[x].name_en + '</label>'+
                     '<ul class="checkbox-list">';
 
                 for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
@@ -418,14 +419,14 @@ function onItemSelectedCallBack(response)
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_en.capitalize() + '</label></li>';
                     }
@@ -572,7 +573,20 @@ function addUserOrder()
 
 
                 $(parent).addClass("error");
-               // scrollToError(index);
+
+                setTimeout(function(){
+
+                    var container = $('.scrollable-area.popup'),
+                        scrollTo = $(parent);
+
+                    // Or you can animate the scrolling:
+                    container.animate({
+
+                        scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+                    },500)
+
+                }, 300);
+
 
                 return;
             }
@@ -861,7 +875,7 @@ function updateCartElements()
         $('#totalAmount').html(userObject.total + " NIS");
         hideShowMinAmount(userObject.total);
 
-        $('#minAmount').html("Minimum "+minOrderLimit + " NIS");
+        $('#minAmount').html("Minimum Order "+minOrderLimit + " NIS");
 
         $('.col-second').css("visibility","visible");
         $('.col-one').hide();

@@ -10,7 +10,7 @@ $(function() {
         {
             $(this).find(".custom-drop-down-list").slideDown(200);
 
-            scrollToError('');
+
         }
 
         e.stopPropagation();
