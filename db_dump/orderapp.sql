@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 26, 2017 at 10:25 AM
+-- Generation Time: Mar 26, 2017 at 01:28 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.29
 
@@ -585,19 +585,19 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (204, 99, 'Sauces', 'Multiple', 0, 'רטבים', 255),
 (205, 99, 'Addons', 'Multiple', 0, 'תוספות', 256),
 (206, 99, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 257),
-(207, 100, 'Bread', 'One', 0, 'לחם לתשלום', 258),
+(207, 100, 'Bread', 'Multiple', 7, 'לחם לתשלום', 258),
 (208, 100, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 259),
-(209, 101, 'Bread', 'One', 0, 'לחם לתשלום', 260),
+(209, 101, 'Bread', 'Multiple', 7, 'לחם לתשלום', 260),
 (210, 101, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 261),
-(211, 102, 'Bread', 'One', 0, 'לחם לתשלום', 262),
+(211, 102, 'Bread', 'Multiple', 7, 'לחם לתשלום', 262),
 (212, 102, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 263),
-(213, 103, 'Bread', 'One', 0, 'לחם לתשלום', 264),
+(213, 103, 'Bread', 'Multiple', 7, 'לחם לתשלום', 264),
 (214, 103, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 265),
-(215, 104, 'Bread', 'One', 0, 'לחם לתשלום', 266),
+(215, 104, 'Bread', 'Multiple', 7, 'לחם לתשלום', 266),
 (216, 104, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 267),
-(217, 105, 'Bread', 'One', 0, 'לחם לתשלום', 268),
+(217, 105, 'Bread', 'Multiple', 7, 'לחם לתשלום', 268),
 (218, 105, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 269),
-(219, 106, 'Bread', 'One', 0, 'לחם לתשלום', 270),
+(219, 106, 'Bread', 'Multiple', 7, 'לחם לתשלום', 270),
 (220, 106, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 271),
 (221, 107, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 272),
 (222, 108, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 273),
