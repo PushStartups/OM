@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 29, 2017 at 08:38 AM
+-- Generation Time: Mar 29, 2017 at 08:47 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.29
 
@@ -332,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `coupons` (
   `discount` int(11) DEFAULT NULL,
   `type` varchar(222) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `coupons`
@@ -343,7 +343,8 @@ INSERT INTO `coupons` (`id`, `name`, `starting_date`, `ending_date`, `discount`,
 (8, 'BETA20', '2017-02-27 00:00:00', '2017-05-31 00:00:00', 20, 'percentage'),
 (9, 'OSHI40', '2017-03-02 00:00:00', '2017-05-31 00:00:00', 40, 'amount'),
 (10, '10APP', '2017-03-01 00:00:00', '2017-06-30 00:00:00', 10, 'percentage'),
-(11, 'TEST25', '2017-03-19 00:00:00', '2017-03-20 00:00:00', 25, 'percentage');
+(11, 'TEST25', '2017-03-19 00:00:00', '2017-03-20 00:00:00', 25, 'percentage'),
+(12, 'Test40', '2017-03-29 00:00:00', '2017-04-30 00:00:00', 40, 'amount');
 
 -- --------------------------------------------------------
 
@@ -1819,7 +1820,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=445 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=447 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -2207,7 +2208,9 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (441, 356, 1, 'Angus Burger', 48, 'Egg (+4), portobello mushroom (+4)'),
 (442, 357, 1, 'Angus Salad', 90, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19)'),
 (443, 357, 1, 'Chicken Salad', 88, '150 grams goose breast or entrecote (+19), \n50 grams goose breast (+8), 150 grams entrecote (+19)'),
-(444, 357, 1, 'Angus Burger', 44, 'Egg (+4), Lettuce');
+(444, 357, 1, 'Angus Burger', 44, 'Egg (+4), Lettuce'),
+(445, 358, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
+(446, 358, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)');
 
 -- --------------------------------------------------------
 
@@ -5661,7 +5664,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'Muhammad', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'test user', '', '', '3434343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(260, 'test@gmail.com', 'test', '', '', '3434454545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (261, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad', '', '', '343434', 'ddddfdfdfdfdf', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -5847,7 +5850,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=358 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=359 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -6119,7 +6122,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (354, 260, 1, 71, NULL, 0, '2017-03-29'),
 (355, 260, 1, 229, NULL, 0, '2017-03-29'),
 (356, 260, 1, 225, NULL, 0, '2017-03-29'),
-(357, 260, 1, 222, NULL, 0, '2017-03-29');
+(357, 260, 1, 222, NULL, 0, '2017-03-29'),
+(358, 260, 1, 131, NULL, 0, '2017-03-29');
 
 -- --------------------------------------------------------
 
