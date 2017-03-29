@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="Final Update Desktop And Mobile Client">
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/order.html" afterPath="$PROJECT_DIR$/en/order.html" />
     </list>
@@ -27,8 +27,8 @@
       <file leaf-file-name="order.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/en/order.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="445" column="8" selection-start-line="445" selection-start-column="8" selection-end-line="445" selection-end-column="8" />
+            <state relative-caret-position="591">
+              <caret line="447" column="4" selection-start-line="447" selection-start-column="4" selection-end-line="447" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -697,14 +697,7 @@
       <workItem from="1490593295123" duration="3714000" />
       <workItem from="1490603253530" duration="15979000" />
       <workItem from="1490678622642" duration="1205000" />
-      <workItem from="1490765045329" duration="13329000" />
-    </task>
-    <task id="LOCAL-00002" summary="Final Production Release 29 Feb 2017 Fixes">
-      <created>1488362535912</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1488362535912</updated>
+      <workItem from="1490765045329" duration="13336000" />
     </task>
     <task id="LOCAL-00003" summary="Final Production Release 29 Feb 2017 Fixes">
       <created>1488364234937</created>
@@ -1042,11 +1035,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490790233262</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Final Update Desktop And Mobile Client">
+      <created>1490790502835</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1490790502836</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262018000" />
+    <option name="totallyTimeSpent" value="262025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1186" extended-state="0" />
@@ -1684,8 +1684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/en/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="445" column="8" selection-start-line="445" selection-start-column="8" selection-end-line="445" selection-end-column="8" />
+        <state relative-caret-position="591">
+          <caret line="447" column="4" selection-start-line="447" selection-start-column="4" selection-end-line="447" selection-end-column="4" />
           <folding />
         </state>
       </provider>
