@@ -152,6 +152,7 @@ function displayRestDetail() {
     $('#min-order').html(temp);
 
 
+
 }
 
 
@@ -229,7 +230,16 @@ function  getCategoriesWithItems(response)
 
     initAccordion();
 
+
+
+    var div = document.getElementById('scrollable');
+
+    div.setAttribute('ss-container', true);
+
+    SimpleScrollbar.initAll();
+
 }
+
 
 function hideShowMinAmount( total )
 {
@@ -461,6 +471,12 @@ function onItemSelectedCallBack(response)
     $('#parent_type_multiple').show();
 
 
+    var div = document.getElementById('scrollable2');
+
+    div.setAttribute('ss-container', true);
+
+    SimpleScrollbar.initAll();
+
     $('#myorder').modal('show');
 
 }
@@ -593,6 +609,7 @@ function addUserOrder()
 
         }
     }
+
 
 
     $('#parent_type_one').hide();

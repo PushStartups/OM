@@ -850,6 +850,17 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	color: #f00;
 	margin-bottom: 10px;
 }
+#scrollable{
+	padding: 0;
+	height: 83vh;
+	background: #fff;
+}
+.ss-wrapper{
+	margin: 0 0 0 -18px;
+}
+.ss-scroll{
+	right:-98.6% !important;
+}
 @media screen and ( max-height: 849px ){.row-holder{padding: 0 0 10px;}}
 @media screen and ( max-height: 829px ){#sidebar .scrollable-area-wrapper, .scrollable-area.right{max-height: 26vh !important;}}
 @media screen and ( max-height: 767px ){

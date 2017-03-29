@@ -71,6 +71,13 @@ $(document).ready(function() {
     updateCartElements();
 
     initAccordion();
+
+
+    var div = document.getElementById('scrollable');
+
+    div.setAttribute('ss-container', true);
+
+    SimpleScrollbar.initAll();
 });
 
 
@@ -287,6 +294,8 @@ function saveUserInfo() {
     hideSlide($('#customerSlider'));
 
 }
+
+
 
 
 function deliveryAddress()
@@ -507,8 +516,16 @@ function processPayments()
 // CREDIT CARD PAYMENT
 function payment_credit_card(token) {
 
+    var  newTotal = userObject.total;
 
-    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : userObject.total, "email"  : userObject.email, "token"  : token},paymentCreditCardCallBack);
+    if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
+
+        newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
+
+    }
+
+
+    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : newTotal, "email"  : userObject.email, "token"  : token},paymentCreditCardCallBack);
 
 }
 
@@ -607,6 +624,15 @@ function  callPage3() {
     {
         userObject.specialRequest = '';
     }
+
+    if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
+
+      var  newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
+
+      userObject.total = newTotal;
+
+    }
+
 
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
 

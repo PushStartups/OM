@@ -796,6 +796,10 @@ a:hover, a:focus {
 	overflow: hidden;
 	padding:24px 31px 78px;
 }
+#scrollable2{
+	height :60vh;
+	background: none;
+}
 .mypopup .scrollable-area-wrapper,
 .scrollable-area.popup{
 	height: inherit !important;
@@ -991,11 +995,26 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	width:937px !important;
 }
 .info .first-col{
+	height: 100%;
+	min-height:100%;
+	z-index: 9;
 	padding: 40px;
 	position: relative;
 	-webkit-border-radius:13px 0 0 13px;
 	-moz-border-radius:13px 0 0 13px;
 	border-radius:13px 0 0 13px;
+
+}
+.info .first-col:after{
+	width: 100%;
+	height: 9999px;
+	content: '';
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: -1;
 	background-image: linear-gradient(197deg, #ffae5e, #ff7f00);
 }
 .info .img-frame {
@@ -1079,11 +1098,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	text-shadow:none;
 }
 .mobile-sec{
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right:0;
 	bottom:20px;
-	width: 100%;
 	display: block;
 }
 .info .second-col{
@@ -1169,6 +1187,21 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 .mypopup.info .scrollable-area.add{height: 570px !important;}
 
 
+
+
+#scrollable{
+	padding: 0;
+	height: 83vh;
+	background: #f7f7f7;
+}
+.ss-wrapper{
+	margin: 0 0 0 -18px;
+}
+.ss-scroll{
+	right:-98.5% !important;
+}
+
+
 @media screen and ( max-height: 829px ){
 	#sidebar .scrollable-area-wrapper,
 	.scrollable-area.right{
@@ -1187,6 +1220,9 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	.accordion {
 		padding-bottom: 100px;
 	}
+	#sidebar .scrollable-area-wrapper,
+	.scrollable-area.right{
+		max-height: 35vh !important;}
 }
 @media only screen and (max-width: 1279px){.btn-top{display: none;}}
 @media only screen and (max-width: 1024px){

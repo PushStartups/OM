@@ -10,6 +10,7 @@
     <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/en/style/simple-scrollbar.css">
     <link rel="stylesheet" type="text/css" href="/en/style/confirm-order.css">
     <link href="/en/style/dropdown.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
@@ -122,7 +123,7 @@
             <div class=" height-box">
                 <div class="row no-gutters">
                     <div class="col-sm-8 col-md-8 col-xs-8 add">
-                        <div class="scrollable-area">
+                        <div  id="scrollable">
                             <div class="left-content">
                                 <ul class="accordion multilevel-accordion">
                                     <li id="customerInfoParent" class="active">
@@ -474,6 +475,8 @@
 <script src="/en/script/ajaxServerRequestConfirmOrder.js"></script>
 <script type="text/javascript" src="/en/script/jquery.accordion.without.click.js"></script>
 <script src="/en/script/alertify.min.js"></script>
+<script type="text/javascript" src="/en/script/simple-scrollbar.min.js"></script>
+<script type="text/javascript" src="/en/script/simple-scrollbar.js"></script>
 <script>
 
 
@@ -779,6 +782,7 @@
     else {
 
         Stripe.setPublishableKey('pk_live_hZQdQ1kOkSbIMhVan4WM6qSY');
+
     }
 
 

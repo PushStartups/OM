@@ -10,6 +10,7 @@
         <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/en/style/simple-scrollbar.css">
         <link rel="stylesheet" type="text/css" href="/en/style/choose-menu.css">
         <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
         <link href="/en/style/dropdown.css" rel="stylesheet" />
@@ -123,13 +124,11 @@
             <div class=" height-box">
                 <div class="row no-gutters">
                     <div class="col-sm-8 col-md-8 col-xs-8 add">
-                        <div class="scrollable-area">
-
+                        <div id="scrollable">
                             <!--CATEGORIES AND ITEMS LIST-->
                             <div class="left-content" id="categories-items">
 
                             </div>
-
                         </div>
                     </div>
 
@@ -257,7 +256,7 @@
                     <span id="itemPopUpPrice" class="txt"> </span>
 
                 </div>
-                <div class="scrollable-area popup">
+                <div id="scrollable2" class="popup">
                     <div class="add-row first text-center">
 
                         <!--ITEM DESCRIPTION IN POPUP -->
@@ -414,6 +413,7 @@
 <script src="/en/script/alertify.min.js"></script>
 
 
+
 <script>
 
     // replace custom forms
@@ -429,6 +429,8 @@
 <script src="/en/script/bootstrap.min.js"></script>
 <script src="/en/script/script.js"> </script>
 <script src="/en/script/dropdown.js"></script>
+<script type="text/javascript" src="/en/script/simple-scrollbar.min.js"></script>
+<script type="text/javascript" src="/en/script/simple-scrollbar.js"></script>
 
 
 
@@ -457,6 +459,8 @@
         $(this).toggleClass('active');
 
     });
+
+
 
 </Script>
 </body>
