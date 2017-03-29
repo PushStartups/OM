@@ -14,7 +14,7 @@ DB::query("set names utf8");
 
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
-     define("EMAIL","devorders@orderapp.com");
+    define("EMAIL","devorders@orderapp.com");
 
 // QA SERVER
 else if($_SERVER['HTTP_HOST'] == "qa.orderapp.com")
@@ -29,8 +29,6 @@ else
 // SLIM INITIALIZATION
 $app = new \Slim\App();
 $app = new \Slim\App();
-
-
 
 
 //  GET LIST OF CITIES
@@ -575,22 +573,32 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         }
 
+        $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
+        $chat_id = "-165732759";
+
+        telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
+
+        ob_end_clean();
+
 
         // SEND EMAIL TO KITCHEN
 
-          email_for_kitchen($user_order, $orderId, $todayDate);
+        email_for_kitchen($user_order, $orderId, $todayDate);
 
-          ob_end_clean();
+        ob_end_clean();
+
 //
 //         CLIENT EMAIL
 //         EMAIL ORDER SUMMARY
 
         if ($user_order['language'] == 'en') {
             email_order_summary_english($user_order, $orderId, $todayDate);
-        } else {
+        }
+        else {
 
             email_order_summary_hebrew($user_order, $orderId, $todayDate);
         }
+
 
         ob_end_clean();
 
@@ -1501,6 +1509,9 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
 
 
+// BRING SEND ADDRESS OF DELIVERY
+
+
 function createBringgTask($user_order, $todayDate, $delivery_time) {
 
     $url = 'https://admin-api.bringg.com//services/6f15901b/caa8a0ea-0b7a-4bd6-87cb-f07c77d66c48/27e666d2-e7cd-4917-988b-aa109829f0c4/';
@@ -1577,6 +1588,119 @@ function createBringgTask($user_order, $todayDate, $delivery_time) {
     }
 
     curl_close($ch);
+
+}
+
+
+
+
+function createOrderForTelegram($user_order)
+{
+    $mailBody = '';
+    $mailBody = " הזמנה חדשה".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'].'
+    
+    ';
+
+    $mailBody .= 'שם הלקוח :' . $user_order['name'] . '
+    
+    ';
+    $mailBody .= 'מספר :' . $user_order['contact'] . '
+    
+    ';
+
+    if ($user_order['pickFromRestaurant'] == 'false') {
+
+        $mailBody .= ':  כתובת'. $user_order['deliveryAptNo'] .' '. $user_order['deliveryAddress'] .' ('.$user_order['deliveryArea'].')'.' 
+        
+        ';
+    }
+    else
+    {
+        $mailBody .= 'כתובת: איסוף עצמי'.'
+        
+        ' ;
+    }
+
+    $mailBody .= 'הזמנה :' . substr($user_order['contact'], -4) . ' 
+    
+    ';
+
+
+
+    foreach ($user_order['cartData'] as $t) {
+
+
+        $mailBody .=  $t['qty'] . '  ' . $t['name_he'] . ' 
+        
+        ';
+
+
+
+        if($t['specialRequest'] != "") {
+
+
+            if ($t['detail_he'] == '') {
+
+
+                $mailBody .=  preg_replace("/\([^)]+\)/", "", $t['detail_he']).'הערות :'.$t['specialRequest'].' 
+                
+                ';
+
+
+            }
+            else {
+
+
+                $mailBody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']).' ,הערות :'.$t['specialRequest'].' 
+               
+                ';
+
+            }
+        }
+        else
+        {
+            $mailBody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']) . ' 
+            
+            ';
+
+        }
+    }
+
+    return $mailBody;
+}
+
+
+
+
+//  TELEGRAM API
+//  SEND ORDERS THROUGH TELEGRAM
+
+function telegramAPI($bot_id, $chat_id, $text) {
+
+
+    $postData = array(
+        'chat_id' => $chat_id,
+        'text' => $text
+    );
+
+
+    $headers = array(
+        'Content-Type: application/json'
+    );
+
+
+    $url = 'https://api.telegram.org/bot'.$bot_id.'/sendMessage';
+
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+    $response = curl_exec($ch);
+    echo "Response: ".$response;
+    curl_close($ch);
+
 
 }
 

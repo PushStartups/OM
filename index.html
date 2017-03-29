@@ -73,7 +73,7 @@
             window.location.href = 'https://qa.orderapp.com/m/en/';
 
         }
-        else if(window.location.hostname == "stagingm.orderapp.com")
+        else if(window.location.hostname == "staging.orderapp.com")
         {
 
             if (location.protocol != 'https:')
@@ -81,7 +81,7 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://stagingm.orderapp.com/m/en/';
+            window.location.href = 'https://staging.orderapp.com/m/en/';
         }
 
     }
@@ -128,10 +128,14 @@
 
         }
 
-        else if(window.location.hostname == "stagingm.orderapp.com")
+        else if(window.location.hostname == "staging.orderapp.com")
         {
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
 
-            window.location.href = 'https://staging.orderapp.com';
+            window.location.href = 'https://staging.orderapp.com/en/';
 
         }
 
