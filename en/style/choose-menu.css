@@ -796,9 +796,14 @@ a:hover, a:focus {
 	overflow: hidden;
 	padding:24px 31px 78px;
 }
+
+.inner-sec{}
 #scrollable2{
-	height :60vh;
+
+	overflow-y: scroll;
+	max-height: 60vh !important;
 	background: none;
+
 }
 .mypopup .scrollable-area-wrapper,
 .scrollable-area.popup{
