@@ -780,11 +780,10 @@ a:hover, a:focus {
 	vertical-align: middle;
 }
 
-/*  */
-
 .mypopup{
 	overflow: hidden;
 }
+
 .mypopup,
 .mypopup .modal-content{
 	border-radius: 13px;
@@ -792,6 +791,7 @@ a:hover, a:focus {
 	margin: 0 auto;
 	overflow: hidden;
 }
+
 .mypopup .holder{
 	overflow: hidden;
 	padding:24px 31px 78px;
