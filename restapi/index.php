@@ -855,6 +855,22 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
     }
 
+    if($user_order['pickFromRestaurant'] == 'false' && $user_order['deliveryCharges'] != null && $user_order['deliveryCharges'] != 0) {
+
+        $mailbody .= '<table style="width: 100%; color:black; padding: 30px 0; border-bottom: 1px solid #D3D3D3" >';
+
+        $mailbody .= '<tr style="font-size: 18px; padding: 10px; font-weight: bold" >';
+
+        // print item name
+        $mailbody .= '<td > Delivery Fee </td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap"><span style="color: #FF864C;" >' . (($user_order['deliveryCharges'])) . ' NIS</span></td>';
+        $mailbody .= '</tr>';
+
+        $mailbody .= '</tr>';
+        $mailbody .= '</table>';
+
+    }
+
     $mailbody .= '</div>';
 
 
