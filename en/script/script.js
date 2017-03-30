@@ -33,7 +33,7 @@ $(function () {
 
     $('body').on('click', '.time-drop-down', function(e) {
 
-        var container = $('.ss-content');
+        var container = $('#scrollable1');
         var scrollTo = $(this);
 
         setTimeout(function(){
@@ -99,7 +99,7 @@ $(function () {
     $('body').on('click', '.discount-drop-down', function(e) {
 
 
-        var container = $('.ss-content');
+        var container = $('#scrollable1');
         var scrollTo = $(this);
 
         setTimeout(function(){

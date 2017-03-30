@@ -230,14 +230,6 @@ function  getCategoriesWithItems(response)
 
     initAccordion();
 
-
-
-    var div = document.getElementById('scrollable');
-
-    div.setAttribute('ss-container', true);
-
-    SimpleScrollbar.initAll();
-
 }
 
 
@@ -471,11 +463,12 @@ function onItemSelectedCallBack(response)
     $('#parent_type_multiple').show();
 
 
-    var div = document.getElementById('scrollable2');
+    // var div = document.getElementById('scrollable2');
+    //
+    // div.setAttribute('ss-container', true);
+    //
+    // SimpleScrollbar.initAll();
 
-    div.setAttribute('ss-container', true);
-
-    SimpleScrollbar.initAll();
 
     $('#myorder').modal('show');
 
@@ -867,19 +860,19 @@ function updateCartElements()
             // BUTTON DECREASE OR CANCEL DEPENDS ON QUANTITY
             if (convertFloat(foodCartData[x].qty) == 1) {
 
-                str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="/en/img/ic_cancel.png">';
+                str += '<img id="left-btn'+x+'" onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="/en/img/ic_cancel.png">';
             }
             else
             {
 
-                str += '<img onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="/en/img/ic_reduce.png">';
+                str += '<img id="left-btn'+x+'" onclick="onQtyDecreasedButtonClicked(' + x + ')" class="left-btn" src="/en/img/ic_reduce.png">';
             }
 
 
             str += '<span id="count'+x+'" class="count">' +
                 foodCartData[x].qty.toString() +
                 '</span>' +
-                '<img onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="/en/img/ic_plus.png">' +
+                '<img id="increase-btn"'+x+' onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="/en/img/ic_plus.png">' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
@@ -957,7 +950,9 @@ function onQtyIncreaseButtonClicked(index) {
 
     $('.badge').html(parseInt($('.badge').html()) + 1);
 
-    $('.left-btn').attr("src","/m/en/img/ic_reduce.png");
+    var leftBtnId = "#left-btn"+index;
+
+    $(leftBtnId).attr("src","/m/en/img/ic_reduce.png");
 
 }
 
@@ -1039,7 +1034,10 @@ function onQtyDecreasedButtonClicked(index) {
 
         if(foodCartData[index].qty == 1)
         {
-            $('.left-btn').attr("src","/m/en/img/ic_cancel.png");
+
+            var leftBtnId = "#left-btn"+index;
+            $(leftBtnId).attr("src","/m/en/img/ic_cancel.png");
+
         }
 
     }

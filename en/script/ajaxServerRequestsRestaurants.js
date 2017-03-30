@@ -264,34 +264,11 @@ function  getAllRestaurants(response)
     }
 
     // APPEND AL RESTAURANTS DATA TO FRONT
-    $("#scrollable").append(allRestaurants);
+    $("#scrollable1").append(allRestaurants);
 
     // APPEND LAST ROW
     var lastRow = '<div class="row separator last">';
-    $("#scrollable").append(lastRow);
-
-    var div = document.getElementById('scrollable');
-
-    div.setAttribute('ss-container', true);
-
-    SimpleScrollbar.initAll();
-
-    //dynamically added event
-    $('.ss-content').on('scroll', function () {
-
-        var scroll = $('.ss-content').scrollTop();
-
-        if(scroll == 0)
-        {
-            $("header").removeClass("shrink");
-
-        }
-        else
-        {
-            $("header").addClass("shrink");
-
-        }
-    });
+    $("#scrollable1").append(lastRow);
 
 }
 

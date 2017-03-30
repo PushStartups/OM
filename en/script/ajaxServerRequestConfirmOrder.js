@@ -41,6 +41,9 @@ $(document).ready(function() {
     restId                      = userObject.restaurantId;                         // SELECTED RESTAURANT ID
 
 
+    $('#rest-title').html(userObject.restaurantTitle);
+
+
     // HIDE SUBMIT ORDER BUTTON ON START
 
     $('#submitOrder').hide();
@@ -72,12 +75,6 @@ $(document).ready(function() {
 
     initAccordion();
 
-
-    var div = document.getElementById('scrollable');
-
-    div.setAttribute('ss-container', true);
-
-    SimpleScrollbar.initAll();
 });
 
 

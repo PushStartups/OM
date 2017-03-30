@@ -1,14 +1,3 @@
-@font-face {
-	font-family: 'HelveticaNeue';
-	src: url('/en/fonts/helveticaneue/HelveticaNeue.woff') format('woff'),
-	url('/en/fonts/helveticaneue/HelveticaNeue Thin.ttf') format('truetype'),
-	url('/en/fonts/helveticaneue/HelveticaNeue Thin.eot') format('eot');
-}
-@font-face {
-	font-family: 'Lobster';
-	src: url('/en/fonts/lobster/Lobster.woff') format('woff'),
-	url('/en/fonts/lobster/Lobster.ttf') format('truetype');
-}
 html,  body {
 	min-height:100%;
 	overflow: hidden;
@@ -18,7 +7,7 @@ body {
 
 	height: 100%;
 	background-color: #fff;
-	font: 15px/18px 'HelveticaNeue', Arial, sans-serif, Helvetica;
+	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
 	background: url('/en/img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	overflow: hidden;
@@ -225,7 +214,7 @@ a:hover, a:focus {
 	font-size: 23px;
 	line-height: 26px;
 	text-transform: uppercase;
-	font-weight: 600;
+	font-weight: 400;
 	color: #fff;
 }
 .jumbotron.jumbotron-fluid{
@@ -260,14 +249,13 @@ a:hover, a:focus {
 	position:absolute;
 	top:40px;
 	right:40px;
-	z-index: 9999999;
+	z-index: 99999;
 }
 #nav ul{
 	padding:0;
 	margin:0;
 	list-style:none;
 	overflow:hidden;
-	font-family: 'HelveticaNeue';
 	font-size: 16px;
 	line-height:19px;
 	font-weight: 300;
@@ -308,7 +296,7 @@ a:hover, a:focus {
 
 .container.new{
 	width:960px !important;
-	padding:0 37px 0  !important;
+	padding:70px 37px 0  !important;
 
 
 
@@ -483,7 +471,7 @@ a:hover, a:focus {
 	padding: 17px 6px;
 	padding-bottom: 8px;
 	text-align: center;
-	font-weight: bold;
+	font-weight: 400;
 }
 
 .order-now-box .footer {
@@ -557,7 +545,7 @@ a:hover, a:focus {
 	display: inline-block;
 	vertical-align: middle;
 	margin-top: 0;
-	font-weight: bold;
+	font-weight: 400;
 }
 .row-heading .title{
 	font-size: 10px;
@@ -816,7 +804,6 @@ img.gallery {
 .time-popup.new .txt{
 	overflow: hidden;
 	padding:20px 25px 10px;
-	font-family: 'HelveticaNeue';
 	font-size: 16px;
 	font-weight: 300;
 	font-style: normal;
@@ -859,8 +846,7 @@ img.gallery {
 .discount-popup.new .txt{
 	overflow: hidden;
 	padding:20px 25px 10px;
-	font-family: 'HelveticaNeue';
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 300;
 	font-style: normal;
 	font-stretch: normal;
@@ -936,6 +922,7 @@ img.gallery {
 #about {
 
 	text-align: center;
+	z-index: 999999;
 }
 .modal {
 	text-align: center;
@@ -968,7 +955,7 @@ img.gallery {
 #about p {
 	font-size: 16px;
 	line-height: 19px;
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
 	letter-spacing: 1px;
@@ -981,7 +968,7 @@ img.gallery {
 	line-height: 25px;
 	letter-spacing: 0.2px;
 	margin:0 0 20px;
-	font-weight: bold;
+	font-weight: 400;
 	color: #797979;
 }
 
@@ -997,6 +984,7 @@ img.gallery {
 	color:#fff;
 	opacity:1;
 	outline: none;
+	font-weight:400 !important;
 }
 #about .close:focus,
 #slider-popup .close:focus {

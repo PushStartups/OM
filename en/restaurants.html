@@ -11,6 +11,7 @@
         <!--STYLE SHEETS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/en/style/baron.css">
         <link rel="stylesheet" type="text/css" href="/en/style/rest-list-new.css">
         <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
         <link rel="stylesheet" type="text/css" href="/en/style/simple-scrollbar.css">
@@ -59,7 +60,11 @@
       We remove the phone call and give you the option of live chat or digital menu." />
     </head>
 </head>
-
+<style>
+    ::-webkit-scrollbar { /* for Mac OS X support */
+        width: 0;
+    }
+</style>
 <body>
 
 <script>
@@ -111,8 +116,16 @@
         <div class="container new height-box" >
 
             <!--ALL RESTAURANTS-->
-            <div id="scrollable">
-            </div>
+                <div class="baron">
+                    <div id="scrollable1" class="baron__scroller">
+                    </div>
+                    <div class="baron__track">
+                        <div class="baron__bar add1"></div>
+                    </div>
+                </div>
+
+
+
 
         </div>
     </section>
@@ -246,20 +259,29 @@
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/en/script/bootstrap.min.js"></script>
-<script type="text/javascript" src="/en/script/simple-scrollbar.min.js"></script>
-<script type="text/javascript" src="/en/script/simple-scrollbar.js"></script>
 <script src="/en/script/script.js"> </script>
 <script src="/en/script/commonAjaxCall.js"> </script>
 <script src="/en/script/ajaxServerRequestsRestaurants.js"> </script>
 <script src="/en/script/alertify.min.js"></script>
+<script type="text/javascript" src="/en/script/baron.js"></script>
 
 
 
 <script>
 
+
+    window.onload = function() {
+        window.dima = baron({
+            root: '.baron',
+            scroller: '.baron__scroller',
+            bar: '.baron__bar'
+        }).autoUpdate();
+    };
+
+
     $( ".btn-top" ).click(function() {
 
-        $('.ss-content').stop().animate({ scrollTop: 0 }, 500);
+        $('#scrollable1').stop().animate({ scrollTop: 0 }, 500);
 
     });
 

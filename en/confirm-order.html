@@ -10,7 +10,7 @@
     <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/en/style/simple-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/en/style/baron.css">
     <link rel="stylesheet" type="text/css" href="/en/style/confirm-order.css">
     <link href="/en/style/dropdown.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/en/style/alertify.min.css">
@@ -61,7 +61,11 @@
       We remove the phone call and give you the option of live chat or digital menu." />
 
 </head>
-</head>
+<style>
+    ::-webkit-scrollbar { /* for Mac OS X support */
+        width: 0;
+    }
+</style>
 
 
 <script>
@@ -115,7 +119,7 @@
             <header class="header-box">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1>BANDORA</h1>
+                        <h1 id="rest-title"></h1>
                         <span class="title-add">Delivery services is available</span>
                     </div>
                 </div>
@@ -123,7 +127,10 @@
             <div class=" height-box">
                 <div class="row no-gutters">
                     <div class="col-sm-8 col-md-8 col-xs-8 add">
-                        <div  id="scrollable">
+
+                        <div class="baron">
+                            <div id="scrollable3" class="baron__scroller">
+
                             <div class="left-content">
                                 <ul class="accordion multilevel-accordion">
                                     <li id="customerInfoParent" class="active">
@@ -358,13 +365,26 @@
                                 <div class="empty-height"></div>
                             </div>
                         </div>
+                        <!-- end scroll  -->
+                            <div class="baron__track">
+                                <div class="baron__bar"></div>
+                            </div>
+                    </div>
+
                     </div>
                     <div class="col-sm-4 col-md-4 col-xs-4">
                         <aside id="sidebar">
                             <div class="col-second">
                                 <h3> FOOD CART <span class="badge"> 1 </span> </h3>
-                                <div class="scrollable-area right">
-                                    <div id="nested-section">
+
+                                <div class="baron scrollable6">
+
+                                    <div id="scrollable6" class="baron__scroller right">
+                                        <div id="nested-section">
+                                        </div>
+                                    </div>
+                                    <div class="baron__track">
+                                        <div class="baron__bar"></div>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12">
@@ -414,7 +434,6 @@
         <!-- Modal content-->
         <div class="modal-content">
 
-            <!--<img class="ic_close" src="img/ic_close.png" onclick="$('#detail-popup').fadeOut(); $('.overlay').fadeOut()">-->
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
             <h3> ORDERAPP, ORDER FAST </h3>
 
@@ -432,6 +451,7 @@
                 <br />
                 *Powered by Push Startups
             </p>
+
             <!-- SOCIAL LINKS FOR ORDER APP -->
             <div class="social-icons">
                 <ul>
@@ -475,9 +495,17 @@
 <script src="/en/script/ajaxServerRequestConfirmOrder.js"></script>
 <script type="text/javascript" src="/en/script/jquery.accordion.without.click.js"></script>
 <script src="/en/script/alertify.min.js"></script>
-<script type="text/javascript" src="/en/script/simple-scrollbar.min.js"></script>
-<script type="text/javascript" src="/en/script/simple-scrollbar.js"></script>
+<script type="text/javascript" src="/en/script/baron.js"></script>
 <script>
+
+
+    window.onload = function() {
+        window.dima = baron({
+            root: '.baron',
+            scroller: '.baron__scroller',
+            bar: '.baron__bar'
+        }).autoUpdate();
+    };
 
 
     $('.checkbox-list li').click(function(e){
@@ -493,30 +521,30 @@
     });
 
 
-    $(function() {
-
-        function reposition() {
-
-            var modal = $(this),
-                    dialog = modal.find('.modal-dialog');
-            modal.css('display', 'block');
-
-            // Dividing by two centers the modal exactly, but dividing by three
-            // or four works better for larger screens.
-            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
-        }
-
-        // Reposition when a modal is shown
-        $('.modal').on('show.bs.modal', reposition);
-
-        // Reposition when the window is resized
-        $(window).on('resize', function() {
-
-            $('.modal:visible').each(reposition);
-
-        });
-
-    });
+//    $(function() {
+//
+//        function reposition() {
+//
+//            var modal = $(this),
+//                    dialog = modal.find('.modal-dialog');
+//            modal.css('display', 'block');
+//
+//            // Dividing by two centers the modal exactly, but dividing by three
+//            // or four works better for larger screens.
+//            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+//        }
+//
+//        // Reposition when a modal is shown
+//        $('.modal').on('show.bs.modal', reposition);
+//
+//        // Reposition when the window is resized
+//        $(window).on('resize', function() {
+//
+//            $('.modal:visible').each(reposition);
+//
+//        });
+//
+//    });
 
 
 </Script>

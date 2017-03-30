@@ -130,7 +130,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
             $dayOfWeek = date('l');
 
             // RESTAURANT AVAILABILITY ACCORDING TO TIME
-            $currentStatus = true;
+            $currentStatus = false;
 
             $today_timings = "";
 
@@ -575,6 +575,7 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
         $chat_id = "-165732759";
+
 
         telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
 

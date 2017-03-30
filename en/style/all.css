@@ -582,6 +582,7 @@ and (orientation : portrait){
 #about {
     
     text-align: center;
+	font-family:'Open Sans', sans-serif;
 }
 .modal {
   text-align: center;
@@ -612,7 +613,7 @@ and (orientation : portrait){
 #about p {
 	font-size: 16px;
 	line-height: 19px;
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
 	letter-spacing: 2px;
@@ -625,7 +626,7 @@ and (orientation : portrait){
 	line-height: 25px;
 	letter-spacing: 0.2px;
 	margin:0 0 25px;
-	font-weight: bold;
+	font-weight: 400;
 	color: #797979;
 }
 
@@ -641,6 +642,7 @@ and (orientation : portrait){
 	color:#fff;
 	opacity:1;
 	outline: none !important;
+	font-weight: 400 !important;
 }
 #about .close:focus{outline: none !important;}
 
