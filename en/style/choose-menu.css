@@ -1385,6 +1385,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	#sidebar .scrollable-area-wrapper,
 	.scrollable-area.right{
 	max-height: 38vh !important;}
+	#scrollable3 {height: 78vh;}
 }
 @media screen and ( max-height: 767px ){
 	/*#sidebar .scrollable-area-wrapper, .scrollable-area.right{height: 140px !important;}*/
@@ -1393,7 +1394,8 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 		width: 170px;
 		height: 170px;
 		padding: 0;
-	}
+}
+
 	.info .cart{margin:  0 0 30px;}
 	.mypopup.info .scrollable-area-wrapper, .mypopup.info .scrollable-area.add{max-height: 80vh !important;}
 	.accordion {
@@ -1402,6 +1404,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	#sidebar .scrollable-area-wrapper,
 	.scrollable-area.right{
 		max-height: 35vh !important;}
+	.info .wrap{padding: 0 0 30px;}
+	#scrollable5 {
+		max-height: 80vh;
+	}
 }
 @media only screen and (max-width: 1279px){.btn-top{display: none;}}
 @media only screen and (max-width: 1024px){
@@ -1427,6 +1433,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 		height: 40px;
 		font-size: 20px;
 		line-height: 23px;
+	}
+	.info .wrap{padding: 0 0 30px;}
+	#scrollable5 {
+		max-height: 80vh;
 	}
 
 }
