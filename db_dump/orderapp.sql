@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 29, 2017 at 08:47 AM
+-- Generation Time: Mar 30, 2017 at 09:32 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.29
 
@@ -379,7 +379,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -411,7 +411,13 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (23, 'Outside Modiin', '', 25, 6),
 (24, 'Outside Modiin', '', 25, 11),
 (25, 'Outside Modiin', '', 30, 10),
-(26, 'Outside Modiin', '', 25, 9);
+(26, 'Outside Modiin', '', 25, 9),
+(27, 'Beit Shemesh', '', 15, 1),
+(28, 'Beit Shemesh', '', 15, 2),
+(29, 'Beit Shemesh', '', 15, 3),
+(30, 'Beit Shemesh', '', 15, 4),
+(31, 'Beit Shemesh', '', 15, 5),
+(32, 'Beit Shemesh', '', 15, 7);
 
 -- --------------------------------------------------------
 
@@ -1820,7 +1826,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=447 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=470 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -2210,7 +2216,30 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (443, 357, 1, 'Chicken Salad', 88, '150 grams goose breast or entrecote (+19), \n50 grams goose breast (+8), 150 grams entrecote (+19)'),
 (444, 357, 1, 'Angus Burger', 44, 'Egg (+4), Lettuce'),
 (445, 358, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
-(446, 358, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)');
+(446, 358, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)'),
+(447, 359, 1, 'Angus Salad', 71, '50 grams goose breast (+8), 150 grams entrecote (+19)'),
+(448, 360, 2, 'Angus Salad', 81, '150 grams goose breast or entrecote (+19), 170 grams chicken breast (+18)'),
+(449, 360, 1, 'Chicken Salad', 90, '170 grams chicken breast (+18), 80 grams goose liver (+30)'),
+(450, 361, 2, 'Meshulashim Pie', 32, ''),
+(451, 362, 1, 'Double Angus Sandwich', 56, ''),
+(452, 362, 1, 'King Angus Sandwich', 67, ''),
+(453, 362, 1, 'Chicken Sandwich', 33, ''),
+(454, 362, 1, 'Chicken Sandwich', 33, ''),
+(455, 362, 1, 'King Angus Sandwich', 67, ''),
+(456, 362, 1, 'Double Angus Sandwich', 56, ''),
+(457, 362, 1, 'King Angus Sandwich', 71, 'Portobello Mushroom (+4)'),
+(458, 362, 1, 'Chicken Sandwich', 33, ''),
+(459, 362, 1, 'Vegetarian Sandwich', 33, ''),
+(460, 363, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), Jalapeño'),
+(461, 364, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
+(462, 365, 1, 'Angus Salad', 90, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19)'),
+(463, 366, 1, 'Angus Salad', 62, '170 grams chicken breast (+18), Jalapeño'),
+(464, 366, 1, 'Chicken Salad', 42, ''),
+(465, 367, 3, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
+(466, 368, 3, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
+(467, 369, 1, 'Tempura Chicken Fillet', 28, ''),
+(468, 369, 2, 'Soup Of The Day', 22, ''),
+(469, 370, 1, 'Angus Salad', 63, '150 grams entrecote (+19)');
 
 -- --------------------------------------------------------
 
@@ -5656,7 +5685,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=381 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=386 ;
 
 --
 -- Dumping data for table `users`
@@ -5664,8 +5693,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'Muhammad', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'test', '', '', '3434454545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad', '', '', '343434', 'ddddfdfdfdfdf', 0, 'english', NULL, NULL, NULL, NULL, 1),
+(260, 'test@gmail.com', 'test@gmail.com', '', '', '3434', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', '454545', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, 1),
 (262, 'Tes@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (263, 'test4444@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (264, 'test43434@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -5678,8 +5707,8 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contac
 (271, 'Test111@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (272, 'Klinger.micheal09@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (273, 'rustom31122@gmail.com', 'Rustom', '', '', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(274, 'avi@pushstartups.com', 'avi', '', '', '0548086730', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(275, 'test@test.com', 'dvora', '', '', '0000000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(274, 'avi@pushstartups.com', 'avi', '', '', '000000000', 'gad street bet shemesh', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(275, 'test@test.com', 'testing', '', '', '456456465465', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (276, 'Rael@pushstartups.com', 'Raek', '', '', '0679', '', 0, 'english', NULL, NULL, NULL, 2, 1),
 (277, '47ae2bc6dec29ba24f07a3fe', NULL, '', '', NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL),
 (278, 'umair.khalid786@outlook.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -5718,7 +5747,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contac
 (311, 'testsdsdsd@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (312, 'testasdf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (313, 'avi@psushstartups.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(314, 'shoaib.it002@gmail.com', 'shoaib', '', '', '987998798', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(314, 'shoaib.it002@gmail.com', 'Shoaib', '', '', '0306648193', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (315, 'shoaibasdfa@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (316, 'rael@psu.com', 'Rael Olwyn', '', '', '00000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (317, 'ewrt@sdf.com', 'wert', '', '', '23452345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
@@ -5784,7 +5813,12 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contac
 (377, 'sdf@dsaf.com', 'sdfsdf', '', '', '3434', 'sdfsdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (378, 'dsf@sdf.com', 'sdf', '', '', '343434', 'dsaf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
 (379, 'ahmad@gmail.com', 'Muhammad', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(380, 'aaron@hunterztest.com', 'tester to telegram', '', '', '4654654654', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
+(380, 'aaron@hunterztest.com', 'tester to telegram', '', '', '4654654654', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(381, 'adsf@sadf.com', 'adf', '', '', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(382, 'muhammad.iftikhar.aftab@gmaiil.com', 'Muhammad', '', '', '3243434', 'test address', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(383, 'sdg@sf.lkj', 'sf', '', '', '321321', 'dfg', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(384, 'dfg@dfg.lkjdf', 'dfg', '', '', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
+(385, 'tasawarmahmood24@gmail.com', 'tasawar', '', '', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -5797,41 +5831,8 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   `user_id` int(11) DEFAULT NULL,
   `coupon_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `coupon_id` (`coupon_id`)
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
-
---
--- Dumping data for table `user_coupons`
---
-
-INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
-(39, 261, 1),
-(40, 271, 2),
-(41, 260, 1),
-(42, 260, 2),
-(43, 273, 1),
-(44, 275, 2),
-(45, 275, 1),
-(46, 286, 1),
-(47, 287, 1),
-(48, 288, 2),
-(49, 290, 1),
-(50, 276, 1),
-(51, 292, 2),
-(52, 295, 2),
-(53, 296, 2),
-(54, 297, 2),
-(55, 298, 2),
-(56, 300, 2),
-(57, 274, NULL),
-(58, 261, 8),
-(59, 260, NULL),
-(60, 260, NULL),
-(61, 323, NULL),
-(62, 285, NULL),
-(63, 330, NULL),
-(64, 348, NULL);
 
 -- --------------------------------------------------------
 
@@ -5850,7 +5851,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=359 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=371 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -6123,7 +6124,19 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (355, 260, 1, 229, NULL, 0, '2017-03-29'),
 (356, 260, 1, 225, NULL, 0, '2017-03-29'),
 (357, 260, 1, 222, NULL, 0, '2017-03-29'),
-(358, 260, 1, 131, NULL, 0, '2017-03-29');
+(358, 260, 1, 131, NULL, 0, '2017-03-29'),
+(359, 260, 1, 96, NULL, 0, '2017-03-29'),
+(360, 260, 1, 277, NULL, 0, '2017-03-29'),
+(361, 275, 2, 64, NULL, 0, '2017-03-29'),
+(362, 314, 1, 449, NULL, 0, '2017-03-29'),
+(363, 381, 1, 96, NULL, 0, '2017-03-29'),
+(364, 382, 1, 96, NULL, 0, '2017-03-29'),
+(365, 261, 1, 115, NULL, 0, '2017-03-29'),
+(366, 261, 1, 119, NULL, 0, '2017-03-29'),
+(367, 383, 1, 238, NULL, 0, '2017-03-30'),
+(368, 384, 1, 213, NULL, 0, '2017-03-30'),
+(369, 274, 4, 97, NULL, 0, '2017-03-30'),
+(370, 385, 1, 63, NULL, 0, '2017-03-30');
 
 -- --------------------------------------------------------
 
@@ -6217,74 +6230,74 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
 --
 
 INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `opening_time_he`, `closing_time`, `closing_time_he`) VALUES
-(8, 1, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(9, 1, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(10, 1, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(11, 1, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(12, 1, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(8, 1, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(9, 1, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(10, 1, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(11, 1, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(12, 1, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (13, 1, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (14, 1, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(15, 2, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(16, 2, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(17, 2, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(18, 2, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(19, 2, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(15, 2, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(16, 2, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(17, 2, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(18, 2, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(19, 2, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (20, 2, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (21, 2, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(22, 3, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(23, 3, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(24, 3, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(25, 3, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(26, 3, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(22, 3, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(23, 3, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(24, 3, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(25, 3, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(26, 3, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (27, 3, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (28, 3, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(36, 4, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(37, 4, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(38, 4, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(39, 4, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(40, 4, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(36, 4, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(37, 4, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(38, 4, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(39, 4, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(40, 4, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (41, 4, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (42, 4, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(43, 5, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(44, 5, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(45, 5, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(46, 5, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(47, 5, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(43, 5, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(44, 5, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(45, 5, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(46, 5, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(47, 5, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (48, 5, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (49, 5, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(50, 6, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(51, 6, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(52, 6, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(53, 6, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(54, 6, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(50, 6, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(51, 6, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(52, 6, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(53, 6, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(54, 6, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (55, 6, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (56, 6, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(64, 9, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(65, 9, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(66, 9, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(67, 9, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(68, 9, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(64, 9, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(65, 9, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(66, 9, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(67, 9, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(68, 9, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (69, 9, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (70, 9, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(71, 10, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(72, 10, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(73, 10, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(74, 10, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(75, 10, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(71, 10, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(72, 10, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(73, 10, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(74, 10, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(75, 10, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (76, 10, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (77, 10, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(78, 11, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(79, 11, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(80, 11, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(81, 11, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(82, 11, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(78, 11, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(79, 11, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(80, 11, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(81, 11, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(82, 11, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (83, 11, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (84, 11, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(85, 7, 'Sunday', 'יום א', '10:00', '10:00', '21:00', '21:00'),
-(86, 7, 'Monday', 'יום ב', '10:00', '10:00', '21:00', '21:00'),
-(87, 7, 'Tuesday', 'יום ג', '10:00', '10:00', '21:00', '21:00'),
-(88, 7, 'Wednesday', 'יום ד', '10:00', '10:00', '21:00', '21:00'),
-(89, 7, 'Thursday', 'יום ה', '10:00', '10:00', '21:00', '21:00'),
+(85, 7, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(86, 7, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(87, 7, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(88, 7, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(89, 7, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (90, 7, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
 (91, 7, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
 
