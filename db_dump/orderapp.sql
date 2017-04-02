@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2017 at 09:32 AM
+-- Generation Time: Apr 02, 2017 at 08:19 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.29
 
@@ -28,15 +28,27 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `b2b_orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `company_id` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
-  `discount` varchar(255) NOT NULL,
-  `date` date NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `company_id` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL,
+  `actual_total` int(11) DEFAULT NULL,
+  `discount` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+
+--
+-- Dumping data for table `b2b_orders`
+--
+
+INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`, `discount`, `date`) VALUES
+(22, 326, 2, 68, 103, 0, '2017-04-01'),
+(23, 326, 2, 7, 42, 0, '2017-04-02'),
+(24, 326, 2, 81, 81, 0, '2017-04-02'),
+(25, 326, 2, 90, 90, 0, '2017-04-02'),
+(26, 326, 2, 123, 123, 0, '2017-04-02');
 
 -- --------------------------------------------------------
 
@@ -46,14 +58,28 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
 
 CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `item` varchar(255) NOT NULL,
-  `sub_total` int(11) NOT NULL,
-  `sub_items` varchar(255) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  `item` varchar(255) DEFAULT NULL,
+  `sub_total` int(11) DEFAULT NULL,
+  `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+
+--
+-- Dumping data for table `b2b_order_detail`
+--
+
+INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_items`) VALUES
+(15, 22, 1, 'Meshulashim Pie', 47, 'Mushrooms (+5), Olives (+5), Tomatoes (+5)'),
+(16, 22, 1, 'Margarita', 28, ''),
+(17, 22, 1, 'Margarita', 28, ''),
+(18, 23, 1, 'Pargit Tortilla', 42, 'Egg (+4), Portobello Mushroom (+4)'),
+(19, 24, 1, 'Angus Salad', 81, '150 grams entrecote (+19), 170 grams chicken breast (+18)'),
+(20, 25, 1, 'Angus Salad', 90, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19)'),
+(21, 26, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)'),
+(22, 26, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)');
 
 -- --------------------------------------------------------
 
@@ -595,19 +621,19 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (204, 99, 'Sauces', 'Multiple', 0, 'רטבים', 255),
 (205, 99, 'Addons', 'Multiple', 0, 'תוספות', 256),
 (206, 99, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 257),
-(207, 100, 'Bread', 'One', 0, 'לחם לתשלום', 258),
+(207, 100, 'Bread', 'Multiple', 0, 'לחם לתשלום', 258),
 (208, 100, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 259),
-(209, 101, 'Bread', 'One', 0, 'לחם לתשלום', 260),
+(209, 101, 'Bread', 'Multiple', 0, 'לחם לתשלום', 260),
 (210, 101, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 261),
-(211, 102, 'Bread', 'One', 0, 'לחם לתשלום', 262),
+(211, 102, 'Bread', 'Multiple', 0, 'לחם לתשלום', 262),
 (212, 102, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 263),
-(213, 103, 'Bread', 'One', 0, 'לחם לתשלום', 264),
+(213, 103, 'Bread', 'Multiple', 0, 'לחם לתשלום', 264),
 (214, 103, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 265),
-(215, 104, 'Bread', 'One', 0, 'לחם לתשלום', 266),
+(215, 104, 'Bread', 'Multiple', 0, 'לחם לתשלום', 266),
 (216, 104, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 267),
-(217, 105, 'Bread', 'One', 0, 'לחם לתשלום', 268),
+(217, 105, 'Bread', 'Multiple', 0, 'לחם לתשלום', 268),
 (218, 105, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 269),
-(219, 106, 'Bread', 'One', 0, 'לחם לתשלום', 270),
+(219, 106, 'Bread', 'Multiple', 0, 'לחם לתשלום', 270),
 (220, 106, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 271),
 (221, 107, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 272),
 (222, 108, 'Roza Deal', 'Multiple', 0, 'רוזה דיל', 273),
@@ -1826,7 +1852,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=470 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=488 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -2239,7 +2265,25 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (466, 368, 3, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
 (467, 369, 1, 'Tempura Chicken Fillet', 28, ''),
 (468, 369, 2, 'Soup Of The Day', 22, ''),
-(469, 370, 1, 'Angus Salad', 63, '150 grams entrecote (+19)');
+(469, 370, 1, 'Angus Salad', 63, '150 grams entrecote (+19)'),
+(470, 371, 1, 'Angus Salad', 90, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19)'),
+(471, 372, 1, 'Angus Salad', 71, '50 grams goose breast (+8), 150 grams entrecote (+19)'),
+(472, 372, 1, 'Chicken Salad', 42, 'Sweet chilli, Jalapeño'),
+(473, 372, 1, 'Coca Cola Zero', 8, ''),
+(474, 372, 1, 'Fuze Tea', 8, ''),
+(475, 373, 1, 'Angus Salad', 92, '170 grams chicken breast (+18), 80 grams goose liver (+30)'),
+(476, 373, 1, 'Chicken Salad', 79, '150 grams entrecote (+19), 170 grams chicken breast (+18)'),
+(477, 374, 1, 'Xl Pie', 70, 'Olives (+5)'),
+(478, 374, 1, 'Xl + Toppings', 75, 'Tomatoes, Corn'),
+(479, 375, 1, 'Angus Salad', 81, '150 grams entrecote (+19), 170 grams chicken breast (+18)'),
+(480, 375, 1, 'Chicken Salad', 79, '150 grams entrecote (+19), 170 grams chicken breast (+18)'),
+(481, 376, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)'),
+(482, 377, 2, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)'),
+(483, 378, 4, 'Angus Salad', 89, '50 grams goose breast (+8), 150 grams entrecote (+19), 170 grams chicken breast (+18), Thousand island, Garlic Mayo, Spicy chilli'),
+(484, 378, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), Egg (+4)'),
+(485, 378, 2, 'Pargit Tortilla', 34, 'Ketchup'),
+(486, 379, 1, 'Xl + Toppings', 75, ''),
+(487, 380, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)');
 
 -- --------------------------------------------------------
 
@@ -5672,6 +5716,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `date` date NOT NULL,
   `contact` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `state` int(16) NOT NULL DEFAULT '0',
@@ -5681,144 +5727,167 @@ CREATE TABLE IF NOT EXISTS `users` (
   `restaurant_id` int(16) DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL,
   `company_id` int(11) DEFAULT NULL,
+  `voucherify_id` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=386 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=410 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`) VALUES
-(255, 'ahmadworkspace@gmail.com', 'Muhammad', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(260, 'test@gmail.com', 'test@gmail.com', '', '', '3434', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', '454545', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, 1),
-(262, 'Tes@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(263, 'test4444@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(264, 'test43434@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(265, 'test333@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(266, 'testwwew@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(267, 'eewe@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(268, 'fdff@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(269, 'nice@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(270, 'ahmad69191@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1),
-(271, 'Test111@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(272, 'Klinger.micheal09@gmail.com', '', '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(273, 'rustom31122@gmail.com', 'Rustom', '', '', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(274, 'avi@pushstartups.com', 'avi', '', '', '000000000', 'gad street bet shemesh', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(275, 'test@test.com', 'testing', '', '', '456456465465', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(276, 'Rael@pushstartups.com', 'Raek', '', '', '0679', '', 0, 'english', NULL, NULL, NULL, 2, 1),
-(277, '47ae2bc6dec29ba24f07a3fe', NULL, '', '', NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL),
-(278, 'umair.khalid786@outlook.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(279, 'Dvora@pushstartups.com', 'Dvora', '', '', '0543047266', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(280, 'ahmadworkuuspace@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(281, 'test@gmai.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(282, 'Fdh@hdh.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(283, 'Ch@hch.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(284, 'asdf@asdf.com', 'asdf', '', '', '123', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(285, 'josh@pushstartups.com', 'Josh Test 3', '', '', '00000000', 'Shimon St', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(286, 'test3434@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(287, 'test223@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(288, 'test6565@gmail.com', 'Muhammad', '', '', '454534545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(289, 'test@gmailc.om', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(290, 'test6666@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(291, 'rael@pushstarups.com', 'RaEL;', '', '', '05455155', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(292, 'fa@cd.vom', 'rlda32', '', '', '05424501', '05', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(293, 'rad@dad.com', 'arra', '', '', '041', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(294, 'rae@sda.com', 'rare', '', '', '054', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(295, 'test10@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(296, 'test1110@gmail.com', 'test', '', '', '032289697998', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(297, 'test110@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(298, 'shoaib@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(299, 'roza@gmail.com', 'roza', '', '', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(300, 'japan@gmail.com', 'japan', '', '', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(301, 'shery@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(302, 'sdfdsf@dfdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(303, 'm@g.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(304, 'sdf@dfdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(305, 'dfd@df.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(306, 'dfdf@fgfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(307, 'testdf@gmaildf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(308, 'tefdf@fgfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(309, 'dfdsf@hjhj.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(310, 'dfdfdf@sdfsdfdsf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(311, 'testsdsdsd@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(312, 'testasdf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(313, 'avi@psushstartups.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(314, 'shoaib.it002@gmail.com', 'Shoaib', '', '', '0306648193', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(315, 'shoaibasdfa@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(316, 'rael@psu.com', 'Rael Olwyn', '', '', '00000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(317, 'ewrt@sdf.com', 'wert', '', '', '23452345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(318, 'fdgs@sd.com', 'ewrgw', '', '', '1342345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(319, 'sdfg@sdf.com', 'fsdg', '', '', '345665', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(320, 'mark@pushstartups.com', 'Mark', '', '', '0000000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(321, 'dsfdsf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(322, 'test@gmaik.com', 'Muhammad', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(323, 'test233@gmail.com', 'Muhammad ', '', '', '343434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(324, 'sdfsdf@fsdf.com', 'sdfsdf', '', '', '13215643215', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(325, 'test@tester.com', 'test', '', '', '0507665524', 'hahar street', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(326, 'shoaibtest@gmail.com', 'shoaib', 'shoaibtest', 'shoaibtest', '03066481938', 'gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2),
-(327, 'shoaibcompany2@gmail.com', 'shoaib', 'shoaibcompany2', 'shoaibcompany2', '03338134153', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, 3),
-(328, 'dfdf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(329, 'dfsfd@dsfsdfdsfsd.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(330, 'sdfsdf3434@sdfsdf.com', 'Muhammad', '', '', '343434', 'afd', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(331, 'testsd@sdfgsdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(332, 'wsdfsd@adsf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(333, 'wesdf@sdfds.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(334, 'asdfdsaf@sadfsdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(335, 'fgfdg@sfgsdfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(336, 'asfd@dsaf.com', 'afr', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(337, 'adf@sadf.com', 'adf', '', '', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(338, 'sdf@sdfsdf.com', 'sdf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(339, 'sdf@zdf.com', 'sdgf', '', '', '4545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(340, 'dsf@dsf.com', 'sadfdf', '', '', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(341, 'sdfsd@dsfgs.com', 'sdf', '', '', '34534', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(342, 'sdf@sdfgsfdg.com', 'sfdsf', '', '', '34534', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(343, 'asfd@sadf.com', 'adfadf ', '', '', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(344, 'sedsdf@sdfsdf.com', 'sdf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(345, 'sdf@sdf.com', 'sdf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(346, 'sdfdsf@sdfdsf.com', 'sdfsdf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(347, 'afd@adf.com', 'asfd', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(348, 'dafdf@gasdfdf.com', 'dafdf', '', '', '3434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(349, 'sdfsdf@sdfsdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(350, 'testsdf@gmail.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(351, 'dsf@gm.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(352, 'dfg@gm.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(353, 'sdf@sadf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(354, 'dfgdsfg@fsadf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(355, 'xcv@sdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(356, 'dsfgdsf@sdg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(357, 'dfgsdfg@sg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(358, 'sdfg@dfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(359, 'sdfgdsfg@dfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(360, 'dfgsdfg@sdf.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(361, 'dfgsdf@gs.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(362, 'dsfg@gdfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(363, 'sdfg@dsfg.com', NULL, '', '', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(364, 'dsaf@sdf.com', 'adsfdf', '', '', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(365, 'asd@adf.com', 'asd', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(366, 'asdsad@adfadf.com', 'asdsad ', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(367, 'sdf@dsfsdf.com', 'sadfdf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(368, 'dsfdsf@sdff.com', 'sdfdsf s', '', '', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(369, 'sdfs@sfgsd.com', 'sdfdsf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(370, 'dsfdf@asdf.com', 'fasdfd', '', '', '433434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(371, 'sdf@adsf.com', 'dsfsdf', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(372, 'sadasd@dafadf.com', 'asdasdsad', '', '', '32434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(373, 'muhammad@gmail.com', 'muhammad', '', '', '343434', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(374, 'asd@gmail.com', 'asd', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(375, 'sdf@gmail.com', 'sdf', '', '', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(376, 'dsf@dsaf.com', 'sdf', '', '', '33434', 'fsdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(377, 'sdf@dsaf.com', 'sdfsdf', '', '', '3434', 'sdfsdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(378, 'dsf@sdf.com', 'sdf', '', '', '343434', 'dsaf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(379, 'ahmad@gmail.com', 'Muhammad', '', '', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(380, 'aaron@hunterztest.com', 'tester to telegram', '', '', '4654654654', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(381, 'adsf@sadf.com', 'adf', '', '', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(382, 'muhammad.iftikhar.aftab@gmaiil.com', 'Muhammad', '', '', '3243434', 'test address', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(383, 'sdg@sf.lkj', 'sf', '', '', '321321', 'dfg', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(384, 'dfg@dfg.lkjdf', 'dfg', '', '', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL),
-(385, 'tasawarmahmood24@gmail.com', 'tasawar', '', '', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
+(255, 'ahmadworkspace@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '343434', '', 0, 'english', NULL, NULL, NULL, 2, 1, ''),
+(260, 'test@gmail.com', 'test@gmail.com', '', '', 0, '0000-00-00', '3434', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_IjBLrqEudMhvhLQGfWs8gXNO'),
+(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '454545', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, 1, ''),
+(262, 'Tes@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(263, 'test4444@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(264, 'test43434@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(265, 'test333@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(266, 'testwwew@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(267, 'eewe@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(268, 'fdff@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(269, 'nice@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(270, 'ahmad69191@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, 2, 1, ''),
+(271, 'Test111@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(272, 'Klinger.micheal09@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(273, 'rustom31122@gmail.com', 'Rustom', '', '', 0, '0000-00-00', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(274, 'avi@pushstartups.com', 'avi test', '', '', 0, '0000-00-00', '00000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_1whzjgK8ux7TqSVd7SR2ciSp'),
+(275, 'test@test.com', 'testing', '', '', 0, '0000-00-00', '456456465465', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(276, 'rael@pushstartups.com', 'Rael Olwyn', '', '', 0, '0000-00-00', '00000', 'Gad', 0, 'english', NULL, NULL, NULL, 2, 1, ''),
+(277, '47ae2bc6dec29ba24f07a3fe', NULL, '', '', 0, '0000-00-00', NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(278, 'umair.khalid786@outlook.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(279, 'Dvora@pushstartups.com', 'Dvora', '', '', 0, '0000-00-00', '0543047266', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(280, 'ahmadworkuuspace@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(281, 'test@gmai.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(282, 'Fdh@hdh.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(283, 'Ch@hch.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(284, 'asdf@asdf.com', 'asdf', '', '', 0, '0000-00-00', '123', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(285, 'josh@pushstartups.com', 'Josh Test 3', '', '', 0, '0000-00-00', '00000000', 'Shimon St', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(286, 'test3434@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(287, 'test223@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(288, 'test6565@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '454534545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(289, 'test@gmailc.om', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(290, 'test6666@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(291, 'rael@pushstarups.com', 'RaEL;', '', '', 0, '0000-00-00', '05455155', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(292, 'fa@cd.vom', 'rlda32', '', '', 0, '0000-00-00', '05424501', '05', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(293, 'rad@dad.com', 'arra', '', '', 0, '0000-00-00', '041', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(294, 'rae@sda.com', 'rare', '', '', 0, '0000-00-00', '054', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(295, 'test10@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(296, 'test1110@gmail.com', 'test', '', '', 0, '0000-00-00', '032289697998', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(297, 'test110@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(298, 'shoaib@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(299, 'roza@gmail.com', 'roza', '', '', 0, '0000-00-00', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(300, 'japan@gmail.com', 'japan', '', '', 0, '0000-00-00', '3434344', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(301, 'shery@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(302, 'sdfdsf@dfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(303, 'm@g.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(304, 'sdf@dfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(305, 'dfd@df.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(306, 'dfdf@fgfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(307, 'testdf@gmaildf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(308, 'tefdf@fgfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(309, 'dfdsf@hjhj.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(310, 'dfdfdf@sdfsdfdsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(311, 'testsdsdsd@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(312, 'testasdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(313, 'avi@psushstartups.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(314, 'shoaib.it002@gmail.com', 'Shoaib', '', '', 0, '0000-00-00', '0306648193', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(315, 'shoaibasdfa@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(316, 'rael@psu.com', 'Rael Olwyn', '', '', 0, '0000-00-00', '00000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(317, 'ewrt@sdf.com', 'wert', '', '', 0, '0000-00-00', '23452345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(318, 'fdgs@sd.com', 'ewrgw', '', '', 0, '0000-00-00', '1342345', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(319, 'sdfg@sdf.com', 'fsdg', '', '', 0, '0000-00-00', '345665', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(320, 'mark@pushstartups.com', 'Mark', '', '', 0, '0000-00-00', '0000000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(321, 'dsfdsf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(322, 'test@gmaik.com', 'Muhammad', '', '', 0, '0000-00-00', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(323, 'test233@gmail.com', 'Muhammad ', '', '', 0, '0000-00-00', '343434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(324, 'sdfsdf@fsdf.com', 'sdfsdf', '', '', 0, '0000-00-00', '13215643215', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(325, 'test@tester.com', 'test', '', '', 0, '0000-00-00', '0507665524', 'hahar street', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(326, 'shoaibtest@gmail.com', '', 'shoaibtest', 'shoaibtest', 0, '2017-04-02', '', '', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(327, 'shoaibcompany2@gmail.com', 'shoaib', 'shoaibcompany2', 'shoaibcompany2', 0, '0000-00-00', '03338134153', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, 3, ''),
+(328, 'dfdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(329, 'dfsfd@dsfsdfdsfsd.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(330, 'sdfsdf3434@sdfsdf.com', 'Muhammad', '', '', 0, '0000-00-00', '343434', 'afd', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(331, 'testsd@sdfgsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(332, 'wsdfsd@adsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(333, 'wesdf@sdfds.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(334, 'asdfdsaf@sadfsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(335, 'fgfdg@sfgsdfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(336, 'asfd@dsaf.com', 'afr', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(337, 'adf@sadf.com', 'adf', '', '', 0, '0000-00-00', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(338, 'sdf@sdfsdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(339, 'sdf@zdf.com', 'sdgf', '', '', 0, '0000-00-00', '4545', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(340, 'dsf@dsf.com', 'sadfdf', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(341, 'sdfsd@dsfgs.com', 'sdf', '', '', 0, '0000-00-00', '34534', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(342, 'sdf@sdfgsfdg.com', 'sfdsf', '', '', 0, '0000-00-00', '34534', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(343, 'asfd@sadf.com', 'adfadf ', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(344, 'sedsdf@sdfsdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(345, 'sdf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(346, 'sdfdsf@sdfdsf.com', 'sdfsdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(347, 'afd@adf.com', 'asfd', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(348, 'dafdf@gasdfdf.com', 'dafdf', '', '', 0, '0000-00-00', '3434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(349, 'sdfsdf@sdfsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(350, 'testsdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(351, 'dsf@gm.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(352, 'dfg@gm.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(353, 'sdf@sadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(354, 'dfgdsfg@fsadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(355, 'xcv@sdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(356, 'dsfgdsf@sdg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(357, 'dfgsdfg@sg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(358, 'sdfg@dfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(359, 'sdfgdsfg@dfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(360, 'dfgsdfg@sdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(361, 'dfgsdf@gs.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(362, 'dsfg@gdfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(363, 'sdfg@dsfg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(364, 'dsaf@sdf.com', 'adsfdf', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(365, 'asd@adf.com', 'asd', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(366, 'asdsad@adfadf.com', 'asdsad ', '', '', 0, '0000-00-00', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(367, 'sdf@dsfsdf.com', 'sadfdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(368, 'dsfdsf@sdff.com', 'sdfdsf s', '', '', 0, '0000-00-00', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(369, 'sdfs@sfgsd.com', 'sdfdsf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(370, 'dsfdf@asdf.com', 'fasdfd', '', '', 0, '0000-00-00', '433434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(371, 'sdf@adsf.com', 'dsfsdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(372, 'sadasd@dafadf.com', 'asdasdsad', '', '', 0, '0000-00-00', '32434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(373, 'muhammad@gmail.com', 'muhammad', '', '', 0, '0000-00-00', '343434', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(374, 'asd@gmail.com', 'asd', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(375, 'sdf@gmail.com', 'sdf', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(376, 'dsf@dsaf.com', 'sdf', '', '', 0, '0000-00-00', '33434', 'fsdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(377, 'sdf@dsaf.com', 'sdfsdf', '', '', 0, '0000-00-00', '3434', 'sdfsdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(378, 'dsf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '343434', 'dsaf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(379, 'ahmad@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(380, 'aaron@hunterztest.com', 'tester to telegram', '', '', 0, '0000-00-00', '4654654654', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(381, 'adsf@sadf.com', 'adf', '', '', 0, '0000-00-00', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(382, 'muhammad.iftikhar.aftab@gmaiil.com', 'Muhammad', '', '', 0, '0000-00-00', '3243434', 'test address', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(383, 'sdg@sf.lkj', 'sf', '', '', 0, '0000-00-00', '321321', 'dfg', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(384, 'dfg@dfg.lkjdf', 'dfg', '', '', 0, '0000-00-00', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(385, 'tasawarmahmood24@gmail.com', 'tasawar', '', '', 0, '0000-00-00', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(386, 'xyz@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(389, 'xxx@gmail.com', 'xxx', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(390, 'ddd@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(391, 'ppp@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(392, 'kpk@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(393, 'bbb@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_5LhVG80IT9ejTLal7hKZONZz'),
+(394, 'teest@test.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_fD6Yp8eaDrQcIBwGbVLDFPqD'),
+(395, 'rockk@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(396, 'rockkkkkk@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(397, 'ggg@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_bTWUCSRxT6tjYGiO7HCAQtoL'),
+(398, 'fgf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(399, 'fgffff@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ist1ngUn6YvCClWvv0uETvg0'),
+(400, 'fgffffdfdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(401, 'a@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LUvYYRKZMITIEoLunfWy08vX'),
+(402, 'asdf@adsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(403, 'sdf@asdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(404, 'af@sdfdsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QKNe8y1mjHqz93RadA9209KN'),
+(405, 'cvc@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_kD7VzxAelfWOJ5FwvpsO1yA8'),
+(406, 'rael@ioda.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(407, 'ral@ioad.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(408, 'noam.lipsitz@gmail.com', 'noam', '', '', 0, '0000-00-00', '0525133739', 'asher street', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xgLfz3nDMGzo0xnovuC8NDTk'),
+(409, 'bbbfgf@hghg.com', 'gfghfhg', '', '', 0, '0000-00-00', '5665', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -5832,7 +5901,15 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   `coupon_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
+
+--
+-- Dumping data for table `user_coupons`
+--
+
+INSERT INTO `user_coupons` (`id`, `user_id`, `coupon_id`) VALUES
+(65, 274, NULL),
+(66, 274, NULL);
 
 -- --------------------------------------------------------
 
@@ -5851,7 +5928,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=371 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=381 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -6136,7 +6213,17 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (367, 383, 1, 238, NULL, 0, '2017-03-30'),
 (368, 384, 1, 213, NULL, 0, '2017-03-30'),
 (369, 274, 4, 97, NULL, 0, '2017-03-30'),
-(370, 385, 1, 63, NULL, 0, '2017-03-30');
+(370, 385, 1, 63, NULL, 0, '2017-03-30'),
+(371, 389, 1, 90, NULL, 0, '2017-03-30'),
+(372, 274, 1, 129, NULL, 0, '2017-03-30'),
+(373, 274, 1, 151, 'fixed value', 20, '2017-03-30'),
+(374, 274, 2, 125, 'fixed value', 20, '2017-03-30'),
+(375, 274, 1, 160, NULL, 0, '2017-03-30'),
+(376, 276, 1, 78, NULL, 0, '2017-03-30'),
+(377, 408, 1, 122, 'fixed percentage', 15, '2017-03-30'),
+(378, 409, 1, 499, NULL, 0, '2017-03-31'),
+(379, 326, 2, 40, NULL, 0, '2017-04-01'),
+(380, 276, 1, 88, NULL, 0, '2017-04-02');
 
 -- --------------------------------------------------------
 
@@ -6309,8 +6396,8 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 -- Constraints for table `b2b_orders`
 --
 ALTER TABLE `b2b_orders`
-  ADD CONSTRAINT `b2b_orders_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`),
-  ADD CONSTRAINT `b2b_orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `b2b_orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `b2b_orders_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 
 --
 -- Constraints for table `b2b_order_detail`

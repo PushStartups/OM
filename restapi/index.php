@@ -756,6 +756,44 @@ $app->post('/add_order', function ($request, $response, $args) {
 
 
 
+$app->post('/tcs_printer', function ($request, $response, $args) {
+
+     try {
+         $result =   TCS_Service_Printer();
+
+     }
+     catch (Exception $e)
+    {
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($e));
+        return $response;
+    }
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($result));
+    return $response;
+
+
+});
+
+function TCS_Service_Printer()
+{
+    $API_KEY = '{demoapikey}';
+    $client = new \GuzzleHttp\Client([
+        'timeout' => 5, // NEVER FORGET to set a timeout
+        'base_uri' => 'https://imprimo.altercodex.com/api/dev/',
+        'headers' => [
+            'Authorization' => "Bearer $API_KEY"
+        ]
+    ]);
+
+    $response = $client->get('devices/');
+    return $response;
+
+}
+
 
 //  RETURN PAYMENT URL OF GUARD API AGAINST PAYMENT OF USER ORDER
 $app->post('/stripe_payment_request', function ($request, $response, $args) {

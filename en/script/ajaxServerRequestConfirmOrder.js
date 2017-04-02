@@ -89,7 +89,6 @@ $('#delivery-areas').on('change', function() {
         $("#error-area").html('Select One!');
         $("#area").addClass("error");
         $("#error-area").show();
-
     }
     else
     {
@@ -99,9 +98,11 @@ $('#delivery-areas').on('change', function() {
         $("#error-area").hide();
         $("#area").removeClass("error");
 
+
     }
 
     updateCartElements();
+
 });
 
 
