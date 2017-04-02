@@ -511,7 +511,7 @@ function processPayments()
 
 
 // CREDIT CARD PAYMENT
-function payment_credit_card(token) {
+function payment_credit_card(cardNo, cvv, exp) {
 
     var  newTotal = userObject.total;
 
@@ -521,8 +521,7 @@ function payment_credit_card(token) {
 
     }
 
-
-    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : newTotal, "email"  : userObject.email, "token"  : token},paymentCreditCardCallBack);
+    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : newTotal, "email"  : userObject.email, "cc_no"  : cardNo, "exp_date"  : exp, "cvv"  : cvv },paymentCreditCardCallBack);
 
 }
 

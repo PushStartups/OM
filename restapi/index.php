@@ -6,6 +6,11 @@ require      'vendor/autoload.php';
 require      'PHPMailer/PHPMailerAutoload.php';
 require_once 'inc/initDb.php';
 
+use Voucherify\VoucherifyClient;
+use Voucherify\VoucherBuilder;
+use Voucherify\CustomerBuilder;
+use Voucherify\ClientException;
+
 
 DB::query("set names utf8");
 
@@ -352,6 +357,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         $email = $request->getParam('email');        //  GET USER EMAIL
         $coupon_code = $request->getParam('code');   //  COUPON CODE ENTER BY USER
         $success_validation = "false";               //  SUCCESS VALIDATION RESPONSE FOR USER
+        $user_id = null;
 
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
@@ -364,99 +370,102 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
                 'smooch_id' => $email
             ));
             $user_id = DB::insertId();
-        } else {
+        }
+        else {
 
             // IF USER ALREADY EXIST IN DATABASE
             $user_id = $getUser['id'];
         }
 
-
         // COUPON VALIDATION
         $coupon_code = strtolower($coupon_code);
 
+        $res = VoucherifyValidation($coupon_code,$user_id);
 
-        //EXACT TIMEZONE OF ISRAEL
-        date_default_timezone_set("Asia/Jerusalem");
-        $current_date_time = date('Y-m-d H:i:s');
-
-
-        $arr = explode(" ", $current_date_time);
-        $current_date_time = $arr[0];
-        $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $coupon_code);
-
-
-        if (!empty($getCouponCode)) {
-
-            $coupon_id = $getCouponCode['id'];
-            $getStartingTime = $getCouponCode['starting_date'];
-            $getEndingTime = $getCouponCode['ending_date'];
-            $discount = $getCouponCode['discount'];
-            $type = $getCouponCode['type'];
-
-            if ($type == "amount") {
-
-                $isFixAmountCoupon = true;
-            } else {
-                $isFixAmountCoupon = false;
-            }
-
-
-            // GETTING START DATE AND END DATE OF COUPON FROM DATABASE
-            $arr1 = explode(" ", $getStartingTime);
-            $start_date = $arr1[0];
-
-
-            $arr2 = explode(" ", $getEndingTime);
-            $end_date = $arr2[0];
-
-
-            if ((($current_date_time >= $start_date) && ($current_date_time <= $end_date))) {
-
-                //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
-                $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id, $coupon_id);
-
-                if (DB::count() == 0) {
-
-                    $success_validation = "true";
-
-                }
-                else
-                {
-
-                    $success_validation = "false";
-                }
-
-            }
-            else
-            {
-                $success_validation = "false";
-            }
-
-        }
-        if ($success_validation == "true") {
-
-            $data = [
-
-                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
-                "amount" => $discount,                                     // DISCOUNT ON COUPON
-                "isFixAmountCoupon" => $isFixAmountCoupon                  // COUPON TYPE (AMOUNT OR PERCENTAGE)
-
-            ];
-        }
-        else
-        {
-
-            $data = [
-
-                "success" => false                                          // SUCCESS FALSE WRONG CODE
-
-            ];
-        }
+//
+//
+//        //EXACT TIMEZONE OF ISRAEL
+//        date_default_timezone_set("Asia/Jerusalem");
+//        $current_date_time = date('Y-m-d H:i:s');
+//
+//
+//        $arr = explode(" ", $current_date_time);
+//        $current_date_time = $arr[0];
+//        $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $coupon_code);
+//
+//
+//        if (!empty($getCouponCode)) {
+//
+//            $coupon_id = $getCouponCode['id'];
+//            $getStartingTime = $getCouponCode['starting_date'];
+//            $getEndingTime = $getCouponCode['ending_date'];
+//            $discount = $getCouponCode['discount'];
+//            $type = $getCouponCode['type'];
+//
+//            if ($type == "amount") {
+//
+//                $isFixAmountCoupon = true;
+//            } else {
+//                $isFixAmountCoupon = false;
+//            }
+//
+//
+//            // GETTING START DATE AND END DATE OF COUPON FROM DATABASE
+//            $arr1 = explode(" ", $getStartingTime);
+//            $start_date = $arr1[0];
+//
+//
+//            $arr2 = explode(" ", $getEndingTime);
+//            $end_date = $arr2[0];
+//
+//
+//            if ((($current_date_time >= $start_date) && ($current_date_time <= $end_date))) {
+//
+//                //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
+//                $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id, $coupon_id);
+//
+//                if (DB::count() == 0) {
+//
+//                    $success_validation = "true";
+//
+//                }
+//                else
+//                {
+//
+//                    $success_validation = "false";
+//                }
+//
+//            }
+//            else
+//            {
+//                $success_validation = "false";
+//            }
+//
+//        }
+//        if ($success_validation == "true") {
+//
+//            $data = [
+//
+//                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
+//                "amount" => $discount,                                     // DISCOUNT ON COUPON
+//                "isFixAmountCoupon" => $isFixAmountCoupon                  // COUPON TYPE (AMOUNT OR PERCENTAGE)
+//
+//            ];
+//        }
+//        else
+//        {
+//
+//            $data = [
+//
+//                "success" => false                                          // SUCCESS FALSE WRONG CODE
+//
+//            ];
+//        }
 
 
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
-        $response = $response->withJson(json_encode($data));
+        $response = $response->withJson(json_encode($res));
         return $response;
 
     }
@@ -469,6 +478,121 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
     }
 
 });
+
+
+
+function VoucherifyValidation($userCoupon,$user_id)
+{
+    $apiID          = "6243c07e-fea0-4f0d-89f8-243d589db97b";
+    $apiKey         = "ac0d95c8-b5fd-4484-a697-41a1a91f3dd2";
+    $voucherify     =  new VoucherifyClient($apiID, $apiKey);
+
+    $result = DB::queryFirstRow("select * from users where id = '$user_id'");
+
+    $Vid = $result['voucherify_id'];
+
+    // USER NOT EXIST ON VOUCHERIFY
+    if($Vid == "" || $Vid == null)
+    {
+
+        try {
+
+            $customer = (new CustomerBuilder())
+                ->setName($result['name'])
+                ->setEmail($result['email'])
+                ->setDescription("OrderApp website2.0 User")
+                ->setMetadata((object)array("lang" => "en"))
+                ->build();
+
+            $vResult = $voucherify->customer->create($customer);
+
+
+            DB::query("update users set voucherify_id = '".$vResult->id."' where id = '$user_id'");
+
+
+            $Vid =  $vResult->id;
+
+
+        }
+        catch (ClientException $e)
+        {
+            $data = [
+
+                "success" => false  // SUCCESS FALSE WRONG CODE
+
+            ];
+            return $data;
+        }
+    }
+
+
+    try {
+
+        $resultRedeem = $voucherify->redeem([
+            "voucher" => $userCoupon,
+            "customer" => [
+                "id" =>  $Vid
+            ]
+        ], NULL);
+
+
+        if($resultRedeem->voucher->discount->type == "AMOUNT")
+        {
+            $dAmount = ($resultRedeem->voucher->discount->amount_off / 100);
+
+            $data = [
+
+                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
+                "amount" => $dAmount,                                      // DISCOUNT ON COUPON
+                "isFixAmountCoupon" => true                                // COUPON TYPE (AMOUNT OR PERCENTAGE)
+
+            ];
+
+
+            return $data;
+
+
+        }
+        else if($resultRedeem->voucher->discount->type == "PERCENT")
+        {
+            $dAmount = $resultRedeem->voucher->discount->percent_off;
+
+
+            $data = [
+
+                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
+                "amount" => $dAmount,                                      // DISCOUNT ON COUPON
+                "isFixAmountCoupon" => false                                // COUPON TYPE (AMOUNT OR PERCENTAGE)
+
+            ];
+
+
+            return $data;
+        }
+
+    }
+    catch (ClientException $e)
+    {
+
+        $data = [
+
+            "success" => false  // SUCCESS FALSE WRONG CODE
+
+        ];
+
+        return $data;
+    }
+
+
+    $data = [
+
+        "success" => false  // SUCCESS FALSE WRONG CODE
+
+    ];
+
+    return $data;
+
+}
 
 
 
@@ -529,16 +653,6 @@ $app->post('/add_order', function ($request, $response, $args) {
                 $discountType = "fixed percentage";
             }
 
-            // EXPIRE USERS COUPON CODE
-
-            $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $user_order['couponCode']);
-
-            DB::insert('user_coupons', array(
-
-                'user_id' => $user_id,
-                'coupon_id' => $getCouponCode['id']
-
-            ));
 
             $discountValue = $user_order['discount'];
         }
@@ -650,7 +764,11 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
 
         $email = $request->getParam('email');
         $amount = $request->getParam('amount');
-        $token = $request->getParam('token');
+        $creditCardNo = $request->getParam('cc_no');
+        $expDate = $request->getParam('exp_date');
+        $cvv = $request->getParam('cvv');
+
+
 
         $user_id = 0;
 
@@ -670,7 +788,7 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
         }
 
 
-        $result = stripePaymentRequest(($amount * 100), $user_id, $email, $token);
+        $result = stripePaymentRequest(($amount*100), $user_id, $email,$creditCardNo,$expDate,$cvv);
 
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
@@ -696,99 +814,97 @@ $app->run();
 // STRIPE API PAYMENT REQUEST
 // AMOUNT DIVIDED BY 100 FROM API
 
-function  stripePaymentRequest($amount, $userId, $email, $token)
+function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$cvv)
 {
-    $str = '';
 
-    try
-    {
+    $str = "Error";
 
-        if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
+    $cgConf['tid']='8804324';
+    $cgConf['amount']=$amount;
+    $cgConf['user']='pushstart';
+    $cgConf['password']='OE2@38sz';
+    $cgConf['cg_gateway_url']="https://cgpay5.creditguard.co.il/xpo/Relay";
+
+    $poststring = 'user='.$cgConf['user'];
+    $poststring .= '&password='.$cgConf['password'];
+
+    /*Build Ashrait XML to post*/
+    $poststring.='&int_in=<ashrait>
+							<request>
+							<language>ENG</language>
+							<command>doDeal</command>
+							<requestId/>
+							<version>1000</version>
+							<doDeal>
+								<terminalNumber>'.$cgConf['tid'].'</terminalNumber>
+								<authNumber/>
+								<transactionCode>Phone</transactionCode>
+								<transactionType>Debit</transactionType>
+								<total>'.$cgConf['amount'].'</total>
+								<creditType>RegularCredit</creditType>
+								<cardNo>'.$creditCardNo.'</cardNo>
+								<cvv>'.$cvv.'</cvv>
+								<cardExpiration>'.$expDate.'</cardExpiration>
+								<validation>AutoComm</validation>
+								<numberOfPayments/>
+								<customerData>
+									<userData1/>
+									<userData2/>
+									<userData3/>
+									<userData4/>
+									<userData5/>
+								</customerData>
+								<currency>ILS</currency>
+								<firstPayment/>
+								
+								<periodicalPayment/>
+								<user>Rael</user>
+							</doDeal>
+						</request>
+					</ashrait>';
+
+    //init curl connection
+    if( function_exists( "curl_init" )) {
+        $CR = curl_init();
+        curl_setopt($CR, CURLOPT_URL, $cgConf['cg_gateway_url']);
+        curl_setopt($CR, CURLOPT_POST, 1);
+        curl_setopt($CR, CURLOPT_FAILONERROR, true);
+        curl_setopt($CR, CURLOPT_POSTFIELDS, $poststring);
+        curl_setopt($CR, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($CR, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($CR, CURLOPT_FAILONERROR,true);
+
+
+        //actual curl execution perfom
+        $result = curl_exec( $CR );
+        $error = curl_error ( $CR );
+
+        // on error - die with error message
+        if( !empty( $error )) {
+            die($error);
+        }
+
+        curl_close($CR);
+
+        $dom = new DOMDocument;
+        $dom->loadXML($result);
+        $status = $dom->getElementsByTagName('status');
+        $message = $dom->getElementsByTagName('message');
+
+
+        if($status->item(0)->nodeValue == 000)
         {
-            require_once('stripe/init.php');
-            \Stripe\Stripe::setApiKey("sk_test_g5tJMLPIVIRobeNktobgy4oZ"); //Replace with your Secret Key
-
+            $str   =  'success';
         }
         else{
 
-            require_once('stripe/init.php');
-            \Stripe\Stripe::setApiKey("sk_live_bOEx3vR2HgwAMMmYumsmO6TW"); //Replace with your Secret Key
+            $str  =  $message->item(0)->nodeValue;
 
         }
 
-
-        // Charge the user's card:
-        $charge = \Stripe\Charge::create(array(
-            "amount" => $amount,
-            "currency" => "ILS",
-            "description" => "Food Order",
-            "source" => $token,
-        ));
-
-
-        // RETURN PAYMENT SUCCESS
-        $str   =  'success';
     }
 
 
-    catch (\Stripe\Error\Card $e) {
-
-        // Card was declined.
-        $e_json = $e->getJsonBody();
-        $error = $e_json['error'];
-        $str =  $error['message'];
-
-    }
-
-
-    catch(Stripe_CardError $e) {
-
-        $str =  $e;
-
-    }
-
-
-    catch (Stripe_InvalidRequestError $e) {
-
-        // Invalid parameters were supplied to Stripe's API
-
-        $str =  $e;
-
-
-    }
-
-    catch (Stripe_AuthenticationError $e) {
-
-        // Authentication with Stripe's API failed
-        // (maybe you changed API keys recently)
-
-        $str =  $e;
-
-
-    }
-    catch (Stripe_ApiConnectionError $e) {
-
-        // Network communication with Stripe failed
-
-        $str =  $e;
-
-    }
-    catch (Stripe_Error $e) {
-
-        // Display a very generic error to the user, and maybe send
-        // yourself an email
-
-        $str =  $e;
-    }
-
-
-    catch (Exception $e) {
-
-        // Something else happened, completely unrelated to Stripe
-
-        $str =  $e;
-
-    }
 
     return $str;
 }

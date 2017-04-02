@@ -952,7 +952,7 @@ function onQtyIncreaseButtonClicked(index) {
 
     var leftBtnId = "#left-btn"+index;
 
-    $(leftBtnId).attr("src","/m/en/img/ic_reduce.png");
+    $(leftBtnId).attr("src","/en/img/ic_reduce.png");
 
 }
 
@@ -1036,7 +1036,7 @@ function onQtyDecreasedButtonClicked(index) {
         {
 
             var leftBtnId = "#left-btn"+index;
-            $(leftBtnId).attr("src","/m/en/img/ic_cancel.png");
+            $(leftBtnId).attr("src","/en/img/ic_cancel.png");
 
         }
 

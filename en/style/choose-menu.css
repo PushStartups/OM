@@ -54,7 +54,7 @@ a:hover, a:focus {
 .loader-css{
 
 	z-index:9999;
-	width: 40px;
+	width: 100px;
 	position: absolute;
 	top: 0;
 	left: 0;

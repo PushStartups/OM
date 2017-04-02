@@ -233,29 +233,29 @@ $(function () {
 
     })
 
-    $(".increase-btn").on("click", function () {
-        var count = $(this).prev(".count");
-        count.text(parseInt(count.text()) + 1);
-
-        $(this).siblings(".left-btn").attr("src", "images/ic_reduce.png");
-
-    })
-    $(".left-btn").on("click", function () {
-        var count = $(this).next(".count");
-
-        if (!(parseInt(count.text()) <= 1)) {
-            var val = parseInt(count.text());
-            count.text(val - 1);
-
-            if ((parseInt(count.text()) == 1)) {
-                $(this).attr("src", "images/ic_cancel.png")
-            }
-        }
-        else {
-            $(this).attr("src", "images/ic_cancel.png")
-        }
-
-    })
+    // $(".increase-btn").on("click", function () {
+    //     var count = $(this).prev(".count");
+    //     count.text(parseInt(count.text()) + 1);
+    //
+    //     $(this).siblings(".left-btn").attr("src", "images/ic_reduce.png");
+    //
+    // })
+    // $(".left-btn").on("click", function () {
+    //     var count = $(this).next(".count");
+    //
+    //     if (!(parseInt(count.text()) <= 1)) {
+    //         var val = parseInt(count.text());
+    //         count.text(val - 1);
+    //
+    //         if ((parseInt(count.text()) == 1)) {
+    //             $(this).attr("src", "images/ic_cancel.png")
+    //         }
+    //     }
+    //     else {
+    //         $(this).attr("src", "images/ic_cancel.png")
+    //     }
+    //
+    // })
 
 
     /*Customer info page*/

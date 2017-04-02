@@ -147,7 +147,7 @@ a:hover, a:focus {
 .loader-css{
 
 	z-index:9999;
-	width: 40px;
+	width: 100px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -342,19 +342,7 @@ a:hover, a:focus {
 	transform: scale(1.1);
 }
 
-.loader-css{
 
-	z-index:9999;
-	width: 40px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 30px;
-	margin:auto;
-	height: auto;
-	display: none;
-}
 .btn-left{
 	width:78px;
 	height:72px;
