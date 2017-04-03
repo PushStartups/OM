@@ -760,12 +760,12 @@ $app->post('/tcs_printer', function ($request, $response, $args) {
 
     $result = 'resp';
 
-     try {
+    try {
 
-         $result =   TCS_Service_Printer();
+        $result =   TCS_Service_Printer();
 
-     }
-     catch (Exception $e)
+    }
+    catch (Exception $e)
     {
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
@@ -1605,6 +1605,21 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
    ' . substr($user_order['contact'], -4) . '
     </span>';
 
+
+
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailbody .= '<br>';
+
+        $mailbody .= ' <span dir="rtl">
+      ההערות :  
+   ' . $user_order["specialRequest"]  . '
+    </span>';
+
+
+    }
+
     $mailbody .= '<br>';
     $mailbody .= '<br>';
     $mailbody .= '<br>';
@@ -1810,15 +1825,21 @@ function createOrderForTelegram($user_order)
     ';
 
 
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailBody .= 'ההערות :' . $user_order["specialRequest"] . ' 
+    
+       ';
+    }
+
+
 
     foreach ($user_order['cartData'] as $t) {
-
 
         $mailBody .=  $t['qty'] . '  ' . $t['name_he'] . ' 
         
         ';
-
-
 
         if($t['specialRequest'] != "") {
 
@@ -1829,7 +1850,6 @@ function createOrderForTelegram($user_order)
                 $mailBody .=  preg_replace("/\([^)]+\)/", "", $t['detail_he']).'הערות :'.$t['specialRequest'].' 
                 
                 ';
-
 
             }
             else {
@@ -1849,6 +1869,11 @@ function createOrderForTelegram($user_order)
 
         }
     }
+
+
+
+
+
 
     return $mailBody;
 }
