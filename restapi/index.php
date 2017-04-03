@@ -899,7 +899,7 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
 								<validation>AutoComm</validation>
 								<numberOfPayments/>
 								<customerData>
-									<userData1/>
+									<userData1>'.$email.'</userData1>
 									<userData2/>
 									<userData3/>
 									<userData4/>
@@ -909,7 +909,7 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
 								<firstPayment/>
 								
 								<periodicalPayment/>
-								<user>'.$email.'</user>
+								<user>Push</user>
 							</doDeal>
 						</request>
 					</ashrait>';
