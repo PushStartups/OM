@@ -299,7 +299,6 @@ function saveUserInfo() {
 function deliveryAddress()
 {
 
-
     $("#appt-no").removeClass("error");
     $("#address").removeClass("error");
     $("#area").removeClass("error");
@@ -316,6 +315,7 @@ function deliveryAddress()
         $('#customerInfoParent').removeClass("active");
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
+        $('#cash_parent').hide();
 
         addressInfoFlag = true;
 
@@ -371,8 +371,9 @@ function deliveryAddress()
         $('#customerInfoParent').removeClass("active");
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
-
+        $('#cash_parent').show();
         $("#user_name").val(userObject.name);
+
 
         addressInfoFlag = true;
 
@@ -395,8 +396,57 @@ function deliveryAddress()
 }
 
 
-function saveCashDetail()
+
+function ClosePayment()
 {
+
+    $("#error-card").removeClass("error");
+    $('#error-card-no').html("");
+
+    $("#error-cvv-parent").removeClass("error");
+    $("#exp_error").removeClass("error");
+
+    $('.payment-errors').html("");
+    $('.payment-errors').hide();
+
+    // IF PAYMENT THROUGH CREDIT CARD
+
+    if ($('#checkbox-id-24').is(":checked")) {
+
+        // CARD NO SHOULD NOT BE EMPTY
+        if ($('#card_no').val() == "") {
+            $("#error-card").addClass("error");
+            $('#error-card-no').html("*Required Field");
+            return;
+        }
+
+        // CVV SHOULD NOT BE EMPTY
+        if ($('#cvv').val() == "") {
+            $("#error-cvv-parent").addClass("error");
+            $('.payment-errors').html("*Required Field CVV");
+            $('.payment-errors').show();
+
+            return;
+        }
+
+        // MONTH SHOULD NOT BE EMPTY
+        if ($('#month').val() == "") {
+            $("#exp_error").addClass("error");
+            $('.payment-errors').html("*Card Expiry Date Month (MM) Required");
+            $('.payment-errors').show();
+            return;
+        }
+
+        // MONTH SHOULD NOT BE EMPTY
+        if ($('#year').val() == "") {
+            $("#exp_error").addClass("error");
+            $('.payment-errors').html("*Card Expiry Date Year (YY) Required");
+            $('.payment-errors').show();
+            return;
+        }
+
+    }
+
     $('#coupon').removeClass('error');
     $("#error-coupon").html("");
     $("#error-coupon").hide();
@@ -414,9 +464,30 @@ function saveCashDetail()
     }
     else
     {
-        processPayments();
+
+        paymentInfoFlag = true;
+
+        if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
+        {
+            $('#submitOrder').show();
+        }
+        else
+        {
+            $('#submitOrder').hide();
+        }
+
+        showSlide($('#specialRequest')).hide().slideDown(300);
+        hideSlide($('#paymentSlider'));
     }
 
+}
+
+
+
+function saveCashDetail()
+{
+
+    processPayments();
 }
 
 
@@ -470,10 +541,23 @@ function checkCouponCallBack(response)
         updateCartElements();
 
         $('#coupon_parent').hide();
-        processPayments();
-
         couponApplied = true;
         $('#coupon-txt').val("");
+
+        paymentInfoFlag = true;
+
+        if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
+        {
+            $('#submitOrder').show();
+        }
+        else
+        {
+            $('#submitOrder').hide();
+        }
+
+        showSlide($('#specialRequest')).hide().slideDown(300);
+        hideSlide($('#paymentSlider'));
+
 
     }
     // INVALID COUPON CODE
@@ -486,6 +570,7 @@ function checkCouponCallBack(response)
         $("#error-coupon").html("Error - this coupon is not valid.");
         $("#error-coupon").show();
         updateCartElements();
+        showSlide($('#paymentSlider')).hide().slideDown(300);
 
     }
 
@@ -495,7 +580,7 @@ function checkCouponCallBack(response)
 
 function processPayments()
 {
-    if ($('#checkbox-id-13').is(':checked')) {
+    if ($('#checkbox-id-13').is(':checked') && !userObject.pickFromRestaurant) {
 
         userObject.Cash_Card = "CASH";
         userObject.Cash_Card_he = "מזומן";
@@ -552,35 +637,9 @@ function paymentCreditCardCallBack(response) {
     {
         $(".payment-errors").html(resp);
         $(".payment-errors").show();
+        showSlide($('#paymentSlider')).hide().slideDown(300);
     }
 
-}
-
-
-
-function onPaymentSuccess()
-{
-    sectionPayment = true;
-
-    $('#deliveryInfoParent').removeClass("active");
-    $('#customerInfoParent').removeClass("active");
-    $('#paymentParent').removeClass("active");
-    $('#specialRequestParent').addClass("active");
-
-
-    paymentInfoFlag = true;
-
-    if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
-    {
-        $('#submitOrder').show();
-    }
-    else
-    {
-        $('#submitOrder').hide();
-    }
-
-    showSlide($('#specialRequest')).hide().slideDown(300);
-    hideSlide($('#paymentSlider'));
 }
 
 
@@ -605,6 +664,18 @@ function specialRequestSave()
 
 
 
+function onPaymentSuccess()
+{
+    sectionPayment = true;
+
+    $('#deliveryInfoParent').removeClass("active");
+    $('#customerInfoParent').removeClass("active");
+    $('#paymentParent').removeClass("active");
+    $('#specialRequestParent').addClass("active");
+
+    callPage3();
+}
+
 
 // SEND ORDER USER TO SERVER & CALL PAGE 3
 
@@ -624,9 +695,9 @@ function  callPage3() {
 
     if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
 
-      var  newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
+        var  newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
 
-      userObject.total = newTotal;
+        userObject.total = newTotal;
 
     }
 

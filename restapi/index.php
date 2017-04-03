@@ -378,7 +378,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         }
 
         // COUPON VALIDATION
-        $coupon_code = strtolower($coupon_code);
+        $coupon_code = $coupon_code;
 
         $res = VoucherifyValidation($coupon_code,$user_id);
 
@@ -758,7 +758,10 @@ $app->post('/add_order', function ($request, $response, $args) {
 
 $app->post('/tcs_printer', function ($request, $response, $args) {
 
+    $result = 'resp';
+
      try {
+
          $result =   TCS_Service_Printer();
 
      }
@@ -766,13 +769,13 @@ $app->post('/tcs_printer', function ($request, $response, $args) {
     {
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
-        $response = $response->withJson(json_encode($e));
+        $response = $response->withJson(json_encode("error  ".$e->getMessage()));
         return $response;
     }
 
     // RESPONSE RETURN TO REST API CALL
     $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($result));
+    $response = $response->withJson($result);
     return $response;
 
 
@@ -780,18 +783,28 @@ $app->post('/tcs_printer', function ($request, $response, $args) {
 
 function TCS_Service_Printer()
 {
-    $API_KEY = '{demoapikey}';
+    $API_KEY = 'demoapikey';
     $client = new \GuzzleHttp\Client([
-        'timeout' => 5, // NEVER FORGET to set a timeout
+
+        'timeout' => 100, // NEVER FORGET to set a timeout
         'base_uri' => 'https://imprimo.altercodex.com/api/dev/',
         'headers' => [
             'Authorization' => "Bearer $API_KEY"
+
         ]
+
     ]);
 
-    $response = $client->get('devices/');
-    return $response;
+    $mystring = "מםפק";
 
+
+    $response = $client->post('devices/356498044821326/requests/', ['json' => [
+        'data' =>   ord ($mystring)
+
+    ]]);
+
+
+    return $response->getBody();
 }
 
 
@@ -896,7 +909,7 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
 								<firstPayment/>
 								
 								<periodicalPayment/>
-								<user>Rael</user>
+								<user>'.$email.'</user>
 							</doDeal>
 						</request>
 					</ashrait>';

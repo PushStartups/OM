@@ -46,6 +46,8 @@ function initAccordion() {
 			var accordion = $(this);
 			var items = accordion.find(':has('+options.slider+')');
 
+			var allowOpen = false;
+
 			items.each(function(){
 				var item = $(this);
 				var opener = item.find(options.opener);
@@ -65,102 +67,104 @@ function initAccordion() {
 					}
 
 
-					if(customerInfoFlag  == true) {
 
-						var id = opener.attr("id");
+					var id = opener.attr("id");
 
-						if (id == "personalInfoOpener") {
+					if (id == "personalInfoOpener") {
 
 
-							if(userObject.name != "") {
+						if(userObject.name != "") {
 
-								$("#name_text").val(userObject.name);
+							$("#name_text").val(userObject.name);
 
+						}
+
+						if(userObject.email != "") {
+
+							$("#email_text").val(userObject.email);
+
+						}
+
+						if(userObject.contact != "")
+						{
+							$("#contact_text").val(userObject.contact);
+						}
+
+
+						$("#email").removeClass("error");
+						$("#name").removeClass("error");
+						$("#contact").removeClass("error");
+						$("#error-name").html('');
+						$("#error-email").html('');
+						$("#error-contact").html('');
+
+						allowOpen = true;
+					}
+					else if (id == "addressOpener" && customerInfoFlag ) {
+
+
+						if (!userObject.pickFromRestaurant) {
+
+							$('#checkbox-id-23').prop('checked', true);
+							$('#checkbox-id-12').prop('checked', false);
+							$('#deliveryFieldsParent').addClass('show');
+
+
+							if (userObject.deliveryAddress != "") {
+
+								$("#address").val(userObject.deliveryAddress);
 							}
 
-							if(userObject.email != "") {
-
-								$("#email_text").val(userObject.email);
-
-							}
-
-							if(userObject.contact != "")
+							if (userObject.deliveryAptNo != "")
 							{
-								$("#contact_text").val(userObject.contact);
+								$("#appt-no").val(userObject.deliveryAptNo);
+
 							}
 
 
-							$("#email").removeClass("error");
-							$("#name").removeClass("error");
-							$("#contact").removeClass("error");
-							$("#error-name").html('');
-							$("#error-email").html('');
-							$("#error-contact").html('');
-
-
+							$("#appt-no").removeClass("error");
+							$("#address").removeClass("error");
+							$("#area").removeClass("error");
+							$("#error-appt-no").hide();
+							$("#error-address").hide();
+							$("#error-area").hide();
 						}
-						else if (id == "addressOpener") {
+						else {
 
-
-							if (!userObject.pickFromRestaurant) {
-
-								$('#checkbox-id-23').prop('checked', true);
-								$('#checkbox-id-12').prop('checked', false);
-								$('#deliveryFieldsParent').addClass('show');
-
-
-								if (userObject.deliveryAddress != "") {
-
-									$("#address").val(userObject.deliveryAddress);
-								}
-
-								if (userObject.deliveryAptNo != "")
-								{
-									$("#appt-no").val(userObject.deliveryAptNo);
-
-								}
-
-
-								$("#appt-no").removeClass("error");
-								$("#address").removeClass("error");
-								$("#area").removeClass("error");
-								$("#error-appt-no").hide();
-								$("#error-address").hide();
-								$("#error-area").hide();
-							}
-							else {
-
-								$('#checkbox-id-12').prop('checked', true);
-								$('#checkbox-id-23').prop('checked', false);
-								$('#deliveryFieldsParent').removeClass('show');
-
-							}
-
-
-						}
-						else if (id == "paymentOpener") {
-
-							$('#coupon').removeClass('error');
-							$("#error-coupon").html("");
-							$(".payment-errors").html("");
-
-							if (userObject.Cash_Card == "CASH") {
-								$('#checkbox-id-13').prop('checked', true);
-								$('#checkbox-id-24').prop('checked', false);
-
-								$('#show_credit_card').removeClass('show');
-							}
-
-							if (userObject.Cash_Card == "Credit Card") {
-								$('#checkbox-id-13').prop('checked', false);
-								$('#checkbox-id-24').prop('checked', true);
-								$('#show_credit_card').addClass('show');
-
-
-							}
+							$('#checkbox-id-12').prop('checked', true);
+							$('#checkbox-id-23').prop('checked', false);
+							$('#deliveryFieldsParent').removeClass('show');
 
 						}
 
+						allowOpen = true;
+
+					}
+					else if (id == "paymentOpener" && addressInfoFlag && customerInfoFlag) {
+
+						$('#coupon').removeClass('error');
+						$("#error-coupon").html("");
+						$(".payment-errors").html("");
+
+						if ($('#checkbox-id-13').is(":checked")) {
+
+							$('#checkbox-id-13').prop('checked', true);
+							$('#checkbox-id-24').prop('checked', false);
+							$('#show_credit_card').removeClass('show');
+						}
+
+						if ($('#checkbox-id-24').is(":checked")) {
+
+							$('#checkbox-id-13').prop('checked', false);
+							$('#checkbox-id-24').prop('checked', true);
+							$('#show_credit_card').addClass('show');
+						}
+
+						allowOpen = true;
+					}
+
+
+					if(allowOpen) {
 
 						if (!slider.is(':animated')) {
 
@@ -191,8 +195,8 @@ function initAccordion() {
 							}
 						}
 
-
 					}
+
 
 					e.preventDefault();
 
