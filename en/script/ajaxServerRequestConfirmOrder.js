@@ -701,6 +701,14 @@ function  callPage3() {
 
     }
 
+    try
+    {
+        app.orderNowEvent();
+    }
+    catch (Exp)
+    {
+
+    }
 
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
 
