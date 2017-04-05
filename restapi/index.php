@@ -857,7 +857,6 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
 });
 
 
-
 $app->run();
 
 

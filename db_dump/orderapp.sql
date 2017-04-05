@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2017 at 10:22 AM
+-- Generation Time: Apr 05, 2017 at 09:22 AM
 -- Server version: 5.5.54
--- PHP Version: 5.6.29
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `b2b_orders`
@@ -50,7 +50,8 @@ INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`
 (25, 326, 2, 90, 90, 0, '2017-04-02'),
 (26, 326, 2, 123, 123, 0, '2017-04-02'),
 (27, 326, 2, 108, 108, 0, '2017-04-02'),
-(28, 326, 2, 0, 12, 23, '2017-04-03');
+(28, 326, 2, 0, 12, 23, '2017-04-03'),
+(29, 326, 2, 7, 42, 0, '2017-04-04');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
@@ -83,7 +84,46 @@ INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `s
 (21, 26, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)'),
 (22, 26, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)'),
 (23, 27, 1, 'Angus Salad', 108, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19), 170 grams chicken breast (+18)'),
-(24, 28, 1, 'Mexican Nachos', 12, '');
+(24, 28, 1, 'Mexican Nachos', 12, ''),
+(25, 29, 1, 'Chicken Salad', 42, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `b2b_users`
+--
+
+CREATE TABLE IF NOT EXISTS `b2b_users` (
+  `id` int(16) NOT NULL AUTO_INCREMENT,
+  `smooch_id` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `contact` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `state` int(16) NOT NULL DEFAULT '0',
+  `language` varchar(255) NOT NULL DEFAULT 'english',
+  `payment_url` varchar(255) DEFAULT NULL,
+  `extras` varchar(255) DEFAULT NULL,
+  `restaurant_id` int(16) DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  `company_id` int(11) DEFAULT NULL,
+  `voucherify_id` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `restaurant_id` (`restaurant_id`),
+  KEY `company_id` (`company_id`),
+  KEY `role_id` (`role_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `b2b_users`
+--
+
+INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
+(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 0, '2017-04-05', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '0000-00-00', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, '');
 
 -- --------------------------------------------------------
 
@@ -99,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `image_url` varchar(255) DEFAULT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=116 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=137 ;
 
 --
 -- Dumping data for table `categories`
@@ -219,7 +259,28 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (112, 12, 'Toasted Sandwiches', 'טוסטים', 'null', 0),
 (113, 12, 'Salads', 'סלטים', 'null', 0),
 (114, 12, 'Sandwiches', 'כריכים', 'null', 0),
-(115, 12, 'Vegan', 'טבעונ', 'null', 0);
+(115, 12, 'Vegan', 'טבעונ', 'null', 0),
+(116, 13, 'Main Dishes', 'עיקריות', '', 216),
+(117, 13, 'Hummus', 'חומוס', '', 217),
+(118, 13, 'Salads', 'סלטים', '', 218),
+(119, 13, 'Side dishes', 'תוספות', '', 219),
+(120, 13, 'Soups', 'מרקים', '', 220),
+(121, 13, 'Drinks', 'שתייה', '', 221),
+(122, 14, 'Pizza', 'פיצה', '', 222),
+(123, 14, 'Toppings', 'תוספות', '', 223),
+(124, 14, 'Sides', 'תוספות בצד', '', 224),
+(125, 14, 'Sauces', 'רטבים', '', 225),
+(126, 14, 'Cans', 'פחית', '', 226),
+(127, 14, 'Drinks (half litre bottle)', 'שתיה (חצי ליטר)', '', 227),
+(128, 14, 'Drinks (1.5 litre bottle)', 'שתיה (בקבוק 1.5 ליטר)', '', 228),
+(129, 14, 'Drink - glass bottle', 'שתיה (בקבוק זכוכית)', '', 229),
+(130, 14, 'Drink - other', 'שתיה (אחר)', '', 230),
+(131, 15, 'Deals', 'דילים', '', 231),
+(132, 15, 'Burgers', 'בורגרים', '', 232),
+(133, 15, 'Sides', 'תוספות ליד', '', 233),
+(134, 15, 'Salad addon', 'תוספת לסלט', '', 234),
+(135, 15, 'Deal Addons', 'תוספות לדיל', '', 235),
+(136, 15, 'Drinks', 'שתייה', '', 236);
 
 -- --------------------------------------------------------
 
@@ -280,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `company_rest` (
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`),
   KEY `rest_id` (`rest_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `company_rest`
@@ -294,7 +355,8 @@ INSERT INTO `company_rest` (`id`, `company_id`, `rest_id`) VALUES
 (5, 3, 4),
 (6, 3, 5),
 (7, 6, 8),
-(8, 6, 5);
+(8, 6, 5),
+(9, 2, 12);
 
 -- --------------------------------------------------------
 
@@ -488,7 +550,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1067 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1090 ;
 
 --
 -- Dumping data for table `extras`
@@ -1279,70 +1341,94 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (971, 811, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
 (972, 811, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
 (974, 811, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(975, 113, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(977, 113, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(978, 113, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(980, 114, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(981, 114, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(982, 114, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(986, 115, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(987, 115, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(988, 115, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(989, 115, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(990, 116, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(993, 116, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(994, 116, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(995, 117, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(996, 117, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(998, 117, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1000, 118, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1001, 118, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1002, 118, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1004, 118, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1005, 119, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1007, 119, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1008, 119, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1010, 120, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1011, 120, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1012, 120, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1014, 120, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1016, 121, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1017, 121, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1018, 121, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1019, 121, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1022, 122, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1023, 122, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1024, 122, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1025, 123, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1026, 123, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1029, 123, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1030, 124, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1031, 124, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1032, 124, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1034, 124, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1036, 125, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1037, 125, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1038, 125, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1040, 126, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1041, 126, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1043, 126, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1044, 126, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1046, 127, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1047, 127, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1048, 127, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1050, 128, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1052, 128, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1053, 128, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1054, 128, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1055, 129, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1058, 129, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
-(1059, 129, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
-(1060, 130, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
-(1061, 130, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
-(1062, 130, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
-(1064, 130, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(975, 812, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(977, 812, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(978, 812, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(980, 813, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(981, 813, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(982, 813, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(986, 813, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(987, 813, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(988, 813, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(989, 813, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(990, 814, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(993, 814, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(994, 814, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(995, 815, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(996, 815, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(998, 815, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1000, 816, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1001, 816, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1002, 816, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1004, 816, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1005, 817, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1007, 817, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1008, 817, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1010, 818, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1011, 818, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1012, 818, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1014, 818, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1016, 819, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1017, 819, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1018, 819, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1019, 819, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1022, 820, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1023, 820, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1024, 820, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1025, 821, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1026, 821, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1029, 821, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1030, 822, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1031, 822, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1032, 822, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1034, 822, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1036, 823, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1037, 823, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1038, 823, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1040, 824, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1041, 824, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1043, 824, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1044, 824, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1046, 825, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1047, 825, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1048, 825, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1050, 826, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1052, 826, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1053, 826, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1054, 826, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1055, 827, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1058, 827, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1059, 827, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1060, 828, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1061, 828, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1062, 828, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1064, 828, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
 (1065, 706, 'Filling Type', 'multiple', 0, 'סוג מילוי', 0),
-(1066, 711, 'Filling Type', 'multiple', 0, 'סוג מילוי', 0);
+(1066, 711, 'Filling Type', 'multiple', 0, 'סוג מילוי', 0),
+(1067, 830, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1068, 831, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1069, 832, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1070, 833, 'Extras - 10 nis', 'multiple', 10, '10 ש״ח', 0),
+(1071, 834, 'Extras - 15 nis', 'multiple', 15, '15 ש״ח', 0),
+(1072, 835, 'Extras - Free Side- Orders', 'multiple', 0, 'ללא תוספת תשלום', 0),
+(1073, 836, 'Extras - 3 nis', 'multiple', 3, '3 ש״ח', 0),
+(1074, 837, 'Extras - 6 nis', 'multiple', 6, '6 ש״ח', 0),
+(1075, 981, 'Addons', 'multiple', 0, '', 995),
+(1076, 982, 'Addons', 'multiple', 0, '', 996),
+(1077, 983, 'Addons', 'multiple', 0, '', 997),
+(1078, 984, 'Addons', 'multiple', 0, '', 998),
+(1079, 985, 'Addons', 'multiple', 0, '', 999),
+(1080, 986, 'Addons', 'multiple', 0, '', 1000),
+(1081, 987, 'Addons', 'multiple', 0, '', 1001),
+(1082, 838, 'Bread', 'one', 0, '', 987),
+(1083, 843, 'Bread', 'one', 0, '', 988),
+(1084, 851, 'Bread', 'one', 0, '', 989),
+(1085, 853, 'Bread', 'one', 0, '', 990),
+(1086, 861, 'Bread', 'one', 0, '', 991),
+(1087, 866, 'Bread', 'one', 0, '', 992);
+INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name_he`, `sort`) VALUES
+(1088, 979, 'Addons', 'multiple', 0, '', 993),
+(1089, 980, 'Addons', 'multiple', 0, '', 994);
 
 -- --------------------------------------------------------
 
@@ -1397,7 +1483,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=838 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1011 ;
 
 --
 -- Dumping data for table `items`
@@ -2231,7 +2317,153 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (834, 115, 'Carrot Juice', 'מיץ גזר', '', '', 14, 0),
 (835, 115, 'Orange Juice with Spirulina', 'מיץ תפוזים\r\nבתוספת ספירולינה', '', '', 21, 0),
 (836, 115, 'Special Mix of Seasonal Fruits\r\nwith Spirulina', 'מיץ פירות העונה\r\nבתוספת ספירולינה', '', '', 0, 0),
-(837, 115, 'Special Mix of Seasonal Fruits', 'מיץ פירות העונה', '', '', 0, 0);
+(837, 115, 'Special Mix of Seasonal Fruits', 'מיץ פירות העונה', '', '', 0, 0),
+(838, 116, 'Meatballs in sauce', 'קציצות בשר ברוטב', '', '', 26, 937),
+(843, 116, 'Schnitzel ', 'שניצל', '', '', 26, 942),
+(851, 116, 'Kebab', 'קבב', '', '', 25, 950),
+(853, 116, 'Jerusalem mixed grill ', 'מעורב', '', '', 30, 952),
+(861, 116, 'Spring chicken', 'פרגית', '', '', 38, 960),
+(866, 116, 'Moussaka ', 'מוסקה', '', '', 46, 965),
+(867, 117, '"once without"', 'פעם בלי', 'Humous with chickpeas, parsley and olive oil', ' חומוס גרנרים, פטרוזיליה ושמן זית', 25, 966),
+(868, 117, 'Complete Humous', 'פעם קומפלט', 'Humous with chickpeas, felafel, hard boiled egg, parsley and olive oil', ' חומוס גרגרים, פלאפל, ביצה קשה, פטרוזיליה ושמן זית', 30, 967),
+(869, 117, 'Matboucha', 'מטבוחה', 'Tehina, chickpeas, parsley and olive oil', ' טחינה, גרגרים, טטבילה, פטרוזיליה ושמן זית', 25, 968),
+(870, 117, 'Humous Meal ', 'פעם סעדה', 'Humous, tehina, parsley and olive oil', 'חומוס, טחינה, פטרוזיליה ושמן זית', 25, 969),
+(871, 117, 'Humous Shakshouka', 'חומוס שקשוקה', '', '', 32, 970),
+(872, 117, 'Humous with Meat', 'חומוס בשר', 'Chickpeas, mincemeat, olive oil and parsley ', 'גרגרים, בשר טחון, שמן זית ופטרוזיליה', 35, 971),
+(875, 117, '1/4 cup Humous', ' גביע 1/4 חומוס', '', '', 14, 974),
+(876, 117, '1/4 cup Tehina', 'גביע 1/4 טחינה', '', '', 14, 975),
+(877, 117, '1/2 cup Humous', ' גביע 1/2 חומוס', '', '', 22, 976),
+(878, 117, '1/2 cup Tehina', 'גביע 1/2 טחינה', '', '', 22, 977),
+(879, 118, 'House Salad ', 'סלט הבית', 'Tomatoes, cucumber, red onion, parsley, hot chickpeas and tehina', ' עגבנייה, מלפפון, בצל סגול, פטרוזיליה, גרגירי חומוס חמים וטחינה', 29, 978),
+(880, 118, 'Chicken Salad', ' סלט רצועות חזה עוף', 'Chicken strips stirfried with onion', ' מוקפץ עם  בצל', 39, 979),
+(881, 118, 'Grilled spring chicken salad', 'סלט פרגית על פלנצ''ה', 'Served with Middle-Eastern seasonings', ' בתיבול מזרחי', 48, 980),
+(882, 119, 'Beans and rice', 'אורז שעועית', '', '', 20, 981),
+(883, 119, 'Chopped Israeli salad', ' סלט ישראלי קצוץ', '', '', 15, 982),
+(884, 119, 'French fries', ' צ''יפס', '', '', 15, 983),
+(885, 119, 'Mashed potato', 'פירה', '', '', 20, 984),
+(886, 119, 'Spaghetti in tomato sauce', 'ספגטי ברוטב עגבניות', '', '', 22, 985),
+(887, 119, 'Majadara', 'מג''דרה', '', '', 20, 986),
+(888, 119, 'Couscous with vegetables', 'קוסקוס ירקות', '', '', 24, 987),
+(889, 119, 'Rice with okra', 'אורז במיא', '', '', 20, 988),
+(890, 119, 'Rice with green beans', 'אורז עם שעועית ירוקה', '', '', 20, 989),
+(891, 119, 'Shakshuka', 'שקשוקה', '', '', 22, 990),
+(892, 120, 'Bean soup', 'מרק שעויעת', '', '', 20, 991),
+(893, 120, 'Kubbeh soup', ' מרק קובה', '', '', 28, 992),
+(894, 120, 'Vegetable soup', ' מרק ירקות', '', '', 22, 993),
+(895, 121, 'Cola', ' קולה', '', '', 9, 994),
+(896, 121, 'Kinley', 'קינלי', '', '', 9, 995),
+(897, 121, 'Sprite', 'ספרייט', '', '', 9, 996),
+(898, 121, 'Diet Sprite', 'דיאט ספרייט', '', '', 9, 997),
+(899, 121, 'Fuze Tea', 'פוז טי', '', '', 9, 998),
+(900, 121, 'Flavored water', 'מים בטעמים', '', '', 8, 999),
+(901, 121, 'Soda water', 'מי סודה', '', '', 8, 1000),
+(902, 121, 'Mineral water', 'מים מינרלים', '', '', 8, 1001),
+(903, 121, 'Malt beer (black beer)', 'בירה שחורה', '', '', 9, 1002),
+(904, 121, 'Beer', 'בירה לבנה', '', '', 14, 1003),
+(905, 122, 'Large pie', 'מגש ענק ', '', '', 65, 1004),
+(906, 122, 'Large pie with drink', 'מגש ענק עם שתיה', '', '', 77, 1005),
+(907, 122, 'Medium pie', 'מגש בינוני ', '', '', 58, 1006),
+(908, 122, 'Individual pie', 'מגש אישי ', '', '', 25, 1007),
+(909, 122, 'Pizza slice', 'משולש', '', '', 10, 1008),
+(910, 123, 'Olives', 'זיתים', 'Topping for large pie', 'תוספות למגש ענק', 12, 1009),
+(911, 123, 'Tomatoes', 'עגבניות', 'Topping for large pie', 'תוספות למגש ענק', 12, 1010),
+(912, 123, 'Corn', 'תירס', 'Topping for large pie', 'תוספות למגש ענק', 12, 1011),
+(913, 123, 'Onion', 'בצל', 'Topping for large pie', 'תוספות למגש ענק', 12, 1012),
+(914, 123, 'Mushroom', 'פטריות', 'Topping for large pie', 'תוספות למגש ענק', 12, 1013),
+(915, 123, 'Red pepper', 'גמבה', 'Topping for large pie', 'תוספות למגש ענק', 12, 1014),
+(916, 123, 'Cheese', 'גבינה', 'Topping for large pie', 'תוספות למגש ענק', 20, 1015),
+(917, 123, 'Tuna', 'טונה', 'Topping for large pie', 'תוספות למגש ענק', 20, 1016),
+(918, 123, 'Tomatoes', 'עגבניות', 'Topping for slice of large pie', 'תוספות למשולש של פיצה ענק', 1.5, 1017),
+(919, 123, 'Corn', 'תירס', 'Topping for slice of large pie', 'תוספות למשולש של פיצה ענק', 1.5, 1018);
+INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `sort`) VALUES
+(920, 123, 'Olives', 'זיתים', 'Topping for slice of large pie', 'תוספות למשולש של פיצה ענק', 1.5, 1019),
+(921, 123, 'Onion', 'בצל', 'Topping for slice of large pie', 'תוספות למשולש של פיצה ענק', 1.5, 1020),
+(922, 123, 'Mushroom', 'פטריות', 'Topping for slice of large pie', 'תוספות למשולש של פיצה ענק', 1.5, 1021),
+(923, 123, 'Red pepper', 'גמבה', 'Topping for slice of large pie', 'תוספות למשולש של פיצה ענק', 1.5, 1022),
+(924, 123, 'Olives', 'זיתים', 'Topping for medium pie', 'תוספות למגש בינוני ', 8, 1023),
+(925, 123, 'Tomatoes', 'עגבניות', 'Topping for medium pie', 'תוספות למגש בינוני ', 8, 1024),
+(926, 123, 'Corn', 'תירס', 'Topping for medium pie', 'תוספות למגש בינוני ', 8, 1025),
+(927, 123, 'Onion', 'בצל', 'Topping for medium pie', 'תוספות למגש בינוני ', 8, 1026),
+(928, 123, 'Mushroom', 'פטריות', 'Topping for medium pie', 'תוספות למגש בינוני ', 8, 1027),
+(929, 123, 'Red pepper', 'גמבה', 'Topping for medium pie', 'תוספות למגש בינוני ', 8, 1028),
+(930, 123, 'Olives', 'זיתים', 'Topping for slice of medium pie', 'תוספת למשולש בינוני', 1, 1029),
+(931, 123, 'Tomatoes', 'עגבניות', 'Topping for slice of medium pie', 'תוספת למשולש בינוני', 1, 1030),
+(932, 123, 'Corn', 'תירס', 'Topping for slice of medium pie', 'תוספת למשולש בינוני', 1, 1031),
+(933, 123, 'Onion', 'בצל', 'Topping for slice of medium pie', 'תוספת למשולש בינוני', 1, 1032),
+(934, 123, 'Mushroom', 'פטריות', 'Topping for slice of medium pie', 'תוספת למשולש בינוני', 1, 1033),
+(935, 123, 'Red pepper', 'גמבה', 'Topping for slice of medium pie', 'תוספת למשולש בינוני', 1, 1034),
+(936, 124, 'Large chips', 'צ''יפס גדול ', '', '', 18, 1035),
+(937, 124, 'Small chips', 'צ''יפס קטן', '', '', 10, 1036),
+(938, 124, 'Large onion rings', 'טבעות בצל גדול', '', '', 18, 1037),
+(939, 124, 'Small onion rings', 'טבעות בצל קטן', '', '', 10, 1038),
+(940, 125, 'Spicy house sauce', 'רוטב הבית (קצת חריף)', '', '', 0, 1039),
+(941, 125, 'Garlic sauce', 'רוטב שום ', '', '', 0, 1040),
+(942, 125, '1000 Island dressing', 'רוטב אלך האיים', '', '', 0, 1041),
+(943, 126, 'Coca cola', 'קוקה קולה ', '', '', 8, 1042),
+(944, 126, 'Coke Zero', 'קוקה קולה זירו', '', '', 8, 1043),
+(945, 126, 'Apple cider', 'סיידר תפוחים', '', '', 7, 1044),
+(946, 126, 'Pepsi', 'פפסי', '', '', 7, 1045),
+(947, 126, 'Mirinda', 'מרינדה', '', '', 7, 1046),
+(948, 126, '7 Up', '7 אפ', '', '', 7, 1047),
+(949, 127, 'Coca cola', 'קוקה קולה ', '', '', 10, 1048),
+(950, 127, 'Mineral water', 'מים מנרלים', '', '', 6, 1049),
+(951, 127, 'Flavored water', 'מים בטעמים', '', '', 10, 1050),
+(952, 127, 'Ice tea', 'ICE TEA', '', '', 10, 1051),
+(953, 127, 'Jump juice', 'מיצים ג''אמפ', '', '', 10, 1052),
+(954, 128, 'Coca cola', 'קוקה קולה ', '', '', 12, 1053),
+(955, 128, 'Coke Zero', 'קוקה קולה זירו', '', '', 12, 1054),
+(956, 128, 'Pepsi', 'פפסי', '', '', 12, 1055),
+(957, 128, 'Mirinda', 'מרינדה', '', '', 12, 1056),
+(958, 128, '7 Up', '7 אפ', '', '', 12, 1057),
+(959, 128, 'Jump Apple', 'ג''אמפ - תפוחים', '', '', 12, 1058),
+(960, 128, 'Orange drink', 'תפוזים', '', '', 12, 1059),
+(961, 128, 'Mango drink', 'מנגו', '', '', 12, 1060),
+(962, 128, 'Mineral water', 'מים מנרלים', '', '', 10, 1061),
+(963, 129, 'Coca cola', 'קוקה קולה ', '', '', 9, 1062),
+(964, 129, 'Apple cider', 'סיידר תפוחים', '', '', 8, 1063),
+(965, 129, 'Soda water', 'סודה', '', '', 5, 1064),
+(966, 129, 'Black beer', 'בירה שחורה', '', '', 10, 1065),
+(967, 129, 'Jump Juice', 'ג''אמפ', '', '', 7, 1066),
+(968, 130, 'Tropit', 'טרופית', '', '', 2.5, 1067),
+(969, 130, 'Chocolate milk', 'שקית שוקו', '', '', 3, 1068),
+(970, 131, 'Burger deal ', 'בורגר דיל 110*1  ', '110 burger + fries/ onion rings, soft drink', ' המבורגר 110*1  + צ''יפס/טבעות בצל + שתייה ', 44, 1069),
+(971, 131, 'Double Burger deal', 'בורגר דיל 110*2', '2 x 110 burgers + fries/ onion rings, soft drink', ' המבורגר 110*2  + צ''יפס/טבעות בצל + שתייה ', 54, 1070),
+(972, 131, 'Triple Burger deal', 'המבורגר 110*3', '3 x 110 burgers + fries/ onion rings, soft drink', 'המבורגר 110*3  + צ''יפס/טבעות בצל + שתייה ', 59, 1071),
+(973, 131, 'Sirloin deal ', 'סינטה  ', 'Sirlion sandwich deal  + fries/ onion rings, soft drink', 'סינטה   + צ''יפס/טבעות בצל + שתייה ', 49, 1072),
+(974, 131, 'Double Sirloin deal', 'סינטה', 'Double sirlion sandwich   + fries/ onion rings, soft drink', 'סינטה*2  + צ''יפס/טבעות בצל + שתייה ', 65, 1073),
+(975, 131, 'Chicken deal', ' צ''יקן סנדביץ'' 110 דיל', 'Chicken sandwich  + fries/ onion rings, soft drink', 'צ''יקן סנדביץ'' 110*1  + צ''יפס/טבעות בצל + שתייה', 44, 1074),
+(976, 131, 'Double chicken deal', 'צ''יקן סנדביץ''  110* 2 דיל', 'Double chicken sandwich  + fries/ onion rings, soft drink', 'צ''יקן סנדביץ'' 110*2  + צ''יפס/טבעות בצל + שתייה', 59, 1075),
+(977, 131, 'Veggie deal', 'דיל  150 ג Veggie/צמחוני', 'Veggie burger  + fries/ onion rings, soft drink', ' בורגר צמחוני + צ''יפס/טבעות בצל + שתייה', 44, 1076),
+(978, 131, 'Double veggie deal', '(150 ג) Veggie/צמחוני* 2', 'Double veggie burger  + fries/ onion rings, soft drink', 'בורגר צמחוני + צ''יפס/טבעות בצל + שתייה', 59, 1077),
+(979, 132, '110 Burger', '110בורגר', '', '', 29, 1078),
+(980, 132, 'Chicken sandwich', 'צ''יקן סנדביץ'' 110', '', '', 29, 1079),
+(981, 132, 'Sirloin sandwich', 'סינטה 110', '', '', 35, 1080),
+(982, 132, 'Veggie burger (150g)', 'Veggie/צמחוני', '', '', 29, 1081),
+(983, 132, '2 x 110 Burgers', '2 * 110בורגר ', '', '', 39, 1082),
+(984, 132, '2 x Chicken sandwiches', '2 * צ''יקן סנדביץ'' 110', '', '', 39, 1083),
+(985, 132, '2 x Sirloin sandwich', '2 * סינטה 110', '', '', 49, 1084),
+(986, 132, '3 x 110 Burgers', '3 * 110בורגר ', '', '', 79, 1085),
+(987, 132, 'Kid''s meal', 'ילדים', 'Chicken tenders, fries, drink', 'שניצלונים + צ''יפס + שתייה', 35, 1086),
+(988, 133, 'Fries', 'צ''יפס רגיל', '', '', 11, 1087),
+(989, 133, 'Large fries', 'צ''יפס  גדול', '', '', 14, 1088),
+(990, 133, 'Onion rings', 'טבעות בצל ', '', '', 14, 1089),
+(991, 133, 'Large onion rings', 'טבעות בצל גדול', '', '', 17, 1090),
+(992, 133, '110 Salad', 'סלט 110', '', '', 29, 1091),
+(993, 134, 'Champignon mushrooms', 'פטריות שמפינון', '', '', 3, 1092),
+(994, 134, 'Chicken breast', 'חזה עוף', '', '', 9, 1093),
+(998, 135, 'Onion rings in meal deal', 'תוספת טבעות בצל בארוחה ', '', '', 3, 1097),
+(999, 135, 'Upgrade to beer in meal deal', 'שדרוג בירה בארוחה ', '', '', 6, 1098),
+(1000, 136, 'Coke', 'קוקה קולה', '', '', 11, 1099),
+(1001, 136, 'Zero', 'זירו', '', '', 11, 1100),
+(1002, 136, 'Fanta', 'פאנטה', '', '', 11, 1101),
+(1003, 136, 'Sprite', 'ספרייט', '', '', 11, 1102),
+(1004, 136, 'Fuze Tea', 'פיוז-טי', '', '', 11, 1103),
+(1005, 136, 'Orange juice', 'תפוזים ', '', '', 11, 1104),
+(1006, 136, 'Grape juice', 'ענבים ', '', '', 11, 1105),
+(1007, 136, 'Mineral water', 'נביעות ', '', '', 9, 1106),
+(1008, 136, 'Living water', 'מי בריאה', '', '', 11, 1107),
+(1009, 136, 'Sparkling water', 'סודה', '', '', 11, 1108),
+(1010, 136, 'Carlsberg 1/3 litre', 'קרלסברג 1/3', '', '', 17, 1109);
 
 -- --------------------------------------------------------
 
@@ -2247,7 +2479,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `menus`
@@ -2264,7 +2496,10 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (9, 9, 'Lunch', 'ארוחת צהריים', 106),
 (10, 10, 'Lunch', 'ארוחת צהריים', 106),
 (11, 11, 'Lunch', 'ארוחת צהריים', 110),
-(12, 12, 'Lunch', 'ארוחת צהריים', 110);
+(12, 12, 'Lunch', 'ארוחת צהריים', 110),
+(13, 13, 'Lunch', 'ארוחת צהריים', 112),
+(14, 14, 'Lunch', 'ארוחת צהריים', 113),
+(15, 15, 'Lunch', 'ארוחת צהריים', 113);
 
 -- --------------------------------------------------------
 
@@ -2281,7 +2516,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=488 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=508 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -2712,7 +2947,27 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (484, 378, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), Egg (+4)'),
 (485, 378, 2, 'Pargit Tortilla', 34, 'Ketchup'),
 (486, 379, 1, 'Xl + Toppings', 75, ''),
-(487, 380, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)');
+(487, 380, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)'),
+(488, 381, 6, 'Angus Salad', 44, 'Jalapeño'),
+(489, 381, 1, 'Angus Salad', 44, 'BBQ, Thousand island'),
+(490, 381, 1, 'Chicken Salad', 42, ''),
+(491, 382, 1, 'Angus Salad', 52, '50 grams goose breast (+8)'),
+(492, 383, 1, 'Chicken Salad', 61, '150 grams goose breast or entrecote (+19)'),
+(493, 384, 2, 'Dim Sum with meat', 29, ''),
+(494, 385, 1, 'Angus Salad', 52, '50 grams goose breast (+8)'),
+(495, 386, 1, 'Angus Salad', 52, '50 grams goose breast (+8)'),
+(496, 386, 1, 'Coca Cola Zero', 8, ''),
+(497, 387, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8)'),
+(498, 388, 1, 'Angus Salad', 52, '50 grams goose breast (+8)'),
+(499, 389, 2, 'Shawarma', 33, 'Bread Type:Pita, Spring Chicken, Fried Onions'),
+(500, 390, 1, 'Angus Salad', 52, '50 grams goose breast (+8)'),
+(501, 391, 1, 'Angus Salad', 90, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19)'),
+(502, 392, 1, 'Angus Salad', 52, '50 grams goose breast (+8)'),
+(503, 392, 1, 'Pargit Tortilla', 38, 'Portobello Mushroom (+4), Ketchup'),
+(504, 393, 2, 'Angus Salad', 44, ''),
+(505, 394, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), portobello mushroom (+4)'),
+(506, 394, 1, 'Chicken Salad', 90, '170 grams chicken breast (+18), 80 grams goose liver (+30)'),
+(507, 395, 2, 'Angus Salad', 44, '');
 
 -- --------------------------------------------------------
 
@@ -2735,7 +2990,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `hechsher_en` varchar(255) NOT NULL,
   `hechsher_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `restaurants`
@@ -2753,7 +3008,10 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, 
 (9, 'Pizza Cheese', 'פיצה צ׳יז', 50, 2, 0, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', 'פיצה מעולה עם כל התוסות, מכחר פסטות וסלטים, שירות נהדר, רוחב לב,  מחיר כמו שאין בשום מקום. מה עוד צריך?!', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, 1, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
 (11, 'Ken LePizza', 'כן לפיצה', 50, 2, 0, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
-(12, 'Aroma', 'ארומה', 50, 1, 0, '/m/en/img/aroma_logo.png', 'Simply the best coffee in town. Coupled with food freshly prepared as you wait. Sandwiches, salads, breakfasts, pastries. If you don''t like coffee, there''s plent of other drinks, hot and cold, on offer. Now you can have this deliciousness delivered to your home. ', '', 'Big Center, Yigal Allon 5, Beit Shemesh', '  מרכז ביג, יגאל אלון 5, בית שמש', 'KOSHER MEHADRIN', 'כשר למהדרין');
+(12, 'Aroma', 'ארומה', 50, 1, 0, '/m/en/img/aroma_logo.png', 'Simply the best coffee in town. Coupled with food freshly prepared as you wait. Sandwiches, salads, breakfasts, pastries. If you don''t like coffee, there''s plent of other drinks, hot and cold, on offer. Now you can have this deliciousness delivered to your home. ', '', 'Big Center, Yigal Allon 5, Beit Shemesh', '  מרכז ביג, יגאל אלון 5, בית שמש', 'KOSHER MEHADRIN', 'כשר למהדרין'),
+(13, 'Pinati', 'פינתי', 50, 1, 1, '', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
+(14, 'Pizzaland', 'פיצה', 50, 1, 1, '', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
+(15, '110 Burger', '110 בורגר', 50, 1, 1, '', '110 Burger is a brand new, revolutionary and groundbreaking fast food ast food industry, the next generation of fast food.\r\nWith a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables, and vegetarianism menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product and its adherence to the standard of gourmet restaurants. ', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food.\n110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף');
 
 -- --------------------------------------------------------
 
@@ -2907,7 +3165,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5405 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5482 ;
 
 --
 -- Dumping data for table `subitems`
@@ -7628,7 +7886,52 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (5400, 1065, 'Chocolate', '', 0, 0),
 (5401, 1065, 'Butter', '', 0, 0),
 (5403, 1066, 'Chocolate', 'שוקולד', 0, 0),
-(5404, 1066, 'Butter', 'חמאה', 0, 0);
+(5404, 1066, 'Butter', 'חמאה', 0, 0),
+(5437, 1088, 'Lettuce', 'חסה', 0, 0),
+(5438, 1088, 'Tomato', 'עגבניה', 0, 0),
+(5439, 1088, 'Pickles', 'חמוצים', 0, 0),
+(5440, 1088, 'Onion', 'בצל', 0, 0),
+(5441, 1088, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5442, 1089, 'Lettuce', 'חסה', 0, 0),
+(5443, 1089, 'Tomato', 'עגבניה', 0, 0),
+(5444, 1089, 'Pickles', 'חמוצים', 0, 0),
+(5445, 1089, 'Onion', 'בצל', 0, 0),
+(5446, 1089, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5447, 1075, 'Lettuce', 'חסה', 0, 0),
+(5448, 1075, 'Tomato', 'עגבניה', 0, 0),
+(5449, 1075, 'Pickles', 'חמוצים', 0, 0),
+(5450, 1075, 'Onion', 'בצל', 0, 0),
+(5451, 1075, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5452, 1076, 'Lettuce', 'חסה', 0, 0),
+(5453, 1076, 'Tomato', 'עגבניה', 0, 0),
+(5454, 1076, 'Pickles', 'חמוצים', 0, 0),
+(5455, 1076, 'Onion', 'בצל', 0, 0),
+(5456, 1076, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5457, 1077, 'Lettuce', 'חסה', 0, 0),
+(5458, 1077, 'Tomato', 'עגבניה', 0, 0),
+(5459, 1077, 'Pickles', 'חמוצים', 0, 0),
+(5460, 1077, 'Onion', 'בצל', 0, 0),
+(5461, 1077, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5462, 1078, 'Lettuce', 'חסה', 0, 0),
+(5463, 1078, 'Tomato', 'עגבניה', 0, 0),
+(5464, 1078, 'Pickles', 'חמוצים', 0, 0),
+(5465, 1078, 'Onion', 'בצל', 0, 0),
+(5466, 1078, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5467, 1079, 'Lettuce', 'חסה', 0, 0),
+(5468, 1079, 'Tomato', 'עגבניה', 0, 0),
+(5469, 1079, 'Pickles', 'חמוצים', 0, 0),
+(5470, 1079, 'Onion', 'בצל', 0, 0),
+(5471, 1079, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5472, 1080, 'Lettuce', 'חסה', 0, 0),
+(5473, 1080, 'Tomato', 'עגבניה', 0, 0),
+(5474, 1080, 'Pickles', 'חמוצים', 0, 0),
+(5475, 1080, 'Onion', 'בצל', 0, 0),
+(5476, 1080, '1000 Island dressing', 'רוטב 1000 איים', 0, 0),
+(5477, 1081, 'Lettuce', 'חסה', 0, 0),
+(5478, 1081, 'Tomato', 'עגבניה', 0, 0),
+(5479, 1081, 'Pickles', 'חמוצים', 0, 0),
+(5480, 1081, 'Onion', 'בצל', 0, 0),
+(5481, 1081, '1000 Island dressing', 'רוטב 1000 איים', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -7696,7 +7999,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=414 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=421 ;
 
 --
 -- Dumping data for table `users`
@@ -7705,7 +8008,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
 (255, 'ahmadworkspace@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '343434', '', 0, 'english', NULL, NULL, NULL, 2, 1, ''),
 (260, 'test@gmail.com', 'test@gmail.com', '', '', 0, '0000-00-00', '3434', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_IjBLrqEudMhvhLQGfWs8gXNO'),
-(261, 'muhammad.iftikhar.aftab@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '454545', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, 1, ''),
+(261, 'dfgdfgdfg', 'Muhammad', '', '', 0, '2017-04-04', '454545', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, 1, ''),
 (262, 'Tes@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (263, 'test4444@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (264, 'test43434@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7718,9 +8021,9 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (271, 'Test111@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (272, 'Klinger.micheal09@gmail.com', '', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (273, 'rustom31122@gmail.com', 'Rustom', '', '', 0, '0000-00-00', '343444', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(274, 'avi@pushstartups.com', 'avi test', '', '', 0, '0000-00-00', '00000000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_1whzjgK8ux7TqSVd7SR2ciSp'),
+(274, 'avi@pushstartups.com', 'avi test', '', '', 0, '0000-00-00', '0000000', 'gad bet shemesh', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_1whzjgK8ux7TqSVd7SR2ciSp'),
 (275, 'test@test.com', 'testing', '', '', 0, '0000-00-00', '456456465465', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(276, 'rael@pushstartups.com', 'Rael Olwyn', '', '', 0, '0000-00-00', '00000', 'Gad', 0, 'english', NULL, NULL, NULL, 2, 1, ''),
+(276, 'rael@pushstartups.com', 'rael test', '', '', 0, '0000-00-00', '000000', '', 0, 'english', NULL, NULL, NULL, 2, 1, ''),
 (277, '47ae2bc6dec29ba24f07a3fe', NULL, '', '', 0, '0000-00-00', NULL, NULL, 1, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (278, 'umair.khalid786@outlook.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (279, 'Dvora@pushstartups.com', 'Dvora', '', '', 0, '0000-00-00', '0543047266', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7770,7 +8073,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (323, 'test233@gmail.com', 'Muhammad ', '', '', 0, '0000-00-00', '343434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (324, 'sdfsdf@fsdf.com', 'sdfsdf', '', '', 0, '0000-00-00', '13215643215', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (325, 'test@tester.com', 'test', '', '', 0, '0000-00-00', '0507665524', 'hahar street', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(326, 'shoaibtest@gmail.com', '', 'shoaibtest', 'shoaibtest', 23, '2017-04-03', '', '', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(326, 'muhammad.iftikhar.aftab@gmail.com', 'shoaib', 'shoaibtest', 'shoaibtest', 35, '2017-04-02', '', '', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (327, 'shoaibcompany2@gmail.com', 'shoaib', 'shoaibcompany2', 'shoaibcompany2', 0, '0000-00-00', '03338134153', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, 3, ''),
 (328, 'dfdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (329, 'dfsfd@dsfsdfdsfsd.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7789,7 +8092,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (342, 'sdf@sdfgsfdg.com', 'sfdsf', '', '', 0, '0000-00-00', '34534', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (343, 'asfd@sadf.com', 'adfadf ', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (344, 'sedsdf@sdfsdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(345, 'sdf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(345, 'sdf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', 'ASD', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_8sjvqln6MsGsD5k2d8wYoWcb'),
 (346, 'sdfdsf@sdfdsf.com', 'sdfsdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (347, 'afd@adf.com', 'asfd', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (348, 'dafdf@gasdfdf.com', 'dafdf', '', '', 0, '0000-00-00', '3434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7797,7 +8100,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (350, 'testsdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (351, 'dsf@gm.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (352, 'dfg@gm.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(353, 'sdf@sadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(353, 'sdf@sadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_fNLEvIxCNi6mbygnVPZq8TWl'),
 (354, 'dfgdsfg@fsadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (355, 'xcv@sdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (356, 'dsfgdsf@sdg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7822,7 +8125,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (375, 'sdf@gmail.com', 'sdf', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (376, 'dsf@dsaf.com', 'sdf', '', '', 0, '0000-00-00', '33434', 'fsdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (377, 'sdf@dsaf.com', 'sdfsdf', '', '', 0, '0000-00-00', '3434', 'sdfsdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(378, 'dsf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '343434', 'dsaf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(378, 'dsf@sdf.com', 'asdfdsf', '', '', 0, '0000-00-00', '34343', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (379, 'ahmad@gmail.com', 'Muhammad', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (380, 'aaron@hunterztest.com', 'tester to telegram', '', '', 0, '0000-00-00', '4654654654', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (381, 'adsf@sadf.com', 'adf', '', '', 0, '0000-00-00', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7843,7 +8146,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (398, 'fgf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (399, 'fgffff@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ist1ngUn6YvCClWvv0uETvg0'),
 (400, 'fgffffdfdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(401, 'a@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LUvYYRKZMITIEoLunfWy08vX'),
+(401, 'a@a.com', 'a', '', '', 0, '0000-00-00', '654654654', 'd', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LUvYYRKZMITIEoLunfWy08vX'),
 (402, 'asdf@adsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (403, 'sdf@asdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (404, 'af@sdfdsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QKNe8y1mjHqz93RadA9209KN'),
@@ -7855,7 +8158,14 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (410, 'ifti@gmail.com', 'test user', 'test1234', 'test1234', 22, '2017-04-03', '3232323', 'dsafdsfdsf', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (411, 'aaa@gmail.com', 'aaa', 'aaa1234', 'aaa1234', 22, '2017-04-02', '23232323', 'sdfsdfsdf', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (412, 'sf@sdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(413, 'testg@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_XFTNwKXouVExXlXam2PUQJ2g');
+(413, 'testg@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_XFTNwKXouVExXlXam2PUQJ2g'),
+(414, 'sdf@dfg.com', 'sdf', '', '', 0, '0000-00-00', '321321', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_oLMUnMb79zwa67HSTuDCtvoZ'),
+(415, 'rale@psic.com', 'Rael test', '', '', 0, '0000-00-00', '00000', 'fafa', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_65N0etR1pWUSpQJ1G4AepoO9'),
+(416, 'rale@pdal.copm', 'Rael', '', '', 0, '0000-00-00', '0000', 'gad', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_3N5hPcj6Q32o6DAxE1OKnO5z'),
+(417, 'rael@push.com', 'Rael Test', '', '', 0, '0000-00-00', '0000', 'dadca', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_mXK2IMyq00r5kR9T2YaONPl9'),
+(418, 'e@e.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(419, 'sdfdsf@dsfsdfdsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(420, 'wsdfdsf@dsfdsf.com', 'ASDASD', '', '', 0, '0000-00-00', '3434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_IHxzNUuQIx1Qb06ZKn9Crm4o');
 
 -- --------------------------------------------------------
 
@@ -7896,7 +8206,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=381 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=396 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -8191,7 +8501,22 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (377, 408, 1, 122, 'fixed percentage', 15, '2017-03-30'),
 (378, 409, 1, 499, NULL, 0, '2017-03-31'),
 (379, 326, 2, 40, NULL, 0, '2017-04-01'),
-(380, 276, 1, 88, NULL, 0, '2017-04-02');
+(380, 276, 1, 88, NULL, 0, '2017-04-02'),
+(381, 414, 1, 350, NULL, 0, '2017-04-03'),
+(382, 276, 1, 52, NULL, 0, '2017-04-03'),
+(383, 274, 1, 86, NULL, 0, '2017-04-03'),
+(384, 415, 6, 66, 'fixed percentage', 15, '2017-04-03'),
+(385, 416, 1, 69, 'fixed percentage', 15, '2017-04-03'),
+(386, 274, 1, 76, 'fixed percentage', 15, '2017-04-03'),
+(387, 345, 1, 56, 'fixed value', 40, '2017-04-03'),
+(388, 417, 1, 37, 'fixed value', 40, '2017-04-03'),
+(389, 274, 3, 51, 'fixed value', 40, '2017-04-03'),
+(390, 417, 1, 27, 'fixed value', 40, '2017-04-03'),
+(391, 378, 1, 115, NULL, 0, '2017-04-03'),
+(392, 274, 1, 115, NULL, 0, '2017-04-03'),
+(393, 401, 1, 113, NULL, 0, '2017-04-05'),
+(394, 420, 1, 174, 'fixed percentage', 10, '2017-04-05'),
+(395, 401, 1, 113, NULL, 0, '2017-04-05');
 
 -- --------------------------------------------------------
 
