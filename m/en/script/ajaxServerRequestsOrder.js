@@ -1251,6 +1251,17 @@ function confirmOrder(paymentChoice)
 
 function  callPage3() {
 
+    try
+    {
+        app.orderNowEvent();
+
+    }
+    catch (exp)
+    {
+
+    }
+
+
     userObject.cartData = foodCartData;
 
     localStorage.setItem("USER_OBJECT", "");
