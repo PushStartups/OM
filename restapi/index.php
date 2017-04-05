@@ -378,7 +378,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         }
 
         // COUPON VALIDATION
-        $coupon_code = $coupon_code;
+        $coupon_code = strtoupper($coupon_code);
 
         $res = VoucherifyValidation($coupon_code,$user_id);
 

@@ -341,17 +341,6 @@ a:hover, a:focus {
 #about .social-icons ul li img:hover {
 	transform: scale(1.1);
 }
-.img-frame{
-	display: inline-block;
-	vertical-align: middle;
-}
-.img-frame img{
-	width: 70px;
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0 2px;
-}
-.img-frame .new-img{width: 100px;}
 
 
 .btn-left{

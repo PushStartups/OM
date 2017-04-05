@@ -190,7 +190,7 @@ function  getCategoriesWithItems(response)
 
 
         if (i == 0)
-            catItem += '<li class="active">';
+            catItem += '<li>';
         else
             catItem += '<li>';
 
