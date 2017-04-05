@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/complete-order.html" afterPath="$PROJECT_DIR$/en/complete-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/page3.html" afterPath="$PROJECT_DIR$/m/en/page3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,38 +163,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -728,14 +694,7 @@
       <workItem from="1491298464399" duration="2932000" />
       <workItem from="1491314473200" duration="1358000" />
       <workItem from="1491370228144" duration="721000" />
-      <workItem from="1491378081864" duration="6779000" />
-    </task>
-    <task id="LOCAL-00023" summary="Final Update Desktop And Mobile Client">
-      <created>1489929341014</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1489929341014</updated>
+      <workItem from="1491378081864" duration="8599000" />
     </task>
     <task id="LOCAL-00024" summary="Final Update Desktop And Mobile Client">
       <created>1489937238709</created>
@@ -1073,11 +1032,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491385212011</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="small changes 3rd party integration">
+      <created>1491385741251</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1491385741251</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344030000" />
+    <option name="totallyTimeSpent" value="345850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1402,7 +1368,7 @@
         <state relative-caret-position="476">
           <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1632,14 +1598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/complete-order.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1664,14 +1622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/en/script/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -1680,10 +1630,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/page3.html">
+    <entry file="file://$PROJECT_DIR$/m/en/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="589" column="49" selection-start-line="589" selection-start-column="49" selection-end-line="589" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1703,10 +1661,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/order.html">
+    <entry file="file://$PROJECT_DIR$/m/en/page3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="589" column="49" selection-start-line="589" selection-start-column="49" selection-end-line="589" selection-end-column="49" />
+        <state relative-caret-position="561">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding />
         </state>
       </provider>

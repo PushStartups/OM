@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 05, 2017 at 09:22 AM
+-- Generation Time: Apr 05, 2017 at 11:48 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -37,21 +37,14 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 --
 -- Dumping data for table `b2b_orders`
 --
 
 INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`, `discount`, `date`) VALUES
-(22, 326, 2, 68, 103, 0, '2017-04-01'),
-(23, 326, 2, 7, 42, 0, '2017-04-02'),
-(24, 326, 2, 81, 81, 0, '2017-04-02'),
-(25, 326, 2, 90, 90, 0, '2017-04-02'),
-(26, 326, 2, 123, 123, 0, '2017-04-02'),
-(27, 326, 2, 108, 108, 0, '2017-04-02'),
-(28, 326, 2, 0, 12, 23, '2017-04-03'),
-(29, 326, 2, 7, 42, 0, '2017-04-04');
+(50, 1, 2, 79, 101, 0, '2017-04-05');
 
 -- --------------------------------------------------------
 
@@ -68,24 +61,14 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
 --
 
 INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_items`) VALUES
-(15, 22, 1, 'Meshulashim Pie', 47, 'Mushrooms (+5), Olives (+5), Tomatoes (+5)'),
-(16, 22, 1, 'Margarita', 28, ''),
-(17, 22, 1, 'Margarita', 28, ''),
-(18, 23, 1, 'Pargit Tortilla', 42, 'Egg (+4), Portobello Mushroom (+4)'),
-(19, 24, 1, 'Angus Salad', 81, '150 grams entrecote (+19), 170 grams chicken breast (+18)'),
-(20, 25, 1, 'Angus Salad', 90, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19)'),
-(21, 26, 1, 'Angus Salad', 63, '150 grams goose breast or entrecote (+19)'),
-(22, 26, 1, 'Chicken Salad', 60, '170 grams chicken breast (+18)'),
-(23, 27, 1, 'Angus Salad', 108, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 150 grams entrecote (+19), 170 grams chicken breast (+18)'),
-(24, 28, 1, 'Mexican Nachos', 12, ''),
-(25, 29, 1, 'Chicken Salad', 42, '');
+(26, 50, 1, 'Angus Salad', 101, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 80 grams goose liver (+30)');
 
 -- --------------------------------------------------------
 
@@ -241,13 +224,13 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (94, 11, 'Salads', 'סלטים', '/m/en/img/categories/ken/salad .png', 194),
 (95, 11, 'Desserts', 'קינוחים', '/m/en/img/categories/ken/Desserts.png', 195),
 (96, 11, 'Drinks', 'שתיה', '/m/en/img/categories/ken/drink.png', 196),
-(97, 13, 'Chicken Sandwiches', 'עוף סנדוויץ׳', '/m/en/img/categories/sandwich.png', 197),
-(98, 13, 'Chicken Meals', 'מנת עוף', '/m/en/img/categories/test.png', 198),
-(99, 13, 'Beef Sandwiches', 'בקר סנדוויץ׳', '/m/en/img/categories/sandwich.png', 199),
-(100, 13, 'Beef Meals', 'מנת בקר', '/m/en/img/categories/test.png', 200),
-(101, 13, 'Snacks', 'נשנושים', '/m/en/img/categories/test.png', 201),
-(102, 13, 'Salads', 'סלטים', '/m/en/img/categories/salads.png', 202),
-(103, 13, 'Soft Drink', 'שתיה', '/m/en/img/categories/drink2.png', 203),
+(97, -1, 'Chicken Sandwiches', 'עוף סנדוויץ׳', '/m/en/img/categories/sandwich.png', 197),
+(98, -1, 'Chicken Meals', 'מנת עוף', '/m/en/img/categories/test.png', 198),
+(99, -1, 'Beef Sandwiches', 'בקר סנדוויץ׳', '/m/en/img/categories/sandwich.png', 199),
+(100, -1, 'Beef Meals', 'מנת בקר', '/m/en/img/categories/test.png', 200),
+(101, -1, 'Snacks', 'נשנושים', '/m/en/img/categories/test.png', 201),
+(102, -1, 'Salads', 'סלטים', '/m/en/img/categories/salads.png', 202),
+(103, -1, 'Soft Drink', 'שתיה', '/m/en/img/categories/drink2.png', 203),
 (104, 12, 'Pastries', 'מאפים', 'null', 0),
 (105, 12, 'Hot Beverages', 'משקאות חמים', 'null', 0),
 (106, 12, 'Coffee+Pastry', 'קפה ומאפה', 'null', 0),
@@ -2516,7 +2499,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=508 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=509 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -2967,7 +2950,8 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (504, 393, 2, 'Angus Salad', 44, ''),
 (505, 394, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), portobello mushroom (+4)'),
 (506, 394, 1, 'Chicken Salad', 90, '170 grams chicken breast (+18), 80 grams goose liver (+30)'),
-(507, 395, 2, 'Angus Salad', 44, '');
+(507, 395, 2, 'Angus Salad', 44, ''),
+(508, 396, 2, 'Angus Salad', 44, '');
 
 -- --------------------------------------------------------
 
@@ -3009,7 +2993,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, 
 (10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, 1, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
 (11, 'Ken LePizza', 'כן לפיצה', 50, 2, 0, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (12, 'Aroma', 'ארומה', 50, 1, 0, '/m/en/img/aroma_logo.png', 'Simply the best coffee in town. Coupled with food freshly prepared as you wait. Sandwiches, salads, breakfasts, pastries. If you don''t like coffee, there''s plent of other drinks, hot and cold, on offer. Now you can have this deliciousness delivered to your home. ', '', 'Big Center, Yigal Allon 5, Beit Shemesh', '  מרכז ביג, יגאל אלון 5, בית שמש', 'KOSHER MEHADRIN', 'כשר למהדרין'),
-(13, 'Pinati', 'פינתי', 50, 1, 1, '', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
+(13, 'Pinati', 'פינתי', 50, 1, 0, '', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
 (14, 'Pizzaland', 'פיצה', 50, 1, 1, '', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
 (15, '110 Burger', '110 בורגר', 50, 1, 1, '', '110 Burger is a brand new, revolutionary and groundbreaking fast food ast food industry, the next generation of fast food.\r\nWith a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables, and vegetarianism menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product and its adherence to the standard of gourmet restaurants. ', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food.\n110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף');
 
@@ -8146,7 +8130,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (398, 'fgf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (399, 'fgffff@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ist1ngUn6YvCClWvv0uETvg0'),
 (400, 'fgffffdfdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(401, 'a@a.com', 'a', '', '', 0, '0000-00-00', '654654654', 'd', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LUvYYRKZMITIEoLunfWy08vX'),
+(401, 'a@a.com', 'testy', '', '', 0, '0000-00-00', '654654654', 'a', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LUvYYRKZMITIEoLunfWy08vX'),
 (402, 'asdf@adsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (403, 'sdf@asdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (404, 'af@sdfdsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QKNe8y1mjHqz93RadA9209KN'),
@@ -8206,7 +8190,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=396 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=397 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -8516,7 +8500,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (392, 274, 1, 115, NULL, 0, '2017-04-03'),
 (393, 401, 1, 113, NULL, 0, '2017-04-05'),
 (394, 420, 1, 174, 'fixed percentage', 10, '2017-04-05'),
-(395, 401, 1, 113, NULL, 0, '2017-04-05');
+(395, 401, 1, 113, NULL, 0, '2017-04-05'),
+(396, 401, 1, 104, 'fixed percentage', 10, '2017-04-05');
 
 -- --------------------------------------------------------
 
@@ -8696,7 +8681,7 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 -- Constraints for table `b2b_orders`
 --
 ALTER TABLE `b2b_orders`
-  ADD CONSTRAINT `b2b_orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `b2b_orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `b2b_users` (`id`),
   ADD CONSTRAINT `b2b_orders_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 
 --
