@@ -30,7 +30,6 @@ $(document).ready(function() {
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
     userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
-
     // RETRIEVE SELECTED REST ID RAW RESPONSE
     selectedRest  = JSON.parse(localStorage.getItem("SELECTED_REST"));
 

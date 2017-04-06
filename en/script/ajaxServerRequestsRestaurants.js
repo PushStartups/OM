@@ -146,8 +146,7 @@ function  getAllRestaurants(response)
                 '</a>'+
                 '</div>'+
                 '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address">'+ result[x].address_en +'</span>'+
-
+                '<span class="rest-address">' + '<span>'+result[x].address_en+'</span>' + '<div class="tooltip-popup"><p>'+result[x].address_en+'</p></div>' + '</span>'+
 
                 // ONCLICK CALL OPEN TIME FUNCTION
                 '<span onclick="openTime('+x+')" class="time-drop-down">'+result[x].today_timings+'<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>'+

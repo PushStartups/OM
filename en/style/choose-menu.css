@@ -172,7 +172,8 @@ a:hover, a:focus {
 	clear: both;
 }
 .container.new{
-	width:960px !important;
+	width:70vw !important;
+	min-width:960px !important;
 	padding:0 !important;
 	border-radius: 18px 18px 0 0;
 	background-color: #fffefe;
@@ -818,7 +819,7 @@ a:hover, a:focus {
 	margin: 0 10px 38px 0;
 }
 #sidebar .dim{
-	display: block;
+	float: right;
 	text-align: center;
 	padding: 10px 10px 0;
 	font-size: 15px;

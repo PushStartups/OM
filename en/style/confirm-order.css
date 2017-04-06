@@ -172,7 +172,8 @@ a:hover, a:focus {
 	clear: both;
 }
 .container.new{
-	width:960px !important;
+	width:70vw !important;
+	min-width:960px !important;
 	padding:0 !important;
 	border-radius: 18px 18px 0 0;
 	background-color: #f7f7f7;
@@ -341,6 +342,17 @@ a:hover, a:focus {
 #about .social-icons ul li img:hover {
 	transform: scale(1.1);
 }
+.img-frame{
+	display: inline-block;
+	vertical-align: middle;
+}
+.img-frame img{
+	width: 70px;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 2px;
+}
+.img-frame .new-img{width: 100px;}
 
 
 .btn-left{
@@ -419,7 +431,7 @@ a:hover, a:focus {
 /* .accordion */
 .left-content{
 	overflow: hidden;
-	padding: 32px;
+	padding: 40px 70px;
 	background: #fff;
 	min-height: 100%;
 	-webkit-box-sizing: border-box;
@@ -493,7 +505,7 @@ a:hover, a:focus {
 .accordion .slide{overflow: hidden;}
 .slide-holder{
 	overflow: hidden;
-	padding: 49px 0 10px;
+	padding: 65px 40px 10px;
 }
 .text-holder{
 	overflow: hidden;
@@ -679,7 +691,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 }
 #sidebar{
 	overflow: hidden;
-	padding: 32px 15px;
+	padding: 40px 35px;
 	height: 100%;
 }
 #sidebar h3{
@@ -733,7 +745,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	margin: 0 10px 38px 0;
 }
 #sidebar .dim{
-	display: block;
+	float: right;
 	text-align: center;
 	padding: 10px 0 0;
 	font-size: 12px;

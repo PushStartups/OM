@@ -294,7 +294,8 @@ a:hover, a:focus {
 }
 
 .container.new{
-	width:960px !important;
+	width:70vw !important;
+	min-width:960px !important;
 	padding:70px 37px 0  !important;
 
 
@@ -617,7 +618,7 @@ img.gallery {
 	cursor: pointer;
 	font-size: 16px;
 	line-height: 20px;
-	padding-top: 17px;
+	padding-top: 0;
 	white-space: nowrap;
 	color: #797979;
 	padding-right: 10px;
@@ -639,7 +640,7 @@ img.gallery {
 	line-height: 20px;
 	color: #797979;
 	display: block;
-	width: 276px;
+	min-width: 276px;
 	white-space: nowrap;
 	overflow: hidden !important;
 	text-overflow: ellipsis;
@@ -906,9 +907,45 @@ img.gallery {
 
 
 
-.row.vertical-divider {
-	overflow: hidden;
+.row.vertical-divider:after {
+	display: block;
+	content: '';
+	clear: both;
 }
+
+.tooltip-popup{
+	background:#f46c00;
+	padding: 10px;
+	position: absolute;
+	top:-45px;
+	left: 0;
+	font-size: 12px;
+	line-height: 15px;
+	color: #fff;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	box-shadow: none;
+	text-align: left;
+	opacity: 1;
+	z-index: 99999;
+	display: none;
+}
+.rest-address:hover .tooltip-popup{display: block;}
+
+.tooltip-popup:after{
+	position: absolute;
+	bottom: -10px;
+	left: 20px;
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 6px 0 6px;
+	border-color: #f46c00 transparent transparent transparent;
+}
+.tooltip-popup p{margin: 0;}
+
 .row.vertical-divider > div[class^="col-"] {
 	border-left: 1px solid #dbdbdb;
 	padding-left:15px !important;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2017 at 08:36 AM
+-- Generation Time: Apr 06, 2017 at 01:09 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -37,14 +37,26 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
 
 --
 -- Dumping data for table `b2b_orders`
 --
 
 INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`, `discount`, `date`) VALUES
-(50, 1, 2, 79, 101, 0, '2017-04-05');
+(50, 1, 2, 79, 101, 0, '2017-04-05'),
+(51, 1, 2, 28, 63, 0, '2017-04-06'),
+(52, 1, 2, 7, 42, 0, '2017-04-06'),
+(53, 1, 2, 2, 37, 0, '2017-04-06'),
+(54, 1, 2, 23, 58, 0, '2017-04-06'),
+(55, 1, 2, 44, 44, 0, '2017-04-06'),
+(56, 1, 2, 44, 44, 0, '2017-04-06'),
+(57, 1, 2, 44, 44, 0, '2017-04-06'),
+(58, 1, 2, 42, 42, 0, '2017-04-06'),
+(59, 1, 2, 44, 44, 0, '2017-04-06'),
+(60, 1, 2, 42, 42, 0, '2017-04-06'),
+(61, 1, 2, 44, 44, 0, '2017-04-06'),
+(62, 1, 2, 44, 44, 0, '2017-04-06');
 
 -- --------------------------------------------------------
 
@@ -61,14 +73,24 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
 --
 
 INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_items`) VALUES
-(26, 50, 1, 'Angus Salad', 101, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 80 grams goose liver (+30)');
+(26, 50, 1, 'Angus Salad', 101, '150 grams goose breast or entrecote (+19), 50 grams goose breast (+8), 80 grams goose liver (+30)'),
+(30, 54, 1, 'American Fries', 14, 'Garlic Mayo, Sweet chilli'),
+(31, 54, 1, 'Angus Salad', 44, ''),
+(32, 55, 1, 'Angus Salad', 44, ''),
+(33, 56, 1, 'Angus Salad', 44, ''),
+(34, 57, 1, 'Angus Salad', 44, ''),
+(35, 58, 1, 'Chicken Salad', 42, ''),
+(36, 59, 1, 'Angus Salad', 44, ''),
+(37, 60, 1, 'Chicken Salad', 42, ''),
+(38, 61, 1, 'Angus Salad', 44, ''),
+(39, 62, 1, 'Angus Salad', 44, '');
 
 -- --------------------------------------------------------
 
@@ -105,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 35, '2017-04-06', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 0, '2017-04-06', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '0000-00-00', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, '');
 
 -- --------------------------------------------------------
@@ -242,7 +264,6 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (121, 13, 'Drinks', 'שתייה', '', 221),
 (122, 14, 'PIE', 'מגש', '', 222),
 (123, 14, 'Sides', 'תוספות בצד', '', 224),
-(124, 14, 'Sauces', 'רטבים', '', 225),
 (125, 14, 'DRINKS - INDIVIDUAL', 'שתיה - קטנה', '', 227),
 (126, 14, 'DRINKS - FAMILY SIZED', ' שתיה- גדולה', '', 228),
 (131, 15, 'Deals', 'דילים', '', 231),
@@ -461,7 +482,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -500,7 +521,23 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (30, 'Beit Shemesh', '', 15, 4),
 (31, 'Beit Shemesh', '', 15, 5),
 (32, 'Beit Shemesh', '', 15, 7),
-(33, 'Beit Shemesh', '', 15, 12);
+(33, 'Beit Shemesh', '', 15, 12),
+(34, 'Beit Shemesh', '', 15, 13),
+(35, 'Beit Shemesh', '', 15, 13),
+(36, 'Beit Shemesh', '', 15, 13),
+(37, 'Beit Shemesh', '', 15, 13),
+(38, 'Beit Shemesh', '', 15, 14),
+(39, 'Beit Shemesh', '', 15, 14),
+(40, 'Beit Shemesh', '', 15, 14),
+(41, 'Beit Shemesh', '', 15, 14),
+(42, 'Beit Shemesh', '', 15, 15),
+(43, 'Beit Shemesh', '', 15, 15),
+(44, 'Beit Shemesh', '', 15, 15),
+(45, 'Beit Shemesh', '', 15, 15),
+(46, 'Beit Shemesh', '', 15, 8),
+(47, 'Beit Shemesh', '', 15, 8),
+(48, 'Beit Shemesh', '', 15, 8),
+(49, 'Beit Shemesh', '', 15, 8);
 
 -- --------------------------------------------------------
 
@@ -1226,6 +1263,8 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (2223, 1409, 'Size', 'One', 0, '', 798),
 (2224, 1410, 'Size', 'One', 0, '', 799),
 (2225, 1413, 'Size', 'One', 0, '', 800),
+(2226, 1400, 'Sauces', 'Multiple', 0, '', 0),
+(2227, 1401, 'Sauces', 'Multiple', 0, '', 0),
 (2300, 1500, 'Extra over burger', 'Multiple', 0, '', 801),
 (2301, 1500, 'Deal Addons', 'Multiple', 0, '', 802),
 (2302, 1500, 'Extras', 'Multiple', 0, '', 803),
@@ -2109,9 +2148,6 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (1403, 122, 'Individual pie', 'מגש אישי ', '', '', 25, 879),
 (1404, 123, 'French fries', 'צ''יפס', '', '', 10, 880),
 (1405, 123, 'Onion rings', 'טבעות בצל', '', '', 10, 881),
-(1406, 124, 'Spicy house sauce ', 'רוטב הבית - קצת חריף', '', '', 0, 882),
-(1407, 124, 'Garlic sauce', 'רוטב שום', '', '', 0, 883),
-(1408, 124, 'Thousand Island', 'רוטב אלף האיים', '', '', 0, 884),
 (1409, 125, 'Cans', 'פחיות', '', '', 7, 885),
 (1410, 125, 'Half Litre bottle', 'בקבוק 1/2 ליטר', '', '', 6, 886),
 (1411, 125, 'Tropit', 'טרופית', '', '', 2, 887),
@@ -2690,14 +2726,14 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `min_amount`, `city_id`, 
 (5, 'Japan Japan', 'ג''אפן ג''אפן', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
 (6, 'OSHI OSHI', 'אושי אושי', 50, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (7, 'Greg Cafe', 'גרג קפה', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
-(8, 'Grill 443', 'גריל 443', 50, 2, 1, '/m/en/img/grill443_logo.png', 'People come from far and wide to eat at the charcoal grilled, expertly chosen meats in Grill 443.  Now you can enjoy their amazing quality at home. There is a large selection of options, including two budget-friendly family meals.  Choose from an abundance of home style dishes, a dozen types of salad, accompanied by laffa straight from the taboun. ', '"""מסעדה מקומית אהובה עם בשרים ושיפודים נבחרים על גריל הפחמים, המדהימים בטעמם האיכותי.\r\n\r\nבצד תוכלו להזמין כמה סוגי סלטים טריים, חומוס הבית עם גרגירים חמים ונעימים לחיך, וקבב הבית הידוע בטעמו.\r\n\r\nבמקום שפע מאכלים ביתיים, לאפות היישר מהטבון. \r\n\r\nארוחות עסקיות ניתן להזמין בכל יום ובכל שעות היום, ואוכל מוכן לשבת לקחת הביתה."""', '443 - on road 443, beside the Sonol gas station at Shilat junction', 'צומת שילת (ת. דלק סונול), מודיעין', 'Rabbanut.    Meat is Chalak, chicken is rabbanut mehadrin', 'רבנות.  העוף מהדרין, והבשר חלק'),
+(8, 'Grill 443', 'גריל 443', 50, 2, 0, '/m/en/img/grill443_logo.png', 'People come from far and wide to eat at the charcoal grilled, expertly chosen meats in Grill 443.  Now you can enjoy their amazing quality at home. There is a large selection of options, including two budget-friendly family meals.  Choose from an abundance of home style dishes, a dozen types of salad, accompanied by laffa straight from the taboun. ', '"""מסעדה מקומית אהובה עם בשרים ושיפודים נבחרים על גריל הפחמים, המדהימים בטעמם האיכותי.\r\n\r\nבצד תוכלו להזמין כמה סוגי סלטים טריים, חומוס הבית עם גרגירים חמים ונעימים לחיך, וקבב הבית הידוע בטעמו.\r\n\r\nבמקום שפע מאכלים ביתיים, לאפות היישר מהטבון. \r\n\r\nארוחות עסקיות ניתן להזמין בכל יום ובכל שעות היום, ואוכל מוכן לשבת לקחת הביתה."""', '443 - on road 443, beside the Sonol gas station at Shilat junction', 'צומת שילת (ת. דלק סונול), מודיעין', 'Rabbanut.    Meat is Chalak, chicken is rabbanut mehadrin', 'רבנות.  העוף מהדרין, והבשר חלק'),
 (9, 'Pizza Cheese', 'פיצה צ׳יז', 50, 2, 0, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', 'פיצה מעולה עם כל התוסות, מכחר פסטות וסלטים, שירות נהדר, רוחב לב,  מחיר כמו שאין בשום מקום. מה עוד צריך?!', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
-(10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, 1, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
-(11, 'Ken LePizza', 'כן לפיצה', 50, 2, 0, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
+(10, 'Crispy Sandwich', 'קריספי סנדוויץ''', 50, 2, 0, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
+(11, 'Ken LePizza', 'כן לפיצה', 50, 2, 1, '/m/en/img/ken_logo.jpg', 'Ken Lepizza is your friendly, local pizzeria, using only high quality ingredients.  The dough is made fresh daily on the premises and only 100% cheese is used, but they are still very competitively priced.  On the menu are the ubiquitous pizzas, along with spaghetti and calzone and because we''re not in Italy, they offer malawach and jachnun and other filling dairy dishes and salads. ', 'כן לפיצה היא פיצריה כשרה למהדרין במודיעין-מכבים-רעות, הנחשבת לאחת הטובות בעיר. הפיצות שלנו עשויות מבצק דק במיוחד הנאפה במקום, ולצד זה גבינה צהובה אמיתית, תוספות עשירות ועוד. אצלנו תולו למצוא גם לחמים, מאפים, סלטים וקינוחים, ההופכים את החוויה הקולינרית למלאה אפילו יותר.  המחירים שלנו נוחים, כאשר באפשרותכם ליהנות ממבצעים משתלמים במיוחד.', 'Kaiser Center, Emek Zevulun 24, Modiin', 'קייזר סנטר, עמק זבולון 24 <br> מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (12, 'Aroma', 'ארומה', 50, 1, 0, '/m/en/img/aroma_logo.png', 'Simply the best coffee in town. Coupled with food freshly prepared as you wait. Sandwiches, salads, breakfasts, pastries. If you don''t like coffee, there''s plent of other drinks, hot and cold, on offer. Now you can have this deliciousness delivered to your home. ', '', 'Big Center, Yigal Allon 5, Beit Shemesh', '  מרכז ביג, יגאל אלון 5, בית שמש', 'KOSHER MEHADRIN', 'כשר למהדרין'),
-(13, 'Pinati', 'פינתי', 50, 1, 1, '', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
-(14, 'Pizzaland', 'פיצה', 50, 1, 0, '', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
-(15, '110 Burger', '110 בורגר', 50, 1, 1, '', '110 Burger is a brand new, revolutionary and groundbreaking fast food ast food industry, the next generation of fast food.\r\nWith a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables, and vegetarianism menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product and its adherence to the standard of gourmet restaurants. ', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food.\n110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף');
+(13, 'Pinati', 'פינתי', 50, 1, 0, '/m/en/img/pinati_logo.png', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
+(14, 'Pizzaland', 'פיצה', 50, 1, 0, '/m/en/img/pizzaland_logo.png', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
+(15, '110 Burger', '110 בורגר', 50, 1, 0, '/m/en/img/110_burger_logo.png', '110 Burger is a brand new, revolutionary and groundbreaking fast food ast food industry, the next generation of fast food.\r\nWith a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables, and vegetarianism menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product and its adherence to the standard of gourmet restaurants. ', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food.\n110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף');
 
 -- --------------------------------------------------------
 
@@ -2711,7 +2747,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_gallery` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
 
 --
 -- Dumping data for table `restaurant_gallery`
@@ -2782,7 +2818,22 @@ INSERT INTO `restaurant_gallery` (`id`, `restaurant_id`, `url`) VALUES
 (78, 7, '/m/en/img/greg_gallery/Scandinavian Morning.png'),
 (79, 12, '/m/en/img/aroma_gallery/img1.jpg'),
 (80, 12, '/m/en/img/aroma_gallery/img2.jpg'),
-(81, 12, '/m/en/img/aroma_gallery/img3.jpg');
+(81, 12, '/m/en/img/aroma_gallery/img3.jpg'),
+(83, 14, '/m/en/img/pizzaland_gallery/img1.jpg'),
+(84, 14, '/m/en/img/pizzaland_gallery/img2.png'),
+(85, 14, '/m/en/img/pizzaland_gallery/img3.png'),
+(86, 13, '/m/en/img/pinati_gallery/img1.png'),
+(87, 13, '/m/en/img/pinati_gallery/img2.png'),
+(88, 13, '/m/en/img/pinati_gallery/img3.png'),
+(89, 13, '/m/en/img/pinati_gallery/img4.png'),
+(90, 15, '/m/en/img/110_burger_gallery/img1.png'),
+(91, 15, '/m/en/img/110_burger_gallery/img2.png'),
+(92, 15, '/m/en/img/110_burger_gallery/img3.png'),
+(93, 15, '/m/en/img/110_burger_gallery/img4.png'),
+(94, 8, '/m/en/img/grill_gallery/img1.jpg'),
+(95, 8, '/m/en/img/grill_gallery/img2.jpg'),
+(96, 8, '/m/en/img/grill_gallery/img3.jpg'),
+(97, 8, '/m/en/img/grill_gallery/img4.jpg');
 
 -- --------------------------------------------------------
 
@@ -6361,6 +6412,12 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (14163, 2225, 'Orange drink', 'תפוזים', 0, 3596),
 (14164, 2225, 'Mango', 'מנגו', 0, 3597),
 (14165, 2225, 'Mineral water', 'מים מנרלים', 0, 3598),
+(14166, 2226, 'Spicy house sauce', 'רוטב הבית - קצת חריף', 0, 0),
+(14167, 2226, 'Garlic sauce ', 'רוטב שום', 0, 0),
+(14168, 2226, 'Thousand Island', 'רוטב אלף האיים', 0, 0),
+(14169, 2227, 'Spicy house sauce', 'רוטב הבית - קצת חריף', 0, 0),
+(14170, 2227, 'Garlic sauce ', 'רוטב שום', 0, 0),
+(14171, 2227, 'Thousand Island', 'רוטב אלף האיים', 0, 0),
 (15000, 2300, 'Onion', 'בצל', 3, 3599),
 (15001, 2300, 'Mushroom', 'פטריות', 3, 3600),
 (15002, 2300, 'Fried egg', 'ביצה עין', 3, 3601),
@@ -6664,7 +6721,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (323, 'test233@gmail.com', 'Muhammad ', '', '', 0, '0000-00-00', '343434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (324, 'sdfsdf@fsdf.com', 'sdfsdf', '', '', 0, '0000-00-00', '13215643215', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (325, 'test@tester.com', 'test', '', '', 0, '0000-00-00', '0507665524', 'hahar street', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(326, 'muhammad.iftikhar.aftab@gmail.com', 'shoaib', 'shoaibtest', 'shoaibtest', 35, '2017-04-02', '', '', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(326, 'muhammad.iftikhar.aftab@gmail.com', 'shoaib', 'shoaibtest', 'shoaibtest', 35, '2017-04-02', '0333258955', '', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (327, 'shoaibcompany2@gmail.com', 'shoaib', 'shoaibcompany2', 'shoaibcompany2', 0, '0000-00-00', '03338134153', 'lahore', 0, 'english', NULL, NULL, NULL, NULL, 3, ''),
 (328, 'dfdf@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (329, 'dfsfd@dsfsdfdsfsd.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7195,7 +7252,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=99 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=127 ;
 
 --
 -- Dumping data for table `weekly_availibility`
@@ -7278,7 +7335,35 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (95, 12, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
 (96, 12, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
 (97, 12, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(98, 12, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
+(98, 12, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(99, 13, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(100, 13, 'Monday', 'יום ב\r\n', '11:00', '11:00', '22:00', '22:00'),
+(101, 13, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(102, 13, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(103, 13, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(104, 13, 'Friday', 'ששי', 'Closed', 'סגור', 'Closed', 'סגור'),
+(105, 13, 'Saturday', 'שבת', 'Closed', 'סגור', 'Closed', 'סגור'),
+(106, 14, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(107, 14, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(108, 14, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(109, 14, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(110, 14, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(111, 14, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(112, 14, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(113, 15, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(114, 15, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(115, 15, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(116, 15, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(117, 15, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(118, 15, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(119, 15, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(120, 8, 'Sunday', 'יום א', '11:00', '11:00', '22:00', '22:00'),
+(121, 8, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
+(122, 8, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
+(123, 8, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
+(124, 8, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(125, 8, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(126, 8, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
 
 --
 -- Constraints for dumped tables
