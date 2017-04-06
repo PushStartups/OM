@@ -409,16 +409,30 @@ function ClosePayment()
     $('.payment-errors').html("");
     $('.payment-errors').hide();
 
+
     // IF PAYMENT THROUGH CREDIT CARD
 
     if ($('#checkbox-id-24').is(":checked")) {
 
         // CARD NO SHOULD NOT BE EMPTY
         if ($('#card_no').val() == "") {
+
             $("#error-card").addClass("error");
             $('#error-card-no').html("*Required Field");
             return;
+
         }
+
+        if((!$('#card_no').val().match(/^\d+$/)))
+        {
+            if($("#card_no").val() != ''){
+
+                $("#error-card").addClass("error");
+                $('#error-card-no').html("Invalid Card Number!");
+                return;
+            }
+        }
+
 
         // CVV SHOULD NOT BE EMPTY
         if ($('#cvv').val() == "") {

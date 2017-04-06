@@ -46,7 +46,7 @@ function initAccordion() {
 			var accordion = $(this);
 			var items = accordion.find(':has('+options.slider+')');
 
-			var allowOpen = false;
+
 
 			items.each(function(){
 				var item = $(this);
@@ -56,6 +56,7 @@ function initAccordion() {
 
 				opener.bind(options.event, function(e){
 
+					var allowOpen = false;
 
 					if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
 					{
