@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 06, 2017 at 01:09 PM
+-- Generation Time: Apr 08, 2017 at 10:00 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `b2b_orders`
@@ -56,7 +56,8 @@ INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`
 (59, 1, 2, 44, 44, 0, '2017-04-06'),
 (60, 1, 2, 42, 42, 0, '2017-04-06'),
 (61, 1, 2, 44, 44, 0, '2017-04-06'),
-(62, 1, 2, 44, 44, 0, '2017-04-06');
+(62, 1, 2, 44, 44, 0, '2017-04-06'),
+(63, 4, 6, 0, 43, 12, '2017-04-06');
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
@@ -90,7 +91,8 @@ INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `s
 (36, 59, 1, 'Angus Salad', 44, ''),
 (37, 60, 1, 'Chicken Salad', 42, ''),
 (38, 61, 1, 'Angus Salad', 44, ''),
-(39, 62, 1, 'Angus Salad', 44, '');
+(39, 62, 1, 'Angus Salad', 44, ''),
+(40, 63, 1, '#87 Japan Roll', 43, 'Soya');
 
 -- --------------------------------------------------------
 
@@ -120,15 +122,16 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `b2b_users`
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 0, '2017-04-06', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
-(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '0000-00-00', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, '');
+(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 35, '2017-04-07', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '0000-00-00', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(4, 'mark@pushstartups.com', 'Avi', 'mark', 'mark', 12, '2017-04-06', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -144,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `image_url` varchar(255) DEFAULT NULL,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=139 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1002 ;
 
 --
 -- Dumping data for table `categories`
@@ -247,7 +250,7 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (95, 11, 'Desserts', 'קינוחים', '/m/en/img/categories/ken/Desserts.png', 195),
 (96, 11, 'Drinks', 'שתיה', '/m/en/img/categories/ken/drink.png', 196),
 (97, 12, 'Salads', 'סלטים', '', 197),
-(98, 12, 'FRESH JUICES, ALL NATURAL, SQUEEZED ON THE SPOT!', 'מיצים טריים, טבעיים וסחוטים במקום', '', 198),
+(98, 12, 'Soft Drink', 'שתיה', '', 198),
 (99, 12, 'BREAKFASTS', 'ארוחות בוקר', '', 199),
 (100, 12, 'TOAST SANDWICH', 'טוסטים', '', 200),
 (101, 12, 'PASTRIES', 'מאפים', '', 201),
@@ -256,6 +259,7 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (104, 12, 'COLD DRINKS', 'משקאות קרים', '', 204),
 (105, 12, 'ICED DRINKS+ICE CREAM', 'אייסים + גלידה', '', 205),
 (106, 12, 'SANDWICH', 'כריכים', '', 206),
+(107, 12, 'COFFE & PASTRY', 'ומאפה', '', 207),
 (116, 13, 'Main Dishes', 'עיקריות', '', 216),
 (117, 13, 'Hummus', 'חומוס', '', 217),
 (118, 13, 'Salads', 'סלטים', '', 218),
@@ -269,7 +273,9 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (131, 15, 'Deals', 'דילים', '', 231),
 (132, 15, 'Burgers', 'בורגרים', '', 232),
 (133, 15, 'Sides', 'תוספות ליד', '', 233),
-(134, 15, 'Drinks', 'שתייה', '', 236);
+(134, 15, 'Drinks', 'שתייה', '', 236),
+(1000, 10, 'TOPPINGS', 'תוספות', NULL, 0),
+(1001, 10, 'SAUCES', 'רוטבים', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -303,7 +309,8 @@ CREATE TABLE IF NOT EXISTS `company` (
   `name` varchar(100) NOT NULL,
   `delivery_address` varchar(255) NOT NULL,
   `discount` int(11) NOT NULL,
-  `url` text NOT NULL,
+  `voting` int(11) NOT NULL,
+  `last_voting_id` int(11) NOT NULL DEFAULT '-1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
@@ -311,11 +318,11 @@ CREATE TABLE IF NOT EXISTS `company` (
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `url`) VALUES
-(1, 'cisco', '', 0, 'http://dev.biz.orderapp.com/?biz=cisco'),
-(2, 'test company', 'beit semish gali no 4', 35, 'www.googlesol.com'),
-(3, 'company 2', 'Nishat colony delecia bakery k uper', 35, 'www.experintSol.com'),
-(6, 'xyz', 'xyz address', 22, 'zzz');
+INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `voting`, `last_voting_id`) VALUES
+(1, 'cisco', '', 0, 0, -1),
+(2, 'test company', 'beit semish gali no 4', 35, 1, 1),
+(3, 'company 2', 'Nishat colony delecia bakery k uper', 35, 0, -1),
+(6, 'xyz', 'xyz address', 55, 0, -1);
 
 -- --------------------------------------------------------
 
@@ -375,7 +382,7 @@ INSERT INTO `company_timing` (`id`, `company_id`, `week_en`, `week_he`, `opening
 (2, 2, 'Tuesday', '', '11:00', '21:00', '', ''),
 (3, 2, 'Wednesday', '', '11:00', '21:00', '', ''),
 (4, 2, 'Thursday', '', '11:00', '21:00', '', ''),
-(5, 2, 'Friday', '', '11:00', '21:00', '', ''),
+(5, 2, 'Friday', '', 'Closed', 'Closed', '', ''),
 (6, 2, 'Saturday', '', 'Closed', 'Closed', '', ''),
 (7, 2, 'Sunday', '', 'Closed', 'Closed', '', ''),
 (8, 3, 'Monday', '', '11:00', '21:00', '', ''),
@@ -405,7 +412,6 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `restaurant_id` int(11) NOT NULL,
   `vote_count` int(11) NOT NULL,
   `vote_timing_id` int(11) NOT NULL,
-  `voting_date` date NOT NULL,
   PRIMARY KEY (`id`),
   KEY `vote_timing_id` (`vote_timing_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=154 ;
@@ -414,12 +420,11 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
 -- Dumping data for table `company_voting`
 --
 
-INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`, `voting_date`) VALUES
-(149, 1, 1, 1, 1, '2017-02-22'),
-(150, 1, 2, 0, 1, '2017-02-22'),
-(151, 1, 3, 0, 1, '2017-02-22'),
-(152, 1, 4, 0, 1, '2017-02-22'),
-(153, 1, 5, 0, 1, '2017-02-22');
+INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`) VALUES
+(149, 2, 1, 1, 1),
+(150, 2, 2, 4, 1),
+(151, 2, 3, 22, 1),
+(152, 2, 12, 25, 1);
 
 -- --------------------------------------------------------
 
@@ -995,8 +1000,6 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (620, 335, 'Sauces', 'Multiple', 0, 'רטבים', 536),
 (621, 336, 'Sauces', 'Multiple', 0, 'רטבים', 537),
 (622, 337, 'Sauces', 'Multiple', 0, 'רטבים', 538),
-(623, 338, 'Addons', 'multiple', 3, 'תוספות', 539),
-(624, 339, 'Addons', 'multiple', 3, 'תוספות', 540),
 (625, 340, 'Sauces', 'Multiple', 0, 'רטבים', 541),
 (626, 341, 'Sauces', 'Multiple', 0, 'רטבים', 542),
 (627, 342, 'Sauces', 'Multiple', 0, 'רטבים', 543),
@@ -1239,6 +1242,10 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (1416, 1217, '6 ILS', 'Multiple', 1, '', 774),
 (1417, 1217, '10 ILS', 'Multiple', 1, '', 775),
 (1418, 1217, '15 ILS', 'Multiple', 1, '', 776),
+(1419, 1298, 'Size', 'One', 1, '', 0),
+(1420, 1298, 'Coffee wth Pastry', 'Multiple', 0, '', 0),
+(1421, 1298, 'Pastry with Coffee', 'Multiple', 0, '', 0),
+(1422, 1298, 'Milk', 'Multiple', 0, '', 0),
 (2200, 1300, 'Size', 'One', 1, '', 777),
 (2201, 1301, 'Size', 'One', 1, '', 778),
 (2202, 1302, 'Size', 'One', 1, '', 779),
@@ -1260,11 +1267,12 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (2220, 1404, 'Extra toppings', 'Multiple', 0, '', 795),
 (2221, 1405, 'Size', 'One', 1, '', 796),
 (2222, 1405, 'Extra toppings', 'Multiple', 0, '', 797),
-(2223, 1409, 'Size', 'One', 0, '', 798),
-(2224, 1410, 'Size', 'One', 0, '', 799),
+(2223, 1409, 'Size', 'One', 1, '', 798),
+(2224, 1410, 'Size', 'One', 1, '', 799),
 (2225, 1413, 'Size', 'One', 0, '', 800),
 (2226, 1400, 'Sauces', 'Multiple', 0, '', 0),
 (2227, 1401, 'Sauces', 'Multiple', 0, '', 0),
+(2228, 1414, 'Size', 'One', 1, '', 0),
 (2300, 1500, 'Extra over burger', 'Multiple', 0, '', 801),
 (2301, 1500, 'Deal Addons', 'Multiple', 0, '', 802),
 (2302, 1500, 'Extras', 'Multiple', 0, '', 803),
@@ -1367,7 +1375,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1532 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1626 ;
 
 --
 -- Dumping data for table `items`
@@ -2001,7 +2009,7 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (634, 96, 'Beer', 'בירה', '', '', 11, 733),
 (635, 96, 'Fruit juice', 'מיצים טבעיים', '', '', 10, 734),
 (636, 96, '1/5 litre bottle', 'בקבוק 1.5 ל', '', '', 11, 735),
-(699, 84, 'Zero 1.5 litre', 'זירו 1.5 ליטר', '', '', 0, 0),
+(699, 84, 'Zero 1.5 litre', 'זירו 1.5 ליטר', '', '', 12, 0),
 (1201, 97, 'Aroma Salad', '', '', '', 39, 736),
 (1202, 97, 'Tuna Salad', '', '', '', 39, 737),
 (1203, 97, 'Halloumi Cheese salad', '', '', '', 39, 738),
@@ -2099,6 +2107,7 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (1295, 106, 'Greek Sandwich', '', '', '', 10, 830),
 (1296, 106, 'Yellow Hard Cheese Sandwich', '', '', '', 10, 831),
 (1297, 106, 'Egg Salad Sandwich', '', '', '', 10, 832),
+(1298, 107, 'COFFE & PASTRY', 'ומאפה', '', '', 18, 0),
 (1300, 116, 'Meatballs in sauce', '', '', '', 25, 833),
 (1301, 116, 'Chicken breast', '', '', '', 25, 834),
 (1302, 116, 'Schnitzel', '', '', '', 25, 835),
@@ -2150,9 +2159,10 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (1405, 123, 'Onion rings', 'טבעות בצל', '', '', 10, 881),
 (1409, 125, 'Cans', 'פחיות', '', '', 7, 885),
 (1410, 125, 'Half Litre bottle', 'בקבוק 1/2 ליטר', '', '', 6, 886),
-(1411, 125, 'Tropit', 'טרופית', '', '', 2, 887),
+(1411, 125, 'Tropit', 'טרופית', '', '', 2.5, 887),
 (1412, 125, 'Chocolate milk (bag)', 'שקית שוקו', '', '', 3, 888),
 (1413, 126, '1.5 Litre bottle', 'בקבוק של 1.5 ליטר', '', '', 12, 889),
+(1414, 125, 'Glass bottle', 'בקבוק זכוכית', '', '', 5, 890),
 (1500, 131, 'Burger deal', '', '', '', 44, 890),
 (1501, 131, 'Double Burger deal', '', '', '', 54, 891),
 (1502, 131, 'Triple Burger deal', '', '', '', 59, 892),
@@ -2184,7 +2194,33 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (1528, 134, 'Mineral water', '', '', '', 9, 918),
 (1529, 134, 'Living water', '', '', '', 11, 919),
 (1530, 134, 'Sparkling water', '', '', '', 11, 920),
-(1531, 134, 'Carlsberg 1/3 litre', '', '', '', 17, 921);
+(1531, 134, 'Carlsberg 1/3 litre', '', '', '', 17, 921),
+(1600, 1000, 'Cabbage in mayonnaiseֻ', 'כרוב במיונז', '', '', 0, 922),
+(1601, 1000, 'Humous', 'חומוס', '', '', 0, 923),
+(1602, 1000, 'Spicy sauce (charif)', 'חריף', '', '', 0, 924),
+(1603, 1000, 'Pickles ', 'חמוצים', '', '', 0, 925),
+(1604, 1000, 'Carrots in spicy sauce', 'גזר חריף', '', '', 0, 926),
+(1605, 1000, 'Shifke (spicy peppers)', 'שיפקה', '', '', 0, 927),
+(1606, 1000, 'Lettuce', 'חסה', '', '', 0, 928),
+(1607, 1000, 'Cucumber', 'מלפפון', '', '', 0, 929),
+(1608, 1000, 'Tomato ', 'עגבניה', '', '', 0, 930),
+(1609, 1000, 'Spicy tomato with onion', 'עגבניה חריף עם בצל', '', '', 0, 931),
+(1610, 1000, 'White cabbage', 'כרוב לבן', '', '', 0, 932),
+(1611, 1000, 'Fried onion', 'בצל מטוגן', '', '', 0, 933),
+(1612, 1000, 'Eggplant', 'חצילים', '', '', 0, 934),
+(1613, 1000, 'Raw onion', 'בצל חי', '', '', 0, 935),
+(1614, 1000, 'Parsley', 'פטרוזיליה', '', '', 0, 936),
+(1615, 1000, 'Black olives', 'זיתים שחורים', '', '', 0, 937),
+(1616, 1001, 'Tehina', 'טחינה', '', '', 0, 938),
+(1617, 1001, 'Amba', 'עמבה', '', '', 0, 939),
+(1618, 1001, 'Ketchup', 'קטצ''ופ', '', '', 0, 940),
+(1619, 1001, 'BBQ sauce', 'BBQ רוטב', '', '', 0, 941),
+(1620, 1001, '1000 Island', 'אלף איים', '', '', 0, 942),
+(1621, 1001, 'Garlic mayonnaise', 'שום מיונז', '', '', 0, 943),
+(1622, 1001, 'Sweet Chili', 'צ''ילי מתוק', '', '', 0, 944),
+(1623, 1001, 'Spicy Chili', 'צ''ילי חריף', '', '', 0, 945),
+(1624, 1001, 'Olive oil and lemon dressing', 'שמן זית לימון', '', '', 0, 946),
+(1625, 1001, 'Mayonnaise', 'מיונז', '', '', 0, 947);
 
 -- --------------------------------------------------------
 
@@ -2200,7 +2236,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `menus`
@@ -2214,13 +2250,14 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (5, 5, 'Lunch', 'ארוחת צהריים', 104),
 (6, 6, 'Lunch', 'ארוחת צהריים', 105),
 (7, 7, 'Lunch', 'ארוחת צהריים', 106),
-(9, 9, 'Lunch', 'ארוחת צהריים', 106),
-(10, 10, 'Lunch', 'ארוחת צהריים', 106),
+(8, 8, 'Lunch\r\n', 'ארוחת צהריים', 107),
+(9, 9, 'Lunch', 'ארוחת צהריים', 108),
+(10, 10, 'Lunch', 'ארוחת צהריים', 109),
 (11, 11, 'Lunch', 'ארוחת צהריים', 110),
-(12, 12, 'Lunch', 'ארוחת צהריים', 110),
+(12, 12, 'Lunch', 'ארוחת צהריים', 111),
 (13, 13, 'Lunch', 'ארוחת צהריים', 112),
 (14, 14, 'Lunch', 'ארוחת צהריים', 113),
-(15, 15, 'Lunch', 'ארוחת צהריים', 113);
+(15, 15, 'Lunch', 'ארוחת צהריים', 114);
 
 -- --------------------------------------------------------
 
@@ -4862,16 +4899,6 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (3016, 622, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 2126),
 (3017, 622, 'Ginger', 'ג''ינג''ר', 0, 2127),
 (3018, 622, 'Wasabi', 'וואסבי', 0, 2128),
-(3019, 623, 'Soya', 'סויה', 0, 2129),
-(3020, 623, 'Teriyaki', 'טריאקי', 0, 2130),
-(3021, 623, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 2131),
-(3022, 623, 'Ginger', 'ג''ינג''ר', 0, 2132),
-(3023, 623, 'Wasabi', 'וואסבי', 0, 2133),
-(3024, 624, 'Soya', 'סויה', 0, 2134),
-(3025, 624, 'Teriyaki', 'טריאקי', 0, 2135),
-(3026, 624, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 2136),
-(3027, 624, 'Ginger', 'ג''ינג''ר', 0, 2137),
-(3028, 624, 'Wasabi', 'וואסבי', 0, 2138),
 (3029, 625, 'Soya', 'סויה', 0, 2139),
 (3030, 625, 'Teriyaki', 'טריאקי', 0, 2140),
 (3031, 625, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 2141),
@@ -5529,8 +5556,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (12487, 1273, 'Tofu', 'טופו', 3, 2715),
 (12488, 1274, 'Roasted Mushrooms', 'פטריות צלויות', 6, 2716),
 (12489, 1274, 'Chemed Cheese 5%', '5% גבינת חמד', 6, 2717),
-(12490, 1274, 'Halloumi Cheese', 'גבינת חלומי', 6, 2718);
-INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
+(12490, 1274, 'Halloumi Cheese', 'גבינת חלומי', 6, 2718),
 (12491, 1274, 'Hard Yellow Cheese', 'גבינה צהובה', 6, 2719),
 (12492, 1274, 'Pasta', 'פסטה', 6, 2720),
 (12493, 1274, 'Tuna', 'טונה', 6, 2721),
@@ -5538,7 +5564,8 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (12495, 1274, 'Potato Slices', 'תפוח אדמה', 6, 2723),
 (12496, 1274, 'Egg Salad', 'סלט ביצים', 6, 2724),
 (12497, 1274, 'Bread & Butter', 'לחם & חמאה', 6, 2725),
-(12498, 1275, 'Smoked Salmon (approx. 60 grams)', 'סלמון מעושן כ60 גרם', 10, 2726),
+(12498, 1275, 'Smoked Salmon (approx. 60 grams)', 'סלמון מעושן כ60 גרם', 10, 2726);
+INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
 (12499, 1275, 'Sweet Potato Cubes (approx. 100 grams)', 'קוביות בטטה כ100 גרם', 10, 2727),
 (12500, 1275, 'Quinoa mix', 'תערובת קינואה', 10, 2728),
 (12501, 1275, 'Omelet (2 eggs)', 'חביתה - 2 ביצים', 10, 2729),
@@ -6308,6 +6335,28 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (13265, 1417, 'Quinoa mix', 'תערובת קינואה', 38, 3493),
 (13266, 1417, 'Omelet (2 eggs)', 'חביתה - 2 ביצים', 38, 3494),
 (13267, 1418, 'Baked Salmon (approx. 100 grams)', 'סלמון אפוי כ100 גרם', 43, 3495),
+(13268, 1419, 'Small Coffe & Pastry', 'קפה קטן ומאפה', 18, 0),
+(13269, 1419, 'Large Coffe & Pastry', 'קפה גדול ומאפה', 20, 0),
+(13270, 1420, 'Cappuccino', 'קפוצ''ינו', 0, 0),
+(13271, 1420, 'Americano', 'אמריקנו', 0, 0),
+(13272, 1420, 'Tea', 'תה', 0, 0),
+(13273, 1421, 'chocolate croissant', 'קרואסון שוקולד', 0, 0),
+(13274, 1421, 'butter croissant', 'קרואסון חמאה', 0, 0),
+(13275, 1421, 'cinnamon danish', 'דניש קינמון', 0, 0),
+(13276, 1421, 'cheese pastry', 'גבינייה', 0, 0),
+(13277, 1421, 'vanilla danish with chocolate chips', 'דניש וניל ופצפוצי שוקולד', 0, 0),
+(13278, 1421, 'orange & coconut cake', 'עוגת תפוזים-קוקוס', 0, 0),
+(13279, 1421, 'Cookies', 'קוקיס', 0, 0),
+(13280, 1421, 'phyllo cheese pastry', 'מאפה פילו גבינה', 0, 0),
+(13281, 1421, 'Date Pastry', 'מאפה תמרים', 0, 0),
+(13282, 1421, 'Halva Pastry', 'מאפה חלבה', 0, 0),
+(13283, 1421, 'Poppy Seed Pastry', 'מאפה פרג', 0, 0),
+(13284, 1421, 'brownies', 'בראוניז', 0, 0),
+(13285, 1421, 'vegan phyllo apple pastry', 'מאפה פילו תפוחי-עץ טבעוני', 0, 0),
+(13286, 1421, 'gluten free marble cake', 'עוגת שיש ללא גלוטן', 0, 0),
+(13287, 1422, '1%', '1%', 0, 0),
+(13288, 1422, '3%', '3%', 0, 0),
+(13289, 1422, 'Soya', 'סויה', 0, 0),
 (14000, 2200, 'Pitta', 'פיתה', 26, 3496),
 (14001, 2200, 'Laffa', 'לאפה', 30, 3497),
 (14002, 2200, 'Baguette', 'בגט', 30, 3498),
@@ -6331,7 +6380,8 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (14020, 2204, 'Pitta', 'פיתה', 30, 3516),
 (14021, 2204, 'Laffa', 'לאפה', 36, 3517),
 (14022, 2204, 'Baguette', 'בגט', 36, 3518),
-(14023, 2204, 'Meat dish', 'סעדה', 38, 3519),
+(14023, 2204, 'Meat dish', 'סעדה', 38, 3519);
+INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
 (14024, 2204, 'Business with 2 side dishes', 'עיסקית עם 2 תוספות', 50, 3520),
 (14025, 2205, 'Pitta', 'פיתה', 30, 3521),
 (14026, 2205, 'Laffa', 'לאפה', 36, 3522),
@@ -6343,8 +6393,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (14032, 2207, 'Chickpeas, mincemeat, olive oil and parsley', 'גרגרים, בשר טחון, שמן זית ופטרוזיליה', 0, 3528),
 (14033, 2207, 'Humous with chicken strips stirfried in onion', 'חומוס רצועות עוף מוקפץ בתוספת בצל', 0, 3529),
 (14034, 2207, 'Home style humous', 'חומוס הבית מעורב מדליק', 0, 3530),
-(14035, 2208, 'Egg', 'ביצה', 3, 3531);
-INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
+(14035, 2208, 'Egg', 'ביצה', 3, 3531),
 (14036, 2208, 'Felafel', 'פלאפל', 3, 3532),
 (14100, 2211, 'Garlic sauce', 'רוטב שום', 0, 3533),
 (14101, 2211, 'Thousand Island', 'רוטב אלך האיים', 0, 3534),
@@ -6393,16 +6442,16 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (14144, 2222, 'Garlic sauce', 'רוטב שום', 0, 3577),
 (14145, 2222, 'Thousand Island', 'רוטב אלך האיים', 0, 3578),
 (14146, 2222, 'Spicy house sauce', 'רוטב הבית - קצת חריף', 0, 3579),
-(14147, 2223, 'Coke', 'קוקה קולה', 1, 3580),
-(14148, 2223, 'Coke Zero', ' קוקה קולה זירו', 1, 3581),
-(14149, 2223, 'Apple cider', 'סיידר תפוחים', 0, 3582),
-(14150, 2223, 'Pepsi', 'פפסי', 0, 3583),
-(14151, 2223, 'Mirinda', 'מרינדה', 0, 3584),
-(14152, 2224, 'Coca cola', 'קוקה קולה', 4, 3585),
-(14153, 2224, 'Mineral water', 'מים מנרלים', 0, 3586),
-(14154, 2224, 'Flavored water', 'מים בטעמים', 4, 3587),
-(14155, 2224, 'Iced tea', '', 4, 3588),
-(14156, 2224, 'Jump juice', 'מיצים ג''אמפ', 4, 3589),
+(14147, 2223, 'Coke', 'קוקה קולה', 8, 3580),
+(14148, 2223, 'Coke Zero', ' קוקה קולה זירו', 8, 3581),
+(14149, 2223, 'Apple cider', 'סיידר תפוחים', 7, 3582),
+(14150, 2223, 'Pepsi', 'פפסי', 7, 3583),
+(14151, 2223, 'Mirinda', 'מרינדה', 7, 3584),
+(14152, 2224, 'Coca cola', 'קוקה קולה', 10, 3585),
+(14153, 2224, 'Mineral water', 'מים מנרלים', 6, 3586),
+(14154, 2224, 'Flavored water', 'מים בטעמים', 10, 3587),
+(14155, 2224, 'Iced tea', '', 10, 3588),
+(14156, 2224, 'Jump juice', 'מיצים ג''אמפ', 10, 3589),
 (14157, 2225, 'Coke', 'קוקה קולה', 0, 3590),
 (14158, 2225, 'Coke Zero', 'קוקה קולה זירו', 0, 3591),
 (14159, 2225, 'Pepsi', 'פפסי', 0, 3592),
@@ -6418,6 +6467,11 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (14169, 2227, 'Spicy house sauce', 'רוטב הבית - קצת חריף', 0, 0),
 (14170, 2227, 'Garlic sauce ', 'רוטב שום', 0, 0),
 (14171, 2227, 'Thousand Island', 'רוטב אלף האיים', 0, 0),
+(14172, 2228, 'Coke', 'קוקה קולה', 9, 3605),
+(14173, 2228, 'Apple cider', 'סיידר תפוחים', 8, 3606),
+(14174, 2228, 'Soda water', 'סודה', 5, 3607),
+(14175, 2228, 'Black beer (malt)', 'בירה שחורה', 10, 3608),
+(14176, 2228, 'Jump juice', 'ג''אמפ', 7, 3609),
 (15000, 2300, 'Onion', 'בצל', 3, 3599),
 (15001, 2300, 'Mushroom', 'פטריות', 3, 3600),
 (15002, 2300, 'Fried egg', 'ביצה עין', 3, 3601),
@@ -7221,19 +7275,20 @@ INSERT INTO `user_votes` (`id`, `user_id`, `restaurant_id`, `vote_timing_id`) VA
 CREATE TABLE IF NOT EXISTS `vote_timings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `company_id` int(11) NOT NULL,
-  `voting_start` varchar(255) NOT NULL,
-  `voting_end` varchar(255) NOT NULL,
-  `ordering_end` varchar(255) NOT NULL,
+  `voting_start` time NOT NULL,
+  `voting_end` time NOT NULL,
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `vote_timings`
 --
 
-INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`, `ordering_end`) VALUES
-(1, 1, '09:57:00', '12:53:00', '12:59:00');
+INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`) VALUES
+(1, 2, '05:57:00', '08:53:00'),
+(4, 2, '14:00:00', '15:00:00'),
+(5, 2, '22:00:00', '23:00:00');
 
 -- --------------------------------------------------------
 
