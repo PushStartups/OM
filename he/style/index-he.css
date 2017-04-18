@@ -1,8 +1,7 @@
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('../fonts/helveticaneue/HelveticaNeue.woff') format('woff'), 
-    url('../fonts/helveticaneue/HelveticaNeue Thin.ttf') format('truetype'),
-	url('../fonts/helveticaneue/HelveticaNeue Thin.eot') format('eot'); 
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
+	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Lobster';
@@ -17,13 +16,15 @@ html {box-sizing: border-box;}
 body {
 	margin: 0;
 	color: #fff;
-	font: 15px/18px 'HelveticaNeue', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family: 'OpenSansHebrew', serif;
 	min-width: 320px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
 }
 
-
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 .blur-class {
 	-webkit-filter: opacity(.2);
 	filter: opacity(.2);
@@ -258,7 +259,6 @@ button {
 	margin:0;
 	list-style:none;
 	overflow:hidden;
-	font-family: 'HelveticaNeue';
 	font-size: 16px;
 	line-height:19px;
 	font-weight: 300;
@@ -274,9 +274,10 @@ button {
 	color: #fff;
 }
 #nav ul li a.active{
-	padding:5px;
-	border-radius:4px;
-	border:1px solid #fff;
+	padding: 3px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	font-size: 14px;
 }
 #nav ul li a.active:hover{border-color:#ff7f00;}
 #nav ul li a:hover{color:#ff7f00;}

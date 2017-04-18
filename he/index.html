@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="he">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
-    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style/all.css">
-    <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/index-he.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/en/script/bootstrap.min.js"></script>
-    <script src="/en/script/script.js"> </script>
-    <script src="/en/script/ajaxServerRequestsIndex.js"></script>
-    <script src="/en/script/alertify.min.js"></script>
-    <script src="/en/script/commonAjaxCall.js"></script>
+    <script src="/he/script/ajaxServerRequestsIndex-he.js"></script>
+    <script src="/he/script/alertify.min.js"></script>
+    <script src="/he/script/commonAjaxCall.js"></script>
 
 
     <!-- Google Analytics -->
@@ -67,8 +61,9 @@
 
 </head>
 
-
 <script>
+
+
 
 
     if (location.protocol != 'https:')
@@ -81,21 +76,15 @@
 
     $(document).ready(function() {
 
+        localStorage.setItem("USER_LANGUAGE", "HE");
         commonAjaxCall("/restapi/index.php/get_all_cities", '', displayAllCities);
 
     });
 
 </script>
 
-
 <body>
-
-
-<img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
-
-<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
-
-<div id="wrapper">
+<div dir="rtl" id="wrapper">
     <!-- carousel slider -->
     <div class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
@@ -109,14 +98,14 @@
         <div class="container">
             <nav id="nav">
                 <ul>
-                    <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
-                    <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
+                    <li data-toggle="modal" data-target="#about"><a href="#">אודות</a></li>
+                    <li><a onclick="redirectToEn();" class="active" href="#">EN</a></li>
                 </ul>
             </nav>
             <div class="row">
                 <div class="col-md-6 col-sm-12 add">
                     <header id="header">
-                        <div class="logo">
+                        <div class="logo" >
                             <a href="#">
                                 <img src="img/logo.png" alt="images description">
                                 <strong>Order App</strong>
@@ -128,19 +117,21 @@
             <div class="row">
                 <div class="col-md-8 add">
                     <form class="form" action="#">
-                        <h1>ORDER SMART <br>ORDER FAST</h1>
+                        <h1>הזמן חכם <br>הזמן מהר</h1>
                         <div class="row no-gutters add">
                             <div class="col-md-6 col-sm-6 col-xs-12 box">
-                                <div class="dropdown error">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="text-span">Dropdown Example</span>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">בחר עיר
                                         <span class="caret"></span></button>
-                                    <ul id="city_list"  class="dropdown-menu scrollable-menu" role="menu">
+                                    <ul  class="dropdown-menu scrollable-menu" role="menu" id="city_list">
+                                        <!--<li><a href="#">בחר עיר</a></li>-->
+                                        <!--<li><a href="#">בחר עיר</a></li>-->
                                     </ul>
-                                    <span id="error-field" class="fild-title">*Required field</span>
+                                    <span style="display: none" class="fild-title">*Required field</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 box">
-                                <button class="btn-submit" onclick="start_ordering()" type="button" >Start Ordering</button>
+                                <button onclick="start_ordering();" class="btn-submit" type="button">התחל עכשיו</button>
                             </div>
                         </div>
                     </form>
@@ -148,11 +139,13 @@
             </div>
         </div>
     </section>
+
     <div class="img visible-lg visible-md">
-        <img src="img/delivery-desktop.png" alt="images description">
+        <img src="img/scoter-desk-he.png" alt="images description">
     </div>
+
     <div class="img visible-sm visible-xs">
-        <img src="img/delivery-mobile.png" alt="images description">
+        <img src="img/scoter-m-he.png" alt="images description">
     </div>
 </div>
 
@@ -177,22 +170,22 @@
             <div class="social-icons">
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/theorderapp/"><img src="/en/img/fb.png"></a>
+                        <a target="_blank" href="https://www.facebook.com/theorderapp/"><img src="img/fb.png"></a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/OrderAppTeam"><img src="/en/img/tw.png"></a>
+                        <a target="_blank" href="https://twitter.com/OrderAppTeam"><img src="img/tw.png"></a>
                     </li>
                     <li>
-                        <a href="https://plus.google.com/106974163137537901922"><img src="/en/img/gp.png"></a>
+                        <a target="_blank" href="https://plus.google.com/106974163137537901922"><img src="img/gp.png"></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/theorderapp/"><img src="/en/img/insta.png"></a>
+                        <a target="_blank" href="https://www.instagram.com/theorderapp/"><img src="img/insta.png"></a>
                     </li>
                     <li>
-                        <a href="https://www.pinterest.com/orderapp/"><img src="/en/img/pin.png"></a>
+                        <a target="_blank" href="https://www.pinterest.com/orderapp/"><img src="img/pin.png"></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="/en/img/link.png"></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="img/link.png"></a>
                     </li>
                 </ul>
             </div>
@@ -201,42 +194,27 @@
     </div>
 
 </div>
-</div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="script/bootstrap.min.js"></script>
 <script>
 
-    $('.carousel').carousel();
 
-</script>
+    $(document).ready(function() {
 
+        $('.carousel').carousel();
 
-<script type="text/javascript">
-
-
-    var selectedCityName = null;
+    });
 
 
-    $(".dropdown").removeClass("error");
-    $("#error-field").hide();
+    function redirectToEn() {
 
-
-    // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-    if(!isCitySelected())
-    {
-
-        $('.btn-primary > span#text-span').text('Choose a city');
-
-    }
-    else
-    {
-        // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-        selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
-        $('.btn-primary > span#text-span').text(selectedCityName);
+        localStorage.setItem("USER_LANGUAGE", "EN");
+        window.location.href = 'https://'+window.location.hostname;
     }
 
 
-
-    // CLICK ON START ORDERING BUTTON
     function start_ordering()
     {
 
@@ -244,7 +222,8 @@
         {
 
             $(".dropdown").removeClass("error");
-            $("#error-field").hide();
+
+            $(".fild-title").css('display', 'none');
 
             selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
             selectedCityName = selectedCityName.replace(/\s/g, '');
@@ -253,24 +232,14 @@
         }
         else
         {
-
             // THROW ERROR
             $(".dropdown").addClass("error");
-            $("#error-field").show();
+            $(".fild-title").css('display' , 'block');
 
         }
 
     }
 
-    function redirectToHE() {
-
-        localStorage.setItem("USER_LANGUAGE", 'HE');
-        window.location.href = 'https://'+window.location.hostname;
-
-    }
-
-
 </script>
-
 </body>
 </html>

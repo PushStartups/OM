@@ -13,10 +13,10 @@ function displayAllCities(response) {
 
     for(var x=0; x<result.length;x++)
     {
-        str += '<li><a onclick="storeUserSelectedCity('+x+')" href="#">'+result[x].name_en+'</a></li>';
+        str += '<li><a onclick="storeUserSelectedCity('+x+')" href="#">'+result[x].name_he+'</a></li>';
     }
 
-    $('#city_list').append(str);
+    $('#city_list').html(str);
 
 }
 
@@ -27,7 +27,8 @@ function storeUserSelectedCity(index) {
     $('.btn-primary > span#text-span').text(allCitiesResp[index].name_en);
 
 
-    localStorage.setItem("USER_CITY_ID", JSON.stringify(allCitiesResp[index].id));
+    localStorage.setItem("USER_CITY_ID_HE", JSON.stringify(allCitiesResp[index].id));
+    localStorage.setItem("USER_CITY_NAME_HE", JSON.stringify(allCitiesResp[index].name_he));
     localStorage.setItem("USER_CITY_NAME", JSON.stringify(allCitiesResp[index].name_en));
 
 
@@ -40,7 +41,7 @@ function storeUserSelectedCity(index) {
 
 function isCitySelected()
 {
-    if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
+    if(localStorage.getItem("USER_CITY_ID_HE") == undefined ||localStorage.getItem("USER_CITY_ID_HE") == "" || localStorage.getItem("USER_CITY_ID_HE") == null)
     {
 
         return false;

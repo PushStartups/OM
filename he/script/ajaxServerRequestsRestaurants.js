@@ -121,13 +121,13 @@ function  getAllRestaurants(response)
 
             if (str2.length > 0)
             {
-                temp += '<span class="more"> more info </span>'+
+                temp += '<span class="more"> מידע נוסף </span>'+
                     '<span class="sign"> + </span>';
             }
             // HIDE BUTTON ON SHORT DESCRIPTION
             else
             {
-                temp += '<span class="more" style="display: none"> more info </span>'+
+                temp += '<span class="more" style="display: none"> מידע נוסף </span>'+
                     '<span class="sign" style="display: none"> + </span>';
             }
 
@@ -205,13 +205,13 @@ function  getAllRestaurants(response)
 
             if (str2.length > 0)
             {
-                temp += '<span class="more"> more info </span>'+
+                temp += '<span class="more"> מידע נוסף </span>'+
                     '<span class="sign"> + </span>';
             }
             // HIDE BUTTON ON SHORT DESCRIPTION
             else
             {
-                temp += '<span class="more" style="display: none"> more info </span>'+
+                temp += '<span class="more" style="display: none"> מידע נוסף </span>'+
                     '<span class="sign" style="display: none"> + </span>';
             }
 

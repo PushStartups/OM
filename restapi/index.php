@@ -800,7 +800,7 @@ function TCS_Service_Printer()
 
 
     $response = $client->post('devices/356498044821326/requests/', ['json' => [
-        'data' =>   ord ($mystring)
+        'data' =>  $mystring
 
     ]]);
 

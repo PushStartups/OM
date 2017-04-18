@@ -21,18 +21,19 @@ var selectedItemPrice           = 0;
 $(document).ready(function() {
 
     // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-    if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER_OBJECT") == "" || localStorage.getItem("USER_OBJECT") == null)
+    if(localStorage.getItem("USER_OBJECT_HE") == undefined ||localStorage.getItem("USER_OBJECT_HE") == "" || localStorage.getItem("USER_OBJECT_HE") == null)
     {
         // SEND USER BACK TO HOME PAGE
-        window.location.href = '/en/index.html';
+        window.location.href = '/he/index.html';
 
     }
 
+
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-    userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
+    userObject  = JSON.parse(localStorage.getItem("USER_OBJECT_HE"));
 
     // RETRIEVE SELECTED REST ID RAW RESPONSE
-    selectedRest  = JSON.parse(localStorage.getItem("SELECTED_REST"));
+    selectedRest  = JSON.parse(localStorage.getItem("SELECTED_REST_HE"));
 
 
 
@@ -74,17 +75,19 @@ $(document).ready(function() {
 
 function displayRestDetail() {
 
-
     // SETTING RESTAURANT DETAILS
 
     var temp =  '<div class="img-frame">'+
         '<a href="#"><img src="'+ selectedRest.logo +'" alt="logo-img"></a>'+
         '</div>'+
-        '<h2>'+ selectedRest.name_en +'</h2>'+
-        '<p>'+ selectedRest.address_en +'</p>'+
-        '<span class="cart">Minimum Order '+ selectedRest.min_amount +' NIS</span>'+
+        '<h2>'+ selectedRest.name_he +'</h2>'+
+        '<p>'+ selectedRest.address_he +'</p>'+
+
+
+
+        '<span class="cart">מינימום הזמנה '+ selectedRest.min_amount +' ש״ח</span>'+
         '<div class="wrap">'+
-        '<p>'+ selectedRest.description_en +'</p>'+
+        '<p>'+ selectedRest.description_he +'</p>'+
         '</div>'+
         '<img class="mobile-sec" src="/en/img/delivery line.png">';
 
@@ -99,8 +102,8 @@ function displayRestDetail() {
     for (i = 0; i < selectedRest.timings.length; i++)
     {
 
-        temp += '<tr><td>'+ selectedRest.timings[i].week_en +'</td>'+
-            '<td>'+ selectedRest.timings[i].opening_time + ' - ' + selectedRest.timings[i].closing_time +'</td></tr>';
+        temp += '<tr><td>'+ selectedRest.timings[i].week_he +'</td>'+
+            '<td>'+ selectedRest.timings[i].opening_time_he + ' - ' + selectedRest.timings[i].closing_time_he +'</td></tr>';
 
     }
 
@@ -116,7 +119,7 @@ function displayRestDetail() {
     {
 
         temp += '<tr>'+
-            '<td>' + selectedRest.delivery_fee[i].area_en +' : Fee '+ selectedRest.delivery_fee[i].fee +' NIS</td>'+
+            '<td>' + selectedRest.delivery_fee[i].area_he +' : Fee '+ selectedRest.delivery_fee[i].fee +' ש"ח</td>'+
             '</tr>';
 
     }
@@ -148,7 +151,7 @@ function displayRestDetail() {
 
     // SETTING MINIMUM ORDER
 
-    temp = '<p>Minimum Order '+ selectedRest.min_amount +' NIS</p>';
+    temp = '<p> מינימום הזמנה '+ selectedRest.min_amount +' ש״ח</p>';
 
     $('#min-order').html(temp);
 
@@ -163,7 +166,7 @@ function  getCategoriesWithItems(response)
 {
 
     // SET MIN ORDER LIMIT TO ERROR POPUP
-    //$('#min_order').html("The minimum order is "+minOrderLimit+" NIS");
+    //$('#min_order').html("The minimum order is "+minOrderLimit+" ש"ח");
 
 
     // UPDATE RESTAURANT TITLE
@@ -176,8 +179,8 @@ function  getCategoriesWithItems(response)
 
 
     // SETTING RESTAURANT NAME AND CATEGORIES
-    temp =  '<h1>'+selectedRest.name_en+'</h1>'+
-        '<p>'+selectedRest.address_en+'</p>'+
+    temp =  '<h1>'+selectedRest.name_he+'</h1>'+
+        '<p>'+selectedRest.address_he+'</p>'+
         '<ul>';
 
 
@@ -197,7 +200,7 @@ function  getCategoriesWithItems(response)
 
 
         catItem +=  '<a  id="slideItem'+i+'"  href="#" class="opener">'+
-            '<h3>'+result.categories_items[i].name_en+'</h3>'+
+            '<h3>'+result.categories_items[i].name_he+'</h3>'+
             '</a>'+
             '<div class="slide">';
 
@@ -206,10 +209,10 @@ function  getCategoriesWithItems(response)
         {
 
             catItem +=  '<div class="add-row" onclick="onItemSelected('+i+','+y+')">'+
-                '<h4>'+ result.categories_items[i].items[y].name_en +'<span>'+result.categories_items[i].items[y].price+' NIS</span></h4>'+
+                '<h4>'+ result.categories_items[i].items[y].name_he +'<span>'+result.categories_items[i].items[y].price+' ש"ח</span></h4>'+
                 '<div class="box">'+
                 '<a class="btn-icon">plus image</a>'+
-                '<p>'+ result.categories_items[i].items[y].desc_en +'</p>'+
+                '<p>'+ result.categories_items[i].items[y].desc_he +'</p>'+
                 '</div>'+
                 '</div>';
 
@@ -277,7 +280,7 @@ function onItemSelected (x,y)
     //  $('.circle').css("background-image","url("+result.categories_items[currentCategoryId].items[y].image_url+")");
 
     // UPDATE ITEM NAME
-    $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_en);
+    $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_he);
 
 
 
@@ -285,11 +288,11 @@ function onItemSelected (x,y)
 
     selectedItemPriceOrg = selectedItemPrice;
 
-    $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
+    $('#itemPopUpPrice').html(selectedItemPrice+' ש"ח');
 
 
     // UPDATE DESCRIPTION
-    $('#itemPopUpDesc').html(result.categories_items[currentCategoryId].items[currentItemIndex].desc_en);
+    $('#itemPopUpDesc').html(result.categories_items[currentCategoryId].items[currentItemIndex].desc_he);
 
 
     // CALL SERVER GET SELECTED ITEM EXTRAS WITH SUB ITEMS
@@ -329,17 +332,17 @@ function onItemSelectedCallBack(response)
 
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
 
-                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '  (' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_he + '  (' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
                     }
                     else
                     {
-                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en +'</li>';
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+ oneTypeSubItems.length +',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_he +'</li>';
                     }
 
                     if (y ==0 || (convertFloat(extras.extra_with_subitems[x].subitems[y].price) < minPrice))
                     {
                         minPrice = extras.extra_with_subitems[x].subitems[y].price;
-                        minSubItemName = extras.extra_with_subitems[x].subitems[y].name_en;
+                        minSubItemName = extras.extra_with_subitems[x].subitems[y].name_he;
                         minY = y;
                     }
                 }
@@ -348,11 +351,11 @@ function onItemSelectedCallBack(response)
 
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0) {
 
-                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+oneTypeSubItems.length+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en + '  (+' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+oneTypeSubItems.length+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_he + '  (+' + extras.extra_with_subitems[x].subitems[y].price + ') </li>';
                     }
                     else
                     {
-                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+oneTypeSubItems.length+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_en +'</li>';
+                        temp += '<li onclick="onOneTypeExtraSubItemSelected(' + x + ',' + y +','+oneTypeSubItems.length+',this)"> ' + extras.extra_with_subitems[x].subitems[y].name_he +'</li>';
                     }
 
                 }
@@ -360,16 +363,16 @@ function onItemSelectedCallBack(response)
 
 
             oneTypeStr += '<div id="oneTypeDD'+oneTypeSubItems.length+'" class="add-row">'+
-                '<label>' + extras.extra_with_subitems[x].name_en + '</label>'+
+                '<label>' + extras.extra_with_subitems[x].name_he + '</label>'+
                 '<div id="cards-drop" class="custom-drop-down">'+
-                '<input id="input'+oneTypeSubItems.length+'" placeholder="Please Choose"  value ="'+ minSubItemName +'"  style="font-size: 18px" readonly="">'+
-                '<img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="/en/img/drop_down.png">'+
+                '<input id="input'+oneTypeSubItems.length+'" placeholder="בבקשה תבחר"  value ="'+ minSubItemName +'"  style="font-size: 18px" readonly="">'+
+                '<img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="/en/img/drop_down.png">'+
                 '<div id="list" class="custom-drop-down-list" style="display: none;">'+
                 '<ul id="categories_list">';
 
             oneTypeStr += temp;
 
-            oneTypeStr += '</ul> </div><span class="red" id="error-one-type'+oneTypeSubItems.length+'">*Required field</span> </div>';
+            oneTypeStr += '</ul> </div><span class="red" id="error-one-type'+oneTypeSubItems.length+'">*שדה נדרש</span> </div>';
 
             if(minSubItemName ==  "")
             {
@@ -377,7 +380,7 @@ function onItemSelectedCallBack(response)
                 // UPDATE VALUE FROM SUB ITEM SELECTION FROM DROP DOWN TYPE ONE
                 var subItem = {};
 
-                subItem[extras.extra_with_subitems[x].name_en] = null;
+                subItem[extras.extra_with_subitems[x].name_he] = null;
                 oneTypeSubItems.push(subItem);
 
             }
@@ -396,7 +399,7 @@ function onItemSelectedCallBack(response)
 
                 var subItem = {};
 
-                subItem[extras.extra_with_subitems[x].name_en] = temp;
+                subItem[extras.extra_with_subitems[x].name_he] = temp;
 
                 oneTypeSubItems.push(subItem);
 
@@ -416,7 +419,7 @@ function onItemSelectedCallBack(response)
                 // SUB ITEMS WITH MULTIPLE SELECTABLE OPTIONS
 
                 multipleTypeStr += '<div class="add-row">' +
-                    '<label style="text-align: left; margin-bottom: 20px">' + extras.extra_with_subitems[x].name_en + '</label>'+
+                    '<label style="text-align: right; margin-bottom: 20px">' + extras.extra_with_subitems[x].name_he + '</label>'+
                     '<ul class="checkbox-list">';
 
                 for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
@@ -426,14 +429,14 @@ function onItemSelectedCallBack(response)
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                         multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                            + extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
+                            + extras.extra_with_subitems[x].subitems[y].name_he+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
                         multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                            + extras.extra_with_subitems[x].subitems[y].name_en.capitalize() + '</label></li>';
+                            + extras.extra_with_subitems[x].subitems[y].name_he + '</label></li>';
                     }
 
 
@@ -441,7 +444,7 @@ function onItemSelectedCallBack(response)
                     // DEFAULT VALUE IS NULL
                     // UPDATE VALUE FROM CHECK BOX SELECTION
                     var subItem = {};
-                    subItem[extras.extra_with_subitems[x].subitems[y].name_en] = null;
+                    subItem[extras.extra_with_subitems[x].subitems[y].name_he] = null;
                     multipleTypeSubItems.push(subItem);
                 }
 
@@ -503,7 +506,7 @@ function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , 
 
 
     // AS ONE TYPE EXTRA OVER RIDE TO EXISTING VALUE
-    oneTypeSubItems[oneTypeIndex][extras.extra_with_subitems[extraIndex].name_en] =  subItem;
+    oneTypeSubItems[oneTypeIndex][extras.extra_with_subitems[extraIndex].name_he] =  subItem;
 
     updatedSelectedItemPrice();
 
@@ -515,7 +518,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     var id = '#checkbox-id-'+extraIndex+subItemIndex;
 
-    var name = extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en;
+    var name = extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he;
 
     // IF CHECK BOX SET CHECKED ADD SUB ITEM
 
@@ -564,17 +567,18 @@ function updatedSelectedItemPrice() {
             // ITEM PRICE DEPENDS ON SUB ITEM CHOICE
             // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
 
-            if (convertFloat(oneTypeSubItems[y][key].replace_price) == 0)
-            {
+            if(oneTypeSubItems[y][key] != null) {
 
-                sum    = convertFloat(sum) + convertFloat(oneTypeSubItems[y][key].subItemPrice);
+                if (convertFloat(oneTypeSubItems[y][key].replace_price) == 0) {
+
+                    sum = convertFloat(sum) + convertFloat(oneTypeSubItems[y][key].subItemPrice);
+                }
+                else {
+                    replace = oneTypeSubItems[y][key].subItemPrice;
+
+                }
+
             }
-            else
-            {
-                replace =  oneTypeSubItems[y][key].subItemPrice;
-
-            }
-
         }
     }
 
@@ -599,7 +603,7 @@ function updatedSelectedItemPrice() {
     selectedItemPrice = convertFloat(sum) + convertFloat(replace);
 
 
-    $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
+    $('#itemPopUpPrice').html(selectedItemPrice+' ש"ח');
 }
 
 
@@ -655,7 +659,6 @@ function addUserOrder()
     var order = {
         "itemId"             : result.categories_items[currentCategoryId].items[currentItemIndex].id,
         "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemIndex].price,
-        "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
         "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
         "itemNameHe"         : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
         "qty"                : 1 ,
@@ -867,35 +870,20 @@ function updateCartElements()
 
             str += '<div class="row-holder">' +
                 '<div class="row header-row  no-gutters">' +
-                '<div class="col-md-9 col-xs-9">' +
-                '<h2>' + foodCartData[x].name + '</h2>' +
-                '</div>'+
+
                 '<div class="col-md-3 col-xs-3">'+
-                '<span class="dim">' + foodCartData[x].price_without_subItems  + ' NIS</span>'+
+                '<span class="dim">' + foodCartData[x].price_without_subItems  + ' ש"ח</span>'+
                 '</div>'+
+
+                '<div class="col-md-9 col-xs-9">' +
+                '<h2>' + foodCartData[x].name_he + '</h2>' +
+                '</div>'+
+
+
+
                 '</div>'+
                 '<div class="row no-gutters">' +
-                '<div class="col-md-9 col-sm-9 col-xs-9">';
 
-            if(foodCartData[x].specialRequest != "")
-            {
-
-                if(foodCartData[x].detail != "") {
-
-                    str += '<p>' + foodCartData[x].detail + ', special request : ' + foodCartData[x].specialRequest + '</p>';
-                }
-                else
-                {
-                    str += '<p>' + foodCartData[x].detail + ' special request : ' + foodCartData[x].specialRequest + '</p>';
-                }
-            }
-            else {
-
-                str += '<p>' + foodCartData[x].detail +'</p>';
-
-            }
-
-            str += '</div>'+
                 '<div class="col-md-3 col-sm-3 col-xs-3">' +
                 '<div class="switch-btn">';
 
@@ -917,6 +905,30 @@ function updateCartElements()
                 '<img id="increase-btn"'+x+' onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="/en/img/ic_plus.png">' +
                 '</div>' +
                 '</div>' +
+
+                '<div class="col-md-9 col-sm-9 col-xs-9">';
+
+            if(foodCartData[x].specialRequest != "")
+            {
+
+                if(foodCartData[x].detail != "") {
+
+                    str += '<p>' + foodCartData[x].detail_he + ', special request : ' + foodCartData[x].specialRequest + '</p>';
+                }
+                else
+                {
+                    str += '<p>' + foodCartData[x].detail_he + ' special request : ' + foodCartData[x].specialRequest + '</p>';
+                }
+            }
+            else {
+
+                str += '<p>' + foodCartData[x].detail_he +'</p>';
+
+            }
+
+            str += '</div>'+
+
+
                 '</div>' +
                 '</div>';
 
@@ -924,10 +936,12 @@ function updateCartElements()
 
         $('#nested-section').html(str);
 
-        $('#totalAmount').html(userObject.total + " NIS");
+        $('#totalAmount').html(userObject.total + " ש״ח");
         hideShowMinAmount(userObject.total);
 
-        $('#minAmount').html("Minimum Order "+minOrderLimit + " NIS");
+
+
+        $('#minAmount').html(" מינימום הזמנה "+ minOrderLimit +" ש״ח");
 
         $('.col-second').css("visibility","visible");
         $('.col-one').hide();
@@ -983,7 +997,7 @@ function onQtyIncreaseButtonClicked(index) {
 
     userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
-    $('#totalAmount').html(userObject.total + " NIS");
+    $('#totalAmount').html(userObject.total + 'ש"ח');
     hideShowMinAmount(userObject.total);
 
     var itemCountId = "#count"+index;
@@ -1084,7 +1098,7 @@ function onQtyDecreasedButtonClicked(index) {
 
     }
 
-    $('#totalAmount').html(userObject.total + " NIS");
+    $('#totalAmount').html(userObject.total + 'ש"ח');
     hideShowMinAmount(userObject.total);
 }
 
@@ -1100,11 +1114,11 @@ function OnOrderNowClicked() {
     }
     else
     {
-        localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
-        localStorage.setItem("FOOD_CARD_DATA", JSON.stringify(foodCartData));
+        localStorage.setItem("USER_OBJECT_HE", JSON.stringify(userObject));
+        localStorage.setItem("FOOD_CARD_DATA_HE", JSON.stringify(foodCartData));
 
         $("#minAmount").css("color","black");
-        window.location.href = '/en/confirm-order.html';
+        window.location.href = '/he/confirm-order.html';
     }
 }
 

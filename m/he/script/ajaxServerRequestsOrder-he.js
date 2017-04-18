@@ -845,14 +845,38 @@ function updateCartElements()
 
             str += '<div class="row-holder">'+
                 '<div class="row header-row no-gutters">'+
-                '<div class="col-md-9 col-xs-9" style="padding: 0 5px 0 0;">'+
-                '<h2>'+ foodCartData[x].name +'</h2>'+
-                '</div>'+
+
                 '<div class="col-md-3 col-xs-3">'+
                 '<span class="dim">'+ foodCartData[x].price_without_subItems +' ש״ח</span>'+
                 '</div>'+
+
+                '<div class="col-md-9 col-xs-9" style="padding: 0 0 0 10px;">'+
+                '<h2>'+ foodCartData[x].name +'</h2>'+
+                '</div>'+
+
                 '</div>'+
                 '<div class="row no-gutters">'+
+
+
+                '<div class="col-md-3 col-sm-3 col-xs-3">'+
+                '<div class="switch-btn">';
+
+            if (convertFloat(foodCartData[x].qty) == 1)
+            {
+                globalx = x;
+                //str += '<img onclick="cartItemRemoveConfirmation('+ x +')" class="left-btn" src="/m/he/img/ic_cancel.png">';
+                str += '<img onclick="onQtyDecreasedButtonClicked('+ x +')" class="left-btn" src="/m/he/img/ic_cancel.png">';
+            }
+            else
+            {
+                str += '<img onclick="onQtyDecreasedButtonClicked('+ x +')" class="left-btn" src="/m/he/img/ic_reduce.png">';
+            }
+
+            str += '<span class="count">'+ foodCartData[x].qty.toString() +'</span>'+
+                '<img onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="/m/he/img/ic_plus.png">'+
+                '</div>'+
+                '</div>'+
+
                 '<div class="col-md-9 col-sm-9 col-xs-9">';
 
 
@@ -875,24 +899,10 @@ function updateCartElements()
             }
 
             str += '</div>'+
-                '<div class="col-md-3 col-sm-3 col-xs-3">'+
-                '<div class="switch-btn">';
 
-            if (convertFloat(foodCartData[x].qty) == 1)
-            {
-                globalx = x;
-                //str += '<img onclick="cartItemRemoveConfirmation('+ x +')" class="left-btn" src="/m/he/img/ic_cancel.png">';
-                str += '<img onclick="onQtyDecreasedButtonClicked('+ x +')" class="left-btn" src="/m/he/img/ic_cancel.png">';
-            }
-            else
-            {
-                str += '<img onclick="onQtyDecreasedButtonClicked('+ x +')" class="left-btn" src="/m/he/img/ic_reduce.png">';
-            }
 
-            str += '<span class="count">'+ foodCartData[x].qty.toString() +'</span>'+
-                '<img onclick="onQtyIncreaseButtonClicked(' + x + ')" class="increase-btn" src="/m/he/img/ic_plus.png">'+
-                '</div>'+
-                '</div>'+
+
+
                 '</div>'+
                 '</div>'+
                 '</div>';

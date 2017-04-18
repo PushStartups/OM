@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2017 at 09:10 AM
+-- Generation Time: Apr 18, 2017 at 01:56 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -262,8 +262,8 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (99, 12, 'BREAKFASTS', 'ארוחות בוקר', '/m/en/img/categories/aroma/BREAKFAST.png', 199),
 (100, 12, 'TOAST SANDWICH', 'טוסטים', '/m/en/img/categories/aroma/TOASTED SANDWICHES.png', 200),
 (101, 12, 'PASTRIES', 'מאפים', '/m/en/img/categories/aroma/PASTRIES.png', 201),
-(102, 12, 'BOUREKAS', 'בורקסים', '/m/en/img/categories/aroma/VEGAN VEGAN.png', 202),
-(103, 12, 'HOT DRINKS', 'משקאות חמים', '/m/en/img/categories/aroma/VEGAN VEGAN.png', 203),
+(102, 12, 'BOUREKAS', 'בורקסים', '/m/en/img/categories/aroma/bourekas.png', 202),
+(103, 12, 'HOT DRINKS', 'משקאות חמים', '/m/en/img/categories/aroma/HOT drinks.png', 203),
 (104, 12, 'COLD DRINKS', 'משקאות קרים', '/m/en/img/categories/aroma/COLD DRINKS.png', 204),
 (105, 12, 'ICED DRINKS+ICE CREAM', 'אייסים + גלידה', '/m/en/img/categories/aroma/ICED DRINKS+ICE CREAM.png', 205),
 (106, 12, 'SANDWICH', 'כריכים', '/m/en/img/categories/aroma/SANDWICHES.png', 206),
@@ -1014,7 +1014,7 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (620, 335, 'Sauces', 'Multiple', 0, 'רטבים', 536),
 (621, 336, 'Sauces', 'Multiple', 0, 'רטבים', 537),
 (622, 337, 'Sauces', 'Multiple', 0, 'רטבים', 538),
-(624, 339, 'Addons', 'multiple', 3, 'תוספות', 540),
+(624, 339, 'Addons', 'multiple', 0, 'תוספות', 540),
 (625, 340, 'Sauces', 'Multiple', 0, 'רטבים', 541),
 (626, 341, 'Sauces', 'Multiple', 0, 'רטבים', 542),
 (627, 342, 'Sauces', 'Multiple', 0, 'רטבים', 543),
@@ -2331,7 +2331,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=558 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=564 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -2832,7 +2832,13 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (554, 435, 2, '??? ?????', 84, '???????? (+18), ??? ??? (+18), ???? (+4)'),
 (555, 436, 2, '??? ?????', 84, '???????? (+18), ??? ??? (+18), ???? (+4)'),
 (556, 437, 2, '??? ?????', 84, '???????? (+18), ??? ??? (+18), ???????? (+4)'),
-(557, 438, 2, 'Angus Salad', 88, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4), portobello mushroom (+4)');
+(557, 438, 2, 'Angus Salad', 88, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4), portobello mushroom (+4)'),
+(558, 439, 2, 'Shawarma', 39, 'Bread Type:Baguette, Veal, Fried Onions, Techina'),
+(559, 440, 1, 'Chicken Salad', 78, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18)'),
+(560, 440, 1, 'Chicken Salad', 78, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18)'),
+(561, 441, 1, 'Chicken Salad', 82, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4)'),
+(562, 441, 1, 'Chicken Salad', 42, ''),
+(563, 441, 1, 'Small Sweet Potato Fries', 14, ':Small');
 
 -- --------------------------------------------------------
 
@@ -2869,7 +2875,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `contact`, `min_amount`, 
 (4, 'Roza', 'רוזה', '97225609527', 50, 1, 0, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
 (5, 'Japan Japan', 'ג''אפן ג''אפן', '97225609531', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
 (6, 'OSHI OSHI', 'אושי אושי', '972772201290', 50, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
-(7, 'Greg Cafe', 'גרג קפה', '97225609534', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
+(7, 'Greg Cafe', 'קפה גרג', '97225609534', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
 (8, 'Grill 443', 'גריל 443', '97225609535', 50, 2, 0, '/m/en/img/grill443_logo.png', 'People come from far and wide to eat at the charcoal grilled, expertly chosen meats in Grill 443.  Now you can enjoy their amazing quality at home. There is a large selection of options, including two budget-friendly family meals.  Choose from an abundance of home style dishes, a dozen types of salad, accompanied by laffa straight from the taboun. ', '"""מסעדה מקומית אהובה עם בשרים ושיפודים נבחרים על גריל הפחמים, המדהימים בטעמם האיכותי.\r\n\r\nבצד תוכלו להזמין כמה סוגי סלטים טריים, חומוס הבית עם גרגירים חמים ונעימים לחיך, וקבב הבית הידוע בטעמו.\r\n\r\nבמקום שפע מאכלים ביתיים, לאפות היישר מהטבון. \r\n\r\nארוחות עסקיות ניתן להזמין בכל יום ובכל שעות היום, ואוכל מוכן לשבת לקחת הביתה."""', '443 - on road 443, beside the Sonol gas station at Shilat junction', 'צומת שילת (ת. דלק סונול), מודיעין', 'Rabbanut.    Meat is Chalak, chicken is rabbanut mehadrin', 'רבנות.  העוף מהדרין, והבשר חלק'),
 (9, 'Pizza Cheese', 'פיצה צ׳יז', '', 50, 2, 0, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', '\n                                    פיצה מעולה עם כל התוספות, מבחר פסטות וסלטים, שירות נהדר ומחיר כמו שאין בשום מקום. מה עוד צריך?!                                ', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (10, 'Crispy Sandwich', 'קריספי סנדוויץ''', '', 50, 2, 0, '/m/en/img/cs_logo.png', 'Beat the crowds at the mall and have your Crispy Sandwich delivered. The fast food place formerly known as 360 degree Schwarma & Friends provides a very reasonably priced menu of baguettes, laffot, plates and salads of your favorite meat dishes. Choose from schwarma, marinated chicken breast, homemade kebabs and a host of other tasty choices. Don''t forget to upgrade your meal to enjoy our yummy sides and drinks!', '"תפריט קריספי במגשית\nהמנות מוגשות עם צ''יפס, באגט/ לאפה, סלטים וממרחים לבחירה. \nסלטים לבחירה: חומוס, חריף, כרוב סגול במיונז, חסה, עבגניות, מלפפון, סלט עגבניות חריף, כרוב לבן, בצל מטוגן, חצילים מטוגנים, זיתים שחורים, פטרוזיליה. \nממרחים לבחירה: טחינה, קטשופ, עמבה, רוטב שום, רוטב אלף האיים, פסטו, ברביקיו, צ''ילי מתוק, צ''ילי חריף, מיונז."', 'Canion Azrieli, Modiin', 'קניון עזריאלי, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין'),
@@ -2994,7 +3000,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_tags` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `restaurant_tags`
@@ -3019,8 +3025,6 @@ INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
 (17, 5, 9),
 (18, 5, 10),
 (19, 5, 2),
-(20, 6, 13),
-(21, 6, 2),
 (26, 7, 17),
 (27, 7, 18),
 (30, 10, 2),
@@ -3038,7 +3042,8 @@ INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
 (42, 8, 6),
 (43, 8, 19),
 (44, 9, 8),
-(45, 9, 17);
+(45, 9, 17),
+(46, 6, 23);
 
 -- --------------------------------------------------------
 
@@ -7526,7 +7531,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `tags`
@@ -7539,7 +7544,7 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 (5, 'Tortillas', 'טורטיות'),
 (6, 'Grill', 'גריל'),
 (7, 'Steak', 'סטייק'),
-(8, 'Pizza', 'פִּיצָה'),
+(8, 'Pizza', 'פיצה'),
 (9, 'Sushi', 'סושי'),
 (10, 'Asian', 'אסייתי'),
 (11, 'Salad', 'סלט'),
@@ -7553,7 +7558,8 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 (19, 'Schwarma', 'שווארמה'),
 (20, 'Coffee, dairy cafe', 'בית קפה'),
 (21, 'Meat, Middle Eastern style', 'בשר'),
-(22, 'Burgers, Steak, Meat', 'המבורגרים, בשר, סטייק');
+(22, 'Burgers, Steak, Meat', 'המבורגרים, בשר, סטייק'),
+(23, 'Appetizers, Sushi Nigiri, Sushi', 'מנות פתיחה , סושי ניגירי, סושי');
 
 -- --------------------------------------------------------
 
@@ -7583,7 +7589,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=484 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=491 ;
 
 --
 -- Dumping data for table `users`
@@ -7676,7 +7682,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (342, 'sdf@sdfgsfdg.com', 'sfdsf', '', '', 0, '0000-00-00', '34534', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (343, 'asfd@sadf.com', 'adfadf ', '', '', 0, '0000-00-00', '334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (344, 'sedsdf@sdfsdf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(345, 'sdf@sdf.com', 'dsfdf', '', '', 0, '0000-00-00', '343434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_8sjvqln6MsGsD5k2d8wYoWcb'),
+(345, 'sdf@sdf.com', 'sdfs', '', '', 0, '0000-00-00', '4545', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_8sjvqln6MsGsD5k2d8wYoWcb'),
 (346, 'sdfdsf@sdfdsf.com', 'sdfsdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (347, 'afd@adf.com', 'asfd', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (348, 'dafdf@gasdfdf.com', 'dafdf', '', '', 0, '0000-00-00', '3434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
@@ -7812,7 +7818,14 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (480, 'hdhd@jdjd.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_2luzPk2fMqPoMnR39SzxNU2I'),
 (481, 'tas@gm.co', 'Tas', '', '', 0, '0000-00-00', '321', 'H', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (482, 'sbhsj@jsis.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xDDCM48MuztcLCcfZDVmzNqJ'),
-(483, 'gdhdh@udid.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Clc28PkqD6DTczb4Tap79XaM');
+(483, 'gdhdh@udid.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Clc28PkqD6DTczb4Tap79XaM'),
+(484, 'avc@gmail.com', 'Shoaib', '', '', 0, '0000-00-00', '0900', 'Abcde', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_1oyg6Ax3vKhNoHwaiNSCGQN7'),
+(485, 'fg@fg.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_f07YJYRoDCglCkgCjXSMoG7H'),
+(486, 'cg@df.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(487, 'hdhdh@jdid.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_FI0yhcICJT6DX0BaxjNPlZsm'),
+(488, 'hdhd@jdid.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_iB95OdIrWM3fRMDrUE2iBvKT'),
+(489, 'df@sdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_EDSZrnrmaIUv0JFNKKivIJhs'),
+(490, 'adf@df.com', 'dsfdsf', '', '', 0, '0000-00-00', '343434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_XsybPCwHSYiLkoG6IELlxYmR');
 
 -- --------------------------------------------------------
 
@@ -7853,7 +7866,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=439 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=442 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -8206,7 +8219,10 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (435, 476, 1, 163, 'fixed percentage', 33, '2017-04-17'),
 (436, 477, 1, 138, 'fixed percentage', 33, '2017-04-17'),
 (437, 479, 1, 138, 'fixed percentage', 33, '2017-04-17'),
-(438, 481, 1, 201, NULL, 0, '2017-04-18');
+(438, 481, 1, 201, NULL, 0, '2017-04-18'),
+(439, 345, 3, 103, NULL, 0, '2017-04-18'),
+(440, 484, 1, 130, 'fixed percentage', 33, '2017-04-18'),
+(441, 490, 1, 117, 'fixed percentage', 33, '2017-04-18');
 
 -- --------------------------------------------------------
 

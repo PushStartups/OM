@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
+	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+}
 html,  body {
 	height:100%;
 	overflow: hidden;
@@ -5,7 +10,7 @@ html,  body {
 html {box-sizing: border-box;}
 body {
 	background-color: #fff;
-	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
+	font: 15px/18px 'OpenSansHebrew', sans-serif, Arial, Helvetica;
 	background: url('../img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	overflow: hidden;
@@ -15,7 +20,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 }
-
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 .blur-class {
 	-webkit-filter: opacity(.2);
 	filter: opacity(.2);
@@ -415,7 +420,7 @@ a:hover, a:focus {
 #about .close {
 	position: absolute;
 	top: -65px;
-	left: -35px;
+	right: -35px;
 	padding: 0;
 	cursor: pointer;
 	font-size:45px;
@@ -474,6 +479,7 @@ a:hover, a:focus {
 	text-align: center;
 	font-weight: 400;
 }
+.order-now-box .header br{display: none;}
 
 .order-now-box .footer {
 	font-size: 12px;
@@ -599,7 +605,7 @@ div.more-toggle span {
 	vertical-align: top;
 	padding: 2px 5px;
 	font-size: 12px;
-	margin: 0;
+	margin: 0 0 0 4px;
 	cursor: pointer;
 }
 
@@ -623,7 +629,7 @@ img.gallery {
 	padding-top: 0;
 	white-space: nowrap;
 	color: #797979;
-	padding-right: 10px;
+	padding-left: 10px;
 }
 
 

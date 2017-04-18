@@ -68,8 +68,8 @@ $(function () {
                 $(".time-popup").css({
 
                     position: "absolute",
-                    top: (scrollTo.offset().top + 50) + "px",
-                    left : (scrollTo.offset().left - 20) + "px"
+                    top: (scrollTo.offset().top + 30) + "px",
+                    left : (scrollTo.offset().left - 150) + "px"
 
                 }).show();
 
@@ -135,7 +135,7 @@ $(function () {
 
                     position: "absolute",
                     top: (scrollTo.offset().top + 30) + "px",
-                    left : (scrollTo.offset().left - 20) + "px"
+                    left : (scrollTo.offset().left - 30) + "px"
 
                 }).show();
 

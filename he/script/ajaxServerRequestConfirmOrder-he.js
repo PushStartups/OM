@@ -1,5 +1,4 @@
 // GLOBAL VARIABLES
-
 var userObject                  = null;                                           // MAIN USER OBJECT
 var foodCartData                = [];                                             // DISPLAY DATA FOR FOOD CART
 var restName                    = null;                                           // SELECTED RESTAURANT NAME
@@ -14,12 +13,13 @@ var paymentInfoFlag             = false;
 var couponApplied               = false;
 var paymentReceived             = false;
 
+
 //SERVER HOST DETAIL
 
 $(document).ready(function() {
 
     // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-    if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER_OBJECT") == "" || localStorage.getItem("USER_OBJECT") == null)
+    if(localStorage.getItem("USER_OBJECT_HE") == undefined ||localStorage.getItem("USER_OBJECT_HE") == "" || localStorage.getItem("USER_OBJECT_HE") == null)
     {
         // SEND USER BACK TO HOME PAGE
         window.location.href = '/en/index.html';
@@ -28,20 +28,20 @@ $(document).ready(function() {
 
 
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-    userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
+    userObject  = JSON.parse(localStorage.getItem("USER_OBJECT_HE"));
 
     // RETRIEVE SELECTED REST ID RAW RESPONSE
-    foodCartData  = JSON.parse(localStorage.getItem("FOOD_CARD_DATA"));
+    foodCartData  = JSON.parse(localStorage.getItem("FOOD_CARD_DATA_HE"));
 
     // RETRIEVE SELECTED REST ID RAW RESPONSE
-    selectedRest  = JSON.parse(localStorage.getItem("SELECTED_REST"));
+    selectedRest  = JSON.parse(localStorage.getItem("SELECTED_REST_HE"));
 
 
     restName                    = userObject.restaurantTitle;                      // SELECTED RESTAURANT NAME
     restId                      = userObject.restaurantId;                         // SELECTED RESTAURANT ID
 
 
-    $('#rest-title').html(userObject.restaurantTitle);
+    $('#rest-title').html(userObject.restaurantTitleHe);
 
 
     // HIDE SUBMIT ORDER BUTTON ON START
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     for(var x=0;x<selectedRest.delivery_fee.length;x++)
     {
-        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_en +' : Fee '+ selectedRest.delivery_fee[x].fee +'NIS</option>';
+        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_he +' : Fee '+' ש"ח ' +selectedRest.delivery_fee[x].fee+'</option>';
     }
 
     $('#delivery-areas').html(temp);
@@ -121,34 +121,34 @@ function updateCartElements()
         countItems = countItems +  foodCartData[x].qty;
 
 
-        str += '<div class="row-holder">' +
-            '<div class="row header-row no-gutters">' +
-            '<div class="col-md-9 col-xs-9">' +
-            '<h2>' + foodCartData[x].name + '</h2>' +
-            '</div>'+
-            '<div class="col-md-3 col-xs-3">'+
-            '<span class="dim">'+ foodCartData[x].qty.toString() +' x ' + foodCartData[x].price_without_subItems  + ' NIS</span>'+
-            '</div>'+
-            '</div>'+
-            '<div class="row no-gutters">' +
-            '<div class="col-md-9 col-sm-9 col-xs-9">';
+        str += '<div class="row-holder">'+
 
+            '<div class="row header-row">'+
+            '<div class="col-md-4 col-xs-4">'+
+            '<span class="dim" dir="rtl">'+ foodCartData[x].qty.toString() +' x ' + ' ש"ח '+ foodCartData[x].price_without_subItems +
+            '</span></div>'+
+            '<div class="col-md-8 col-xs-8">'+
+            '<h2>'+ foodCartData[x].name_he +'</h2>'+
+            '</div>'+
+            '</div>'+
+            '<div class="row no-gutters">'+
+            '<div class="col-md-8 col-sm-8 col-xs-8 pull-right">';
 
         if(foodCartData[x].specialRequest != "")
         {
 
             if(foodCartData[x].detail != "") {
 
-                str += '<p>' + foodCartData[x].detail + ', special request : ' + foodCartData[x].specialRequest + '</p>';
+                str += '<p>' + foodCartData[x].detail_he + ', special request : ' + foodCartData[x].specialRequest + '</p>';
             }
             else
             {
-                str += '<p>' + foodCartData[x].detail + ' special request : ' + foodCartData[x].specialRequest + '</p>';
+                str += '<p>' + foodCartData[x].detail_he + ' special request : ' + foodCartData[x].specialRequest + '</p>';
             }
         }
         else {
 
-            str += '<p>' + foodCartData[x].detail +'</p>';
+            str += '<p>' + foodCartData[x].detail_he +'</p>';
 
         }
 
@@ -161,7 +161,10 @@ function updateCartElements()
 
 
     $('#nested-section').html(str);
-    $('#totalAmountWithoutDiscount').html(userObject.total + " NIS");
+    $('#summary_items').html(str);
+
+    $('#totalAmountWithoutDiscount').html(userObject.total + ' ש"ח');
+    $('#totalAmountWithoutDiscount2').html(userObject.total + ' ש"ח');
 
 
     $('.badge').html(countItems);
@@ -170,12 +173,17 @@ function updateCartElements()
     if(!userObject.isCoupon)
     {
         $('#showDiscount').hide();
+        $('#showDiscount2').hide();
     }
     else
     {
 
         $('#showDiscount').show();
-        $('#totalAmountWithoutDiscount').html(userObject.totalWithoutDiscount + " NIS");
+        $('#showDiscount2').show();
+
+        $('#totalAmountWithoutDiscount').html(userObject.totalWithoutDiscount + ' ש"ח');
+        $('#totalAmountWithoutDiscount2').html(userObject.totalWithoutDiscount + ' ש"ח');
+
         newTotal = userObject.total;
     }
 
@@ -183,22 +191,27 @@ function updateCartElements()
     if($('#checkbox-id-12').is(":checked"))
     {
         $('#deliveryDetail').hide();
+        $('#deliveryDetail2').hide();
     }
     else
     {
         if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
 
-            $('#area-charges').html(userObject.deliveryCharges + " NIS");
+            $('#area-charges').html(userObject.deliveryCharges + ' ש"ח');
+            $('#area-charges2').html(userObject.deliveryCharges + ' ש"ח');
             newTotal = convertFloat(convertFloat(newTotal) + convertFloat(userObject.deliveryCharges));
             $('#deliveryDetail').show();
+            $('#deliveryDetail2').show();
         }
         else
         {
             $('#deliveryDetail').hide();
+            $('#deliveryDetail2').hide();
         }
     }
 
-    $('#totalAmount').html(newTotal + " NIS");
+    $('#totalAmount').html(newTotal + ' ש"ח');
+    $('#totalAmount2').html(newTotal + ' ש"ח');
 
 }
 
@@ -219,7 +232,7 @@ function saveUserInfo() {
     if($("#name_text").val() == "")
     {
         $("#name").addClass("error");
-        $("#error-name").html('*Required Field');
+        $("#error-name").html('*שדה נדרש');
         $("#error-name").show();
 
         return;
@@ -229,7 +242,7 @@ function saveUserInfo() {
     if($("#email_text").val() == ""){
 
         $("#email").addClass("error");
-        $("#error-email").html('*Required Field');
+        $("#error-email").html('*שדה נדרש');
         $("#error-email").show();
 
         return;
@@ -238,7 +251,7 @@ function saveUserInfo() {
     if( !validateEmail($("#email_text").val())){
 
         $("#email").addClass("error");
-        $("#error-email").html('Invalid Email!');
+        $("#error-email").html('דוא"ל שגוי');
         $("#error-email").show();
         return;
     }
@@ -248,7 +261,7 @@ function saveUserInfo() {
     if($("#contact_text").val() == ""){
 
         $("#contact").addClass("error");
-        $("#error-contact").html('*Required Field');
+        $("#error-contact").html('*שדה נדרש');
         $("#error-contact").show();
         return;
     }
@@ -261,7 +274,7 @@ function saveUserInfo() {
     if(!(/^\d+$/.test(contact)))
     {
         $("#contact").addClass("error");
-        $("#error-contact").html('Invalid Phone Number!');
+        $("#error-contact").html('מספר טלפון לא תקין');
         $("#error-contact").show();
         return;
     }
@@ -339,7 +352,7 @@ function deliveryAddress()
         if($("#appt-no").val() == "")
         {
             $("#appt-no").addClass("error");
-            $("#error-appt-no").html('*Required Field');
+            $("#error-appt-no").html('*שדה נדרש');
             $("#error-appt-no").show();
             return;
         }
@@ -348,7 +361,7 @@ function deliveryAddress()
         if($("#address").val() == "")
         {
             $("#address").addClass("error");
-            $("#error-address").html('*Required Field');
+            $("#error-address").html('*שדה נדרש');
             $("#error-address").show();
             return;
         }
@@ -418,7 +431,7 @@ function ClosePayment()
         if ($('#card_no').val() == "") {
 
             $("#error-card").addClass("error");
-            $('#error-card-no').html("*Required Field");
+            $('#error-card-no').html("*שדה נדרש");
             return;
 
         }
@@ -428,7 +441,7 @@ function ClosePayment()
             if($("#card_no").val() != ''){
 
                 $("#error-card").addClass("error");
-                $('#error-card-no').html("Invalid Card Number!");
+                $('#error-card-no').html("מספר כרטיס שגוי");
                 return;
             }
         }
@@ -437,7 +450,7 @@ function ClosePayment()
         // CVV SHOULD NOT BE EMPTY
         if ($('#cvv').val() == "") {
             $("#error-cvv-parent").addClass("error");
-            $('.payment-errors').html("*Required Field CVV");
+            $('.payment-errors').html("*שדה נדרש CVV");
             $('.payment-errors').show();
 
             return;
@@ -446,7 +459,7 @@ function ClosePayment()
         // MONTH SHOULD NOT BE EMPTY
         if ($('#month').val() == "") {
             $("#exp_error").addClass("error");
-            $('.payment-errors').html("*Card Expiry Date Month (MM) Required");
+            $('.payment-errors').html("* תאריך תפוגה של כרטיס חודש (MM) נדרש");
             $('.payment-errors').show();
             return;
         }
@@ -454,7 +467,7 @@ function ClosePayment()
         // MONTH SHOULD NOT BE EMPTY
         if ($('#year').val() == "") {
             $("#exp_error").addClass("error");
-            $('.payment-errors').html("*Card Expiry Date Year (YY) Required");
+            $('.payment-errors').html("* תאריך תפוגת הכרטיס שנה (YY) חובה");
             $('.payment-errors').show();
             return;
         }
@@ -501,6 +514,7 @@ function ClosePayment()
 function saveCashDetail()
 {
 
+    $('#order-summary').modal('hide');
     processPayments();
 }
 
@@ -530,7 +544,8 @@ function checkCouponCallBack(response)
 
             newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
 
-            $('#discountValue').html("-" + discountedAmount +" NIS");
+            $('#discountValue').html("-" + discountedAmount +' ש"ח');
+            $('#discountValue2').html("-" + discountedAmount +' ש"ח');
         }
         else
         {
@@ -541,9 +556,11 @@ function checkCouponCallBack(response)
 
             newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
 
-            $('#discountValue').html("-" + discountedAmount +" NIS");
+            $('#discountValue').html("-" + discountedAmount +' ש"ח');
+            $('#discountValue2').html("-" + discountedAmount +' ש"ח');
 
-            $('#discountTitle').html("Coupon Discount " + userObject.discount+"%");
+            $('#discountTitle').html(" קופון הנחה " + userObject.discount+"%");
+            $('#discountTitle2').html(" קופון הנחה " + userObject.discount+"%");
 
         }
 

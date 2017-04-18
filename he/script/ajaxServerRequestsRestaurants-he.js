@@ -11,14 +11,14 @@ $(document).ready(function() {
 
 
     // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-    if (localStorage.getItem("USER_CITY_ID") == undefined || localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null) {
+    if (localStorage.getItem("USER_CITY_ID_HE") == undefined || localStorage.getItem("USER_CITY_ID_HE") == "" || localStorage.getItem("USER_CITY_ID_HE") == null) {
         // SEND USER BACK TO HOME PAGE
         window.location.href = '../index.html';
     }
 
 
 // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-    selectedCityId = JSON.parse(localStorage.getItem("USER_CITY_ID"));
+    selectedCityId = JSON.parse(localStorage.getItem("USER_CITY_ID_HE"));
 
 
 // USER ORDER INFORMATION
@@ -70,12 +70,12 @@ function  getAllRestaurants(response)
         var tagsString = fromTagsToString(result[x]);
 
         var str2  = ' ';
-        var str1  = result[x].description_en;
+        var str1  = result[x].description_he;
 
         // RESTAURANTS DESCRIPTION LENGTH CHECK
-        if (result[x].description_en.length > 200)
+        if (result[x].description_he.length > 200)
         {
-            var yourString = result[x].description_en ; //replace with your string.
+            var yourString = result[x].description_he ; //replace with your string.
             var maxLength = 200 // maximum number of characters to extract
 
             //trim the string to the maximum length
@@ -85,15 +85,85 @@ function  getAllRestaurants(response)
             trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
 
             str1  = trimmedString;
-            str2  += result[x].description_en.replace(trimmedString,"");
+            str2  += result[x].description_he.replace(trimmedString,"");
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if (result[x].availability) {   
+        if (true) {     //result[x].availability
+
 
             temp +=
 
                 '<div class="row separator">'+
+                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
+                '<div class="order-now-box">'+
+                '<div onclick="order_now('+ x +')" class="header">הזמן <br> עכשיו</div>'+
+                '</div>'+
+                '</div>'+
+                '<div class="col-md-8 col-sm-8 col-xs-8">'+
+                '<div class="row">'+
+                '<div class="col-md-12 col-sm-12 col-xs-12">'+
+                '<h2 class="row-heading">'+ result[x].name_he +'<span class="title">כשר</span></h2>'+
+                '<p class="detail">'+
+
+                str1+
+
+                '<span class="toggle-content">';
+
+
+            if (str2.length > 0)
+            {
+                temp += str2;
+            }
+
+
+            temp += '</span>'+
+                '</p>'+
+                '<div class="more-toggle">';
+
+
+            if (str2.length > 0)
+            {
+                temp +=
+
+                    '<span class="more"> מידע נוסף </span>'+
+                    '<span class="sign"> + </span>';
+
+            }
+            // HIDE BUTTON ON SHORT DESCRIPTION
+            else
+            {
+                temp +=
+
+                    '<span class="more" style="display: none"> מידע נוסף </span>'+
+                    '<span class="sign" style="display: none"> + </span>';
+
+            }
+
+            temp +=
+
+                '</div>'+
+                '</div>'+
+                '</div>'+
+                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
+                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
+                '<span class="rest-address"> מינימום הזמנה '+ result[x].min_amount +' ש״ח </span>'+
+                '<span class="discount-drop-down" onclick="openDiscount('+ x +')">משלוח '+ result[x].min_delivery+'ש״ח - '+result[x].max_delivery +' ש״ח<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
+                '</div>'+
+                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
+                '<span class="rest-address"><span>'+ result[x].address_he +'</span>'+
+                '<div class="tooltip-popup">'+
+                '<p>'+ result[x].address_he +'</p>'+
+                '</div>'+
+                '</span>'+
+                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ result[x].today_timings +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
+                '</div>'+
+                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery('+ x +')" data-toggle="modal" data-target="#slider-popup">'+
+                '<img src="/he/img/gallery.png" alt="image description"></a>'+
+                '</div>'+
+                '</div>'+
+
+                '</div>'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
                 '<div class="circular-logo">'+
                 '<span class="status"></span>'+
@@ -103,71 +173,6 @@ function  getAllRestaurants(response)
                 '<div class="arrow"></div>'+
                 '</div>'+
                 '</div>'+
-                '<div class="col-md-8 col-sm-8 col-xs-8">'+
-                '<div class="row">'+
-                '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">' + result[x].name_en + '<span class="title">כשר</span></h2>'+
-                '<p class="detail">'+
-                str1+
-                '<span class="toggle-content">';
-
-            if (str2.length > 0)
-            {
-                temp += str2;
-            }
-
-            temp += '</span>'+
-                '<div class="more-toggle">';
-
-            if (str2.length > 0)
-            {
-                temp += '<span class="more"> more info </span>'+
-                    '<span class="sign"> + </span>';
-            }
-            // HIDE BUTTON ON SHORT DESCRIPTION
-            else
-            {
-                temp += '<span class="more" style="display: none"> more info </span>'+
-                    '<span class="sign" style="display: none"> + </span>';
-            }
-
-            temp +=
-                '</div>'+
-                '</p>'+
-                '</div>'+
-                '</div>'+
-                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
-                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">'+
-
-
-                // ONCLICK CALL OPEN GALLERY FUNCTION
-                '<a onclick="openGallery('+ x +')"   data-toggle="modal" data-target="#slider-popup">'+
-                '<img src="/en/img/gallery.png" alt="image description">'+
-                '</a>'+
-                '</div>'+
-                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address">' + '<span>'+result[x].address_en+'</span>' + '<div class="tooltip-popup"><p>'+result[x].address_en+'</p></div>' + '</span>'+
-
-                // ONCLICK CALL OPEN TIME FUNCTION
-                '<span onclick="openTime('+x+')" class="time-drop-down">'+result[x].today_timings+'<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
-                '<span class="rest-address"> Minimum '+result[x].min_amount+' NIS </span>'+
-
-
-                // ONCLICK CALL OPEN DISCOUNT FUNCTION
-                '<span class="discount-drop-down" onclick="openDiscount('+x+')">Delivery '+result[x].min_delivery+'NIS - '+result[x].max_delivery+'NIS <img src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box">'+
-                '<div onclick="order_now('+x+')" class="header" >'+
-                'ORDER<br>'+
-                'NOW'+
-                '</div>'+
-                '</div>'+
-                '</div>'+
                 '<div class="custom-hr"></div>'+
                 '</div>';
 
@@ -175,9 +180,80 @@ function  getAllRestaurants(response)
         //CURRENTLY NOT AVAILABLE
         else {
 
+
+
             temp +=
 
                 '<div class="row separator">'+
+                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
+                '<div class="order-now-box offline">'+
+                '<div onclick="order_now(0)" class="header">הזמן <br> עכשיו</div>'+
+                '</div>'+
+                '</div>'+
+                '<div class="col-md-8 col-sm-8 col-xs-8">'+
+                '<div class="row">'+
+                '<div class="col-md-12 col-sm-12 col-xs-12">'+
+                '<h2 class="row-heading">'+ result[x].name_he +'<span class="title">כשר</span></h2>'+
+                '<p class="detail">'+
+
+                str1+
+
+                '<span class="toggle-content">';
+
+
+            if (str2.length > 0)
+            {
+                temp += str2;
+            }
+
+
+            temp += '</span>'+
+                '</p>'+
+                '<div class="more-toggle">';
+
+
+            if (str2.length > 0)
+            {
+                temp +=
+
+                    '<span class="more"> מידע נוסף </span>'+
+                    '<span class="sign"> + </span>';
+
+            }
+            // HIDE BUTTON ON SHORT DESCRIPTION
+            else
+            {
+                temp +=
+
+                    '<span class="more" style="display: none"> מידע נוסף </span>'+
+                    '<span class="sign" style="display: none"> + </span>';
+
+            }
+
+            temp +=
+
+                '</div>'+
+                '</div>'+
+                '</div>'+
+                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
+                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
+                '<span class="rest-address"> מינימום הזמנה '+ result[x].min_amount +' ש״ח </span>'+
+                '<span class="discount-drop-down" onclick="openDiscount('+ x +')">משלוח '+ result[x].min_delivery+'ש״ח - '+result[x].max_delivery +' ש״ח<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
+                '</div>'+
+                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
+                '<span class="rest-address"><span>'+ result[x].address_he +'</span>'+
+                '<div class="tooltip-popup">'+
+                '<p>'+ result[x].address_he +'</p>'+
+                '</div>'+
+                '</span>'+
+                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ result[x].today_timings +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
+                '</div>'+
+                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery('+ x +')" data-toggle="modal" data-target="#slider-popup">'+
+                '<img src="/he/img/gallery.png" alt="image description"></a>'+
+                '</div>'+
+                '</div>'+
+
+                '</div>'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
                 '<div class="circular-logo">'+
                 '<span class="status offline"></span>'+
@@ -185,72 +261,6 @@ function  getAllRestaurants(response)
                 '<img class="rest_img" src="'+ result[x].logo + '">'+
                 '</div>'+
                 '<div class="arrow"></div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-8 col-sm-8 col-xs-8">'+
-                '<div class="row">'+
-                '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">' + result[x].name_en + '<span class="title">כשר</span></h2>'+
-                '<p class="detail">'+
-                str1+
-                '<span class="toggle-content">';
-
-            if (str2.length > 0)
-            {
-                temp += str2;
-            }
-
-            temp += '</span>'+
-                '<div class="more-toggle">';
-
-            if (str2.length > 0)
-            {
-                temp += '<span class="more"> more info </span>'+
-                    '<span class="sign"> + </span>';
-            }
-            // HIDE BUTTON ON SHORT DESCRIPTION
-            else
-            {
-                temp += '<span class="more" style="display: none"> more info </span>'+
-                    '<span class="sign" style="display: none"> + </span>';
-            }
-
-            temp +=
-                '</div>'+
-                '</p>'+
-                '</div>'+
-                '</div>'+
-                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
-                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">'+
-
-
-                // ONCLCIK CALL OPEN GALLERY FUNCTION
-                '<a onclick="openGallery('+ x +')"   data-toggle="modal" data-target="#slider-popup">'+
-                '<img src="/en/img/gallery.png" alt="image description">'+
-                '</a>'+
-                '</div>'+
-                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address">'+ result[x].address_en +'</span>'+
-
-
-                // ONCLICK CALL OPEN TIME FUNCTION
-                '<span onclick="openTime('+x+')" class="time-drop-down">'+result[x].today_timings+'<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
-                '<span class="rest-address"> Minimum '+result[x].min_amount+' NIS </span>'+
-
-
-                // ON CLICK CALL OPEN DISCOUNT FUNCTION
-                '<span class="discount-drop-down" onclick="openDiscount('+x+')">Delivery '+result[x].min_delivery+'NIS - '+result[x].max_delivery+'NIS <img src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box offline">'+
-                '<div class="header">'+
-                'ORDER<br>'+
-                'NOW'+
-                '</div>'+
                 '</div>'+
                 '</div>'+
                 '<div class="custom-hr"></div>'+
@@ -280,10 +290,10 @@ function fromTagsToString (restaurant)
     for (var i=0 ; i < restaurant.tags.length ; i++)
     {
         if ( i == 0)
-            tags += restaurant.tags[i]['name_en'];
+            tags += restaurant.tags[i]['name_he'];
 
         else
-            tags += ", "+restaurant.tags[i]['name_en'] ;
+            tags += ", "+restaurant.tags[i]['name_he'] ;
     }
 
     return tags;
@@ -299,12 +309,12 @@ function order_now(clickedRestId) {
     userObject.restaurantId        = allRestJson[clickedRestId].id;
     userObject.restaurantTitle     = allRestJson[clickedRestId].name_en;
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
-    userObject.restaurantAddress   = allRestJson[clickedRestId].address_en;
+    userObject.restaurantAddress   = allRestJson[clickedRestId].address_he;
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 
-    localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
-    localStorage.setItem("SELECTED_REST", JSON.stringify(allRestJson[clickedRestId]));
+    localStorage.setItem("USER_OBJECT_HE", JSON.stringify(userObject));
+    localStorage.setItem("SELECTED_REST_HE", JSON.stringify(allRestJson[clickedRestId]));
 
 
     var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
@@ -312,7 +322,7 @@ function order_now(clickedRestId) {
     selectedCityName        =   selectedCityName.replace(/\s/g, '');
 
     // MOVING TO ORDER PAGE
-    window.location.href = '/en/'+selectedCityName+"/"+ restaurantTitle+"/order";
+    window.location.href = '/he/'+selectedCityName+"/"+ restaurantTitle+"/order";
 
 };
 
@@ -321,7 +331,7 @@ function openTime(index) {
     var temp = '';
     for (i = 0 ; i < allRestJson[index].timings.length; i++)
     {
-        temp += '<tr><td>'+allRestJson[index].timings[i].week_en+'</td>'+
+        temp += '<tr><td>'+allRestJson[index].timings[i].week_he+'</td>'+
             '<td>'+ allRestJson[index].timings[i].opening_time + ' - ' + allRestJson[index].timings[i].closing_time +'</td></tr>';
     }
 
@@ -363,7 +373,7 @@ function openDiscount(index) {
 
     for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
     {
-        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_en +' : Fee '+ allRestJson[index].delivery_fee[i].fee +' NIS</p>';
+        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_he +' : Fee '+ allRestJson[index].delivery_fee[i].fee +' NIS</p>';
 
     }
 
