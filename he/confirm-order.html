@@ -1,0 +1,979 @@
+<!Doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
+    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/baron.css">
+    <link rel="stylesheet" type="text/css" href="style/confirm-order.css">
+    <link href="style/dropdown.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Facebook/Twitter Open Graph -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
+
+</head>
+<!--<style>-->
+    <!--::-webkit-scrollbar { /* for Mac OS X support */-->
+        <!--width: 0;-->
+    <!--}-->
+<!--</style>-->
+
+
+<!--<script>-->
+
+    <!--if (location.protocol != 'https:')-->
+    <!--{-->
+        <!--location.href = 'https:' + window.location.href.substring(window.location.protocol.length);-->
+    <!--}-->
+
+<!--</script>-->
+
+<body style="overflow: hidden">
+
+<img id="loader" style="z-index: 99999;" class="loader-css" src="img/loader.gif" >
+
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.5);"></div>
+
+<div id="wrapper" dir="rtl">
+    <section class="jumbotron jumbotron-fluid">
+        <header id="header">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-auto">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="img description">
+                            </a>
+                        </div>
+                        <span>ordering information</span>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
+                    <li><a class="active" href="#">HE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="content dropdown">
+        <div class="parent" style="position: relative;width:100%; height:100%;">
+            <img src="img/pizza.png" style="left: -10px"/>
+            <img src="img/img1.png" style="right: 0"/>
+        </div>
+        <div class="parent-bottom" style="position: relative;width:100%;height:100%;">
+            <img src="img/left_bottom.png" style="left: -10px;bottom: 0"/>
+            <img src="img/right_bottom.png" style="right: 0"/>
+        </div>
+        <div class="container new height-box">
+            <header class="header-box">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 id="rest-title">בנדורה</h1>
+                        <span class="title-add">שרות משלוחים פעיל</span>
+                    </div>
+                </div>
+            </header>
+            <div class=" height-box">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 col-md-4 col-xs-4">
+                        <aside id="sidebar">
+                            <div class="col-second">
+                                <h3> עגלת קניות <span class="badge"> 1 </span> </h3>
+
+                                <div class="baron scrollable6">
+
+                                    <div id="scrollable6" class="baron__scroller right">
+                                        <div id="nested-section">
+                                            <div class="row-holder">
+                                                <div class="row header-row">
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <span class="dim"> 62 NIS </span>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8">
+                                                        <h2> פיצה רביולי </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-8 col-sm-8 col-xs-8 pull-right">
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה, כאן ניתן יהיה לתת תאור על </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-holder">
+                                                <div class="row header-row">
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <span class="dim"> 62 NIS </span>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8">
+                                                        <h2> פיצה רביולי </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-8 col-sm-8 col-xs-8 pull-right">
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה, כאן ניתן יהיה לתת תאור על </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-holder">
+                                                <div class="row header-row">
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <span class="dim"> 62 NIS </span>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8">
+                                                        <h2> פיצה רביולי </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-8 col-sm-8 col-xs-8 pull-right">
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה, כאן ניתן יהיה לתת תאור על </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-holder">
+                                                <div class="row header-row">
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <span class="dim"> 62 NIS </span>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8">
+                                                        <h2> פיצה רביולי </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-8 col-sm-8 col-xs-8 pull-right">
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה, כאן ניתן יהיה לתת תאור על </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="baron__track">
+                                        <div class="baron__bar"></div>
+                                    </div>
+                                </div>
+                                <div class=" col-xs-12">
+                                    <div class="minimum-item add">
+                                        <div class="row no-gutters">
+                                            <div  class="col-md-6 col-xs-6">
+                                                <h3>Total</h3>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <span id="totalAmountWithoutDiscount" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                        <div id="showDiscount" class="row no-gutters">
+                                            <div  class="col-md-6 col-xs-6">
+                                                <h3 id="discountTitle">Coupon Discount</h3>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <span id="discountValue" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                        <div id="deliveryDetail" class="row no-gutters">
+                                            <div class="col-md-6 col-xs-6">
+                                                <h3>Delivery</h3>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <span id="area-charges" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="minimum-item">
+                                        <h2 id="totalAmount"> 130 ש״ח </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-xs-8 add">
+
+                        <div class="baron">
+                            <div id="scrollable3" class="baron__scroller">
+
+                                <div class="left-content">
+                                    <ul class="accordion multilevel-accordion">
+                                        <li class="active" id="customerInfoParent">
+                                            <a href="#" class="opener"  id="personalInfoOpener">
+                                                <h3>פרטי הלקוח</h3>
+                                            </a>
+                                            <div class="slide" id="customerSlider">
+                                                <div class="slide-holder">
+                                                    <div class="error-field">
+                                                        <div class="text-holder row no-gutters" id="name">
+                                                            <div class="col-xs-11">
+                                                                <input type="text" id="name_text" placeholder="שם הלקוח">
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <img class="edit" src="img/ic_profile.png">
+                                                            </div>
+                                                        </div>
+                                                        <span class="error-span" id="error-name">error in field</span>
+                                                    </div>
+
+                                                    <div class="error-field">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="text-holder row no-gutters" id="email">
+                                                                    <div class="col-xs-10">
+                                                                        <input type="email" id="email_text" placeholder="Email address">
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <img class="edit" src="img/ic_message.png">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-email">error in field</span>
+                                                            </div>
+
+
+                                                            <div class="col-sm-6">
+                                                                <div class="text-holder row no-gutters" id="contact">
+                                                                    <div class="col-xs-10">
+                                                                        <input type="tel" placeholder="מספר טלפון" id="contact_text">
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <img class="edit" src="img/ic_phone.png">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-contact">error in field</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <button  onclick="saveUserInfo()"   type="button" class="btn-add-submit">שמור</button>
+                                                    <!--<button  data-toggle="modal" data-target="#order-summary"   type="button" class="btn-add-submit">order</button>-->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="active" id="deliveryInfoParent">
+                                            <a href="#" class="opener" id="addressOpener">
+                                                <h3>אופן האיסוף</h3>
+                                            </a>
+                                            <div class="slide" id="deliverySlider">
+                                                <div class="slide-holder">
+                                                    <ul class="checkbox-list">
+                                                        <li> <input type="checkbox" id="checkbox-id-12"> <label for="checkbox-id-12"> איסוף עצמי מהמסעדה <span id="address-text">שדרות יגאל אלון 6, בית שמש</span></label></li>
+                                                        <li> <input type="checkbox" id="checkbox-id-23"> <label for="checkbox-id-23">   משלוח עד הדלת<span>מלא את פרטי הכתובת</span></label></li>
+                                                    </ul>
+                                                    <div class="show-box" id="deliveryFieldsParent" style="display: none">
+                                                        <div class="error-field">
+                                                            <div class="row">
+                                                                <div class="col-sm-4">
+                                                                    <div class="text-holder row no-gutters">
+                                                                        <div class="col-xs-9">
+                                                                            <input id="appt-no" type="text" placeholder="Apt. No.">
+                                                                        </div>
+                                                                        <div class="col-xs-3">
+                                                                            <img class="edit" src="img/ic_home.png">
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="error-span" id="error-appt-no">error in field</span>
+                                                                </div>
+                                                                <div class="col-sm-8">
+                                                                    <div class="text-holder row no-gutters">
+                                                                        <div class="col-xs-11">
+                                                                            <input type="text" id="address">
+                                                                        </div>
+                                                                        <div class="col-xs-1">
+                                                                            <img class="edit" src="img/ic_checkin.png">
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="error-span" id="error-address">error in field</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="error-field">
+                                                            <div class="text-holder row no-gutters" id="area">
+                                                                <div class="col-xs-12">
+                                                                    <div class="custom-select" id="delivery-areas">
+                                                                        <select>
+                                                                            <option>select area</option>
+                                                                            <option>select area</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <span class="error-span" id="error-area">error in field</span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" onclick="deliveryAddress()" class="btn-add-submit">Save</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li id="paymentParent"  class="active">
+                                            <a href="#" class="opener" id="paymentOpener">
+                                                <h3>אמצעי תשלום</h3>
+                                            </a>
+                                            <div class="slide" id="paymentSlider">
+                                                <div class="slide-holder">
+                                                    <ul class="checkbox-list">
+                                                        <li id="cash_parent"> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> תשלום במזומן <span>התשלום יתבצע במעמד קבלת/איסוף ההזמנה</span></label></li>
+                                                        <li> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> תשלום באמצעות כרטיס אשראי <span id="check24_click" ><a href="#"><img src="img/cards.png"></a></span></label></li>
+                                                    </ul>
+
+
+                                                    <div class="show-box" id="show_credit_card">
+
+                                                        <form name="payment-form" id="payment-form" style="height:100%"  method="POST">
+                                                            <div class="error-field">
+                                                                <div class="text-holder row no-gutters">
+                                                                    <div class="col-xs-12">
+                                                                        <input class="add-box" id="user_name" type="text" placeholder="שם בעל הכרטיס">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span">error in field</span>
+                                                            </div>
+                                                            <div class="error-field">
+                                                                <div class="text-holder row no-gutters" id="error-card">
+                                                                    <div class="col-xs-12">
+                                                                        <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" class="add-box" type="text" placeholder="תעודת זהות של בעל הכרטיס">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" style="display: block!important;" id="error-card-no"></span>
+                                                            </div>
+                                                            <div class="error-field">
+                                                                <div class="row">
+                                                                    <div class="col-sm-3"></div>
+                                                                    <div class="col-sm-5">
+                                                                        <div class="text-holder add row no-gutters" id="exp_error">
+                                                                            <div class="col-xs-10">
+                                                                                <div class="row no-gutters">
+                                                                                    <div class="col-xs-5">
+                                                                                        <input class="right-field" placeholder="תאריך" maxlength="2" id="year" type="number" size="2" data-stripe="exp_year">
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <span class="devider"> / </span>
+                                                                                    </div>
+                                                                                    <div class="col-xs-5">
+                                                                                        <input class="left-field"  placeholder="תפוגה"  id="month"  type="number" size="2" data-stripe="exp_month">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xs-2">
+                                                                                <img class="edit" src="img/ic_calender.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <span class="error-span" id="error-month"></span>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="text-holder row no-gutters" id="error-cvv-parent">
+
+                                                                            <div class="col-xs-8">
+                                                                                <input id="cvv" type="number" placeholder="cvv" size="4" data-stripe="cvc">
+                                                                            </div>
+                                                                            <div class="col-xs-4">
+                                                                                <img class="edit" src="img/cvs-icon.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <span id="error-cvv" class="error-span">error in field</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <span style="color: red;font-size: 15px;" class="payment-errors"></span>
+
+                                                            <div class="form-row" style="display: none">
+                                                                <label>
+                                                                    <span>Billing ZIP Code</span>
+                                                                    <input type="text" size="6" data-stripe="address_zip" value="5">
+                                                                </label>
+                                                            </div>
+
+                                                        </form>
+
+                                                    </div>
+
+                                                    <div class="error-field" id="coupon_parent">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <label class="new-label">השתמש בקופון</label>
+                                                            </div>
+                                                            <div class="show-text" id="isCoupon">
+                                                                <div class="col-xs-4"></div>
+                                                                <div class="col-xs-8">
+                                                                    <div class="text-holder row no-gutters" id="coupon">
+                                                                        <input class="add-box" type="text" id="coupon-txt" placeholder="מספר קופון">
+                                                                    </div>
+                                                                    <span class="error-span" id="error-coupon"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <button type="button" onclick="ClosePayment()" class="btn-add-submit">שמור</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li id="specialRequestParent" class="active">
+                                            <a href="#" class="opener" id="specialRequestOpener">
+                                                <h3>הערות מיוחדת</h3>
+                                            </a>
+                                            <div class="slide" id="specialRequest">
+                                                <div class="slide-holder">
+                                                    <div class="error-field">
+                                                        <div class="text-holder row no-gutters">
+                                                            <div class="col-xs-11">
+                                                                <textarea id="specialRequestText" placeholder="Type here"></textarea>
+                                                                <img class="resize" src="img/Path-he.png">
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <img class="edit" src="img/ic_edit-he.png">
+                                                            </div>
+                                                        </div>
+                                                        <span class="error-span">error in field</span>
+                                                    </div>
+                                                    <button type="button" onclick="specialRequestSave()"  class="btn-add-submit">שמור</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <button type="button" id="submitOrder" onclick="saveCashDetail()" class="btn-submit">אשר הזמנה</button>
+                                    <div class="empty-height"></div>
+                                </div>
+                            </div>
+                            <!-- end scroll  -->
+                            <div class="baron__track">
+                                <div class="baron__bar"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <a class="btn-left" onclick="goBack()" href="#"></a>
+</div>
+
+
+
+<!-- order summary popup -->
+<div class="modal fade"  id="order-summary" role="dialog">
+    <div class="modal-dialog modal-md mypopup">
+        <div class="modal-content">
+            <div class="holder">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="text-center">
+
+                    <!--ITEM NAME IN POPUP-->
+                    <h2 id="itemPopUpTitle"> </h2>
+
+                    <!--ITEMS PRICE IN POPUP-->
+                    <span id="itemPopUpPrice" class="txt"> </span>
+
+                </div>
+                <div class="baron">
+                    <div id="scrollable2" class="baron__scroller popup">
+                        <div class="popup-txt">
+                            <div class="row-holder">
+                                <div class="row header-row no-gutters">
+                                    <div class="col-md-9 col-xs-9">
+                                        <h2>Angus Salad</h2>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3">
+                                        <span class="dim">2 x 44 NIS</span>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <p>Ketchup, BBQ, Thousand island</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-holder">
+                                <div class="row header-row no-gutters">
+                                    <div class="col-md-9 col-xs-9">
+                                        <h2>Angus Salad</h2>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3">
+                                        <span class="dim">2 x 44 NIS</span>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <p>Ketchup, BBQ, Thousand island</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-holder">
+                                <div class="row header-row no-gutters">
+                                    <div class="col-md-9 col-xs-9">
+                                        <h2>Angus Salad</h2>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3">
+                                        <span class="dim">2 x 44 NIS</span>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <p>Ketchup, BBQ, Thousand island</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-holder">
+                                <div class="row header-row no-gutters">
+                                    <div class="col-md-9 col-xs-9">
+                                        <h2>Angus Salad</h2>
+                                    </div>
+                                    <div class="col-md-3 col-xs-3">
+                                        <span class="dim">2 x 44 NIS</span>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="col-md-9 col-sm-9 col-xs-9">
+                                        <p>Ketchup, BBQ, Thousand island</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row no-gutters">
+                                <div class=" col-xs-12">
+                                    <div class="minimum-item add">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-6 col-xs-6">
+                                                <h3>Total</h3>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <span id="totalAmountWithoutDiscount" class="nis">90 NIS</span>
+                                            </div>
+                                        </div>
+                                        <div id="showDiscount" class="row no-gutters">
+                                            <div class="col-md-6 col-xs-6">
+                                                <h3 id="discountTitle">Coupon Discount</h3>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <span id="discountValue" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                        <div id="deliveryDetail" class="row no-gutters">
+                                            <div class="col-md-6 col-xs-6">
+                                                <h3>Delivery</h3>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <span id="area-charges" class="nis">0 NIS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="minimum-item">
+                                        <h2 id="totalAmount">90 NIS</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="baron__track">
+                        <div class="baron__bar"></div>
+                    </div>
+                </div>
+                <button  type="button" class="btn-submit">confirm order </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade"  id="about" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3> ORDERAPP, ORDER FAST </h3>
+            <p>
+                OrderApp is revolutionizing the online ordering experience.<br>
+                We ease all the pain involved in the ordering process. For restaurants, we are a flowing source of manageable orders. For users, we are an easy ordering platform with a timely delivery to your door.<br>
+                <br>
+                *Powered by Push Startups
+            </p>
+
+            <!-- SOCIAL LINKS FOR ORDER APP -->
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/theorderapp/"><img src="img/fb.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/OrderAppTeam"><img src="img/tw.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/106974163137537901922"><img src="img/gp.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/theorderapp/"><img src="img/insta.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/orderapp/"><img src="img/pin.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="img/link.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="script/jcf.js"></script>
+<script type="text/javascript" src="script/jcf.scrollable.js"></script>
+<script type="text/javascript">
+    // replace custom forms
+    jcf.lib.domReady(function(){
+        jcf.customForms.replaceAll();
+    });
+</script>
+<script src="script/bootstrap.min.js"></script>
+<script src="script/script.js"> </script>
+<script src="script/dropdown.js"></script>
+<!--<script src="script/ajaxServerRequestConfirmOrder.js"></script>-->
+<script type="text/javascript" src="script/jquery.accordion.without.click.js"></script>
+<script src="script/alertify.min.js"></script>
+<script type="text/javascript" src="script/baron.js"></script>
+<script>
+
+
+    window.onload = function() {
+        window.dima = baron({
+            root: '.baron',
+            scroller: '.baron__scroller',
+            bar: '.baron__bar'
+        }).autoUpdate();
+    };
+
+
+    $('.checkbox-list li').click(function(e){
+
+        $('.show-box').toggleClass('show');
+
+    });
+
+    $('.new-label').click(function(e){
+
+        $('.show-text').toggleClass('show');
+
+    });
+
+
+    //    $(function() {
+    //
+    //        function reposition() {
+    //
+    //            var modal = $(this),
+    //                    dialog = modal.find('.modal-dialog');
+    //            modal.css('display', 'block');
+    //
+    //            // Dividing by two centers the modal exactly, but dividing by three
+    //            // or four works better for larger screens.
+    //            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+    //        }
+    //
+    //        // Reposition when a modal is shown
+    //        $('.modal').on('show.bs.modal', reposition);
+    //
+    //        // Reposition when the window is resized
+    //        $(window).on('resize', function() {
+    //
+    //            $('.modal:visible').each(reposition);
+    //
+    //        });
+    //
+    //    });
+
+
+</Script>
+
+<script>
+
+//    // WHEN NAME FIELD CHANGES
+//    $('#name_text').bind('input', function() {
+//
+//        document.getElementById("error-name").innerHTML = "";
+//
+//        $("#name").removeClass("error");
+//
+//
+//    });
+
+</script>
+
+<script>
+
+//    // WHEN NAME FIELD CHANGES
+//    $('#email_text').bind('input', function() {
+//
+//        document.getElementById("error-email").innerHTML = "";
+//
+//        $("#email").removeClass("error");
+//
+//
+//    });
+
+</script>
+
+
+<script>
+
+//    // WHEN NAME FIELD CHANGES
+//    $('#contact_text').bind('input', function() {
+//        document.getElementById("error-contact").innerHTML = "";
+//        $("#contact").removeClass("error");
+//    });
+
+</script>
+
+<script>
+
+    $('#checkbox-id-23').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#deliveryFieldsParent').addClass('show');
+            $('#checkbox-id-12').prop('checked', false);
+
+        }
+        else {
+
+            $('#deliveryFieldsParent').removeClass('show');
+            $('#checkbox-id-12').prop('checked', true);
+        }
+
+        updateCartElements();
+
+    });
+
+
+    $('#checkbox-id-12').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#deliveryFieldsParent').removeClass('show');
+            $('#checkbox-id-23').prop('checked', false);
+        }
+        else {
+
+            $('#deliveryFieldsParent').addClass('show');
+            $('#checkbox-id-23').prop('checked', true);
+
+
+        }
+
+        updateCartElements();
+    });
+
+
+</script>
+
+<script>
+
+//    // WHEN NAME FIELD CHANGES
+//    $('#appt-no').bind('input', function() {
+//
+//        document.getElementById("error-appt-no").innerHTML = "";
+//        $("#appt-no").removeClass("error");
+//
+//    });
+
+</script>
+
+
+<script>
+
+//    // WHEN NAME FIELD CHANGES
+//    $('#address').bind('input', function() {
+//
+//        document.getElementById("error-address").innerHTML = "";
+//        $("#address").removeClass("error");
+//
+//    });
+
+</script>
+
+<script>
+
+    $('#checkbox-id-13').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#show_credit_card').removeClass('show');
+            $('#checkbox-id-24').prop('checked', false);
+
+        }
+        else {
+
+
+            $('#show_credit_card').addClass('show');
+            $('#checkbox-id-24').prop('checked', true);
+
+        }
+
+
+    });
+
+
+    $('#checkbox-id-24').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#show_credit_card').addClass('show');
+            $('#checkbox-id-13').prop('checked', false);
+
+        }
+        else {
+
+
+            $('#show_credit_card').removeClass('show');
+            $('#checkbox-id-13').prop('checked', true);
+
+
+        }
+
+
+    });
+
+
+    $("#check24_click").click(function(e) {
+
+        $('#checkbox-id-24').prop('checked', true);
+        $('#checkbox-id-13').prop('checked', false);
+
+    });
+
+
+
+
+</script>
+
+
+
+<!--VALIDATE CARD NUMBER-->
+<script>
+
+    $('#card_no').bind('input', function() {
+
+        $('#error-card-no').html("");
+        $("#error-card").removeClass("error");
+
+        if((!this.value.match(/^\d+$/)))
+        {
+            if($("#card_no").val() == ''){
+
+                $("#error-card").removeClass("error");
+                $('#error-card-no').html("");
+            }
+            else
+            {
+                $("#error-card").addClass("error");
+                $('#error-card-no').html("Invalid Card Number!");
+            }
+        }
+        else
+        {
+
+            $("#error-card").removeClass("error");
+
+        }
+    });
+
+</script>
+
+
+<script>
+    $('#month').bind('input', function(e) {
+        //alert($("#price").val());
+        if ($(this).val() > 12) {
+            e.preventDefault();
+            $(this).val(12);
+
+        }
+    });
+</script>
+
+<!--STRIPE PAYMENT -->
+<script>
+
+    $(document).ready(function() {
+
+        $("#payment-form").submit(function(e){
+
+
+            var exp = $('#month').val() + $('#year').val();
+
+            payment_credit_card($('#card_no').val(),$('#cvv').val(),exp);
+
+
+            e.preventDefault(e);
+            return false;
+        });
+
+    });
+
+
+</script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+
+<!--<script type="text/javascript" src="script/commonAjaxCall.js"></script>-->
+
+</body>
+</html>

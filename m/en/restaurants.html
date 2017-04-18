@@ -1,176 +1,161 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false" />
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>OrderApp</title>
-    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/restaurants.css">
 
 
-    <!-- CSS -->
-    <link href="/m/en/style/bootstrap.css" rel="stylesheet">
-    <link href="/m/en/style/my-style.css" rel="stylesheet">
-    <link href=/m/en/style/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="/m/en/style/animate.css">
 
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    <!-- JS -->
-    <script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
-    <script type="text/javascript" src="/m/en/script/jquery.bpopup.min.js"></script>
-    <script type="text/javascript" src="/m/en/script/jquery.easing.1.3.js"></script>
-    <script src="/m/en/script/commonAjaxCall.js"></script>
-    <script type="text/javascript" src="/m/en/script/ajaxServerRequestsRestaurants.js"></script>
-
-
-    <script type="text/javascript">
-
-
-        if (location.protocol != 'https:')
-        {
-            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-        }
-
-        // CLICK LISTENER FOR RESTAURANT TIMINGS POPUP
-        $(document).on('click','.slideLeftRight',function(){
-
-            // RESTAURANT CLICKED BY USER
-            var clickedRestId = $(this).attr('id').replace('timings','');
-
-
-            // DISPLAY RESTAURANT TIMINGS
-            var str = "";
-
-
-            for(var x=0;x<allRestJson[clickedRestId].timings.length;x++)
-            {
-                str +=  '<tr class="todays_date_bold">'+
-                        '<td>'+allRestJson[clickedRestId].timings[x].week_en+'</td>'+
-                        '<td>'+allRestJson[clickedRestId].timings[x].opening_time+'</td>'+
-                        '<td>'+allRestJson[clickedRestId].timings[x].closing_time+'</td>'+
-                        '</tr>';
-            }
-
-
-            $("#tableBody").html(str);
-
-
-            // DISPLAY POPUP
-            $('.slideLeftRightMsg').bPopup({
-                easing: 'easeOutBack', //uses jQuery easing plugin
-                speed: 1050,
-                transition: 'slideDown'
-            });
-
-
-        });
-
-        // CLICK LISTENER FOR RESTAURANT IMAGES GALLERY
-        $(document).on('click','.slideLeftRight1',function(){
-
-            // RESTAURANT CLICKED BY USER
-            var clickedRestId = $(this).attr('id').replace('pop','');
-
-            // DISPLAY RESTAURANT GALLERY
-            var str = "";
-
-            for(var x=0;x<allRestJson[clickedRestId].gallery.length;x++)
-            {
-                if(x == 0)
-                    str += '<div class="item active gallery_img_cernter_crop"><img  src="'+allRestJson[clickedRestId].gallery[x].url+'"> </div>';
-
-                else
-                    str+= '<div class="item gallery_img_cernter_crop"><img alt="item3" src="'+allRestJson[clickedRestId].gallery[x].url+'"> </div>';
-            }
-
-            $(".carousel-inner").html(str);
-
-
-            $('.slideLeftRightMsg1').bPopup({
-                easing: 'easeOutBack', //uses jQuery easing plugin
-                speed: 1050,
-                transition: 'slideDown'
-            });
-        });
-
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
     </script>
 
-    <style type="text/css">
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
 
-        #popup, .bMulti {
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+    </noscript>
 
-            display: none;
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
 
-        }
-
-    </style>
+    <!-- Facebook/Twitter Open Graph -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
 
 </head>
 
 <body>
 
-<img id="loader" class="loader-css" src="/m/en/img/loader.gif" >
+<img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
+
+<script>
+
+    if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
+    {
+        window.location.href='/m/en/index.html';
+    }
+
+</script>
 
 
-<!--HEADER START -->
-<nav class="navbar navbar-default" role="navigation">
-
-    <img id="ic_back_arrow" src="/m/en/img/back_arrow.png" onclick="window.location.href = '/m/en'">
-
-    <div class="container nav_container">
-        <div class="navbar-header">
-            <div class="navbar-brand navbar-brand-centered animate-box fadeInDown animated">
-                <img src="/m/en/img/logo.png" class="img-responsive">
-            </div>
+<!--HEADER -->
+<div id="wrapper">
+    <header id="header">
+        <div class="logo">
+            <a href="#">
+                <img src="/m/en/img/logo.png" alt="images description">
+                <strong>Order App</strong>
+            </a>
         </div>
+        <span class="title" id="rest-name-header"></span>
+        <img class="delivery" src="/m/en/img/delivery line.png">
+        <nav id="nav">
+            <ul>
 
-        <div class="" id="navbar-brand-centered">
-            <ul class="nav navbar-nav navbar-right pull-right animate-box fadeInRight animated">
-                <li>
-                    <a href="#" >
-                        <span style="border: none" class="navigation-btn"> </span>
-                    </a>
-                </li>
+                <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
+
+            </ul>
+        </nav>
+        <a class="btn-back"  onclick="window.location.href='index.html'" href="/m/en/index.html"><img src="/m/en/img/back_arrow.png"></a>
+    </header>
+    <div id="main">
+        <div class="accordion-holder">
+            <ul class="accordion multilevel-accordion" id="scrollable">
+
             </ul>
         </div>
     </div>
-
-    <div class="top_notification">
-        <div class="col-lg-12">
-            Hungry? Choose a restaurant and order
-        </div>
-    </div>
-</nav>
-<!--HEADER END -->
+</div>
 
 
 
-<!--ALL RESTAURANTS -->
-<div class="middle_panel">
-    <div  id = "restaurantList" class="container middle_panel_padding">
-        <div class="accordion" id="accordion2">
+<!--ADDRESS DELIVERY POPUP -->
+<div class="modal fade" id="address-popup" role="dialog">
+    <div class="modal-dialog" role="document" style="margin-top: 40%;">
+        <div class="modal-content">
+            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+            <div class="popup-address">
+                <div class="frame">
+                    <h3>delivery Fee</h3>
+                    <h4>Minimum for delivery 100 NIS</h4>
+                </div>
+                <!--RESTAURANT DELIVERY FEE-->
+                <div class="fee-txt add" id="discount-pop">
+                    <span class="add-title">Restaurant Address: Gad 14, Ramat Beit Shemesh</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 
-<!--TIMINGS POPUP-->
-<div id="popup" class="slideLeftRightMsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 100%; left: 0px;">
-    <div class="modal-dialog">
-        <img onclick="$('.b-modal').click()"  data-dismiss="modal" style="width:50px; padding:13px; margin-bottom:-10px;" src="/m/en/img/close.png" >
-        <div class="modal-dialog gallery_digonal">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <table class="table" style="margin-bottom:0px; text-align: left">
-                        <tbody id="tableBody">
-                        </tbody>
-                    </table>
+<!-- TIME POPUP -->
+<div class="modal fade" id="time-popup" role="dialog">
+    <div class="modal-dialog" role="document" style="margin-top: 40%;">
+        <div class="modal-content">
+            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+            <div class="popup-address">
+                <div class="frame">
+                    <h3>delivery</h3>
+                    <h4>Until half an hour before closing</h4>
+                </div>
+
+                <!--RESTRAURANT TMINGS-->
+                <table class="time-table" id="rest-time"></table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- POPUP IMAGE SLIDER GALLERY-->
+<div class="modal fade"  id="slider-popup" role="dialog"  >
+    <div class="modal-dialog" style="margin-top: 60% !important;">
+        <div class="modal-content">
+            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!--RESTAURANT GALLERY IMAGES-->
+                <div class="carousel-inner" id="gallery-imgs" role="listbox">
+
                 </div>
             </div>
         </div>
@@ -179,126 +164,78 @@
 
 
 
-
-<!--IMAGES GALLERY POPUP-->
-<div id="popup" class="slideLeftRightMsg1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 100%; left: 0px;">
-    <div class="modal-dialog">
-        <img onclick="$('.b-modal').click()"  data-dismiss="modal" style="width:50px; padding:13px; margin-bottom:-10px;" src="/m/en/img/close.png" >
-        <div class="modal-content gallery_modal_content">
-            <div class="modal-body">
-                <div class="carousel slide" data-interval="false" id="myCarousel">
-                    <div class="carousel-inner">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+<script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
+<script src="/m/en/script/bootstrap.min.js"></script>
+<!--<script src="script/script.js"> </script>-->
+<script src="/m/en/script/jquery.accordion.js"> </script>
+<script type="text/javascript" src="/m/en/script/jquery.easing.1.3.js"></script>
 <script src="/m/en/script/jquery.mobile.custom.min.js"></script>
-<script src="/m/en/script/bootstrap.js"></script>
+<script src="/m/en/script/alertify.min.js"></script>
+<script src="/m/en/script/commonAjaxCall.js"></script>
+<script src="/m/en/script/ajaxServerRequestsRestaurants.js"></script>
 
-
-<!-- Mobile & Tab device swipe Left and Right Side Start -->
 <script>
+    $(window).scroll(function(){
+        if($(document).scrollTop() > 0) {
+
+            $('#header').addClass('small');
+        }
+        else {
+
+            $('#header').removeClass('small');
+        }
+    });
 
     $(document).ready(function () {
 
-        $("#myCarousel").swiperight(function () {
+        $("#carousel").swiperight(function () {
             $(this).carousel('prev');
         });
 
-        $("#myCarousel").swipeleft(function () {
+        $("#carousel").swipeleft(function () {
             $(this).carousel('next');
         });
+
+        // SET CITY NAME IN HEADER USER SELECTED IN PREVIOUS PAGE
+        var cityName = JSON.parse( localStorage.getItem("USER_CITY_NAME") );
+        $('#rest-name-header').text('Restaurants in ' + cityName);
+
+        initialize();
+
     });
 
-</script>
-<!-- Mobile & Tab device swipe Left and Right Side End -->
+    $(function() {
 
+        function reposition() {
+            var modal = $(this),
+                    dialog = modal.find('.modal-dialog');
+            modal.css('display', 'block');
 
-<script type="text/javascript">
-
-
-    $(document).ready(function () {
-
-
-        function alignModal()
-        {
-
-            var modalDialog = $(this).find(".modal-dialog");
-
-            // Applying the top margin on modal dialog to align it vertically center
-            modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+            // Dividing by two centers the modal exactly, but dividing by three
+            // or four works better for larger screens.
+           // dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
         }
 
-        // Align modal when it is displayed
-        $(".modal").on("shown.bs.modal", alignModal);
+        // Reposition when a modal is shown
+        $('.modal').on('show.bs.modal', reposition);
 
-
-        // Align modal when user resize the window
-        $(window).on("resize", function () {
-            $(".modal:visible").each(alignModal);
+        // Reposition when the window is resized
+        $(window).on('resize', function() {
+            $('.modal:visible').each(reposition);
         });
 
-
     });
 
-</script>
+    function redirectToHE() {
 
+        localStorage.setItem("USER_LANGUAGE", 'HE');
+        localStorage.setItem("USER_CITY_ID_HE", localStorage.getItem("USER_CITY_ID"));
 
+        var selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+        selectedCityName = selectedCityName.replace(/\s/g, '');
+        window.location.href = '/m/he/restaurants/'+selectedCityName;
 
-<!-- According Script Start -->
-<script>
-
-    /**
-     * EFECTO PARA FLECHAS EN ACORDEON
-     */
-    $(document).on('show', '.accordion', function (e) {
-
-        $(e.target).prev('.accordion-heading').addClass('accordion-opened');
-    });
-
-
-    $(document).on('hide', '.accordion', function (e) {
-        $(this).find('.accordion-heading').not($(e.target)).removeClass('accordion-opened');
-    });
-
-
-    // SRC
-
-    var lastOpen = null;
-
-    $(function () {
-
-        $(document).on('click','.accordion-toggle',function(){
-
-            var test = $(this);
-
-            $('html, body').animate({
-                scrollTop: (test.offset().top - 180)
-            }, 500);
-
-            if(lastOpen != null)
-            {
-                $(lastOpen).collapse('toggle');
-            }
-
-            if( $(this).attr('href') != lastOpen) {
-
-                lastOpen = $(this).attr('href');
-            }
-            else
-            {
-                lastOpen = null;
-            }
-
-        });
-    });
-
-
+    }
 
 </script>
 </body>

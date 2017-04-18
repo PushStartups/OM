@@ -161,7 +161,10 @@ function updateCartElements()
 
 
     $('#nested-section').html(str);
+    $('#summary_items').html(str);
+
     $('#totalAmountWithoutDiscount').html(userObject.total + " NIS");
+    $('#totalAmountWithoutDiscount2').html(userObject.total + " NIS");
 
 
     $('.badge').html(countItems);
@@ -170,12 +173,17 @@ function updateCartElements()
     if(!userObject.isCoupon)
     {
         $('#showDiscount').hide();
+        $('#showDiscount2').hide();
     }
     else
     {
 
         $('#showDiscount').show();
+        $('#showDiscount2').show();
+
         $('#totalAmountWithoutDiscount').html(userObject.totalWithoutDiscount + " NIS");
+        $('#totalAmountWithoutDiscount2').html(userObject.totalWithoutDiscount + " NIS");
+
         newTotal = userObject.total;
     }
 
@@ -183,22 +191,27 @@ function updateCartElements()
     if($('#checkbox-id-12').is(":checked"))
     {
         $('#deliveryDetail').hide();
+        $('#deliveryDetail2').hide();
     }
     else
     {
         if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
 
             $('#area-charges').html(userObject.deliveryCharges + " NIS");
+            $('#area-charges2').html(userObject.deliveryCharges + " NIS");
             newTotal = convertFloat(convertFloat(newTotal) + convertFloat(userObject.deliveryCharges));
             $('#deliveryDetail').show();
+            $('#deliveryDetail2').show();
         }
         else
         {
             $('#deliveryDetail').hide();
+            $('#deliveryDetail2').hide();
         }
     }
 
     $('#totalAmount').html(newTotal + " NIS");
+    $('#totalAmount2').html(newTotal + " NIS");
 
 }
 
@@ -501,6 +514,7 @@ function ClosePayment()
 function saveCashDetail()
 {
 
+    $('#order-summary').modal('hide');
     processPayments();
 }
 
@@ -531,6 +545,7 @@ function checkCouponCallBack(response)
             newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
 
             $('#discountValue').html("-" + discountedAmount +" NIS");
+            $('#discountValue2').html("-" + discountedAmount +" NIS");
         }
         else
         {
@@ -542,8 +557,10 @@ function checkCouponCallBack(response)
             newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
 
             $('#discountValue').html("-" + discountedAmount +" NIS");
+            $('#discountValue2').html("-" + discountedAmount +" NIS");
 
             $('#discountTitle').html("Coupon Discount " + userObject.discount+"%");
+            $('#discountTitle2').html("Coupon Discount " + userObject.discount+"%");
 
         }
 
@@ -613,15 +630,33 @@ function processPayments()
 // CREDIT CARD PAYMENT
 function payment_credit_card(cardNo, cvv, exp) {
 
+    userObject.cartData = foodCartData;
+
+
+    if(userObject.deliveryArea == null)
+    {
+        userObject.deliveryArea = '';
+    }
+
+
+    if(userObject.specialRequest == null)
+    {
+        userObject.specialRequest = '';
+    }
+
+
     var  newTotal = userObject.total;
+
 
     if(userObject.deliveryCharges != null && userObject.deliveryCharges != 0) {
 
+
         newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
+
 
     }
 
-    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : newTotal, "email"  : userObject.email, "cc_no"  : cardNo, "exp_date"  : exp, "cvv"  : cvv },paymentCreditCardCallBack);
+    commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : newTotal, "user_order": userObject , "cc_no"  : cardNo, "exp_date"  : exp, "cvv"  : cvv },paymentCreditCardCallBack);
 
 }
 

@@ -12,6 +12,7 @@ var oneTypeSubItems             = null;                                         
 var multipleTypeSubItems        = null;                                           // SUB-ITEMS TYPE MULTIPLE
 var extras                      = null;                                           // EXTRAS FROM SERVER
 var minOrderLimit               = null;                                           // MINIMUM ORDER LIMIT
+var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
 
 
@@ -272,15 +273,14 @@ function onItemSelected (x,y)
     // DISPLAY ITEM (PRODUCT) DETAIL CARD
 
 
-    // DISPLAY ITEM IMAGE ROUND
-    //  $('.circle').css("background-image","url("+result.categories_items[currentCategoryId].items[y].image_url+")");
-
     // UPDATE ITEM NAME
     $('#itemPopUpTitle').html(result.categories_items[currentCategoryId].items[currentItemIndex].name_en);
 
 
 
     selectedItemPrice = result.categories_items[currentCategoryId].items[currentItemIndex].price;
+
+    selectedItemPriceOrg = selectedItemPrice;
 
     $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
 
@@ -463,13 +463,6 @@ function onItemSelectedCallBack(response)
     $('#parent_type_multiple').show();
 
 
-    // var div = document.getElementById('scrollable2');
-    //
-    // div.setAttribute('ss-container', true);
-    //
-    // SimpleScrollbar.initAll();
-
-
     $('#myorder').modal('show');
 
 }
@@ -480,24 +473,9 @@ function onItemSelectedCallBack(response)
 // ON ONE TYPE EXTRA SELECTED BY USER
 function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , e) {
 
-    if(convertFloat(extras.extra_with_subitems[extraIndex].price_replace) == 1)
-    {
-        $('#itemPopUpPrice').html(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price+' NIS');
-    }
-    else
-    {
-        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
-        {
-            var temp = convertFloat(convertFloat(selectedItemPrice) + convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
-            $('#itemPopUpPrice').html(temp+' NIS');
-        }
-    }
-
-
     var index  = '#input'+oneTypeIndex;
     var parent = '#oneTypeDD'+oneTypeIndex;
     $(index).val(e.innerHTML);
-
 
     // REMOVE ERROR MESSAGES ON SELECTION
     $(parent).removeClass("error");
@@ -513,8 +491,12 @@ function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , 
         "subItemNameHe"   : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
         "qty"             : 1};   // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
+
     // AS ONE TYPE EXTRA OVER RIDE TO EXISTING VALUE
     oneTypeSubItems[oneTypeIndex][extras.extra_with_subitems[extraIndex].name_en] =  subItem;
+
+    updatedSelectedItemPrice();
+
 }
 
 
@@ -542,11 +524,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
         multipleTypeSubItems[index][name] = subItem;
 
-        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
-        {
-            selectedItemPrice = convertFloat(convertFloat(selectedItemPrice) + convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
-            $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
-        }
+
     }
 
     // IF CHECK BOX NOT CHECKED REMOVE SUB ITEM
@@ -554,13 +532,67 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
     else
     {
         multipleTypeSubItems[index][name] = null;
-        if(convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price) > 0)
+
+    }
+
+
+    updatedSelectedItemPrice();
+}
+
+
+
+function updatedSelectedItemPrice() {
+
+    var replace = selectedItemPriceOrg;
+    var sum = 0;
+
+    for (var y = 0; y < oneTypeSubItems.length; y++)
+    {
+        for (var key in oneTypeSubItems[y])
         {
-            selectedItemPrice = convertFloat(convertFloat(selectedItemPrice) - convertFloat(extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price));
-            $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
+
+            // ITEM PRICE DEPENDS ON SUB ITEM CHOICE
+            // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
+
+            if (convertFloat(oneTypeSubItems[y][key].replace_price) == 0)
+            {
+
+                sum    = convertFloat(sum) + convertFloat(oneTypeSubItems[y][key].subItemPrice);
+            }
+            else
+            {
+                replace =  oneTypeSubItems[y][key].subItemPrice;
+
+            }
+
         }
     }
+
+    for (var y = 0; y <  multipleTypeSubItems.length; y++) {
+
+        for (var key in  multipleTypeSubItems[y]) {
+
+            if ( multipleTypeSubItems[y][key] != null) {
+
+                if (convertFloat( multipleTypeSubItems[y][key].subItemPrice) != 0) {
+
+                    sum   = convertFloat(sum) + convertFloat(multipleTypeSubItems[y][key].subItemPrice);
+
+                }
+
+            }
+        }
+
+    }
+
+
+    selectedItemPrice = convertFloat(sum) + convertFloat(replace);
+
+
+    $('#itemPopUpPrice').html(selectedItemPrice+' NIS');
 }
+
+
 
 
 // ADD USER ORDER  (ADD TO MY ORDER CLICKED)

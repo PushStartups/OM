@@ -203,7 +203,8 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "availability"         => $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
                 "today_timings"        => $today_timings,               // TODAY TIMINGS
                 "hours_left_to_open"   => $hoursLeftToOpen,             // HOURS LEFT TO OPEN FROM CURRENT TIME
-                "delivery_fee"         => $delivery_fee                // DELIVERY FEE AREA WISE
+                "delivery_fee"         => $delivery_fee,                // DELIVERY FEE AREA WISE
+                "contact"              => $result['contact']            // CONTACT NO
             ];
 
             $restaurants[$count] = $restaurant;
@@ -813,25 +814,26 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
 
     try {
 
-        $email = $request->getParam('email');
         $amount = $request->getParam('amount');
         $creditCardNo = $request->getParam('cc_no');
         $expDate = $request->getParam('exp_date');
         $cvv = $request->getParam('cvv');
-
+        $user_order = $request->getParam('user_order');
 
 
         $user_id = 0;
 
-        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
+        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '".$user_order['email']."'");
 
         if (DB::count() == 0) {
 
             // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
             DB::insert('users', array(
-                'smooch_id' => $email
+                'smooch_id' => $user_order['email']
             ));
+
             $user_id = DB::insertId();
+
         } else {
 
             // IF USER ALREADY EXIST IN DATABASE
@@ -839,7 +841,7 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
         }
 
 
-        $result = stripePaymentRequest(($amount*100), $user_id, $email,$creditCardNo,$expDate,$cvv);
+        $result = stripePaymentRequest(($amount*100),$user_order,$user_id,$creditCardNo,$expDate,$cvv);
 
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
@@ -864,11 +866,9 @@ $app->run();
 // STRIPE API PAYMENT REQUEST
 // AMOUNT DIVIDED BY 100 FROM API
 
-function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$cvv)
+function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDate,$cvv)
 {
-
     $str = "Error";
-
     $cgConf['tid']='8804324';
     $cgConf['amount']=$amount;
     $cgConf['user']='pushstart';
@@ -898,7 +898,7 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
 								<validation>AutoComm</validation>
 								<numberOfPayments/>
 								<customerData>
-									<userData1>'.$email.'</userData1>
+									<userData1>'.$user_order['email'].'</userData1>
 									<userData2/>
 									<userData3/>
 									<userData4/>
@@ -906,12 +906,55 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
 								</customerData>
 								<currency>ILS</currency>
 								<firstPayment/>
-								
 								<periodicalPayment/>
-								<user>Push</user>
+								<user>Push</user>	
+								
+								<invoice>
+
+									<invoiceCreationMethod>wait</invoiceCreationMethod>
+									
+									<invoiceDate/>
+									
+									<invoiceSubject>'.$user_order['restaurantTitle'].' Order# '.$user_id.'</invoiceSubject>
+									
+									<invoiceDiscount/>
+									
+									<invoiceDiscountRate/>
+									
+									<invoiceItemCode>'.$user_id.'</invoiceItemCode>
+									
+									<invoiceItemDescription>'.$user_order['restaurantTitle'].' food order from OrderApp</invoiceItemDescription>
+									
+									<invoiceItemQuantity>1</invoiceItemQuantity>
+									
+									<invoiceItemPrice>'.$amount.'</invoiceItemPrice>
+									
+									<invoiceTaxRate/>
+									
+									<invoiceComments/>
+									
+									<companyInfo>OrderApp</companyInfo>
+									
+									<sendMail>1</sendMail>
+									
+									<mailTo>'.$user_order['email'].'</mailTo>
+									
+									<isItemPriceWithTax>1</isItemPriceWithTax>
+									
+									<ccDate>'.date("Y-m-d").'</ccDate>
+									
+									<invoiceSignature/>
+									
+									<invoiceType/>
+									
+									<DocNotMaam/>
+									
+								</invoice>	
+								
 							</doDeal>
 						</request>
 					</ashrait>';
+
 
     //init curl connection
     if( function_exists( "curl_init" )) {
@@ -938,13 +981,16 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
 
         $dom = new DOMDocument;
         $dom->loadXML($result);
-        $status = $dom->getElementsByTagName('status');
-        $message = $dom->getElementsByTagName('message');
 
+        $status      = $dom->getElementsByTagName('result');
+        $message     = $dom->getElementsByTagName('message');
+        $receipt     = $dom->getElementsByTagName('invoiceDocUrl');
 
         if($status->item(0)->nodeValue == 000)
         {
             $str   =  'success';
+            // $url   =  $receipt->item(0)->nodeValue;
+
         }
         else{
 
@@ -953,8 +999,6 @@ function  stripePaymentRequest($amount, $userId, $email,$creditCardNo,$expDate,$
         }
 
     }
-
-
 
     return $str;
 }

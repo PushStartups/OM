@@ -1,37 +1,52 @@
 // GET ALL CITIES
 var allCitiesResp = null;
 
+// ON DOCUMENT READY CALL TO DISPLAY ALL CITIES
+// FOR USER SELECTION
 
-// DISPLAY ALL CITIES TO USER
+$(document).ready(function() {
 
-function displayAllCities(response)
-{
+
+    localStorage.setItem("USER_LANGUAGE", 'EN');
+    commonAjaxCall("/restapi/index.php/get_all_cities", '', displayAllCitiesCallBack);
+
+
+});
+
+
+function displayAllCitiesCallBack(response) {
+
+    // DISPLAY ALL CITIES TO USER FROM SERVER
     var result = JSON.parse(response);
     allCitiesResp = result;
 
     var str = '';
 
-    for (var x = 0; x < result.length; x++) {
-
-        str += '<li><a onclick="storeUserSelectedCity(' + x + ')" href="#">' + result[x].name_en + '</a></li>';
-
+    for(var x=0; x<result.length;x++)
+    {
+        str += '<li><a onclick="storeUserSelectedCity('+x+')" href="#">'+result[x].name_en+'</a></li>';
     }
 
-    $('#city_list').append(str); // APPEND CITY LIST TO MAIN PAGE
+    $('#city_list').append(str);
+
 }
 
 
 // STORE SELECTED CITY IN CACHE
-
 function storeUserSelectedCity(index) {
 
 
     $('.btn-primary > span#text-span').text(allCitiesResp[index].name_en);
+
+    $(".dropdown").removeClass("error");
+    $('#error-text').css('display', 'none');
+
     localStorage.setItem("USER_CITY_ID", JSON.stringify(allCitiesResp[index].id));
     localStorage.setItem("USER_CITY_NAME", JSON.stringify(allCitiesResp[index].name_en));
 
-
+    start_ordering();
 }
+
 
 // CITY AVAILABLE IN CACHE ?
 
@@ -46,4 +61,6 @@ function isCitySelected()
     {
         return true;
     }
+
+
 }

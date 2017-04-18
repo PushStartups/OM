@@ -2,6 +2,15 @@
 <html lang="en">
 <script>
 
+    var USER_LANGUAGE = localStorage.getItem("USER_LANGUAGE");
+
+    if (USER_LANGUAGE == undefined || USER_LANGUAGE == "" || USER_LANGUAGE == null) {
+
+        USER_LANGUAGE = 'EN';
+        localStorage.setItem("USER_LANGUAGE", 'EN');
+
+    }
+
     if (location.protocol != 'https:')
     {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
@@ -45,11 +54,20 @@
         {
             if (location.protocol != 'https:')
             {
+
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+
             }
 
-            window.location.href = 'https://orderapp.com/m/en/';
+            if(USER_LANGUAGE == 'EN') {
 
+                window.location.href = 'https://orderapp.com/m/en/';
+            }
+            else {
+
+                window.location.href = 'https://orderapp.com/m/he/';
+
+            }
         }
         else if(window.location.hostname == "dev.orderapp.com")
         {
@@ -59,7 +77,14 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://dev.orderapp.com/m/en/';
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://dev.orderapp.com/m/en/';
+            }
+            else
+            {
+                window.location.href = 'https://dev.orderapp.com/m/he/';
+            }
 
         }
         else if(window.location.hostname == "qa.orderapp.com")
@@ -70,8 +95,14 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://qa.orderapp.com/m/en/';
+            if(USER_LANGUAGE == 'EN') {
 
+                window.location.href = 'https://qa.orderapp.com/m/en/';
+            }
+            else {
+
+                window.location.href = 'https://qa.orderapp.com/m/he/';
+            }
         }
         else if(window.location.hostname == "staging.orderapp.com")
         {
@@ -81,7 +112,15 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://staging.orderapp.com/m/en/';
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://staging.orderapp.com/m/en/';
+            }
+            else {
+
+
+                window.location.href = 'https://staging.orderapp.com/m/he/';
+            }
         }
 
     }
@@ -99,7 +138,14 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://orderapp.com/en/';
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://orderapp.com/en/';
+            }
+            else
+            {
+                window.location.href = 'https://orderapp.com/he/';
+            }
         }
 
 
@@ -111,8 +157,16 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
+            if(USER_LANGUAGE == 'EN') {
 
-            window.location.href = 'https://dev.orderapp.com/en/';
+                window.location.href = 'https://dev.orderapp.com/en/';
+
+            }
+            else {
+
+
+                window.location.href = 'https://dev.orderapp.com/he/';
+            }
 
         }
 
@@ -124,7 +178,14 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://qa.orderapp.com/en/';
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://qa.orderapp.com/en/';
+            }
+            else
+            {
+                window.location.href = 'https://qa.orderapp.com/he/';
+            }
 
         }
 
@@ -135,13 +196,16 @@
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
 
-            window.location.href = 'https://staging.orderapp.com/en/';
+            if(USER_LANGUAGE == 'EN') {
 
+                window.location.href = 'https://staging.orderapp.com/en/';
+            }
+            else
+            {
+                window.location.href = 'https://staging.orderapp.com/he/';
+            }
         }
 
-
     }
-
-
 </script>
 </html>

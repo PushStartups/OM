@@ -1,0 +1,650 @@
+<!Doctype html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+        <title>Orderapp | Order from restaurants online</title>
+        <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style/simple-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="style/baron.css">
+        <link rel="stylesheet" type="text/css" href="style/choose-menu.css">
+        <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
+        <link href="style/dropdown.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+        <!--&lt;!&ndash; Google Analytics &ndash;&gt;-->
+        <!--<script>-->
+            <!--(function (i, s, o, g, r, a, m) {-->
+                <!--i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {-->
+                            <!--(i[r].q = i[r].q || []).push(arguments)-->
+                        <!--}, i[r].l = 1 * new Date(); a = s.createElement(o),-->
+                        <!--m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)-->
+            <!--})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');-->
+
+            <!--ga('create', 'UA-89656592-1', 'auto');-->
+            <!--ga('send', 'pageview');-->
+        <!--</script>-->
+
+        <!--&lt;!&ndash; End Google Analytics &ndash;&gt;-->
+        <!--&lt;!&ndash; Facebook Pixel Code &ndash;&gt;-->
+        <!--<script>-->
+            <!--!function (f, b, e, v, n, t, s) {-->
+                <!--if (f.fbq) return; n = f.fbq = function () {-->
+                    <!--n.callMethod ?-->
+                            <!--n.callMethod.apply(n, arguments) : n.queue.push(arguments)-->
+                <!--}; if (!f._fbq) f._fbq = n;-->
+                <!--n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;-->
+                <!--t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)-->
+            <!--}(window,-->
+                    <!--document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');-->
+            <!--fbq('init', '2198328787059300'); // Insert your pixel ID here.-->
+            <!--fbq('track', 'PageView');-->
+        <!--</script>-->
+        <!--<noscript>-->
+            <!--<img height="1" width="1" style="display:none"-->
+                 <!--src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />-->
+        <!--</noscript>-->
+        <!--&lt;!&ndash; DO NOT MODIFY &ndash;&gt;-->
+        <!--&lt;!&ndash; End Facebook Pixel Code &ndash;&gt;-->
+
+        <!--&lt;!&ndash; Facebook/Twitter Open Graph &ndash;&gt;-->
+        <!--<meta name="twitter:card" content="summary" />-->
+        <!--<meta name="twitter:site" content="@orderappteam" />-->
+        <!--<meta property="og:url" content="http://orderapp.com" />-->
+        <!--<meta property="og:title" content="OrderApp - Order delivery online today." />-->
+        <!--<meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.-->
+      <!--We remove the phone call and give you the option of live chat or digital menu." />-->
+
+</head>
+<!--<style>-->
+    <!--::-webkit-scrollbar { /* for Mac OS X support */-->
+        <!--width: 0;-->
+    <!--}-->
+<!--</style>-->
+<script>
+
+
+//    if (location.protocol != 'https:')
+//    {
+//        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+//    }
+
+
+</script>
+
+
+<body style="overflow: hidden">
+
+
+<img id="loader" style="z-index: 99999;" class="loader-css" src="img/loader.gif" >
+
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.5);"></div>
+
+<div id="wrapper" dir="rtl">
+    <section class="jumbotron jumbotron-fluid">
+        <header id="header">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12 col-md-auto">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="images description">
+                            </a>
+                        </div>
+                        <span> בחר את התפריט שלך</span>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li data-toggle="modal" data-target="#about"><a href="#">אודות</a></li>
+                    <li><a class="active" href="#">HE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="content dropdown">
+        <div class="parent" style="position: relative;width:100%; height:100%;">
+            <img src="img/pizza.png" style="left: -10px"/>
+            <img src="img/img1.png" style="right: 0"/>
+        </div>
+        <div class="parent-bottom" style="position: relative;width:100%;height:100%;">
+            <img src="img/left_bottom.png" style="left: -10px;bottom: 0"/>
+            <img src="img/right_bottom.png" style="right: 0"/>
+        </div>
+
+        <div class="container new height-box">
+            <header class="header-box">
+                <div class="row">
+                    <div class="col-xs-2"><a  data-toggle="modal" data-target="#popup-info"  class="alert-img" href="#"><img src="img/alert.png"></a></div>
+                    <div class="col-xs-10" id="rest-name-cat">
+                        <h1>בנדורה</h1>
+                        <p>דרך יצחק רבין 5, בית שמש</p>
+                    </div>
+
+                </div>
+            </header>
+            <div class=" height-box">
+                <div class="row no-gutters">
+
+                    <div class="col-sm-4 col-md-4 col-xs-4">
+
+                        <aside id="sidebar">
+
+                            <div class="row col-one">
+                                <div class="col-xs-12">
+                                    <h3>עגלת קניות</h3>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="empty-cart">
+                                        <img src="img/cart-img-he.png" alt="cart">
+                                        <p>העגלה שלך ריקה</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+
+
+                                    <!--MINIMUM ORDER-->
+                                    <div class="minimum-item" id="min-order">
+                                        <p>מינימום הזמנה 100 ש״ח</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-second" >
+                                <h3> עגלת קניות <span class="badge"> 1 </span> </h3>
+
+                                <div class="baron scrollable4">
+                                    <div id="scrollable4" class="baron__scroller right">
+                                        <div id="nested-section">
+                                            <div class="row-holder">
+                                                <div class="row header-row">
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <span class="dim"> 62 NIS </span>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8">
+                                                        <h2> פיצה רביולי </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                                        <div class="switch-btn">
+                                                            <img class="left-btn" src="img/ic_cancel.png">
+                                                            <span class="count">1</span>
+                                                            <img class="increase-btn" src="img/ic_plus.png">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-sm-8 col-xs-8">
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה, כאן ניתן יהיה לתת תאור על </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row-holder">
+                                                <div class="row header-row">
+                                                    <div class="col-md-4 col-xs-4">
+                                                        <span class="dim"> 62 NIS </span>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8">
+                                                        <h2> פיצה רביולי </h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                                        <div class="switch-btn">
+                                                            <img class="left-btn" src="img/ic_cancel.png">
+                                                            <span class="count">1</span>
+                                                            <img class="increase-btn" src="img/ic_plus.png">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-sm-8 col-xs-8">
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה, כאן ניתן יהיה לתת תאור על </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="baron__track">
+                                        <div class="baron__bar"></div>
+                                    </div>
+                                </div>
+                                <div class=" col-xs-12" style="padding: 0px">
+                                    <div class="minimum-item">
+                                        <h2 id="totalAmount"> 130 ש״ח</h2>
+                                        <p style="font-size: 20px;" id="minAmount">100 ש״ח</p>
+                                        <button type="button" onclick="OnOrderNowClicked()" class="btn-submit"><img src="img/Shopping-Cart-he.png"> הזמן עכשיו </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-xs-8 add">
+
+
+                        <div class="baron">
+                            <div id="scrollable3" class="baron__scroller">
+                                <!--CATEGORIES AND ITEMS LIST-->
+                                <div class="left-content" id="categories-items">
+                                    <ul class="accordion multilevel-accordion">
+                                        <li>
+                                            <a id="slideItem0" href="#" class="opener">
+                                                <h3>פיצה</h3>
+                                            </a>
+                                            <div class="slide">
+                                                <div class="add-row" onclick="onItemSelected(0,0)">
+                                                    <h4>פיצה זוגית <span>44 NIS</span></h4>
+                                                    <div class="box">
+                                                        <a data-toggle="modal" data-target="#myorder" class="btn-icon">plus image</a>
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה ה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a id="slideItem0" href="#" class="opener">
+                                                <h3>סלטים</h3>
+                                            </a>
+                                            <div class="slide">
+                                                <div class="add-row" onclick="onItemSelected(0,0)">
+                                                    <h4>פיצה זוגית <span>44 NIS</span></h4>
+                                                    <div class="box">
+                                                        <a class="btn-icon">plus image</a>
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה ה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a id="slideItem0" href="#" class="opener">
+                                                <h3>פיצה</h3>
+                                            </a>
+                                            <div class="slide">
+                                                <div class="add-row" onclick="onItemSelected(0,0)">
+                                                    <h4>פיצה זוגית <span>44 NIS</span></h4>
+                                                    <div class="box">
+                                                        <a class="btn-icon">plus image</a>
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה ה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a id="slideItem0" href="#" class="opener">
+                                                <h3>סלטים</h3>
+                                            </a>
+                                            <div class="slide">
+                                                <div class="add-row" onclick="onItemSelected(0,0)">
+                                                    <h4>פיצה זוגית <span>44 NIS</span></h4>
+                                                    <div class="box">
+                                                        <a class="btn-icon">plus image</a>
+                                                        <p>כאן ניתן יהיה לתת תאור על המנה ה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה כאן ניתן יהיה לתת תאור על המנה</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="baron__track">
+                                <div class="baron__bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <a class="btn-top" ><img src="img/icon01.png"></a>
+    <a class="btn-left" onclick = "goBack()"></a>
+
+    <!--<script>-->
+
+        <!--function goBack() {-->
+
+            <!--selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));-->
+            <!--selectedCityName = selectedCityName.replace(/\s/g, '');-->
+            <!--window.location.href = 'restaurants/'+selectedCityName;-->
+
+        <!--}-->
+    <!--</script>-->
+
+</div>
+
+
+
+
+<div class="modal fade"  id="myorder" role="dialog">
+    <div class="modal-dialog modal-md mypopup">
+        <div class="modal-content" dir="rtl">
+            <div class="holder">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="text-center">
+
+                    <!--ITEM NAME IN POPUP-->
+                    <h2 id="itemPopUpTitle">קינג סנדוויץ׳ אנגוס </h2>
+
+                    <!--ITEMS PRICE IN POPUP-->
+                    <span id="itemPopUpPrice" class="txt">20 ש״ח </span>
+
+                </div>
+                <div class="baron">
+                    <div id="scrollable2" class="baron__scroller popup">
+                        <div class="add-row first text-center">
+
+                            <!--ITEM DESCRIPTION IN POPUP -->
+                            <p id="itemPopUpDesc">כאן יהיה ניתן לתת תאור של המנה, כאן יהיה ניתן לתת תאור של המנה, כאן יהיה ניתן לתת תאור של המנה, כאן יהיה ניתן לתת תאור של המנה, </p>
+
+                        </div>
+
+                        <div id="parent_type_one">
+
+                        </div>
+
+                        <div id="parent_type_multiple">
+                            <div class="add-row">
+                                <label style="text-align: right; margin-bottom: 20px">הערה מיוחדת</label>
+                                <ul class="checkbox-list">
+                                    <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-00">
+                                        <label for="checkbox-id-00">בצל מטוגן</label>
+                                    </li>
+                                    <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-01">
+                                        <label for="checkbox-id-01">בצל מטוגן</label>
+                                    </li>
+                                    <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-02">
+                                        <label for="checkbox-id-02">בצל מטוגן</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="add-row">
+                                <label style="text-align: right; margin-bottom: 20px">הערה מיוחדת</label>
+                                <ul class="checkbox-list">
+                                    <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-03">
+                                        <label for="checkbox-id-03">בצל מטוגן</label>
+                                    </li>
+                                    <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-04">
+                                        <label for="checkbox-id-04">בצל מטוגן</label>
+                                    </li>
+                                    <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-05">
+                                        <label for="checkbox-id-05">בצל מטוגן</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="add-row">
+                            <label>הערה מיוחדת</label>
+                            <div class="text-holder no-gutters">
+                                <div class="col-xs-11">
+                                    <textarea id="special_request" placeholder="כתוב כאן"></textarea>
+                                    <img class="resize" src="img/Path-he.png">
+                                </div>
+                                <div class="col-xs-1">
+                                    <img class="edit" src="img/ic_edit-he.png">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="baron__track">
+                        <div class="baron__bar"></div>
+                    </div>
+                </div>
+                <button  onclick="addUserOrder()"  type="button" class="btn-submit">+ הוסף להזמנה שלי </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- popup two -->
+<div class="modal fade"  id="popup-info" role="dialog">
+    <div class="modal-dialog modal-md mypopup info">
+        <div class="modal-content" dir="rtl">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="row no-gutters">
+
+                <div class="col-md-6 col-sm-6 col-xs-6 second-col">
+
+                    <div class="baron">
+
+                        <div id="scrollable5" class="baron__scroller right add">
+                            <div class="add-row first">
+                                <span class="title">שעות פתיחה</span>
+
+
+                                <!--RESTAURANT TIMINGS FROM SERVER-->
+                                <table class="table" id="time-detail">
+                                    <tr>
+                                        <td>שישי</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>חמישי</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>רביעי</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>שלישי</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>שני</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ראשון</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>שבת</td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="add-row first">
+                                <span class="title title2">עלויות משלוח</span>
+
+
+                                <!--DELIVERY FEE DETAIL FROM SERVER-->
+                                <table class="table" id="discount-detail">
+                                    <tr>
+                                        <td>בית שמש</td>
+                                        <td>25 ש״ח</td>
+                                    </tr>
+                                    <tr>
+                                        <td> רמת בית שמש א    רמת</td>
+                                        <td>35 ש״ח</td>
+                                    </tr>
+                                    <tr>
+                                        <td> רמת בית שמש א    רמת</td>
+                                        <td>35 ש״ח</td>
+                                    </tr>
+                                    <tr>
+                                        <td> רמת בית שמש א    רמת</td>
+                                        <td>35 ש״ח</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="add-row first">
+                                <span class="title title3">Gallery</span>
+                                <div id="menu-carousel" class="carousel slide" data-ride="carousel">
+
+
+                                    <!--GALLERY IMAGES FROM SERVER-->
+                                    <div class="carousel-inner" role="listbox" id="gallery-images">
+                                        <div class="item active"><img src="img/menu1.png" alt="Chania" width="50%"></div>
+                                        <div class="item"><img src="img/menu2.png" alt="Chania" width="50%"></div>
+                                    </div>
+
+                                    <a class="left carousel-control" href="#menu-carousel" role="button" data-slide="prev">
+                                        <span class="sr-only">Previous</span>
+                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                    </a>
+                                    <a class="right carousel-control" href="#menu-carousel" role="button" data-slide="next">
+                                        <span class="sr-only">Next</span>
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baron__track">
+                            <div class="baron__bar add"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 first-col text-center" id="rest-detail">
+                    <div class="img-frame">
+                        <a href="#"><img src="img/angos_logo.png" alt="logo-img"></a>
+                    </div>
+                    <h2>בנדורה</h2>
+                    <p>שדרות יגאל אלון 6, קניון שערי העיר, בית שמש</p>
+                    <span class="cart">מינימום הזמנה 100 ש״ח</span>
+                    <div class="wrap">
+                        <p>בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.</p>
+                    </div>
+                    <img class="mobile-sec" src="img/delivery-line-he.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div  class="modal fade"  id="about" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3> ORDERAPP, ORDER FAST </h3>
+            <p>
+                OrderApp is revolutionizing the online ordering experience.<br>
+                We ease all the pain involved in the ordering process. For restaurants, we are a flowing source of manageable orders. For users, we are an easy ordering platform with a timely delivery to your door.<br>
+                <br>
+                *Powered by Push Startups
+            </p>
+
+            <!-- SOCIAL LINKS FOR ORDER APP -->
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/theorderapp/"><img src="img/fb.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/OrderAppTeam"><img src="img/tw.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/106974163137537901922"><img src="img/gp.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/theorderapp/"><img src="img/insta.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/orderapp/"><img src="img/pin.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="img/link.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="script/jquery.accordion.js"></script>
+<script type="text/javascript" src="script/jcf.js"></script>
+<script type="text/javascript" src="script/jcf.scrollable.js"></script>
+<!--<script src="script/commonAjaxCall.js"></script>-->
+<!--<script type="text/javascript" src="script/ajaxServerRequestsOrder.js"></script>-->
+<script src="script/alertify.min.js"></script>
+
+
+
+<script>
+
+    // replace custom forms
+    jcf.lib.domReady(function(){
+
+        jcf.customForms.replaceAll();
+
+    });
+
+</script>
+
+
+<script src="script/bootstrap.min.js"></script>
+<script src="script/script.js"> </script>
+<script src="script/dropdown.js"></script>
+<script type="text/javascript" src="script/baron.js"></script>
+
+
+
+
+
+<script>
+
+
+    window.onload = function() {
+        window.dima = baron({
+            root: '.baron',
+            scroller: '.baron__scroller',
+            bar: '.baron__bar'
+        }).autoUpdate();
+    };
+
+
+    // FRONT END
+
+//    $( ".btn-top" ).click(function() {
+//
+//        $('.height-box').stop();
+//
+//        $('#scrollable3').scrollTop(0);
+//
+//    });
+
+    $( ".btn-top" ).click(function() {
+
+        $('#scrollable3').stop().animate({ scrollTop: 0 }, 500);
+
+    });
+
+
+
+    $('.height-box').scroll(function() {
+
+        $(".time-popup").fadeOut();
+
+    });
+
+    $('.btn-icon').click(function() {
+
+        $(this).toggleClass('active');
+
+    });
+
+
+
+</Script>
+</body>
+</html>

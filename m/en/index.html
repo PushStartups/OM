@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OrderApp</title>
-    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style/all.css">
     <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="style/alertify.css">
+    <link rel="stylesheet" type="text/css" href="style/index.css">
 
 
-    <script src="script/jquery.min.js"></script>
-    <script src="script/bootstrap.min.js"></script>
-    <script src="script/script.js"> </script>
-    <script src="script/ajaxServerRequestsIndex.js"></script>
-    <script src="script/alertify.min.js"></script>
-    <script src="script/commonAjaxCall.js"></script>
-
-
-    <!--GOOGLE ANALYTICS HEADER CODE-->
+    <!-- Google Analytics -->
     <script>
-
-
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-                    (i[r].q=i[r].q||[]).push(arguments)
-                },i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-89656592-1', 'auto');
         ga('send', 'pageview');
+    </script>
 
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
     </script>
 
 
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+    </noscript>
+
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Facebook/Twitter Open Graph -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
 
 </head>
 
 
 <script>
 
+
     if (location.protocol != 'https:')
     {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
     }
 
-    // ON DOCUMENT READY CALL TO DISPLAY ALL CITIES
-    // FOR USER SELECTION
-
-    $(document).ready(function() {
-
-        commonAjaxCall("/restapi/index.php/get_all_cities", "",displayAllCities); // CALL AJAX DATA FROM SERVER
-
-    });
 
 </script>
 
 
-
 <body>
+
+<img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
 
 <div id="wrapper">
     <!-- carousel slider -->
@@ -78,8 +93,7 @@
         <div class="container">
             <nav id="nav">
                 <ul>
-                    <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
-                    <li><a class="active" href="https://orderapp.com/index_he">HE</a></li>
+                    <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
                 </ul>
             </nav>
             <div class="row">
@@ -100,16 +114,18 @@
                         <h1>ORDER SMART <br>ORDER FAST</h1>
                         <div class="row no-gutters add">
                             <div class="col-md-6 col-sm-6 col-xs-12 box">
-                                <div class="dropdown error">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="text-span">Dropdown Example</span>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="text-span">Choose a city</span>
                                         <span class="caret"></span></button>
-                                    <ul id="city_list"  class="dropdown-menu scrollable-menu" role="menu">
+                                    <ul id="city_list" class="dropdown-menu scrollable-menu" role="menu">
+                                        <!--<li><a href="#">option 1</a></li>-->
+                                        <!--<li><a href="#">option 2</a></li>-->
                                     </ul>
-                                    <span id="error-field" class="fild-title">*Required field</span>
+                                    <span class="fild-title" id="error-text">*Required field</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 box">
-                                <button class="btn-submit" onclick="start_ordering()" type="button" >Start Ordering</button>
+                                <button class="btn-submit" onclick="start_ordering()" type="button">Start Ordering</button>
                             </div>
                         </div>
                     </form>
@@ -132,6 +148,7 @@
         <!-- Modal content-->
         <div class="modal-content">
 
+            <!--<img class="ic_close" src="images/mobile/ic_close.png" onclick="$('#detail-popup').fadeOut(); $('.overlay').fadeOut()">-->
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
             <h3> ORDERAPP, ORDER FAST </h3>
             <p>
@@ -151,22 +168,22 @@
             <div class="social-icons">
                 <ul>
                     <li>
-                        <a href="#"><img src="img/fb.png"></a>
+                        <a href="https://www.facebook.com/theorderapp/"><img src="images/mobile/fb.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img src="img/tw.png"></a>
+                        <a href="https://twitter.com/OrderAppTeam"><img src="images/mobile/tw.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img src="img/gp.png"></a>
+                        <a href="https://plus.google.com/106974163137537901922"><img src="images/mobile/gp.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img src="img/insta.png"></a>
+                        <a href="https://www.instagram.com/theorderapp/"><img src="images/mobile/insta.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img src="img/pin.png"></a>
+                        <a href="https://www.pinterest.com/orderapp/"><img src="images/mobile/pin.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img src="img/link.png"></a>
+                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="images/mobile/link.png"></a>
                     </li>
                 </ul>
             </div>
@@ -176,38 +193,36 @@
     </div>
 </div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="script/bootstrap.min.js"></script>
+<script src="script/script.js"> </script>
+<script src="/m/en/script/ajaxServerRequestsIndex.js"></script>
+<script src="/m/en/script/alertify.min.js"></script>
+<script src="/m/en/script/commonAjaxCall.js"></script>
+
+
+
 <script>
 
     $('.carousel').carousel();
 
-</script>
+
+    $('#error-text').css('display', 'none');
 
 
-<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".dropdown").removeClass("error");
+        if( isCitySelected() == true)
+        {
+            $("#error-field").hide();
+            var name  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+            $('.btn-primary > span#text-span').text(name);
 
 
-    var selectedCityName = null;
-
-
-    $(".dropdown").removeClass("error");
-    $("#error-field").hide();
-
-
-    // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
-    if(!isCitySelected())
-    {
-
-        $('.btn-primary > span#text-span').text('Choose a city');
-
-    }
-    else
-    {
-        // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
-        selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
-        $('.btn-primary > span#text-span').text(selectedCityName);
-    }
-
-
+        }
+    });
 
     // CLICK ON START ORDERING BUTTON
     function start_ordering()
@@ -217,6 +232,7 @@
         {
 
             $(".dropdown").removeClass("error");
+            $('#error-text').css('display', 'none');
             $("#error-field").hide();
 
             selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
@@ -230,12 +246,22 @@
             // THROW ERROR
             $(".dropdown").addClass("error");
             $("#error-field").show();
+            $('#error-text').css('display', 'block');
 
         }
 
     }
 
+
+        function redirectToHE() {
+
+            localStorage.setItem("USER_LANGUAGE", 'HE');
+            window.location.href = 'https://'+window.location.hostname;
+
+        }
+
 </script>
+
 
 </body>
 </html>

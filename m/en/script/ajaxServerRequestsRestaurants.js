@@ -1,25 +1,26 @@
-//SERVER HOST DETAIL
-
+var host                = null;
 var selectedCityId      = null;
 var allRestJson         = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
-var minOrderLimit       = 0;     // MINIMUM ORDER LIMIT
 var userObject          = null;
 
 
-$(document).ready(function() {
+// AFTER DOCUMENTED LOADED
+function initialize() {
 
-// EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
+    // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
     if (localStorage.getItem("USER_CITY_ID") == undefined || localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null) {
+
         // SEND USER BACK TO HOME PAGE
-        window.location.href = '/m/en/index.html';
+        window.location.href = '../index.html';
     }
+
 
 // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
     selectedCityId = JSON.parse(localStorage.getItem("USER_CITY_ID"));
 
 
-// USER ORDER INFORMATION
 
+// USER ORDER INFORMATION
     userObject = {
 
         'language': 'en',                  // USER LANGAGUE ENGLISH
@@ -27,12 +28,14 @@ $(document).ready(function() {
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
         'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
+        'restaurantContact' : "",          // RESTAURANT CONTACT
         'name': "",                        // USER NAME
         'email': "",                       // USER EMAIL
         'contact': "",                     // USER CONTACT
         'orders': [],                      // USER ORDERS
         'total': 0,                        // TOTAL AMOUNT OF ORDER
         'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
+        'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
         'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
         'isCoupon': false,                 // USER HAVE COUPON CODE ?
         'couponCode': '',                  // COUPON CODE OF USER
@@ -41,32 +44,21 @@ $(document).ready(function() {
         'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
         'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
         'cartData': null,                  // COMPUTED CART DATA
-        'totalWithoutDiscount': null       // TOTAL WITHOUT DISCOUNT
+        'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
+        'deliveryArea':null,               // DELIVERY AREA
+        'deliveryCharges':null,            // DELIVERY CHARGES
+        'specialRequest':""                // SPECIAL REQUEST FROM USER
     };
 
-
-    //commonAjaxCall("/restapi/index.php/get_min_order_amount","",getMinimumValue);  // GET MINIMUM ORDER VALUE
-    commonAjaxCall("/restapi/index.php/get_all_restaurants", {'city_id':selectedCityId},getAllRestaurants); // GET LIST OF ALL RESTAURANTS
-
-});
-
-
-// GET MINIMUM ORDER VALUE FROM SERVER
-function getMinimumValue(response) {
-
-
-    var result = JSON.parse(response);
-    minOrderLimit = parseInt(result[0].value); // MINIMUM ORDER AMOUNT SET FROM SERVER
+    commonAjaxCall("/restapi/index.php/get_all_restaurants",{'city_id':selectedCityId},getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER
 
 }
 
 
-// GET ALL RESTAURANTS FROM SERVER
+// GET ALL RESTAURANTS FROM COMMON AJAX CALL
 function  getAllRestaurants(response)
 {
-
     var result = JSON.parse(response);
-
     allRestJson = result;   // MAKE SERVER RESPONSE GLOBAL FOR ACCESS IN OTHER FUNTIONS
 
 
@@ -78,88 +70,91 @@ function  getAllRestaurants(response)
         var temp = "";
         var tagsString = fromTagsToString(result[x]);
 
-        // RESTAURANT CURRENTLY ACTIVE
-        if (result[x].availability) {
 
-            temp += '<div class="accordion-group animate-box fadeInUp animated">' +
-                '<div class="accordion-heading">' +
-                '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' + x + '">' +
-                '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
-                '<div class="status_online">' + '</div>' +
-                '<div class="img_cernter_crop">' +
-                '<img src=' + result[x].logo + ' class="picture-src">' +
-                '</div>' +
-                '<div id="right-triangle">' + '</div>' +
-                '<div class="resto_title" >' +
-                '<h3><b>' + result[x].name_en + '</b></h3>' +
-                '<span><b>' + result[x].hechsher_en + '</b></span>' +
-                '<p style="font-size: 14px"><b>' + tagsString + '</b></p>' +
-                '</div>' +
-                '</div>' +
-                '</a>' +
-                '</div>' +
-                '<div class="clearfix">' + '</div>' +
-                '<div id="collapse' + x + '"class="accordion-body collapse">' +
-                '<div class="accordion-inner">' +
-                '<p style="word-break: normal"><b>' + result[x].description_en + '</b></p>' +
-                '<div class="btn-group btn-group-justified">' +
-                '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"> <p style="word-break: normal">' + result[x].address_en + '</p></div>' +
-                '<a href="#" onClick="return false;" onClick="return false;" id="timings' + x + '" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left">Open Now<img src="/m/en/img/dropdown.png"></p><span class="text-left"><b>' + result[x].today_timings + '</b></span></a>' +
-                '<a href="#" onClick="return false;" onClick="return false;" id="pop' + x + '" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="/m/en/img/video.png" style="margin:0 auto;"></p><span>View Gallery</span></a>' +
-                '</div>' +
-                '<a href="#" id="ordernow' + x + '" class="order_now">Order Now</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
+        // RESTAURANT CURRENTLY ACTIVE
+
+        if (result[x].availability) {     //
+
+
+            temp += '<li>'+
+                    '<a href="#" class="opener">'+
+                    '<div class="image-box">'+
+                    '<img src="'+ result[x].logo + '">'+
+                    '</div>'+
+                    '<div class="txt">'+
+                    '<h2>' + result[x].name_en + '<span>כשר</span></h2>'+
+                    '<p>'+ tagsString +'</p>'+
+                    '</div>'+
+                    '</a>'+
+                    '<div class="slide">'+
+                    '<div class="block">'+
+                    '<p>'+ result[x].description_en +'</p> '+
+                    '</div>'+
+                    '<ul class="list">'+
+                    '<li>'+
+                    '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_en +'</div><span>delivery Fee</span></a>'+
+                    '</li>'+
+                    '<li>'+
+                    '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>Open Now</span>' +result[x].today_timings+ '</a>'+
+                    '</li>'+
+                    '<li class="last text-center">'+
+                    '<a  onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
+                    '</li>'+
+                    '</ul>'+
+                    '<a href="#" onclick="order_now('+ x +')" class="brn-submit">Order Now</a>'+
+                    '</div>'+
+                    '</li>';
+
 
         }
-        // CURRENTLY NOT AVAILABLE
+        //CURRENTLY NOT AVAILABLE
         else {
 
-            temp += '<div class="accordion-group animate-box fadeInUp animated">' +
-                '<div class="accordion-heading">' +
-                '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse' + x + '">' +
-                '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
-                '<div class="status_offline"><span class="close_arrow" aria-hidden="true">×</span></div>' +
-                '<div class="img_cernter_crop">' +
-                '<img src=' + result[x].logo + ' class="picture-src">' +
-                '</div>' +
-                '<div id="right-triangle"></div>' +
-                '<div class="resto_title" >' +
-                '<h3><b>' + result[x].name_en + '</b></h3>' +
-                '<span><b>' + result[x].hechsher_en + '</b></span>' +
-                '<p style="font-size: 14px"><b>' + tagsString + '</b></p>' +
-                '</div>' +
-                '</div>' +
-                '</a>' +
-                '</div>' +
-                '<div class="clearfix"></div>' +
-                '<div id="collapse' + x + '" class="accordion-body collapse">' +
-                '<div class="accordion-inner">' +
-                '<p style="word-break: normal"><b>' + result[x].description_en + '</b></p>' +
-                '<div class="btn-group btn-group-justified">' +
-                '<div class="btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left;"><p style="word-break: normal">' + result[x].address_en + '</p></div>' +
-                '<a href="#" onClick="return false;" onClick="return false;" id="timings' + x + '" class="slideLeftRight btn btn-primary" style="border-right: solid 1px rgba(255, 255, 255, 0.63) !important; text-align:left !important;"><p class="text-left"><b>Closed Now</b><img src="/m/en/img/dropdown.png"></p> <span class="text-left"></span></a>' +
-                '<a href="#" onClick="return false;" onClick="return false;" id="pop' + x + '" class="slideLeftRight1 btn btn-primary" style="border-right:0px;"><p><img src="/m/en/img/video.png" style="margin:0 auto;"></p> <span>View Gallery</span></a>' +
-                '</div>' +
-                '<a href="#" id="ordernow' + x + '" class="order_now_gray">Order Now <p>' + result[x].hours_left_to_open + '</p></a>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
+            temp += '<li>'+
+                '<a href="#" class="opener">'+
+                '<div class="image-box gray">'+
+                '<img src="'+ result[x].logo + '">'+
+                '</div>'+
+                '<div class="txt">'+
+                '<h2>' + result[x].name_en + '<span>כשר</span></h2>'+
+                '<p>'+ tagsString +'</p>'+
+                '</div>'+
+                '</a>'+
+                '<div class="slide">'+
+                '<div class="block">'+
+                '<p>'+ result[x].description_en +'</p> '+
+                '</div>'+
+                '<ul class="list">'+
+                '<li>'+
+                '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_en +'</div><span>delivery Fee</span></a>'+
+                '</li>'+
+                '<li>'+
+                '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>Open Now</span>' +result[x].today_timings+ '</a>'+
+                '</li>'+
+                '<li class="last text-center">'+
+                '<a  onclick="openGallery('+ x +')"  data-toggle="modal" data-target="#slider-popup" href="#"><img src="/m/en/img/gallery-img.png"> Gallery</a>'+
+                '</li>'+
+                '</ul>'+
+                '<a href="#" onclick="order_now('+ x +')" class="brn-submit">Order Now</a>'+
+                '</div>'+
+                '</li>';
+
         }
+
+
 
         allRestaurants += temp;
 
-
     }
 
-
-    $("#accordion2").append(allRestaurants);
+    // APPEND AL RESTAURANTS DATA TO FRONT
+    $("#scrollable").append(allRestaurants);
+    initAccordion();
 
 }
 
-// CONVERT ALL RESTAUTANT TAGS TO STRING
 
+// CONVERT ALL RESTAUTANT TAGS TO STRING
 function fromTagsToString (restaurant)
 {
     var tags = "";
@@ -167,14 +162,11 @@ function fromTagsToString (restaurant)
     for (var i=0 ; i < restaurant.tags.length ; i++)
     {
         if ( i == 0)
-
             tags += restaurant.tags[i]['name_en'];
 
         else
-
             tags += ", "+restaurant.tags[i]['name_en'] ;
     }
-
 
     return tags;
 }
@@ -183,22 +175,22 @@ function fromTagsToString (restaurant)
 
 // CLICK LISTENER FOR RESTAURANT (ORDER NOW)
 
-$(document).on('click','.order_now',function() {
+function order_now(clickedRestId) {
 
-
-    // RESTAURANT CLICKED BY USER
-    var clickedRestId = $(this).attr('id').replace('ordernow','');
 
     userObject.restaurantId        = allRestJson[clickedRestId].id;
     userObject.restaurantTitle     = allRestJson[clickedRestId].name_en;
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
     userObject.restaurantAddress   = allRestJson[clickedRestId].address_en;
-
-    minOrderLimit = allRestJson[clickedRestId].min_amount;
+    userObject.restaurantContact   = allRestJson[clickedRestId].contact;
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 
     localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+    localStorage.setItem("SELECTED_REST", JSON.stringify(allRestJson[clickedRestId]));
+
+    minOrderLimit = allRestJson[clickedRestId].min_amount;
+
     localStorage.setItem("min_order_amount", minOrderLimit);
 
 
@@ -208,6 +200,65 @@ $(document).on('click','.order_now',function() {
 
     // MOVING TO ORDER PAGE
     window.location.href = '/m/en/'+selectedCityName+"/"+ restaurantTitle+"/order";
-});
+    //window.location.href = '/m/en/menu-page.html';
+
+};
+
+
+// SET RESTAURANT TIMINGS IN rest-time POPUP
+function openTime(index) {
+
+    var temp = '';
+
+    for (i = 0 ; i < allRestJson[index].timings.length; i++)
+    {
+        temp += '<tr><td>'+allRestJson[index].timings[i].week_en+'</td>'+
+                '<td>'+ allRestJson[index].timings[i].opening_time + ' - ' + allRestJson[index].timings[i].closing_time +'</td></tr>';
+    }
+
+
+    $("#rest-time").html(temp);
+
+}
+
+
+// SET GALLERY IMAGES IN gallery-imgs POPUP
+function openGallery(index) {
+
+    var temp = '';
+    for (var i = 0 ; i < allRestJson[index].gallery.length; i++)
+    {
+        if (i == 0)
+        {
+            temp = '<div class="item active">';
+        }
+        else
+        {
+            temp += '<div class="item">';
+        }
+
+        temp += '<img src="'+ allRestJson[index].gallery[i].url +'" alt="Chania" width="50%">'+
+                '</div>';
+    }
+
+    $("#gallery-imgs").html(temp);
+
+    $('#slider-popup').modal('show');
+}
+
+// SET DELIVERY CHARGES TO discount-pop POPUP
+function openDiscount(index) {
+
+    var temp = ' <span class="add-title">'+ allRestJson[index].address_en +'</span>';
+
+
+    for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
+    {
+        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_en +' : Fee '+ allRestJson[index].delivery_fee[i].fee +' NIS</p>';
+    }
+
+    $("#discount-pop").html(temp);
+
+}
 
 

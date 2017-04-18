@@ -1,20 +1,25 @@
 $(function() {
 
+    var datafromServer1 = [" Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1", " Freshly brewed coffee1"];
+    var darkText2 = [" Coffee1", " Sandwich1", " Coffee1", " Sandwich1", " Coffee1", " Sandwich1", " Coffee1", " Sandwich1", " Coffee1", " Sandwich1"];
+
+
     $(document).on('click','.custom-drop-down',function(e){
 
         if ($('.custom-drop-down-list').is(':visible'))
         {
             $(this).find(".custom-drop-down-list").slideUp(200);
         }
-        else
-        {
+        else {
             $(this).find(".custom-drop-down-list").slideDown(200);
 
-            scrollToError('');
         }
-
         e.stopPropagation();
     });
+
+
+
+
 
 
     function feedDropDown(it) {
@@ -62,7 +67,7 @@ $(function() {
             colcontainer.className = "cci-col-50";
 
             var newRow = i % 2 == 1 || i == 0;
-            colcontainer.appendChild(createCard("/m/en/img/Image2.png", items[i], "75 NIS", datafromServer1[i]));
+            colcontainer.appendChild(createCard("img/Image2.png", items[i], "75 NIS", datafromServer1[i]));
 
             if (newRow) {
                 row = document.createElement("div");
@@ -78,7 +83,24 @@ $(function() {
         }
 
     }
+    /*var card = document.getElementById("cards");
+     var cardsArray = [];
 
+     var colcontainer = document.createElement("div");
+     colcontainer.className = "cci-col-50";
+     var row = "";
+
+     for (i = 0; i < items.length; i++) {
+     var newRow = i % 2 == 1;
+     colcontainer.appendChild(createCard("img/Image.png", items[i], "75 NIS" , datafromServer1[i]));
+
+     if(newRow){
+     row = document.createElement("div")
+     row.className = "cci-row";
+     }
+
+     row.appendChild(colcontainer);
+     } */
 
     function createCard(imgUrl, boldText, badge, dimDetail) {
 
