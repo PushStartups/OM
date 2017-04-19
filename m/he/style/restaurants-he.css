@@ -1,4 +1,9 @@
 @font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
+	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+}
+@font-face {
 	font-family: 'Lobster';
 	src: url('../fonts/lobster/Lobster.woff') format('woff'),
 	url('../fonts/lobster/Lobster.ttf') format('truetype');
@@ -10,7 +15,9 @@ html {box-sizing: border-box;}
 body {
 	margin: 0;
 	color: #fff;
-	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family: 'OpenSansHebrew', serif;
 	min-width: 320px;
 	background:url(../img/bg.png)  no-repeat fixed top center;
 	background-size:cover;
@@ -18,6 +25,7 @@ body {
 	-ms-text-size-adjust: none;
 }
 * {max-height: 1000000px;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 a{
 	text-decoration: none;
 	transition: all 1s;
@@ -53,8 +61,8 @@ a:hover, a:focus {
 	padding: 10px;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 15px;
-	line-height: 28px;
+	font-size: 15pt;
+	line-height: 20pt;
 	color: #fff;
 	height: 48px;
 	-webkit-transition: all 1s;
@@ -151,7 +159,6 @@ a:hover, a:focus {
 	overflow:hidden;
 	font-size: 9pt;
 	line-height: 11pt;
-	font-weight: 300;
 	text-align:left;
 }
 #nav ul li{
@@ -215,7 +222,7 @@ a:hover, a:focus {
 	-moz-border-radius:50%;
 	border-radius: 50%;
 	position: absolute;
-	top:2px;
+	top:-4px;
 	left: 0;
 	content: '';
 }
@@ -228,8 +235,8 @@ a:hover, a:focus {
 	-moz-border-radius:50%;
 	border-radius: 50%;
 	position: absolute;
-	top:2px;
-	left: 5px;
+	top:-4px;
+	left: 0;
 	color: #777c72;
 	font-family: FontAwesome;
 	font-size: 18px;
@@ -244,18 +251,17 @@ a:hover, a:focus {
 .txt{
 	overflow: hidden;
 	padding: 2.3vh 4vw 0 0;
-	font-size: 10pt;
-	line-height: 14pt;
-	font-weight: 400;
+	font-size: 9pt;
+	line-height: 13pt;
+	font-width:300;
 	color: #000;
-	letter-spacing: 0;
+	letter-spacing: 0.4px;
 }
 .txt p{margin: 0;}
 .txt h2{
-	font-size: 16pt;
+	font-size: 15.75pt;
 	line-height: 18pt;
 	margin:  0 0 0.6vh;
-	font-weight: 400;
 }
 .txt h2 span{
 	width:20px;
@@ -378,7 +384,7 @@ a:hover, a:focus {
 	display: table;
 	width: 100%;
 	border-top: 1px solid #fff;
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 9pt;
 	line-height: 12pt;
 }
@@ -409,6 +415,7 @@ a:hover, a:focus {
 .accordion .list li a span{
 	display: block;
 	position: relative;
+	font-weight: normal;
 }
 .accordion .list li a span:after{
 	width: 0;
@@ -437,22 +444,22 @@ a:hover, a:focus {
 }
 .popup-address .frame{
 	overflow: hidden;
-	padding: 18px 10px 28px;
+	padding: 21px 10px 28px;
 	background-image: url("../img/bg-popup.png");
 	background-size: 100%;
 	text-align: center;
 }
 .popup-address .frame h3 {
-	font-size: 16px;
-	line-height:19px;
+	font-size: 12px;
+	line-height:15px;
 	font-weight: 700;
-	margin: 0;
+	margin: 0 0 5px;
 	text-transform: uppercase;
 }
 
 .popup-address .frame h4{
-	font-size: 16px;
-	line-height:19px;
+	font-size: 12px;
+	line-height:15px;
 	font-weight: 400;
 	margin: 0;
 }
@@ -461,22 +468,20 @@ a:hover, a:focus {
 	width: 100%;
 	overflow: hidden;
 	padding:20px 25px 10px;
-	font-size: 14px;
-	line-height: 18px;
-	font-weight: 300;
+	font-size: 12px;
+	line-height: 15px;
 	letter-spacing: 0.2px;
 	color: #797979;
 }
 .popup-address .fee-txt.add{text-align: right;}
-.popup-address .fee-txt p{margin: 0 0 15px;}
+.popup-address .fee-txt p{margin: 0 0 10px;}
 .fee-txt.add .add-title{
 	display: block;
-	font-size: 14px;
-	line-height: 18px;
-	font-weight: 600;
+	font-size: 13px;
+	line-height: 15px;
 	border-bottom: 1px solid #979797;
-	padding: 0 0 15px;
-	margin: 0 0 15px;
+	padding: 0 0 10px;
+	margin: 0 0 10px;
 }
 
 .modal {
@@ -542,15 +547,14 @@ a:hover, a:focus {
 	border-collapse: collapse;
 	display: table;
 	margin: 10px 0;
-	font-size: 11pt;
-	line-height: 13pt;
-	font-weight: 300;
-	letter-spacing: 0.2px;
+	font-size: 9pt;
+	line-height: 10pt;
+	letter-spacing: 0.4px;
 	color: #797979;
 	text-align: right;
 }
 .time-table td{
 	display: table-cell;
 	vertical-align: top;
-	padding:1vh 4vh;
+	padding:5px 4vh;
 }

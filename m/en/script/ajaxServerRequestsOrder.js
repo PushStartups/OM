@@ -1590,6 +1590,15 @@ function  callPage3() {
 function callPage3CallBack(response) {
 
 
+    try
+    {
+        app.orderNowEvent();
+    }
+    catch (err)
+    {
+
+    }
+
     var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
     var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
     selectedCityName        =   selectedCityName.replace(/\s/g, '');

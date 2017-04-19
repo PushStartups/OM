@@ -6,7 +6,7 @@ html {box-sizing: border-box;}
 body {
 	background-color: #fff;
 	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
-	background: url('/en/img/restaurants-bg.png') center center no-repeat;
+	background: url('/en/img/feedback-bg.png') center center no-repeat;
 	position: relative;
 	overflow: hidden;
 	min-width: 1024px;

@@ -1,4 +1,9 @@
 @font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
+	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+}
+@font-face {
 	font-family: 'Lobster';
 	src: url('../fonts/lobster/Lobster.woff') format('woff'),
 	url('../fonts/lobster/Lobster.ttf') format('truetype');
@@ -11,12 +16,15 @@ html {box-sizing: border-box;}
 body {
 	margin: 0;
 	color: #fff;
-	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family: 'OpenSansHebrew', serif;
 	min-width: 320px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
 }
 * {max-height: 1000000px;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 article,
 aside,
 details,
@@ -50,7 +58,7 @@ a:hover, a:focus {
 input,
 textarea,
 select {
-	font: Arial, Helvetica, sans-serif;
+	font-family: 'OpenSansHebrew', serif;
 	color: #000;
 	vertical-align: middle;
 }
@@ -199,10 +207,8 @@ button {
 	margin:0;
 	list-style:none;
 	overflow:hidden;
-	font-family: 'HelveticaNeue';
-	font-size: 10pt;
-	line-height: 12pt;
-	font-weight: 300;
+	font-size: 9pt;
+	line-height: 11pt;
 	text-align:left;
 }
 #nav ul li{
@@ -215,7 +221,7 @@ button {
 	color: #fff;
 }
 #nav ul li a.active{
-	padding: 6px 6px 6px;
+	padding: 3px;
 	border-radius:4px;
 	border:1px solid #fff;
 }
@@ -276,8 +282,8 @@ button {
 .form .dropdown ul{
 	padding:11px 25px;
 	text-align:left;
-	font-size:24px;
-	line-height:27px;
+	font-size:15px;
+	line-height:20px;
 }
 .form .dropdown ul li{border-bottom:1px solid #ccc;}
 .form .dropdown ul li a{
@@ -297,7 +303,7 @@ button {
 	transition: all 1s;
 	padding:12px;
 	height:50px;
-	font-size:18px;
+	font-size:15px;
 	line-height:25px;
 	text-align:center;
 	border-radius:0 0 10px 10px;
@@ -334,7 +340,7 @@ button {
 	background:none;
 	border:none;
 	padding:12px;
-	font-size:18px;
+	font-size:15px;
 	line-height:25px;
 	text-align:center;
 	color:#000;

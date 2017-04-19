@@ -195,6 +195,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="script/bootstrap.min.js"></script>
 <script src="script/script.js"> </script>
 <script src="/m/en/script/ajaxServerRequestsIndex.js"></script>
@@ -253,12 +254,21 @@
     }
 
 
-        function redirectToHE() {
+    function redirectToHE() {
 
-            localStorage.setItem("USER_LANGUAGE", 'HE');
-            window.location.href = 'https://'+window.location.hostname;
+        localStorage.setItem("USER_LANGUAGE", 'HE');
+        window.location.href = 'https://'+window.location.hostname;
 
-        }
+    }
+
+
+//
+//    $( window ).on( "orientationchange", function(event) {
+//
+//        alert(event.orientation);
+//
+//    });
+//
 
 </script>
 

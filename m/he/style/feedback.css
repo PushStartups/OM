@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
+	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Lobster';
+	src: url('../fonts/lobster/Lobster.woff') format('woff'),
+	url('../fonts/lobster/Lobster.ttf') format('truetype');
+}
 html,  body {
   height: 100%;
   overflow:hidden;
@@ -11,7 +21,9 @@ body {
 	min-width: 320px;
 	height: 100%;
 	background-color: #fff;
-	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family: 'OpenSansHebrew', serif;
 	background: url('../img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	background-size: cover;
@@ -21,6 +33,7 @@ body {
 }
 
 * {max-height: 1000000px;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 article,
 aside,
 details,
@@ -51,7 +64,7 @@ a:hover, a:focus {
 input,
 textarea,
 select {
-	font: Arial, Helvetica, sans-serif;
+	font-family: 'OpenSansHebrew', serif;
 	color: #000;
 	vertical-align: middle;
 }
@@ -233,9 +246,8 @@ button {
 }
 .section h2,
 .first-section h1{
-	font-size: 33px;
-	line-height:40px;
-	font-weight: 400;
+	font-size: 23px;
+	line-height:32px;
 	font-style: normal;
 	color: #fff;
 	margin:0;

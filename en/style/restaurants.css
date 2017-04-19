@@ -19,7 +19,7 @@ html, body {
 body {
     font-family: HelveticaNeue !important;
     letter-spacing: 1.5px;
-    background-image: url("/en/img/restaurants-bg.png");
+    background-image: url("/en/img/feedback-bg.png");
     background-size: cover; /* <------ */
     background-repeat: no-repeat;
     background-position: center center;

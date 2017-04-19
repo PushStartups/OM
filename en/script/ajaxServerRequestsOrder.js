@@ -560,21 +560,20 @@ function updatedSelectedItemPrice() {
     {
         for (var key in oneTypeSubItems[y])
         {
+            if(oneTypeSubItems[y][key] != null) {
+                // ITEM PRICE DEPENDS ON SUB ITEM CHOICE
+                // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
 
-            // ITEM PRICE DEPENDS ON SUB ITEM CHOICE
-            // REPLACE THE ORDER AMOUNT IF AMOUNT NEED TO BE REPLACE DUE TO EXTRA TYPE ONE REPLACE PRICE
+                if (convertFloat(oneTypeSubItems[y][key].replace_price) == 0) {
 
-            if (convertFloat(oneTypeSubItems[y][key].replace_price) == 0)
-            {
+                    sum = convertFloat(sum) + convertFloat(oneTypeSubItems[y][key].subItemPrice);
+                }
+                else {
+                    replace = oneTypeSubItems[y][key].subItemPrice;
 
-                sum    = convertFloat(sum) + convertFloat(oneTypeSubItems[y][key].subItemPrice);
+                }
+
             }
-            else
-            {
-                replace =  oneTypeSubItems[y][key].subItemPrice;
-
-            }
-
         }
     }
 
