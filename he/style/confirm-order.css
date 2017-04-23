@@ -779,6 +779,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	color: #000;
 	text-align: left;
 }
+.minimum-item.add h3{text-align: right;}
 #sidebar{
 	overflow: hidden;
 	padding: 40px 35px;

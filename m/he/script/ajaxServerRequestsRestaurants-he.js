@@ -259,7 +259,7 @@ function openDiscount(index) {
 
     for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
     {
-        temp += '<p>'+' ש״ח '+ allRestJson[index].delivery_fee[i].fee +' : '+ allRestJson[index].delivery_fee[i].area_he +'</p>';
+        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_he +" : "+ allRestJson[index].delivery_fee[i].fee +' ש״ח '+'</p>';
     }
 
     $("#discount-pop").html(temp);

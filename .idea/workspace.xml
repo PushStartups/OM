@@ -1,97 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/font.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew-Light.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew.woff" />
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/japan/okaga.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/index.html" afterPath="$PROJECT_DIR$/en/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/order.html" afterPath="$PROJECT_DIR$/en/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/restaurants.html" afterPath="$PROJECT_DIR$/en/restaurants.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/confirm-order.html" afterPath="$PROJECT_DIR$/he/confirm-order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/index.html" afterPath="$PROJECT_DIR$/he/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/order.html" afterPath="$PROJECT_DIR$/he/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/restaurants.html" afterPath="$PROJECT_DIR$/he/restaurants.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/style/confirm-order.css" afterPath="$PROJECT_DIR$/he/style/confirm-order.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" afterPath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -132,9 +55,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/m/en/style/dropdown.css" />
-        <option value="$PROJECT_DIR$/m/en/script/dropdown.js" />
-        <option value="$PROJECT_DIR$/en/complete-order.html" />
         <option value="$PROJECT_DIR$/cc.php" />
         <option value="$PROJECT_DIR$/m/en/style/feedback.css" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
@@ -144,15 +64,10 @@
         <option value="$PROJECT_DIR$/m/he/style/index-he.css" />
         <option value="$PROJECT_DIR$/m/he/script/dropdown.js" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsIndex.js" />
-        <option value="$PROJECT_DIR$/he/index.html" />
         <option value="$PROJECT_DIR$/printer.php" />
         <option value="$PROJECT_DIR$/he/script/script.js" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
-        <option value="$PROJECT_DIR$/he/order.html" />
-        <option value="$PROJECT_DIR$/he/confirm-order.html" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
-        <option value="$PROJECT_DIR$/en/index.html" />
-        <option value="$PROJECT_DIR$/en/confirm-order.html" />
         <option value="$PROJECT_DIR$/en/style/rest-list-new.css" />
         <option value="$PROJECT_DIR$/en/style/choose-menu.css" />
         <option value="$PROJECT_DIR$/en/style/confirm-order.css" />
@@ -180,9 +95,17 @@
         <option value="$PROJECT_DIR$/m/he/order.html" />
         <option value="$PROJECT_DIR$/restapi/index.php" />
         <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" />
-        <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" />
+        <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" />
+        <option value="$PROJECT_DIR$/he/index.html" />
+        <option value="$PROJECT_DIR$/he/restaurants.html" />
+        <option value="$PROJECT_DIR$/he/order.html" />
+        <option value="$PROJECT_DIR$/he/confirm-order.html" />
+        <option value="$PROJECT_DIR$/en/index.html" />
+        <option value="$PROJECT_DIR$/en/order.html" />
+        <option value="$PROJECT_DIR$/en/restaurants.html" />
+        <option value="$PROJECT_DIR$/en/confirm-order.html" />
       </list>
     </option>
   </component>
@@ -263,7 +186,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
+              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -812,14 +735,7 @@
       <workItem from="1492666529845" duration="25434000" />
       <workItem from="1492760012474" duration="13424000" />
       <workItem from="1492881280115" duration="10617000" />
-      <workItem from="1492918958186" duration="13940000" />
-    </task>
-    <task id="LOCAL-00033" summary="Final Update Desktop And Mobile Client">
-      <created>1490109058624</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1490109058624</updated>
+      <workItem from="1492918958186" duration="16406000" />
     </task>
     <task id="LOCAL-00034" summary="Final Update Desktop And Mobile Client">
       <created>1490110732679</created>
@@ -1157,11 +1073,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492935244107</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="23 April Update Staging (Build 1.0)&#10;&#10;fonts update&#10;">
+      <created>1492935784998</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1492935784999</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607681000" />
+    <option name="totallyTimeSpent" value="610147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1253,7 +1176,8 @@
     <MESSAGE value="Mobile EN / HE Complete &#10;DB Update&#10;DESKTOP EN / HE Complete" />
     <MESSAGE value="23 April Update Staging (Build 1.0)" />
     <MESSAGE value="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;" />
+    <MESSAGE value="23 April Update Staging (Build 1.0)&#10;&#10;fonts update&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="23 April Update Staging (Build 1.0)&#10;&#10;fonts update&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1266,60 +1190,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/he/script/jquery.accordion.without.click.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/he/confirm-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="159" column="81" selection-start-line="159" selection-start-column="81" selection-end-line="159" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsIndex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/commonAjaxCall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="94" selection-end-column="190" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/img/feedback-bg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/confirm-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/complete-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9741">
@@ -1375,13 +1245,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/he/complete-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1469,19 +1332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/feedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -1544,31 +1394,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/he/restaurants.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3311">
-          <caret line="222" column="7" selection-start-line="222" selection-start-column="7" selection-end-line="222" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="108" column="55" selection-start-line="108" selection-start-column="55" selection-end-line="108" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/he/restaurants.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1877,26 +1706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="135" column="114" selection-start-line="135" selection-start-column="114" selection-end-line="135" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="140" column="110" selection-start-line="140" selection-start-column="110" selection-end-line="140" selection-end-column="110" />
           <folding />
         </state>
       </provider>
@@ -1934,6 +1747,120 @@
             <marker date="1492934856000" expanded="true" signature="9555:9574" ph="..." />
             <marker date="1492934856000" expanded="true" signature="10063:10082" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/he/restaurants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="158" column="71" selection-start-line="158" selection-start-column="59" selection-end-line="158" selection-end-column="71" />
+          <folding>
+            <element signature="n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="261" column="70" selection-start-line="261" selection-start-column="70" selection-end-line="261" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1322">
+          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/confirm-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="891" column="72" selection-start-line="891" selection-start-column="72" selection-end-line="891" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="965">
+          <caret line="514" column="9" selection-start-line="514" selection-start-column="9" selection-end-line="514" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/restaurants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="965">
+          <caret line="309" column="9" selection-start-line="309" selection-start-column="9" selection-end-line="309" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="248" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/complete-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="866">
+          <caret line="274" column="0" selection-start-line="274" selection-start-column="0" selection-end-line="278" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/complete-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/confirm-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="823" column="72" selection-start-line="823" selection-start-column="72" selection-end-line="823" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/restaurants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="951">
+          <caret line="303" column="9" selection-start-line="303" selection-start-column="9" selection-end-line="303" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="951">
+          <caret line="517" column="9" selection-start-line="517" selection-start-column="9" selection-end-line="517" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
