@@ -89,7 +89,7 @@ function  getAllRestaurants(response)
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if  (true) //(result[x].availability)
+        if  (result[x].availability) //(result[x].availability)
              {
 
             temp +=
