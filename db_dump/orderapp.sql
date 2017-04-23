@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2017 at 09:37 AM
+-- Generation Time: Apr 23, 2017 at 10:51 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -286,10 +286,10 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (123, 14, 'Sides', 'תוספות בצד', '/m/en/img/categories/pizzaland/SIDES.png', 224),
 (125, 14, 'DRINKS - INDIVIDUAL', 'שתיה - קטנה', '/m/en/img/categories/pizzaland/DRINK-INDIVIDUAL.png', 227),
 (126, 14, 'DRINKS - FAMILY SIZED', ' שתיה- גדולה', '/m/en/img/categories/pizzaland/DRINK-FAMILY SIZE.png', 228),
-(131, 15, 'Deals', 'דילים', '', 231),
-(132, 15, 'Burgers', 'בורגרים', '', 232),
-(133, 15, 'Sides', 'תוספות ליד', '', 233),
-(134, 15, 'Drinks', 'שתייה', '', 236),
+(131, 15, 'Deals', 'דילים', '/m/en/img/categories/burger110/DEALS.png', 231),
+(132, 15, 'Burgers', 'בורגרים', '/m/en/img/categories/burger110/BURGERS.png', 232),
+(133, 15, 'Sides', 'תוספות ליד', '/m/en/img/categories/burger110/SIDES.png', 233),
+(134, 15, 'Drinks', 'שתייה', '/m/en/img/categories/burger110/DRINKS.png', 236),
 (161, 16, 'STARTERS', 'מנות פתיחה', '/m/en/img/categories/atza/STARTERS.jpg', 261),
 (162, 16, 'FIRST COURSE ', ' מנות ראשונות', '/m/en/img/categories/atza/FIRST COURSE.jpg', 262),
 (163, 16, 'ATZA SOUPS ', 'מרקי אצה', '/m/en/img/categories/atza/ATZA SOUPS.jpg', 263),
@@ -620,7 +620,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7184 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7189 ;
 
 --
 -- Dumping data for table `extras`
@@ -1476,7 +1476,7 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (6003, 1626, 'Size', 'One', 1, 'גודל', 848),
 (6004, 1630, 'Size', 'One', 1, 'גודל', 848),
 (6005, 1646, 'vegetarian addons', 'Multiple', 0, 'תוספות צמחוניות (שדה חובה)', 848),
-(6006, 1647, 'Fish', 'One', 0, 'דג (שדה חובה)', 848),
+(6006, 1647, 'Fish', 'One', 1, 'דג (שדה חובה)', 848),
 (6007, 1651, 'Fish', 'One', 1, 'דג (שדה חובה)', 848),
 (6008, 1651, 'vegetarian addons', 'Multiple', 0, 'תוספות צמחוניות (שדה חובה)', 848),
 (6009, 1652, 'vegetarian addons', 'Multiple', 0, 'תוספות צמחוניות (שדה חובה)', 848),
@@ -1682,7 +1682,12 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (7180, 1764, 'Sauces', 'Multiple', 0, 'רטבים', 1180),
 (7181, 1765, 'Sauces', 'Multiple', 0, 'רטבים', 1181),
 (7182, 1766, 'Soft Drinks', 'Multiple', 0, 'שתיה קלה', 1182),
-(7183, 1767, 'Soft Drinks', 'Multiple', 0, 'שתיה קלה', 1183);
+(7183, 1767, 'Soft Drinks', 'Multiple', 0, 'שתיה קלה', 1183),
+(7184, 1778, 'Addons', 'Multiple', 0, 'תוספות', 1184),
+(7185, 1779, 'Addons', 'Multiple', 0, 'תוספות', 1185),
+(7186, 1780, 'Addons', 'Multiple', 0, 'תוספות', 1186),
+(7187, 1781, 'Addons', 'Multiple', 0, 'תוספות', 1187),
+(7188, 1782, 'Addons', 'Multiple', 0, 'תוספות', 1188);
 
 -- --------------------------------------------------------
 
@@ -1822,7 +1827,6 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (80, 18, 'Cauliflower Tahini', 'כרובית בטחינה', 'With sweet chili', 'בליווי צ''ילי מתוק', 26, 179),
 (81, 18, 'Sourdough Bread And Four Homemade Dips', 'לחם מחמצת וארבעה מטבלי הבית', '', '', 18, 180),
 (83, 18, 'Sweet Potato Fries With A Touch Of Maple', 'צ''יפס בטטה בנגיעות מייפל', '', '', 18, 182),
-(84, 18, 'Soup Of The Day', 'מרק היום- שאל את הטלפן', '', '', 22, 183),
 (85, 18, 'Tempura Chicken Fillet', 'פילה עוף טמפורה', 'Drizzled with sweet chili', 'על מצע צ''ילי מתוק', 28, 184),
 (86, 18, 'Stir Fried Mushrooms', 'פטריות מוקפצות', 'Portobello Mushrooms and teriyaki sauce', 'שמפיניון ופורטובלו ברוטב טריאקי', 33, 185),
 (87, 19, 'Sandwich Chicken', 'סנדוויץ'' עוף', 'Chicken strips grilled with fried onion spread with guacamole and roasted peppers', 'נתחי עוף בגריל עם בצל מטוגן, ממרח גוואקאמולי ופלפל קלוי', 43, 186),
@@ -2823,7 +2827,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `contact`, `min_amount`, 
 (1, 'Angus', 'אנגוס', '97225609533', 50, 1, 0, '/m/en/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
 (2, 'Meshulashim', 'פיצה משולשים', '97225609532', 50, 1, 0, '/m/en/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
 (3, 'Bandora', 'בנדורה', '972772200051', 50, 1, 0, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
-(4, 'Roza', 'רוזה', '97225609527', 50, 1, 0, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
+(4, 'Roza', 'רוזה', '97225609527', 50, 1, 0, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Canion Big Fashion Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
 (5, 'Japan Japan', 'ג''אפן ג''אפן', '97225609531', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
 (6, 'OSHI OSHI', 'אושי אושי', '972772201290', 50, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (7, 'Greg Cafe', 'קפה גרג', '97225609534', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'קפה גרג יצר לעצמו מוניטין בתור בית קפה המגיש אוכל חלבי איכותי וקפה מצויין. לקפה גרג תפריט עשיר מאוד שבמרכזו ארוחת בוקר טעימה, עשירה ומפנקת. הרשת לא קופאת על שמריה לרגע, ומקפידה לחדש, להתחדש ולרגש את קהל לקוחותיה ע"י השקת תפריט חדש, מגוון ואקלקטי מדי שנה, המשלב ארוחות מכל העולם וממטבחים מגוונים ביניהם מטבח איטלקי, אסייתי, אמריקאי, בלקני, שוויצרי, מקסיקני, ספרדי וכמובן - ישראלי. כמו כן, בית הקפה מציע מנות טבעוניות בריאות וטעימות. ', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
@@ -2834,8 +2838,8 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `contact`, `min_amount`, 
 (12, 'Aroma', 'ארומה', '', 50, 1, 0, '/m/en/img/aroma_logo.png', 'Simply the best coffee in town. Coupled with food freshly prepared as you wait. Sandwiches, salads, breakfasts, pastries. If you don''t like coffee, there''s plent of other drinks, hot and cold, on offer. Now you can have this deliciousness delivered to your home. ', 'פשוט הקפה הטוב ביותר בעיר, יחד עם אוכל מוכן טרי במקום. סנדוויצ''ים, סלטים, ארוחות בוקר, מאפים. אם אתם לא אוהבים קפה, ישנו מגוון רחב של משקאות אחרים, חמים וקרים. כעט תכלו לקבל כל זאת ישירות לביתכם. ', 'Big Center, Yigal Allon 5, Beit Shemesh', '  מרכז ביג, יגאל אלון 5, בית שמש', 'KOSHER MEHADRIN', 'כשר למהדרין'),
 (13, 'Pinati', 'פינתי', '', 50, 1, 0, '/m/en/img/pinati_logo.png', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
 (14, 'Pizzaland', 'פיצה לנד', '97225609526', 50, 1, 0, '/m/en/img/pizzaland_logo.png', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
-(15, '110 Burger', '110 בורגר', '', 50, 1, 1, '/m/en/img/110_burger_logo.png', '110 Burger is new, revolutionary and groundbreaking brand in the fast food industry, the next generation of fast food. With a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables and vegetarian-friendly menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product, which adheres to the standard of gourmet restaurants.', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food בישראל. 110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
-(16, 'Atza Sushi Bar', 'אצה סושי בר', '', 50, 1, 1, '/m/en/img/atza_logo.png', 'Atza serves Pan-Asian style food, with influences of Eastern Asian cuisine and a varied menu where you can enjoy dozens of delicious dishes. You can choose from meat, chicken, fish and tofu dishes, not to mention a huge sushi menu.', 'המנות של אצה הן בסגנון פאן-אסייתי.  אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת אצה תפריט מגוון בו תוכלו להינות  ממנות שונות. תוכלו לבחור מבין כסוגי מנות בשרים וסוגי מנות עוף, בקר, דגים וטופו. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Big Center, Yigal Allon 1, Beit Shemesh', '  מרכז ביג, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
+(15, '110 Burger', '110 בורגר', '', 50, 1, 0, '/m/en/img/110_burger_logo.png', '110 Burger is new, revolutionary and groundbreaking brand in the fast food industry, the next generation of fast food. With a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables and vegetarian-friendly menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product, which adheres to the standard of gourmet restaurants.', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food בישראל. 110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
+(16, 'Atza Sushi Bar', 'אצה סושי בר', '', 50, 1, 0, '/m/en/img/atza_logo.png', 'Atza serves Pan-Asian style food, with influences of Eastern Asian cuisine and a varied menu where you can enjoy dozens of delicious dishes. You can choose from meat, chicken, fish and tofu dishes, not to mention a huge sushi menu.', 'המנות של אצה הן בסגנון פאן-אסייתי.  אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת אצה תפריט מגוון בו תוכלו להינות  ממנות שונות. תוכלו לבחור מבין כסוגי מנות בשרים וסוגי מנות עוף, בקר, דגים וטופו. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Big Center, Yigal Allon 1, Beit Shemesh', '  מרכז ביג, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
 (17, 'GRILL BURGER', 'גריל בורגר', '', 50, 1, 0, '/m/en/img/grill_burger_logo.png', 'Grill Burger is rightly the most popular burger restaurant in the Rama, with great food at the best prices. Now you can enjoy their delicious food at home. Choose from a varied menu of burgers and seasoned meats in baguettes, whole wheat rolls or ciabattas with your favorite toppings. Don''t forget to order sides of fries and other extras! For the health conscious, there is a selection of fresh salads with and without meat or chicken. ', 'גריל בורגר, מסעדת המבורגרים הממוקמת בבית שמש, במסעדה תפריט בשרי עשיר. גריל בורגר מסעדה כשרה בהשגחת הרבנות ובהשגחת הרב ראובן. שירות מקצועי, אוכל טרי נקי וטעים!', '2 Nahal Tse''elim Ave, Ramat Beit Shemesh ', 'נחל צאלים 2 רמת בית שמש', 'Badatz Rav Rubin', 'בד''''ץ  רב רובין');
 
 -- --------------------------------------------------------
@@ -3019,7 +3023,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18218 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18243 ;
 
 --
 -- Dumping data for table `subitems`
@@ -3341,7 +3345,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (358, 65, 'Vegan Cheese', 'גבינה טבעונית', 10, 457),
 (360, 67, 'Penne', 'פנה', 0, 459),
 (361, 67, 'Linguine', 'לינגוויני', 0, 460),
-(362, 67, 'Fettuccine', 'לינגוויני', 0, 461),
+(362, 67, 'Fettuccine', 'פטוצ׳יני', 0, 461),
 (363, 68, 'Onions', 'בצל', 5, 462),
 (364, 68, 'Mushrooms', 'פטריות', 5, 463),
 (365, 68, 'Olives', 'זיתים', 5, 464),
@@ -3350,7 +3354,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (368, 68, 'Vegan Cheese', 'גבינה טבעונית', 10, 467),
 (370, 70, 'Penne', 'פנה', 0, 469),
 (371, 70, 'Linguine', 'לינגוויני', 0, 470),
-(372, 70, 'Fettuccine', 'לינגוויני', 0, 471),
+(372, 70, 'Fettuccine', 'פטוצ׳יני', 0, 471),
 (373, 71, 'Onions', 'בצל', 5, 472),
 (374, 71, 'Mushrooms', 'פטריות', 5, 473),
 (375, 71, 'Olives', 'זיתים', 5, 474),
@@ -3359,7 +3363,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (378, 71, 'Vegan Cheese', 'גבינה טבעונית', 10, 477),
 (380, 73, 'Penne', 'פנה', 0, 479),
 (381, 73, 'Linguine', 'לינגוויני', 0, 480),
-(382, 73, 'Fettuccine', 'לינגוויני', 0, 481),
+(382, 73, 'Fettuccine', 'פטוצ׳יני', 0, 481),
 (383, 74, 'Onions', 'בצל', 5, 482),
 (384, 74, 'Mushrooms', 'פטריות', 5, 483),
 (385, 74, 'Olives', 'זיתים', 5, 484),
@@ -3368,7 +3372,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (388, 74, 'Vegan Cheese', 'גבינה טבעונית', 10, 487),
 (390, 76, 'Penne', 'פנה', 0, 489),
 (391, 76, 'Linguine', 'לינגוויני', 0, 490),
-(392, 76, 'Fettuccine', 'לינגוויני', 0, 491),
+(392, 76, 'Fettuccine', 'פטוצ׳יני', 0, 491),
 (393, 77, 'Onions', 'בצל', 5, 492),
 (394, 77, 'Mushrooms', 'פטריות', 5, 493),
 (395, 77, 'Olives', 'זיתים', 5, 494),
@@ -3377,7 +3381,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (398, 77, 'Vegan Cheese', 'גבינה טבעונית', 10, 497),
 (400, 79, 'Penne', 'פנה', 0, 499),
 (401, 79, 'Linguine', 'לינגוויני', 0, 500),
-(402, 79, 'Fettuccine', 'לינגוויני', 0, 501),
+(402, 79, 'Fettuccine', 'פטוצ׳יני', 0, 501),
 (445, 105, 'Pita', 'פיתה', 33, 544),
 (446, 105, 'Baguette', 'בגט', 39, 545),
 (447, 105, 'Laffa', 'לאפה', 39, 546),
@@ -3947,9 +3951,9 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (1014, 263, 'Wasabi', 'וואסבי', 0, 1113),
 (1015, 264, 'Soya', 'סויה', 0, 1114),
 (1016, 264, 'Teriyaki', 'טריאקי', 0, 1115),
-(1017, 264, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1116);
+(1017, 264, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1116),
+(1018, 264, 'Ginger', 'ג''ינג''ר', 0, 1117);
 INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
-(1018, 264, 'Ginger', 'ג''ינג''ר', 0, 1117),
 (1019, 264, 'Wasabi', 'וואסבי', 0, 1118),
 (1020, 265, 'Soya', 'סויה', 0, 1119),
 (1021, 265, 'Teriyaki', 'טריאקי', 0, 1120),
@@ -4796,9 +4800,9 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (2827, 584, 'Ginger', 'ג''ינג''ר', 0, 1937),
 (2828, 584, 'Wasabi', 'וואסבי', 0, 1938),
 (2829, 585, 'Soya', 'סויה', 0, 1939),
-(2830, 585, 'Teriyaki', 'טריאקי', 0, 1940);
+(2830, 585, 'Teriyaki', 'טריאקי', 0, 1940),
+(2831, 585, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1941);
 INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
-(2831, 585, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 1941),
 (2832, 585, 'Ginger', 'ג''ינג''ר', 0, 1942),
 (2833, 585, 'Wasabi', 'וואסבי', 0, 1943),
 (2834, 586, 'Soya', 'סויה', 0, 1944),
@@ -5768,9 +5772,9 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (3808, 696, 'BBQ sauce', 'BBQ רוטב', 0, 0),
 (3809, 696, '1000 Island', 'אלף האיים', 0, 0),
 (3810, 696, 'Garlic mayonnaise', 'שום מיונז', 0, 0),
-(3811, 696, 'Sweet Chili', 'צ''ילי מתוק', 0, 0);
+(3811, 696, 'Sweet Chili', 'צ''ילי מתוק', 0, 0),
+(3812, 696, 'Spicy Chili', 'צ''ילי חריף', 0, 0);
 INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
-(3812, 696, 'Spicy Chili', 'צ''ילי חריף', 0, 0),
 (3813, 696, 'Olive oil and lemon dressing', 'שמן זית לימון', 0, 0),
 (3814, 696, 'Mayonnaise', 'מיונז', 0, 0),
 (3815, 697, 'Tehina', 'טחינה', 0, 0),
@@ -6583,9 +6587,9 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (12761, 1324, '3%', '3%', 0, 2989),
 (12762, 1324, 'Soya', 'סויה', 0, 2990),
 (12763, 1325, '1%', '1%', 0, 2991),
-(12764, 1325, '3%', '3%', 0, 2992);
+(12764, 1325, '3%', '3%', 0, 2992),
+(12765, 1325, 'Soya', 'סויה', 0, 2993);
 INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
-(12765, 1325, 'Soya', 'סויה', 0, 2993),
 (12766, 1326, 'Peach', 'אפרסק', 0, 2994),
 (12767, 1326, 'Grapes', 'ענבים', 0, 2995),
 (12768, 1326, 'Apple', 'תפוח', 0, 2996),
@@ -8918,7 +8922,32 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (18214, 7183, 'Prigat Grape - can', 'פריגת ענבים - פחית', 0, 8214),
 (18215, 7183, 'Diet Coke - can', 'דיאט קולה - פחית', 0, 8215),
 (18216, 7183, 'Fanta - can', 'פאנטה - פחית', 0, 8216),
-(18217, 7183, 'Ice tea', 'אייס תה', 0, 8217);
+(18217, 7183, 'Ice tea', 'אייס תה', 0, 8217),
+(18218, 7184, 'Soya', 'סויה', 0, 8218),
+(18219, 7184, 'Wasabi', 'וואסבי', 0, 8219),
+(18220, 7184, 'Ginger', 'ג''ינג''ר', 0, 8220),
+(18221, 7184, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 8221),
+(18222, 7184, 'Teriyaki', 'טריאקי', 0, 8222),
+(18223, 7185, 'Soya', 'סויה', 0, 8223),
+(18224, 7185, 'Wasabi', 'וואסבי', 0, 8224),
+(18225, 7185, 'Ginger', 'ג''ינג''ר', 0, 8225),
+(18226, 7185, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 8226),
+(18227, 7185, 'Teriyaki', 'טריאקי', 0, 8227),
+(18228, 7186, 'Soya', 'סויה', 0, 8228),
+(18229, 7186, 'Wasabi', 'וואסבי', 0, 8229),
+(18230, 7186, 'Ginger', 'ג''ינג''ר', 0, 8230),
+(18231, 7186, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 8231),
+(18232, 7186, 'Teriyaki', 'טריאקי', 0, 8232),
+(18233, 7187, 'Soya', 'סויה', 0, 8233),
+(18234, 7187, 'Wasabi', 'וואסבי', 0, 8234),
+(18235, 7187, 'Ginger', 'ג''ינג''ר', 0, 8235),
+(18236, 7187, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 8236),
+(18237, 7187, 'Teriyaki', 'טריאקי', 0, 8237),
+(18238, 7188, 'Soya', 'סויה', 0, 8238),
+(18239, 7188, 'Wasabi', 'וואסבי', 0, 8239),
+(18240, 7188, 'Ginger', 'ג''ינג''ר', 0, 8240),
+(18241, 7188, 'Spicy Mayonnaise', 'ספייסי מיונז', 0, 8241),
+(18242, 7188, 'Teriyaki', 'טריאקי', 0, 8242);
 
 -- --------------------------------------------------------
 

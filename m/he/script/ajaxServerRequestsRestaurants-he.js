@@ -163,7 +163,7 @@ function  getAllRestaurants(response)
 // CONVERT ALL RESTAUTANT TAGS TO STRING
 function fromTagsToString (restaurant)
 {
-    var tags = "";
+    var tags = restaurant.hechsher_he+"</br>";
 
     for (var i=0 ; i < restaurant.tags.length ; i++)
     {
