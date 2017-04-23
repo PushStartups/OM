@@ -1063,7 +1063,11 @@
 
         if($(this).is(":checked")) {
 
+            setTimeout(function(){
 
+                $('.box-frame.new').scrollTop(800);
+
+            }, 500);
             $('#delivery-info').addClass('show');
             $('#checkbox-id112').prop('checked', false);
         }

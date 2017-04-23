@@ -1403,6 +1403,12 @@ function checkCouponCallBack(response)
 
 function selectCC() {
 
+    setTimeout(function(){
+
+        $('.box-frame.new').scrollTop(800);
+
+    }, 500);
+
     $('#cashBtn').removeClass('active');
     $('#ccBtn').addClass('active');
     $('#show_credit_card').addClass('show');
