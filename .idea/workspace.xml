@@ -1,10 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew-Light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/Hebrew/OpenSansHebrew.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/font.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-bolditalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-extrabolditalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-lightitalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/OpenSansHebrew-master/opensanshebrew-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-bolditalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-extrabolditalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-lightitalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/he/fonts/OpenSans/opensanshebrew-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew-Light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/he/fonts/Hebrew/OpenSansHebrew.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -725,14 +812,7 @@
       <workItem from="1492666529845" duration="25434000" />
       <workItem from="1492760012474" duration="13424000" />
       <workItem from="1492881280115" duration="10617000" />
-      <workItem from="1492918958186" duration="13394000" />
-    </task>
-    <task id="LOCAL-00032" summary="Final Update Desktop And Mobile Client">
-      <created>1490108593402</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1490108593402</updated>
+      <workItem from="1492918958186" duration="13940000" />
     </task>
     <task id="LOCAL-00033" summary="Final Update Desktop And Mobile Client">
       <created>1490109058624</created>
@@ -1070,11 +1150,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492934423284</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;">
+      <created>1492935244107</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1492935244107</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607135000" />
+    <option name="totallyTimeSpent" value="607681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1165,7 +1252,8 @@
     <MESSAGE value="Mobile EN / HE Complete &#10;DB Update" />
     <MESSAGE value="Mobile EN / HE Complete &#10;DB Update&#10;DESKTOP EN / HE Complete" />
     <MESSAGE value="23 April Update Staging (Build 1.0)" />
-    <option name="LAST_COMMIT_MESSAGE" value="23 April Update Staging (Build 1.0)" />
+    <MESSAGE value="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
