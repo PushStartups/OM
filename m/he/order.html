@@ -623,13 +623,13 @@
                                                     <div class="col-xs-10">
                                                         <div class="row no-gutters">
                                                             <div class="col-xs-5">
-                                                                <input class="left-field" placeholder="MM" id="month" type="number" size="2" data-stripe="exp_month">
+                                                                <input class="left-field" placeholder="MM" id="month" type="text" size="2" data-stripe="exp_month">
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <span class="devider"> / </span>
                                                             </div>
                                                             <div class="col-xs-5">
-                                                                <input class="right-field" placeholder="YY" maxlength="2" id="year" type="number" size="2" data-stripe="exp_year">
+                                                                <input class="right-field" placeholder="YY" maxlength="2" id="year" type="text" size="2" data-stripe="exp_year">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -641,7 +641,7 @@
                                             <div class="col-xs-5" id="cvv-parent">
                                                 <div class="text-holder row no-gutters">
                                                     <div class="col-xs-8" >
-                                                        <input id="cvv" type="number" placeholder="cvv" size="4" data-stripe="cvc">
+                                                        <input id="cvv" type="text" placeholder="cvv" size="4" data-stripe="cvc">
                                                     </div>
                                                     <div class="col-xs-4">
                                                         <img class="edit add3" src="/m/he/img/cvs-icon.png">
@@ -955,6 +955,12 @@
                 $('.order .btn-submit').hide();
                 $('.popup-header').hide();
                 $('.close').hide();
+
+                setTimeout(function(){
+
+                    $('.box-frame.new').scrollTop(800);
+
+                }, 500);
 
                 if($('#order-popup').is(':visible'))
                 {

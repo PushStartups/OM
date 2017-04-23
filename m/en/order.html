@@ -636,13 +636,13 @@
                                                     <div class="col-xs-10">
                                                         <div class="row no-gutters">
                                                             <div class="col-xs-5">
-                                                                <input class="left-field" placeholder="MM" id="month" type="number" size="2" data-stripe="exp_month">
+                                                                <input class="left-field" placeholder="MM" id="month" type="text" size="2" data-stripe="exp_month">
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <span class="devider"> / </span>
                                                             </div>
                                                             <div class="col-xs-5">
-                                                                <input class="right-field" placeholder="YY" maxlength="2" id="year" type="number" size="2" data-stripe="exp_year">
+                                                                <input class="right-field" placeholder="YY" maxlength="2" id="year" type="text" size="2" data-stripe="exp_year">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -655,7 +655,7 @@
                                                         <img class="edit add3" src="/m/en/img/cvs-icon.png">
                                                     </div>
                                                     <div class="col-xs-8">
-                                                        <input type="number" id="cvv" placeholder="cvv" size="4" data-stripe="cvc">
+                                                        <input type="text" id="cvv" placeholder="cvv" size="4" data-stripe="cvc">
                                                     </div>
                                                 </div>
                                                 <span id="cvv-error" class="error-span">error in field</span>
@@ -933,6 +933,12 @@
                 $('.popup-header').hide();
                 $('.close').hide();
 
+                setTimeout(function(){
+
+                    $('.box-frame.new').scrollTop(800);
+
+                }, 500);
+
                 if($('#order-popup').is(':visible'))
                 {
                     $('.box-frame.new').css('height' , '80vh');
@@ -1059,10 +1065,11 @@
 
             setTimeout(function(){
 
+
                 $('.box-frame.new').scrollTop(800);
 
             }, 500);
-
+            
             $('#delivery-info').addClass('show');
             $('#checkbox-id112').prop('checked', false);
         }
