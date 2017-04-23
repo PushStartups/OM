@@ -74,6 +74,12 @@
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
     }
 
+    function home() {
+
+        window.location.href = "https://"+window.location.hostname;
+
+    }
+
 
 </script>
 
@@ -92,11 +98,13 @@
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto">
                         <div class="logo">
-                            <a href="#">
-                                <img src="/en/img/logo.png" alt="images description">
+                            <a href="#" onclick="home()">
+                                <div class="logo-img">
+                                    <img src="/en/img/logo.png" alt="images description">
+                                </div>
+                                <span> Choose your menu</span>
                             </a>
                         </div>
-                        <span> CHOOSE YOUR ORDER</span>
                     </div>
                 </div>
             </div>

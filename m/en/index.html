@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,7 +11,10 @@
     <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
     <link rel="stylesheet" type="text/css" href="style/alertify.css">
     <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -64,6 +67,20 @@
 
 <script>
 
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
 
     if (location.protocol != 'https:')
     {
@@ -76,126 +93,142 @@
 
 <body>
 
-<img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
-<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
+<div id="main-content">
 
-<div id="wrapper">
-    <!-- carousel slider -->
-    <div class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div class="item active"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-        </div>
-    </div>
-    <section class="jumbotron vertical-center img-block">
-        <div class="container">
-            <nav id="nav">
-                <ul>
-                    <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
-                </ul>
-            </nav>
-            <div class="row">
-                <div class="col-md-6 col-sm-12 add">
-                    <header id="header">
-                        <div class="logo">
-                            <a href="#">
-                                <img src="img/logo.png" alt="images description">
-                                <strong>Order App</strong>
-                            </a>
-                        </div>
-                    </header>
-                </div>
+    <img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
+    <div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
+
+    <div id="wrapper">
+        <!-- carousel slider -->
+        <div class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
             </div>
-            <div class="row">
-                <div class="col-md-8 add">
-                    <form class="form" action="#">
-                        <h1>ORDER SMART <br>ORDER FAST</h1>
-                        <div class="row no-gutters add">
-                            <div class="col-md-6 col-sm-6 col-xs-12 box">
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="text-span">Choose a city</span>
-                                        <span class="caret"></span></button>
-                                    <ul id="city_list" class="dropdown-menu scrollable-menu" role="menu">
-                                        <!--<li><a href="#">option 1</a></li>-->
-                                        <!--<li><a href="#">option 2</a></li>-->
-                                    </ul>
-                                    <span class="fild-title" id="error-text">*Required field</span>
+        </div>
+        <section class="jumbotron vertical-center img-block">
+            <div class="container">
+                <nav id="nav">
+                    <ul>
+                        <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
+                    </ul>
+                </nav>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 add">
+                        <header id="header">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="images description">
+                                    <strong>Order App</strong>
+                                </a>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 add">
+                        <form class="form" action="#">
+                            <h1>ORDER SMART <br>ORDER FAST</h1>
+                            <div class="row no-gutters add">
+                                <div class="col-md-6 col-sm-6 col-xs-12 box">
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span id="text-span">Choose a city</span>
+                                            <span class="caret"></span></button>
+                                        <ul id="city_list" class="dropdown-menu scrollable-menu" role="menu">
+                                            <!--<li><a href="#">option 1</a></li>-->
+                                            <!--<li><a href="#">option 2</a></li>-->
+                                        </ul>
+                                        <span class="fild-title" id="error-text">*Required field</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12 box">
+                                    <button class="btn-submit" onclick="start_ordering()" type="button">Start Ordering</button>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 box">
-                                <button class="btn-submit" onclick="start_ordering()" type="button">Start Ordering</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </section>
+        <div class="img visible-lg visible-md">
+            <img src="img/delivery-desktop.png" alt="images description">
         </div>
-    </section>
-    <div class="img visible-lg visible-md">
-        <img src="img/delivery-desktop.png" alt="images description">
+        <div class="img visible-sm visible-xs">
+            <img src="img/delivery-mobile.png" alt="images description">
+        </div>
     </div>
-    <div class="img visible-sm visible-xs">
-        <img src="img/delivery-mobile.png" alt="images description">
-    </div>
-</div>
 
-<!-- Modal -->
-<div class="modal fade"  id="about" role="dialog">
-    <div class="modal-dialog modal-md">
+    <!-- Modal -->
+    <div class="modal fade"  id="about" role="dialog">
+        <div class="modal-dialog modal-md">
 
-        <!-- Modal content-->
-        <div class="modal-content">
+            <!-- Modal content-->
+            <div class="modal-content">
 
-            <!--<img class="ic_close" src="images/mobile/ic_close.png" onclick="$('#detail-popup').fadeOut(); $('.overlay').fadeOut()">-->
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-            <h3> ORDERAPP, ORDER FAST </h3>
-            <p>
-                "What's for dinner?" <br>
-                "You choose" </br>
-                "I'll choose, but you're calling in the order" </br>
-                "Ok, never mind. I'll choose, you call" </br></br>
-                Sound familiar? We all hate making that dreaded 8-10 min takeout call,
-                shouting to be heard over the din of background noise, when all you want to do is order some burgers. </br></br>
-                Enter OrderApp! With a few clicks on your screen you can find a comprehensive list of restaurants in your area that are offering food takeout delivery at any given time.
-                You can choose a restaurant, browse their online menu and then send your order via chat, without having to try and speak to a live human being.
-                Your order for delivery will be recorded in the chat, thereby minimizing the likelihood of the restaurant messing up your order. </br></br>
-                No need to procrastinate and argue over that frustrating phone call any longer. With OrderApp, you can place your online takeout order to be delivered to you with no hassle and no tears.</br>
-                <br />
-                *Powered by Push Startups
-            </p>
-            <div class="social-icons">
-                <ul>
-                    <li>
-                        <a href="https://www.facebook.com/theorderapp/"><img src="images/mobile/fb.png"></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/OrderAppTeam"><img src="images/mobile/tw.png"></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/106974163137537901922"><img src="images/mobile/gp.png"></a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/theorderapp/"><img src="images/mobile/insta.png"></a>
-                    </li>
-                    <li>
-                        <a href="https://www.pinterest.com/orderapp/"><img src="images/mobile/pin.png"></a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="images/mobile/link.png"></a>
-                    </li>
-                </ul>
+                <!--<img class="ic_close" src="images/mobile/ic_close.png" onclick="$('#detail-popup').fadeOut(); $('.overlay').fadeOut()">-->
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h3> ORDERAPP, ORDER FAST </h3>
+                <p>
+                    "What's for dinner?" <br>
+                    "You choose" </br>
+                    "I'll choose, but you're calling in the order" </br>
+                    "Ok, never mind. I'll choose, you call" </br></br>
+                    Sound familiar? We all hate making that dreaded 8-10 min takeout call,
+                    shouting to be heard over the din of background noise, when all you want to do is order some burgers. </br></br>
+                    Enter OrderApp! With a few clicks on your screen you can find a comprehensive list of restaurants in your area that are offering food takeout delivery at any given time.
+                    You can choose a restaurant, browse their online menu and then send your order via chat, without having to try and speak to a live human being.
+                    Your order for delivery will be recorded in the chat, thereby minimizing the likelihood of the restaurant messing up your order. </br></br>
+                    No need to procrastinate and argue over that frustrating phone call any longer. With OrderApp, you can place your online takeout order to be delivered to you with no hassle and no tears.</br>
+                    <br />
+                    *Powered by Push Startups
+                </p>
+                <div class="social-icons">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/theorderapp/"><img src="images/mobile/fb.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/OrderAppTeam"><img src="images/mobile/tw.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/106974163137537901922"><img src="images/mobile/gp.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/theorderapp/"><img src="images/mobile/insta.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/orderapp/"><img src="images/mobile/pin.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="images/mobile/link.png"></a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
-
     </div>
 </div>
 
+<div id="ori-mess" style="display: none; background: url('/m/en/img/home-bg.jpg'); background-size: cover; height: 100%; font-family: 'Open Sans', sans-serif;">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;">We work best in portrait mode.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;"> Please rotate your screen </span>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="script/bootstrap.min.js"></script>
 <script src="script/script.js"> </script>
 <script src="/m/en/script/ajaxServerRequestsIndex.js"></script>
@@ -221,9 +254,10 @@
             var name  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
             $('.btn-primary > span#text-span').text(name);
 
-
         }
+
     });
+
 
     // CLICK ON START ORDERING BUTTON
     function start_ordering()
@@ -262,13 +296,23 @@
     }
 
 
-//
-//    $( window ).on( "orientationchange", function(event) {
-//
-//        alert(event.orientation);
-//
-//    });
-//
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation == undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
 
 </script>
 

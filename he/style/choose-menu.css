@@ -1,7 +1,52 @@
 @font-face {
 	font-family: 'OpenSansHebrew';
-	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
-	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-regular.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.svg#open_sans_hebrewregular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-italic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.svg#open_sans_hebrewitalic') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-bold.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.svg#open_sans_hebrewbold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-light.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-light.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-light.svg#open_sans_hebrewlight') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.svg#open_sans_hebrewlight_italic') format('svg');
+	font-weight: 200;
+	font-style: italic;
 }
 html,  body {
 	min-height:100%;
@@ -22,7 +67,15 @@ body {
 	-o-background-size: cover;
 
 }
+button,
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
+input,
+textarea,
+select {
+	font-family: 'OpenSansHebrew', serif;
+	color: #000;
+	vertical-align: middle;
+}
 
 * {max-height: 1000000px;}
 .parent-bottom,
@@ -102,10 +155,9 @@ a:hover, a:focus {
 #header span{
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 23px;
+	font-size: 24px;
 	line-height: 26px;
 	text-transform: uppercase;
-	font-weight: 400;
 	color: #fff;
 }
 .jumbotron.jumbotron-fluid{
@@ -114,9 +166,13 @@ a:hover, a:focus {
 
 }
 .logo{
+	display: inline-block;
+	vertical-align: top;
+}
+.logo .logo-img{
 	width: 60px;
 	height: 40px;
-	margin:0 11px;
+	margin:0 0 0 11px;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -126,15 +182,14 @@ a:hover, a:focus {
 }
 .logo a img{
 	display:block;
-	width:70px;
-	margin:0 auto;
+	width:100%;
+	height: auto;
 }
 .logo a strong {
 	font-size: 20px;
 	line-height:23px;
 	font-weight: normal;
 	color: #fff;
-	font-family: 'Lobster';
 }
 #nav{
 	position:absolute;
@@ -149,7 +204,6 @@ a:hover, a:focus {
 	overflow:hidden;
 	font-size: 16px;
 	line-height:19px;
-	font-weight: 300;
 	text-align:left;
 }
 #nav ul li{
@@ -166,6 +220,7 @@ a:hover, a:focus {
 	border-radius:5px;
 	border:1px solid #fff;
 	font-size: 14px;
+	font-weight: 300;
 }
 #nav ul li a.active:hover{border-color:#ff7f00;}
 #nav ul li a:hover{color:#ff7f00;}
@@ -575,7 +630,7 @@ a:hover, a:focus {
 	color: #fff;
 	font-size: 20px;
 	line-height: 23px;
-	font-weight: 300;
+	font-weight: 400;
 }
 .header-box p{margin: 0;}
 .alert-img{
@@ -585,7 +640,7 @@ a:hover, a:focus {
 }
 .header-box h1{
 	font-size: 24px;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 27px;
 	color: #fff;
 	margin: 0 0 4px;
@@ -699,9 +754,9 @@ a:hover, a:focus {
 .accordion li.active .opener:after{content: "\f107";}
 .accordion  h3{
 	margin: 0;
-	font-size: 20px;
-	line-height: 23px;
-	font-weight: 400;
+	font-size: 24px;
+	line-height: 27px;
+	font-weight: normal;
 }
 .accordion .slide{
 	overflow: hidden;
@@ -711,10 +766,11 @@ a:hover, a:focus {
 	background: #fff;
 	border-radius: 10px;
 	padding: 12pt;
-	margin: 0 0 13.5pt;
 	color: #797979;
 	font-size: 16px;
 	line-height: 19px;
+	font-weight: 400;
+	letter-spacing: 0.2px;
 	margin: 0 0 15px;
 }
 .accordion .add-row h4{
@@ -729,6 +785,7 @@ a:hover, a:focus {
 	padding: 5px 10px;
 	font-size: 12px;
 	line-height: 15px;
+	font-weight: 400;
 	display: inline-block;
 	vertical-align: middle;
 	background:rgb(238, 238, 238);
@@ -737,6 +794,7 @@ a:hover, a:focus {
 	border-radius:4pt;
 	margin: 0 5px 0 0;
 	text-align: center;
+	letter-spacing: 0.2px;
 }
 .accordion .add-row .box:after{
 	display: block;
@@ -763,20 +821,28 @@ a:hover, a:focus {
 }
 #sidebar h3{
 	margin: 0 0 20px;
-	font-size: 22px;
-	line-height: 25px;
-	font-weight: 300;
+	font-size: 24px;
+	line-height: 27px;
+	font-weight: normal;
 }
 .empty-cart{
 	overflow: hidden;
 	padding: 52px 0;
 	text-align: center;
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.2px;
+	color: #797979;
 }
 .empty-cart img{
 	display: block;
 	margin:0 auto 20px;
 }
 .minimum-item{
+	font-size: 12px;
+	line-height: 15px;
+	letter-spacing: 0.2px;
+	color: #797979;
 	margin: 10px 0 0;
 	padding: 20px 0 0;
 	overflow: hidden;
@@ -836,10 +902,11 @@ a:hover, a:focus {
 	float: left;
 	text-align: center;
 	padding: 10px 10px 0;
-	font-size: 15px;
-	line-height: 17px;
+	font-size: 12px;
+	line-height: 15px;
 	white-space: nowrap;
 	color: #797979;
+	font-weight: 400;
 }
 #sidebar .detail{
 	font-size: 17px;
@@ -917,9 +984,9 @@ a:hover, a:focus {
 	width: 100%;
 	height: 56px;
 	border:none;
-	font-size: 22px;
+	font-size: 24px;
 	line-height: 27px;
-	font-weight: 300;
+	font-weight: normal;
 	text-transform: uppercase;
 	border-radius: 39px;
 	background-image: linear-gradient(246deg, #ffae5e, #ff7f00);
@@ -932,13 +999,13 @@ a:hover, a:focus {
 
 }
 #sidebar .minimum-item h2{
-	font-size: 28px;
+	font-size: 33px;
 	font-weight: normal;
-	line-height: 31px;
+	line-height: 35px;
 	letter-spacing: 0.4px;
 	text-align: center;
 	color: #797979;
-	margin: 0 0 10px;
+	margin: 0 0 15px;
 	
 }
 .no-gutters {
@@ -1029,8 +1096,8 @@ input[type="radio"] + label, input[type="checkbox"] + label {
 	display: block;
 	text-align: right;
 	padding: 6px 50px 6px 0 !important;
-	font-size: 17px;
-	font-weight: 300;
+	font-size: 20px;
+	font-weight: normal;
 	line-height: 23px;
 	color: #919191;
 }
@@ -1044,6 +1111,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	line-height: 27px;
 	text-align: center;
 	font-size: 24px;
+	font-weight: 300;
 	border-radius: 50%;
 	margin:0 0 30px;
 }
@@ -1062,9 +1130,18 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	padding: 25px 0;
 	font-size: 16px;
 	line-height: 19px;
-	border-top: solid 1px #979797;
+	letter-spacing: 0.2px;
+	color: #797979;
+	border-top:1px solid  #979797;
 }
-.mypopup .add-row > label{text-align: right; display: block;}
+.mypopup .add-row > label{
+	text-align: right;
+	display: block;
+	color: #000;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 300 !important;
+}
 .mypopup .add-row:after{
 	display: block;
 	content: "";
@@ -1113,7 +1190,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	background-image: linear-gradient(249deg, #ffae5e, #ff7f00);
 	font-size: 24px;
 	line-height: 36px;
-	letter-spacing: 0.4px;
+	letter-spacing: 0.3px;
 	text-align: center;
 	color: #fff;
 	position: fixed;

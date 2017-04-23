@@ -4,15 +4,16 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/m/en/style/restaurants.css">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
-
+    <script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -63,108 +64,151 @@
 
 <body>
 
-<img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
-<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
-
 <script>
+
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0 ) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+            $('body').css("overflow","inherit");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+            $('body').css("overflow","hidden");
+        }
+    });
 
     if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
     {
         window.location.href='/m/en/index.html';
     }
 
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+
 </script>
 
 
-<!--HEADER -->
-<div id="wrapper">
-    <header id="header">
-        <div class="logo">
-            <a href="#">
-                <img src="/m/en/img/logo.png" alt="images description">
-                <strong>Order App</strong>
-            </a>
-        </div>
-        <span class="title" id="rest-name-header"></span>
-        <img class="delivery" src="/m/en/img/delivery line.png">
-        <nav id="nav">
-            <ul>
+<div id="main-content"  style="height: 100%;">
 
-                <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
 
-            </ul>
-        </nav>
-        <a class="btn-back"  onclick="window.location.href='index.html'" href="/m/en/index.html"><img src="/m/en/img/back_arrow.png"></a>
-    </header>
-    <div id="main">
-        <div class="accordion-holder">
-            <ul class="accordion multilevel-accordion" id="scrollable">
+    <img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
+    <div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
 
-            </ul>
+    <!--HEADER -->
+    <div id="wrapper" style="height: 100%;">
+        <header id="header">
+            <div class="logo">
+                <a href="#">
+                    <img src="/m/en/img/logo.png" alt="images description">
+                    <strong>Order App</strong>
+                </a>
+            </div>
+            <span class="title" id="rest-name-header"></span>
+            <img class="delivery" src="/m/en/img/delivery line.png">
+            <nav id="nav">
+                <ul>
+
+                    <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
+
+                </ul>
+            </nav>
+            <a class="btn-back"  onclick="window.location.href='index.html'" href="/m/en/index.html"><img src="/m/en/img/back_arrow.png"></a>
+        </header>
+        <div id="main" style="height: 100%; overflow-y: scroll">
+            <div class="accordion-holder">
+                <ul class="accordion multilevel-accordion" id="scrollable">
+
+                </ul>
+            </div>
         </div>
     </div>
+
+
+
+    <!--ADDRESS DELIVERY POPUP -->
+    <div class="modal fade" id="address-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+                <div class="popup-address">
+                    <div class="frame">
+                        <h3>delivery Fee</h3>
+                        <h4>Minimum for delivery 100 NIS</h4>
+                    </div>
+                    <!--RESTAURANT DELIVERY FEE-->
+                    <div class="fee-txt add" id="discount-pop">
+                        <span class="add-title">Restaurant Address: Gad 14, Ramat Beit Shemesh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TIME POPUP -->
+    <div class="modal fade" id="time-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+                <div class="popup-address">
+                    <div class="frame">
+                        <h3>delivery</h3>
+                        <h4>Until half an hour before closing</h4>
+                    </div>
+
+                    <!--RESTRAURANT TMINGS-->
+                    <table class="time-table" id="rest-time"></table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- POPUP IMAGE SLIDER GALLERY-->
+    <div class="modal fade"  id="slider-popup" role="dialog"  >
+        <div class="modal-dialog" style="margin-top: 60% !important;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <!--RESTAURANT GALLERY IMAGES-->
+                    <div class="carousel-inner" id="gallery-imgs" role="listbox">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 
-
-<!--ADDRESS DELIVERY POPUP -->
-<div class="modal fade" id="address-popup" role="dialog">
-    <div class="modal-dialog" role="document" style="margin-top: 40%;">
-        <div class="modal-content">
-            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
-            <div class="popup-address">
-                <div class="frame">
-                    <h3>delivery Fee</h3>
-                    <h4>Minimum for delivery 100 NIS</h4>
+<div id="ori-mess" style="display: none; background: url('/m/en/img/home-bg.jpg'); background-size: cover; height: 100%; font-family: 'Open Sans', sans-serif;">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
                 </div>
-                <!--RESTAURANT DELIVERY FEE-->
-                <div class="fee-txt add" id="discount-pop">
-                    <span class="add-title">Restaurant Address: Gad 14, Ramat Beit Shemesh</span>
-                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;">We work best in portrait mode.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;"> Please rotate your screen </span>
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- TIME POPUP -->
-<div class="modal fade" id="time-popup" role="dialog">
-    <div class="modal-dialog" role="document" style="margin-top: 40%;">
-        <div class="modal-content">
-            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
-            <div class="popup-address">
-                <div class="frame">
-                    <h3>delivery</h3>
-                    <h4>Until half an hour before closing</h4>
-                </div>
-
-                <!--RESTRAURANT TMINGS-->
-                <table class="time-table" id="rest-time"></table>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- POPUP IMAGE SLIDER GALLERY-->
-<div class="modal fade"  id="slider-popup" role="dialog"  >
-    <div class="modal-dialog" style="margin-top: 60% !important;">
-        <div class="modal-content">
-            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-                <!--RESTAURANT GALLERY IMAGES-->
-                <div class="carousel-inner" id="gallery-imgs" role="listbox">
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
 <script src="/m/en/script/bootstrap.min.js"></script>
 <!--<script src="script/script.js"> </script>-->
 <script src="/m/en/script/jquery.accordion.js"> </script>
@@ -175,8 +219,8 @@
 <script src="/m/en/script/ajaxServerRequestsRestaurants.js"></script>
 
 <script>
-    $(window).scroll(function(){
-        if($(document).scrollTop() > 0) {
+    $('#main').scroll(function(){
+        if($('#main').scrollTop() > 0) {
 
             $('#header').addClass('small');
         }
@@ -213,7 +257,7 @@
 
             // Dividing by two centers the modal exactly, but dividing by three
             // or four works better for larger screens.
-           // dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+            // dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
         }
 
         // Reposition when a modal is shown
@@ -236,6 +280,25 @@
         window.location.href = '/m/he/restaurants/'+selectedCityName;
 
     }
+
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation == undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+            $('body').css("overflow","inherit");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+            $('body').css("overflow","hidden");
+        }
+
+    });
+
 
 </script>
 </body>

@@ -1,3 +1,53 @@
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-regular.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.svg#open_sans_hebrewregular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-italic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.svg#open_sans_hebrewitalic') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-bold.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.svg#open_sans_hebrewbold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-light.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-light.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-light.svg#open_sans_hebrewlight') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.svg#open_sans_hebrewlight_italic') format('svg');
+	font-weight: 200;
+	font-style: italic;
+}
 html,  body {
 	min-height:100%;
 	/*overflow: hidden;*/
@@ -6,13 +56,24 @@ html {box-sizing: border-box;}
 body {
 	height: 100%;
 	background-color: #fff;
-	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family: 'OpenSansHebrew', serif;
 	background: url('../img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+}
+button,
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
+input,
+textarea,
+select {
+	font-family: 'OpenSansHebrew', serif;
+	color: #000;
+	vertical-align: middle;
 }
 * {max-height: 1000000px;}
 .parent-bottom,
@@ -70,10 +131,9 @@ a:hover, a:focus {
 #header span{
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 23px;
+	font-size: 24px;
 	line-height: 26px;
 	text-transform: uppercase;
-	font-weight: 400;
 	color: #fff;
 }
 .jumbotron.jumbotron-fluid{
@@ -82,14 +142,16 @@ a:hover, a:focus {
 
 }
 .logo{
+	display: inline-block;
+	vertical-align: top;
+}
+.logo .logo-img{
 	width: 60px;
 	height: 40px;
-	margin:0 11px;
+	margin:0 0 0 11px;
 	display: inline-block;
 	vertical-align: middle;
 }
-
-
 .logo a{
 	display:block;
 	height:100%;
@@ -104,7 +166,6 @@ a:hover, a:focus {
   line-height:23px;
   font-weight: normal;
   color: #fff;
-  font-family: 'Lobster';
 }
 #nav{
 	position:absolute;
@@ -119,7 +180,6 @@ a:hover, a:focus {
 	overflow:hidden;
 	font-size: 16px;
 	line-height:19px;
-	font-weight: 300;
 	text-align:left;
 }
 #nav ul li{
@@ -136,6 +196,7 @@ a:hover, a:focus {
 	border-radius: 5px;
 	border: 1px solid #fff;
 	font-size: 14px;
+	font-weight: 300;
 }
 
 .blur-class {
@@ -392,7 +453,7 @@ a:hover, a:focus {
 }
 .header-box h1{
 	font-size: 24px;
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 27px;
 	color: #fff;
 	margin: 0 0 4px;
@@ -405,12 +466,11 @@ a:hover, a:focus {
 	overflow: hidden;
 	font-size: 20px;
 	line-height: 23px;
-	font-weight: 500;
 }
 .header-box .title-add{
 	font-size: 20px;
 	line-height: 23px;
-	font-weight: 500;
+	font-weight: 400;
 	display: block;
 	color: #fff;
 }
@@ -495,13 +555,14 @@ a:hover, a:focus {
 	position: absolute;
 	top: 0;
 	left: 0;
+	transform: rotate(180deg);
 }
 .accordion li.active .opener:after{content: "\f107";}
 .accordion  h3{
 	margin: 0;
 	font-size: 24px;
 	line-height: 27px;
-	font-weight: 300;
+	font-weight: normal;
 }
 .accordion .slide{overflow: hidden;}
 .slide-holder{
@@ -547,10 +608,14 @@ a:hover, a:focus {
 	color: #797979;
 	font-size:16px;
 	line-height: 19px;
-	padding: 10px 0 10px 10px;
+	font-weight: 400;
+	padding: 10px;
 	background: none;
 	outline: none;
+	letter-spacing: 0.2px;
 }
+#exp_error.right-field,
+#exp_error.text-holder input[type="number"]{text-align: center;}
 .devider {
 	display: inline-block;
 	vertical-align: bottom;
@@ -588,7 +653,7 @@ a:hover, a:focus {
 .edit{margin: 10px 8px 0;}
 .new-label {
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: 400;
 	color: #797979;
 	display: block;
 	position: relative;
@@ -623,10 +688,9 @@ a:hover, a:focus {
 	padding: 10px;
 	font-size: 24px;
 	line-height: 24px;
-	font-weight: 300;
+	font-weight: normal;
 	border-radius: 40px;
 	background: #63df7e;
-	border:none;
 	margin: 0 auto;
 	display: block;
 	transition: all 1s;
@@ -656,6 +720,7 @@ a:hover, a:focus {
 .checkbox-list li label span{
 	display:block;
 	color: #000;
+	font-weight: 400;
 }
 input[type="radio"], input[type="checkbox"] {
 	position: absolute;
@@ -668,10 +733,10 @@ input[type="radio"] + label, input[type="checkbox"] + label {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 6px 50px 6px 0 !important;
-	font-size: 20px;
-	font-weight: 300;
+	font-size: 16px;
+	font-weight: 400;
 	line-height: 23px;
-	color: #919191;
+	color: #bababa;
 }
 input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	background: url('../img/check02.png') 100% 50% no-repeat;
@@ -709,6 +774,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	color: #797979;
 	display: block;
 }
+.minimum-item.add .nis,
 .minimum-item.add h3{
 	color: #000;
 	text-align: left;
@@ -720,9 +786,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 }
 #sidebar h3{
 	margin: 0 0 20px;
-	font-size: 22px;
-	line-height: 25px;
-	font-weight: 300;
+	font-size: 24px;
+	line-height: 27px;
+	font-weight: normal;
+	color: #797979;
 }
 .minimum-item{
 	margin: 10px 0 0;
@@ -820,7 +887,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	text-align: center;
 	color: #797979;
 	margin: 0 0 10px;
-	font-family: 'Open Sans', sans-serif;
+	
 }
 .no-gutters {
 	margin-right: 0;
@@ -913,7 +980,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	/*#sidebar .scrollable-area-wrapper, .scrollable-area.right{height: 118px !important;}*/
 }
 @media only screen and (max-width: 1399px){
-	#sidebar h3{margin: 0 0 7px;}
+	#sidebar h3{margin: 0 0 7px; text-align: right;}
 	.minimum-item{padding: 10px 0 0;}
 }
 @media only screen and (max-width: 1024px){
@@ -1002,7 +1069,6 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	padding: 0 33px;
 }
 .mypopup h2{
-	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	font-weight: 300;
 	font-stretch: normal;
@@ -1035,7 +1101,6 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	padding: 10px;
 	border-radius:0 0 13px 13px;
 	background-image: linear-gradient(249deg, #ffae5e, #ff7f00);
-	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	line-height: 36px;
 	letter-spacing: 0.4px;

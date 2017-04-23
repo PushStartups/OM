@@ -24,7 +24,7 @@ $(document).ready(function() {
 // USER ORDER INFORMATION
     userObject = {
 
-        'language': 'en',                  // USER LANGAGUE ENGLISH
+        'language': 'he',                  // USER LANGAGUE HEBREW
         'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
@@ -89,7 +89,8 @@ function  getAllRestaurants(response)
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if (true) {     //result[x].availability
+        if   (true) //( result[x].availability )
+        {
 
 
             temp +=
@@ -103,7 +104,14 @@ function  getAllRestaurants(response)
                 '<div class="col-md-8 col-sm-8 col-xs-8">'+
                 '<div class="row">'+
                 '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">'+ result[x].name_he +'<span class="title">כשר</span></h2>'+
+                '<h2 class="row-heading">'+ result[x].name_he +
+                '<div class="title-frame">'+
+                '<span class="title">כשר</span>' +
+                '<div class="tooltip-popup">'+
+                '<p>'+ result[x].hechsher_he +'</p>'+
+                '</div>'+
+                '</div>'+
+                '</h2>'+
                 '<p class="detail">'+
 
                 str1+
@@ -187,13 +195,19 @@ function  getAllRestaurants(response)
                 '<div class="row separator">'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
                 '<div class="order-now-box offline">'+
-                '<div onclick="order_now(0)" class="header">הזמן <br> עכשיו</div>'+
+                '<div class="header">הזמן <br> עכשיו</div>'+
                 '</div>'+
                 '</div>'+
                 '<div class="col-md-8 col-sm-8 col-xs-8">'+
                 '<div class="row">'+
                 '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">'+ result[x].name_he +'<span class="title">כשר</span></h2>'+
+                '<h2 class="row-heading">'+ result[x].name_he +
+                '<div class="title-frame">'+
+                '<span class="title">כשר</span>' +
+                '<div class="tooltip-popup">'+
+                '<p>'+ result[x].hechsher_he +'</p>'+
+                '</div>'+
+                '</h2>'+
                 '<p class="detail">'+
 
                 str1+
@@ -332,7 +346,7 @@ function openTime(index) {
     for (i = 0 ; i < allRestJson[index].timings.length; i++)
     {
         temp += '<tr><td>'+allRestJson[index].timings[i].week_he+'</td>'+
-            '<td>'+ allRestJson[index].timings[i].opening_time + ' - ' + allRestJson[index].timings[i].closing_time +'</td></tr>';
+            '<td>'+ allRestJson[index].timings[i].opening_time_he + ' - ' + allRestJson[index].timings[i].closing_time_he +'</td></tr>';
     }
 
 
@@ -366,14 +380,14 @@ function openGallery(index) {
 
 }
 
-// ON DISCOUNT CLICK
+// ON DELIVERY CLICK
 function openDiscount(index) {
 
     var temp = '';
 
     for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
     {
-        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_he +' : Fee '+ allRestJson[index].delivery_fee[i].fee +' NIS</p>';
+        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_he +' : דמי משלוח '+ allRestJson[index].delivery_fee[i].fee +' ש"ח</p>';
 
     }
 

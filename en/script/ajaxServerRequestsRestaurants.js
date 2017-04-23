@@ -89,7 +89,8 @@ function  getAllRestaurants(response)
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if (result[x].availability) {   
+        if  (true) //(result[x].availability)
+             {
 
             temp +=
 
@@ -106,7 +107,12 @@ function  getAllRestaurants(response)
                 '<div class="col-md-8 col-sm-8 col-xs-8">'+
                 '<div class="row">'+
                 '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">' + result[x].name_en + '<span class="title">כשר</span></h2>'+
+                '<h2 class="row-heading">' + result[x].name_en +
+                '<div class="title-frame">'+
+                '<span class="title">כשר</span>' +
+                '<div class="tooltip-popup"><p>'+result[x].hechsher_en+'</p></div>'+
+                '</div>'+
+                '</h2>'+
                 '<p class="detail">'+
                 str1+
                 '<span class="toggle-content">';
@@ -190,7 +196,13 @@ function  getAllRestaurants(response)
                 '<div class="col-md-8 col-sm-8 col-xs-8">'+
                 '<div class="row">'+
                 '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">' + result[x].name_en + '<span class="title">כשר</span></h2>'+
+                '<h2 class="row-heading">' +
+                result[x].name_en +
+                '<div class="title-frame">'+
+                '<span class="title">כשר</span>' +
+                '<div class="tooltip-popup"><p>'+result[x].hechsher_en+'</p></div>'+
+                '</div>'+
+                '</h2>'+
                 '<p class="detail">'+
                 str1+
                 '<span class="toggle-content">';

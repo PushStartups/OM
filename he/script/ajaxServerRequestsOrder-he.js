@@ -365,14 +365,14 @@ function onItemSelectedCallBack(response)
             oneTypeStr += '<div id="oneTypeDD'+oneTypeSubItems.length+'" class="add-row">'+
                 '<label>' + extras.extra_with_subitems[x].name_he + '</label>'+
                 '<div id="cards-drop" class="custom-drop-down">'+
-                '<input id="input'+oneTypeSubItems.length+'" placeholder="בבקשה תבחר"  value ="'+ minSubItemName +'"  style="font-size: 18px" readonly="">'+
+                '<input id="input'+oneTypeSubItems.length+'" placeholder="בחר"  value ="'+ minSubItemName +'"  style="font-size: 18px" readonly="">'+
                 '<img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="/en/img/drop_down.png">'+
                 '<div id="list" class="custom-drop-down-list" style="display: none;">'+
                 '<ul id="categories_list">';
 
             oneTypeStr += temp;
 
-            oneTypeStr += '</ul> </div><span class="red" id="error-one-type'+oneTypeSubItems.length+'">*שדה נדרש</span> </div>';
+            oneTypeStr += '</ul> </div><span class="red" id="error-one-type'+oneTypeSubItems.length+'"></span></div>';
 
             if(minSubItemName ==  "")
             {

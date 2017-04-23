@@ -8,7 +8,7 @@ html,  body {
 	overflow: auto;
 
 }
-html {box-sizing: border-box;}
+html {box-sizing: border-box; overflow: hidden !important;}
 body {
 	margin: 0;
 	color: #fff;
@@ -1107,11 +1107,17 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	outline: none;
 }
 .box-frame.new .add-box{
-	padding: 12px 22px 0 10px !important;
+	padding: 12px 10px 0 10px !important;
 }
-.box-frame.new .add-box{
-	background: url(../img/arrow01.png) no-repeat 97% 85% !important;
+.img-button{
+	display: block;
+	padding: 10px 5px 0;
+	width: 35px;
+	margin: 0 auto;
 }
+/*.box-frame.new .add-box{*/
+	/*background: url(../img/arrow01.png) no-repeat 97% 85% !important;*/
+/*}*/
 .box-frame.new .custom-select select {
 	border:none;
 	-moz-appearance: none;

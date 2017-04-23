@@ -5,13 +5,15 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/m/he/style/restaurants-he.css">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
+    <script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -69,6 +71,21 @@
 
 <script>
 
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
     if (location.protocol != 'https:')
     {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
@@ -77,95 +94,113 @@
 </script>
 
 
+<div id="ori-mess" style="display: none; background: url('/m/he/img/home-bg.png'); background-size: cover; height: 100%">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">אנחנו עובדים הכי טוב במצב דיוקן.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">  סובב את המסך </span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <img id="loader" style="z-index: 99999;" class="loader-css" src="/m/he/img/loader.gif" >
 <div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 150%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
 
 
 <body>
 
-<div id="wrapper" dir="rtl">
-    <header id="header">
-        <div class="logo">
-            <a href="#">
-                <img src="/m/he/img/logo.png" alt="images description">
-                <strong>Order App</strong>
-            </a>
-        </div>
-        <span class="title">רעב? בחר מסעדה והזמן עכשיו</span>
-        <img class="delivery" src="/m/he/img/delivery-mobile-he.png">
-        <nav id="nav">
-            <ul>
-                <li><a onclick="redirectToEN()" class="active" href="#">EN</a></li>
-            </ul>
-        </nav>
-        <a class="btn-back" href="/m/he/index.html"><img src="/m/he/img/back_arrow-next.png"></a>
-    </header>
-    <div id="main">
-        <div class="accordion-holder">
 
+<div id="main-content" style="height: 100%">
 
-            <!--LISTING ALL RESTAURANTS-->
-            <ul class="accordion multilevel-accordion" id="scrollable"></ul>
+    <div id="wrapper" dir="rtl" style="height: 100%">
+        <header id="header">
+            <div class="logo">
+                <a href="#">
+                    <img src="/m/he/img/logo.png" alt="images description">
+                    <strong>Order App</strong>
+                </a>
+            </div>
+            <span class="title">רעב? בחר מסעדה והזמן עכשיו</span>
+            <img class="delivery" src="/m/he/img/delivery-mobile-he.png">
+            <nav id="nav">
+                <ul>
+                    <li><a onclick="redirectToEN()" class="active" href="#">EN</a></li>
+                </ul>
+            </nav>
+            <a class="btn-back" href="/m/he/index.html"><img src="/m/he/img/back_arrow-next.png"></a>
+        </header>
+        <div id="main" style="height: 100%; overflow-y: auto">
+            <div class="accordion-holder">
 
+                <!--LISTING ALL RESTAURANTS-->
+                <ul class="accordion multilevel-accordion" id="scrollable"></ul>
 
+            </div>
         </div>
     </div>
-</div>
-<!-- all popup -->
-<!-- popup with address -->
-<div class="modal fade" id="address-popup" role="dialog">
-    <div class="modal-dialog" role="document" style="margin-top: 40%">
-        <div class="modal-content" dir="rtl">
-            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
-            <div class="popup-address">
-                <div class="frame" dir="rtl">
-                    <h3>מחירון משלוחים</h3>
-                    <h4>מינימום הזמנה למשלוח 100 ש״ח</h4>
+    <!-- all popup -->
+    <!-- popup with address -->
+    <div class="modal fade" id="address-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%">
+            <div class="modal-content" dir="rtl">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+                <div class="popup-address">
+                    <div class="frame" dir="rtl">
+                        <h3>מחירון משלוחים</h3>
+                        <h4>מינימום הזמנה למשלוח 100 ש״ח</h4>
+                    </div>
+                    <div class="fee-txt add" dir="rtl" id="discount-pop">
+                        <!--<span class="add-title">Yitzhak Rabin Road 5, Beit Shemesh</span>-->
+                        <!--<p>בית שמש: 15 ש״ח</p>-->
+
+                    </div>
                 </div>
-                <div class="fee-txt add" dir="rtl" id="discount-pop">
-                    <!--<span class="add-title">Yitzhak Rabin Road 5, Beit Shemesh</span>-->
-                    <!--<p>בית שמש: 15 ש״ח</p>-->
+            </div>
+        </div>
+    </div>
+    <!-- popup with time -->
+    <div class="modal fade" id="time-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+                <div class="popup-address" dir="rtl">
+                    <div class="frame" dir="rtl">
+                        <h3>מְסִירָה</h3>
+                        <h4>עד חצי שעה לפני הסגירה</h4>
+                    </div>
+
+
+                    <!--TIME POPUP OF RESTAURANTS-->
+                    <table class="time-table" dir="rtl" id="rest-time"></table>
+
 
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- popup with time -->
-<div class="modal fade" id="time-popup" role="dialog">
-    <div class="modal-dialog" role="document" style="margin-top: 40%">
-        <div class="modal-content">
-            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
-            <div class="popup-address" dir="rtl">
-                <div class="frame" dir="rtl">
-                    <h3>מְסִירָה</h3>
-                    <h4>עד חצי שעה לפני הסגירה</h4>
-                </div>
-
-
-                <!--TIME POPUP OF RESTAURANTS-->
-                <table class="time-table" dir="rtl" id="rest-time"></table>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- popup with slider-->
-<div class="modal fade"  id="slider-popup" role="dialog">
-    <div class="modal-dialog" style="margin-top: 60%;">
-        <div class="modal-content">
-            <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" role="listbox" id="gallery-imgs">
+    <!-- popup with slider-->
+    <div class="modal fade"  id="slider-popup" role="dialog">
+        <div class="modal-dialog" style="margin-top: 60%;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true"></span></button>
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox" id="gallery-imgs">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 
-<script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
 <script src="/m/he/script/bootstrap.min.js"></script>
 <script src="/m/he/script/commonAjaxCall.js"></script>
 <script src="/m/he/script/jquery.accordion.js"> </script>
@@ -177,8 +212,8 @@
 
 <script>
 
-    $(window).scroll(function(){
-        if($(document).scrollTop() > 0) {
+    $('#main').scroll(function(){
+        if($('#main').scrollTop() > 0) {
 
             $('#header').addClass('small');
         }
@@ -187,7 +222,6 @@
             $('#header').removeClass('small');
         }
     });
-
 
     $(document).ready(function () {
 
@@ -226,10 +260,26 @@
         localStorage.setItem("USER_CITY_ID", localStorage.getItem("USER_CITY_ID_HE"));
 
         var selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
-            selectedCityName = selectedCityName.replace(/\s/g, '');
-            window.location.href = '/m/en/restaurants/'+selectedCityName;
+        selectedCityName = selectedCityName.replace(/\s/g, '');
+        window.location.href = '/m/en/restaurants/'+selectedCityName;
 
     }
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
 
 </script>
 </body>

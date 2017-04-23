@@ -110,7 +110,7 @@ function  getCategoriesWithItems(response)
 
     for(var x=0;x<selectedRest.delivery_fee.length;x++)
     {
-        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_he +' : Fee '+ selectedRest.delivery_fee[x].fee +'ש״ח</option>';
+        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_he +' : דמי משלוח '+ selectedRest.delivery_fee[x].fee+' ש"ח '+'</option>';
     }
 
     $('#delivery-areas').html(temp);
@@ -150,9 +150,7 @@ function infoPopup() {
     temp = '';
     var contact = userObject['restaurantContact'];
 
-    temp += '<tr>'+
-        '<td>'+ contact +'</td>'+
-        '</tr>';
+    temp += '<a class="btn-tel" href="tel:'+contact+'">'+contact+'</a>';
 
     $('#info-popup-contact').html(temp);
 
@@ -325,7 +323,7 @@ function onItemSelectedCallBack(response)
 
             oneTypeStr += '<h3>' + extras.extra_with_subitems[x].name_he + '</h3>'+
                 '<div class="custom-drop-down" id="oneTypeDD'+oneTypeSubItems.length+'">'+
-                '<input id="input'+oneTypeSubItems.length+'" placeholder="בבקשה תבחר" value ="'+ minSubItemName +'" readonly />'+
+                '<input id="input'+oneTypeSubItems.length+'" placeholder="בחר" value ="'+ minSubItemName +'" readonly />'+
                 '<img style="width:13px; position:absolute; left:15px; top:50%; transform:translateY(-50%)" src="/m/he/img/drop_down.png">'+
                 '<div class="custom-drop-down-list">'+
                 '<ul>';
@@ -1105,13 +1103,13 @@ function validateCustomerInfo() {
     if (name.length == 0)
     {
         $('#customer-name-field').addClass('error');
-        $('#name-error').html("*שדה נדרש");
+        $('#name-error').html("*שדה חובה");
         return;
     }
     if (email.length == 0)
     {
         $('#customer-email-field').addClass('error');
-        $('#email-error').html("*שדה נדרש");
+        $('#email-error').html("*שדה חובה");
         return;
     }
     if(!validateEmail(email))
@@ -1123,7 +1121,7 @@ function validateCustomerInfo() {
     if (number.length == 0)
     {
         $('#customer-number-field').addClass('error');
-        $('#contact-error').html("*שדה נדרש");
+        $('#contact-error').html("*שדה חובה");
         return;
     }
 
@@ -1145,14 +1143,10 @@ function validateCustomerInfo() {
 
 
     $('.box-frame.new').css('height' , 'calc(100% - 220px)');
-    $('.box-frame.new .wrap-col').css('height' , 'auto');
 
 
     $('#customer-info-popup').modal('hide');
     $('#delivery-popup').modal('show');
-
-
-
 }
 
 
@@ -1218,7 +1212,7 @@ function deliveryAddress() {
         if($("#appt_no").val() == "")
         {
             $("#apt-parent").addClass("error");
-            $("#error-apt").html('*שדה נדרש');
+            $("#error-apt").html('*שדה חובה');
             $("#error-apt").show();
             $('.box-frame.new').scrollTop(800);
             return;
@@ -1228,7 +1222,7 @@ function deliveryAddress() {
         if($("#address").val() == "")
         {
             $("#address-parent").addClass("error");
-            $("#error-address").html('*שדה נדרש');
+            $("#error-address").html('*שדה חובה');
             $("#error-address").show();
             $('.box-frame.new').scrollTop(800);
             return;
@@ -1256,10 +1250,28 @@ function deliveryAddress() {
 }
 
 
+function submit_coupon() {
+
+    // USER WANT TO USE COUPON
+    if($('#coupon-txt').val() != "") {
+
+        submit_summary();
+
+    }
+    else {
+
+        $('#coupon').addClass('error');
+        $("#coupon-txt").val("");
+        $("#error-coupon").html("*שדה חובה");
+        $("#error-coupon").show();
+    }
+
+}
+
+
 function submit_summary() {
 
     $("#error-coupon").html("");
-
 
     var sr = $('#specialRequestText').val();
 
@@ -1267,7 +1279,6 @@ function submit_summary() {
     {
         userObject.specialRequest = sr;
     }
-
 
     // USER WANT TO USE COUPON
     if($('#coupon-txt').val() != "")
@@ -1325,7 +1336,7 @@ function checkCouponCallBack(response)
 
             newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
 
-            $('#coupon-fee').html("-" + discountedAmount +" ש״ח ");
+            $('#coupon-fee').html(" ש״ח "+discountedAmount + "-" );
         }
         else
         {
@@ -1336,7 +1347,7 @@ function checkCouponCallBack(response)
 
             newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
 
-            $('#coupon-fee').html("-" + discountedAmount +" ש״ח ");
+            $('#coupon-fee').html(" ש״ח "+discountedAmount + "-" );
 
             $('#coupon_detail').html("Coupon Discount " + userObject.discount+"%");
         }
@@ -1367,8 +1378,6 @@ function checkCouponCallBack(response)
             $('#cashBtn').show();
         }
 
-        $('#summary-popup').modal('hide');
-        $('#payment-popup').modal('show');
 
     }
     // INVALID COUPON CODE
@@ -1411,6 +1420,8 @@ function processPayment() {
     $('#error-card').removeClass('error');
     $('.payment-errors').html("");
     $('.payment-errors').hide();
+    $('.parent_date').removeClass('error');
+    $('#cvv-parent').removeClass('error');
 
     if (!($('#show_credit_card').hasClass('show')) && !userObject.pickFromRestaurant) {
 
@@ -1429,7 +1440,7 @@ function processPayment() {
             if(cardNumber == "")
             {
                 $('#error-card').addClass('error');
-                $('#error-card-no').html("*שדה נדרש");
+                $('#error-card-no').html("*שדה חובה");
                 $('.box-frame.new').scrollTop(800);
                 return;
             }
@@ -1439,6 +1450,7 @@ function processPayment() {
                 $('#error-card').addClass('error');
                 $('#error-card-no').html("מספר כרטיס שגוי");
                 $('.box-frame.new').scrollTop(800);
+
                 return;
             }
 
@@ -1446,16 +1458,19 @@ function processPayment() {
 
             if(cvv == "")
             {
-                $('.payment-errors').html("*שדה נדרש");
+                $('.payment-errors').html("*שדה חובה");
+                $('.payment-errors').show();
+                $('#cvv-parent').addClass('error');
                 $('.box-frame.new').scrollTop(800);
                 return;
             }
 
-            if(!(/^\d+$/.test(cardNumber)))
+            if(!(/^\d+$/.test(cvv)))
             {
                 $('.payment-errors').html("Cvv לא חוקי");
                 $('.payment-errors').show();
                 $('.box-frame.new').scrollTop(800);
+                $('#cvv-parent').addClass('error');
                 return;
             }
 
@@ -1465,6 +1480,7 @@ function processPayment() {
                 $("#exp_error").addClass("error");
                 $('.payment-errors').html("* תאריך תפוגה של כרטיס חודש (MM) נדרש");
                 $('.payment-errors').show();
+                $('.parent_date').addClass('error');
                 $('.box-frame.new').scrollTop(800);
                 return;
             }
@@ -1474,6 +1490,7 @@ function processPayment() {
                 $("#exp_error").addClass("error");
                 $('.payment-errors').html("* תאריך תפוגת הכרטיס שנה (YY) חובה");
                 $('.payment-errors').show();
+                $('.parent_date').addClass('error');
                 $('.box-frame.new').scrollTop(800);
                 return;
             }
@@ -1608,6 +1625,9 @@ function callPage3CallBack(response) {
 
     userObject = null;
     localStorage.setItem("USER_OBJECT_HE", "");
+
+
+    refresh = true;
 
     // MOVING TO ORDER PAGE
     window.location.href = '/m/he/feedback.html';

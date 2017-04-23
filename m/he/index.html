@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" >
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="style/index-he.css">
     <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
     <link rel="stylesheet" type="text/css" href="style/alertify.css">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
     <!-- Google Analytics -->
@@ -77,14 +81,35 @@
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
     }
 
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
+
 
 </script>
+
 
 
 <img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
 <div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
 
 <body>
+
+
+
+<div id="main-content">
 
 <div id="wrapper" dir="rtl">
 
@@ -132,11 +157,11 @@
                                         <li><a href="#"> חכם</a></li>
                                         <li><a href="#">הזמן</a></li>
                                     </ul>
-                                    <span class="fild-title" id="error-text">*Required field</span>
+                                    <span class="fild-title" id="error-text">*שדה חובה</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12 box">
-                                <button class="btn-submit" onclick="start_ordering();" type="button">התחל להזמין</button>
+                                <button class="btn-submit" onclick="start_ordering();" type="button">הזמן עכשיו</button>
                             </div>
                         </div>
                     </form>
@@ -207,7 +232,29 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</div>
+
+
+
+<div id="ori-mess" style="display: none; background: url('/m/he/img/home-bg.png'); background-size: cover; height: 100%">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">אנחנו עובדים הכי טוב במצב דיוקן.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">  סובב את המסך </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <script src="script/bootstrap.min.js"></script>
 <script src="script/script.js"> </script>
 
@@ -277,6 +324,24 @@
 
     }
 
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
 </script>
 </body>
+
+
 </html>

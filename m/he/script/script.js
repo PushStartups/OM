@@ -13,11 +13,11 @@ $(function () {
         var that = this;
         $(this).siblings().find(".toggle-content").fadeToggle().promise().done(function () {
             if ($(that).find(".more").text().indexOf("more") != -1) {
-                $(that).find(".more").text("less info")
+                $(that).find(".more").text("פחות מידע")
                 $(that).find(".sign").text("-")
             }
             else {
-                $(that).find(".more").text("more info")
+                $(that).find(".more").text("מידע נוסף")
                 $(that).find(".sign").text("+")
             }
         });;

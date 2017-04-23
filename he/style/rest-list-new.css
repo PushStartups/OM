@@ -1,7 +1,52 @@
 @font-face {
 	font-family: 'OpenSansHebrew';
-	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
-	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-regular.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.svg#open_sans_hebrewregular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-italic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.svg#open_sans_hebrewitalic') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-bold.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.svg#open_sans_hebrewbold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-light.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-light.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-light.svg#open_sans_hebrewlight') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.svg#open_sans_hebrewlight_italic') format('svg');
+	font-weight: 200;
+	font-style: italic;
 }
 html,  body {
 	height:100%;
@@ -10,7 +55,9 @@ html,  body {
 html {box-sizing: border-box;}
 body {
 	background-color: #fff;
-	font: 15px/18px 'OpenSansHebrew', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family:'OpenSansHebrew', sans-serif;
 	background: url('../img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	overflow: hidden;
@@ -21,6 +68,13 @@ body {
 	-o-background-size: cover;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
+input,
+textarea,
+select {
+	font-family: 'OpenSansHebrew', serif;
+	color: #000;
+	vertical-align: middle;
+}
 .blur-class {
 	-webkit-filter: opacity(.2);
 	filter: opacity(.2);
@@ -215,10 +269,9 @@ a:hover, a:focus {
 #header span{
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 23px;
+	font-size: 24px;
 	line-height: 26px;
 	text-transform: uppercase;
-	font-weight: 400;
 	color: #fff;
 }
 .jumbotron.jumbotron-fluid{
@@ -227,9 +280,13 @@ a:hover, a:focus {
 
 }
 .logo{
+	display: inline-block;
+	vertical-align: top;
+}
+.logo .logo-img{
 	width: 60px;
 	height: 40px;
-	margin:0 11px;
+	margin:0 0 0 11px;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -239,15 +296,14 @@ a:hover, a:focus {
 }
 .logo a img{
 	display:block;
-	width:70px;
-	margin:0 auto;
+	width:100%;
+	height: auto;
 }
 .logo a strong {
 	font-size: 20px;
 	line-height:23px;
 	font-weight: normal;
 	color: #fff;
-	font-family: 'Lobster';
 }
 #nav{
 	position:absolute;
@@ -262,7 +318,6 @@ a:hover, a:focus {
 	overflow:hidden;
 	font-size: 16px;
 	line-height:19px;
-	font-weight: 300;
 	text-align:left;
 }
 #nav ul li{
@@ -279,6 +334,7 @@ a:hover, a:focus {
 	border-radius:5px;
 	border:1px solid #fff;
 	font-size: 14px;
+	font-weight: 300;
 }
 #nav ul li a.active:hover{border-color:#ff7f00;}
 #nav ul li a:hover{color:#ff7f00;}
@@ -302,7 +358,7 @@ a:hover, a:focus {
 .container.new{
 	width:70vw !important;
 	min-width:960px !important;
-	padding:70px 37px 0  !important;
+	padding:0 37px 0  !important;
 
 
 
@@ -477,7 +533,7 @@ a:hover, a:focus {
 	padding: 17px 6px;
 	padding-bottom: 8px;
 	text-align: center;
-	font-weight: 400;
+	font-weight: 700;
 }
 .order-now-box .header br{display: none;}
 
@@ -554,8 +610,13 @@ a:hover, a:focus {
 	margin-top: 0;
 	font-weight: 400;
 }
+.title-frame{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
 .row-heading .title{
-	font-size: 10px;
+	font-size: 11px;
 	line-height:25px;
 	color: #fff;
 	display: inline-block;
@@ -588,7 +649,7 @@ a:hover, a:focus {
 	padding: 59px 0 25px 0;
 	position: relative;
 }
-.separator:first-child{padding: 0 0 25px;}
+.separator:first-child{padding: 70px 0 25px;}
 .separator .custom-hr {
 	border-bottom: 1px solid #cacaca;
 	width: calc(100% - 50px);
@@ -607,6 +668,7 @@ div.more-toggle span {
 	font-size: 12px;
 	margin: 0 0 0 4px;
 	cursor: pointer;
+	font-weight: normal;
 }
 
 div.more-toggle span:last-child {
@@ -624,19 +686,22 @@ img.gallery {
 
 .time-drop-down {
 	cursor: pointer;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 300;
 	padding-top: 0;
 	white-space: nowrap;
 	color: #797979;
 	padding-left: 10px;
+
 }
 
 
 .discount-drop-down {
 	cursor: pointer;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 300;
 	white-space: nowrap;
 	color: #797979;
 	padding-left: 10px;
@@ -644,8 +709,9 @@ img.gallery {
 }
 
 .rest-address {
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 20px;
+	line-height: 23px;
+	font-weight: 300;
 	color: #797979;
 	display: block;
 	min-width: 276px;
@@ -671,12 +737,12 @@ img.gallery {
 
 .detail {
 	font-size: 16px;
-	font-weight: 300;
 	font-style: normal;
 	font-stretch: normal;
-	line-height: normal;
+	line-height: 20px;
 	color: #797979;
 	letter-spacing: 0.2px;
+	font-weight: normal;
 }
 
 
@@ -694,6 +760,9 @@ img.gallery {
 	box-shadow: 0 5.5px 14px 0 rgba(0, 0, 0, 0.35);
 	z-index: 9999;
 	display: none;
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: normal;
 }
 
 
@@ -727,13 +796,13 @@ img.gallery {
 
 .time-popup.new .header{
 	overflow: hidden;
-	padding: 18px 10px;
+	padding: 20px 10px;
 	background: url(../img/popup-bg.png) no-repeat;
 }
 
 .discount-popup.new .header{
 	overflow: hidden;
-	padding: 18px 10px;
+	padding: 20px 10px;
 	background: url(../img/popup-bg.png) no-repeat;
 }
 
@@ -785,19 +854,19 @@ img.gallery {
 
 .time-popup.new .header h3,
 .time-popup.new .header h4{
-	font-size:17px;
+	font-size:16px;
 	line-height: 19px;
-	font-weight: 500;
+	font-weight: 700;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 5px;
 	letter-spacing: 0.2px;
 }
 .time-popup.new .header h4{
-	font-weight: 300;
+	font-weight: normal;
 	font-size:16px;
 }
 .time-popup .header h4 {
-	font-size: 13px;
+
 	color: white;
 	text-align: center;
 	padding: 0 40px;
@@ -824,18 +893,18 @@ img.gallery {
 
 .discount-popup.new .header h3,
 .discount-popup.new .header h4{
-	font-size: 21px;
-	line-height: 19px;
+	font-size: 16px;
+	line-height: 20px;
 	color: white;
 	text-align: center;
-	font-weight: 500;
+	font-weight: 700;
 	padding: 0;
 	margin: 0;
 	letter-spacing: 0.2px;
 }
 
 .discount-popup.new .header h4{
-	font-weight: 300;
+	font-weight: normal;
 	font-size:16px;
 }
 .discount-popup .header h4 {
@@ -854,8 +923,7 @@ img.gallery {
 .discount-popup.new .txt{
 	overflow: hidden;
 	padding:20px 25px 10px;
-	font-size: 15px;
-	font-weight: 300;
+	font-size: 16px;
 	font-style: normal;
 	font-stretch: normal;
 	line-height: 19px;
@@ -945,8 +1013,12 @@ img.gallery {
 	z-index: 99999;
 	display: none;
 }
+.title-frame:hover .tooltip-popup,
 .rest-address:hover .tooltip-popup{display: block;}
-
+.title-frame .tooltip-popup:after{
+	right: 12px;
+}
+.title-frame .tooltip-popup{white-space: nowrap;}
 .tooltip-popup:after{
 	position: absolute;
 	bottom: -10px;

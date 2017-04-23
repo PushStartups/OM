@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
-    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/he/img/favicon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/he/style/simple-scrollbar.css">
@@ -74,6 +74,13 @@
     }
 
 
+    function home() {
+
+        window.location.href = "https://"+window.location.hostname;
+
+    }
+
+
 </script>
 
 
@@ -91,18 +98,21 @@
                 <div class="row justify-content-md-center">
                     <div class="col-12 col-md-auto">
                         <div class="logo">
-                            <a href="#">
-                                <img src="/he/img/logo.png" alt="images description">
+                            <a href= "#" onclick="home()">
+                                <div class="logo-img">
+                                    <img src="/he/img/logo.png" alt="img description">
+                                </div>
+                                <span> בחר את התפריט שלך</span>
                             </a>
                         </div>
-                        <span> בחר את התפריט שלך</span>
+
                     </div>
                 </div>
             </div>
             <nav id="nav">
                 <ul>
                     <li data-toggle="modal" data-target="#about"><a href="#">אודות</a></li>
-                    <li><a class="active" href="#">HE</a></li>
+                    <li><a class="active" href="#">EN</a></li>
                 </ul>
             </nav>
         </header>
@@ -256,7 +266,7 @@
 
                         <div id="parent_type_multiple">
                             <div class="add-row">
-                                <label style="text-align: right; margin-bottom: 20px">הערה מיוחדת</label>
+                                <label style="text-align: right; margin-bottom: 20px">הערות מיוחדות</label>
                                 <ul class="checkbox-list">
                                     <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-00">
                                         <label for="checkbox-id-00">בצל מטוגן</label>
@@ -270,7 +280,7 @@
                                 </ul>
                             </div>
                             <div class="add-row">
-                                <label style="text-align: right; margin-bottom: 20px">הערה מיוחדת</label>
+                                <label style="text-align: right; margin-bottom: 20px">הערות מיוחדות</label>
                                 <ul class="checkbox-list">
                                     <li> <input type="checkbox" onclick="onExtraSubItemSelected(0,0,0,this)" id="checkbox-id-03">
                                         <label for="checkbox-id-03">בצל מטוגן</label>
@@ -286,7 +296,7 @@
                         </div>
 
                         <div class="add-row">
-                            <label>הערה מיוחדת</label>
+                            <label>הערות מיוחדות</label>
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-11">
                                     <textarea id="special_request" placeholder="כתוב כאן"></textarea>
@@ -332,7 +342,7 @@
 
                             </div>
                             <div class="add-row first">
-                                <span class="title tel">Phone number</span>
+                                <span class="title tel">טלפון</span>
 
                                 <a class="btn-tel" href="tel:97225609533">97225609533</a>
 
@@ -396,12 +406,10 @@
         <div class="modal-content">
 
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-            <h3> ORDERAPP, ORDER FAST </h3>
-            <p>
-                OrderApp is revolutionizing the online ordering experience.<br>
-                We ease all the pain involved in the ordering process. For restaurants, we are a flowing source of manageable orders. For users, we are an easy ordering platform with a timely delivery to your door.<br>
+            <h3> מחוללת מהפכה בחוויית הזמנת אוכל באינטרנט </h3>
+            <p>  אנו מקלים על כל הסבל והקושי בתהליך ההזמנה דרך האינטרנט <br>   עבור הלקוח, אנו פלטפורמת הזמנות נוחה המקלה ומזרזת את תהליך ההזמנה כך שיגיע במהירות לבית הלקוח<br>
                 <br>
-                *Powered by Push Startups
+                בחסות  Push Startups
             </p>
 
             <!-- SOCIAL LINKS FOR ORDER APP -->

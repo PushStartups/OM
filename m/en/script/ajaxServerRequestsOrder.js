@@ -28,7 +28,6 @@ $( document ).ready(function() {
 
     }
 
-
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
     userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
@@ -136,7 +135,7 @@ function infoPopup() {
         '</div>'+
         '<h2>'+ selectedRest.name_en +'</h2>'+
         '<p>'+ selectedRest.address_en +'</p>'+
-        '<span class="cart">Min'+ minOrderLimit +'NIS</span>'+
+        '<span class="cart">Min '+ minOrderLimit +' NIS</span>'+
         '<div class="wrap">'+
         '<p>'+ selectedRest.description_en +'</p>'+
         '</div>'+
@@ -151,9 +150,7 @@ function infoPopup() {
 
     var contact = userObject['restaurantContact'];
 
-    temp += '<tr>'+
-        '<td>'+ contact +'</td>'+
-        '</tr>';
+    temp += '<a class="btn-tel" href="tel:'+contact+'">'+contact+'</a>';
 
     $('#info-popup-contact').html(temp);
 
@@ -163,6 +160,7 @@ function infoPopup() {
 
     for (var i = 0 ; i < selectedRest.timings.length; i++)
     {
+
         temp += '<tr>'+
             '<td>'+ selectedRest.timings[i].week_en +'</td>'+
             '<td>'+ selectedRest.timings[i].opening_time + ' - ' + selectedRest.timings[i].closing_time +'</td>'+
@@ -1142,7 +1140,6 @@ function validateCustomerInfo() {
 
 
     $('.box-frame.new').css('height' , 'calc(100% - 220px)');
-    $('.box-frame.new .wrap-col').css('height' , 'auto');
 
     $('#customer-info-popup').modal('hide');
     $('#delivery-popup').modal('show');
@@ -1250,6 +1247,23 @@ function deliveryAddress() {
     $('#delivery-popup').modal('hide');
     $('#summary-popup').modal('show');
 }
+
+
+function submitCoupon() {
+
+    // USER WANT TO USE COUPON
+    if($('#coupon-txt').val() != "")
+    {
+        submit_summary();
+    }
+    else
+    {
+        $("#error-coupon").html("Enter Code!");
+        $("#error-coupon").show();
+        $('#coupon').addClass('error');
+    }
+}
+
 
 
 function submit_summary() {
@@ -1364,10 +1378,10 @@ function checkCouponCallBack(response)
             $('#cashBtn').show();
         }
 
-        $('#summary-popup').modal('hide');
-        $('#payment-popup').modal('show');
-
-
+        // $('#summary-popup').modal('hide');
+        // $('#payment-popup').modal('show');
+        //
+        //
 
     }
     // INVALID COUPON CODE
@@ -1605,6 +1619,8 @@ function callPage3CallBack(response) {
 
     userObject = null;
     localStorage.setItem("USER_OBJECT", "");
+
+    refresh = true;
 
     // MOVING TO ORDER PAGE
     window.location.href = '/m/en/feedback.html';

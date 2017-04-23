@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/m/en/style/feedback.css">
-    <link rel="icon" href="/m/en/img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
     <!--<link href="/en/style/main.css" rel="stylesheet">-->
 
     <!-- Google Analytics -->
@@ -68,6 +73,22 @@
 
 <script>
 
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
+
     if (location.protocol != 'https:')
     {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
@@ -77,35 +98,73 @@
 </script>
 
 <body>
-<div id="wrapper">
-    <div class="frame-box">
-        <section class="first-section">
-            <div class="container">
-                <div class="logo">
-                    <a href="#">
-                        <img src="/m/en/img/logo.png" alt="images description">
-                        <strong>Order App</strong>
-                    </a>
-                </div>
 
-                <h1>Great, your food is<br>on it’s way to you!</h1>
-            </div>
-            <div class="img-holder">
-                <img class="delivery-img" src="/m/en/img/delivery-desktop-m.png">
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-            </div>
-        </section>
+<div id="main-content" style="height: 100%">
+    <div id="wrapper">
+        <div class="frame-box">
+            <section class="first-section">
+                <div class="container">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="/m/en/img/logo.png" alt="images description">
+                            <strong>Order App</strong>
+                        </a>
+                    </div>
+
+                    <h1>Great, your food is<br>on it’s way to you!</h1>
+                </div>
+                <div class="img-holder">
+                    <img class="delivery-img" src="/m/en/img/delivery-desktop-m.png">
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                </div>
+            </section>
+        </div>
     </div>
 </div>
 
+<div id="ori-mess" style="display: none; background: url('/m/en/img/home-bg.jpg'); background-size: cover; height: 100%; font-family: 'Open Sans', sans-serif;">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;">We work best in portrait mode.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;"> Please rotate your screen </span>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script src="https://cdn.smooch.io/smooch.min.js"></script>
+<!--<script src="https://cdn.smooch.io/smooch.min.js"></script>-->
+<!--<script>-->
+<!--Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });-->
+<!--Smooch.open();-->
+<!--</script>-->
+
+
 <script>
-    Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
-    Smooch.open();
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation == undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
 </script>
 
 </body>

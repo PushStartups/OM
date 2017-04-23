@@ -5,8 +5,9 @@
 }
 html,  body {
   height: 100%;
+
 }
-html {box-sizing: border-box;}
+html {box-sizing: border-box;overflow: hidden;}
 body {
 	margin: 0;
 	color: #fff;
@@ -119,7 +120,10 @@ a:hover, a:focus {
 	color: #fff;
 	background-image: linear-gradient(77deg, #34d861, #53e590);
 }
-
+.offline:focus, .offline:hover,
+.offline {
+	background:#b0b0b0;
+}
 
 #header.small {min-height: 90px;  }
 #header.small .logo{display: none;}
@@ -259,7 +263,7 @@ a:hover, a:focus {
 	-moz-border-radius:50%;
 	border-radius: 50%;
 	position: absolute;
-	top:2px;
+	top:-5px;
 	left: 0;
 	content: '';
 }
@@ -272,8 +276,8 @@ a:hover, a:focus {
 	-moz-border-radius:50%;
 	border-radius: 50%;
 	position: absolute;
-	top:2px;
-	left: 5px;
+	top:-5px;
+	left: 0;
 	color: #777c72;
 	font-family: FontAwesome;
 	font-size: 18px;

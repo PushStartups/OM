@@ -16,11 +16,11 @@ $(function () {
         var that = this;
         $(this).siblings().find(".toggle-content").fadeToggle().promise().done(function () {
             if ($(that).find(".more").text().indexOf("more") != -1) {
-                $(that).find(".more").text("less info")
+                $(that).find(".more").text("פחות מידע")
                 $(that).find(".sign").text("-")
             }
             else {
-                $(that).find(".more").text("more info")
+                $(that).find(".more").text("קרא עוד")
                 $(that).find(".sign").text("+")
             }
         });;
@@ -135,7 +135,7 @@ $(function () {
 
                     position: "absolute",
                     top: (scrollTo.offset().top + 30) + "px",
-                    left : (scrollTo.offset().left - 30) + "px"
+                    left : (scrollTo.offset().left + 30) + "px"
 
                 }).show();
 

@@ -1,9 +1,0 @@
-RewriteEngine on
-
-RewriteRule ^restaurants/([0-9a-zA-Z_-]+) restaurants.html [NC,L]
-
-RewriteRule ^([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/order menu-page.html [NC,L]
-
-RewriteRule ^wait wait.html [NC,L]
-
-

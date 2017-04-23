@@ -222,9 +222,13 @@ a:hover, a:focus {
 
 }
 .logo{
+	display: inline-block;
+	vertical-align: top;
+}
+.logo .logo-img{
 	width: 60px;
 	height: 40px;
-	margin:0 11px;
+	margin:0 11px 0 0;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -234,7 +238,8 @@ a:hover, a:focus {
 }
 .logo a img{
 	display:block;
-	width:70px;
+	width:100%;
+	height: auto;
 	margin:0 auto;
 }
 .logo a strong {
@@ -242,7 +247,8 @@ a:hover, a:focus {
 	line-height:23px;
 	font-weight: normal;
 	color: #fff;
-	font-family: 'Lobster';
+	display: inline-block;
+	vertical-align: middle;
 }
 #nav{
 	position:absolute;
@@ -296,7 +302,7 @@ a:hover, a:focus {
 .container.new{
 	width:70vw !important;
 	min-width:960px !important;
-	padding:70px 37px 0  !important;
+	padding:0 37px 0  !important;
 
 
 
@@ -547,6 +553,11 @@ a:hover, a:focus {
 	margin-top: 0;
 	font-weight: 400;
 }
+.title-frame{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
 .row-heading .title{
 	font-size: 10px;
 	line-height:25px;
@@ -581,7 +592,7 @@ a:hover, a:focus {
 	padding: 59px 0 25px 0;
 	position: relative;
 }
-.separator:first-child{padding: 0 0 25px;}
+.separator:first-child{padding: 70px 0 25px;}
 .separator .custom-hr {
 	border-bottom: 1px solid #cacaca;
 	width: calc(100% - 50px);
@@ -931,7 +942,13 @@ img.gallery {
 	z-index: 99999;
 	display: none;
 }
+
+.title-frame:hover .tooltip-popup,
 .rest-address:hover .tooltip-popup{display: block;}
+.title-frame .tooltip-popup:after{
+	left: 12px;
+}
+.title-frame .tooltip-popup{white-space: nowrap;}
 
 .tooltip-popup:after{
 	position: absolute;

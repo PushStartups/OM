@@ -138,6 +138,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
             $currentStatus = false;
 
             $today_timings = "";
+            $today_timings_he = "";
 
 
             foreach ($restaurantTimings as $singleTime) {
@@ -147,6 +148,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
 
                     $today_timings = $singleTime['opening_time'] . " - " . $singleTime['closing_time'];
+                    $today_timings_he = $singleTime['opening_time_he'] . " - " . $singleTime['closing_time_he'];
                     $openingTime = DateTime::createFromFormat('H:i', $singleTime['opening_time']);
                     $closingTime = DateTime::createFromFormat('H:i', $singleTime['closing_time']);
                     $currentTime = DateTime::createFromFormat('H:i', $currentTime);
@@ -202,6 +204,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
                 "availability"         => $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
                 "today_timings"        => $today_timings,               // TODAY TIMINGS
+                "today_timings_he"     => $today_timings_he,            // TODAY TIMINGS HE
                 "hours_left_to_open"   => $hoursLeftToOpen,             // HOURS LEFT TO OPEN FROM CURRENT TIME
                 "delivery_fee"         => $delivery_fee,                // DELIVERY FEE AREA WISE
                 "contact"              => $result['contact']            // CONTACT NO
@@ -708,11 +711,15 @@ $app->post('/add_order', function ($request, $response, $args) {
 //         EMAIL ORDER SUMMARY
 
         if ($user_order['language'] == 'en') {
+
             email_order_summary_english($user_order, $orderId, $todayDate);
+
         }
         else {
 
+
             email_order_summary_hebrew($user_order, $orderId, $todayDate);
+
         }
 
 
@@ -1293,12 +1300,6 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     $mailbody .=  '</div>';
 
-    if($user_order['specialRequest'] != '')
-    {
-
-        $mailbody .= '<br><span style="color: #000000;text-align: right;float: right;" dir="rtl"> <span style="color: #808080; padding:10px 30px;">בקשה מיוחדת :</span>'.$user_order["specialRequest"].'</span><br>';
-
-    }
 
     $mailbody .= '<table style="width: 100%; color:black; padding:10px 30px; background: #FEF2E8; border-bottom: 1px solid #D3D3D3 ">';
 
@@ -1323,6 +1324,15 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     $mailbody .= '</table>';
 
+
+    if($user_order['specialRequest'] != '')
+    {
+
+        $mailbody .= '<br><span style="color: #000000;text-align: right;float: right;" dir="rtl"> <span style="color: #808080; padding:10px 30px;">בקשה מיוחדת :</span>'.$user_order["specialRequest"].'</span><br>';
+
+    }
+
+
     $mailbody .= '<table style="float: right;color:black; padding:10px 30px; width: 270px; position: relative; left: calc(100% - 270px)" cellspacing="5px">';
     $mailbody .= '<tr style="font-size: 18px;  font-weight: bold" >';
     $mailbody .= '<td colspan="2" style="padding: 10px 0; text-align: right" dir="rtl" > מידע ללקוחות   </td>';
@@ -1339,7 +1349,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     if($user_order['pickFromRestaurant'] == 'false')
     {
-        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAptNo'].'  '.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')</td>';
+        $mailbody .= '<td style="text-align: right; white-space: nowrap" dir="rtl"> כתובת למשלוח : '.$user_order['deliveryAptNo'].'  '.$user_order['deliveryAddress'].' )'.$user_order['deliveryArea'].')</td>';
     }
     else
     {

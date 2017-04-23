@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
+	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+}
 html,  body {
   height: 100%;
   overflow:hidden;
@@ -11,7 +16,10 @@ body {
 	min-width: 320px;
 	height: 100%;
 	background-color: #fff;
-	font: 15px/18px 'Open Sans', sans-serif, Arial, Helvetica;
+	font-size: 15px;
+	line-height: 18px;
+	font-family: 'OpenSansHebrew', serif;
+	background: url('../img/restaurants-bg.png') center center no-repeat;
 	background: url('../img/restaurants-bg.png') center center no-repeat;
 	position: relative;
 	background-size: cover;
@@ -48,17 +56,22 @@ a:hover, a:focus {
 	outline: 0px auto -webkit-focus-ring-color !important;
 	outline-offset: 0px !important;
 }
+button,
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 input,
 textarea,
 select {
+	font-family: 'OpenSansHebrew', serif;
 	color: #000;
 	vertical-align: middle;
 }
+
 form,
 fieldset {
 	margin: 0;
 	padding: 0;
 	border-style: none;
+	font-family: 'OpenSansHebrew', serif;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {

@@ -1,8 +1,54 @@
 @font-face {
 	font-family: 'OpenSansHebrew';
-	src: url('../fonts/Hebrew/OpenSansHebrew.woff') format('woff'),
-	url('../fonts/Hebrew/OpenSansHebrew.ttf') format('truetype');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-regular.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-regular.svg#open_sans_hebrewregular') format('svg');
+	font-weight: 400;
+	font-style: normal;
 }
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-italic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-italic.svg#open_sans_hebrewitalic') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-bold.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-bold.svg#open_sans_hebrewbold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-light.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-light.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-light.svg#open_sans_hebrewlight') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'OpenSansHebrew';
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot');
+	src: url('../fonts/OpenSans/opensanshebrew-lightitalic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.woff') format('woff'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.ttf') format('truetype'),
+	url('../fonts/OpenSans/opensanshebrew-lightitalic.svg#open_sans_hebrewlight_italic') format('svg');
+	font-weight: 200;
+	font-style: italic;
+}
+
 @font-face {
     font-family: 'Lobster';
     src: url('../fonts/lobster/Lobster.woff') format('woff'), 
@@ -23,7 +69,7 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: none;
 }
-
+button,
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'OpenSansHebrew', serif;}
 .blur-class {
 	-webkit-filter: opacity(.2);
@@ -77,7 +123,7 @@ a:hover, a:focus {
 input,
 textarea,
 select {
-	font: Arial, Helvetica, sans-serif;
+	font-family: 'OpenSansHebrew', serif;
 	color: #000;
 	vertical-align: middle;
 }
@@ -282,9 +328,9 @@ button {
 #nav ul li a.active:hover{border-color:#ff7f00;}
 #nav ul li a:hover{color:#ff7f00;}
 .img-block h1{
-	font-size: 75px;
-	line-height:83px;
-	font-weight: 100;
+	font-size: 85px;
+	line-height:95px;
+	font-weight: normal;
 	font-style: normal;
 	color: #fff;
 	margin:0 0 40px;
@@ -578,7 +624,6 @@ and (orientation : portrait){
 #about {
 
 	text-align: center;
-	font-family:'Open Sans', sans-serif;
 }
 .modal {
 	text-align: center;

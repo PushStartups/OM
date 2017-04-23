@@ -3,14 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/m/he/style/feedback.css">
-    <link rel="icon" href="/m/he/img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 
     <!-- Google Analytics -->
@@ -66,7 +68,39 @@
 
 
 </head>
+
+<script>
+
+
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
+
+
+</script>
+
+
 <body>
+
+<div id="main-content" style="height: 100%;">
+
 <div id="wrapper">
     <div class="frame-box">
         <section class="first-section">
@@ -78,7 +112,8 @@
                     </a>
                 </div>
 
-                <h1> אלייך<br> האוכל שלך כבר בדרך<br> מעולה!</h1>
+                <h1> מעולה<br> !האוכל שלך כבר בדרך אליך </h1>
+
             </div>
             <div class="img-holder">
                 <img class="delivery-img" src="/m/he/img/delivery-desktop-he.png">
@@ -90,12 +125,55 @@
         </section>
     </div>
 </div>
+</div>
 
 
-<script src="https://cdn.smooch.io/smooch.min.js"></script>
+<div id="ori-mess" style="display: none; background: url('/m/he/img/home-bg.png'); background-size: cover; height: 100%">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">אנחנו עובדים הכי טוב במצב דיוקן.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">  סובב את המסך </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
-    Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
-    Smooch.open();
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
+
 </script>
+
+
+<!--<script src="https://cdn.smooch.io/smooch.min.js"></script>-->
+<!--<script>-->
+    <!--Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });-->
+    <!--Smooch.sendMessage("HEBREW HEBREW");-->
+    <!--Smooch.open();-->
+<!--</script>-->
+
+
 </body>
 </html>

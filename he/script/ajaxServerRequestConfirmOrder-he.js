@@ -62,11 +62,11 @@ $(document).ready(function() {
 
     $('#address-text').html(userObject.restaurantAddress);
 
-    var temp = '<option value="-1">Select Area</option>';
+    var temp = '<option value="-1">בחר אזור</option>';
 
     for(var x=0;x<selectedRest.delivery_fee.length;x++)
     {
-        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_he +' : Fee '+' ש"ח ' +selectedRest.delivery_fee[x].fee+'</option>';
+        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_he +' : דמי משלוח ' +selectedRest.delivery_fee[x].fee+  ' ש"ח ' +'</option>';
     }
 
     $('#delivery-areas').html(temp);
@@ -232,7 +232,7 @@ function saveUserInfo() {
     if($("#name_text").val() == "")
     {
         $("#name").addClass("error");
-        $("#error-name").html('*שדה נדרש');
+        $("#error-name").html('*שדה חובה');
         $("#error-name").show();
 
         return;
@@ -242,7 +242,7 @@ function saveUserInfo() {
     if($("#email_text").val() == ""){
 
         $("#email").addClass("error");
-        $("#error-email").html('*שדה נדרש');
+        $("#error-email").html('*שדה חובה');
         $("#error-email").show();
 
         return;
@@ -261,7 +261,7 @@ function saveUserInfo() {
     if($("#contact_text").val() == ""){
 
         $("#contact").addClass("error");
-        $("#error-contact").html('*שדה נדרש');
+        $("#error-contact").html('*שדה חובה');
         $("#error-contact").show();
         return;
     }
@@ -352,7 +352,7 @@ function deliveryAddress()
         if($("#appt-no").val() == "")
         {
             $("#appt-no").addClass("error");
-            $("#error-appt-no").html('*שדה נדרש');
+            $("#error-appt-no").html('*שדה חובה');
             $("#error-appt-no").show();
             return;
         }
@@ -361,7 +361,7 @@ function deliveryAddress()
         if($("#address").val() == "")
         {
             $("#address").addClass("error");
-            $("#error-address").html('*שדה נדרש');
+            $("#error-address").html('*שדה חובה');
             $("#error-address").show();
             return;
         }
@@ -431,7 +431,7 @@ function ClosePayment()
         if ($('#card_no').val() == "") {
 
             $("#error-card").addClass("error");
-            $('#error-card-no').html("*שדה נדרש");
+            $('#error-card-no').html("*שדה חובה");
             return;
 
         }
@@ -450,7 +450,7 @@ function ClosePayment()
         // CVV SHOULD NOT BE EMPTY
         if ($('#cvv').val() == "") {
             $("#error-cvv-parent").addClass("error");
-            $('.payment-errors').html("*שדה נדרש CVV");
+            $('.payment-errors').html("*שדה חובה CVV");
             $('.payment-errors').show();
 
             return;
@@ -766,7 +766,7 @@ function callPage3CallBack(response) {
     localStorage.setItem("USER_OBJECT", "");
 
     // MOVING TO ORDER PAGE
-    window.location.href = '/en/'+selectedCityName+"/"+ restaurantTitle+"/complete-order";
+    window.location.href = '/he/'+selectedCityName+"/"+ restaurantTitle+"/complete-order";
 
 }
 
@@ -803,5 +803,5 @@ function goBack()
     selectedCityName        =   selectedCityName.replace(/\s/g, '');
 
     // MOVING TO ORDER PAGE
-    window.location.href = '/en/'+selectedCityName+"/"+ restaurantTitle+"/order";
+    window.location.href = '/he/'+selectedCityName+"/"+ restaurantTitle+"/order";
 }

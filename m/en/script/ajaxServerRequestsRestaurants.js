@@ -21,34 +21,35 @@ function initialize() {
 
 
 // USER ORDER INFORMATION
-    userObject = {
+        userObject = {
 
-        'language': 'en',                  // USER LANGAGUE ENGLISH
-        'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
-        'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
-        'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
-        'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
-        'restaurantContact' : "",          // RESTAURANT CONTACT
-        'name': "",                        // USER NAME
-        'email': "",                       // USER EMAIL
-        'contact': "",                     // USER CONTACT
-        'orders': [],                      // USER ORDERS
-        'total': 0,                        // TOTAL AMOUNT OF ORDER
-        'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
-        'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
-        'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
-        'isCoupon': false,                 // USER HAVE COUPON CODE ?
-        'couponCode': '',                  // COUPON CODE OF USER
-        'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
-        'discount': 0,                     // DISCOUNT ON COUPON VALUE
-        'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
-        'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
-        'cartData': null,                  // COMPUTED CART DATA
-        'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
-        'deliveryArea':null,               // DELIVERY AREA
-        'deliveryCharges':null,            // DELIVERY CHARGES
-        'specialRequest':""                // SPECIAL REQUEST FROM USER
-    };
+            'language': 'en',                  // USER LANGAGUE ENGLISH
+            'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
+            'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
+            'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
+            'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
+            'restaurantContact': "",          // RESTAURANT CONTACT
+            'name': "",                        // USER NAME
+            'email': "",                       // USER EMAIL
+            'contact': "",                     // USER CONTACT
+            'orders': [],                      // USER ORDERS
+            'total': 0,                        // TOTAL AMOUNT OF ORDER
+            'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
+            'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
+            'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
+            'isCoupon': false,                 // USER HAVE COUPON CODE ?
+            'couponCode': '',                  // COUPON CODE OF USER
+            'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
+            'discount': 0,                     // DISCOUNT ON COUPON VALUE
+            'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
+            'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
+            'cartData': null,                  // COMPUTED CART DATA
+            'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
+            'deliveryArea': null,               // DELIVERY AREA
+            'deliveryCharges': null,            // DELIVERY CHARGES
+            'specialRequest': ""                // SPECIAL REQUEST FROM USER
+        };
+
 
     commonAjaxCall("/restapi/index.php/get_all_restaurants",{'city_id':selectedCityId},getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER
 
@@ -73,7 +74,7 @@ function  getAllRestaurants(response)
 
         // RESTAURANT CURRENTLY ACTIVE
 
-        if (result[x].availability) {     //
+        if (result[x].availability) {     //result[x].availability
 
 
             temp += '<li>'+
@@ -132,10 +133,10 @@ function  getAllRestaurants(response)
                 '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>Open Now</span>' +result[x].today_timings+ '</a>'+
                 '</li>'+
                 '<li class="last text-center">'+
-                '<a  onclick="openGallery('+ x +')"  data-toggle="modal" data-target="#slider-popup" href="#"><img src="/m/en/img/gallery-img.png"> Gallery</a>'+
+                '<a  onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
                 '</li>'+
                 '</ul>'+
-                '<a href="#" onclick="order_now('+ x +')" class="brn-submit">Order Now</a>'+
+                '<a href="#" class="brn-submit offline">Order Now</a>'+
                 '</div>'+
                 '</li>';
 

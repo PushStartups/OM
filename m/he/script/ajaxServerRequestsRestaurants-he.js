@@ -23,7 +23,7 @@ function initialize() {
 // USER ORDER INFORMATION
     userObject = {
 
-        'language': 'en',                  // USER LANGAGUE ENGLISH
+        'language': 'he',                  // USER LANGAGUE HEBREW
         'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
@@ -79,7 +79,7 @@ function  getAllRestaurants(response)
 
         // RESTAURANT CURRENTLY ACTIVE
 
-        if (result[x].availability) {    
+        if (result[x].availability) { //result[x].availability
 
 
             temp += '<li>'+
@@ -98,13 +98,13 @@ function  getAllRestaurants(response)
                 '</div>'+
                 '<ul class="list">'+
                 '<li>'+
-                '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_he +'</div><span>delivery Fee</span></a>'+
+                '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_he +'</div><span>מחירון משלוחים </span></a>'+
                 '</li>'+
                 '<li>'+
-                '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>פתוח עכשיו</span>' +result[x].today_timings+ '</a>'+
+                '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>פתוח עכשיו</span>' +result[x].today_timings_he+ '</a>'+
                 '</li>'+
                 '<li class="last text-center">'+
-                '<a onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
+                '<a onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png">גלריה</a>'+
                 '</li>'+
                 '</ul>'+
                 '<a href="#" onclick="order_now('+ x +')" class="brn-submit">הזמן עכשיו</a>'+
@@ -135,13 +135,13 @@ function  getAllRestaurants(response)
                 '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_he +'</div><span>delivery Fee</span></a>'+
                 '</li>'+
                 '<li>'+
-                '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>פתוח עכשיו</span>' +result[x].today_timings+ '</a>'+
+                '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>פתוח עכשיו</span>' +result[x].today_timings_he+ '</a>'+
                 '</li>'+
                 '<li class="last text-center">'+
-                '<a data-toggle="modal"  onclick="openGallery('+ x +')"  data-target="#slider-popup" href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
+                '<a onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png">גלריה</a>'+
                 '</li>'+
                 '</ul>'+
-                '<a href="#" onclick="order_now('+ x +')" class="brn-submit">הזמן עכשיו</a>'+
+                '<a  class="brn-submit offline">הזמן עכשיו</a>'+
                 '</div>'+
                 '</li>';
 
@@ -259,7 +259,7 @@ function openDiscount(index) {
 
     for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
     {
-        temp += '<p> ש״ח '+ allRestJson[index].delivery_fee[i].fee +' : '+ allRestJson[index].delivery_fee[i].area_he +'</p>';
+        temp += '<p>'+' ש״ח '+ allRestJson[index].delivery_fee[i].fee +' : '+ allRestJson[index].delivery_fee[i].area_he +'</p>';
     }
 
     $("#discount-pop").html(temp);
