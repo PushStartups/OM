@@ -1087,6 +1087,9 @@ function OnOrderNowClicked() {
 
 function validateCustomerInfo() {
 
+
+    console.log('hi');
+
     $('#customer-name-field').removeClass('error');
     $('#customer-email-field').removeClass('error');
     $('#customer-number-field').removeClass('error');
@@ -1187,6 +1190,8 @@ $('#delivery-areas').on('change', function() {
 
 
 function deliveryAddress() {
+
+    console.log('hi');
 
     $("#apt-parent").removeClass("error");
     $("#address-parent").removeClass("error");

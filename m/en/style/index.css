@@ -172,6 +172,41 @@ button {
 
 }
 
+
+.ajs-dialog{
+
+	font-family: sans-serif;
+	color: black;
+	font-weight: 700;
+	height: 165px;
+}
+
+.ajs-modal {
+
+	top: 50% !important;
+	margin: -103px 0 0 !important;
+	z-index: 9999999;
+}
+
+
+
+.ajs-button{
+
+	border: 1px solid red;
+}
+
+
+.ajs-content{
+
+	overflow: hidden !important;
+}
+
+
+.ajs-maximize{
+
+	display: none !important;
+}S
+
 .alertify.ajs-maximizable .ajs-commands button.ajs-maximize, .alertify.ajs-maximizable .ajs-commands button.ajs-restore,
 .alertify.ajs-resizable:not(.ajs-maximized) .ajs-handle{
 

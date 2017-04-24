@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2017 at 10:51 AM
+-- Generation Time: Apr 24, 2017 at 01:33 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 50, '2017-04-20', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'shoaib.it002@gmail.com', 'Shoaib', 'test', 'test', 50, '2017-04-24', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '0000-00-00', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (4, 'mark@pushstartups.com', 'Avi', 'mark', 'mark', 12, '2017-04-06', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 0, '2017-04-19', '0548307445', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 2, '');
@@ -526,7 +526,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=84 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=88 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -554,8 +554,8 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (19, 'Within Modiin', 'בתוך מודיעין\n', 17, 9),
 (20, 'Within Modiin', 'בתוך מודיעין\n', 18, 10),
 (21, 'Within Modiin', 'בתוך מודיעין\n', 17, 11),
-(22, 'Within Modiin', 'בתוך מודיעין\n', 17, 6),
-(23, 'Outside Modiin', 'מחוץ למודיעין\n', 25, 6),
+(22, 'Modiin/Reut/Maccabim', 'מודיעין\\מכבים\\רעות', 7, 6),
+(23, 'Shaalavim', 'שעלבים', 12, 6),
 (24, 'Outside Modiin', 'מחוץ למודיעין\n', 25, 11),
 (25, 'Outside Modiin', 'מחוץ למודיעין\n', 30, 10),
 (26, 'Outside Modiin', 'מחוץ למודיעין\n', 25, 9),
@@ -602,7 +602,11 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (80, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 14),
 (81, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 15),
 (82, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 16),
-(83, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 17);
+(83, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 17),
+(84, 'Nof Ayalon', 'נוף איילון', 12, 6),
+(85, 'Shilat', 'שילת', 12, 6),
+(86, 'Chashmonaim', 'חשמונאים', 12, 6),
+(87, 'Modiin Illit', 'מודיעין עילית', 12, 6);
 
 -- --------------------------------------------------------
 
@@ -1844,7 +1848,7 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (99, 21, 'Tortilla Lamb', 'טורטיה טלה', 'Spicy lamb sausages spread with guacamole', 'נקניקיות טלה פיקנטיות וממרח גוואקמולי', 44, 198),
 (100, 22, 'Satay Chicken Salad', 'סלט סאטה עוף', 'Chicken breast coated in peanut sauce on a bed of green salad', 'חזה עוף מושרה בחמאת בוטנים על מצע סלט ירוק', 44, 199),
 (101, 22, 'Veal Salad', 'סלט נתחי עגל', 'Stirfried veal pieces with onion on a bed of greens with peanut sauce and gourmet tehina', 'נתחי עגל מוקפצים עם בצל על מצע סלט ירוק ברוטב חמאת בוטנים וטחינה גולמית', 46, 200),
-(102, 22, 'Chicken And Goose Breast Salad', 'סלט עוף עם חזה אווז', 'Stirfried pieces of chicken and aged goose breast on a bed of green salad, mixed with roasted peppers', 'נתחי עוף מוקפצים עם חזה אווז מעושן על מצע סלט ירוק ופלפל קלוי', 47, 201),
+(102, 22, 'Chicken, Mushroom, and Onion Salad', 'סלט עוף פטריות ובצל', 'Stirfried pieces of chicken and aged goose breast on a bed of green salad, mixed with roasted peppers', 'נתחי עוף מוקפצים עם חזה אווז מעושן על מצע סלט ירוק ופלפל קלוי', 47, 201),
 (103, 22, 'Roast Beef Salad', 'סלט רוסטביף', 'Hot roast beef on a bed of greens, roast peppers, topped with a fried egg, croutons and Dijonnaise sauce', 'רוסטביף חם על מצע סלט ירוק ופלפל קלוי בתוספת ביצת עין , קרוטונים ודיזו''נז''', 47, 202),
 (104, 22, 'Chicken Liver Salad', 'סלט כבדי עוף', 'Chicken livers in maple sauce, pears, walnuts and cranberries on a bed of greens', 'כבדי עוף בניחוח מייפל, אגסים, אגוזי מלך וחמוציות על מצע של סלט ירוק', 44, 203),
 (105, 22, 'Green Salad', 'סלט ירוק', 'Lettuce, baby leaves, purple onion, cherry tomatoes, cucumber, avocado (when in season) in a mustard vinaigrette sauce', 'חסה, עלי בייבי, בצל סגול, עגבניות שרי, מלפפון, אבוקדו (בעונה)', 27, 204),
@@ -2786,14 +2790,22 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=605 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=613 ;
 
 --
 -- Dumping data for table `order_detail`
 --
 
 INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_items`) VALUES
-(604, 477, 2, '??? ?????', 80, '???????? (+18), ??? ??? (+18)');
+(604, 477, 2, '??? ?????', 80, '???????? (+18), ??? ??? (+18)'),
+(605, 478, 2, 'Angus Burger', 40, 'Thousand Island, Jalpeño, Lettuce'),
+(606, 479, 1, 'Angus Salad', 44, ''),
+(607, 479, 1, 'Chicken Salad', 42, ''),
+(608, 479, 1, 'Pargit Tortilla', 34, 'Bbq, Garlic Mayo'),
+(609, 479, 1, 'Chicken Sandwich', 33, 'Thousand Island, Pickled spicy pepper'),
+(610, 480, 2, '??? ?????', 84, '???????? (+18), ??? ??? (+18), ???????? (+4), ???????'),
+(611, 480, 2, '??? ?????', 66, '??? ??? (+18), ???? (+4)'),
+(612, 481, 2, '??? ?????', 84, '???????? (+18), ??? ??? (+18), ???? (+4)');
 
 -- --------------------------------------------------------
 
@@ -2826,10 +2838,10 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `contact`, `min_amount`, `city_id`, `hide`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`) VALUES
 (1, 'Angus', 'אנגוס', '97225609533', 50, 1, 0, '/m/en/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש'),
 (2, 'Meshulashim', 'פיצה משולשים', '97225609532', 50, 1, 0, '/m/en/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא '),
-(3, 'Bandora', 'בנדורה', '972772200051', 50, 1, 0, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canyon Gate City, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
+(3, 'Bandora', 'בנדורה', '972772200051', 50, 1, 0, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canion Shaarei Ha''Ir, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף'),
 (4, 'Roza', 'רוזה', '97225609527', 50, 1, 0, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Sderot Canion Big Fashion Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי'),
 (5, 'Japan Japan', 'ג''אפן ג''אפן', '97225609531', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף'),
-(6, 'OSHI OSHI', 'אושי אושי', '972772201290', 50, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
+(6, 'OSHI OSHI', 'אושי אושי', '972772201290', 70, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
 (7, 'Greg Cafe', 'קפה גרג', '97225609534', 50, 1, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe, located in Big Fashion mall, has made a name for itself as THE place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'קפה גרג יצר לעצמו מוניטין בתור בית קפה המגיש אוכל חלבי איכותי וקפה מצויין. לקפה גרג תפריט עשיר מאוד שבמרכזו ארוחת בוקר טעימה, עשירה ומפנקת. הרשת לא קופאת על שמריה לרגע, ומקפידה לחדש, להתחדש ולרגש את קהל לקוחותיה ע"י השקת תפריט חדש, מגוון ואקלקטי מדי שנה, המשלב ארוחות מכל העולם וממטבחים מגוונים ביניהם מטבח איטלקי, אסייתי, אמריקאי, בלקני, שוויצרי, מקסיקני, ספרדי וכמובן - ישראלי. כמו כן, בית הקפה מציע מנות טבעוניות בריאות וטעימות. ', 'Big Fashion Mall, Yigal Alon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
 (8, 'Grill 443', 'גריל 443', '97225609535', 50, 2, 0, '/m/en/img/grill443_logo.png', 'People come from far and wide to eat at the charcoal grilled, expertly chosen meats in Grill 443.  Now you can enjoy their amazing quality at home. There is a large selection of options, including two budget-friendly family meals.  Choose from an abundance of home style dishes, a dozen types of salad, accompanied by laffa straight from the taboun. ', '"""מסעדה מקומית אהובה עם בשרים ושיפודים נבחרים על גריל הפחמים, המדהימים בטעמם האיכותי.\r\n\r\nבצד תוכלו להזמין כמה סוגי סלטים טריים, חומוס הבית עם גרגירים חמים ונעימים לחיך, וקבב הבית הידוע בטעמו.\r\n\r\nבמקום שפע מאכלים ביתיים, לאפות היישר מהטבון. \r\n\r\nארוחות עסקיות ניתן להזמין בכל יום ובכל שעות היום, ואוכל מוכן לשבת לקחת הביתה."""', '443 - on road 443, beside the Sonol gas station at Shilat junction', 'צומת שילת (ת. דלק סונול), מודיעין', 'Rabbanut.    Meat is Chalak, chicken is rabbanut mehadrin', 'רבנות.  העוף מהדרין, והבשר חלק'),
 (9, 'Pizza Cheese', 'פיצה צ׳יז', '', 50, 2, 0, '/m/en/img/pc_logo.png', 'Not just budget-friendly pizzas, pastas and salads from your friendly local pizzeria. With this being Israel, there''s also jachnun and malawach to choose from, in addition to ziva and garlic bread. Delicious!', '\n                                    פיצה מעולה עם כל התוספות, מבחר פסטות וסלטים, שירות נהדר ומחיר כמו שאין בשום מקום. מה עוד צריך?!                                ', 'Marlaz Center, Emek Dotan 66, Modiin', 'מרכז קניות מרלז, עמק דותן 66, מודיעין', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף'),
@@ -2839,7 +2851,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `contact`, `min_amount`, 
 (13, 'Pinati', 'פינתי', '', 50, 1, 0, '/m/en/img/pinati_logo.png', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
 (14, 'Pizzaland', 'פיצה לנד', '97225609526', 50, 1, 0, '/m/en/img/pizzaland_logo.png', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
 (15, '110 Burger', '110 בורגר', '', 50, 1, 0, '/m/en/img/110_burger_logo.png', '110 Burger is new, revolutionary and groundbreaking brand in the fast food industry, the next generation of fast food. With a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables and vegetarian-friendly menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product, which adheres to the standard of gourmet restaurants.', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food בישראל. 110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
-(16, 'Atza Sushi Bar', 'אצה סושי בר', '', 50, 1, 0, '/m/en/img/atza_logo.png', 'Atza serves Pan-Asian style food, with influences of Eastern Asian cuisine and a varied menu where you can enjoy dozens of delicious dishes. You can choose from meat, chicken, fish and tofu dishes, not to mention a huge sushi menu.', 'המנות של אצה הן בסגנון פאן-אסייתי.  אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת אצה תפריט מגוון בו תוכלו להינות  ממנות שונות. תוכלו לבחור מבין כסוגי מנות בשרים וסוגי מנות עוף, בקר, דגים וטופו. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Big Center, Yigal Allon 1, Beit Shemesh', '  מרכז ביג, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
+(16, 'Atza Sushi Bar', 'אצה סושי בר', '', 50, 1, 1, '/m/en/img/atza_logo.png', 'Atza serves Pan-Asian style food, with influences of Eastern Asian cuisine and a varied menu where you can enjoy dozens of delicious dishes. You can choose from meat, chicken, fish and tofu dishes, not to mention a huge sushi menu.', 'המנות של אצה הן בסגנון פאן-אסייתי.  אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת אצה תפריט מגוון בו תוכלו להינות  ממנות שונות. תוכלו לבחור מבין כסוגי מנות בשרים וסוגי מנות עוף, בקר, דגים וטופו. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Big Center, Yigal Allon 1, Beit Shemesh', '  מרכז ביג, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
 (17, 'GRILL BURGER', 'גריל בורגר', '', 50, 1, 0, '/m/en/img/grill_burger_logo.png', 'Grill Burger is rightly the most popular burger restaurant in the Rama, with great food at the best prices. Now you can enjoy their delicious food at home. Choose from a varied menu of burgers and seasoned meats in baguettes, whole wheat rolls or ciabattas with your favorite toppings. Don''t forget to order sides of fries and other extras! For the health conscious, there is a selection of fresh salads with and without meat or chicken. ', 'גריל בורגר, מסעדת המבורגרים הממוקמת בבית שמש, במסעדה תפריט בשרי עשיר. גריל בורגר מסעדה כשרה בהשגחת הרבנות ובהשגחת הרב ראובן. שירות מקצועי, אוכל טרי נקי וטעים!', '2 Nahal Tse''elim Ave, Ramat Beit Shemesh ', 'נחל צאלים 2 רמת בית שמש', 'Badatz Rav Rubin', 'בד''''ץ  רב רובין');
 
 -- --------------------------------------------------------
@@ -9019,14 +9031,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=515 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=520 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(514, 'd@gmail.com', 'דבורה', '', '', 0, '0000-00-00', '0000000000', 'Gad ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '');
+(514, 'd@gmail.com', 'דבורה', '', '', 0, '0000-00-00', '0000000000', 'Gad ', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(515, 'avi@pushstartups.com', 'אבי', '', '', 0, '0000-00-00', '000000', 'ds', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Lg0NdearFMFvIXbhjs8Mfr3C'),
+(516, 'mark@pushstartups.com', 'test', '', '', 0, '0000-00-00', '0000000000', 'hahar', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(517, 'sdf@dsf.com', 'sf', '', '', 0, '0000-00-00', '343434', 'sdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(518, 'hdhd@fjfjkf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QThfg69G5vDtrvA9QDjtMwch'),
+(519, 'hdhd@jfkf.com', 'Hdbdh', '', '', 0, '0000-00-00', '3736463773', 'Xbbcbx', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_tnz9yfNdK17C62rvNWAbhtsi');
 
 -- --------------------------------------------------------
 
@@ -9059,14 +9076,18 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=478 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=482 ;
 
 --
 -- Dumping data for table `user_orders`
 --
 
 INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_discount`, `discount_value`, `order_date`) VALUES
-(477, 514, 1, 185, NULL, 0, '2017-04-23');
+(477, 514, 1, 185, NULL, 0, '2017-04-23'),
+(478, 515, 1, 105, NULL, 0, '2017-04-23'),
+(479, 516, 1, 178, NULL, 0, '2017-04-23'),
+(480, 517, 1, 325, NULL, 0, '2017-04-24'),
+(481, 519, 1, 193, NULL, 0, '2017-04-24');
 
 -- --------------------------------------------------------
 
@@ -9162,125 +9183,125 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
 --
 
 INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `opening_time_he`, `closing_time`, `closing_time_he`) VALUES
-(8, 1, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(9, 1, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(10, 1, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(11, 1, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(12, 1, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(8, 1, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(9, 1, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(10, 1, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(11, 1, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(12, 1, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (13, 1, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(14, 1, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(15, 2, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(16, 2, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(17, 2, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(18, 2, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(19, 2, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(14, 1, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(15, 2, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(16, 2, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(17, 2, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(18, 2, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(19, 2, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (20, 2, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(21, 2, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(22, 3, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(23, 3, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(24, 3, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(25, 3, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(26, 3, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(21, 2, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(22, 3, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(23, 3, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(24, 3, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(25, 3, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(26, 3, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (27, 3, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(28, 3, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(36, 4, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(37, 4, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(38, 4, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(39, 4, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(40, 4, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(28, 3, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(36, 4, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(37, 4, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(38, 4, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(39, 4, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(40, 4, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (41, 4, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(42, 4, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(43, 5, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(44, 5, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(45, 5, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(46, 5, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(47, 5, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(42, 4, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(43, 5, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(44, 5, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(45, 5, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(46, 5, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(47, 5, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (48, 5, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(49, 5, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(50, 6, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(51, 6, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(52, 6, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(53, 6, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(54, 6, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(49, 5, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(50, 6, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(51, 6, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(52, 6, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(53, 6, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(54, 6, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (55, 6, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(56, 6, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(64, 9, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(65, 9, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(66, 9, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(67, 9, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(68, 9, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(56, 6, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(64, 9, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(65, 9, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(66, 9, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(67, 9, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(68, 9, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (69, 9, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(70, 9, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(71, 10, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(72, 10, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(73, 10, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(74, 10, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(75, 10, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(70, 9, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(71, 10, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(72, 10, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(73, 10, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(74, 10, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(75, 10, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (76, 10, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(77, 10, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(78, 11, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(79, 11, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(80, 11, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(81, 11, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(82, 11, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(77, 10, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(78, 11, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(79, 11, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(80, 11, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(81, 11, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(82, 11, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (83, 11, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(84, 11, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(85, 7, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(86, 7, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(87, 7, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(88, 7, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(89, 7, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(84, 11, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(85, 7, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(86, 7, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(87, 7, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(88, 7, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(89, 7, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (90, 7, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(91, 7, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(92, 12, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(93, 12, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(94, 12, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(95, 12, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(96, 12, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(91, 7, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(92, 12, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(93, 12, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(94, 12, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(95, 12, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(96, 12, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (97, 12, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(98, 12, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(99, 13, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(100, 13, 'Monday', 'יום ב\r\n', '11:00', '11:00', '22:00', '22:00'),
-(101, 13, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(102, 13, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(103, 13, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
-(104, 13, 'Friday', 'ששי', 'Closed', 'סגור', 'Closed', 'סגור'),
-(105, 13, 'Saturday', 'שבת', 'Closed', 'סגור', 'Closed', 'סגור'),
-(106, 14, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(107, 14, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(108, 14, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(109, 14, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(110, 14, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(98, 12, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(99, 13, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(100, 13, 'Monday', 'יום ב\r\n', '11:30', '11:30', '23:30', '23:30'),
+(101, 13, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(102, 13, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(103, 13, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
+(104, 13, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
+(105, 13, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(106, 14, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(107, 14, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(108, 14, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(109, 14, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(110, 14, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (111, 14, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(112, 14, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(113, 15, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(114, 15, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(115, 15, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(116, 15, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(117, 15, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(112, 14, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(113, 15, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(114, 15, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(115, 15, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(116, 15, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(117, 15, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (118, 15, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(119, 15, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(120, 8, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(121, 8, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(122, 8, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(123, 8, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(124, 8, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(119, 15, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(120, 8, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(121, 8, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(122, 8, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(123, 8, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(124, 8, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (125, 8, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(126, 8, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(127, 16, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(128, 16, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(129, 16, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(130, 16, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(131, 16, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(126, 8, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(127, 16, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(128, 16, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(129, 16, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(130, 16, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(131, 16, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (132, 16, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(133, 16, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(134, 17, 'Sunday', 'יום א', '11:00', '11:00', '18:00', '18:00'),
-(135, 17, 'Monday', 'יום ב', '11:00', '11:00', '22:00', '22:00'),
-(136, 17, 'Tuesday', 'יום ג', '11:00', '11:00', '22:00', '22:00'),
-(137, 17, 'Wednesday', 'יום ד', '11:00', '11:00', '22:00', '22:00'),
-(138, 17, 'Thursday', 'יום ה', '11:00', '11:00', '22:00', '22:00'),
+(133, 16, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30'),
+(134, 17, 'Sunday', 'יום א', '11:30', '11:30', '23:30', '23:30'),
+(135, 17, 'Monday', 'יום ב', '11:30', '11:30', '23:30', '23:30'),
+(136, 17, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
+(137, 17, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
+(138, 17, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
 (139, 17, 'Friday', 'ששי', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר'),
-(140, 17, 'Saturday', 'שבת', 'Closed', 'סָגוּר', 'Closed', 'סָגוּר');
+(140, 17, 'Saturday', 'שבת', '20:30', '20:30', '23:30', '23:30');
 
 --
 -- Constraints for dumped tables

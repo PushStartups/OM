@@ -267,6 +267,40 @@ a:hover, a:focus {
 	left: 0;
 	content: '';
 }
+
+.ajs-dialog{
+
+	font-family: sans-serif;
+	color: black;
+	font-weight: 700;
+	height: 165px;
+}
+
+.ajs-modal {
+
+	top: 50% !important;
+	margin: -103px 0 0 !important;
+	z-index: 9999999;
+}
+
+
+
+.ajs-button{
+
+	border: 1px solid red;
+}
+
+
+.ajs-content{
+
+	overflow: hidden !important;
+}
+
+
+.ajs-maximize{
+
+	display: none !important;
+}
 .accordion .image-box.gray:before{
 	content: "\f057";
 	width:15px;
