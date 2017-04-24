@@ -79,6 +79,35 @@ a:hover, a:focus {
 	background-image: linear-gradient(77deg, #34d861, #53e590);
 	color: #ff7f00;
 }
+
+.alertify .ajs-dialog{
+
+	position: fixed;
+	top: 50%;
+	left: 20px;
+	right: 20px;
+	margin: -50% 0 0;
+
+}
+
+.alertify.ajs-maximizable .ajs-commands button.ajs-maximize, .alertify.ajs-maximizable .ajs-commands button.ajs-restore,
+.alertify.ajs-resizable:not(.ajs-maximized) .ajs-handle{
+
+	display: none;
+}
+.alertify.ajs-resizable .ajs-commands, .alertify.ajs-maximized .ajs-commands{
+
+	margin: 14px 5px 0 0;
+}
+
+.alertify.ajs-closable .ajs-commands button.ajs-close{
+
+	background-image: url(/m/en/img/ic_close.png);
+	background-size: 60%;
+}
+
+
+
 /* start new css code */
 .logo-area{
 	float: right;
@@ -553,7 +582,7 @@ a:hover, a:focus {
 }
 
 .box-frame{
-	height: calc(100% - 220px);
+	height: calc(100% - 242px);
 	overflow: hidden;
 	overflow-y: auto;
 	padding: 7vh 5vh 6vh;

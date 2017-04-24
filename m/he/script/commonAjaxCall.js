@@ -51,7 +51,8 @@ function commonAjaxCall(url,data,callBcak)
                                 return {
 
                                     buttons:[{text: "Try Again", key:27/*Esc*/}],
-                                    focus: { element:1 }
+                                    focus: { element:1 },
+
 
                                 };
                             },
@@ -64,7 +65,9 @@ function commonAjaxCall(url,data,callBcak)
 
                     },true,'alert');
                 }
+            // alertify.movable(false);
                 alertify.errorAlert("No Response From Server <br/>");
+
 
 
             }

@@ -1081,6 +1081,7 @@ function OnOrderNowClicked() {
     $('.totalBill').html(userObject.total + " ש״ח");
     $('#restAddress').html(userObject.restaurantAddress);
 
+    $('.box-frame.new').css('height' , 'calc(100% - 242px)');
 
     $('#food-cart-popup').modal('hide');
 
@@ -1142,7 +1143,7 @@ function validateCustomerInfo() {
     userObject.contact    =  number;
 
 
-    $('.box-frame.new').css('height' , 'calc(100% - 220px)');
+    $('.box-frame.new').css('height' , 'calc(100% - 242px)');
 
 
     $('#customer-info-popup').modal('hide');

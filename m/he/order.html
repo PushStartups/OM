@@ -10,9 +10,15 @@
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/m/he/style/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/he/style/alertify.css">
+
     <link rel="stylesheet" type="text/css" href="/m/he/style/menu-page-he.css">
     <link href="/m/he/style/dropdown.css" rel="stylesheet">
     <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+
+
 
     <script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
 
@@ -350,7 +356,7 @@
                     </div>
                 </div>
                 <div class="my-btn-holder">
-                    <button onclick="validateCustomerInfo()" data-toggle="modal" type="button" class="btn-submit">אפשרויות משלוח <i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                    <button onclick="validateCustomerInfo()"  type="button" class="btn-submit">אפשרויות משלוח <i class="fa fa-angle-left" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -721,6 +727,7 @@
 <script src="/m/he/script/dropdown.js"></script>
 <script src="/m/he/script/app.js"></script>
 <script src="/m/he/script/alertify.min.js"></script>
+<script src="/m/he/script/alertify.js"></script>
 <script src="/m/he/script/commonAjaxCall.js"></script>
 <script src="/m/he/script/ajaxServerRequestsOrder-he.js"></script>
 
@@ -920,23 +927,23 @@
 
                 if ($('#customer-info-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' , 'calc(100vh - 330px)');
+                    $('.box-frame.new').css('height' , 'calc(100% - 242px)');
 
 
                 }
                 else if ($('#delivery-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' ,  'calc(100% - 220px)');
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
 
                 }
                 else if ($('#summary-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' ,  'calc(100% - 220px)');
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
 
                 }
                 else if ($('#payment-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' ,  'calc(100% - 220px)');
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
 
                 }
                 else if($('#order-popup').is(':visible'))

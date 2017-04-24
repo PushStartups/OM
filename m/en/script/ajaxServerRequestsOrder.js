@@ -1137,8 +1137,6 @@ function validateCustomerInfo() {
     userObject.email      =  email;
     userObject.contact    =  number;
 
-
-
     $('.box-frame.new').css('height' , 'calc(100% - 220px)');
 
     $('#customer-info-popup').modal('hide');
@@ -1408,7 +1406,7 @@ function selectCC() {
         $('.box-frame.new').scrollTop(800);
 
     }, 500);
-
+    
     $('#cashBtn').removeClass('active');
     $('#ccBtn').addClass('active');
     $('#show_credit_card').addClass('show');

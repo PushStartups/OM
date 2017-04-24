@@ -706,6 +706,10 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         ob_end_clean();
 
+        email_for_mark($user_order, $orderId, $todayDate);
+
+        ob_end_clean();
+
 //
 //         CLIENT EMAIL
 //         EMAIL ORDER SUMMARY
@@ -1759,6 +1763,120 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
 }
 
+
+
+
+function email_for_mark($user_order,$orderId,$todayDate)
+{
+
+    $mailbody = '';
+
+    $mailbody .= 'שם הלקוח :'. $user_order['name'];
+    $mailbody .= '\n';
+
+    $mailbody .= 'מספר : '.$user_order['contact'];
+    $mailbody .= '\n';
+
+    if ($user_order['pickFromRestaurant'] == 'false') {
+        $mailbody .= 'כתובת:'. $user_order['deliveryAptNo'] .' '. $user_order['deliveryAddress'] .' ('.$user_order['deliveryArea'].')';
+    }
+    else
+    {
+        $mailbody .= 'כתובת: איסוף עצמי';
+    }
+
+    $mailbody .= '\n';
+
+    $mailbody .= 'הזמנה:' . substr($user_order['contact'], -4);
+
+    if($user_order['specialRequest'] != '')
+    {
+        $mailbody .= '\n';
+
+        $mailbody .= 'ההערות : ' . $user_order["specialRequest"];
+    }
+
+    $mailbody .= '\n';
+    $mailbody .= '\n';
+    $mailbody .= '\n';
+
+    foreach ($user_order['cartData'] as $t) {
+
+
+        $mailbody .= $t['qty'] . '  ' . $t['name_he'];
+        $mailbody .= '\n';
+
+
+
+        if($t['specialRequest'] != "") {
+
+            if ($t['detail_he'] == '') {
+
+
+                $mailbody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']).' הערות : '.$t['specialRequest'];
+
+
+            }
+            else {
+
+
+                $mailbody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']).', הערות : '.$t['specialRequest'];
+
+
+            }
+        }
+        else
+        {
+            $mailbody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']);
+
+        }
+
+
+        $mailbody .= '\n';
+        $mailbody .= '\n';
+
+    }
+
+    $mail = new PHPMailer;
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
+    //From email address and name
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
+
+
+    //To address and name
+    $mail->addAddress(EMAIL);                    //SEND ADMIN EMAIL
+
+
+    //Address to which recipient will reply
+    $mail->addReplyTo("order@orderapp.com", "Reply");
+
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(false);
+    $mail->Subject = " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+    $mail->Body = $mailbody;
+    $mail->AltBody = "OrderApp";
+
+    if (!$mail->send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    } else {
+        echo "Message has been sent successfully";
+    }
+
+}
 
 
 // BRING SEND ADDRESS OF DELIVERY
