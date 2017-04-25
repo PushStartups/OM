@@ -106,14 +106,19 @@
 
     var refresh = false;
 
-    $(window).on("beforeunload", function () {
+    if(window.location.hostname == "staging.orderapp.com") {
 
-        if(refresh == false)
-        {
-            return false;
-        }
+        $(window).on("beforeunload", function () {
 
-    });
+            if (refresh == false) {
+                return false;
+            }
+
+        });
+
+
+        refresh = true;
+    }
 
 </script>
 

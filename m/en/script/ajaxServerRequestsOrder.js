@@ -1642,7 +1642,7 @@ function callPage3CallBack(response) {
     refresh = true;
 
     // MOVING TO ORDER PAGE
-    window.location.href = '/m/en/feedback.html';
+    window.location.href = '/m/en/feedback';
 
 }
 
