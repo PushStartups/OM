@@ -1084,9 +1084,19 @@ function OnOrderNowClicked() {
 }
 
 
+$(document).on("click", "#btn_close", function(event){
+
+    validateCustomerInfo();
+
+});
+
+function myFunction() {
+
+    document.activeElement.blur();
+}
+
 
 function validateCustomerInfo() {
-
 
     console.log('hi');
 

@@ -162,16 +162,22 @@ button {
 	pointer-events:none;
 }
 
-.alertify .ajs-dialog{
+.alertify.ajs-movable:not(.ajs-maximized) .ajs-header{
 
-	position: absolute;
-	top: 50%;
-	left: 20px;
-	right: 20px;
-	margin: -22% 0 0;
+	pointer-events: none;
 
 }
 
+
+.alertify .ajs-dialog{
+
+	position: fixed;
+	top: 50%;
+	left: 20px;
+	right: 20px;
+	margin: -50% 0 0;
+
+}
 
 .ajs-dialog{
 

@@ -101,6 +101,13 @@ a:hover, a:focus {
 
 }
 
+.alertify.ajs-movable:not(.ajs-maximized) .ajs-header{
+
+	pointer-events: none;
+
+}
+
+
 .alertify.ajs-maximizable .ajs-commands button.ajs-maximize, .alertify.ajs-maximizable .ajs-commands button.ajs-restore,
 .alertify.ajs-resizable:not(.ajs-maximized) .ajs-handle{
 

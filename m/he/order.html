@@ -18,9 +18,7 @@
     <link href="/m/he/style/dropdown.css" rel="stylesheet">
     <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
-
-
-    <script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -320,7 +318,7 @@
                         <div class="error-field" id="customer-name-field">
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-10">
-                                    <input id="customer-name" type="text" placeholder="שם פרטי ומשפחה">
+                                    <input onblur="myFunction()" id="customer-name" type="text" placeholder="שם פרטי ומשפחה">
                                 </div>
                                 <div class="col-xs-2">
                                     <img class="edit" src="/m/he/img/ic_profile.png">
@@ -332,7 +330,7 @@
                         <div class="error-field" id="customer-email-field" >
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-10">
-                                    <input type="email" id="customer-email" placeholder="כתובת מייל">
+                                    <input onblur="myFunction()" type="text" id="customer-email" placeholder="כתובת מייל">
                                 </div>
                                 <div class="col-xs-2">
                                     <img class="edit email" src="/m/he/img/ic_message.png">
@@ -344,7 +342,7 @@
                         <div class="error-field" id="customer-number-field">
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-10">
-                                    <input type="text" id="customer-number" placeholder="מספר טלפון">
+                                    <input onblur="myFunction()" type="text" id="customer-number" placeholder="מספר טלפון">
                                 </div>
                                 <div class="col-xs-2">
                                     <img class="edit my" src="/m/he/img/ic_phone.png">
@@ -356,7 +354,7 @@
                     </div>
                 </div>
                 <div class="my-btn-holder">
-                    <button onclick="validateCustomerInfo()"  type="button" class="btn-submit">אפשרויות משלוח <i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                    <button id="btn_close" type="button" class="btn-submit">אפשרויות משלוח <i class="fa fa-angle-left" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -1094,10 +1092,46 @@
         }
 
         updateCartElements();
+
     });
 
 
+
+    // iOS check...ugly but necessary
+    if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+        $('.modal').on('show.bs.modal', function() {
+            // Position modal absolute and bump it down to the scrollPosition
+            $(this)
+                    .css({
+                        position: 'absolute',
+                        marginTop: $(window).scrollTop() + 'px',
+                        bottom: 'auto'
+                    });
+            // Position backdrop absolute and make it span the entire page
+            //
+            // Also dirty, but we need to tap into the backdrop after Boostrap
+            // positions it but before transitions finish.
+            //
+            setTimeout( function() {
+                $('.modal-backdrop').css({
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: Math.max(
+                            document.body.scrollHeight, document.documentElement.scrollHeight,
+                            document.body.offsetHeight, document.documentElement.offsetHeight,
+                            document.body.clientHeight, document.documentElement.clientHeight
+                    ) + 'px'
+                });
+            }, 0);
+        });
+    }
+
+
 </script>
+
+
 
 </body>
 </html>

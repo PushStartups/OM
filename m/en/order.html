@@ -11,14 +11,14 @@
     <title>Orderapp | Order from restaurants online</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style/alertify.min.css">
-    <link rel="stylesheet" type="text/css" href="style/alertify.css">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/alertify.css">
     <link rel="stylesheet" type="text/css" href="/m/en/style/menu-page.css">
     <link href="/m/en/style/dropdown.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
-    <script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -79,6 +79,12 @@
 
 <script>
 
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+
     $( document ).ready(function() {
 
         if(window.orientation ==undefined || window.orientation == 0) // Portrait
@@ -96,11 +102,6 @@
 
     });
 
-    if (location.protocol != 'https:')
-    {
-        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-    }
-
 
     //  IF USER CITY ID IS NOT IN CACHE THEN SEND USER TO INDEX PAGE
     if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
@@ -110,6 +111,7 @@
 
 
     var refresh = false;
+
 
     $(window).on("beforeunload", function () {
 
@@ -326,7 +328,7 @@
                                     <img class="edit" src="/m/en/img/ic_profile.png">
                                 </div>
                                 <div class="col-xs-10">
-                                    <input id="customer-name" type="text" placeholder="Name of customer">
+                                    <input onblur="myFunction()" id="customer-name" type="text" placeholder="Name of customer">
                                 </div>
                             </div>
                             <span class="error-span" id="name-error"></span>
@@ -338,7 +340,7 @@
                                     <img class="edit email" src="/m/en/img/ic_message.png">
                                 </div>
                                 <div class="col-xs-10">
-                                    <input type="email" id="customer-email" placeholder="Email address">
+                                    <input onblur="myFunction()" type="email" id="customer-email" placeholder="Email address">
                                 </div>
                             </div>
                             <span class="error-span" id="email-error"></span>
@@ -350,7 +352,7 @@
                                     <img class="edit my" src="/m/en/img/ic_phone.png">
                                 </div>
                                 <div class="col-xs-10">
-                                    <input type="text" id="customer-number" placeholder="Phone number">
+                                    <input onblur="myFunction()" type="text" id="customer-number" placeholder="Phone number">
                                 </div>
                             </div>
                             <span class="error-span" id="contact-error"></span>
@@ -359,7 +361,7 @@
                     </div>
                 </div>
                 <div class="my-btn-holder">
-                    <button data-toggle="modal" onclick="validateCustomerInfo()" type="button" class="btn-submit">Delivery <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <button id="btn_close"  type="button" class="btn-submit">Delivery <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -1090,6 +1092,38 @@
         updateCartElements();
     });
 
+
+
+    // iOS check...ugly but necessary
+    if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+        $('.modal').on('show.bs.modal', function() {
+            // Position modal absolute and bump it down to the scrollPosition
+            $(this)
+                    .css({
+                        position: 'absolute',
+                        marginTop: $(window).scrollTop() + 'px',
+                        bottom: 'auto'
+                    });
+            // Position backdrop absolute and make it span the entire page
+            //
+            // Also dirty, but we need to tap into the backdrop after Boostrap
+            // positions it but before transitions finish.
+            //
+            setTimeout( function() {
+                $('.modal-backdrop').css({
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: Math.max(
+                            document.body.scrollHeight, document.documentElement.scrollHeight,
+                            document.body.offsetHeight, document.documentElement.offsetHeight,
+                            document.body.clientHeight, document.documentElement.clientHeight
+                    ) + 'px'
+                });
+            }, 0);
+        });
+    }
 
 </script>
 
