@@ -485,7 +485,7 @@ function ClosePayment()
 
         if(!couponApplied)
         {
-            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email, "total": userObject.total },checkCouponCallBack);
         }
 
     }

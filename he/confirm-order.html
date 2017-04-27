@@ -104,7 +104,7 @@
             <nav id="nav">
                 <ul>
                     <li data-toggle="modal" data-target="#about"><a href="#">אודות</a></li>
-                    <li><a class="active" href="#">HE</a></li>
+                    <!--<li><a class="active" href="#">HE</a></li>-->
                 </ul>
             </nav>
         </header>
@@ -315,7 +315,7 @@
                                             <div class="slide" id="paymentSlider">
                                                 <div class="slide-holder">
                                                     <ul class="checkbox-list">
-                                                        <li id="cash_parent"> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> תשלום במזומן <span>התשלום יתבצע במעמד קבלת/איסוף ההזמנה</span></label></li>
+                                                        <li id="cash_parent"> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> תשלום במזומן <span>התשלום יתבצע במעמד קבלת ההזמנה</span></label></li>
                                                         <li> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> תשלום באמצעות כרטיס אשראי <span id="check24_click" ><a href="#"><img src="/he/img/cards.png"></a></span></label></li>
                                                     </ul>
 
@@ -437,7 +437,8 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <button type="button" id="submitOrder" onclick="saveCashDetail()" class="btn-submit">אשר הזמנה</button>
+                                    <button type="button" id="submitOrder" onclick="$('#order-summary').modal('show')" class="btn-submit">אשר הזמנה</button>
+                                    <!--<button type="button" id="submitOrder" onclick="saveCashDetail()" class="btn-submit">אשר הזמנה</button>-->
                                     <div class="empty-height"></div>
                                 </div>
                             </div>
@@ -467,7 +468,7 @@
                 <div class="text-center">
 
                     <!--ITEM NAME IN POPUP-->
-                    <h2 id="itemPopUpTitle"> </h2>
+                    <h2 id="itemPopUpTitle">סיכום הזמנה</h2>
 
                     <!--ITEMS PRICE IN POPUP-->
                     <span id="itemPopUpPrice" class="txt"> </span>
@@ -480,50 +481,31 @@
 
                             <div id="summary_items">
                             </div>
-
-                            <div class="row-holder">
-                                <div class="row header-row no-gutters">
-                                    <div class="col-md-9 col-xs-9">
-                                        <h2>Angus Salad</h2>
-                                    </div>
-                                    <div class="col-md-3 col-xs-3">
-                                        <span class="dim">2 x 44 NIS</span>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters">
-                                    <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <p>Ketchup, BBQ, Thousand island</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
                             <div class="row no-gutters">
                                 <div class=" col-xs-12">
                                     <div class="minimum-item add">
                                         <div class="row no-gutters">
                                             <div class="col-md-6 col-xs-6">
-                                                <h3>סה"כ</h3>
+                                                <span id="totalAmountWithoutDiscount2" class="nis">90 NIS</span>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
-                                                <span id="totalAmountWithoutDiscount2" class="nis">90 NIS</span>
+                                                <h3>סה"כ</h3>
                                             </div>
                                         </div>
                                         <div id="showDiscount2" class="row no-gutters">
                                             <div class="col-md-6 col-xs-6">
-                                                <h3 id="discountTitle2">Coupon Discount</h3>
+                                                <span id="discountValue2" class="nis">0 NIS</span>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
-                                                <span id="discountValue2" class="nis">0 NIS</span>
+                                                <h3 id="discountTitle2">Coupon Discount</h3>
                                             </div>
                                         </div>
                                         <div id="deliveryDetail2" class="row no-gutters">
                                             <div class="col-md-6 col-xs-6">
-                                                <h3>מְסִירָה</h3>
+                                                <span id="area-charges2" class="nis">0 NIS</span>
                                             </div>
                                             <div class="col-md-6 col-xs-6">
-                                                <span id="area-charges2" class="nis">0 NIS</span>
+                                                <h3>מְסִירָה</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -541,7 +523,7 @@
                         <div class="baron__bar"></div>
                     </div>
                 </div>
-                <button  type="button" class="btn-submit">confirm order </button>
+                <button  type="button" class="btn-submit">אשר הזמנה</button>
             </div>
         </div>
 
@@ -557,11 +539,13 @@
         <div class="modal-content">
 
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-            <h3> מחוללת מהפכה בחוויית הזמנת אוכל באינטרנט </h3>
-            <p>  אנו מקלים על כל הסבל והקושי בתהליך ההזמנה דרך האינטרנט <br>   עבור הלקוח, אנו פלטפורמת הזמנות נוחה המקלה ומזרזת את תהליך ההזמנה כך שיגיע במהירות לבית הלקוח<br>
-                <br>
-                בחסות  Push Startups
-            </p>
+            <p dir="rtl">
+                OrderApp מחוללת מהפכה בחוויית הזמנת אוכל באינטרנט.
+                <br>אנו מקלים על כל הסבל והקושי בתהליך ההזמנה דרך האינטרנט.<br>
+                עבור המסעדות, אנו מתפעלים מערכת  אשר תנהל את כל ההזמנות.<br>
+                עבור הלקוח, אנו פלטפורמת הזמנות נוחה המקלה ומזרזת את תהליך ההזמנה כך שיגיע במהירות לבית הלקוח.<br><br><br>
+                בחסות  Push Startups</p>
+
 
             <!-- SOCIAL LINKS FOR ORDER APP -->
             <div class="social-icons">

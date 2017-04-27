@@ -67,10 +67,18 @@ function  getAllRestaurants(response)
     {
 
         var temp = "";
+
+        var timeStr = '';
+        var trimmedTimeOpen = result[x].today_timings.substr(0, 5);
+        var trimmedTimeClose = result[x].today_timings.substr(8, result[x].today_timings.lengthss);
+        timeStr = trimmedTimeClose + " - " + trimmedTimeOpen;
+
+
         var tagsString = fromTagsToString(result[x]);
 
         var str2  = ' ';
         var str1  = result[x].description_he;
+
 
         // RESTAURANTS DESCRIPTION LENGTH CHECK
         if (result[x].description_he.length > 200)
@@ -81,6 +89,8 @@ function  getAllRestaurants(response)
             //trim the string to the maximum length
             var trimmedString = yourString.substr(0, maxLength);
 
+
+
             //re-trim if we are in the middle of a word
             trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
 
@@ -89,7 +99,7 @@ function  getAllRestaurants(response)
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if   (result[x].availability) //( result[x].availability )
+        if   (true) //( result[x].availability )
         {
 
 
@@ -164,7 +174,7 @@ function  getAllRestaurants(response)
                 '<p>'+ result[x].address_he +'</p>'+
                 '</div>'+
                 '</span>'+
-                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ result[x].today_timings +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
+                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ timeStr +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
                 '</div>'+
                 '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery('+ x +')" data-toggle="modal" data-target="#slider-popup">'+
                 '<img src="/he/img/gallery.png" alt="image description"></a>'+
@@ -183,6 +193,7 @@ function  getAllRestaurants(response)
                 '</div>'+
                 '<div class="custom-hr"></div>'+
                 '</div>';
+            var a = 5;
 
         }
         //CURRENTLY NOT AVAILABLE
@@ -260,7 +271,7 @@ function  getAllRestaurants(response)
                 '<p>'+ result[x].address_he +'</p>'+
                 '</div>'+
                 '</span>'+
-                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ result[x].today_timings +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
+                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ timeStr +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
                 '</div>'+
                 '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery('+ x +')" data-toggle="modal" data-target="#slider-popup">'+
                 '<img src="/he/img/gallery.png" alt="image description"></a>'+
@@ -346,7 +357,7 @@ function openTime(index) {
     for (i = 0 ; i < allRestJson[index].timings.length; i++)
     {
         temp += '<tr><td>'+allRestJson[index].timings[i].week_he+'</td>'+
-            '<td>'+ allRestJson[index].timings[i].opening_time_he + ' - ' + allRestJson[index].timings[i].closing_time_he +'</td></tr>';
+            '<td>'+ allRestJson[index].timings[i].closing_time_he + ' - ' + allRestJson[index].timings[i].opening_time_he +'</td></tr>';
     }
 
 

@@ -1118,7 +1118,7 @@ function OnOrderNowClicked() {
         localStorage.setItem("FOOD_CARD_DATA_HE", JSON.stringify(foodCartData));
 
         $("#minAmount").css("color","black");
-        window.location.href = '/he/confirm-order.html';
+        window.location.href = '/he/confirm-order';
     }
 }
 

@@ -360,6 +360,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
         $email = $request->getParam('email');        //  GET USER EMAIL
         $coupon_code = $request->getParam('code');   //  COUPON CODE ENTER BY USER
+        $order_amount = $request->getParam('total');   //  ORDER AMOUNT
         $success_validation = "false";               //  SUCCESS VALIDATION RESPONSE FOR USER
         $user_id = null;
 
@@ -384,7 +385,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         // COUPON VALIDATION
         $coupon_code = strtoupper($coupon_code);
 
-        $res = VoucherifyValidation($coupon_code,$user_id);
+        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100));
 
 //
 //
@@ -485,7 +486,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
 
 
-function VoucherifyValidation($userCoupon,$user_id)
+function VoucherifyValidation($userCoupon,$user_id,$order_amount)
 {
     $apiID          = "6243c07e-fea0-4f0d-89f8-243d589db97b";
     $apiKey         = "ac0d95c8-b5fd-4484-a697-41a1a91f3dd2";
@@ -536,8 +537,13 @@ function VoucherifyValidation($userCoupon,$user_id)
             "voucher" => $userCoupon,
             "customer" => [
                 "id" =>  $Vid
+            ],
+            "order" => [
+            "amount" => $order_amount
             ]
         ], NULL);
+
+
 
 
         if($resultRedeem->voucher->discount->type == "AMOUNT")
@@ -577,11 +583,10 @@ function VoucherifyValidation($userCoupon,$user_id)
     }
     catch (ClientException $e)
     {
-
         $data = [
 
-            "success" => false  // SUCCESS FALSE WRONG CODE
-
+            "success" => false,  // SUCCESS FALSE WRONG CODE
+            "message" => $e->getMessage()
         ];
 
         return $data;
@@ -1803,7 +1808,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
     foreach ($user_order['cartData'] as $t) {
 
 
-        $mailbody .= $t['qty'] . '  ' . $t['name_he'];
+        $mailbody .= $t['qty'] . '  ' . $t['name_he'] . '  ' . $t['price'];
         $mailbody .= '\n';
 
 
@@ -1831,7 +1836,8 @@ function email_for_mark($user_order,$orderId,$todayDate)
 
         }
 
-
+        
+        $mailbody .= $user_order['total'] . 'סה"כ ';
         $mailbody .= '\n';
         $mailbody .= '\n';
 

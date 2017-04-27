@@ -853,12 +853,16 @@ a:hover, a:focus {
 .col-one{display: block;}
 /*.col-second{visibility: hidden}*/
 .col-second{
-	padding:0 12px 0 0;
+	padding:0;
 }
-.col-second .scrollable4{overflow: inherit !important;}
-.col-second .baron__track{right: -18px;}
-
-
+.col-second .scrollable4{
+	overflow: hidden !important;
+	margin: 0 -6px 0 0;
+	padding: 0;
+}
+.col-second .baron__track{
+	right: 0;
+}
 #sidebar h3 span{
 	width: 30px;
 	height: 30px;
@@ -896,7 +900,7 @@ a:hover, a:focus {
 }
 #nested-section{
 	overflow: hidden;
-	margin: 0 0 38px;
+	margin: 0 12px 38px 0;
 }
 #sidebar .dim{
 	float: left;

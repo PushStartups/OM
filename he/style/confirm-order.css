@@ -801,9 +801,6 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 }
 .minimum-item p{margin: 0 0 10px;}
 .show .col-second{display: block;  }
-.col-second{
-	padding: 0 10px 0 0;
-}
 #sidebar h3 span{
 	width: 24px;
 	height: 24px;
@@ -837,13 +834,19 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 }
 #nested-section{
 	overflow: hidden;
-	margin: 0 0 38px 0;
+	margin: 0 15px 38px 0;
+}
+
+.col-second{
+	padding:0;
 }
 .col-second .scrollable6 {
-	overflow: inherit !important;
+	overflow: hidden !important;
+	margin: 0 -6px 0 0;
+	padding: 0;
 }
 .col-second .baron__track {
-	right: -18px;
+	right: 0;
 }
 #sidebar .dim{
 	float: left;
@@ -1017,9 +1020,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	overflow: hidden;
 	text-align: left;
 }
+#order-summary .popup-txt{text-align: right;}
 .popup-txt .dim{
 	color: #797979;
-	float: right;
+	float: left;
 	font-size: 12px;
 	line-height: 15px;
 	padding: 10px 0 0;

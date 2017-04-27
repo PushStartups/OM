@@ -18,7 +18,7 @@
     <link href="/m/he/style/dropdown.css" rel="stylesheet">
     <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -323,7 +323,7 @@
                         <div class="error-field" id="customer-name-field">
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-10">
-                                    <input onblur="myFunction()" id="customer-name" type="text" placeholder="שם פרטי ומשפחה">
+                                    <input  id="customer-name" type="text" placeholder="שם פרטי ומשפחה">
                                 </div>
                                 <div class="col-xs-2">
                                     <img class="edit" src="/m/he/img/ic_profile.png">
@@ -335,7 +335,7 @@
                         <div class="error-field" id="customer-email-field" >
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-10">
-                                    <input onblur="myFunction()" type="text" id="customer-email" placeholder="כתובת מייל">
+                                    <input type="text" id="customer-email" placeholder="כתובת מייל">
                                 </div>
                                 <div class="col-xs-2">
                                     <img class="edit email" src="/m/he/img/ic_message.png">
@@ -347,7 +347,7 @@
                         <div class="error-field" id="customer-number-field">
                             <div class="text-holder no-gutters">
                                 <div class="col-xs-10">
-                                    <input onblur="myFunction()" type="text" id="customer-number" placeholder="מספר טלפון">
+                                    <input type="text" id="customer-number" placeholder="מספר טלפון">
                                 </div>
                                 <div class="col-xs-2">
                                     <img class="edit my" src="/m/he/img/ic_phone.png">
@@ -359,7 +359,7 @@
                     </div>
                 </div>
                 <div class="my-btn-holder">
-                    <button id="btn_close" type="button" class="btn-submit">אפשרויות משלוח <i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                    <button id="btn_close" type="button" onclick="validateCustomerInfo()" class="btn-submit">אפשרויות משלוח <i class="fa fa-angle-left" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
