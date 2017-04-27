@@ -1,9 +1,9 @@
 <?php
 
-define("HOST", "orderapp.crv4lzhgi1gx.eu-central-1.rds.amazonaws.com:3306");
+define("HOST", "orderappdev.crv4lzhgi1gx.eu-central-1.rds.amazonaws.com:3306");
 define("DBUSER", "root");
 define("PASS", "orderapp");
-define("DB", "Orderapp");
+define("DB", "orderapp");
 define("PORT", 3306);
 
 

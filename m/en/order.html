@@ -107,16 +107,22 @@
     }
 
 
+
     var refresh = false;
 
     $(window).on("beforeunload", function () {
 
-        if(refresh == false)
-        {
+        if (refresh == false) {
+
             return false;
         }
 
     });
+
+    if(window.location.hostname == "staging.orderapp.com") {
+
+        refresh = true;
+    }
 
 </script>
 
@@ -715,12 +721,10 @@
 <script src="/m/en/script/bootstrap.min.js"></script>
 <script type="text/javascript" src="/m/en/script/jquery.accordion.js"></script>
 <script src="/m/en/script/dropdown.js"></script>
-
 <script src="/m/en/script/app.js"></script>
 <script src="/m/en/script/alertify.min.js"></script>
 <script src="/m/en/script/commonAjaxCall.js"></script>
 <script type="text/javascript" src="/m/en/script/ajaxServerRequestsOrder.js"></script>
-
 <script type="text/javascript" src="/m/en/script/jquery.easing.1.3.js"></script>
 <script src="/m/en/script/jquery.mobile.custom.min.js"></script>
 
@@ -784,33 +788,33 @@
 
     });
 
-        $( "#sr-label" ).click(function() {
+    $( "#sr-label" ).click(function() {
 
-            if($( "#sr" ).hasClass("show"))
-            {
+        if($( "#sr" ).hasClass("show"))
+        {
 
-                $( "#sr" ).removeClass("show");
-            }
-            else {
+            $( "#sr" ).removeClass("show");
+        }
+        else {
 
-                $( "#sr" ).addClass( "show" );
+            $( "#sr" ).addClass( "show" );
 
-            }
-        });
+        }
+    });
 
-        $( "#cc-label" ).click(function() {
+    $( "#cc-label" ).click(function() {
 
-            if($( "#coupon" ).hasClass("show"))
-            {
+        if($( "#coupon" ).hasClass("show"))
+        {
 
-                $( "#coupon" ).removeClass("show");
-            }
-            else {
+            $( "#coupon" ).removeClass("show");
+        }
+        else {
 
-                $( "#coupon" ).addClass( "show" );
+            $( "#coupon" ).addClass( "show" );
 
-            }
-        });
+        }
+    });
 
 
     $(function() {
@@ -900,23 +904,23 @@
 
                 if ($('#customer-info-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' , 'calc(100vh - 330px)');
+                    $('.box-frame.new').css('height' , 'calc(100% - 242px)');
 
 
                 }
                 else if ($('#delivery-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' ,  'calc(100% - 220px)');
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
 
                 }
                 else if ($('#summary-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' ,  'calc(100% - 220px)');
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
 
                 }
                 else if ($('#payment-popup').is(':visible')) {
 
-                    $('.box-frame.new').css('height' ,  'calc(100% - 220px)');
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
 
                 }
                 else if($('#order-popup').is(':visible'))
@@ -1072,7 +1076,7 @@
                 $('.box-frame.new').scrollTop(800);
 
             }, 500);
-            
+
             $('#delivery-info').addClass('show');
             $('#checkbox-id112').prop('checked', false);
         }
@@ -1087,6 +1091,41 @@
 
         updateCartElements();
     });
+
+
+
+
+    // iOS check...ugly but necessary
+    if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+        $('.modal').on('show.bs.modal', function() {
+            // Position modal absolute and bump it down to the scrollPosition
+            $(this)
+                    .css({
+                        position: 'absolute',
+                        marginTop: $(window).scrollTop() + 'px',
+                        bottom: 'auto'
+                    });
+            // Position backdrop absolute and make it span the entire page
+            //
+            // Also dirty, but we need to tap into the backdrop after Boostrap
+            // positions it but before transitions finish.
+            //
+            setTimeout( function() {
+                $('.modal-backdrop').css({
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: Math.max(
+                            document.body.scrollHeight, document.documentElement.scrollHeight,
+                            document.body.offsetHeight, document.documentElement.offsetHeight,
+                            document.body.clientHeight, document.documentElement.clientHeight
+                    ) + 'px'
+                });
+            }, 0);
+        });
+    }
+
 
 
 </script>

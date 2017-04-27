@@ -104,18 +104,19 @@
     }
 
 
+
     var refresh = false;
 
+    $(window).on("beforeunload", function () {
+
+        if (refresh == false) {
+
+            return false;
+        }
+
+    });
+
     if(window.location.hostname == "staging.orderapp.com") {
-
-        $(window).on("beforeunload", function () {
-
-            if (refresh == false) {
-                return false;
-            }
-
-        });
-
 
         refresh = true;
     }

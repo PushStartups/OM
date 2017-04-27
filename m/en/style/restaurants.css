@@ -581,16 +581,18 @@ a:hover, a:focus {
 	position: absolute;
 	top: -40px;
 	left: 0;
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
 	cursor: pointer;
 	opacity:1;
-	background: none;
 	border: none;
-	background-image: url("../img/ic_close.png");
+	background: url("../img/ic_close.png");
 	background-repeat: no-repeat;
 	background-size: 100%;
+	display: block;
+	z-index: 111;
 }
+.close-icon span{display: block;}
 
 #slider-popup{
 	overflow: hidden;

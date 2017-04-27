@@ -501,10 +501,11 @@ a:hover, a:focus {
 	font-size: 8vh;
 	font-weight: 400;
 	left: 12px;
-	line-height: 9pt;
-	top: 14px;
+	line-height: 15pt;
+	top: 10px;
 	z-index: 999999;
 }
+.order .close.black span{display: block;}
 .modal-dialog.order{
 	height: 88vh;
 	height: calc(100% - 12px);
