@@ -1047,9 +1047,9 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 
 .inner-sec{}
 #scrollable2{
-
+	height: auto;
 	overflow-y: scroll;
-	max-height: 60vh !important;
+	max-height: 42vh !important;
 	background: none;
 
 }

@@ -554,16 +554,20 @@ a:hover, a:focus {
 	font-size: 12pt;
 	line-height: 14pt;
 }
+
 .order .close.black{
 	color: #000;
 	font-size: 8vh;
 	font-weight: 400;
 	right: 12px;
 	left:auto;
-	line-height: 9pt;
-	top: 14px;
+	line-height: 15pt;
+	top: 10px;
 	z-index: 999999;
 }
+.order .close.black span{display: block;}
+
+
 .modal-dialog.order{
 	height: 88vh;
 	height: calc(100% - 12px);

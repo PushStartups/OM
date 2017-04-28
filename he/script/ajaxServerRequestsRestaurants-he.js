@@ -99,16 +99,31 @@ function  getAllRestaurants(response)
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if   (true) //( result[x].availability )
+        if   (result[x].availability || window.location.hostname == "dev.orderapp.com") //( result[x].availability )
         {
 
 
             temp +=
 
-                '<div class="row separator">'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box">'+
-                '<div onclick="order_now('+ x +')" class="header">הזמן <br> עכשיו</div>'+
+                '<div class="row separator">';
+
+
+            if(result[x].coming_soon == 0) {
+
+
+            temp += '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
+                    '<div class="order-now-box">'+
+                    '<div onclick="order_now(' + x + ')" class="header">הזמן <br> עכשיו</div>';
+
+            }
+            else {
+
+                temp += '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset offline">'+
+                        '<div class="order-now-box offline">'+
+                        '<div class="header">בקרוב</div>';
+            }
+
+            temp +=
                 '</div>'+
                 '</div>'+
                 '<div class="col-md-8 col-sm-8 col-xs-8">'+
@@ -183,17 +198,26 @@ function  getAllRestaurants(response)
 
                 '</div>'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
-                '<div class="circular-logo">'+
-                '<span class="status"></span>'+
+                '<div class="circular-logo">';
+                 if(result[x].coming_soon == 0) {
+                     temp += '<span class="status"></span>';
+                }
+                else
+                 {
+                     temp += '<span class="status offline"></span>';
+                 }
+
+                 temp +=
                 '<div class="logo-container">'+
                 '<img class="rest_img" src="'+ result[x].logo + '">'+
                 '</div>'+
+                '<div class="arrow"></div>'+
                 '<div class="arrow"></div>'+
                 '</div>'+
                 '</div>'+
                 '<div class="custom-hr"></div>'+
                 '</div>';
-            var a = 5;
+
 
         }
         //CURRENTLY NOT AVAILABLE

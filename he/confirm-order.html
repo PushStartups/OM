@@ -316,6 +316,7 @@
                                                 <div class="slide-holder">
                                                     <ul class="checkbox-list">
                                                         <li id="cash_parent"> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> תשלום במזומן <span>התשלום יתבצע במעמד קבלת ההזמנה</span></label></li>
+                                                        <li id="cash_message" style="display: none"> <input type="checkbox" disabled > <label style="opacity: 0.5;"> תשלום במזומן <span>מזומן לא זמין כאשר נבחרה אפשרות האיסוף</span></label></li>
                                                         <li> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> תשלום באמצעות כרטיס אשראי <span id="check24_click" ><a href="#"><img src="/he/img/cards.png"></a></span></label></li>
                                                     </ul>
 
@@ -460,7 +461,7 @@
 
 
 <!-- order summary popup -->
-<div class="modal fade"  id="order-summary" role="dialog">
+<div class="modal fade"  dir="rtl" id="order-summary" role="dialog">
     <div class="modal-dialog modal-md mypopup">
         <div class="modal-content">
             <div class="holder">
@@ -477,53 +478,48 @@
                 <div class="baron">
                     <div id="scrollable2" class="baron__scroller popup">
                         <div class="popup-txt">
-
-
                             <div id="summary_items">
                             </div>
-                            <div class="row no-gutters">
-                                <div class=" col-xs-12">
-                                    <div class="minimum-item add">
-                                        <div class="row no-gutters">
-                                            <div class="col-md-6 col-xs-6">
-                                                <span id="totalAmountWithoutDiscount2" class="nis">90 NIS</span>
-                                            </div>
-                                            <div class="col-md-6 col-xs-6">
-                                                <h3>סה"כ</h3>
-                                            </div>
-                                        </div>
-                                        <div id="showDiscount2" class="row no-gutters">
-                                            <div class="col-md-6 col-xs-6">
-                                                <span id="discountValue2" class="nis">0 NIS</span>
-                                            </div>
-                                            <div class="col-md-6 col-xs-6">
-                                                <h3 id="discountTitle2">Coupon Discount</h3>
-                                            </div>
-                                        </div>
-                                        <div id="deliveryDetail2" class="row no-gutters">
-                                            <div class="col-md-6 col-xs-6">
-                                                <span id="area-charges2" class="nis">0 NIS</span>
-                                            </div>
-                                            <div class="col-md-6 col-xs-6">
-                                                <h3>מְסִירָה</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="minimum-item">
-                                        <h2 id="totalAmount2"></h2>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-
-
                     </div>
                     <div class="baron__track">
                         <div class="baron__bar"></div>
                     </div>
                 </div>
-                <button  type="button" class="btn-submit">אשר הזמנה</button>
+                <div class="row no-gutters">
+                    <div class=" col-xs-12">
+                        <div class="minimum-item add">
+                            <div class="row no-gutters">
+                                <div class="col-md-6 col-xs-6">
+                                    <span id="totalAmountWithoutDiscount2" class="nis">90 NIS</span>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <h3>סה"כ</h3>
+                                </div>
+                            </div>
+                            <div id="showDiscount2" class="row no-gutters">
+                                <div class="col-md-6 col-xs-6">
+                                    <span id="discountValue2" class="nis">0 NIS</span>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <h3 id="discountTitle2">Coupon Discount</h3>
+                                </div>
+                            </div>
+                            <div id="deliveryDetail2" class="row no-gutters">
+                                <div class="col-md-6 col-xs-6">
+                                    <span id="area-charges2" class="nis">0 NIS</span>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <h3>מְסִירָה</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="minimum-item">
+                            <h2 id="totalAmount2"></h2>
+                        </div>
+                    </div>
+                </div>
+                <button  type="button" onclick="saveCashDetail()" class="btn-submit">אשר הזמנה</button>
             </div>
         </div>
 
@@ -603,12 +599,6 @@
     };
 
 
-    $('.checkbox-list li').click(function(e){
-
-        $('.show-box').toggleClass('show');
-
-    });
-
     $('.new-label').click(function(e){
 
         $('.show-text').toggleClass('show');
@@ -685,18 +675,14 @@
 
 <script>
 
-    $('#checkbox-id-23').change(function() {
+    $("#checkbox-id-23").click(function(e) {
 
-        if($(this).is(":checked")) {
+        $('#checkbox-id-12').prop('checked', false);
+        $('#deliveryFieldsParent').addClass('show');
 
-            $('#deliveryFieldsParent').addClass('show');
-            $('#checkbox-id-12').prop('checked', false);
-
-        }
-        else {
-
-            $('#deliveryFieldsParent').removeClass('show');
-            $('#checkbox-id-12').prop('checked', true);
+        if(!this.checked)
+        {
+            return false;
         }
 
         updateCartElements();
@@ -704,23 +690,22 @@
     });
 
 
-    $('#checkbox-id-12').change(function() {
+    $("#checkbox-id-12").click(function(e) {
 
-        if($(this).is(":checked")) {
+        $('#checkbox-id-23').prop('checked', false);
+        $('#deliveryFieldsParent').removeClass('show');
 
-            $('#deliveryFieldsParent').removeClass('show');
-            $('#checkbox-id-23').prop('checked', false);
-        }
-        else {
+        if(!this.checked)
+        {
 
-            $('#deliveryFieldsParent').addClass('show');
-            $('#checkbox-id-23').prop('checked', true);
-
-
+            return false;
         }
 
         updateCartElements();
+
+
     });
+
 
 
 </script>
@@ -752,54 +737,40 @@
 
 <script>
 
-    $('#checkbox-id-13').change(function() {
+    $("#checkbox-id-13").click(function(e) {
 
-        if($(this).is(":checked")) {
+        $('#checkbox-id-24').prop('checked', false);
+        $('#show_credit_card').removeClass('show');
 
-            $('#show_credit_card').removeClass('show');
-            $('#checkbox-id-24').prop('checked', false);
+        if(!this.checked)
+        {
 
-        }
-        else {
-
-
-            $('#show_credit_card').addClass('show');
-            $('#checkbox-id-24').prop('checked', true);
-
+            return false;
         }
 
 
     });
 
+    $("#checkbox-id-24").click(function(e) {
 
-    $('#checkbox-id-24').change(function() {
-
-        if($(this).is(":checked")) {
-
-            $('#show_credit_card').addClass('show');
-            $('#checkbox-id-13').prop('checked', false);
-
-        }
-        else {
-
-
-            $('#show_credit_card').removeClass('show');
-            $('#checkbox-id-13').prop('checked', true);
-
-
-        }
-
-
-    });
-
-
-    $("#check24_click").click(function(e) {
-
-        $('#checkbox-id-24').prop('checked', true);
         $('#checkbox-id-13').prop('checked', false);
+        $('#show_credit_card').addClass('show');
+
+        if(!this.checked)
+        {
+            return false;
+        }
 
     });
 
+
+    $('#check24_click').click(function(e) {
+
+        $('#checkbox-id-13').prop('checked', false);
+        $('#checkbox-id-24').prop('checked', true);
+        $('#show_credit_card').addClass('show');
+
+    });
 
 
 

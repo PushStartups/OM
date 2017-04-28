@@ -21,9 +21,9 @@
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-89656592-1', 'auto');
@@ -36,12 +36,12 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             }; if (!f._fbq) f._fbq = n;
             n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
             t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
         }(window,
-            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '2198328787059300'); // Insert your pixel ID here.
         fbq('track', 'PageView');
     </script>
@@ -245,7 +245,8 @@
                                                 <div class="slide-holder">
                                                     <ul class="checkbox-list">
                                                         <li id="cash_parent"> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> Cash <span></span></label></li>
-                                                        <li> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> Credit card <span id="check24_click" ><a href="#"><img src="img/cards.png"></a></span></label></li>
+                                                        <li id="cash_message" style="display: none"> <input type="checkbox" disabled > <label style="opacity: 0.5;"> Cash <span>Cash not available when pickup option selected</span></label></li>
+                                                        <li id="cc_parent"> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> Credit card <span id="check24_click" ><a href="#"><img src="img/cards.png"></a></span></label></li>
                                                     </ul>
 
 
@@ -577,11 +578,6 @@
     };
 
 
-    $('.checkbox-list li').click(function(e){
-
-        $('.show-box').toggleClass('show');
-
-    });
 
     $('.new-label').click(function(e){
 
@@ -634,18 +630,15 @@
 
 <script>
 
-    $('#checkbox-id-23').change(function() {
 
-        if($(this).is(":checked")) {
+    $("#checkbox-id-23").click(function(e) {
 
-            $('#deliveryFieldsParent').addClass('show');
-            $('#checkbox-id-12').prop('checked', false);
+        $('#checkbox-id-12').prop('checked', false);
+        $('#deliveryFieldsParent').addClass('show');
 
-        }
-        else {
-
-            $('#deliveryFieldsParent').removeClass('show');
-            $('#checkbox-id-12').prop('checked', true);
+        if(!this.checked)
+        {
+            return false;
         }
 
         updateCartElements();
@@ -653,22 +646,20 @@
     });
 
 
-    $('#checkbox-id-12').change(function() {
+    $("#checkbox-id-12").click(function(e) {
 
-        if($(this).is(":checked")) {
+        $('#checkbox-id-23').prop('checked', false);
+        $('#deliveryFieldsParent').removeClass('show');
 
-            $('#deliveryFieldsParent').removeClass('show');
-            $('#checkbox-id-23').prop('checked', false);
-        }
-        else {
+        if(!this.checked)
+        {
 
-            $('#deliveryFieldsParent').addClass('show');
-            $('#checkbox-id-23').prop('checked', true);
-
-
+            return false;
         }
 
         updateCartElements();
+
+
     });
 
 
@@ -701,56 +692,40 @@
 
 <script>
 
-    $('#checkbox-id-13').change(function() {
+    $("#checkbox-id-13").click(function(e) {
 
-        if($(this).is(":checked")) {
+        $('#checkbox-id-24').prop('checked', false);
+        $('#show_credit_card').removeClass('show');
 
-            $('#show_credit_card').removeClass('show');
-            $('#checkbox-id-24').prop('checked', false);
+        if(!this.checked)
+        {
 
-        }
-        else {
-
-
-            $('#show_credit_card').addClass('show');
-            $('#checkbox-id-24').prop('checked', true);
-
+            return false;
         }
 
 
     });
 
+    $("#checkbox-id-24").click(function(e) {
 
-    $('#checkbox-id-24').change(function() {
-
-        if($(this).is(":checked")) {
-
-            $('#show_credit_card').addClass('show');
-            $('#checkbox-id-13').prop('checked', false);
-
-        }
-        else {
-
-
-            $('#show_credit_card').removeClass('show');
-            $('#checkbox-id-13').prop('checked', true);
-
-
-        }
-
-
-    });
-
-
-    $("#check24_click").click(function(e) {
-
-        $('#checkbox-id-24').prop('checked', true);
         $('#checkbox-id-13').prop('checked', false);
+        $('#show_credit_card').addClass('show');
+
+        if(!this.checked)
+        {
+            return false;
+        }
 
     });
 
 
+    $('#check24_click').click(function(e) {
 
+        $('#checkbox-id-13').prop('checked', false);
+        $('#checkbox-id-24').prop('checked', true);
+        $('#show_credit_card').addClass('show');
+
+    });
 
 </script>
 

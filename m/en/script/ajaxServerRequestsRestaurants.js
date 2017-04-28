@@ -21,34 +21,34 @@ function initialize() {
 
 
 // USER ORDER INFORMATION
-        userObject = {
+    userObject = {
 
-            'language': 'en',                  // USER LANGAGUE ENGLISH
-            'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
-            'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
-            'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
-            'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
-            'restaurantContact': "",          // RESTAURANT CONTACT
-            'name': "",                        // USER NAME
-            'email': "",                       // USER EMAIL
-            'contact': "",                     // USER CONTACT
-            'orders': [],                      // USER ORDERS
-            'total': 0,                        // TOTAL AMOUNT OF ORDER
-            'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
-            'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
-            'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
-            'isCoupon': false,                 // USER HAVE COUPON CODE ?
-            'couponCode': '',                  // COUPON CODE OF USER
-            'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
-            'discount': 0,                     // DISCOUNT ON COUPON VALUE
-            'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
-            'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
-            'cartData': null,                  // COMPUTED CART DATA
-            'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
-            'deliveryArea': null,               // DELIVERY AREA
-            'deliveryCharges': null,            // DELIVERY CHARGES
-            'specialRequest': ""                // SPECIAL REQUEST FROM USER
-        };
+        'language': 'en',                  // USER LANGAGUE ENGLISH
+        'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
+        'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
+        'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
+        'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
+        'restaurantContact': "",          // RESTAURANT CONTACT
+        'name': "",                        // USER NAME
+        'email': "",                       // USER EMAIL
+        'contact': "",                     // USER CONTACT
+        'orders': [],                      // USER ORDERS
+        'total': 0,                        // TOTAL AMOUNT OF ORDER
+        'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
+        'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
+        'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
+        'isCoupon': false,                 // USER HAVE COUPON CODE ?
+        'couponCode': '',                  // COUPON CODE OF USER
+        'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
+        'discount': 0,                     // DISCOUNT ON COUPON VALUE
+        'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
+        'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
+        'cartData': null,                  // COMPUTED CART DATA
+        'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
+        'deliveryArea': null,               // DELIVERY AREA
+        'deliveryCharges': null,            // DELIVERY CHARGES
+        'specialRequest': ""                // SPECIAL REQUEST FROM USER
+    };
 
 
     commonAjaxCall("/restapi/index.php/get_all_restaurants",{'city_id':selectedCityId},getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER
@@ -74,37 +74,57 @@ function  getAllRestaurants(response)
 
         // RESTAURANT CURRENTLY ACTIVE
 
-        if (true) {     //result[x].availability
+        if (result[x].availability) {     //result[x].availability
 
 
             temp += '<li>'+
-                    '<a href="#" class="opener">'+
-                    '<div class="image-box">'+
-                    '<img src="'+ result[x].logo + '">'+
-                    '</div>'+
-                    '<div class="txt">'+
-                    '<h2>' + result[x].name_en + '<span>כשר</span></h2>'+
-                    '<p>'+ tagsString +'</p>'+
-                    '</div>'+
-                    '</a>'+
-                    '<div class="slide">'+
-                    '<div class="block">'+
-                    '<p>'+ result[x].description_en +'</p> '+
-                    '</div>'+
-                    '<ul class="list">'+
-                    '<li>'+
-                    '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_en +'</div><span>delivery Fee</span></a>'+
-                    '</li>'+
-                    '<li>'+
-                    '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>Open Now</span>' +result[x].today_timings+ '</a>'+
-                    '</li>'+
-                    '<li class="last text-center">'+
-                    '<a  onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
-                    '</li>'+
-                    '</ul>'+
-                    '<a href="#" onclick="order_now('+ x +')" class="brn-submit">Order Now</a>'+
-                    '</div>'+
-                    '</li>';
+                '<a href="#" class="opener">';
+
+            if(result[x].coming_soon == 0) {
+                temp += '<div class="image-box">';
+            }
+            else
+            {
+                temp += '<div class="image-box gray">';
+            }
+                temp +=
+                '<img src="'+ result[x].logo + '">'+
+                '</div>'+
+                '<div class="txt">'+
+                '<h2>' + result[x].name_en + '<span>כשר</span></h2>'+
+                '<p>'+ tagsString +'</p>'+
+                '</div>'+
+                '</a>'+
+                '<div class="slide">'+
+                '<div class="block">'+
+                '<p>'+ result[x].description_en +'</p> '+
+                '</div>'+
+                '<ul class="list">'+
+                '<li>'+
+                '<a data-toggle="modal" onclick="openDiscount('+x+')" data-target="#address-popup" href="#"><div class="address-add">'+ result[x].address_en +'</div><span>delivery Fee</span></a>'+
+                '</li>'+
+                '<li>'+
+                '<a data-toggle="modal" onclick="openTime('+x+')" data-target="#time-popup" href="#"><span>Open Now</span>' +result[x].today_timings+ '</a>'+
+                '</li>'+
+                '<li class="last text-center">'+
+                '<a  onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
+                '</li>'+
+                '</ul>';
+
+            if(result[x].coming_soon == 0) {
+
+
+                temp += '<a href="#" onclick="order_now(' + x + ')" class="brn-submit">Order Now</a>';
+
+            }
+            else {
+
+                temp += '<a href="#" class="brn-submit offline">Coming Soon</a>';
+
+            }
+
+            temp +=  '</div>'+
+                '</li>';
 
 
         }
@@ -214,7 +234,7 @@ function openTime(index) {
     for (i = 0 ; i < allRestJson[index].timings.length; i++)
     {
         temp += '<tr><td>'+allRestJson[index].timings[i].week_en+'</td>'+
-                '<td>'+ allRestJson[index].timings[i].opening_time + ' - ' + allRestJson[index].timings[i].closing_time +'</td></tr>';
+            '<td>'+ allRestJson[index].timings[i].opening_time + ' - ' + allRestJson[index].timings[i].closing_time +'</td></tr>';
     }
 
 
@@ -239,7 +259,7 @@ function openGallery(index) {
         }
 
         temp += '<img src="'+ allRestJson[index].gallery[i].url +'" alt="Chania" width="50%">'+
-                '</div>';
+            '</div>';
     }
 
     $("#gallery-imgs").html(temp);

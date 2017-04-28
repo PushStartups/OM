@@ -329,6 +329,7 @@ function deliveryAddress()
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
         $('#cash_parent').hide();
+        $('#cash_message').show();
 
         addressInfoFlag = true;
 
@@ -385,6 +386,7 @@ function deliveryAddress()
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
         $('#cash_parent').show();
+        $('#cash_message').hide();
         $("#user_name").val(userObject.name);
 
 

@@ -923,10 +923,10 @@ function updateCartElements()
 
         $('#nested-section').html(str);
 
-        $('#totalAmount').html(userObject.total + " NIS");
+        $('#totalAmount').html(userObject.total + " NIS ");
         hideShowMinAmount(userObject.total);
 
-        $('#minAmount').html("Minimum Order "+minOrderLimit + " NIS");
+        $('#minAmount').html("Minimum Order "+minOrderLimit + " NIS ");
 
         $('.col-second').css("visibility","visible");
         $('.col-one').hide();
@@ -982,7 +982,7 @@ function onQtyIncreaseButtonClicked(index) {
 
     userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
-    $('#totalAmount').html(userObject.total + " NIS");
+    $('#totalAmount').html(userObject.total + " NIS ");
     hideShowMinAmount(userObject.total);
 
     var itemCountId = "#count"+index;
@@ -1083,7 +1083,7 @@ function onQtyDecreasedButtonClicked(index) {
 
     }
 
-    $('#totalAmount').html(userObject.total + " NIS");
+    $('#totalAmount').html(userObject.total + " NIS ");
     hideShowMinAmount(userObject.total);
 }
 

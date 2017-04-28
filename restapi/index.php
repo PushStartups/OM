@@ -199,6 +199,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "address_he"           => $result["address_he"],        // RESTAURANT ADDRESS
                 "hechsher_en"          => $result["hechsher_en"],       // RESTAURANT HECHSHER
                 "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
+                "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
                 "tags"                 => $tags,                        // RESTAURANT TAGS
                 "gallery"              => $galleryImages,               // RESTAURANT GALLERY
                 "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -539,7 +540,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount)
                 "id" =>  $Vid
             ],
             "order" => [
-            "amount" => $order_amount
+                "amount" => $order_amount
             ]
         ], NULL);
 
@@ -712,6 +713,10 @@ $app->post('/add_order', function ($request, $response, $args) {
         ob_end_clean();
 
         email_for_mark($user_order, $orderId, $todayDate);
+
+        ob_end_clean();
+
+        email_for_mark2($user_order, $orderId, $todayDate);
 
         ob_end_clean();
 
@@ -1836,7 +1841,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
 
         }
 
-        
+
         $mailbody .= $user_order['total'] . 'סה"כ ';
         $mailbody .= '\n';
         $mailbody .= '\n';
@@ -1881,6 +1886,111 @@ function email_for_mark($user_order,$orderId,$todayDate)
     } else {
         echo "Message has been sent successfully";
     }
+
+}
+
+
+
+
+
+
+function email_for_mark2($user_order,$orderId,$todayDate)
+{
+
+    $mailbody = '';
+
+    $mailbody .= 'Name :'. $user_order['name'];
+    $mailbody .= '\n';
+
+    $mailbody .= 'Email :'. $user_order['email'];
+    $mailbody .= '\n';
+
+    $mailbody .= 'Restaurant Name :'. $user_order['restaurantTitle'];
+    $mailbody .= '\n';
+
+    $mailbody .= 'Payment Method : '.$user_order['Cash_Card'];
+    $mailbody .= '\n';
+
+    if ($user_order['pickFromRestaurant'] == 'false') {
+
+        $mailbody .= 'Delivery Charges : '. $user_order['deliveryCharges'];
+        $mailbody .= '\n';
+        $mailbody .= 'Appt No : '. $user_order['deliveryAptNo'];
+        $mailbody .= '\n';
+        $mailbody .= ' Address : '. $user_order['deliveryAddress'];
+        $mailbody .= '\n';
+        $mailbody .=  ' Area : ('.$user_order['deliveryArea'].')';
+    }
+    else
+    {
+        $mailbody .= 'Pick Up : Pick From Restaurant';
+    }
+
+
+    if($user_order['isCoupon']) {
+
+        $mailbody .= '\n';
+        $mailbody .= 'coupon code : ' . $user_order['couponCode'];
+        $mailbody .= '\n';
+
+        if ($user_order['isFixAmountCoupon'] == 'true') {
+
+            $mailbody .= 'Discount : ' . $user_order['discount'] . ' NIS';
+        } else {
+
+            $mailbody .= 'Discount : ' . $user_order['discount'] . ' %';
+        }
+
+
+    }
+
+
+    $mailbody .= '\n';
+    $mailbody .= 'Total : '.$user_order['total'];
+
+    $mailbody .= '\n';
+    $mailbody .= '\n';
+
+
+$mail = new PHPMailer;
+
+$mail->CharSet = 'UTF-8';
+
+$mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+$mail->isSMTP();
+$mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+$mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+$mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+$mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+$mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587;
+
+//From email address and name
+$mail->From = "order@orderapp.com";
+$mail->FromName = "OrderApp";
+
+
+//To address and name
+$mail->addAddress(EMAIL);                    //SEND ADMIN EMAIL
+
+
+//Address to which recipient will reply
+$mail->addReplyTo("order@orderapp.com", "Reply");
+
+
+//Send HTML or Plain Text email
+$mail->isHTML(false);
+$mail->Subject = 'Ledger '.$user_order['restaurantTitle'].' Order# '.$orderId;
+$mail->Body = $mailbody;
+$mail->AltBody = "OrderApp";
+
+if (!$mail->send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+}
+else {
+    echo "Message has been sent successfully";
+}
 
 }
 

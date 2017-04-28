@@ -89,16 +89,23 @@ function  getAllRestaurants(response)
         }
 
         // RESTAURANT CURRENTLY ACTIVE
-        if  (true) //(result[x].availability)
-             {
+        if  (result[x].availability || window.location.hostname == "dev.orderapp.com") //(result[x].availability)
+        {
 
             temp +=
 
                 '<div class="row separator">'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
-                '<div class="circular-logo">'+
-                '<span class="status"></span>'+
-                '<div class="logo-container">'+
+                '<div class="circular-logo">';
+
+            if(result[x].coming_soon == 0) {
+                temp += '<span class="status"></span>';
+            }
+            else
+            {
+                temp += '<span class="status offline"></span>';
+            }
+                temp += '<div class="logo-container">'+
                 '<img class="rest_img" src="'+ result[x].logo + '">'+
                 '</div>'+
                 '<div class="arrow"></div>'+
@@ -166,12 +173,27 @@ function  getAllRestaurants(response)
                 '</div>'+
                 '</div>'+
                 '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box">'+
-                '<div onclick="order_now('+x+')" class="header" >'+
-                'ORDER<br>'+
-                'NOW'+
-                '</div>'+
+                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">';
+
+
+            if(result[x].coming_soon == 0) {
+
+                temp +=
+                    '<div class="order-now-box">'+
+                    '<div onclick="order_now(' + x + ')" class="header" >' +
+                    'ORDER<br>' +
+                    'NOW';
+            }
+            else {
+
+                temp += '<div class="order-now-box offline">'+
+                    '<div class="header" >' +
+                    'Coming<br>' +
+                    'Soon';
+
+            }
+
+            temp += '</div>'+
                 '</div>'+
                 '</div>'+
                 '<div class="custom-hr"></div>'+

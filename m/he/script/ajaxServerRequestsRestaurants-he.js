@@ -79,12 +79,19 @@ function  getAllRestaurants(response)
 
         // RESTAURANT CURRENTLY ACTIVE
 
-        if (true) { //result[x].availability
+        if (result[x].availability) { //result[x].availability
 
 
             temp += '<li>'+
-                '<a href="#" class="opener">'+
-                '<div class="image-box">'+
+                '<a href="#" class="opener">';
+            if(result[x].coming_soon == 0) {
+                temp += '<div class="image-box">';
+            }
+            else
+            {
+                temp += '<div class="image-box gray">';
+            }
+                temp +=
                 '<img src="'+ result[x].logo + '">'+
                 '</div>'+
                 '<div class="txt">'+
@@ -106,9 +113,20 @@ function  getAllRestaurants(response)
                 '<li class="last text-center">'+
                 '<a onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png">גלריה</a>'+
                 '</li>'+
-                '</ul>'+
-                '<a href="#" onclick="order_now('+ x +')" class="brn-submit">הזמן עכשיו</a>'+
-                '</div>'+
+                '</ul>';
+
+            if(result[x].coming_soon == 0) {
+
+                temp += '<a href="#" onclick="order_now(' + x + ')" class="brn-submit">הזמן עכשיו</a>';
+
+            }
+            else {
+
+                temp += '<a href="#"  class="brn-submit offline">בקרוב</a>';
+
+            }
+
+            temp +=     '</div>'+
                 '</li>';
 
 

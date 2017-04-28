@@ -125,7 +125,7 @@ function updateCartElements()
 
             '<div class="row header-row">'+
             '<div class="col-md-4 col-xs-4">'+
-            '<span class="dim" dir="rtl">'+ foodCartData[x].qty.toString() +' x ' + ' ש"ח '+ foodCartData[x].price_without_subItems +
+            '<span class="dim" dir="rtl"> '+foodCartData[x].qty.toString()+' '+ ' x ש"ח ' + foodCartData[x].price_without_subItems+
             '</span></div>'+
             '<div class="col-md-8 col-xs-8">'+
             '<h2>'+ foodCartData[x].name_he +'</h2>'+
@@ -329,6 +329,7 @@ function deliveryAddress()
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
         $('#cash_parent').hide();
+        $('#cash_message').show();
 
         addressInfoFlag = true;
 
@@ -385,6 +386,7 @@ function deliveryAddress()
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
         $('#cash_parent').show();
+        $('#cash_message').hide();
         $("#user_name").val(userObject.name);
 
 

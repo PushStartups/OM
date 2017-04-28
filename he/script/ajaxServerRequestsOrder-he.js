@@ -103,7 +103,7 @@ function displayRestDetail() {
     {
 
         temp += '<tr><td>'+ selectedRest.timings[i].week_he +'</td>'+
-            '<td>'+ selectedRest.timings[i].opening_time_he + ' - ' + selectedRest.timings[i].closing_time_he +'</td></tr>';
+            '<td>'+ selectedRest.timings[i].closing_time_he + ' - ' + selectedRest.timings[i].opening_time_he +'</td></tr>';
 
     }
 
