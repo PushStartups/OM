@@ -949,7 +949,15 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	padding: 10px;
 	background: #fff;
 }
-.edit{margin: 10px 13px 0;}
+.edit{margin: 10px 8px 0;}
+.edit.add2{
+	width: 28px;
+	margin: 10px 10px 0;
+}
+.edit.add1{
+	width: 20px;
+	margin: 4px 10px 0;
+}
 .resize{
 	position: absolute;
 	left:0;

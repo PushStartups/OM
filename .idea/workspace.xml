@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/confirm-order.css" afterPath="$PROJECT_DIR$/en/style/confirm-order.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rds.php" afterPath="$PROJECT_DIR$/rds.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/style/confirm-order.css" afterPath="$PROJECT_DIR$/he/style/confirm-order.css" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -730,14 +727,7 @@
       <workItem from="1493362507906" duration="6526000" />
       <workItem from="1493481692122" duration="1022000" />
       <workItem from="1493491681417" duration="5965000" />
-      <workItem from="1493534731758" duration="611000" />
-    </task>
-    <task id="LOCAL-00049" summary="Final Update Desktop And Mobile Client">
-      <created>1490777241822</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1490777241822</updated>
+      <workItem from="1493534731758" duration="1200000" />
     </task>
     <task id="LOCAL-00050" summary="Final Update Desktop And Mobile Client">
       <created>1490790233262</created>
@@ -1075,11 +1065,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493375289861</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="DB update + code latest &#10;&#10;">
+      <created>1493536771644</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1493536771645</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="687643000" />
+    <option name="totallyTimeSpent" value="688232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
