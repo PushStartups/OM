@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/baguette_hapamoon_gallery/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/baguette_hapamoon_gallery/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/baguette_hapamoon_gallery/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/kapao_gallery/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/kapao_gallery/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/rebar_gallery/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/rebar_gallery/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/rebar_gallery/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shasimi_gallery/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shasimi_gallery/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shasimi_gallery/3.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -175,6 +165,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db_dump" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -193,8 +197,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\img" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\img" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\he\img" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\he\img" />
@@ -737,14 +741,7 @@
       <workItem from="1493362507906" duration="6526000" />
       <workItem from="1493481692122" duration="1022000" />
       <workItem from="1493491681417" duration="5965000" />
-      <workItem from="1493534731758" duration="5363000" />
-    </task>
-    <task id="LOCAL-00052" summary="Final Update Desktop And Mobile Client">
-      <created>1490790510045</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1490790510045</updated>
+      <workItem from="1493534731758" duration="6015000" />
     </task>
     <task id="LOCAL-00053" summary="Final Update Desktop And Mobile Client">
       <created>1490794662685</created>
@@ -1082,11 +1079,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493552023760</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="DB update + code latest &#10;&#10;">
+      <created>1493552619195</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1493552619195</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="692395000" />
+    <option name="totallyTimeSpent" value="693047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
