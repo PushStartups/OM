@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2017 at 12:31 PM
+-- Generation Time: Apr 30, 2017 at 01:35 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -3339,28 +3339,28 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (2241, 356, 'Leo beer - 330 ml', 'בירה ליאו 330 מ"ל', '', '', 15, 2147),
 (2242, 356, 'Leo beer - 630 ml', 'בירה ליאו 630 מ"ל', '', '', 25, 2148),
 (2243, 356, 'Fresh coconut', ' קוקוס טרי', '', '', 20, 2149),
-(2501, 401, 'juice ', 'קייל', 'Apple, kale, cucumber, melon, celery, with potassium, vitamin K, iron, vitamin C, antioxidants', 'וגדי חימצון ,K ברזל, ויטמין ,C תפוח, קייל, מלפפון, מלון, סלרי אשלגן, ויטמין', 16, 2501),
-(2502, 401, 'juice', 'גזר', 'Carrot, ginger, apple with vitamin A, vitamin C, potassium', 'גזר, ג''ינג''ר, תפוח, ויטמין A, ויטמין C, אשלגן', 16, 2502),
-(2503, 401, 'juice ', 'קייל', 'Beetroot, apple, celery with antioxidants, fibre', 'סלק, תפוח, סלרי, נוגדי חמצון, סיבים תזונתיים', 16, 2503),
-(2504, 401, 'juice', 'גזר', 'Melon, mint, honey, apple with vitamin C ', 'מלון, נענע, דבש, תפוח, ויטמין C', 16, 2504),
-(2505, 401, 'juice ', 'קייל', 'Red grapefruit, orange, lemon with vitamin C ', 'אשכולית אדומה, תפוז, לימון, ויטמין C', 16, 2505),
-(2506, 401, 'juice', 'גזר', 'Cucumber, apple, pineapple, celery with vitamin C', 'מלפפון, תפוח, אננס, סלרי, ויטמין C', 16, 2506),
-(2507, 401, 'juice ', 'קייל', 'Lemon, apple, ginger with vitamin C ', 'לימון, תפוח, ג‘ינג‘ר, ויטמין C', 16, 2507),
-(2508, 401, 'juice', 'גזר', 'Pomegranate, beetroot, apple with potassium ', 'רימון, סלק, תפוח, אשלגן', 16, 2508),
-(2509, 402, 'mix', 'חלווה', 'Techina, dates, walnuts, silan, regurt, milk with calcium, magnesium, iron ', 'טחינה גולמית, תמר, אגוזי קליפורניה, סילאן, regurt, חלב, סידן, מגנזיום, ברזל', 20, 2509),
-(2510, 402, 'mix', 'חלווה', 'Mango, banana, melon, honey, cinnamon, regurt, mango juice with vitamin C, calcium', 'מנגו, בננה, מלון, דבש, קינמון, regurt, מיץ מנגו ויטמין C | סידן', 20, 2510),
-(2511, 402, 'mix', 'חלווה', 'Almonds, silan, banana, dates, regurt, almond milk with vitamin E, calcium, magnesium, potassium', 'שקדים, סילאן, בננה, תמר, regurt, חלב שקדים ויטמין E | סידן | מגנזיום | אשלגן', 20, 2511),
-(2512, 402, 'mix', 'חלווה', 'Coconut milk, pineapple, banana, honey, regurt with calcium ', 'חלב קוקוס, אננס, בננה, דבש, regurt סידן', 20, 2512),
-(2513, 402, 'mix', 'חלווה', 'acai, mango, banana, silan, regurt, mango juice with antioxidants and calcium ', 'אסאי, מנגו, בננה, סילאן, regurt, מיץ מנגו נוגדי חמצון , סידן', 20, 2513),
-(2514, 402, 'mix', 'חלווה', 'Ground peanuts, bananas, honey, regurt, milk with magnesium, calcium and potassium ', 'טחינת בוטנים, בננה, דבש, regurt, חלב מגנזיום, סידן , אשלג', 20, 2514),
-(2515, 402, 'mix', 'חלווה', 'Pear, walnuts, raisins, honey, cinnamon, regurt, milk with fibre and calcium', 'אגס, אגוזי קליפורניה, צימוקים, דבש, קינמון, regurt, חלב סיבים תזונתיים, סידן', 20, 2515),
-(2516, 403, 'freeze', 'תפוז', 'Peach, banana, silan, grapefruit sorbet, apple juice with vitamin C ', 'אפרסק, בננה, סילאן, סורבה אשכולית אדומה, מיץ תפוחים ויטמין C', 20, 2516),
-(2517, 403, 'freeze', 'תפוז', 'Acai, blueberry, pineapple, strawberry sorbet, apple juice with antioxidants, vitamin C', 'אסאי, אוכמניות, אננס, סורבה תות, מיץ תפוחים נוגדי חמצון, ויטמין C', 20, 2517),
-(2518, 403, 'freeze', 'תפוז', 'Strawberry, raspberry, strawberry sorbet, apple juice with vitamin C', 'תות, פטל, סורבה תות, מיץ תפוחים ויטמין C', 20, 2518),
-(2519, 403, 'freeze', 'תפוז', 'Orange, banana, silan, strawberry sorbet with vitamin C and magnesium', 'תפוז, בננה, סילאן, סורבה תות ויטמין C | מגנזיום', 20, 2519),
-(2520, 403, 'freeze', 'תפוז', 'Mango, banana, passionfruit sorbet, mango juice with vitamin C and magnesium', 'מנגו, בננה, סורבה פסיפלורה, מיץ מנגו ויטמין C | מגנזיום', 20, 2520),
-(2521, 403, 'freeze', 'תפוז', 'Red grapefruit, pineapple, raspberry, lemon sorbet with vitamin A and vitamin C', 'אשכולית אדומה, אננס, פטל, סורבה לימון ויטמין A, ויטמין C', 20, 2521),
-(2522, 403, 'freeze', 'תפוז', 'Pomegranate, raspberry, cranberry, strawberry sorbet with antioxidants and vitamin C ', 'רימון, פטל, חמוציות, סורבה תות נוגדי חמצון, ויטמין C', 20, 2522),
+(2501, 401, 'kile juice', 'מיץ קייל', 'Apple, kale, cucumber, melon, celery, with potassium, vitamin K, iron, vitamin C, antioxidants', 'וגדי חימצון ,K ברזל, ויטמין ,C תפוח, קייל, מלפפון, מלון, סלרי אשלגן, ויטמין', 16, 2501),
+(2502, 401, 'Carrot juice', 'מיץ גזר', 'Carrot, ginger, apple with vitamin A, vitamin C, potassium', 'גזר, ג''ינג''ר, תפוח, ויטמין A, ויטמין C, אשלגן', 16, 2502),
+(2503, 401, 'beet juice', 'מיץ סלק', 'Beetroot, apple, celery with antioxidants, fibre', 'סלק, תפוח, סלרי, נוגדי חמצון, סיבים תזונתיים', 16, 2503),
+(2504, 401, 'melon juice', 'מיץ מלון', 'Melon, mint, honey, apple with vitamin C ', 'מלון, נענע, דבש, תפוח, ויטמין C', 16, 2504),
+(2505, 401, 'Citrus juice', 'מיץ הדרים', 'Red grapefruit, orange, lemon with vitamin C ', 'אשכולית אדומה, תפוז, לימון, ויטמין C', 16, 2505),
+(2506, 401, 'walldrof juice', 'מיץ וולדורף', 'Cucumber, apple, pineapple, celery with vitamin C', 'מלפפון, תפוח, אננס, סלרי, ויטמין C', 16, 2506),
+(2507, 401, 'Lemon juice', 'מיץ לימון', 'Lemon, apple, ginger with vitamin C ', 'לימון, תפוח, ג‘ינג‘ר, ויטמין C', 16, 2507),
+(2508, 401, 'Pomegranate juice', 'מיץ רימון', 'Pomegranate, beetroot, apple with potassium ', 'רימון, סלק, תפוח, אשלגן', 16, 2508),
+(2509, 402, 'Halva mix', 'מיקס חלווה', 'Techina, dates, walnuts, silan, regurt, milk with calcium, magnesium, iron ', 'טחינה גולמית, תמר, אגוזי קליפורניה, סילאן, regurt, חלב, סידן, מגנזיום, ברזל', 20, 2509),
+(2510, 402, 'Mango mix', 'מיקס מנגו', 'Mango, banana, melon, honey, cinnamon, regurt, mango juice with vitamin C, calcium', 'מנגו, בננה, מלון, דבש, קינמון, regurt, מיץ מנגו ויטמין C | סידן', 20, 2510),
+(2511, 402, 'Almonds mix', 'מיץ שקדים', 'Almonds, silan, banana, dates, regurt, almond milk with vitamin E, calcium, magnesium, potassium', 'שקדים, סילאן, בננה, תמר, regurt, חלב שקדים ויטמין E | סידן | מגנזיום | אשלגן', 20, 2511),
+(2512, 402, 'Coconut mix', 'מיקס קוקוס', 'Coconut milk, pineapple, banana, honey, regurt with calcium ', 'חלב קוקוס, אננס, בננה, דבש, regurt סידן', 20, 2512),
+(2513, 402, 'Asai mix', 'מיקס אסאי', 'acai, mango, banana, silan, regurt, mango juice with antioxidants and calcium ', 'אסאי, מנגו, בננה, סילאן, regurt, מיץ מנגו נוגדי חמצון , סידן', 20, 2513),
+(2514, 402, 'Peanuts mix', 'מיקס בוטנים', 'Ground peanuts, bananas, honey, regurt, milk with magnesium, calcium and potassium ', 'טחינת בוטנים, בננה, דבש, regurt, חלב מגנזיום, סידן , אשלג', 20, 2514),
+(2515, 402, 'Pears mix', 'מיקס אגסים', 'Pear, walnuts, raisins, honey, cinnamon, regurt, milk with fibre and calcium', 'אגס, אגוזי קליפורניה, צימוקים, דבש, קינמון, regurt, חלב סיבים תזונתיים, סידן', 20, 2515),
+(2516, 403, 'Freeze peach', 'פרייז אפרסק', 'Peach, banana, silan, grapefruit sorbet, apple juice with vitamin C ', 'אפרסק, בננה, סילאן, סורבה אשכולית אדומה, מיץ תפוחים ויטמין C', 20, 2516),
+(2517, 403, 'Freeze Asai ', 'פרייז אסאי', 'Acai, blueberry, pineapple, strawberry sorbet, apple juice with antioxidants, vitamin C', 'אסאי, אוכמניות, אננס, סורבה תות, מיץ תפוחים נוגדי חמצון, ויטמין C', 20, 2517),
+(2518, 403, 'Freeze strawberry', 'פרייז תות', 'Strawberry, raspberry, strawberry sorbet, apple juice with vitamin C', 'תות, פטל, סורבה תות, מיץ תפוחים ויטמין C', 20, 2518),
+(2519, 403, 'Freeze orange', 'פרייז תפוז', 'Orange, banana, silan, strawberry sorbet with vitamin C and magnesium', 'תפוז, בננה, סילאן, סורבה תות ויטמין C | מגנזיום', 20, 2519),
+(2520, 403, 'Freeze Passionflower', 'פרייז פסיפלורה', 'Mango, banana, passionfruit sorbet, mango juice with vitamin C and magnesium', 'מנגו, בננה, סורבה פסיפלורה, מיץ מנגו ויטמין C | מגנזיום', 20, 2520),
+(2521, 403, 'Freeze red grapefruit', 'פרייז אשכולית אדומה', 'Red grapefruit, pineapple, raspberry, lemon sorbet with vitamin A and vitamin C', 'אשכולית אדומה, אננס, פטל, סורבה לימון ויטמין A, ויטמין C', 20, 2521),
+(2522, 403, 'Freeze Pomegranate', 'פרייז רימון', 'Pomegranate, raspberry, cranberry, strawberry sorbet with antioxidants and vitamin C ', 'רימון, פטל, חמוציות, סורבה תות נוגדי חמצון, ויטמין C', 20, 2522),
 (2526, 405, 'Acai shot', 'שוט אסאי', 'Acai and beetroot with antioxidants, fibre and folic acid ', 'אסאי, סלק נוגדי חמצון, סיבים, חומצה פולית', 10, 2526),
 (2527, 405, 'Avocado shot', 'שוט אבוקדו', 'Avocado, lemon with fibre, vitamin C, vitamin K ', 'אבוקדו, לימון סיבים | ויטמין C | ויטמין K', 10, 2527),
 (2528, 405, 'Spirulina shot', 'שוט ספירולינה', 'Spirulina, cucumber with iron, protein, B vitamins ', 'B ספירולינה, מלפפון ברזל, חלבון, ויטמיני', 10, 2528),
@@ -3368,8 +3368,8 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (2530, 406, 'Goat''s milk yoghurt with honey ', 'יוגורט עיזים עם דבש', '', '', 16, 2530),
 (2531, 406, 'Cow''s milk yoghurt with silan', 'יוגורט בקר עם סילאן', '', '', 16, 2531),
 (2532, 406, 'Goat''s milk yoghurt with silan', 'יוגורט עיזים עם סילאן', '', '', 16, 2532),
-(2533, 406, 'regurt ', 'פירות', 'Cow''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט בקר', 21, 2533),
-(2534, 406, 'regurt', 'פירות', 'Goat''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C ', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט עיזים', 21, 2534),
+(2533, 406, 'Regurt fruits (Cow''s milk)', 'ריגרט פירות - חלב פרה', 'Cow''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט בקר', 21, 2533),
+(2534, 406, 'Regurt fruits', 'ריגרט פירות - חלב עיזים', 'Goat''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C ', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט עיזים', 21, 2534),
 (2535, 406, 'Cow''s milk yoghurt', 'בסיס יוגורט (בקר)', '', '', 16, 2535),
 (2536, 406, 'Goat''s milk yoghurt ', 'בסיס יוגורט (עיזים)', '', '', 16, 2536),
 (2537, 406, 'Sugar free cow''s milk yoghurt', 'בסיס יוגורט בקר ללא סוכר', '', '', 16, 2537),
@@ -3554,7 +3554,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=650 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=651 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -3606,7 +3606,8 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (646, 502, 1, 'Mexican Nachos', 12, 'Sweet Chilli, Spicy Chilli, Jalpeño'),
 (647, 503, 3, 'Malawach pizza with toppings ', 25, ''),
 (648, 504, 2, 'Chicken breast in honey and mustard sauce', 34, 'Mushroom (+3), Lettuce'),
-(649, 505, 1, '??? ??? ???', 55, '');
+(649, 505, 1, '??? ??? ???', 55, ''),
+(650, 506, 1, 'Angus Salad', 80, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Jalpeño');
 
 -- --------------------------------------------------------
 
@@ -12690,7 +12691,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (526, 'xcxcxc@xcxcxc.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZaBzzs6SlYBqWsdp3UQG9QQZ'),
 (527, 'asf@asdf.com', 'a', '', '', 0, '0000-00-00', '345', 'sfa', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (528, 'sdg@dsf.asdf', 'sgfd', '', '', 0, '0000-00-00', '2345', 'eryt', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(529, 'sdf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '321', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_vjGejGcyBjVKinS74fUmb4ti'),
+(529, 'sdf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '343434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_vjGejGcyBjVKinS74fUmb4ti'),
 (530, 'afd@ad.sadf', 'asdf', '', '', 0, '0000-00-00', '456', 'dsg', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (531, 'a@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_5VyXPgAWi88xD5ydfOXsGBAq'),
 (532, 'adsf@saf.ds', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Dwl1latafZ9uOSLSIijtQxZS'),
@@ -12738,7 +12739,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=506 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=507 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -12773,7 +12774,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (502, 529, 1, 237, NULL, 0, '2017-04-27'),
 (503, 515, 22, 100, NULL, 0, '2017-04-30'),
 (504, 515, 17, 83, 'fixed value', 10, '2017-04-30'),
-(505, 515, 20, 72, 'fixed percentage', 15, '2017-04-30');
+(505, 515, 20, 72, 'fixed percentage', 15, '2017-04-30'),
+(506, 529, 1, 105, NULL, 0, '2017-04-30');
 
 -- --------------------------------------------------------
 
