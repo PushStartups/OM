@@ -550,7 +550,7 @@ a:hover, a:focus {
 	color: #797979;
 	font-size:16px;
 	line-height: 19px;
-	padding: 10px 10px 10px 0;
+	padding: 10px;
 	background: none;
 	outline: none;
 }
@@ -850,6 +850,15 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	background: #fff;
 }
 .edit{margin: 10px 13px 0;}
+.edit.add2{
+	width: 28px;
+	margin: 10px 10px 0;
+}
+.edit.add1{
+	width: 20px;
+	margin: 4px 10px 0;
+}
+
 .resize{
 	position: absolute;
 	right:0;
