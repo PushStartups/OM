@@ -99,7 +99,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
         $restaurants = Array();
 
-        $results = DB::query("select * from restaurants where city_id = '$id' and hide = 0");
+        $results = DB::query("select * from restaurants  where city_id = '$id' and hide = 0 Order By coming_soon");
 
         $count = 0;
 

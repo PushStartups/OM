@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2017 at 06:56 AM
+-- Generation Time: Apr 30, 2017 at 11:33 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -328,54 +328,53 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (217, 8, 'PLATE', 'חמגשית', '/m/en/img/categories/gril443/plate.png', 297),
 (218, 8, 'DRINKS', 'שתיה', '/m/en/img/categories/gril443/DRINKS.png', 298),
 (219, 8, 'SNACKS', 'נשנושים', '/m/en/img/categories/gril443/SNACKS.png', 299),
-(301, 18, 'CHICKEN ', 'עוף', '', 301),
-(302, 18, 'BEEF ', 'בקר', '', 302),
-(303, 18, 'SALADS', 'סלט', '', 303),
-(304, 18, 'VEGETARIAN', 'צמחוני', '', 304),
-(305, 18, 'FISH ', 'דג', '', 305),
-(306, 18, 'SIDES', 'תוספות', '', 306),
-(307, 18, 'DRINKS ', 'שתייה', '', 307),
-(311, 19, 'STARTERS', 'מנות פתיחה', '', 308),
-(312, 19, 'STIR-FRY', 'מוקפצים', '', 309),
-(313, 19, 'COMBINATIONS ', 'קומבינציות', '', 310),
-(314, 19, 'NIGIRI', 'ניגירי', '', 311),
-(315, 19, 'SASHIMI', 'סשימי', '', 312),
-(316, 19, 'SPECIAL SASHIMI', 'ספיישל סשימי', '', 313),
-(317, 19, 'MAKI', 'מאקי', '', 314),
-(318, 19, 'AROMAKI ', 'ארומאקי', '', 315),
-(319, 19, 'SPICY ROLLS - 8 PCS', 'ספייסי רולס - 8 יח', '', 316),
-(320, 19, 'SUSHI SANDWICH - 4 PCS', 'סנדוויץ סושי - 4 יח', '', 317),
-(321, 19, 'TAMAKI (ANDEROL)', 'טמאקי (אנדרול)', '', 318),
-(322, 19, 'DESSERTS ', 'קינוחים', '', 319),
-(351, 20, 'STARTERS', 'ראשונות', '', 320),
-(352, 20, 'SPECIALS - DISHES WITH COCONUT MILK', 'מיוחדים - תבשילים בחלב קוקוס', '', 321),
-(353, 20, 'STIR - FRY', 'מוקפצים', '', 322),
-(354, 20, 'DESSERTS', 'קינוחים', '', 323),
-(355, 20, 'DRINKS', 'שתייה', '', 324),
-(356, 20, 'DRINKS FROM THAILAND', 'שתייה מתאילנד', '', 325),
-(401, 21, 'JUICES ', 'מיצים', '', 401),
-(402, 21, 'YOGHURT MIX', 'משקאות יוגורט', '', 402),
-(403, 21, 'FREEZE 0% FAT', 'משקאות סורבה 0% שומן', '', 403),
-(404, 21, 'ACAI ', 'מעדני אסאי עם תוספות', '', 404),
-(405, 21, 'SMALL SHOT', 'שוט בריאות', '', 405),
-(406, 21, 'REGURT', 'מעדני יוגורט מוקפא', '', 406),
-(407, 21, 'RECOMMENDED FOR ', 'משקאות לפי צורך', '', 407),
-(408, 21, 'SUPER-FOOD DRINK', 'משקאות סופר פוד', '', 408),
-(451, 22, 'PIZZA', 'פיצה', '', 411),
-(452, 22, 'SALAD ', 'סלט', '', 412),
-(453, 22, 'MALAWACH ', 'מלוואח', '', 413),
-(454, 22, 'STUFFED BOUREKAS', 'בורקס פינוקים', '', 414),
-(455, 22, 'DRINKS ', 'שתייה', '', 415),
-(501, 25, 'BELGIAN WAFFLES', 'וופל בלגי', '', 501),
-(502, 25, 'FRENCH CREPE', 'קרפ צרפתי', '', 502),
-(503, 25, 'FROZEN YOGHURT ', 'פרוזן יוגורט', '', 503),
-(504, 25, 'FRUIT SHAKE ', 'פרוט שייק', '', 504),
-(505, 25, 'BIO YOGHURT', 'יוגורט ביו', '', 505),
-(506, 25, 'ICED DRINKS ', 'אייסים', '', 506),
-(507, 25, 'SLUSH ', 'ברד', '', 507),
-(508, 25, 'FLAVORED YOGHURT ', 'יוגורט בטעמים', '', 508),
-(509, 25, 'HOT DRINKS', 'שתייה חמה', '', 509),
-(510, 25, 'ICE CREAM SCOOPS', ' גלידת כדורים', '', 510);
+(301, 18, 'CHICKEN ', 'עוף', '/m/en/img/categories/BAGUETTE/CHICKEN.png', 301),
+(302, 18, 'BEEF ', 'בקר', '/m/en/img/categories/BAGUETTE/BEEF.png', 302),
+(303, 18, 'SALADS', 'סלט', '/m/en/img/categories/BAGUETTE/SALADS.png', 303),
+(304, 18, 'VEGETARIAN', 'צמחוני', '/m/en/img/categories/BAGUETTE/VEGETARIAN.png', 304),
+(305, 18, 'FISH ', 'דג', '/m/en/img/categories/BAGUETTE/FISH.png', 305),
+(306, 18, 'SIDES', 'תוספות', '/m/en/img/categories/BAGUETTE/SIDES.png', 306),
+(307, 18, 'DRINKS ', 'שתייה', '/m/en/img/categories/BAGUETTE/DRINKS.png', 307),
+(311, 19, 'STARTERS', 'מנות פתיחה', '/m/en/img/categories/Sashimi/sashimi_starters.jpg', 308),
+(312, 19, 'STIR-FRY', 'מוקפצים', '/m/en/img/categories/Sashimi/sashimi_stirfry.jpg', 309),
+(313, 19, 'COMBINATIONS ', 'קומבינציות', '/m/en/img/categories/Sashimi/sashimi_combination.jpg', 310),
+(314, 19, 'NIGIRI', 'ניגירי', '/m/en/img/categories/Sashimi/sashimi_nigiri.jpg', 311),
+(315, 19, 'SASHIMI', 'סשימי', '/m/en/img/categories/Sashimi/sashimi_sashimi.jpg', 312),
+(316, 19, 'SPECIAL SASHIMI', 'ספיישל סשימי', '/m/en/img/categories/Sashimi/sashimi_special_sashimi.jpg', 313),
+(317, 19, 'MAKI', 'מאקי', '/m/en/img/categories/Sashimi/sashimi_maki.jpg', 314),
+(318, 19, 'AROMAKI ', 'ארומאקי', '/m/en/img/categories/Sashimi/sashimi_uramaki.jpg', 315),
+(319, 19, 'SPICY ROLLS - 8 PCS', 'ספייסי רולס - 8 יח', '/m/en/img/categories/Sashimi/sashimi_spicy_rolls.jpg', 316),
+(320, 19, 'SUSHI SANDWICH - 4 PCS', 'סנדוויץ סושי - 4 יח', '/m/en/img/categories/Sashimi/sashimi_sushi_sandwich.jpg', 317),
+(321, 19, 'TAMAKI (ANDEROL)', 'טמאקי (אנדרול)', '/m/en/img/categories/Sashimi/sashimi_tamaki.jpg', 318),
+(322, 19, 'DESSERTS ', 'קינוחים', '/m/en/img/categories/Sashimi/sashimi_desserts.jpg', 319),
+(351, 20, 'STARTERS', 'ראשונות', '/m/en/img/categories/kapao/STARTERS.png', 320),
+(352, 20, 'SPECIALS - DISHES WITH COCONUT MILK', 'מיוחדים - תבשילים בחלב קוקוס', '/m/en/img/categories/kapao/SPECIALS - DISHES WITH COCONUT MILK.png', 321),
+(353, 20, 'STIR - FRY', 'מוקפצים', '/m/en/img/categories/kapao/STIR - FRY.png', 322),
+(354, 20, 'DESSERTS', 'קינוחים', '/m/en/img/categories/kapao/DESSERTS.png', 323),
+(355, 20, 'DRINKS', 'שתייה', '/m/en/img/categories/kapao/DRINKS.png', 324),
+(356, 20, 'DRINKS FROM THAILAND', 'שתייה מתאילנד', '/m/en/img/categories/kapao/DRINKS FROM THAILAND.png', 325),
+(401, 21, 'JUICES ', 'מיצים', '/m/en/img/categories/rebar/JUICES.png', 401),
+(402, 21, 'YOGHURT MIX', 'משקאות יוגורט', '/m/en/img/categories/rebar/YOGHURT MIX.png', 402),
+(403, 21, 'FREEZE 0% FAT', 'משקאות סורבה 0% שומן', '/m/en/img/categories/rebar/FREEZE_FAT.png', 403),
+(405, 21, 'SMALL SHOT', 'שוט בריאות', '/m/en/img/categories/rebar/SMALL SHOT.png', 405),
+(406, 21, 'REGURT', 'מעדני יוגורט מוקפא', '/m/en/img/categories/rebar/REGURT.png', 406),
+(407, 21, 'RECOMMENDED FOR ', 'משקאות לפי צורך', '/m/en/img/categories/rebar/RECOMMENDED FOR.png', 407),
+(408, 21, 'SUPER-FOOD DRINK', 'משקאות סופר פוד', '/m/en/img/categories/rebar/SUPER-FOOD DRINK.png', 408),
+(451, 22, 'PIZZA', 'פיצה', '/m/en/img/categories/pizza_or/pizza.png', 411),
+(452, 22, 'SALAD ', 'סלט', '/m/en/img/categories/pizza_or/salad.png', 412),
+(453, 22, 'MALAWACH ', 'מלוואח', '/m/en/img/categories/pizza_or/MALAWACH.png', 413),
+(454, 22, 'STUFFED BOUREKAS', 'בורקס פינוקים', '/m/en/img/categories/pizza_or/STUFFED BOUREKAS.png', 414),
+(455, 22, 'DRINKS ', 'שתייה', '/m/en/img/categories/pizza_or/DRINKS.png', 415),
+(501, 25, 'BELGIAN WAFFLES', 'וופל בלגי', '/m/en/img/categories/katzefet/BELGIANWAFFLES.png', 501),
+(502, 25, 'FRENCH CREPE', 'קרפ צרפתי', '/m/en/img/categories/katzefet/FRENCHCREPE.png', 502),
+(503, 25, 'FROZEN YOGHURT ', 'פרוזן יוגורט', '/m/en/img/categories/katzefet/FROZENYOGHURT.png', 503),
+(504, 25, 'FRUIT SHAKE ', 'פרוט שייק', '/m/en/img/categories/katzefet/FRUITSHAKE.png', 504),
+(505, 25, 'BIO YOGHURT', 'יוגורט ביו', '/m/en/img/categories/katzefet/BIOYOGHURT.png', 505),
+(506, 25, 'ICED DRINKS ', 'אייסים', '/m/en/img/categories/katzefet/ICECREAMSCOOPS.png', 506),
+(507, 25, 'SLUSH ', 'ברד', '/m/en/img/categories/katzefet/SLUSH.png', 507),
+(508, 25, 'FLAVORED YOGHURT ', 'יוגורט בטעמים', '/m/en/img/categories/katzefet/FLAVOREDYOGHURT.png', 508),
+(509, 25, 'HOT DRINKS', 'שתייה חמה', '/m/en/img/categories/katzefet/HOTDRINKS.png', 509),
+(510, 25, 'ICE CREAM SCOOPS', ' גלידת כדורים', '/m/en/img/categories/katzefet/ICECREAMSCOOPS.png', 510);
 
 -- --------------------------------------------------------
 
@@ -3297,21 +3296,21 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (2158, 322, 'Tapioca', 'טפיוקה', 'Sweet tapioca pearls in coconut sauce and fresh exotic fruits', 'פניני טפיוקה מתוקים ברוטב קוקוס ופירות אקזוטיים טריים', 29, 2104),
 (2159, 322, 'Sorbet ', 'סורבה', 'Two types of sorbet in chocolate and maple sauce', 'שני סוגי סורבה ברוטב שוקולד ומייפל', 32, 2105),
 (2160, 322, 'Bao Chocolate \\ Apple', 'באו שוקולד \\ תפוח עץ', 'Asian dumplings filled with chocolate and a variety of sauces ', 'כופתאות אסיאתיות במילוי שוקולד ושלל רטבים', 44, 2106),
-(2201, 351, 'סום טאם', 'סום טאם', 'Green papaya strips, carrots, cherry tomatoes, roasted peanuts, garlic and lemon. Recommended, spicy, without gluten, fish sauce', 'רצועות פאפיה ירוקה, גזר, עגבניות שרי, בוטנים קלויים, שום ולימון. מומלץ, חריף, ללא גלוטן, רוטב דגים', 28, 2107),
-(2202, 351, 'פופיה', 'פופיה', 'Vegetarian eggroll stuffed with noodles, beans, sprouts and vegetables. (2 pc)', 'אגרול צמחוני במילוי אטריות, שעועית, נבטים וירקות.(2יחידות)', 25, 2108),
-(2203, 351, 'פופיה גאי', 'פופיה גאי', 'Eggroll stuffed with chopped chicken, noddles, beans, sprouts and vegetables. (2 pc)', 'אגרול במילוי עוף קצוץ, אטריות, שעועית, נבטים וירקות.(2יחידות)', 25, 2109),
-(2204, 352, 'גנג קייאו וון גאי', 'גנג קייאו וון גאי', 'Chicken in coconut milk and green curry with eggplant, baby corn, kaffir lime and basil served with jasmine rice. (spicy)', 'תבשיל עוף בחלב קוקוס בקארי ירוק עם חצילים, תירס גמדי, קפיר ליים ובזיליקום מוגש לצד אורז יסמין.(חריף)', 55, 2110),
-(2205, 352, 'גנג פאט גאי', 'גנג פאט גאי', 'Chicken in coconut milk and red curry with eggplant, kaffir lime and basil served with jasmine rice. (spicy) ', 'תבשיל עוף בחלב קוקוס בקארי אדום עם חצילים, קפיר ליים ובזיליקום מוגש לצד אורז יסמין.(פיקנטי)', 55, 2111),
-(2206, 352, 'גנג מאסאמן גאי', 'גנג מאסאמן גאי', 'Chicken in coconut milk with massaman curry with potato, white onion and peanuts served with jasmine rice. (spicy)', 'תבשיל עוף בחלב קוקוס בקארי מסאמאן עם תפוח אדמה, בצל לבן ובוטנים מוגש לצד אורז יסמין.(פיקנטי)', 65, 2112),
-(2207, 353, 'פאד קפאו', 'פאד קפאו', 'Basil, onion, corn and chili, served with white rice and an egg on top. (spicy)', 'בזיל, בצל, תירס וצ''ילי, מוגש לצד אורז יסמין עם ביצה מעל. (חריף)', 43, 2113),
-(2208, 353, 'קאו פאד גאי', 'קאו פאד גאי', 'Stir-fried rice with scrambled egg, corn and spring onion', 'אורז מוקפץ עם ביצה טרופה, תירס ובצל ירוק', 39, 2114),
-(2209, 353, 'קאו פאד גאי בזיל', 'קאו פאד גאי בזיל', 'Stir-fried rice with scrambled egg, chili, corn and basil', 'אורז מוקפץ עם ביצה טרופה, צ''ילי, תירס ובזיליקום', 39, 2115),
-(2210, 353, 'פאד תאי', 'פאד תאי', 'Stir-fried rice noodles with scrambled egg, sprouts, carrots, cabbage and spring onion with crushed peanuts on the side', 'אטריות אורז מוקפצות עם ביצה טרופה, נבטים, גזר, כרוב, בצל ירוק ובוטנים כתושים בצד', 43, 2116),
-(2211, 353, 'פאד סיו', 'פאד סיו', 'Browned wide rice noodles with scrambled egg and spinach', 'אטריות אורז רחבות מושחמות עם ביצה טרופה ותרד', 45, 2117),
-(2212, 353, 'פאד קי מאו', 'פאד קי מאו', 'Browned wide rice noddles with scrambled egg, baby corn, chili and basil. (spicy)', 'אטריות אורז רחבות מושחמות עם ביצה טרופה, תירס גמדי, צ''ילי ובזיל. (חריף)', 45, 2118),
-(2213, 353, 'גאי פאד מד מה מונג', 'גאי פאד מד מה מונג', 'Stir-fried chicken with cashew, chili, white onion, and spring onion served with white rice. (spicy)', 'עוף מוקפץ עם קשיו, צ''ילי, בצל לבן ובצל ירוק מוגש לצד אורז יסמין. (חריף)', 45, 2119),
-(2214, 354, 'נאם קנג סאי', 'נאם קנג סאי', 'Tapioca pearls with coconut milk, seasonal fruit and crushed rice ', 'פניני טפיוקה בחלב קוקוס, פירות העונה וקרח כתוש', 28, 2120),
-(2215, 354, 'בננה לוטי', 'בננה לוטי', 'Banana fried in batter, served with chocolate syrup and toasted coconut and coconut sorbet', 'בננה מטוגנת בבצק בליווי סירופ שוקולד וקוקוס קלוי, מוגש לצד סורבה קוקוס', 35, 2121),
+(2201, 351, 'Som Tam', 'סום טאם', 'Green papaya strips, carrots, cherry tomatoes, roasted peanuts, garlic and lemon. Recommended, spicy, without gluten, fish sauce', 'רצועות פאפיה ירוקה, גזר, עגבניות שרי, בוטנים קלויים, שום ולימון. מומלץ, חריף, ללא גלוטן, רוטב דגים', 28, 2107),
+(2202, 351, 'Popia', 'פופיה', 'Vegetarian eggroll stuffed with noodles, beans, sprouts and vegetables. (2 pc)', 'אגרול צמחוני במילוי אטריות, שעועית, נבטים וירקות.(2יחידות)', 25, 2108),
+(2203, 351, 'Popia Gai', 'פופיה גאי', 'Eggroll stuffed with chopped chicken, noddles, beans, sprouts and vegetables. (2 pc)', 'אגרול במילוי עוף קצוץ, אטריות, שעועית, נבטים וירקות.(2יחידות)', 25, 2109),
+(2204, 352, 'Gang Qiao Wen Gai', 'גנג קייאו וון גאי', 'Chicken in coconut milk and green curry with eggplant, baby corn, kaffir lime and basil served with jasmine rice. (spicy)', 'תבשיל עוף בחלב קוקוס בקארי ירוק עם חצילים, תירס גמדי, קפיר ליים ובזיליקום מוגש לצד אורז יסמין.(חריף)', 55, 2110),
+(2205, 352, 'Gang Fat Gai', 'גנג פאט גאי', 'Chicken in coconut milk and red curry with eggplant, kaffir lime and basil served with jasmine rice. (spicy) ', 'תבשיל עוף בחלב קוקוס בקארי אדום עם חצילים, קפיר ליים ובזיליקום מוגש לצד אורז יסמין.(פיקנטי)', 55, 2111),
+(2206, 352, 'Gang Masaman Gai', 'גנג מאסאמן גאי', 'Chicken in coconut milk with massaman curry with potato, white onion and peanuts served with jasmine rice. (spicy)', 'תבשיל עוף בחלב קוקוס בקארי מסאמאן עם תפוח אדמה, בצל לבן ובוטנים מוגש לצד אורז יסמין.(פיקנטי)', 65, 2112),
+(2207, 353, 'Pad Kapao', 'פאד קפאו', 'Basil, onion, corn and chili, served with white rice and an egg on top. (spicy)', 'בזיל, בצל, תירס וצ''ילי, מוגש לצד אורז יסמין עם ביצה מעל. (חריף)', 43, 2113),
+(2208, 353, 'Kao Pad Gai', 'קאו פאד גאי', 'Stir-fried rice with scrambled egg, corn and spring onion', 'אורז מוקפץ עם ביצה טרופה, תירס ובצל ירוק', 39, 2114),
+(2209, 353, 'Kao Pad Gai Basil', 'קאו פאד גאי בזיל', 'Stir-fried rice with scrambled egg, chili, corn and basil', 'אורז מוקפץ עם ביצה טרופה, צ''ילי, תירס ובזיליקום', 39, 2115),
+(2210, 353, 'Pad Thai', 'פאד תאי', 'Stir-fried rice noodles with scrambled egg, sprouts, carrots, cabbage and spring onion with crushed peanuts on the side', 'אטריות אורז מוקפצות עם ביצה טרופה, נבטים, גזר, כרוב, בצל ירוק ובוטנים כתושים בצד', 43, 2116),
+(2211, 353, 'Pad Siu', 'פאד סיו', 'Browned wide rice noodles with scrambled egg and spinach', 'אטריות אורז רחבות מושחמות עם ביצה טרופה ותרד', 45, 2117),
+(2212, 353, 'Pad Ki Mao', 'פאד קי מאו', 'Browned wide rice noddles with scrambled egg, baby corn, chili and basil. (spicy)', 'אטריות אורז רחבות מושחמות עם ביצה טרופה, תירס גמדי, צ''ילי ובזיל. (חריף)', 45, 2118),
+(2213, 353, 'Gai Pad Mad Ma Mung', 'גאי פאד מד מה מונג', 'Stir-fried chicken with cashew, chili, white onion, and spring onion served with white rice. (spicy)', 'עוף מוקפץ עם קשיו, צ''ילי, בצל לבן ובצל ירוק מוגש לצד אורז יסמין. (חריף)', 45, 2119),
+(2214, 354, 'Nam Kang Sei', 'נאם קנג סאי', 'Tapioca pearls with coconut milk, seasonal fruit and crushed rice ', 'פניני טפיוקה בחלב קוקוס, פירות העונה וקרח כתוש', 28, 2120),
+(2215, 354, 'Banana Loti', 'בננה לוטי', 'Banana fried in batter, served with chocolate syrup and toasted coconut and coconut sorbet', 'בננה מטוגנת בבצק בליווי סירופ שוקולד וקוקוס קלוי, מוגש לצד סורבה קוקוס', 35, 2121),
 (2216, 355, 'Coke - 350 ml', ' קוקה קולה 350 מ"ל', '', '', 10, 2122),
 (2217, 355, 'Coke zero - 250 ml', 'קולה זירו 350 מ"ל', '', '', 10, 2123),
 (2218, 355, 'Sprite - 350 ml', 'ספרייט 350 מ"ל', '', '', 10, 2124),
@@ -3362,9 +3361,6 @@ INSERT INTO `items` (`id`, `category_id`, `name_en`, `name_he`, `desc_en`, `desc
 (2520, 403, 'freeze', 'תפוז', 'Mango, banana, passionfruit sorbet, mango juice with vitamin C and magnesium', 'מנגו, בננה, סורבה פסיפלורה, מיץ מנגו ויטמין C | מגנזיום', 20, 2520),
 (2521, 403, 'freeze', 'תפוז', 'Red grapefruit, pineapple, raspberry, lemon sorbet with vitamin A and vitamin C', 'אשכולית אדומה, אננס, פטל, סורבה לימון ויטמין A, ויטמין C', 20, 2521),
 (2522, 403, 'freeze', 'תפוז', 'Pomegranate, raspberry, cranberry, strawberry sorbet with antioxidants and vitamin C ', 'רימון, פטל, חמוציות, סורבה תות נוגדי חמצון, ויטמין C', 20, 2522),
-(2523, 404, 'acai (Pickup only)', 'בננה', 'Acai, banana, apple, silan with calcium and antioxidants. Extras: banana, home style granola and regurt', 'אסאי, בננה, תפוח, סילאן. תוספות: בננה, גרנולת הבית ו- regurt סידן, נוגדי חמצון', 25, 2523),
-(2524, 404, 'acai (Pickup only)', 'בננה', 'Acai, coconut mik, mango, honey, with calcium and antioxidants. Extras: pineapple, toasted coconut, almonds ', 'אסאי, חלב קוקוס, מנגו, דבש. תוספות: אננס, קוקוס קלוי, שקדים סידן | נוגדי חמצון', 25, 2524),
-(2525, 404, 'acai (Pickup only)', 'בננה', 'Acai, soy, avocado, organic raisins, silan. With calcium and antioxidants. Vegan. Extras: apple, dried cranberries, natural pecans ', '"אסאי, חלב סויה, אבוקדו, צימוקים אורגניים, סילאן. תוספות: תפוח, חמוציות מיובשות, פקאן טבעי סידן | נוגדי חמצון | טבעוני', 25, 2525),
 (2526, 405, 'Acai shot', 'שוט אסאי', 'Acai and beetroot with antioxidants, fibre and folic acid ', 'אסאי, סלק נוגדי חמצון, סיבים, חומצה פולית', 10, 2526),
 (2527, 405, 'Avocado shot', 'שוט אבוקדו', 'Avocado, lemon with fibre, vitamin C, vitamin K ', 'אבוקדו, לימון סיבים | ויטמין C | ויטמין K', 10, 2527),
 (2528, 405, 'Spirulina shot', 'שוט ספירולינה', 'Spirulina, cucumber with iron, protein, B vitamins ', 'B ספירולינה, מלפפון ברזל, חלבון, ויטמיני', 10, 2528),
@@ -3558,7 +3554,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=647 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=650 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -3607,7 +3603,10 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (643, 502, 1, 'Pargit Tortilla', 34, 'Bbq, Thousand Island, Garlic Mayo'),
 (644, 502, 1, 'Chicken Tortilla', 32, 'Garlic Mayo, Sweet Chilli, Spicy Chilli, Jalpeño'),
 (645, 502, 1, 'American Fries', 14, 'Garlic Mayo, Sweet Chilli, Jalpeño'),
-(646, 502, 1, 'Mexican Nachos', 12, 'Sweet Chilli, Spicy Chilli, Jalpeño');
+(646, 502, 1, 'Mexican Nachos', 12, 'Sweet Chilli, Spicy Chilli, Jalpeño'),
+(647, 503, 3, 'Malawach pizza with toppings ', 25, ''),
+(648, 504, 2, 'Chicken breast in honey and mustard sauce', 34, 'Mushroom (+3), Lettuce'),
+(649, 505, 1, '??? ??? ???', 55, '');
 
 -- --------------------------------------------------------
 
@@ -3653,16 +3652,16 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (12, 'Aroma', 'ארומה', 0, '', 50, 1, 0, '/m/en/img/aroma_logo.png', 'Simply the best coffee in town. Coupled with food freshly prepared as you wait. Sandwiches, salads, breakfasts, pastries. If you don''t like coffee, there''s plent of other drinks, hot and cold, on offer. Now you can have this deliciousness delivered to your home. ', 'פשוט הקפה הטוב ביותר בעיר, יחד עם אוכל מוכן טרי במקום. סנדוויצ''ים, סלטים, ארוחות בוקר, מאפים. אם אתם לא אוהבים קפה, ישנו מגוון רחב של משקאות אחרים, חמים וקרים. כעט תכלו לקבל כל זאת ישירות לביתכם. ', 'Big Center, Yigal Allon 5, Beit Shemesh', '  מרכז ביג, יגאל אלון 5, בית שמש', 'KOSHER MEHADRIN', 'כשר למהדרין'),
 (13, 'Pinati', 'פינתי', 0, '', 50, 1, 0, '/m/en/img/pinati_logo.png', 'Pinati is where the locals go when they want reasonably priced food, made according to the Mediterranean palate. Their speciality is humous, which can be ordered with a selection of accompaniments. Along with this, you can order their main courses, salads and soups - you won''t be disappointed!', '"החומוס של פינתי הוא שם דבר, אבל פינתי היא לא רק חומוס. \nתוכלו לקפוץ לפינתי ולהזכר במטבח של אמא – ארוחה מבושלת, ממטבח נקי, \nמוגשת לכם במהירות ומתאימה לכל מי שמחפש ארוחה משביעה וכשרה במחיר סביר.\nהאוכל שלנו מוכן מדי יום כבר יותר משלושים שנה. בכל אחד מהסניפים שלנו אנחנו \nמכינים אוכל ממוצרים טריים עבור לקוחותינו.\nלא צריך ללבוש חליפה, ואין צורך לתכנן. אנחנו מחכים לכם כאן, כמו תמיד, \nואכשיו מביאים את האוכל במשלוח אליכם – חם, ביתי, וטעים טעים – האוכל של פינתי."', 'Yigal Allon 24, Northern Industrial Area, Beit Shemesh', 'יגאל אלון 24, אזור תעשייה, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף'),
 (14, 'Pizzaland', 'פיצה לנד', 0, '97225609526', 50, 1, 0, '/m/en/img/pizzaland_logo.png', 'Pizzaland is your local neighborhood pizzeria, which prides iself on serving only the very best.  With a selection of sizes and toppings, they have the dish to suit all pizza lovers.  What can be better than a slice of piping hot, fresh pizza?', ' הפיצריה הטובה ביותר ברמת בית שמש הגיעה לorderapp!  הזמינו פיצות חמות וטריות - בתאבון!', 'Nachal Katlav, RBS A', 'נחל קטלב 4, רמת בית שמש א', 'Badatz Eida Chareidis', 'בד''''ץ העדה החרדית ירושלים'),
-(15, '110 Burger', '110 בורגר', 0, '', 50, 1, 0, '/m/en/img/110_burger_logo.png', '110 Burger is new, revolutionary and groundbreaking brand in the fast food industry, the next generation of fast food. With a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables and vegetarian-friendly menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product, which adheres to the standard of gourmet restaurants.', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food בישראל. 110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל שלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
+(15, '110 Burger', '110 בורגר', 0, '', 50, 1, 0, '/m/en/img/110_burger_logo.png', '110 Burger is new, revolutionary and groundbreaking brand in the fast food industry, the next generation of fast food. With a fast, affordable, quality menu, 110 Burger offers speed, fresh meat and vegetables and vegetarian-friendly menu options. The restaurant uses state-of-the-art, exclusive equipment for fast, precise, simple and clean operation. The roasting method in the new machinery preserves the juiciness of the product, which adheres to the standard of gourmet restaurants.', '110 בורגר הוא מותג חדש, מהפכני ופורץ דרך בענף המזון המהיר, הדור הבא של ה-Fast Food בישראל. 110 בורגר נוסדה במגמה להציב סטנדרטים חדשים בתחום המזון המהיר. מוצר יום-יומי, מהיר, בעל מחיר נגיש, תו איכות מוכח ותפיסה מודרנית חדשנית.110 בורגר מציגה יתרונות ברורים, כמו מהירות, שימוש בבשר בקר טרי ובירקות טריים והתייחסות לצמחוניים בתפריט. המסעדה משתמשת במיכון חדיש ובלעדי לרשת אשר מאפשר תפעול מהיר, מדוייק, פשוט ונקי. שיטת הצלייה במיכון החדש שומרת על עסיסיות המוצר ועל עמידתו בסטדנרט של מסעדות גורמה. ', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל אלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
 (16, 'Atza Sushi Bar', 'אצה סושי בר', 0, '', 50, 1, 0, '/m/en/img/atza_logo.png', 'Atza serves Pan-Asian style food, with influences of Eastern Asian cuisine and a varied menu where you can enjoy dozens of delicious dishes. You can choose from meat, chicken, fish and tofu dishes, not to mention a huge sushi menu.', 'המנות של אצה הן בסגנון פאן-אסייתי.  אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת אצה תפריט מגוון בו תוכלו להינות  ממנות שונות. תוכלו לבחור מבין כסוגי מנות בשרים וסוגי מנות עוף, בקר, דגים וטופו. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Big Center, Yigal Allon 1, Beit Shemesh', '  מרכז ביג, יגאל אלון 1, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
 (17, 'GRILL BURGER', 'גריל בורגר', 0, '', 50, 1, 0, '/m/en/img/grill_burger_logo.png', 'Grill Burger is rightly the most popular burger restaurant in the Rama, with great food at the best prices. Now you can enjoy their delicious food at home. Choose from a varied menu of burgers and seasoned meats in baguettes, whole wheat rolls or ciabattas with your favorite toppings. Don''t forget to order sides of fries and other extras! For the health conscious, there is a selection of fresh salads with and without meat or chicken. ', 'גריל בורגר, מסעדת המבורגרים הממוקמת בבית שמש, במסעדה תפריט בשרי עשיר. גריל בורגר מסעדה כשרה בהשגחת הרבנות ובהשגחת הרב ראובן. שירות מקצועי, אוכל טרי נקי וטעים!', '2 Nahal Tse''elim Ave, Ramat Beit Shemesh ', 'נחל צאלים 2 רמת בית שמש', 'Badatz Rav Rubin', 'בד"ץ רב רובין'),
 (18, 'Baguette Hapaamon', 'באגט הפעמון', 0, '02-587-5559', 50, 1, 0, '/m/en/img/baguette.png', 'High quality sausages, amazing hot dogs, amazing omelettes, fried chicken, real schnitzel, Jerusalem mixed grill, classic shakshuka, house patties, excellent chicken breast, tuna, salads and the list goes on.The magic behind the fine sandwiches of Baguette HaPaamon is fresh and varied ingredients. Each sandwich is lovingly prepared according to the customer''s order and you choose the salads and sauces according to your taste.  Along with rich and colorful baguettes, the Baguette HaPaamon restaurant menu includes snacks and salads too. In short, when you order a Baguette HaPaamon meal, you will have a culinary experience (as befits an original Jerusalem kitchen).', 'נקניקים איכותיים, נקניקיות מדהימות, חביתה משגעת, פרגיות מדליקות, שניצל אמיתי, מעורב ירושלמי, שקשוקה קלאסית, קציצות הבית, חזה עוף מעולה, טונה, סלטים והרשימה נמשכת.  הקסם שמאחורי הכריכים המדויקים של באגט הפעמון הוא טריות ומגוון. כל כריך מוכן באהבה בהתאם להזמנת הלקוח ואתם בוחרים את הסלטים והרטבים לפי טעמכם.לצד באגטים עשירים וססגוניים יש למסעדת באגט הפעמון תפריט משלוחים בו תמצאו גם נשנושים וסלטים בכמה שילובים. בקיצור, כשאתם מארגנים ממסעדת באגט הפעמון משלוחים לבית או למשרד צפויה לכם חוויה קולינארית איכותית (כיאה למטבח ירושלמי מקורי).', 'Big Fashion Mall, Yigal Allon 3, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3  בית שמש', 'Rabbanut Beit Shemesh, meat has Badatz Beit Yosef certification ', 'רבנות בית שמש , (בשר של בד''''ץ בית יוסף)'),
-(19, 'Sashimi Bet Shemesh', 'סשימי בית שמש', 0, '', 50, 1, 0, '/m/en/img/sashimi.png', 'Making sushi is an artform. To create the perfect roll takes patience, skill but most importantly love. Without the love and passion, all you have are the ingredients -Chef Yossi', 'הכנת סושי זוהי אומנות. כדי ליצור את הרול המושלם יש צורך בסובלנות ובכישורים מיוחדים אך החשוב מכל הוא אהבה. ללא תשוקה ואהבה להכנת הרוליים מה שנשאר לך זה רק המצרכיים." -השף יוסי', 'Yitzchak Rabin 19 Bet Shemesh', 'דרך יצחק רבין 19, בית שמש', 'Agudat Yisrael', ''),
-(20, 'kapao', 'קפאו', 0, '', 50, 1, 0, '/m/en/img/kapao.png', 'The tastiest Thai food with an amazing range of dishes to suit every palate. And the prices are very reasonable!', 'אוכל טעים ביותר. מגוון מנות תאילנדיות מדהימות. טעים ביותר . ומחירים נוחים', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', '', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
+(19, 'Sashimi', 'סשימי בית שמש', 0, '', 50, 1, 0, '/m/en/img/sashimi.png', 'Making sushi is an artform. To create the perfect roll takes patience, skill but most importantly love. Without the love and passion, all you have are the ingredients -Chef Yossi', 'הכנת סושי זוהי אומנות. כדי ליצור את הרול המושלם יש צורך בסובלנות ובכישורים מיוחדים אך החשוב מכל הוא אהבה. ללא תשוקה ואהבה להכנת הרוליים מה שנשאר לך זה רק המצרכיים." -השף יוסי', 'Yitzchak Rabin 19 Bet Shemesh', 'דרך יצחק רבין 19, בית שמש', 'Agudat Yisrael', 'אגודת ישראל'),
+(20, 'kapao', 'קפאו', 0, '', 50, 1, 0, '/m/en/img/kapao.png', 'The tastiest Thai food with an amazing range of dishes to suit every palate. And the prices are very reasonable!', 'אוכל טעים ביותר. מגוון מנות תאילנדיות מדהימות. טעים ביותר . ומחירים נוחים', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'יגאל אלון 6, בית שמש', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
 (21, 'rebar', 'rebar', 0, '', 50, 1, 0, '/m/en/img/rebar.png', '"Rebar''s health principles are:\r\nNatural ingredients, made meticulously \r\nLow fat, low sodium and no food coloring\r\nRich in vitamins and minerals\r\nAdjusted to personal taste\r\nA rich and varied flavors and colors\r\nUnique nutritional supplements in the menu\r\nCombining optimal components\r\nPrepared in a clean and sanitary environment\r\nPreparation processes that preserve the values of the elements\r\nDrinks to suit your body and mind"', '"עקרונות הבריאות של rebar: \r\nחומרי גלם טבעיים, מובחרים ומוקפדים \r\nדל שומן, דל נתרן וללא צבעי מאכל \r\nעשיר בויטמינים ומינרלים \r\nמותאם לטעם אישי \r\nעשיר ומגוון בטעמים וצבעים \r\nתפריט תוספי תזונה ייחודי \r\nשילוב מרכיבים מיטבי \r\nהכנה בסביבה נקייה והגיינית \r\nתהליכי הכנה המשמרים את ערכי המרכיבים \r\nמשקאות המותאמים לצורכי הגוף והנפש"', 'Big Fashion Mall, Yigal Allon 1, Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 1, בית שמש', 'Chatam Sofer ', 'חתם סופר'),
 (22, 'Pizza Or', 'פיצה אור', 0, '', 50, 1, 0, '/m/en/img/pizza_or.png', 'The pizzeria in the center of town now delivers through OrderApp! The prices are very reasonable and they have everything you need if you''re in the mood for a quick and easy dairy meal.  Not just pizza, but also toasts, filled baguettes, salads and borekas. Bon appetit!', '"פיצה אור בית שמש\r\nאצלנו בפיצה אור תקבלו פיצה איכותית טרייה וטעימה \r\nמחומרים איכותיים ושלל תוספות\r\nניתן להנות גם מבורקס תורכי, טוסטים סלטים ועוד...\r\nאז למה אתם מחכים?"', 'Rechov Hashiva 2, Beit Shemesh', 'רח השבעה 2, בית שמש', 'Rabbanut Beit Shemesh ', 'רבנות בית שמש   '),
-(23, 'Schnitzel Jordi', '', 1, '', 50, 1, 0, '', 'One bite of any of our sandwiches will convince you that we aren''t your average schnitzel joint. Anything you want, we got it! You just have to make one simple decision - do you want it in a sandwhich or on a plate?', '"השניצל שלנו מקבל יחס אישי, ואתם מרגישים אותו בבגט שנאפה כאן במקום...\r\nהריח והטעם בשניצל ג''ורדי זה סיפור אהבה בבגט. שניצל ג''ורדי, בול מה שהייתי צריך!\r\nנשאר רק לבחור - בצלחת או בכריך \r\nמחכים לכם..."', '', 'שד'' יגאל אלון 6,בית שמש', 'Badatz Beit Yosef', ''),
-(24, 'Pizza & Falafel', '', 1, '', 50, 1, 0, '/m/en/img/p_f.png', 'Pinat HaSova is a Felafel and Pizza place conveniently located in the commercial area of Ramat Beit Shemesh A. They produce delicious, fresh pizza and felafel daily, and offer a wide range of salads.', 'פינת השובע היא מסעדה של פלאפל ושווארמה הממוקמת באיזור המסחרי של רמת בית שמש א''. מכינים פיצות טעימות וטריות ופאלפאל משגע כל יום. כמו כן הם מציעים גם מגוון רחב של סלטים.', '', '', 'Badatz Eida Chareidis', ''),
+(23, 'Schnitzel Jordi', 'שניצל ג''ורדי', 1, '', 50, 1, 0, '/m/en/img/jordi_logo.png', 'One bite of any of our sandwiches will convince you that we aren''t your average schnitzel joint. Anything you want, we got it! You just have to make one simple decision - do you want it in a sandwhich or on a plate?', '"השניצל שלנו מקבל יחס אישי, ואתם מרגישים אותו בבגט שנאפה כאן במקום...\r\nהריח והטעם בשניצל ג''ורדי זה סיפור אהבה בבגט. שניצל ג''ורדי, בול מה שהייתי צריך!\r\nנשאר רק לבחור - בצלחת או בכריך \r\nמחכים לכם..."', '', 'שד'' יגאל אלון 6,בית שמש', 'Badatz Beit Yosef', 'בדץ בית יוסף'),
+(24, 'Pizza & Falafel', '', 1, '', 50, 1, 1, '/m/en/img/p_f.png', 'Pinat HaSova is a Felafel and Pizza place conveniently located in the commercial area of Ramat Beit Shemesh A. They produce delicious, fresh pizza and felafel daily, and offer a wide range of salads.', 'פינת השובע היא מסעדה של פלאפל ושווארמה הממוקמת באיזור המסחרי של רמת בית שמש א''. מכינים פיצות טעימות וטריות ופאלפאל משגע כל יום. כמו כן הם מציעים גם מגוון רחב של סלטים.', '', '', 'Badatz Eida Chareidis', 'בדץ עדה חרידית'),
 (25, 'Katzefet', 'קצפת', 0, '', 50, 1, 0, '/m/en/img/ktzft.png', 'Indulge your sweet tooth with Katzefet''s amazing desserts. Choose from classic premium ice creams or healthy gourmet frozen yoghurts or sorbets, with real fruit and no sugar. If you''re feeling decadent, then order Belgian waffles or French crepes, washed down with milkshakes, fruit shakes or a selection of hot drinks.', '"גלידריית קצפת מספקת לונה פארק של טעמים!\r\nאצלנו תוכלו להנות ממבחר גדול של גלידות שמנת,\r\nסורבה גורמה, גלידות פרווה וללא סוכר.\r\nאנו מתמחים בהכנת מגוון גלידות יוגורט משובחות\r\nובמבחר טעמים היחודיים לנו.\r\nבנוסף תוכלו להנות משייקים על בסיס פירות או גלידה,\r\nואייסים העשויים מחומרי גלם איכותיים ובמבחר טעמים .\r\nכמו כן ברשת מוגשים קינוחים חמים וופל בלגי, קרפ צרפתי."', 'Canion Shaarei Hair, Yigal Allon 6, Beit Shemesh', 'קניון שער העיר, רח'' יגעל אלון 6, בית שמש', 'Mehadrin, Chatam Sofer, Bnei Brak. All ice cream products are Badatz Eida Charedit', 'מהדרין - חתם סופר, ובהכשר הבד"ץ העדה החרדית על כל מגוון הגלידות החלביות.'),
 (26, 'Haturki', 'הטורקי', 1, '', 50, 1, 0, '/m/en/img/haturki.png', 'You can judge from the aroma that rises from the pot that the food is going to be delicious. Haturk''s owners and staff are warm and know how to pamper their customers. Sometimes it is the spice that makes a good meal excellent and here, it''s no exception. Well seasoned meats are a house speciality and there''s a good selection of these, along with all the sides and breads that you''d expect from a top-notch grill restaurant . Highly recommended.', 'הריחות המעולים שיעלו מין הסירים לא פחות חשוב מהאוכל הוא מי מעומד מאחוריו. האנשים בטורקי הם חמים וכאלה שיודעים לפנק מכל הלב. ( לפעמים זה התבלין שהופך ארוחה טובה למצוינת) . הזמנות מהטורקי מומלץ בחום.', 'Sonol Gas Station, Eshtaol', 'תחנת דלת סונול, אשתאול', 'Mehadrin Matei Yehuda, with Chalak Meat', 'כשל למהדרין רבנות מטי יהודה'),
 (27, 'Pizza Shemesh', 'פיצה שמש', 1, '', 50, 1, 0, '/m/en/img/pizza_shemesh.png', 'The cheapest pizza in town! If you''re on a budget but don''t want to compromise on quality ingredients,  then order from Pizza Shemesh.  They''ve made a commitment to bring their customers just that. To prove their point, they offer a family pie that contains 100% Terra Yellow cheese from only 19.90 NIS.  And remember - delicious doesn''t always mean expensive!', '"פיצה שמש בית שמש חרטה על דגלה להביא ללקוחותיה את המחיר הטוב ביותר עבור מגש פיצה ללא התפשרות על איכות החומרים \r\nאנו מציעים מגש משפחתית הכולל 100 אחוז גבינה צהובה של ״טרה״ החל מ19.90 ש״ח בלבד.\r\nותמיד תזכרו - אין יותר טעים יש יותר יקר !"', 'Derech Rabin 15, Beit Shemesh', 'דרל רבין 15, בית שמשמ', 'Badatz Beit Yosef', ' בד״צ בית יוסף'),
@@ -3803,7 +3802,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_tags` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `restaurant_tags`
@@ -3849,7 +3848,19 @@ INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
 (46, 6, 23),
 (47, 16, 24),
 (49, 18, 25),
-(50, 20, 26);
+(51, 17, 3),
+(52, 17, 7),
+(53, 17, 2),
+(54, 21, 27),
+(55, 21, 28),
+(56, 21, 29),
+(57, 22, 30),
+(58, 22, 11),
+(59, 22, 8),
+(60, 20, 31),
+(61, 19, 32),
+(62, 19, 33),
+(63, 25, 34);
 
 -- --------------------------------------------------------
 
@@ -12581,7 +12592,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `tags`
@@ -12612,7 +12623,15 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 (23, 'Appetizers, Sushi Nigiri, Sushi', 'מנות פתיחה , סושי ניגירי, סושי'),
 (24, 'Asian, sushi', 'אסיאטי, סושי'),
 (25, 'Baguettes, salads, meat', 'באגטים, סלטים (בשרי)'),
-(26, 'Sandwich, Schnitzel, Meat', 'שניצל, בשר, סנדוויץ''');
+(26, 'Sandwich, Schnitzel, Meat', 'שניצל, בשר, סנדוויץ'''),
+(27, 'Health', 'בריאות'),
+(28, 'drinks', 'משקאות'),
+(29, 'smoothies', 'שייקים'),
+(30, 'borekas', 'בורקסים'),
+(31, 'Thai food', 'אוכל תאילנדי'),
+(32, 'Sushi', 'סושי'),
+(33, 'Parve', 'אסייאטי'),
+(34, 'Ice cream, waffles, desserts', 'קיונוחים, גלידות, וופלים ');
 
 -- --------------------------------------------------------
 
@@ -12650,7 +12669,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
 (514, 'd@gmail.com', 'דבורה', '', '', 0, '0000-00-00', '0000000000', 'Gad ', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(515, 'Avi@pushstartups.com', 'Avi', '', '', 0, '0000-00-00', '00000', 'Hfh', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Lg0NdearFMFvIXbhjs8Mfr3C'),
+(515, 'Avi@pushstartups.com', 'Avi', '', '', 0, '0000-00-00', '000000', 'Hdgg', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Lg0NdearFMFvIXbhjs8Mfr3C'),
 (516, 'mark@pushstartups.com', 'test', '', '', 0, '0000-00-00', '0000000000', 'hahar', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (517, 'sdf@dsf.com', 'sf', '', '', 0, '0000-00-00', '343434', 'sdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (518, 'hdhd@fjfjkf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QThfg69G5vDtrvA9QDjtMwch'),
@@ -12712,7 +12731,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=503 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=506 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -12744,7 +12763,10 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (499, 529, 1, 237, NULL, 0, '2017-04-27'),
 (500, 543, 1, 81, 'fixed percentage', 33, '2017-04-27'),
 (501, 544, 1, 84, 'fixed percentage', 33, '2017-04-27'),
-(502, 529, 1, 237, NULL, 0, '2017-04-27');
+(502, 529, 1, 237, NULL, 0, '2017-04-27'),
+(503, 515, 22, 100, NULL, 0, '2017-04-30'),
+(504, 515, 17, 83, 'fixed value', 10, '2017-04-30'),
+(505, 515, 20, 72, 'fixed percentage', 15, '2017-04-30');
 
 -- --------------------------------------------------------
 

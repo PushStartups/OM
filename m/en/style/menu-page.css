@@ -1704,7 +1704,8 @@ and (max-device-width : 320px) and (orientation : portrait){
 		font-size: 13pt;
 		line-height: 15pt;
 	}
-
+	.top-list li{margin:0 0 0 1.5vw;}
+	.logo{margin:0 3vw 0 2vw;}
 
 	/*#header{min-height:87px;}*/
 	/*.logo{*/
