@@ -2,138 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/colorblind-friendly/pt1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/colorblind-friendly/pt2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/colorblind-friendly/pt3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/basic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/chat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/demo-smartbig-alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/demo-smartmedium-alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/demo-smartsmall-alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/detail-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/detail-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/e-comm/detail-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/hero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/image-placeholder-64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/iphoneview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/layout-collapse-minified.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/layout-collapse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/layout-hidden.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/layout-menutop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/layout-rtl-menutop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/layout-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-glass.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-google.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-material.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-pixel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/layout-skins/skin-ultralight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/m1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/m2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/m3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/newsletter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/responseimg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/s1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/s2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/s3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/sa-demo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/sample.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/sidebar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/sidebarhero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/site-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/site-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/widget-colorpicker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/bg-new-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/burger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/check02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/checked01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/cvs-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/delivery line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/header-bg-rtl.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/header-sm-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/ic_calender.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/ic_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/ic_profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/juice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/logo-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/pci-dss.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/popup-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/img/right_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/jcrop/Jcrop.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/ipad-landscape.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/ipad-portrait.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/iphone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/sptouch-icon-iphone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/touch-icon-ipad-retina.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/touch-icon-ipad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/splash/touch-icon-iphone-retina.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/bigbox.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/bigbox.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/messagebox.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/messagebox.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/smallbox.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/smallbox.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/voice_alert.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/voice_alert.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/voice_off.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/voice_off.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/voice_on.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/voice_on.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/change_hide_status.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/change_rank.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/demowidget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/email-compose.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/email-opened.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/email-reply.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/email-template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/email/email-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/modal-content/modal-voicecommand.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/notify/mail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/notify/notifications.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/notify/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/website-template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/demo.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/invoice.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/lockscreen.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/orderappadmin-production-plugins.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/orderappadmin-production.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/orderappadmin-rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/orderappadmin-skins.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/orderappadmin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/css/your_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/data/dataList.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/demo/copyright.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/order-detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/orders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sound/license.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/inc/functions.php" afterPath="$PROJECT_DIR$/admin/inc/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" afterPath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -910,14 +780,7 @@
       <workItem from="1493750037556" duration="2871000" />
       <workItem from="1493781800888" duration="7000" />
       <workItem from="1493782420956" duration="1803000" />
-      <workItem from="1493795907662" duration="17476000" />
-    </task>
-    <task id="LOCAL-00056" summary="Final Update Desktop And Mobile Client">
-      <created>1490795165670</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1490795165670</updated>
+      <workItem from="1493795907662" duration="17938000" />
     </task>
     <task id="LOCAL-00057" summary="Final Update Desktop And Mobile Client">
       <created>1490795229575</created>
@@ -1255,11 +1118,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493801053234</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="DB update + code latest">
+      <created>1493820040357</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1493820040357</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="731878000" />
+    <option name="totallyTimeSpent" value="732340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1948,14 +1818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="991">
@@ -1968,6 +1830,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="689">
           <caret line="415" column="0" lean-forward="true" selection-start-line="411" selection-start-column="7" selection-end-line="415" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
