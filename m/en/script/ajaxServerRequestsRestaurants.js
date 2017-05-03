@@ -155,8 +155,23 @@ function  getAllRestaurants(response)
                 '<li class="last text-center">'+
                 '<a  onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>'+
                 '</li>'+
-                '</ul>'+
-                '<a href="#" class="brn-submit offline">Order Now</a>'+
+                '</ul>';
+
+
+            if(result[x].coming_soon == 0) {
+
+
+                temp += '<a href="#" class="brn-submit offline">Order Now</a>';
+
+            }
+            else {
+
+                temp += '<a href="#" class="brn-submit offline">Coming Soon</a>';
+
+            }
+
+
+                temp +=
                 '</div>'+
                 '</li>';
 

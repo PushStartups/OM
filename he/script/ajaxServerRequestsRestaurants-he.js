@@ -229,8 +229,21 @@ function  getAllRestaurants(response)
 
                 '<div class="row separator">'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box offline">'+
-                '<div class="header">הזמן <br> עכשיו</div>'+
+                '<div class="order-now-box offline">';
+
+
+
+            if(result[x].coming_soon == 0) {
+                temp += '<div class="header">הזמן <br> עכשיו</div>';
+            }
+            else
+            {
+                temp += '<div class="header">בקרוב</div>';
+            }
+
+
+
+            temp +=
                 '</div>'+
                 '</div>'+
                 '<div class="col-md-8 col-sm-8 col-xs-8">'+

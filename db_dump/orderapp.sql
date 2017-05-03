@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 03, 2017 at 08:37 AM
+-- Generation Time: May 03, 2017 at 01:58 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=81 ;
 
 --
 -- Dumping data for table `b2b_orders`
@@ -93,7 +93,8 @@ INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`
 (76, 1, 2, 0, 14, 24, '2017-05-01'),
 (77, 1, 2, 0, 14, 10, '2017-05-01'),
 (78, 1, 2, 0, 8, 2, '2017-05-01'),
-(79, 1, 2, 0, 44, 56, '2017-05-01');
+(79, 1, 2, 0, 44, 56, '2017-05-01'),
+(80, 1, 2, 0, 88, 12, '2017-05-03');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
@@ -148,7 +149,8 @@ INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `s
 (57, 76, 1, 'Small Sweet Potato Fries', 14, 'Size:Small'),
 (58, 77, 1, 'Small Sweet Potato Fries', 14, 'Size:Small'),
 (59, 78, 1, 'Coca Cola Zero', 8, ''),
-(60, 79, 1, 'Angus Salad', 44, '');
+(60, 79, 1, 'Angus Salad', 44, ''),
+(61, 80, 1, 'סלט אנגוס', 88, 'אנטריקוט (+18), חזה עוף (+18), ביצה (+4), פורטובלו (+4)');
 
 -- --------------------------------------------------------
 
@@ -185,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'muhammad.iftikhar.aftab@gmail.com', 'Shoaib', 'test', 'test', 100, '2017-05-03', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'muhammad.iftikhar.aftab@gmail.com', 'Shoaib', 'test', 'test', 12, '2017-05-03', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '2017-05-01', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (4, 'mark@pushstartups.com', 'Avi', 'mark', 'mark', 12, '2017-04-06', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 0, '2017-04-19', '0548307445', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 2, '');
@@ -396,13 +398,15 @@ INSERT INTO `categories` (`id`, `menu_id`, `name_en`, `name_he`, `image_url`, `s
 (403, 21, 'FREEZE 0% FAT', 'משקאות סורבה 0% שומן', '/m/en/img/categories/rebar/FREEZE_FAT.png', 403),
 (405, 21, 'SMALL SHOT', 'שוט בריאות', '/m/en/img/categories/rebar/SMALL SHOT.png', 405),
 (406, 21, 'REGURT', 'מעדני יוגורט מוקפא', '/m/en/img/categories/rebar/REGURT.png', 406),
-(407, 21, 'RECOMMENDED FOR ', 'משקאות לפי צורך', '/m/en/img/categories/rebar/RECOMMENDED FOR.png', 407),
+(407, 21, 'RECOMMENDED FOR', 'משקאות מומלצים', '/m/en/img/categories/rebar/RECOMMENDED FOR.png', 407),
 (408, 21, 'SUPER-FOOD DRINK', 'משקאות סופר פוד', '/m/en/img/categories/rebar/SUPER-FOOD DRINK.png', 408),
 (451, 22, 'PIZZA', 'פיצה', '/m/en/img/categories/pizza_or/pizza.png', 411),
 (452, 22, 'SALAD ', 'סלט', '/m/en/img/categories/pizza_or/salad.png', 412),
 (453, 22, 'MALAWACH ', 'מלוואח', '/m/en/img/categories/pizza_or/MALAWACH.png', 413),
 (454, 22, 'STUFFED BOUREKAS', 'בורקס פינוקים', '/m/en/img/categories/pizza_or/STUFFED BOUREKAS.png', 414),
 (455, 22, 'DRINKS ', 'שתייה', '/m/en/img/categories/pizza_or/DRINKS.png', 415),
+(456, 22, 'BAGUETTE ', 'בגאט', '', 416),
+(457, 22, 'TOASTS', 'טוסטים', '', 417),
 (501, 25, 'BELGIAN WAFFLES', 'וופל בלגי', '/m/en/img/categories/katzefet/BELGIANWAFFLES.png', 501),
 (502, 25, 'FRENCH CREPE', 'קרפ צרפתי', '/m/en/img/categories/katzefet/FRENCHCREPE.png', 502),
 (503, 25, 'FROZEN YOGHURT ', 'פרוזן יוגורט', '/m/en/img/categories/katzefet/FROZENYOGHURT.png', 503),
@@ -514,11 +518,11 @@ CREATE TABLE IF NOT EXISTS `company_timing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `company_id` int(11) NOT NULL,
   `week_en` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `week_he` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `week_he` varchar(255) NOT NULL,
   `opening_time` varchar(255) CHARACTER SET latin1 NOT NULL,
   `closing_time` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `opening_time_he` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `closing_time_he` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `opening_time_he` varchar(255) NOT NULL,
+  `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
@@ -528,13 +532,13 @@ CREATE TABLE IF NOT EXISTS `company_timing` (
 --
 
 INSERT INTO `company_timing` (`id`, `company_id`, `week_en`, `week_he`, `opening_time`, `closing_time`, `opening_time_he`, `closing_time_he`) VALUES
-(1, 2, 'Monday', '', '11:00', '23:59', '', ''),
-(2, 2, 'Tuesday', '', '08:00', '21:00', '', ''),
-(3, 2, 'Wednesday', '', '07:00', '22:00', '', ''),
-(4, 2, 'Thursday', '', '11:00', '21:00', '', ''),
-(5, 2, 'Friday', '', 'Closed', 'Closed', '', ''),
-(6, 2, 'Saturday', '', 'Closed', 'Closed', '', ''),
-(7, 2, 'Sunday', '', 'Closed', 'Closed', '', ''),
+(1, 2, 'Monday', 'יום ב', '11:00', '23:59', '11:00', '23:59'),
+(2, 2, 'Tuesday', 'יום ג', '08:00', '21:00', '08:00', '21:00'),
+(3, 2, 'Wednesday', 'יום ד', '07:00', '22:00', '07:00', '22:00'),
+(4, 2, 'Thursday', 'יום ה', '11:00', '21:00', '11:00', '21:00'),
+(5, 2, 'Friday', 'ששי', 'Closed', 'Closed', 'סגור', 'סגור'),
+(6, 2, 'Saturday', 'שבת', 'Closed', 'Closed', 'סגור', 'סגור'),
+(7, 2, 'Sunday', 'יום א', 'Closed', 'Closed', 'סגור', 'סגור'),
 (8, 3, 'Monday', '', '11:00', '21:00', '', ''),
 (9, 3, 'Tuesday', '', '11:00', '21:00', '', ''),
 (10, 3, 'Wednesday', '', '11:00', '21:00', '', ''),
@@ -2065,22 +2069,22 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (8530, 2536, 'Size', 'One', 1, ' גודל (שדה חובה)', 8135),
 (8531, 2537, 'Size', 'One', 1, ' גודל (שדה חובה)', 8136),
 (8532, 2538, 'Size', 'One', 1, ' גודל (שדה חובה)', 8137),
-(8533, 2539, 'Size', 'One', 1, ' גודל (שדה חובה)', 8138),
-(8534, 2540, 'Size', 'One', 1, ' גודל (שדה חובה)', 8139),
-(8535, 2541, 'Size', 'One', 1, ' גודל (שדה חובה)', 8140),
-(8536, 2542, 'Size', 'One', 1, ' גודל (שדה חובה)', 8141),
-(8537, 2543, 'Size', 'One', 1, ' גודל (שדה חובה)', 8142),
-(8538, 2544, 'Size', 'One', 1, ' גודל (שדה חובה)', 8143),
-(8539, 2545, 'Size', 'One', 1, ' גודל (שדה חובה)', 8144),
-(8540, 2546, 'Size', 'One', 1, ' גודל (שדה חובה)', 8145),
-(8541, 2547, 'Size', 'One', 1, ' גודל (שדה חובה)', 8146),
-(8542, 2548, 'Size', 'One', 1, ' גודל (שדה חובה)', 8147),
-(8543, 2549, 'Size', 'One', 1, ' גודל (שדה חובה)', 8148),
-(8544, 2550, 'Size', 'One', 1, ' גודל (שדה חובה)', 8149),
-(8545, 2551, 'Size', 'One', 1, ' גודל (שדה חובה)', 8150),
-(8546, 2552, 'Size', 'One', 1, ' גודל (שדה חובה)', 8151),
-(8547, 2553, 'Size', 'One', 1, ' גודל (שדה חובה)', 8152),
-(8548, 2554, 'Size', 'One', 1, ' גודל (שדה חובה)', 8153),
+(8533, 2539, 'Size', 'One', 1, 'גודל', 8138),
+(8534, 2540, 'Size', 'One', 1, 'גודל', 8139),
+(8535, 2541, 'Size', 'One', 1, 'גודל', 8140),
+(8536, 2542, 'Size', 'One', 1, 'גודל', 8141),
+(8537, 2543, 'Size', 'One', 1, 'גודל', 8142),
+(8538, 2544, 'Size', 'One', 1, 'גודל', 8143),
+(8539, 2545, 'Size', 'One', 1, 'גודל', 8144),
+(8540, 2546, 'Size', 'One', 1, 'גודל', 8145),
+(8541, 2547, 'Size', 'One', 1, 'גודל', 8146),
+(8542, 2548, 'Size', 'One', 1, 'גודל', 8147),
+(8543, 2549, 'Size', 'One', 1, 'גודל', 8148),
+(8544, 2550, 'Size', 'One', 1, 'גודל', 8149),
+(8545, 2551, 'Size', 'One', 1, 'גודל', 8150),
+(8546, 2552, 'Size', 'One', 1, 'גודל', 8151),
+(8547, 2553, 'Size', 'One', 1, 'גודל', 8152),
+(8548, 2554, 'Size', 'One', 1, 'גודל', 8153),
 (8549, 2555, 'Size', 'One', 1, ' גודל (שדה חובה)', 8154),
 (8550, 2556, 'Size', 'One', 1, ' גודל (שדה חובה)', 8155),
 (8551, 2557, 'Size', 'One', 1, ' גודל (שדה חובה)', 8156),
@@ -2877,28 +2881,28 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (1273, 104, 0, 'Sprite', 'ספרייט', '', '', 9, 808),
 (1274, 104, 0, 'Diet Sprite', 'דיאט ספרייט', '', '', 9, 809),
 (1275, 104, 0, 'Flavored Water', 'מים בטעמים', '', '', 9, 810),
-(1276, 105, 0, 'Ice Aroma', 'אייס ארומה', '', '', 14, 811),
-(1277, 105, 0, 'Ice Aroma diet', 'אייס ארומה דיאט', '', '', 14, 812),
-(1278, 105, 0, 'Ice Chocolate', 'אייס שוקו', '', '', 14, 813),
-(1279, 105, 0, 'Ice Cappuccino espresso, cold milk, ice', 'קפוצ׳ינו קר אספרסו, חלב קר, קרח', '', '', 14, 814),
-(1280, 105, 0, 'Ice Aroma w/ Cookies', 'אייס עוגיות', '', '', 16, 815),
-(1281, 105, 0, 'Ice Aroma w/ Ice Cream ', 'אייס ארומה עם גלידה', '', '', 18, 816),
-(1282, 105, 0, 'Iced Mint-Lemonade', 'אייס לימונענע', '', '', 12, 817),
+(1276, 105, 0, 'Ice Aroma', 'אייס ארומה', '', '', 17, 811),
+(1277, 105, 0, 'Ice Aroma diet', 'אייס ארומה דיאט', '', '', 17, 812),
+(1278, 105, 0, 'Ice Chocolate', 'אייס שוקו', '', '', 17, 813),
+(1279, 105, 0, 'Ice Cappuccino espresso, cold milk, ice', 'קפוצ׳ינו קר אספרסו, חלב קר, קרח', '', '', 17, 814),
+(1280, 105, 0, 'Ice Aroma w/ Cookies', 'אייס עוגיות', '', '', 19, 815),
+(1281, 105, 0, 'Ice Aroma w/ Ice Cream ', 'אייס ארומה עם גלידה', '', '', 21, 816),
+(1282, 105, 0, 'Iced Mint-Lemonade', 'אייס לימונענע', '', '', 14, 817),
 (1283, 105, 0, 'Ice Americano Double Espresso, ice, water', 'אמריקנו קר אספרסו כפול, מים, קרח', '', '', 12, 818),
 (1284, 105, 0, 'Vegan Iced Coconut-Lychee', 'אייס טבעוני קוקוס ליצ׳י', '', '', 22, 819),
 (1285, 105, 0, 'Coconut-Lychee Milkshake', 'מילקשייק קוקוס ליצ׳י', '', '', 23, 820),
 (1286, 105, 0, 'Fruit Shake', 'שייק פירות', 'on Milk \\ Water \\ Orange juice & your choice of fruits', 'על בסיס חלב \\ מים \\ מיץ תפוזים ופירות לבחירה', 22, 821),
-(1287, 106, 0, 'Salmon Sandwich', ' כריך סלומון', 'smoked salmon, cream cheese, lettuce, red onion, lemon juice', 'סלמון מעושן, גבינת שמנת, חסה, בצל סגול ומיץ לימון', 19, 822),
-(1288, 106, 0, 'Omelet Sandwich', 'כריך חביתה', 'omelet, cream cheese, tomato, pickles, lettuce', 'חביתה, גבינת שמנת, עגבניה, מלפפון חמוץ וחסה\n', 17, 823),
-(1289, 106, 0, 'Tuna Sandwich', 'כריך טונה', 'tuna, Aroma dressing, tomato, pickles, arugula', 'טונה, רוטב ארומה, עגבניה, מלפפון חמוץ ורוקט\n', 17, 824),
-(1290, 106, 0, 'Sabich Sandwich', 'כריך סביח', 'sliced potato, roasted eggplant, hard boiled egg, spicy pepper spread, pickels, tahini and parsley', 'פרוסות תפוח אדמה, חציל קלוי, ביצה קשה, ממרח פלפל צ''ומה, מלפפון חמוץ, טחינה ופטרוזיליה', 17, 825),
-(1291, 106, 0, 'Chickpea Omelet', 'חביתת חומוס', 'vegan, chickpea omelet, tahini, tomato, pickles, lettuce', 'חביתת חומוס טבעונית, טחינה, עגבניה, מלפפון חמוץ וחסה', 17, 826),
-(1292, 106, 0, 'Avocado Sandwich', 'כריך אבוקדו', 'avocado spread, hard boiled egg, tomato', 'ממרח אבוקדו, ביצה קשה ועגבניה\n', 17, 827),
-(1293, 106, 0, 'Halloumi cheese Sandwich', 'כריך חלומ', 'roasted halloumi cheese, cream cheese, tomato, pickles, lettuce', 'גבינת חלומי צרובה, גבינת שמנת, עגבניה, מלפפון חמוץ וחסה\n', 17, 828),
-(1294, 106, 0, 'Chemed Cheese Sandwich', 'כריך חמד', '5% fat chemed cheese, spicy pepper spread, lettuce, tomato, za’atar, olive oil', 'גבינת חמד %5 ,ממרח פלפל צ''ומה, חסה, עגבניה, זעתר ושמן זית', 10, 829),
-(1295, 106, 0, 'Greek Sandwich', 'כריך יווני', '5% fat Bulgarian cheese, tomato, basil, olive oil', 'גבינה בולגרית %5 , עגבניה, בזיליקום ושמן זית\n', 10, 830),
-(1296, 106, 0, 'Yellow Hard Cheese Sandwich', 'כריך צהובה', 'hard yellow cheese, cream cheese, lettuce, tomato', 'גבינה צהובה, גבינת שמנת, חסה ועגבניה\n', 10, 831),
-(1297, 106, 0, 'Egg Salad Sandwich', 'כריך סלט ביצים\n', 'freshly made egg salad, tomato, spring onion', 'סלט ביצים מוכן במקום, עגבניה ובצל ירוק\n', 10, 832),
+(1287, 106, 0, 'Salmon Sandwich', ' כריך סלומון', 'smoked salmon, cream cheese, lettuce, red onion, lemon juice', 'סלמון מעושן, גבינת שמנת, חסה, בצל סגול ומיץ לימון', 33, 822),
+(1288, 106, 0, 'Omelet Sandwich', 'כריך חביתה', 'omelet, cream cheese, tomato, pickles, lettuce', 'חביתה, גבינת שמנת, עגבניה, מלפפון חמוץ וחסה\n', 29, 823),
+(1289, 106, 0, 'Tuna Sandwich', 'כריך טונה', 'tuna, Aroma dressing, tomato, pickles, arugula', 'טונה, רוטב ארומה, עגבניה, מלפפון חמוץ ורוקט\n', 29, 824),
+(1290, 106, 0, 'Sabich Sandwich', 'כריך סביח', 'sliced potato, roasted eggplant, hard boiled egg, spicy pepper spread, pickels, tahini and parsley', 'פרוסות תפוח אדמה, חציל קלוי, ביצה קשה, ממרח פלפל צ''ומה, מלפפון חמוץ, טחינה ופטרוזיליה', 29, 825),
+(1291, 106, 0, 'Chickpea Omelet', 'חביתת חומוס', 'vegan, chickpea omelet, tahini, tomato, pickles, lettuce', 'חביתת חומוס טבעונית, טחינה, עגבניה, מלפפון חמוץ וחסה', 29, 826),
+(1292, 106, 0, 'Avocado Sandwich', 'כריך אבוקדו', 'avocado spread, hard boiled egg, tomato', 'ממרח אבוקדו, ביצה קשה ועגבניה\n', 19, 827),
+(1293, 106, 0, 'Halloumi cheese Sandwich', 'כריך חלומ', 'roasted halloumi cheese, cream cheese, tomato, pickles, lettuce', 'גבינת חלומי צרובה, גבינת שמנת, עגבניה, מלפפון חמוץ וחסה\n', 19, 828),
+(1294, 106, 0, 'Chemed Cheese Sandwich', 'כריך חמד', '5% fat chemed cheese, spicy pepper spread, lettuce, tomato, za’atar, olive oil', 'גבינת חמד %5 ,ממרח פלפל צ''ומה, חסה, עגבניה, זעתר ושמן זית', 18, 829),
+(1295, 106, 0, 'Greek Sandwich', 'כריך יווני', '5% fat Bulgarian cheese, tomato, basil, olive oil', 'גבינה בולגרית %5 , עגבניה, בזיליקום ושמן זית\n', 18, 830),
+(1296, 106, 0, 'Yellow Hard Cheese Sandwich', 'כריך צהובה', 'hard yellow cheese, cream cheese, lettuce, tomato', 'גבינה צהובה, גבינת שמנת, חסה ועגבניה\n', 18, 831),
+(1297, 106, 0, 'Egg Salad Sandwich', 'כריך סלט ביצים\n', 'freshly made egg salad, tomato, spring onion', 'סלט ביצים מוכן במקום, עגבניה ובצל ירוק\n', 18, 832),
 (1298, 107, 0, 'COFFE & PASTRY', 'ומאפה', '', '', 18, 0),
 (1300, 116, 0, 'Meatballs in sauce', 'קציצות בשר ברוטב', '', '', 25, 833),
 (1301, 116, 0, 'Chicken breast', 'חזה עוף', '', '', 25, 834),
@@ -2968,7 +2972,6 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (1528, 134, 0, 'Mineral water', 'נביעות', '', '', 9, 918),
 (1529, 134, 0, 'Living water', 'מי בריאה', '', '', 11, 919),
 (1530, 134, 0, 'Sparkling water', 'סודה', '', '', 11, 920),
-(1531, 134, 0, 'Carlsberg 1/3 litre', 'קרלסברג 1/3', '', '', 17, 921),
 (1532, 135, 0, 'Classic burger', 'בורגר 110 קלאסי', '', '', 29, 899),
 (1533, 135, 0, 'Chicken sandwich', 'צ''יקן סנדביץ'' 110', '', '', 29, 900),
 (1534, 135, 0, 'Sirloin sandwich', 'סינטה 110', '', '', 35, 901),
@@ -2980,8 +2983,8 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (1540, 136, 0, 'Sirloin sandwich', 'סינטה 110', '', '', 49, 901),
 (1541, 136, 0, 'Burger deal', 'בורגר דיל 110', 'Burger, side of fries, soft drink', 'המבורגר 110 + צ''יפס + שתייה', 54, 903),
 (1542, 136, 0, 'Burger deal - sirloin', 'בורגר דיל 110 סינטה', 'Sirloin sandwich, side of fries, soft drink', 'סינטה + צ''יפס + שתייה', 65, 904),
-(1543, 137, 0, 'Classic burger', 'בורגר 110 קלאסי', '', '', 39, 899),
-(1544, 137, 0, 'Burger deal', 'בורגר דיל 110', 'Burger, side of fries, soft drink', 'המבורגר 110 + צ''יפס + שתייה', 54, 903),
+(1543, 137, 0, 'Classic burger', 'בורגר 110 קלאסי', '', '', 49, 899),
+(1544, 137, 0, 'Burger deal', 'בורגר דיל 110', 'Burger, side of fries, soft drink', 'המבורגר 110 + צ''יפס + שתייה', 59, 903),
 (1545, 138, 0, 'Kid''s meal', 'ארות ילדים', 'Chicken tenders, fries, drink', 'שניצלונים + צ''יפס + שתייה', 35, 907),
 (1601, 161, 0, 'Japanese pickles', 'חמוצים יפניים', 'Cabbage, carrot, cucumber and pepper in a sweet marinade, garnished with sesame seeds', 'כרוב, גזר, מלפפון ופלפלים בתחמיץ מתקתק עם קישוט של שומשום מעל', 15, 922),
 (1602, 161, 0, 'Edamame', 'אדממה', 'Steamed soybean pods served with coarse salt and lemon', 'תרמילי סויה מאודים מוגש עם מלח גס ולימון', 17, 923),
@@ -3399,32 +3402,32 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (2526, 405, 0, 'Acai shot', 'שוט אסאי', 'Acai and beetroot with antioxidants, fibre and folic acid ', 'אסאי, סלק נוגדי חמצון, סיבים, חומצה פולית', 10, 2526),
 (2527, 405, 0, 'Avocado shot', 'שוט אבוקדו', 'Avocado, lemon with fibre, vitamin C, vitamin K ', 'אבוקדו, לימון סיבים | ויטמין C | ויטמין K', 10, 2527),
 (2528, 405, 0, 'Spirulina shot', 'שוט ספירולינה', 'Spirulina, cucumber with iron, protein, B vitamins ', 'B ספירולינה, מלפפון ברזל, חלבון, ויטמיני', 10, 2528),
-(2529, 406, 0, 'Cow''s milk yoghurt with honey', 'יוגורט בקר עם דבש', '', '', 16, 2529),
-(2530, 406, 0, 'Goat''s milk yoghurt with honey ', 'יוגורט עיזים עם דבש', '', '', 16, 2530),
-(2531, 406, 0, 'Cow''s milk yoghurt with silan', 'יוגורט בקר עם סילאן', '', '', 16, 2531),
-(2532, 406, 0, 'Goat''s milk yoghurt with silan', 'יוגורט עיזים עם סילאן', '', '', 16, 2532),
-(2533, 406, 0, 'Regurt fruits (Cow''s milk)', 'ריגרט פירות - חלב פרה', 'Cow''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט בקר', 21, 2533),
+(2529, 406, 0, 'Cow''s milk yoghurt with honey', 'יוגורט חלב פרה עם דבש', '', '', 16, 2529),
+(2530, 406, 0, 'Goat''s milk yoghurt with honey ', 'יוגורט חלב עיזים עם דבש', '', '', 16, 2530),
+(2531, 406, 0, 'Cow''s milk yoghurt with silan', 'יוגורט חלב פרה עם סילאן', '', '', 16, 2531),
+(2532, 406, 0, 'Goat''s milk yoghurt with silan', 'יוגורט חלב עיזים עם סילאן', '', '', 16, 2532),
+(2533, 406, 0, 'Regurt fruits (Cow''s milk)', ' ריגרט פירות - חלב פרה', 'Cow''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט בקר', 21, 2533),
 (2534, 406, 0, 'Regurt fruits', 'ריגרט פירות - חלב עיזים', 'Goat''s milk yoghurt with mixed seasonal fruit, toasted coconut, home style granola, with calcium and vitamin C ', 'מיקס פירות העונה, קוקוס קלוי, גרנולת הבית סידן | ויטמין C עם יוגורט עיזים', 21, 2534),
-(2535, 406, 0, 'Cow''s milk yoghurt', 'בסיס יוגורט (בקר)', '', '', 16, 2535),
-(2536, 406, 0, 'Goat''s milk yoghurt ', 'בסיס יוגורט (עיזים)', '', '', 16, 2536),
-(2537, 406, 0, 'Sugar free cow''s milk yoghurt', 'בסיס יוגורט בקר ללא סוכר', '', '', 16, 2537),
-(2538, 406, 0, 'Sugar free goat''s milk yoghurt ', 'בסיס יוגורט עיזים ללא סוכר', '', '', 16, 2538),
-(2539, 407, 0, 'relax (Cow''s yogurt)', '(יוגורט בקר)', 'Pineapple, mango, passionfruit sorbet, regurt (cow''s milk yoghurt), mango juice with calcium and vitamin C ', 'אננס, מנגו, סורבה פסיפלורה, regurt, מיץ מנגו סידן | ויטמין c - עם יוגורט בקר', 20, 2539),
+(2535, 406, 0, 'Cow''s milk yoghurt', ' יוגורט על בסיס חלב פרה', '', '', 16, 2535),
+(2536, 406, 0, 'Goat''s milk yoghurt ', 'יוגורט על בסיס חלב עיזים', '', '', 16, 2536),
+(2537, 406, 0, 'Sugar free cow''s milk yoghurt', 'יוגורט על בסיס חלב פרה ללא סוכר', '', '', 16, 2537),
+(2538, 406, 0, 'Sugar free goat''s milk yoghurt ', 'יוגורט על בסיס חלב עיזים ללא סוכר', '', '', 16, 2538),
+(2539, 407, 0, 'relax Cow''s yogurt', 'רילקס יוגורט בקר', 'Pineapple, mango, passionfruit sorbet, regurt (cow''s milk yoghurt), mango juice with calcium and vitamin C ', 'אננס, מנגו, סורבה פסיפלורה, regurt, מיץ מנגו סידן | ויטמין c - עם יוגורט בקר', 20, 2539),
 (2540, 407, 0, 'relax Goat''s yogurt', 'רילקס יוגורט עיזים', 'relax (Goat''s yogurt | בסיס יוגורט עיזים)Pineapple, mango, passionfruit sorbet, regurt (goat''s milk yoghurt), mango juice with calcium and vitamin C', 'אננס, מנגו, סורבה פסיפלורה, regurt, מיץ מנגו סידן | ויטמין c - עם יוגורט עיזים', 20, 2540),
 (2541, 407, 0, 'refemme Cow''s yogurt ', 'ריפים יוגורט בקר', 'Strawberry, raspberry, cranberry, blueberry, strawberry sorbet, regurt (cow''''s milk yoghurt), apple juice with vitamin C and antioxidants', 'תות, פטל, חמוציות, אוכמניות, סורבה תות, regurt, מיץ תפוחים ויטמין c | נוגדי חמצון - עם יוגורט בקר', 20, 2541),
 (2542, 407, 0, 'refemme Goat''s yogurt', 'ריפים יוגורט עיזים', 'Strawberry, raspberry, cranberry, blueberry, strawberry sorbet, regurt (goat''''s milk yoghurt), apple juice with vitamin C and antioxidants', 'תות, פטל, חמוציות, אוכמניות, סורבה תות, regurt, מיץ תפוחים ויטמין c | נוגדי חמצון - עם יוגורט עיזים', 20, 2542),
 (2543, 407, 0, 'reshape Cow''s yogurt', 'רישייפ יוגורט בקר', 'Bananas, figs, walnuts, flax, reghurt (cow''s milk yoghurt), milk proteins with potassium, calcium, fibre', 'בננה, תאנה, אגוזי קליפורניה, פשתן, regurt, חלב חלבונים | אשלגן | סידן | סיבים תזונתיים - עם יוגורט בקר', 20, 2543),
-(2544, 407, 0, 'reshape (Goat''s yogurt)', '(בסיס יוגורט עיזים)', 'Bananas, figs, walnuts, flax, reghurt (goat''s milk yoghurt), milk proteins with potassium, calcium, fibre', 'בננה, תאנה, אגוזי קליפורניה, פשתן, regurt, חלב חלבונים | אשלגן | סידן | סיבים תזונתיים - עם יוגורט עיזים', 20, 2544),
-(2545, 407, 0, 'refresh', 'refresh', 'Melon, mint, lemon sorbet, apple juice. Vegan. 0% fat with vitamin C ', 'מלון, נענע, סורבה לימון, מיץ תפוחים טבעוני | 0% שומן | ויטמין c', 20, 2545),
-(2546, 407, 0, 'reduce', 'reduce', 'Pineapple, cranberry, mint, red chili, grapefruit sorbet, apple juice. Vegan. 0% fat. Vitamin C ', 'אננס, חמוציות, נענע, צ''ילי אדום, סורבה אשכולית אדומה, מיץ תפוחים טבעוני | 0% שומן | ויטמין c', 20, 2546),
-(2547, 407, 0, 'rejoy Goat''s yogurt ', ' ריג''וי יוגורט עיזים', 'Banana, chocolate, regurt (cow''s milk yoghurt), with magnesium and calcium', 'בננה, שוקולד, regurt, חלב מגנזיום | סידן - עם יוגורט בקר', 20, 2547),
-(2548, 407, 0, 'rejoy Goat''s yogurt', ' ריג''וי יוגורט עיזים', 'Banana, chocolate, regurt (goat''s milk yoghurt), with magnesium and calcium', 'בננה, שוקולד, regurt, חלב מגנזיום | סידן - עם יוגורט עיזים', 20, 2548),
-(2549, 407, 0, 'revive (Cow''s yogurt)', '(יוגורט בקר)', 'Peach, orange, almond, silan, reghurt (cow''s milk yoghurt) with vitamin E, magnesium, calcium, vitamin C', 'אפרסק, תפוז, שקדים, סילאן, regurt ויטמין E | מגנזיום | סידן | ויטמין c -עם יוגורט ', 20, 2549),
-(2550, 407, 0, 'revive (Goat''s yogurt )', 'אפרסק, תפוז, שקדים, סילאן, regurt ויטמין E | מגנזיום | סידן | ויטמין c -עם יוגורט ', 'Peach, orange, almond, silan, reghurt (goat''s milk yoghurt) with vitamin E, magnesium, calcium, vitamin C', 'אפרסק, תפוז, שקדים, סילאן, regurt ויטמין E | מגנזיום | סידן | ויטמין c -עם יוגורט עיזים', 20, 2550),
-(2551, 407, 0, 'recharge (Cow''s yogurt)', '(יוגורט בקר)', 'Banana, home style granola, honey, regurt (cow''s milk yoghurt) milk. With magnesium, calcium fibre', 'בננה, גרנולת הבית, דבש, regurt, חלב מגנזיום | סידן | סיבים תזונתיים - עם יוגורט בקר', 20, 2551),
-(2552, 407, 0, 'recharge (Goat''s yogurt)', '(בסיס יוגורט עיזים)', 'Banana, home style granola, honey, regurt (goat''s milk yoghurt) milk. With magnesium, calcium fibre ', 'בננה, גרנולת הבית, דבש, regurt, חלב מגנזיום | סידן | סיבים תזונתיים - עם יוגורט עיזים', 20, 2552),
-(2553, 407, 0, 'replay (Cow''s yogurt)', '(יוגורט בקר)', 'Strawberry, banana, strawberry sorbet, regurt (cow''s milk yoghurt), apple juice. With calcium and vitamin C', 'תות, בננה, סורבה תות, regurt, מיץ תפוחים סידן | ויטמין c - עם יוגורט בקר', 20, 2553),
-(2554, 407, 0, 'replay (Goat''s yogurt)', '(בסיס יוגורט עיזים)', 'Strawberry, banana, strawberry sorbet, regurt (goat''s milk yoghurt), apple juice. With calcium and vitamin C ', 'תות, בננה, סורבה תות, regurt, מיץ תפוחים סידן | ויטמין c - עם יוגורט עיזים', 20, 2554),
+(2544, 407, 0, 'reshape (Goat''s yogurt)', 'רישייפ יוגורט עיזים', 'Bananas, figs, walnuts, flax, reghurt (goat''s milk yoghurt), milk proteins with potassium, calcium, fibre', 'בננה, תאנה, אגוזי קליפורניה, פשתן, regurt, חלב חלבונים | אשלגן | סידן | סיבים תזונתיים - עם יוגורט עיזים', 20, 2544),
+(2545, 407, 0, 'refresh', 'ריפרייש', 'Melon, mint, lemon sorbet, apple juice. Vegan. 0% fat with vitamin C ', 'מלון, נענע, סורבה לימון, מיץ תפוחים טבעוני | 0% שומן | ויטמין c', 20, 2545),
+(2546, 407, 0, 'reduce', 'רידיוס', 'Pineapple, cranberry, mint, red chili, grapefruit sorbet, apple juice. Vegan. 0% fat. Vitamin C ', 'אננס, חמוציות, נענע, צ''ילי אדום, סורבה אשכולית אדומה, מיץ תפוחים טבעוני | 0% שומן | ויטמין c', 20, 2546),
+(2547, 407, 0, 'rejoy Cow''s yogurt ', 'ריג''וי יוגורט חלב פרה', 'Banana, chocolate, regurt (cow''s milk yoghurt), with magnesium and calcium', 'בננה, שוקולד, regurt, חלב מגנזיום | סידן - עם יוגורט בקר', 20, 2547),
+(2548, 407, 0, 'rejoy Goat''s yogurt', 'ריג''וי יוגורט עיזים', 'Banana, chocolate, regurt (goat''s milk yoghurt), with magnesium and calcium', 'בננה, שוקולד, regurt, חלב מגנזיום | סידן - עם יוגורט עיזים', 20, 2548),
+(2549, 407, 0, 'revive Cow''s yogurt', 'ריוויו יוגורט חלב פרה', 'Peach, orange, almond, silan, reghurt (cow''s milk yoghurt) with vitamin E, magnesium, calcium, vitamin C', 'אפרסק, תפוז, שקדים, סילאן, regurt ויטמין E | מגנזיום | סידן | ויטמין c -עם יוגורט בקר', 20, 2549),
+(2550, 407, 0, 'revive (Goat''s yogurt )', 'ריוויו יוגורט עיזים', 'Peach, orange, almond, silan, reghurt (goat''s milk yoghurt) with vitamin E, magnesium, calcium, vitamin C', 'אפרסק, תפוז, שקדים, סילאן, regurt ויטמין E | מגנזיום | סידן | ויטמין c -עם יוגורט עיזים', 20, 2550),
+(2551, 407, 0, 'recharge (Cow''s yogurt)', 'ריצרג'' יוגורט חלב פרה', 'Banana, home style granola, honey, regurt (cow''s milk yoghurt) milk. With magnesium, calcium fibre', 'בננה, גרנולת הבית, דבש, regurt, חלב מגנזיום | סידן | סיבים תזונתיים - עם יוגורט בקר', 20, 2551),
+(2552, 407, 0, 'recharge (Goat''s yogurt)', 'ריצרג'' יוגורט עיזים', 'Banana, home style granola, honey, regurt (goat''s milk yoghurt) milk. With magnesium, calcium fibre ', 'בננה, גרנולת הבית, דבש, regurt, חלב מגנזיום | סידן | סיבים תזונתיים - עם יוגורט עיזים', 20, 2552),
+(2553, 407, 0, 'replay (Cow''s yogurt)', 'ריפליי יוגורט חלב פרה', 'Strawberry, banana, strawberry sorbet, regurt (cow''s milk yoghurt), apple juice. With calcium and vitamin C', 'תות, בננה, סורבה תות, regurt, מיץ תפוחים סידן | ויטמין c - עם יוגורט בקר', 20, 2553),
+(2554, 407, 0, 'replay (Goat''s yogurt)', 'ריפליי בסיס יוגורט עיזים', 'Strawberry, banana, strawberry sorbet, regurt (goat''s milk yoghurt), apple juice. With calcium and vitamin C ', 'תות, בננה, סורבה תות, regurt, מיץ תפוחים סידן | ויטמין c - עם יוגורט עיזים', 20, 2554),
 (2555, 408, 0, 'supergreen', 'סופרגריין', 'Apple, pear, banana, spinach, cucumber, mint, avave, spirulina with iron, fibre, vitamin C', 'תפוח, אגס, בננה, תרד, מלפפון, נענע, אגבה, ספירולינה ברזל | סיבים | ויטמין c', 24, 2555),
 (2556, 408, 0, 'superberries', ' סופרברי', 'Pomegranate, strawberry, basil, pear, pineapple, goji berry With antioxidants, vitamin C and potassium', 'רימון, תות, בזיליקום, אגס, אננס, גוג''י ברי נוגדי חמצון | ויטמין c | אשלגן', 24, 2556),
 (2557, 408, 0, 'supernuts', ' סופרברי', 'Soy milk, apricot, walnuts, pecans natural, banana, lemon, date syrup, cinnamon, chia with omega-3, fibre, calcium, magnesium', 'חלב סויה, אפרסק, אגוזי קליפורניה, פקאן טבעי, בננה, גרידת לימון, סילאן, קינמון, צ''יה אומגה 3 | סיבים | סידן | מגנזיום', 24, 2557),
@@ -3470,6 +3473,9 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (2735, 455, 0, 'Sprite Zero - 1.5 liter bottle', ' ספרייט זירו- 1.5 ליטר', '', '', 10, 2735),
 (2736, 455, 0, 'Fanta - 1.5 liter bottle', 'פאנטה - 1.5 ליטר', '', '', 10, 2736),
 (2737, 455, 0, 'Fanta Red - 1.5 liter bottle', 'פאנטה אדומה - 1.5 ליטר', '', '', 10, 2737),
+(2738, 456, 0, 'Stuffed baguette with omelet', 'באגט פינוקים עם חביתה', '', '', 20, 0),
+(2739, 456, 0, 'Stuffed baguette with tuna', 'באגט פינוקים עם טונה', '', '', 20, 0),
+(2740, 457, 0, 'Toasts', 'טוסטים', '', '', 22, 0),
 (2801, 501, 0, 'Belgian Waffles ', 'וופל בלגי', 'including whipped cream and toppings', 'כולל קצפת ותוספות', 23, 2801),
 (2802, 502, 0, 'French Crepe', 'קרפ צרפתי', 'with all toppings', ' עם כל התוספות', 20, 2802),
 (2803, 503, 0, 'Small frozen yoghurt', 'פרוזן קטן', '', '', 16, 2803),
@@ -3534,9 +3540,9 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (3013, 513, 0, 'Sweet potato ravioli ', 'רביולי בטטה', 'Ravioli stuffed with sweet potato cream in a rosa sauce', 'רביולי ממולא קרם בטטה ברוטב רוזה', 58, 503),
 (3014, 513, 0, 'Cheese Ravioli', 'רביולי גבינות', 'רביולי ממולא בריקוטה, פרמז''ן ובזיליקום ברוטב שמנת פטריות', 'רביולי ממולא בריקוטה, פרמז''ן ובזיליקום ברוטב שמנת פטריות', 58, 504),
 (3015, 513, 0, 'Ricotta spinach ravioli', 'רביולי ריקוטה תרד', 'Large ravioli stuffed with spinach and cheese, in a Swiss chard and cream sauce', 'רביולי גדול ממולא בתרד וגבינות, ברוטב שמנת מנגולד', 63, 505),
-(3016, 513, 0, 'Mushroom tortellini', 'טורטליני פטריות', 'Pasta pockets stuffed with mushrooms,in a mushroom cream sauce with pesto', 'כיסוני פסטה ממולאים בפטריות שמפיניון, ברוטב שמנת פטריות ופסטו', 63, 506),
-(3017, 513, 0, 'Lasagna Rotollo', 'לזניה רוטולו', 'Pasta roses filled with cheese and seasonal vegetables, tomato and cream sauce, enriched with mozzarella. Served with salad', 'שושני פסטה במילוי גבינות וירקות העונה, מונחים ברוטב עגבניות ושמנת ומוקרמים במוצרלה. מוגשת עם סלט אישי', 63, 507);
+(3016, 513, 0, 'Mushroom tortellini', 'טורטליני פטריות', 'Pasta pockets stuffed with mushrooms,in a mushroom cream sauce with pesto', 'כיסוני פסטה ממולאים בפטריות שמפיניון, ברוטב שמנת פטריות ופסטו', 63, 506);
 INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `sort`) VALUES
+(3017, 513, 0, 'Lasagna Rotollo', 'לזניה רוטולו', 'Pasta roses filled with cheese and seasonal vegetables, tomato and cream sauce, enriched with mozzarella. Served with salad', 'שושני פסטה במילוי גבינות וירקות העונה, מונחים ברוטב עגבניות ושמנת ומוקרמים במוצרלה. מוגשת עם סלט אישי', 63, 507),
 (3018, 513, 0, 'Pizza Bianca', 'פיצה ביאנקה', 'Thin crust pizza with smoked salmon, cream sauce, mozzarella cheese, mushrooms and green onions', '  בצק דק, סלמון מעושן ,רוטב שמנת, גבינת מוצרלה, פטריות ובצל ירוק', 57, 508),
 (3019, 513, 0, 'Pizza', 'פיצה', 'Optional additions: Bulgarian cheese, onions, tomatoes, roasted peppers, tuna, grilled eggplant, mushrooms, green olives (choose 3)', 'תוספת לבחירה: גבינה בולגרית, בצל, עגבניות, פלפל קלוי, טונה, חציל קלוי, פטריות, זיתים ירוקים (3 לבחירה)', 46, 509),
 (3020, 514, 0, 'Omelette', 'חביתה', 'With a challah roll, cream cheese, eggs, tomato, pickles and lettuce', 'לחמניית חלה, גבינת שמנת, חביתה, עגבנייה, מלפפון חמוץ וחסה', 44, 510),
@@ -3668,7 +3674,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=666 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=667 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -3736,7 +3742,8 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (662, 518, 1, 'Angus Tortilla', 36, 'Thousand Island, Garlic Mayo'),
 (663, 518, 1, 'Pargit Tortilla', 34, 'Thousand Island, Garlic Mayo'),
 (664, 519, 1, 'Shawarma', 39, '???:Laffa, Veal, French Fries, Fried Onions'),
-(665, 519, 1, 'Super Spicy Bandora', 35, '???:Pita, Mix, French Fries, Fried Onions');
+(665, 519, 1, 'Super Spicy Bandora', 35, '???:Pita, Mix, French Fries, Fried Onions'),
+(666, 520, 2, 'Classic burger', 45, 'Mushroom (+3), Fried egg (+3)');
 
 -- --------------------------------------------------------
 
@@ -3814,7 +3821,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_gallery` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=129 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=141 ;
 
 --
 -- Dumping data for table `restaurant_gallery`
@@ -3871,7 +3878,6 @@ INSERT INTO `restaurant_gallery` (`id`, `restaurant_id`, `url`) VALUES
 (63, 10, '/m/en/img/crispy_sendwich_gallery/cs_3.png'),
 (64, 10, '/m/en/img/crispy_sendwich_gallery/cs_4.png'),
 (65, 10, '/m/en/img/crispy_sendwich_gallery/cs_logo.png'),
-(66, 7, '/m/en/img/greg_gallery/12191438_1207784905905562_6667840069913494798_n.png'),
 (68, 7, '/m/en/img/greg_gallery/Antipasto Shakshuka.png'),
 (69, 7, '/m/en/img/greg_gallery/Baked Salmon Fillet with vegitables.png'),
 (70, 7, '/m/en/img/greg_gallery/Bass Fillet.png'),
@@ -3927,7 +3933,18 @@ INSERT INTO `restaurant_gallery` (`id`, `restaurant_id`, `url`) VALUES
 (125, 21, '/m/en/img/rebar_gallery/3.png'),
 (126, 19, '/m/en/img/shasimi_gallery/1.png'),
 (127, 19, '/m/en/img/shasimi_gallery/2.png'),
-(128, 19, '/m/en/img/shasimi_gallery/3.png');
+(128, 19, '/m/en/img/shasimi_gallery/3.png'),
+(130, 32, '/m/en/img/greg_gallery/Antipasto Shakshuka.png'),
+(131, 32, '/m/en/img/greg_gallery/Baked Salmon Fillet with vegitables.png'),
+(132, 32, '/m/en/img/greg_gallery/Bass Fillet.png'),
+(133, 32, '/m/en/img/greg_gallery/Breakfast for two.png'),
+(134, 32, '/m/en/img/greg_gallery/Breakfast.png'),
+(135, 32, '/m/en/img/greg_gallery/Breakfastt.png'),
+(136, 32, '/m/en/img/greg_gallery/Cheese Filo Burreka.png'),
+(137, 32, '/m/en/img/greg_gallery/Cheese Tortilla.png'),
+(138, 32, '/m/en/img/greg_gallery/Double Veggie Burger.png'),
+(139, 32, '/m/en/img/greg_gallery/Vegitables in Curry.png'),
+(140, 32, '/m/en/img/greg_gallery/Scandinavian Morning.png');
 
 -- --------------------------------------------------------
 
@@ -12804,7 +12821,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=563 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=591 ;
 
 --
 -- Dumping data for table `users`
@@ -12812,7 +12829,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
 (514, 'd@gmail.com', 'דבורה', '', '', 0, '0000-00-00', '0000000000', 'Gad ', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(515, 'avi@pushstartups.com', 'avi test', '', '', 0, '0000-00-00', '0000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Lg0NdearFMFvIXbhjs8Mfr3C'),
+(515, 'avi@pushstartups.com', 'avi test', '', '', 0, '0000-00-00', '00000', 'sfds', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Lg0NdearFMFvIXbhjs8Mfr3C'),
 (516, 'mark@pushstartups.com', 'test', '', '', 0, '0000-00-00', '0000000000', 'hahar', 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
 (517, 'sdf@dsf.com', 'sf', '', '', 0, '0000-00-00', '343434', 'sdfdsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_REq8J85r2Vk3TJbuyTP5fD9h'),
 (518, 'hdhd@fjfjkf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QThfg69G5vDtrvA9QDjtMwch'),
@@ -12859,7 +12876,35 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (559, 'sdsssf@dkkkf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_CmRolzNhrGjzMQQUfrXimJ8T'),
 (560, 'test@test.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_J0BFjmWQulQ2mbv2iZZR0slr'),
 (561, 's@ws.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_2ubTe0V65XIURGE7k6xG06qJ'),
-(562, 'd@d.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_c88BWMHJ2qWhdGuHOH0NObIU');
+(562, 'd@d.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_c88BWMHJ2qWhdGuHOH0NObIU'),
+(563, 'sdffff@dfdfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_cAdeGZ798pu1W9BXsHHN7BQt'),
+(564, 'vhmnbn@cbb.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_DCXjtVVSrRblVKQ0a6SYXSHb'),
+(565, 'iftikhaaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZMCzXP6HcR85HLKoA8S9zWv3'),
+(566, 'iftikhadddaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_6dUuJlv7rAjdtJyLod2cV8RB'),
+(567, 'iftikhadssdddaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_D4ihekw4yA8RSfjS1kKNXHOB'),
+(568, 'iftdsdddaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_KyMRVWYVkDWk7POhTwGkIY51'),
+(569, 'iftdsdddaar_yvvvahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_WkW8jaJ3PjKei1gIBruwI41x'),
+(570, 'iftdsdddaar_yvvssdvahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xFO0JqpJLoXkw0d01LNGuu1b'),
+(571, 'iftdsssfdddaar_yvvssdvahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xBdzg44uaAMrGWPlo259GmdF'),
+(572, 'ahmad@gfmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_6ViYS2iEKaZeBJ4YkJPLVI2h'),
+(573, 'ahmasdfsdfd@gfmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_i2yZJc3rNQAVzcNqV86SOHl7'),
+(574, 'ahmasdfsdfsdfsdfd@gsdffmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Cyu4SpzM5U33g90u8658wnZd'),
+(575, 'ahmadfgsdfsdfsdfsdfd@gsdffmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_IfuUOzijy5rRnUJh36cNqkD3'),
+(576, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_efQxMWNI25PYkkptBALM2c8J'),
+(577, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_H8Dr8E0IxSUhWzwSmOBX60NW'),
+(578, 'ahmadfgsdfsdfsdfsdfd@gsdffmdsfdfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_fFTuws12Q3O1hz68gJMpCaW4'),
+(579, 'ahmfsdfsdfd@gsdffmdsfdfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_f026L8JHPIVtSF5quMPGODmN'),
+(580, 'ahmfsdfsdfd@gsfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_uwFS2zLFSesHUJecKEFeC5U7'),
+(581, 'rrr@abcdgmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_8tDBIOiY98K4VoVJ7skalHF8'),
+(582, 'sdf@sd.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZGiB4wBprVQePmGOolxiJX00'),
+(583, 'gmgjh@rtrt.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_de1y6GYOBGhST1cUTWoGqgOA'),
+(584, 'dsf@dsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_kPszysYTGXTLbcBBMsWBftT4'),
+(585, 'erer@rtrt.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_FLSE3uT32RnZ5JRpPgb4FDuI'),
+(586, 'erer@sdfgfg.vom', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_FAxWBKALnFA1s2GT0CR2BjKa'),
+(587, 'rrr@rrr.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LQqJw9tRhoxwrZpn3tmYJX7b'),
+(588, 'cvcvcv@mvmvmv.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_SUVnakXVHPSDYRB0uRNOzACw'),
+(589, 'cvcv@xcvcv.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_sU3PaGkDDARMAsDQaECoOsYb'),
+(590, 'sdfsdf@dsfsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_yX7k25gmd9XI74Iglf7yO7bg');
 
 -- --------------------------------------------------------
 
@@ -12893,7 +12938,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=520 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=521 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -12942,7 +12987,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (516, 554, 2, 100, NULL, 0, '2017-05-02', 'HE mobile'),
 (517, 555, 2, 100, NULL, 0, '2017-05-02', 'ENG mobile'),
 (518, 515, 1, 85, 'fixed percentage', 15, '2017-05-03', 'HE Desktop'),
-(519, 515, 3, 99, NULL, 0, '2017-05-03', 'HE Desktop');
+(519, 515, 3, 99, NULL, 0, '2017-05-03', 'HE Desktop'),
+(520, 515, 15, 115, NULL, 0, '2017-05-03', 'ENG Desktop');
 
 -- --------------------------------------------------------
 

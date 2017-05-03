@@ -347,6 +347,11 @@ function deliveryAddress()
         showSlide($('#paymentSlider')).hide().slideDown(300);
         hideSlide($('#deliverySlider'));
 
+
+        $('#checkbox-id-13').prop('checked', false);
+        $('#checkbox-id-24').prop('checked', true);
+        $('#show_credit_card').addClass('show');
+
     }
     else
     {
@@ -403,6 +408,12 @@ function deliveryAddress()
 
         showSlide($('#paymentSlider')).hide().slideDown(300);
         hideSlide($('#deliverySlider'));
+
+        $('#checkbox-id-24').prop('checked', false);
+        $('#checkbox-id-13').prop('checked', true);
+        $('#show_credit_card').removeClass('show');
+
+
     }
 
 
@@ -491,7 +502,7 @@ function ClosePayment()
 
             commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
                 "total": userObject.total,"rest_title" : userObject.restaurantTitle,
-                "rest_city" : selectedCityName },checkCouponCallBack);
+                "rest_city" : selectedCityName, "delivery_fee" : userObject.deliveryCharges },checkCouponCallBack);
         }
 
     }
@@ -579,7 +590,6 @@ function checkCouponCallBack(response)
         }
         else
         {
-
             userObject.isFixAmountCoupon = true;
 
             discountedAmount = convertFloat(userObject.deliveryCharges);

@@ -347,6 +347,10 @@ function deliveryAddress()
         showSlide($('#paymentSlider')).hide().slideDown(300);
         hideSlide($('#deliverySlider'));
 
+        $('#checkbox-id-13').prop('checked', false);
+        $('#checkbox-id-24').prop('checked', true);
+        $('#show_credit_card').addClass('show');
+
     }
     else
     {
@@ -403,6 +407,12 @@ function deliveryAddress()
 
         showSlide($('#paymentSlider')).hide().slideDown(300);
         hideSlide($('#deliverySlider'));
+
+        $('#checkbox-id-24').prop('checked', false);
+        $('#checkbox-id-13').prop('checked', true);
+        $('#show_credit_card').removeClass('show');
+
+
     }
 
 

@@ -251,7 +251,7 @@ $app->post('/categories_with_items', function ($request, $response, $args)
         $count2 = 0;
         foreach ($categories as $category) {
 
-            $items = DB::query("select * from items where category_id = '" . $category["id"] . "'");
+            $items = DB::query("select * from items where category_id = '" . $category["id"] . "' and hide = '0'");
 
             $count3 = 0;
             // CHECK FOR ITEMS PRICE ZERO
@@ -364,6 +364,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         $order_amount       =   $request->getParam('total');          //  ORDER AMOUNT
         $restaurant_title   =   $request->getParam('rest_title');     //  RESTAURANT TITLE
         $restaurant_city    =   $request->getParam('rest_city');      //  RESTAURANT CITY
+        $delivery_fee       =   $request->getParam('delivery_fee');   //  DELIVERY FEE
         $success_validation =   "false";                              //  SUCCESS VALIDATION RESPONSE FOR USER
         $user_id            =   null;
 
@@ -388,7 +389,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         // COUPON VALIDATION
         $coupon_code = strtoupper($coupon_code);
 
-        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city);
+        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city,$delivery_fee);
 
 
         // RESPONSE RETURN TO REST API CALL
@@ -409,11 +410,13 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
 
 
-function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city)
+function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city,$delivery_fee)
 {
     $apiID          = "6243c07e-fea0-4f0d-89f8-243d589db97b";
     $apiKey         = "ac0d95c8-b5fd-4484-a697-41a1a91f3dd2";
     $voucherify     =  new VoucherifyClient($apiID, $apiKey);
+    $data = '';
+
 
     $result = DB::queryFirstRow("select * from users where id = '$user_id'");
 
@@ -456,6 +459,22 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
     try {
 
+        $result =  $voucherify->get($userCoupon);
+
+        if($result->discount->type == "UNIT" && $delivery_fee == "null")
+        {
+            $data = [
+
+                "success" => false,                                       // COUPON VALID OR NOT (TRUE OR FALSE)
+                "deliveryFree" => true,                                   //  COUPON DISCOUNT
+                "message" => "Error Coupon is valid only in case of Delivery"
+            ];
+
+
+            return $data;
+
+        }
+
         $resultRedeem = $voucherify->redeem([
             "voucher" => $userCoupon,
             "customer" => [
@@ -470,6 +489,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
                 "city" => $rest_city
             ]
         ], NULL);
+
 
 
         if($resultRedeem->voucher->discount->type == "AMOUNT")
@@ -523,17 +543,16 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
         }
         else if($resultRedeem->voucher->discount->type == "UNIT")
         {
-
             $data = [
 
                 "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
-                "deliveryFree" => true                                    //  COUPON DISCOUNT
+                "deliveryFree" => true,                                    //  COUPON DISCOUNT
 
             ];
 
-
             return $data;
         }
+
 
     }
     catch (ClientException $e)
@@ -1860,6 +1879,9 @@ function email_for_mark2($user_order,$orderId,$todayDate)
     $mailbody .= 'Email :'. $user_order['email'];
     $mailbody .= '\n';
 
+    $mailbody .= 'Contact :'. $user_order['contact'];
+    $mailbody .= '\n';
+
     $mailbody .= 'Restaurant Name :'. $user_order['restaurantTitle'];
     $mailbody .= '\n';
 
@@ -1907,45 +1929,45 @@ function email_for_mark2($user_order,$orderId,$todayDate)
     $mailbody .= '\n';
 
 
-$mail = new PHPMailer;
+    $mail = new PHPMailer;
 
-$mail->CharSet = 'UTF-8';
+    $mail->CharSet = 'UTF-8';
 
-$mail->SMTPDebug = 3;                                               // Enable verbose debug output
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
-$mail->isSMTP();
-$mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
-$mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-$mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-$mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
-$mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
-$mail->Port = 587;
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
 
 //From email address and name
-$mail->From = "order@orderapp.com";
-$mail->FromName = "OrderApp";
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
 
 
 //To address and name
-$mail->addAddress(EMAIL);                    //SEND ADMIN EMAIL
+    $mail->addAddress(EMAIL);                    //SEND ADMIN EMAIL
 
 
 //Address to which recipient will reply
-$mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("order@orderapp.com", "Reply");
 
 
 //Send HTML or Plain Text email
-$mail->isHTML(false);
-$mail->Subject = 'Ledger '.$user_order['restaurantTitle'].' Order# '.$orderId;
-$mail->Body = $mailbody;
-$mail->AltBody = "OrderApp";
+    $mail->isHTML(false);
+    $mail->Subject = 'Ledger '.$user_order['restaurantTitle'].' Order# '.$orderId;
+    $mail->Body = $mailbody;
+    $mail->AltBody = "OrderApp";
 
-if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-}
-else {
-    echo "Message has been sent successfully";
-}
+    if (!$mail->send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+    else {
+        echo "Message has been sent successfully";
+    }
 
 }
 

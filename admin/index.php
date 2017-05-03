@@ -130,6 +130,9 @@ DB::query("set names utf8");
 				<a href="index.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-cutlery"></i> <span class="menu-item-parent">Restaurant</span></a>
 			</li>
 			<li>
+				<a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
+			</li>
+			<li>
 				<a href="logout.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-sign-out"></i> <span class="menu-item-parent">Sign Out</span></a>
 			</li>
 		</ul>

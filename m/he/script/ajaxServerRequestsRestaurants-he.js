@@ -158,8 +158,18 @@ function  getAllRestaurants(response)
                 '<li class="last text-center">'+
                 '<a onclick="openGallery('+ x +')"  href="#"><img  src="/m/en/img/gallery-img.png">גלריה</a>'+
                 '</li>'+
-                '</ul>'+
-                '<a  class="brn-submit offline">הזמן עכשיו</a>'+
+                '</ul>';
+            if(result[x].coming_soon == 0) {
+
+                temp += '<a class="brn-submit offline">הזמן עכשיו</a>';
+
+            }
+            else {
+
+                temp += '<a  class="brn-submit offline">בקרוב</a>';
+
+            }
+                temp +=
                 '</div>'+
                 '</li>';
 

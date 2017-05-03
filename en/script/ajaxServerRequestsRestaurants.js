@@ -281,10 +281,20 @@ function  getAllRestaurants(response)
                 '</div>'+
                 '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
                 '<div class="order-now-box offline">'+
-                '<div class="header">'+
-                'ORDER<br>'+
-                'NOW'+
-                '</div>'+
+                '<div class="header">';
+
+                if(result[x].coming_soon == 0) {
+
+                    temp += 'ORDER<br>'+
+                    'NOW';
+                }
+                else {
+
+                    temp += 'Coming<br>' +
+                        'Soon';
+                }
+
+               temp+= '</div>'+
                 '</div>'+
                 '</div>'+
                 '<div class="custom-hr"></div>'+
