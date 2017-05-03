@@ -852,7 +852,7 @@ function updateCartElements()
                 '<h2>'+ foodCartData[x].name +'</h2>'+
                 '</div>'+
                 '<div class="col-md-3 col-xs-3">'+
-                '<span class="dim">'+ foodCartData[x].price_without_subItems +' NIS</span>'+
+                '<span class="dim">'+ foodCartData[x].price +' NIS</span>'+
                 '</div>'+
                 '</div>'+
                 '<div class="row no-gutters">'+
@@ -1284,7 +1284,11 @@ function submit_summary() {
     {
         var code  = $('#coupon-txt').val();
 
-        commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+        var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+
+        commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
+            "total": userObject.total,"rest_title" : userObject.restaurantTitle,
+            "rest_city" : selectedCityName },checkCouponCallBack);
 
     }
     else {
@@ -1602,7 +1606,7 @@ function  callPage3() {
 
     }
 
-    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
+    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'ENG mobile'},callPage3CallBack);
 
 };
 

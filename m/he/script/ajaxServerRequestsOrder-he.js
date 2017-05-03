@@ -845,7 +845,7 @@ function updateCartElements()
                 '<div class="row header-row no-gutters">'+
 
                 '<div class="col-md-3 col-xs-3">'+
-                '<span class="dim">'+ foodCartData[x].price_without_subItems +' ש״ח</span>'+
+                '<span class="dim">'+ foodCartData[x].price +' ש״ח</span>'+
                 '</div>'+
 
                 '<div class="col-md-9 col-xs-9" style="padding: 0 0 0 10px;">'+
@@ -1286,8 +1286,12 @@ function submit_summary() {
     {
         var code  = $('#coupon-txt').val();
 
-        commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+        var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
 
+        commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
+            "total": userObject.total,"rest_title" : userObject.restaurantTitle,
+            "rest_city" : selectedCityName },checkCouponCallBack);
+        
     }
     else {
 
@@ -1611,7 +1615,7 @@ function  callPage3() {
 
     }
 
-    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
+    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'HE mobile'},callPage3CallBack);
 
 };
 

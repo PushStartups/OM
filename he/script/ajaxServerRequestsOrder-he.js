@@ -872,7 +872,7 @@ function updateCartElements()
                 '<div class="row header-row  no-gutters">' +
 
                 '<div class="col-md-3 col-xs-3">'+
-                '<span class="dim">' + foodCartData[x].price_without_subItems  + ' ש"ח</span>'+
+                '<span class="dim">' + foodCartData[x].price + ' ש"ח</span>'+
                 '</div>'+
 
                 '<div class="col-md-9 col-xs-9">' +
@@ -936,7 +936,7 @@ function updateCartElements()
 
         $('#nested-section').html(str);
 
-        $('#totalAmount').html(userObject.total + " ש״ח");
+        $('#totalAmount').html(' סה"כ '+userObject.total + " ש״ח");
         hideShowMinAmount(userObject.total);
 
 
@@ -997,7 +997,7 @@ function onQtyIncreaseButtonClicked(index) {
 
     userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
-    $('#totalAmount').html(userObject.total + 'ש"ח');
+    $('#totalAmount').html(' סה"כ '+userObject.total + 'ש"ח');
     hideShowMinAmount(userObject.total);
 
     var itemCountId = "#count"+index;
@@ -1098,7 +1098,7 @@ function onQtyDecreasedButtonClicked(index) {
 
     }
 
-    $('#totalAmount').html(userObject.total + 'ש"ח');
+    $('#totalAmount').html(' סה"כ '+userObject.total + 'ש"ח');
     hideShowMinAmount(userObject.total);
 }
 

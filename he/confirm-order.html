@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="/he/style/alertify.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
+    <script src="/he/script/isMobileRedirect.js"></script>
+
 
     <!-- Google Analytics -->
     <script>
@@ -155,7 +157,7 @@
                                                     <span id="totalAmountWithoutDiscount" class="nis"></span>
                                                 </div>
                                                 <div  class="col-md-6 col-xs-6">
-                                                    <h3>סה"כ</h3>
+                                                    <h3>סיכום ביניים</h3>
                                                 </div>
                                             </div>
                                             <div id="showDiscount" class="row no-gutters">
@@ -494,7 +496,7 @@
                                     <span id="totalAmountWithoutDiscount2" class="nis">90 NIS</span>
                                 </div>
                                 <div class="col-md-6 col-xs-6">
-                                    <h3>סה"כ</h3>
+                                    <h3>סיכום ביניים</h3>
                                 </div>
                             </div>
                             <div id="showDiscount2" class="row no-gutters">
@@ -851,7 +853,9 @@
 <script src="https://cdn.smooch.io/smooch.min.js"></script>
 <script>
     Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
-    Smooch.sendMessage("HEBREW HEBREW");
+    Smooch.on('ready', function(){
+        Smooch.sendMessage("HEBREW HEBREW");
+    });
 </script>
 
 </body>

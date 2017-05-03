@@ -125,7 +125,7 @@ function updateCartElements()
 
             '<div class="row header-row">'+
             '<div class="col-md-4 col-xs-4">'+
-            '<span class="dim" dir="rtl"> '+foodCartData[x].qty.toString()+' '+ ' x ש"ח ' + foodCartData[x].price_without_subItems+
+            '<span class="dim" dir="rtl"> '+foodCartData[x].qty.toString()+' '+ ' x ש"ח ' + foodCartData[x].price+
             '</span></div>'+
             '<div class="col-md-8 col-xs-8">'+
             '<h2>'+ foodCartData[x].name_he +'</h2>'+
@@ -210,8 +210,8 @@ function updateCartElements()
         }
     }
 
-    $('#totalAmount').html(newTotal + ' ש"ח');
-    $('#totalAmount2').html(newTotal + ' ש"ח');
+    $('#totalAmount').html(' סה"כ '+newTotal + ' ש"ח');
+    $('#totalAmount2').html(' סה"כ '+newTotal + ' ש"ח');
 
 }
 
@@ -487,7 +487,11 @@ function ClosePayment()
 
         if(!couponApplied)
         {
-            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email},checkCouponCallBack);
+            var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+
+            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
+                "total": userObject.total,"rest_title" : userObject.restaurantTitle,
+                "rest_city" : selectedCityName},checkCouponCallBack);
         }
 
     }
@@ -752,7 +756,7 @@ function  callPage3() {
 
     }
 
-    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
+    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'HE Desktop'},callPage3CallBack);
 
 };
 

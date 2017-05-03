@@ -359,11 +359,13 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
     try {
 
-        $email = $request->getParam('email');        //  GET USER EMAIL
-        $coupon_code = $request->getParam('code');   //  COUPON CODE ENTER BY USER
-        $order_amount = $request->getParam('total');   //  ORDER AMOUNT
-        $success_validation = "false";               //  SUCCESS VALIDATION RESPONSE FOR USER
-        $user_id = null;
+        $email              =   $request->getParam('email');          //  GET USER EMAIL
+        $coupon_code        =   $request->getParam('code');           //  COUPON CODE ENTER BY USER
+        $order_amount       =   $request->getParam('total');          //  ORDER AMOUNT
+        $restaurant_title   =   $request->getParam('rest_title');     //  RESTAURANT TITLE
+        $restaurant_city    =   $request->getParam('rest_city');      //  RESTAURANT CITY
+        $success_validation =   "false";                              //  SUCCESS VALIDATION RESPONSE FOR USER
+        $user_id            =   null;
 
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
@@ -386,87 +388,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         // COUPON VALIDATION
         $coupon_code = strtoupper($coupon_code);
 
-        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100));
-
-//
-//
-//        //EXACT TIMEZONE OF ISRAEL
-//        date_default_timezone_set("Asia/Jerusalem");
-//        $current_date_time = date('Y-m-d H:i:s');
-//
-//
-//        $arr = explode(" ", $current_date_time);
-//        $current_date_time = $arr[0];
-//        $getCouponCode = DB::queryFirstRow("select * from coupons where name =%s", $coupon_code);
-//
-//
-//        if (!empty($getCouponCode)) {
-//
-//            $coupon_id = $getCouponCode['id'];
-//            $getStartingTime = $getCouponCode['starting_date'];
-//            $getEndingTime = $getCouponCode['ending_date'];
-//            $discount = $getCouponCode['discount'];
-//            $type = $getCouponCode['type'];
-//
-//            if ($type == "amount") {
-//
-//                $isFixAmountCoupon = true;
-//            } else {
-//                $isFixAmountCoupon = false;
-//            }
-//
-//
-//            // GETTING START DATE AND END DATE OF COUPON FROM DATABASE
-//            $arr1 = explode(" ", $getStartingTime);
-//            $start_date = $arr1[0];
-//
-//
-//            $arr2 = explode(" ", $getEndingTime);
-//            $end_date = $arr2[0];
-//
-//
-//            if ((($current_date_time >= $start_date) && ($current_date_time <= $end_date))) {
-//
-//                //VALIDATE COUPON, IF USER ALREADY HAVE THAT COUPON
-//                $userExist = DB::queryFirstRow("select * from user_coupons where user_id =%d AND coupon_id = %d", $user_id, $coupon_id);
-//
-//                if (DB::count() == 0) {
-//
-//                    $success_validation = "true";
-//
-//                }
-//                else
-//                {
-//
-//                    $success_validation = "false";
-//                }
-//
-//            }
-//            else
-//            {
-//                $success_validation = "false";
-//            }
-//
-//        }
-//        if ($success_validation == "true") {
-//
-//            $data = [
-//
-//                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
-//                "amount" => $discount,                                     // DISCOUNT ON COUPON
-//                "isFixAmountCoupon" => $isFixAmountCoupon                  // COUPON TYPE (AMOUNT OR PERCENTAGE)
-//
-//            ];
-//        }
-//        else
-//        {
-//
-//            $data = [
-//
-//                "success" => false                                          // SUCCESS FALSE WRONG CODE
-//
-//            ];
-//        }
+        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city);
 
 
         // RESPONSE RETURN TO REST API CALL
@@ -487,7 +409,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
 
 
-function VoucherifyValidation($userCoupon,$user_id,$order_amount)
+function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city)
 {
     $apiID          = "6243c07e-fea0-4f0d-89f8-243d589db97b";
     $apiKey         = "ac0d95c8-b5fd-4484-a697-41a1a91f3dd2";
@@ -541,10 +463,13 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount)
             ],
             "order" => [
                 "amount" => $order_amount
+            ],
+            "metadata" => [
+
+                "restaurant" => $rest_title,
+                "city" => $rest_city
             ]
         ], NULL);
-
-
 
 
         if($resultRedeem->voucher->discount->type == "AMOUNT")
@@ -573,7 +498,36 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount)
 
                 "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
                 "amount" => $dAmount,                                      // DISCOUNT ON COUPON
-                "isFixAmountCoupon" => false                                // COUPON TYPE (AMOUNT OR PERCENTAGE)
+                "isFixAmountCoupon" => false,                              // COUPON TYPE (AMOUNT OR PERCENTAGE)
+                "deliveryFree" => false
+            ];
+
+
+            return $data;
+        }
+        else if($resultRedeem->voucher->discount->type == "PERCENT")
+        {
+            $dAmount = $resultRedeem->voucher->discount->percent_off;
+
+
+            $data = [
+
+                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
+                "amount" => $dAmount,                                      // DISCOUNT ON COUPON
+                "isFixAmountCoupon" => false,                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
+                "deliveryFree" => false
+            ];
+
+
+            return $data;
+        }
+        else if($resultRedeem->voucher->discount->type == "UNIT")
+        {
+
+            $data = [
+
+                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
+                "deliveryFree" => true                                    //  COUPON DISCOUNT
 
             ];
 
@@ -613,8 +567,8 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         // GET ORDER RESPONSE FROM USER (CLIENT SIDE)
         $user_order = $request->getParam('user_order');
+        $user_platform = $request->getParam('user_platform');
         $user_id = null;
-
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
         $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_order['email'] . "'");
@@ -677,7 +631,8 @@ $app->post('/add_order', function ($request, $response, $args) {
             'total' => $user_order['total'],
             'coupon_discount' => $discountType,
             'discount_value' => $discountValue,
-            "order_date" => DB::sqleval("NOW()")
+            "order_date" => DB::sqleval("NOW()"),
+            "platform_info" => $user_platform
         ));
 
 
@@ -902,7 +857,7 @@ function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDa
     /*Build Ashrait XML to post*/
     $poststring.='&int_in=<ashrait>
 							<request>
-							<language>ENG</language>
+							<language>HEB</language>
 							<command>doDeal</command>
 							<requestId/>
 							<version>1000</version>
@@ -960,13 +915,13 @@ function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDa
 									
 									<mailTo>'.$user_order['email'].'</mailTo>
 									
-									<isItemPriceWithTax>1</isItemPriceWithTax>
+									<isItemPriceWithTax>0</isItemPriceWithTax>
 									
 									<ccDate>'.date("Y-m-d").'</ccDate>
 									
 									<invoiceSignature/>
 									
-									<invoiceType/>
+									<invoiceType>receipt</invoiceType>
 									
 									<DocNotMaam/>
 									

@@ -870,7 +870,7 @@ function updateCartElements()
                 '<h2>' + foodCartData[x].name + '</h2>' +
                 '</div>'+
                 '<div class="col-md-3 col-xs-3">'+
-                '<span class="dim">' + foodCartData[x].price_without_subItems  + ' NIS</span>'+
+                '<span class="dim">' + foodCartData[x].price  + ' NIS</span>'+
                 '</div>'+
                 '</div>'+
                 '<div class="row no-gutters">' +
@@ -923,7 +923,7 @@ function updateCartElements()
 
         $('#nested-section').html(str);
 
-        $('#totalAmount').html(userObject.total + " NIS ");
+        $('#totalAmount').html('Total '+userObject.total + " NIS ");
         hideShowMinAmount(userObject.total);
 
         $('#minAmount').html("Minimum Order "+minOrderLimit + " NIS ");
@@ -982,7 +982,7 @@ function onQtyIncreaseButtonClicked(index) {
 
     userObject.total = convertFloat(convertFloat(userObject.total) + convertFloat(foodCartData[index].price));
 
-    $('#totalAmount').html(userObject.total + " NIS ");
+    $('#totalAmount').html('Total '+userObject.total + " NIS ");
     hideShowMinAmount(userObject.total);
 
     var itemCountId = "#count"+index;
@@ -1083,7 +1083,7 @@ function onQtyDecreasedButtonClicked(index) {
 
     }
 
-    $('#totalAmount').html(userObject.total + " NIS ");
+    $('#totalAmount').html('Total '+userObject.total + " NIS ");
     hideShowMinAmount(userObject.total);
 }
 

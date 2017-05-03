@@ -6,13 +6,13 @@ var restName                    = null;                                         
 var restId                      = null;                                           // SELECTED RESTAURANT ID
 var selectedRest                = null;
 
-
 var customerInfoFlag            = false;
 var addressInfoFlag             = false;
 var paymentInfoFlag             = false;
 
 var couponApplied               = false;
 var paymentReceived             = false;
+
 
 //SERVER HOST DETAIL
 
@@ -127,7 +127,7 @@ function updateCartElements()
             '<h2>' + foodCartData[x].name + '</h2>' +
             '</div>'+
             '<div class="col-md-3 col-xs-3">'+
-            '<span class="dim">'+ foodCartData[x].qty.toString() +' x ' + foodCartData[x].price_without_subItems  + ' NIS</span>'+
+            '<span class="dim">'+ foodCartData[x].qty.toString() +' x ' + foodCartData[x].price  + ' NIS</span>'+
             '</div>'+
             '</div>'+
             '<div class="row no-gutters">' +
@@ -210,8 +210,8 @@ function updateCartElements()
         }
     }
 
-    $('#totalAmount').html(newTotal + " NIS");
-    $('#totalAmount2').html(newTotal + " NIS");
+    $('#totalAmount').html('Total '+newTotal + " NIS");
+    $('#totalAmount2').html('Total '+newTotal + " NIS");
 
 }
 
@@ -487,7 +487,11 @@ function ClosePayment()
 
         if(!couponApplied)
         {
-            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email, "total": userObject.total },checkCouponCallBack);
+            var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+
+            commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
+                "total": userObject.total,"rest_title" : userObject.restaurantTitle,
+                "rest_city" : selectedCityName },checkCouponCallBack);
         }
 
     }
@@ -538,31 +542,52 @@ function checkCouponCallBack(response)
         userObject.discount = responseCoupon.amount;
         var discountedAmount = 0;
 
-        if (responseCoupon.isFixAmountCoupon) {
 
-            userObject.isFixAmountCoupon = true;
+        // NOT A DELIVERY FREE COUPON
+        if(!responseCoupon.deliveryFree) {
 
-            discountedAmount = convertFloat(userObject.discount);
+            if (responseCoupon.isFixAmountCoupon) {
 
-            newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
 
-            $('#discountValue').html("-" + discountedAmount +" NIS");
-            $('#discountValue2').html("-" + discountedAmount +" NIS");
+                userObject.isFixAmountCoupon = true;
+
+                discountedAmount = convertFloat(userObject.discount);
+
+                newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
+
+                $('#discountValue').html("-" + discountedAmount + " NIS");
+                $('#discountValue2').html("-" + discountedAmount + " NIS");
+            }
+            else {
+
+
+                userObject.isFixAmountCoupon = false;
+
+                discountedAmount = convertFloat((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100);
+
+                newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
+
+                $('#discountValue').html("-" + discountedAmount + " NIS");
+                $('#discountValue2').html("-" + discountedAmount + " NIS");
+
+                $('#discountTitle').html("Coupon Discount " + userObject.discount + "%");
+                $('#discountTitle2').html("Coupon Discount " + userObject.discount + "%");
+
+            }
+
+
         }
         else
         {
 
-            userObject.isFixAmountCoupon = false;
+            userObject.isFixAmountCoupon = true;
 
-            discountedAmount = convertFloat((convertFloat(userObject.total) * convertFloat(userObject.discount)) / 100);
+            discountedAmount = convertFloat(userObject.deliveryCharges);
 
-            newTotal = convertFloat(convertFloat(userObject.total) - convertFloat(discountedAmount));
+            newTotal = convertFloat(userObject.total) - convertFloat(userObject.deliveryCharges);
 
-            $('#discountValue').html("-" + discountedAmount +" NIS");
-            $('#discountValue2').html("-" + discountedAmount +" NIS");
-
-            $('#discountTitle').html("Coupon Discount " + userObject.discount+"%");
-            $('#discountTitle2').html("Coupon Discount " + userObject.discount+"%");
+            $('#discountValue').html("Delivery Free -" + discountedAmount + " NIS");
+            $('#discountValue2').html("Delivery Free -" + discountedAmount + " NIS");
 
         }
 
@@ -752,7 +777,7 @@ function  callPage3() {
 
     }
 
-    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject},callPage3CallBack);
+    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'ENG Desktop'},callPage3CallBack);
 
 };
 
