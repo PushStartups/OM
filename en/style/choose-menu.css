@@ -647,7 +647,7 @@ a:hover, a:focus {
 	padding:0;
 	position: relative;
 	text-transform: uppercase;
-	margin: 0 0 29px;
+	margin: 0;
 	z-index: 1;
 
 }
@@ -699,6 +699,8 @@ a:hover, a:focus {
 	font-size: 20px;
 	line-height: 23px;
 	font-weight: 400;
+	display: inline-block;
+	vertical-align: middle;
 }
 .accordion .slide{
 	overflow: hidden;
@@ -735,6 +737,53 @@ a:hover, a:focus {
 	margin: 0 0 0 50px;
 	text-align: center;
 }
+
+.accordion .add-row h4 .new-price{
+	margin: 0 0 0 20px;
+	position: relative;
+	visibility: hidden;
+}
+.accordion .add-row h4 .new-price i{
+	font-size: 16px;
+	line-height: 16px;
+	color: #f00;
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	font-weight: 100;
+}
+.new-dis{
+	font-size: 16px;
+	line-height: 16px;
+	color:#ff7f00;
+
+	padding: 5px 10px;
+	display: inline-block;
+	vertical-align: middle;
+	background:rgb(238, 238, 238);
+	-webkit-border-radius:4pt;
+	-moz-border-radius:4pt;
+	border-radius:4pt;
+	text-align: center;
+	margin: 0 0 0 10px;
+	visibility: hidden;
+}
+.accordion .opener .tag{
+	width: 50px;
+	display: inline-block;
+	vertical-align: middle;
+	visibility: hidden;
+	margin: 0 0 0 10px;
+}
+.accordion .new-discount .opener .tag,
+.accordion .new-discount .add-row h4 .new-price,
+.new-discount .new-dis{visibility: visible;}
+.accordion .add-row .box:after{
+	display: block;
+	content: '';
+	clear: both;
+}
+
 .accordion .add-row .box:after{
 	display: block;
 	content: '';

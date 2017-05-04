@@ -193,15 +193,27 @@ function  getCategoriesWithItems(response)
 
 
 
-        if (i == 0)
-            catItem += '<li>';
+        if (result.categories_items[i].is_discount != 0) {
+
+
+            catItem += '<li class="new-discount">';
+
+        }
         else
+        {
             catItem += '<li>';
+        }
 
 
         catItem +=  '<a  id="slideItem'+i+'"  href="#" class="opener">'+
-            '<h3>'+result.categories_items[i].name_he+'</h3>'+
-            '</a>'+
+            '<h3>'+result.categories_items[i].name_he+' <span class="new-dis"> ירידה של 15% </span></h3>';
+
+        if (result.categories_items[i].is_discount != 0) {
+
+            catItem += '<img class="tag" src="/en/img/price_tag.png">' ;
+        }
+
+        catItem += '</a>'+
             '<div class="slide">';
 
 
@@ -209,7 +221,7 @@ function  getCategoriesWithItems(response)
         {
 
             catItem +=  '<div class="add-row" onclick="onItemSelected('+i+','+y+')">'+
-                '<h4>'+ result.categories_items[i].items[y].name_he +'<span>'+result.categories_items[i].items[y].price+' ש"ח</span></h4>'+
+                '<h4>'+ result.categories_items[i].items[y].name_he +'<span>'+result.categories_items[i].items[y].price+' ש"ח</span><span class="new-price">249 NIS <i class="fa fa-times" aria-hidden="true"></i></span></h4>'+
                 '<div class="box">'+
                 '<a class="btn-icon">plus image</a>'+
                 '<p>'+ result.categories_items[i].items[y].desc_he +'</p>'+
