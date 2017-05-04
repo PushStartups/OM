@@ -1167,6 +1167,24 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	color: #000000;
 	margin: 0 0 20px;
 }
+/*.mypopup #itemPopUpTitle{*/
+	/*max-height:55px;*/
+	/*position: relative;*/
+
+	/*display: block; !* Fallback for non-webkit *!*/
+	/*display: -webkit-box;*/
+	/*-webkit-line-clamp: 3; !* no of lines *!*/
+	/*text-overflow: ellipsis;*/
+	/*overflow:hidden !important;*/
+	/*width:180px;*/
+/*}*/
+/*.mypopup #itemPopUpTitle:after {*/
+	/*content: '...';*/
+	/*position: absolute;*/
+	/*left: 2px;*/
+	/*bottom: 0px;*/
+/*}*/
+.mypopup .add-row #itemPopUpDesc{margin:0;}
 .mypopup .add-row p{margin:  0 0 25px;}
 .mypopup h3 {
 	font-size: 20px;

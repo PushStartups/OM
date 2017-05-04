@@ -26,7 +26,6 @@ $(document).ready(function() {
 
     }
 
-
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
     userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
 
@@ -502,7 +501,7 @@ function ClosePayment()
 
             commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
                 "total": userObject.total,"rest_title" : userObject.restaurantTitle,
-                "rest_city" : selectedCityName, "delivery_fee" : userObject.deliveryCharges },checkCouponCallBack);
+                "rest_city" : selectedCityName, "delivery_fee" : userObject.deliveryCharges, "user_order" : userObject },checkCouponCallBack);
         }
 
     }

@@ -1079,7 +1079,17 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	line-height: 27px;
 	color: #000000;
 	margin: 0 0 20px;
+	/*max-height:55px;*/
+	/*overflow: hidden;*/
+	/*position: relative;*/
 }
+/*.mypopup h2:before {*/
+	/*content: '...';*/
+	/*position: absolute;*/
+	/*right: 2px;*/
+	/*bottom: 0px;*/
+/*}*/
+.mypopup .add-row #itemPopUpDesc{margin:0;}
 .mypopup .add-row p{margin:  0 0 25px;}
 .mypopup h3 {
 	font-size: 20px;

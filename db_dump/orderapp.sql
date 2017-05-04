@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 03, 2017 at 02:06 PM
+-- Generation Time: May 04, 2017 at 07:40 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'muhammad.iftikhar.aftab@gmail.com', 'Shoaib', 'test', 'test', 12, '2017-05-03', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'muhammad.iftikhar.aftab@gmail.com', 'Shoaib', 'test', 'test', 100, '2017-05-04', '03338134153', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 0, '2017-05-01', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (4, 'mark@pushstartups.com', 'Avi', 'mark', 'mark', 12, '2017-04-06', '12121212', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 0, '2017-04-19', '0548307445', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 2, '');
@@ -2431,7 +2431,7 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (204, 36, 0, '#504 Double Tempura Combination - 20 pieces', 'טמפורה זוגית- 20 יח #504', 'Saka tempura 8 pieces, magoro tempura 4 pieces, veggie tempura 4 pieces, salmon sandwich in hot panko crumbs 4 pieces', '8 יח'' סאקה טמפורה, 4 יח'' מאגורו טמפורה, 4 יח'' Vג''י טמפורה, 4 יח'' סנדוויץ'' סלמון בפנאקו.', 95, 303),
 (205, 36, 0, '#505 Yo Tzai Combination 32 pieces', 'קומבינציית יוצ''אי – 32 יח #505', '4 pieces each: Salmon ceviche, rainbow roll, veggie roll, kinugushi roll, maki avocado, maki sweet potato, saka maki, magoro sandwich, taka maki', '4 יח'' סביצ''ה סלמון, 4 יח'' ריינבו רול, 4 יח'' ווג''י רול, 4 יח'' קינוגושי רול, 5 יח'' מאקי אבוקדו , 4 מאקי בטטה , סאקה מאקי ,  מאגורו סנדוויץ, טאקה מאקי.', 89, 304),
 (206, 36, 0, '#506 Japan Japan Combination Special', 'קומבינציית ג''אפן ג''אפן ספיישל – ספינת עץ #506', 'Samurai roll 8 pieces, rainbow roll 4 pieces, hot salmon roll 4 pieces, spicy salmon sandwich 4 pieces, suzuki maki 8 pieces, sake roll 8 pieces, seviche salmon 8 pieces, hot dennis nigiri 1 piece, salmon nigiri 1 piece, tamago nigiri 1 piece, avocado nigiri 1 piece', '8 יח'' סמוראי רול,\n4 יח'' ריינבאו,\n4 יח'' רול סלמון חם,\n4 יח'' סנדוויץ'' ספייסי סלמון,\n8 יח'' מאקי סוזוקי,\n8 יח'' סאקה רול,\n8 יח'' סביצ''ה סלמון,\n1 יח'' ניגירי דניס חם,\n1 יח'' ניגירי סלמון,\n1 יח'' ניגירי טמאגו (חביתה יפנית),\n1 יח'' ניגירי אבוקדו.', 199, 305),
-(207, 37, 0, 'Happy Family - 65 pieces: \nI/O (inside out) tuna roll - 8 pieces\nI/O spicy salmon roll - 8 pieces\nSpecial salmon fotomaki - 5 pieces\nAsparagus maki - 8 pieces\nSalmon nigiri - 4 pieces\nI/O salmon skin roll - 8 pices\nI/O vegetarian avocado roll - 8 pieces\nT', '65 יחידות-HAPPY FAMILY\n   רול I/O טונה - 8 יח'' #\nרול I/O ספייסי סלמון - 8 יח'' #\nפוטומאקי סלמון ספיישל - 5 יח'' #\nמאקי אספרגוס - 8 יח'' #\nניגירי סלמון - 4 יח'' #\nרול I/O סלמון סקין - 8 יח'' #\nרול I/O צמחוני אבוכדו - 8 יח'' #\nמאקי טמאגו - 8יח'' #\nמאקי אבוכדו - 8 ', '', '', 249, 306),
+(207, 37, 0, 'Happy Family - 65 pieces', '65 יחידות-HAPPY FAMILY', 'I/O (inside out) tuna roll - 8 pieces\nI/O spicy salmon roll - 8 pieces\nSpecial salmon fotomaki - 5 pieces\nAsparagus maki - 8 pieces\nSalmon nigiri - 4 pieces\nI/O salmon skin roll - 8 pices\nI/O vegetarian avocado roll - 8 pieces', 'רול I/O טונה - 8 יח'' #\nרול I/O ספייסי סלמון - 8 יח'' #\nפוטומאקי סלמון ספיישל - 5 יח'' #\nמאקי אספרגוס - 8 יח'' #\nניגירי סלמון - 4 יח'' #\nרול I/O סלמון סקין - 8 יח'' #\nרול I/O צמחוני אבוכדו - 8 יח'' #\nמאקי טמאגו - 8יח'' #\nמאקי אבוכדו - 8', 249, 306),
 (208, 38, 0, ' Mineral water', 'מים מינרלים 0.5 ליטר ', '', '', 9, 307),
 (209, 38, 0, ' Soda water', 'סודה 250 מ''ל ', '', '', 9, 308),
 (210, 38, 0, ' Peach Iced Tea (Nestea)', 'נסטי אפרסק 330 מ''ל ', '', '', 10, 309),
@@ -12821,7 +12821,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=591 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=594 ;
 
 --
 -- Dumping data for table `users`
@@ -12904,7 +12904,10 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (587, 'rrr@rrr.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LQqJw9tRhoxwrZpn3tmYJX7b'),
 (588, 'cvcvcv@mvmvmv.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_SUVnakXVHPSDYRB0uRNOzACw'),
 (589, 'cvcv@xcvcv.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_sU3PaGkDDARMAsDQaECoOsYb'),
-(590, 'sdfsdf@dsfsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_yX7k25gmd9XI74Iglf7yO7bg');
+(590, 'sdfsdf@dsfsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_yX7k25gmd9XI74Iglf7yO7bg'),
+(591, 'asdasd@dsfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_AGcamoHHf4kmmwm8nP36GG4N'),
+(592, 'sdfsdf@dfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZZ0tO1xkjZetRcCwZveotFUh'),
+(593, 'svcxvwf@yuyu.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_1ZkCgcnwNFjYBYMC8AizQrjT');
 
 -- --------------------------------------------------------
 

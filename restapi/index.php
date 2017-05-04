@@ -365,6 +365,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         $restaurant_title   =   $request->getParam('rest_title');     //  RESTAURANT TITLE
         $restaurant_city    =   $request->getParam('rest_city');      //  RESTAURANT CITY
         $delivery_fee       =   $request->getParam('delivery_fee');   //  DELIVERY FEE
+        $user_order         =   $request->getParam('user_order');     //  USER ORDER
         $success_validation =   "false";                              //  SUCCESS VALIDATION RESPONSE FOR USER
         $user_id            =   null;
 
@@ -389,7 +390,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         // COUPON VALIDATION
         $coupon_code = strtoupper($coupon_code);
 
-        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city,$delivery_fee);
+        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city,$delivery_fee,$user_order);
 
 
         // RESPONSE RETURN TO REST API CALL
@@ -410,8 +411,9 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
 
 
-function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city,$delivery_fee)
+function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city,$delivery_fee,$user_order)
 {
+
     $apiID          = "6243c07e-fea0-4f0d-89f8-243d589db97b";
     $apiKey         = "ac0d95c8-b5fd-4484-a697-41a1a91f3dd2";
     $voucherify     =  new VoucherifyClient($apiID, $apiKey);
@@ -419,6 +421,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
 
     $result = DB::queryFirstRow("select * from users where id = '$user_id'");
+
 
     $Vid = $result['voucherify_id'];
 
@@ -475,6 +478,26 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
         }
 
+
+
+        // PREPARE META DATA ON ITEMS SELECTED
+        // FOR COUPON REDUMPTION VALIDATION
+
+        $metaData = [
+
+            "restaurant" => $rest_title,
+            "city" => $rest_city
+        ];
+
+
+        foreach ($user_order['orders'] as $order) {
+
+            $metaData[$order['itemName']] =  $order['itemName'];
+        }
+
+
+
+
         $resultRedeem = $voucherify->redeem([
             "voucher" => $userCoupon,
             "customer" => [
@@ -483,11 +506,8 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
             "order" => [
                 "amount" => $order_amount
             ],
-            "metadata" => [
+            "metadata" => $metaData
 
-                "restaurant" => $rest_title,
-                "city" => $rest_city
-            ]
         ], NULL);
 
 

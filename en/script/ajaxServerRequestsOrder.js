@@ -451,7 +451,7 @@ function onItemSelectedCallBack(response)
         }
     }
 
-    if(isOneExist)
+    if(oneTypeSubItems.length != 0)
     {
 
         $('#parent_type_one').show();
@@ -462,15 +462,10 @@ function onItemSelectedCallBack(response)
         $('#parent_type_one').hide();
     }
 
+
     $('#parent_type_multiple').html(multipleTypeStr);
     $('#parent_type_multiple').show();
 
-
-    // var div = document.getElementById('scrollable2');
-    //
-    // div.setAttribute('ss-container', true);
-    //
-    // SimpleScrollbar.initAll();
 
 
     $('#myorder').modal('show');
