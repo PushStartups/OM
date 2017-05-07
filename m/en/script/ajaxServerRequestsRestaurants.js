@@ -47,7 +47,8 @@ function initialize() {
         'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
         'deliveryArea': null,               // DELIVERY AREA
         'deliveryCharges': null,            // DELIVERY CHARGES
-        'specialRequest': ""                // SPECIAL REQUEST FROM USER
+        'specialRequest': "",               // SPECIAL REQUEST FROM USER
+        'trans_id':""                      // TRANSACTION ID
     };
 
 

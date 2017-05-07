@@ -47,7 +47,9 @@ $(document).ready(function() {
         'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
         'deliveryArea': null,              // DELIVERY AREA
         'deliveryCharges':null,            // DELIVERY CHARGES
-        'specialRequest':""                // SPECIAL REQUEST FROM USER
+        'specialRequest':"",               // SPECIAL REQUEST FROM USER
+        'trans_id':""                      // TRANSACTION ID
+
     };
 
     commonAjaxCall("/restapi/index.php/get_all_restaurants",{'city_id':selectedCityId},getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER

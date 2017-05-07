@@ -49,7 +49,7 @@ function getRestaurantsCountByCity($city_id)
 // GET ALL ORDERS FROM DATABASE (SHOWING ON ORDERS.PHP)
 function getAllOrders()
 {
-    $orders = DB::query("select o.*, r.name_en as restaurant_name, u.smooch_id as email from user_orders as o inner join restaurants as r on o.restaurant_id = r.id  inner join users as u on o.user_id = u.id");
+    $orders = DB::query("select o.*, r.name_en as restaurant_name, u.smooch_id as email from user_orders as o inner join restaurants as r on o.restaurant_id = r.id  inner join users as u on o.user_id = u.id order by o.id DESC ");
     return $orders;
 }
 
@@ -72,6 +72,41 @@ function getTotalPriceOfSpecificOrder($order_id)
     foreach($orders as $order)
     {
         $total = $total + $order['sub_total'];
+    }
+    return $total;
+}
+
+function getPaymentMethod($order_id)
+{
+    $payment       =  DB::queryFirstRow("select total,payment_method from user_orders where id = '$order_id' ");
+    $payment_info  =  $payment['payment_method'];
+    $total         =  $payment['total'];
+    $transaction_id        =  $payment['transaction_id '];
+    return array('payment_info' => $payment_info, 'total' => $total, 'transaction_id' => $transaction_id );
+}
+
+
+function getRefundCount($order_id)
+{
+    DB::query("select * from refund where order_id = '$order_id'");
+    return $refund_count = DB::count();
+}
+
+function getRefundDetail($order_id)
+{
+    $refund_orders = DB::query("select * from refund where order_id = '$order_id'");
+    return $refund_orders;
+}
+
+
+
+function getTotalRefundAmount($order_id)
+{
+    $total = 0;
+    $orders = DB::query("select * from refund where order_id = '$order_id'");
+    foreach($orders as $order)
+    {
+        $total = $total + $order['amount'];
     }
     return $total;
 }

@@ -496,19 +496,65 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     if($(id).is(':checked'))
     {
-        // SUB ITEM OBJECT
 
-        var subItem  = {
+        var limit = parseInt(extras.extra_with_subitems[extraIndex].limit);
 
-            "subItemId"      : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
-            "subItemPrice"   : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
-            "subItemName"    : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
-            "subItemNameHe"  : extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
-            "qty"            : 1}; // QUANTITY OF SUB-ITEM BY DEFAULT 1
+        if(limit == 0) {
 
 
-        multipleTypeSubItems[index][name] = subItem;
+            // SUB ITEM OBJECT
 
+            var subItem = {
+
+                "subItemId": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
+                "subItemPrice": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
+                "subItemName": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+                "subItemNameHe": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
+                "qty": 1
+            }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
+
+
+            multipleTypeSubItems[index][name] = subItem;
+
+
+        }
+        else
+        {
+
+            var countSelectedItems = 0;
+
+            for(var x =0;x<multipleTypeSubItems.length;x++)
+            {
+                for (var key in multipleTypeSubItems[x]) {
+
+                    if (multipleTypeSubItems[x][key] != null && multipleTypeSubItems[x][key] != undefined) {
+                        countSelectedItems++;
+                    }
+                }
+            }
+
+            if(countSelectedItems >= limit)
+            {
+                alert("limit over");
+                $(id).prop('checked', false);
+            }
+            else {
+
+                var subItem = {
+
+                    "subItemId": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].id,
+                    "subItemPrice": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].price,
+                    "subItemName": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_en,
+                    "subItemNameHe": extras.extra_with_subitems[extraIndex].subitems[subItemIndex].name_he,
+                    "qty": 1
+                }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
+
+
+                multipleTypeSubItems[index][name] = subItem;
+
+            }
+
+        }
     }
 
     // IF CHECK BOX NOT CHECKED REMOVE SUB ITEM
@@ -1547,6 +1593,7 @@ function payment_credit_card(cardNo, cvv, exp) {
 
 function paymentCreditCardCallBack(response) {
 
+
     var resp = '';
 
     try {
@@ -1559,16 +1606,17 @@ function paymentCreditCardCallBack(response) {
         console.log(resp);
     }
 
-    if(response == "success")
+    if(resp.response == "success")
     {
         paymentReceived = true;
         userObject.Cash_Card = "Credit Card";
         userObject.Cash_Card_he = "כרטיס אשראי";
+        userObject.trans_id = resp.trans_id;
         onPaymentSuccess();
     }
     else
     {
-        $(".payment-errors").html(resp);
+        $(".payment-errors").html(resp.response);
         $(".payment-errors").show();
         $('.box-frame.new').scrollTop(800);
     }

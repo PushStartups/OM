@@ -671,7 +671,9 @@ $app->post('/add_order', function ($request, $response, $args) {
             'coupon_discount' => $discountType,
             'discount_value' => $discountValue,
             "order_date" => DB::sqleval("NOW()"),
-            "platform_info" => $user_platform
+            "platform_info" => $user_platform,
+            'payment_method' => $user_order['Cash_Card'],
+            'transaction_id' => $user_order['trans_id']
         ));
 
 
@@ -883,7 +885,7 @@ $app->run();
 
 function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDate,$cvv)
 {
-    $str = "Error";
+    $rest = "Error";
     $cgConf['tid']='8804324';
     $cgConf['amount']=$amount;
     $cgConf['user']='pushstart';
@@ -896,7 +898,7 @@ function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDa
     /*Build Ashrait XML to post*/
     $poststring.='&int_in=<ashrait>
 							<request>
-							<language>HEB</language>
+							<language>ENG</language>
 							<command>doDeal</command>
 							<requestId/>
 							<version>1000</version>
@@ -994,28 +996,30 @@ function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDa
 
         curl_close($CR);
 
-        $dom = new DOMDocument;
-        $dom->loadXML($result);
+        $xml  = simplexml_load_string((string) $result);
 
-        $status      = $dom->getElementsByTagName('result');
-        $message     = $dom->getElementsByTagName('message');
-        $receipt     = $dom->getElementsByTagName('invoiceDocUrl');
-
-        if($status->item(0)->nodeValue == 000)
+        if($xml->response->result[0] == 000)
         {
-            $str   =  'success';
-            // $url   =  $receipt->item(0)->nodeValue;
+            $rest = [
+
+                "response" => 'success',
+                "trans_id" => (string) $xml->response->tranId[0]
+            ];
 
         }
         else{
 
-            $str  =  $message->item(0)->nodeValue;
+            $rest = [
+
+                "response" =>  (string) $xml->response->message[0]
+
+            ];
 
         }
 
     }
 
-    return $str;
+    return $rest;
 }
 
 // CLIENT EMAILS

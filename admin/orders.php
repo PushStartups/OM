@@ -123,11 +123,11 @@ DB::query("set names utf8");
 <aside id="left-panel">
 	<nav>
 		<ul>
+<!--			<li>-->
+<!--				<a href="dashboard-social.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>-->
+<!--			</li>-->
 			<li>
-				<a href="dashboard-social.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
-			</li>
-			<li>
-				<a href="index.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-cutlery"></i> <span class="menu-item-parent">Restaurant</span></a>
+				<a href="index.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-cutlery"></i> <span class="menu-item-parent">Restaurants</span></a>
 			</li>
 			<li class="active">
 				<a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
@@ -181,44 +181,24 @@ DB::query("set names utf8");
 
 		<!-- widget grid -->
 		<section id="widget-grid" class="">
-
 			<!-- row -->
 			<div class="row">
-
 				<!-- NEW WIDGET START -->
 				<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
 					<!-- Widget ID (each widget will need unique ID)-->
 					<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
-						<!-- widget options:
-                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
-                        data-widget-colorbutton="false"
-                        data-widget-editbutton="false"
-                        data-widget-togglebutton="false"
-                        data-widget-deletebutton="false"
-                        data-widget-fullscreenbutton="false"
-                        data-widget-custombutton="false"
-                        data-widget-collapsed="true"
-                        data-widget-sortable="false"
-
-                        -->
 						<header>
 							<span class="widget-icon"> <i class="fa fa-table"></i> </span>
 							<h2>Order Detail </h2>
-
 						</header>
-
 						<!-- widget div-->
 						<div>
-
 							<!-- widget edit box -->
 							<div class="jarviswidget-editbox">
 								<!-- This area used as dropdown edit box -->
-
 							</div>
 							<!-- end widget edit box -->
-
 							<!-- widget content -->
 							<div class="widget-body no-padding">
 
@@ -230,6 +210,9 @@ DB::query("set names utf8");
 										<th data-class="expand">Order ID</th>
 										<th >User Email</th>
 										<th data-hide="phone, tablet">Restaurant</th>
+										<th data-hide="phone, tablet">Payment</th>
+										<th data-hide="phone, tablet">Total</th>
+										<th data-hide="phone, tablet">Refund</th>
 										<th data-hide="phone, tablet">Coupon Type</th>
 										<th data-hide="phone,tablet">Discount</th>
 										<th data-hide="phone,tablet">Date</th>
@@ -241,17 +224,28 @@ DB::query("set names utf8");
 									<?php $orders = getAllOrders();
 									foreach ($orders as $order)
 									{
+										if($payment_method != "CASH")
+										{
+											$refundAmount =   getTotalRefundAmount($order['id']);
+										}
+										else
+										{
+											$refundAmount =   0;
+										}
 									?>
 									<tr>
 										<td><?=$order['id']?></td>
 										<td><?=$order['email']?></td>
 										<td><?=$order['restaurant_name']?></td>
+										<td><?=$order['payment_method']?></td>
+										<td><?=$order['total']." NIS"?></td>
+										<td><?=$refundAmount." NIS"?></td>
+
 										<?php if(empty($order['coupon_discount'])){ $order['coupon_discount'] = "N/A"; } ?>
 										<td><?=$order['coupon_discount']?></td>
 										<td><?=$order['discount_value']?></td>
 										<td><?=$order['order_date']?></td>
 										<td><a href="order-detail.php?order_id=<?=$order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> More Detail </button></a></td>
-
 									</tr>
 									<?php } ?>
 									</tbody>

@@ -691,16 +691,17 @@ function paymentCreditCardCallBack(response) {
         console.log(resp);
     }
 
-    if(response == "success")
+    if(resp.response == "success")
     {
         paymentReceived = true;
         userObject.Cash_Card = "Credit Card";
         userObject.Cash_Card_he = "כרטיס אשראי";
+        userObject.trans_id = resp.trans_id;
         onPaymentSuccess();
     }
     else
     {
-        $(".payment-errors").html(resp);
+        $(".payment-errors").html(resp.response);
         $(".payment-errors").show();
         showSlide($('#paymentSlider')).hide().slideDown(300);
     }
