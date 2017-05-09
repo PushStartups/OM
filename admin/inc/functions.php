@@ -12,6 +12,7 @@ function checkAdminSession() {
 
 
 
+
 //GET ALL RESTAURANTS FROM DATABSE (SHOWING ON INDEX.PHP)
 function getAllRestaurants()
 {
@@ -21,10 +22,11 @@ function getAllRestaurants()
 
 
 
+
 //GET ALL RESTAURANTS ON CITY BASIS
 function getAllRestaurantsByCity($city_id)
 {
-    $restaurants = DB::query("select * from restaurants where city_id = '$city_id' and id <> '99999'");
+    $restaurants = DB::query("select restaurants.*,cities.name_en as city_name from restaurants inner join cities on restaurants.city_id = cities.id where restaurants.city_id = '$city_id' and restaurants.id <> '99999'");
     return $restaurants;
 }
 
@@ -61,11 +63,13 @@ function getAllB2BOrders()
 }
 
 
+
 function getOrderItems($order_id)
 {
     $order_detail = DB::query("select * from order_detail where order_id = '$order_id'");
     return $order_detail;
 }
+
 
 
 function getOrderItemsB2B($order_id)
@@ -76,16 +80,22 @@ function getOrderItemsB2B($order_id)
 
 
 
+
 function getRestaurantNameByOrderId($order_id)
 {
     $orders = DB::queryFirstRow("select o.*, r.name_en as restaurant_name from user_orders as o  inner join restaurants as r on o.restaurant_id = r.id where o.id = '$order_id'");
     return $orders;
 }
+
+
+
 function getCompanyNameByOrderId($order_id)
 {
     $orders = DB::queryFirstRow("select o.*, c.name as company_name from b2b_orders as o  inner join company as c on o.company_id = c.id where o.id = '$order_id'");
     return $orders;
 }
+
+
 
 function getTotalPriceOfSpecificOrder($order_id)
 {
@@ -104,8 +114,9 @@ function getPaymentMethod($order_id)
     $payment_info           =  $payment['payment_method'];
     $total                  =  $payment['total'];
     $transaction_id         =  $payment['transaction_id '];
+    $order_date             =  $payment['order_date'];
 
-    return array('payment_info' => $payment_info, 'total' => $total, 'transaction_id' => $transaction_id );
+    return array('payment_info' => $payment_info, 'total' => $total, 'transaction_id' => $transaction_id, 'order_date' => $order_date );
 
 }
 
@@ -162,4 +173,19 @@ function getTotalRefundAmountB2B($order_id)
         $total = $total + $order['amount'];
     }
     return $total;
+}
+
+function getCurrentTime()
+{
+    date_default_timezone_set("Asia/Jerusalem");
+    $currentTime           =    date("H:i:s");
+    $currentDay            =    date("Y-m-d");
+
+    return $currentDay." ".$currentTime;
+}
+
+function getAllCities()
+{
+    $cities = DB::query("select * from cities");
+    return $cities;
 }

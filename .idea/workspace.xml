@@ -2,46 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/hambuger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/health.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/ic_profile01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/meat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/mehadrin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/milky.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/pizzeria.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/en/img/sushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/que_riko.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shalom-falafel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shalom-falafel_gallery/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shalom-falafel_gallery/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shalom-falafel_gallery/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shalom-falafel_gallery/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/b2b-order-detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/b2b-orders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/refund.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/he/error-desktop.html" afterPath="$PROJECT_DIR$/he/error.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/haturki.png" afterPath="$PROJECT_DIR$/m/en/img/haturki.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/refund_amount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/change_rank.php" afterPath="$PROJECT_DIR$/admin/ajax/change_rank.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/b2b-order-detail.php" afterPath="$PROJECT_DIR$/admin/b2b-order-detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/b2b-orders.php" afterPath="$PROJECT_DIR$/admin/b2b-orders.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/inc/functions.php" afterPath="$PROJECT_DIR$/admin/inc/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/refund.js" afterPath="$PROJECT_DIR$/admin/js/custom/refund.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/restaurants.js" afterPath="$PROJECT_DIR$/admin/js/custom/restaurants.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/order-detail.php" afterPath="$PROJECT_DIR$/admin/order-detail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/orders.php" afterPath="$PROJECT_DIR$/admin/orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/restaurants.html" afterPath="$PROJECT_DIR$/en/restaurants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/baron.css" afterPath="$PROJECT_DIR$/en/style/baron.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/confirm-order.css" afterPath="$PROJECT_DIR$/en/style/confirm-order.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/rest-list-new.css" afterPath="$PROJECT_DIR$/en/style/rest-list-new.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/.htaccess" afterPath="$PROJECT_DIR$/he/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/confirm-order.html" afterPath="$PROJECT_DIR$/he/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/restaurants.html" afterPath="$PROJECT_DIR$/he/restaurants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/style/confirm-order.css" afterPath="$PROJECT_DIR$/he/style/confirm-order.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/style/rest-list-new.css" afterPath="$PROJECT_DIR$/he/style/rest-list-new.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -820,14 +793,7 @@
       <workItem from="1494218675476" duration="2604000" />
       <workItem from="1494239612088" duration="7342000" />
       <workItem from="1494251263251" duration="2994000" />
-      <workItem from="1494307928727" duration="3711000" />
-    </task>
-    <task id="LOCAL-00061" summary="Final Update Desktop And Mobile Client">
-      <created>1490866483846</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1490866483846</updated>
+      <workItem from="1494307928727" duration="4322000" />
     </task>
     <task id="LOCAL-00062" summary="Final Update Desktop And Mobile Client">
       <created>1491115155988</created>
@@ -1165,14 +1131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1494144634822</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="DB update + code latest">
+      <created>1494317464117</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1494317464118</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="785763000" />
+    <option name="totallyTimeSpent" value="786374000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1186" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />

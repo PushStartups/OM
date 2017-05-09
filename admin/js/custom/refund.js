@@ -37,6 +37,36 @@ function refend_amount(total,order_id,url,transaction_id){
     }
 }
 
+function cancel_order(total,order_id,url,transaction_id)
+{
+    if(total <= 0)
+    {
+        alert("Total Amount is 0");
+        return;
+    }
+    var refund_amount = total;
+
+    addLoading();
+    $.ajax({
+        url:"ajax/refund_amount.php",
+        method:"post",
+        data:{refund_amount:parseInt(refund_amount),order_id:order_id,transaction_id:transaction_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            if(data == "success")
+            {
+                alert("Refund Successful");
+            }
+            else{
+                alert("Refund Fail");
+            }
+            window.location.href = url;
+        }
+    });
+}
+
 $('#refund').bind('input', function() {
     document.getElementsByClassName("refund_message")[0].innerHTML = "";
 

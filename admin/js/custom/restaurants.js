@@ -1,6 +1,6 @@
 
 // CHANGE THE RANK OR RESTAURANT (SORT)
-function change_rank(id)
+function change_rank(id,city_id)
 {
     addLoading();
     var rank = "";
@@ -8,12 +8,12 @@ function change_rank(id)
     $.ajax({
         url:"ajax/change_rank.php",
         method:"post",
-        data:{id:id,rank:rank},
+        data:{id:id,rank:rank,city_id:city_id},
         dataType:"json",
         success:function(data)
         {
             hideLoading();
-            window.location.href="index.php";
+            window.location.href="index.php?id="+city_id;
         }
     });
 }
@@ -36,7 +36,7 @@ $('#signin').on('click', function () {
             }
             else
             {
-                window.location.href="index.php";
+                window.location.href="index.php?id=1";
             }
         }
     });
