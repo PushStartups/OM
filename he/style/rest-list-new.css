@@ -248,7 +248,7 @@ a:hover, a:focus {
 #header{
 	height: 220px;
 	overflow:hidden;
-	padding: 80px 0 40px;
+	padding: 69px 0 40px;
 	text-align: center;
 	margin: -30px 0 0;
 	background-image: url("../img/header-sm-he.png");
@@ -340,7 +340,7 @@ a:hover, a:focus {
 #nav ul li a:hover{color:#ff7f00;}
 .content{
 	overflow: hidden;
-	margin: -100px auto 0;
+	margin: -111px auto 0;
 }
 
 .content .container{
@@ -359,6 +359,7 @@ a:hover, a:focus {
 	width:70vw !important;
 	min-width:960px !important;
 	padding:0 37px 0  !important;
+	height: 100vh;
 
 
 
@@ -616,6 +617,7 @@ a:hover, a:focus {
 	position: relative;
 }
 .row-heading .title{
+	cursor: pointer;
 	font-size: 11px;
 	line-height:25px;
 	color: #fff;
@@ -643,13 +645,87 @@ a:hover, a:focus {
 }
 
 
+.control {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 0;
+	margin-bottom: 0;
+	cursor: pointer;
+	text-align: center;
+
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 0.2px;
+	color: #797979;
+}
+.control input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.control__indicator {
+	display: inline-block;
+	vertical-align: middle;
+	margin: -3px 0 0 7px;
+	background: none;
+	width: 14px;
+	height: 14px;
+	border-radius: 3px;
+	border: solid 1px #979797;
+	position: relative;
+}
+.control__indicator:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+.control input:checked ~ .control__indicator:after {
+	display: block;
+}
+.control--checkbox .control__indicator:after {
+	left: 4px;
+	top: 0;
+	width: 5px;
+	height: 10px;
+	border: solid #000;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+.list-item{
+	overflow: hidden;
+	margin: 0 0 10px;
+	border-bottom: solid 2px #cacaca;
+}
+.list-item ul{
+	padding:12px 0;
+	margin: 0;
+	list-style: none;
+	display: table;
+	width: 100%;
+}
+.list-item ul li{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 1%;
+	padding: 0 5px;
+	border-right:1px dashed #979797;
+}
+.list-item ul li:first-child{
+	border:none;
+}
+.list-item ul li img{
+	display: block;
+	margin: 0 auto 12px;
+}
+
 
 
 .separator {
-	padding: 59px 0 25px 0;
+	padding: 59px 0 25px;
 	position: relative;
 }
-.separator:first-child{padding: 70px 0 25px;}
+.separator:first-child{padding: 45px 0 25px;}
 .separator .custom-hr {
 	border-bottom: 1px solid #cacaca;
 	width: calc(100% - 50px);

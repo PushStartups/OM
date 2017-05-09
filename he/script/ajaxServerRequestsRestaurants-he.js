@@ -2,6 +2,7 @@ var host                = null;
 var selectedCityId      = null;
 var allRestJson         = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
 var userObject          = null;
+var rawResponse         = null;
 
 
 // AFTER DOCUMENTED LOADED
@@ -56,287 +57,383 @@ $(document).ready(function() {
 });
 
 
+
+function onFilterChange() {
+
+    if(rawResponse== null) {
+
+        commonAjaxCall("/restapi/index.php/get_all_restaurants", {'city_id': selectedCityId}, getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER
+
+    }
+    else {
+
+        getAllRestaurants(rawResponse);
+    }
+}
+
+
+
 // GET ALL RESTAURANTS FROM COMMON AJAX CALL
 function  getAllRestaurants(response)
 {
+    rawResponse = response;
+
     var result = JSON.parse(response);
+
     allRestJson = result;   // MAKE SERVER RESPONSE GLOBAL FOR ACCESS IN OTHER FUNTIONS
 
     var allRestaurants = "";
 
     for(var x=0 ;x <result.length;x++)
     {
+        var isShow = false;
 
-        var temp = "";
-
-        var timeStr = '';
-        var trimmedTimeOpen = result[x].today_timings.substr(0, 5);
-        var trimmedTimeClose = result[x].today_timings.substr(8, result[x].today_timings.lengthss);
-        timeStr = trimmedTimeClose + " - " + trimmedTimeOpen;
-
-
-        var tagsString = fromTagsToString(result[x]);
-
-        var str2  = ' ';
-        var str1  = result[x].description_he;
-
-
-        // RESTAURANTS DESCRIPTION LENGTH CHECK
-        if (result[x].description_he.length > 200)
+        if((!$('#cb_milky').is(":checked")) && (!$('#cb_meat').is(":checked")) &&  (!$('#cb_health').is(":checked")) &&  (!$('#cb_pizzeria').is(":checked")) && (!$('#cb_hamburger').is(":checked"))
+            && (!$('#cb_sushi').is(":checked")) && (!$('#cb_mehadrin').is(":checked")) )
         {
-            var yourString = result[x].description_he ; //replace with your string.
-            var maxLength = 200 // maximum number of characters to extract
-
-            //trim the string to the maximum length
-            var trimmedString = yourString.substr(0, maxLength);
-
-
-
-            //re-trim if we are in the middle of a word
-            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
-
-            str1  = trimmedString;
-            str2  += result[x].description_he.replace(trimmedString,"");
+            isShow = true;
         }
-
-        // RESTAURANT CURRENTLY ACTIVE
-        if   (result[x].availability || window.location.hostname == "dev.orderapp.com") //( result[x].availability )
+        else
         {
 
+            for (var y = 0; y < result[x].tags.length; y++) {
 
-            temp +=
+                if ($('#cb_milky').is(":checked")) {
 
-                '<div class="row separator">';
-
-
-            if(result[x].coming_soon == 0) {
+                    var tag = result[x].tags[y]['name_en'];
 
 
-            temp += '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                    '<div class="order-now-box">'+
-                    '<div onclick="order_now(' + x + ')" class="header">הזמן <br> עכשיו</div>';
+                    if ((tag.toLowerCase()).includes('dairy')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_meat').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('meat')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_health').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('health')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_pizzeria').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('pizza')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_hamburger').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('burgers')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_sushi').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('sushi')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_mehadrin').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('mehadrin')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+
 
             }
+
+        }
+
+        if(isShow) {
+
+            var temp = "";
+
+            var timeStr = '';
+            var trimmedTimeOpen = result[x].today_timings.substr(0, 5);
+            var trimmedTimeClose = result[x].today_timings.substr(8, result[x].today_timings.lengthss);
+            timeStr = trimmedTimeClose + " - " + trimmedTimeOpen;
+
+
+            var tagsString = fromTagsToString(result[x]);
+
+            var str2 = ' ';
+            var str1 = result[x].description_he;
+
+
+            // RESTAURANTS DESCRIPTION LENGTH CHECK
+            if (result[x].description_he.length > 200) {
+                var yourString = result[x].description_he; //replace with your string.
+                var maxLength = 200 // maximum number of characters to extract
+
+                //trim the string to the maximum length
+                var trimmedString = yourString.substr(0, maxLength);
+
+
+                //re-trim if we are in the middle of a word
+                trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+
+                str1 = trimmedString;
+                str2 += result[x].description_he.replace(trimmedString, "");
+            }
+
+            // RESTAURANT CURRENTLY ACTIVE
+            if (result[x].availability || window.location.hostname == "dev.orderapp.com") //( result[x].availability )
+            {
+
+
+                temp +=
+
+                    '<div class="row separator">';
+
+
+                if (result[x].coming_soon == 0) {
+
+
+                    temp += '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">' +
+                        '<div class="order-now-box">' +
+                        '<div onclick="order_now(' + x + ')" class="header">הזמן <br> עכשיו</div>';
+
+                }
+                else {
+
+                    temp += '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset offline">' +
+                        '<div class="order-now-box offline">' +
+                        '<div class="header">בקרוב</div>';
+                }
+
+                temp +=
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                    '<div class="row">' +
+                    '<div class="col-md-12 col-sm-12 col-xs-12">' +
+                    '<h2 class="row-heading">' + result[x].name_he +
+                    '<div class="title-frame">' +
+                    '<span class="title">כשר</span>' +
+                    '<div class="tooltip-popup">' +
+                    '<p>' + result[x].hechsher_he + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</h2>' +
+                    '<p class="detail">' +
+
+                    str1 +
+
+                    '<span class="toggle-content">';
+
+
+                if (str2.length > 0) {
+                    temp += str2;
+                }
+
+
+                temp += '</span>' +
+                    '</p>' +
+                    '<div class="more-toggle">';
+
+
+                if (str2.length > 0) {
+                    temp +=
+
+                        '<span class="more"> מידע נוסף </span>' +
+                        '<span class="sign"> + </span>';
+
+                }
+                // HIDE BUTTON ON SHORT DESCRIPTION
+                else {
+                    temp +=
+
+                        '<span class="more" style="display: none"> מידע נוסף </span>' +
+                        '<span class="sign" style="display: none"> + </span>';
+
+                }
+
+                temp +=
+
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row vertical-divider" style="margin-top:15px !important;">' +
+                    '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">' +
+                    '<span class="rest-address"> מינימום הזמנה ' + result[x].min_amount + ' ש״ח </span>' +
+                    '<span class="discount-drop-down" onclick="openDiscount(' + x + ')">משלוח ' + result[x].min_delivery + 'ש״ח - ' + result[x].max_delivery + ' ש״ח<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">' +
+                    '<span class="rest-address"><span>' + result[x].address_he + '</span>' +
+                    '<div class="tooltip-popup">' +
+                    '<p>' + result[x].address_he + '</p>' +
+                    '</div>' +
+                    '</span>' +
+                    '<span onclick="openTime(' + x + ')" class="time-drop-down">' + timeStr + '<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery(' + x + ')" data-toggle="modal" data-target="#slider-popup">' +
+                    '<img src="/he/img/gallery.png" alt="image description"></a>' +
+                    '</div>' +
+                    '</div>' +
+
+                    '</div>' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content">' +
+                    '<div class="circular-logo">';
+                if (result[x].coming_soon == 0) {
+                    temp += '<span class="status"></span>';
+                }
+                else {
+                    temp += '<span class="status offline"></span>';
+                }
+
+                temp +=
+                    '<div class="logo-container">' +
+                    '<img class="rest_img" src="' + result[x].logo + '">' +
+                    '</div>' +
+                    '<div class="arrow"></div>' +
+                    '<div class="arrow"></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="custom-hr"></div>' +
+                    '</div>';
+
+
+            }
+            //CURRENTLY NOT AVAILABLE
             else {
 
-                temp += '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset offline">'+
-                        '<div class="order-now-box offline">'+
-                        '<div class="header">בקרוב</div>';
-            }
 
-            temp +=
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-8 col-sm-8 col-xs-8">'+
-                '<div class="row">'+
-                '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">'+ result[x].name_he +
-                '<div class="title-frame">'+
-                '<span class="title">כשר</span>' +
-                '<div class="tooltip-popup">'+
-                '<p>'+ result[x].hechsher_he +'</p>'+
-                '</div>'+
-                '</div>'+
-                '</h2>'+
-                '<p class="detail">'+
-
-                str1+
-
-                '<span class="toggle-content">';
-
-
-            if (str2.length > 0)
-            {
-                temp += str2;
-            }
-
-
-            temp += '</span>'+
-                '</p>'+
-                '<div class="more-toggle">';
-
-
-            if (str2.length > 0)
-            {
                 temp +=
 
-                    '<span class="more"> מידע נוסף </span>'+
-                    '<span class="sign"> + </span>';
+                    '<div class="row separator">' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">' +
+                    '<div class="order-now-box offline">';
 
-            }
-            // HIDE BUTTON ON SHORT DESCRIPTION
-            else
-            {
-                temp +=
 
-                    '<span class="more" style="display: none"> מידע נוסף </span>'+
-                    '<span class="sign" style="display: none"> + </span>';
-
-            }
-
-            temp +=
-
-                '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
-                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
-                '<span class="rest-address"> מינימום הזמנה '+ result[x].min_amount +' ש״ח </span>'+
-                '<span class="discount-drop-down" onclick="openDiscount('+ x +')">משלוח '+ result[x].min_delivery+'ש״ח - '+result[x].max_delivery +' ש״ח<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address"><span>'+ result[x].address_he +'</span>'+
-                '<div class="tooltip-popup">'+
-                '<p>'+ result[x].address_he +'</p>'+
-                '</div>'+
-                '</span>'+
-                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ timeStr +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery('+ x +')" data-toggle="modal" data-target="#slider-popup">'+
-                '<img src="/he/img/gallery.png" alt="image description"></a>'+
-                '</div>'+
-                '</div>'+
-
-                '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
-                '<div class="circular-logo">';
-                 if(result[x].coming_soon == 0) {
-                     temp += '<span class="status"></span>';
+                if (result[x].coming_soon == 0) {
+                    temp += '<div class="header">הזמן <br> עכשיו</div>';
                 }
-                else
-                 {
-                     temp += '<span class="status offline"></span>';
-                 }
-
-                 temp +=
-                '<div class="logo-container">'+
-                '<img class="rest_img" src="'+ result[x].logo + '">'+
-                '</div>'+
-                '<div class="arrow"></div>'+
-                '<div class="arrow"></div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="custom-hr"></div>'+
-                '</div>';
+                else {
+                    temp += '<div class="header">בקרוב</div>';
+                }
 
 
-        }
-        //CURRENTLY NOT AVAILABLE
-        else {
+                temp +=
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                    '<div class="row">' +
+                    '<div class="col-md-12 col-sm-12 col-xs-12">' +
+                    '<h2 class="row-heading">' + result[x].name_he +
+                    '<div class="title-frame">' +
+                    '<span class="title">כשר</span>' +
+                    '<div class="tooltip-popup">' +
+                    '<p>' + result[x].hechsher_he + '</p>' +
+                    '</div>' +
+                    '</h2>' +
+                    '<p class="detail">' +
+
+                    str1 +
+
+                    '<span class="toggle-content">';
 
 
-
-            temp +=
-
-                '<div class="row separator">'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box offline">';
+                if (str2.length > 0) {
+                    temp += str2;
+                }
 
 
-
-            if(result[x].coming_soon == 0) {
-                temp += '<div class="header">הזמן <br> עכשיו</div>';
-            }
-            else
-            {
-                temp += '<div class="header">בקרוב</div>';
-            }
+                temp += '</span>' +
+                    '</p>' +
+                    '<div class="more-toggle">';
 
 
+                if (str2.length > 0) {
+                    temp +=
 
-            temp +=
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-8 col-sm-8 col-xs-8">'+
-                '<div class="row">'+
-                '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">'+ result[x].name_he +
-                '<div class="title-frame">'+
-                '<span class="title">כשר</span>' +
-                '<div class="tooltip-popup">'+
-                '<p>'+ result[x].hechsher_he +'</p>'+
-                '</div>'+
-                '</h2>'+
-                '<p class="detail">'+
+                        '<span class="more"> מידע נוסף </span>' +
+                        '<span class="sign"> + </span>';
 
-                str1+
+                }
+                // HIDE BUTTON ON SHORT DESCRIPTION
+                else {
+                    temp +=
 
-                '<span class="toggle-content">';
+                        '<span class="more" style="display: none"> מידע נוסף </span>' +
+                        '<span class="sign" style="display: none"> + </span>';
 
+                }
 
-            if (str2.length > 0)
-            {
-                temp += str2;
-            }
-
-
-            temp += '</span>'+
-                '</p>'+
-                '<div class="more-toggle">';
-
-
-            if (str2.length > 0)
-            {
                 temp +=
 
-                    '<span class="more"> מידע נוסף </span>'+
-                    '<span class="sign"> + </span>';
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row vertical-divider" style="margin-top:15px !important;">' +
+                    '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">' +
+                    '<span class="rest-address"> מינימום הזמנה ' + result[x].min_amount + ' ש״ח </span>' +
+                    '<span class="discount-drop-down" onclick="openDiscount(' + x + ')">משלוח ' + result[x].min_delivery + 'ש״ח - ' + result[x].max_delivery + ' ש״ח<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">' +
+                    '<span class="rest-address"><span>' + result[x].address_he + '</span>' +
+                    '<div class="tooltip-popup">' +
+                    '<p>' + result[x].address_he + '</p>' +
+                    '</div>' +
+                    '</span>' +
+                    '<span onclick="openTime(' + x + ')" class="time-drop-down">' + timeStr + '<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery(' + x + ')" data-toggle="modal" data-target="#slider-popup">' +
+                    '<img src="/he/img/gallery.png" alt="image description"></a>' +
+                    '</div>' +
+                    '</div>' +
 
+                    '</div>' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content">' +
+                    '<div class="circular-logo">' +
+                    '<span class="status offline"></span>' +
+                    '<div class="logo-container">' +
+                    '<img class="rest_img" src="' + result[x].logo + '">' +
+                    '</div>' +
+                    '<div class="arrow"></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="custom-hr"></div>' +
+                    '</div>';
             }
-            // HIDE BUTTON ON SHORT DESCRIPTION
-            else
-            {
-                temp +=
 
-                    '<span class="more" style="display: none"> מידע נוסף </span>'+
-                    '<span class="sign" style="display: none"> + </span>';
+            allRestaurants += temp;
 
-            }
-
-            temp +=
-
-                '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
-                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
-                '<span class="rest-address"> מינימום הזמנה '+ result[x].min_amount +' ש״ח </span>'+
-                '<span class="discount-drop-down" onclick="openDiscount('+ x +')">משלוח '+ result[x].min_delivery+'ש״ח - '+result[x].max_delivery +' ש״ח<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address"><span>'+ result[x].address_he +'</span>'+
-                '<div class="tooltip-popup">'+
-                '<p>'+ result[x].address_he +'</p>'+
-                '</div>'+
-                '</span>'+
-                '<span onclick="openTime('+ x +')" class="time-drop-down">'+ timeStr +'<img style="padding-right: 5px;" src="/he/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1"><a onclick="openGallery('+ x +')" data-toggle="modal" data-target="#slider-popup">'+
-                '<img src="/he/img/gallery.png" alt="image description"></a>'+
-                '</div>'+
-                '</div>'+
-
-                '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
-                '<div class="circular-logo">'+
-                '<span class="status offline"></span>'+
-                '<div class="logo-container">'+
-                '<img class="rest_img" src="'+ result[x].logo + '">'+
-                '</div>'+
-                '<div class="arrow"></div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="custom-hr"></div>'+
-                '</div>';
         }
-
-        allRestaurants += temp;
-
-
     }
 
     // APPEND AL RESTAURANTS DATA TO FRONT
-    $("#scrollable1").append(allRestaurants);
+    $("#scrollable1").html(allRestaurants);
 
     // APPEND LAST ROW
     var lastRow = '<div class="row separator last">';

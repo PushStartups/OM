@@ -123,16 +123,16 @@ DB::query("set names utf8");
 <aside id="left-panel">
     <nav>
         <ul>
-<!--            <li>-->
-<!--                <a href="dashboard-social.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>-->
-<!--            </li>-->
+            <!--            <li>-->
+            <!--                <a href="dashboard-social.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>-->
+            <!--            </li>-->
             <li>
                 <a href="index.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-cutlery"></i> <span class="menu-item-parent">Restaurants</span></a>
             </li>
-            <li class="active">
+            <li>
                 <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
             </li>
-            <li>
+            <li class="active">
                 <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>
             </li>
             <li>
@@ -155,7 +155,7 @@ if(isset($_GET['order_id'])){
     $order_id = $_GET['order_id'];
 }
 else{
-    header("location:orders.php");
+    header("location:b2b-orders.php");
 }
 ?>
 <div id="main" role="main">
@@ -169,8 +169,8 @@ else{
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <?php $order = getRestaurantNameByOrderId($order_id) ?>
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i><?=$order['restaurant_name']?> Restaurant</h1>
+                <?php $order = getCompanyNameByOrderId($order_id) ?>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i><?=$order['company_name']?></h1>
             </div>
             <!-- end col -->
 
@@ -180,18 +180,25 @@ else{
                 <!-- sparks -->
                 <ul id="sparks">
                     <li class="sparks-info">
-                        <?php $info = getPaymentMethod($order_id);
+                        <?php $info = getPaymentMethodB2B($order_id);
                         $transaction_id = $info['transaction_id'];
                         ?>
-                        <?php $count = $info['total'];  $payment_info = $info['payment_info']; ?>
-                        <h5> <b>Total Price</b> <span class="txt-color-blue"><?=$count?></span></h5>
+                        <?php $count = $info['total'];  ?>
+                        <h5> <b>Payable Amount</b> <span class="txt-color-blue"><?=$count?></span></h5>
                     </li>
-                    <?php if($payment_info != "CASH"){ ?>
+
                     <li class="sparks-info">
-                        <?php $refundAmount   =  getTotalRefundAmount($order_id);  ?>
-                        <h5><b>Refund Amount</b><span class="txt-color-purple">&nbsp;<?=$refundAmount?></span></h5>
+                        <h5><b>Billing Amount</b><span class="txt-color-purple">&nbsp;<?=$info['billing_amount']?></span></h5>
                     </li>
-                    <?php } ?>
+                    <li class="sparks-info">
+                        <h5><b>Remaining Balance</b><span class="txt-color-purple">&nbsp;<?=$info['remaining_balance']?></span></h5>
+                    </li>
+
+                    <li class="sparks-info">
+                            <?php $refundAmount   =  getTotalRefundAmountB2B($order_id);  ?>
+                            <h5><b>Refund Amount</b><span class="txt-color-purple">&nbsp;<?=$refundAmount?></span></h5>
+                    </li>
+
                 </ul>
                 <!-- end sparks -->
             </div>
@@ -216,26 +223,12 @@ else{
 
                     <!-- Widget ID (each widget will need unique ID)-->
                     <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
-                        <!-- widget options:
-                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                        data-widget-colorbutton="false"
-                        data-widget-editbutton="false"
-                        data-widget-togglebutton="false"
-                        data-widget-deletebutton="false"
-                        data-widget-fullscreenbutton="false"
-                        data-widget-custombutton="false"
-                        data-widget-collapsed="true"
-                        data-widget-sortable="false"
-
-                        -->
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
                             <h2>Order Detail </h2>
 
                         </header>
 
-                        <!-- widget div-->
                         <div>
 
                             <!-- widget edit box -->
@@ -263,7 +256,7 @@ else{
                                     </thead>
 
                                     <tbody>
-                                    <?php $orders = getOrderItems($order_id);
+                                    <?php $orders = getOrderItemsB2B($order_id);
                                     foreach ($orders as $order)
                                     {
                                         ?>
@@ -313,123 +306,122 @@ else{
         <!-- end widget grid -->
 
         <!--   REFUND AREA-->
-        <?php if($payment_info != "CASH"){  ?>
-        <section id="widget-grid" class="">
-            <!-- row -->
-            <div class="row">
-                <!-- NEW WIDGET START -->
-                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
-
-                        <header>
-                            <span class="widget-icon"> <i class="fa fa-exchange"></i> </span>
-                            <h2>Refund </h2>
-                        </header><br>
-                        <style>
-                            .label {
-                                display: inline;
-                                padding: .2em .6em .3em;
-                                font-size: 100%;
-                                font-weight: 700;
-                                line-height: 1;
-                                color: #000;
-                                text-align: center;
-                                white-space: nowrap;
-                                vertical-align: baseline;
-                                border-radius: .25em;
-                            }
-                        </style>
-                        <fieldset>
-
-                            <section>
-                                <label class="label">Refund Amount</label>
-                                <label class="input">
-                                    <input type="text" id="refund" name="refund" class="input-sm">
-                                    <span style="color:red" class="refund_message" id="refund_message"></span>
-                                </label>
-                                
-                            </section>
-                        </fieldset>
-                        <footer>
-                            <button onclick="refend_amount('<?=$count?>','<?=$order_id?>','<?=$_SERVER['REQUEST_URI']?>','<?=$transaction_id?>')"  class="btn btn-primary">
-                                Submit
-                            </button>
-
-                        </footer>
-                    </div>
-                </article>
-            </div>
-        </section>
-            <?php  $counter = getRefundCount($order_id);
-            if($counter > 0){
-            ?>
-        <!--   REFUND TABLE    -->
             <section id="widget-grid" class="">
-
+                <!-- row -->
                 <div class="row">
                     <!-- NEW WIDGET START -->
                     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
+                        <!-- Widget ID (each widget will need unique ID)-->
                         <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
 
                             <header>
                                 <span class="widget-icon"> <i class="fa fa-exchange"></i> </span>
-                                <h2>Refund Detail </h2>
+                                <h2>Refund </h2>
+                            </header><br>
+                            <style>
+                                .label {
+                                    display: inline;
+                                    padding: .2em .6em .3em;
+                                    font-size: 100%;
+                                    font-weight: 700;
+                                    line-height: 1;
+                                    color: #000;
+                                    text-align: center;
+                                    white-space: nowrap;
+                                    vertical-align: baseline;
+                                    border-radius: .25em;
+                                }
+                            </style>
+                            <fieldset>
 
-                            </header>
+                                <section>
+                                    <label class="label">Refund Amount</label>
+                                    <label class="input">
+                                        <input type="text" id="refund" name="refund" class="input-sm">
+                                        <span style="color:red" class="refund_message" id="refund_message"></span>
+                                    </label>
 
-                            <div>
-                                <!-- widget edit box -->
-                                <div class="jarviswidget-editbox">
+                                </section>
+                            </fieldset>
+                            <footer>
+                                <button onclick="refend_amount('<?=$count?>','<?=$order_id?>','<?=$_SERVER['REQUEST_URI']?>','<?=$transaction_id?>')"  class="btn btn-primary">
+                                    Submit
+                                </button>
 
-                                </div>
-
-                                <div class="widget-body no-padding">
-
-                                    <table id="datatable_fixed_column" class="table table-striped table-bordered" width="100%">
-
-                                        <thead>
-
-                                        <tr>
-                                            <th data-class="expand">Order ID</th>
-                                            <th >Refund Amount</th>
-
-
-                                        </tr>
-                                        </thead>
-
-                                        <tbody>
-                                        <?php $orders = getRefundDetail($order_id);
-                                        foreach ($orders as $order)
-                                        {
-                                            ?>
-                                            <tr>
-                                                <td><?=$order['order_id']?></td>
-                                                <td><?=$order['amount']?></td>
-
-                                            </tr>
-                                        <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- end widget content -->
-                            </div>
-                            <!-- end widget div -->
+                            </footer>
                         </div>
-                        <!-- end widget -->
                     </article>
                 </div>
+            </section>
+            <?php  $counter = getRefundCount($order_id);
+            if($counter > 0){
+                ?>
+                <!--   REFUND TABLE    -->
+                <section id="widget-grid" class="">
 
-                <div class="row">
-                    <div class="col-sm-12">
+                    <div class="row">
+                        <!-- NEW WIDGET START -->
+                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
+                            <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
+
+                                <header>
+                                    <span class="widget-icon"> <i class="fa fa-exchange"></i> </span>
+                                    <h2>Refund Detail </h2>
+
+                                </header>
+
+                                <div>
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+
+                                    </div>
+
+                                    <div class="widget-body no-padding">
+
+                                        <table id="datatable_fixed_column" class="table table-striped table-bordered" width="100%">
+
+                                            <thead>
+
+                                            <tr>
+                                                <th data-class="expand">Order ID</th>
+                                                <th >Refund Amount</th>
+
+
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <?php $orders = getRefundDetail($order_id);
+                                            foreach ($orders as $order)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><?=$order['order_id']?></td>
+                                                    <td><?=$order['amount']?></td>
+
+                                                </tr>
+                                            <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end widget content -->
+                                </div>
+                                <!-- end widget div -->
+                            </div>
+                            <!-- end widget -->
+                        </article>
                     </div>
-                </div>
 
-            </section> <?php } ?>
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                        </div>
+                    </div>
+
+                </section> <?php } ?>
             <!--   REFUND TABLE    -->
-        <?php  } ?>
+      
 
     </div>
     <!-- END MAIN CONTENT -->

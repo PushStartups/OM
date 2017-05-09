@@ -133,6 +133,9 @@ DB::query("set names utf8");
 				<a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
 			</li>
 			<li>
+				<a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>
+			</li>
+			<li>
 				<a href="logout.php" title="signout"><i class="fa fa-lg fa-fw fa-sign-out"></i> <span class="menu-item-parent">Sign Out</span></a>
 			</li>
 		</ul>
@@ -213,8 +216,10 @@ DB::query("set names utf8");
 										<th data-hide="phone, tablet">Payment</th>
 										<th data-hide="phone, tablet">Total</th>
 										<th data-hide="phone, tablet">Refund</th>
-										<th data-hide="phone, tablet">Coupon Type</th>
+										<th data-hide="phone, tablet">Transaction ID</th>
+										<th data-hide="phone, tablet">Coupon</th>
 										<th data-hide="phone,tablet">Discount</th>
+										
 										<th data-hide="phone,tablet">Date</th>
 										<th>Action</th>
 									</tr>
@@ -240,11 +245,17 @@ DB::query("set names utf8");
 										<td><?=$order['payment_method']?></td>
 										<td><?=$order['total']." NIS"?></td>
 										<td><?=$refundAmount." NIS"?></td>
+										<?php if(empty($order['transaction_id'])) { $order['transaction_id'] = "N/A"; }?>
+										<td><?=$order['transaction_id']?></td>
 
 										<?php if(empty($order['coupon_discount'])){ $order['coupon_discount'] = "N/A"; } ?>
 										<td><?=$order['coupon_discount']?></td>
 										<td><?=$order['discount_value']?></td>
-										<td><?=$order['order_date']?></td>
+
+										<?php $date = explode(" ",$order['order_date']);
+										      $date[0] = date('d-m-Y', strtotime($date[0]));
+										?>
+										<td><?=$date[0]?></td>
 										<td><a href="order-detail.php?order_id=<?=$order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> More Detail </button></a></td>
 									</tr>
 									<?php } ?>

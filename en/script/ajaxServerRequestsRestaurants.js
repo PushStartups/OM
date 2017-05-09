@@ -2,6 +2,7 @@ var host                = null;
 var selectedCityId      = null;
 var allRestJson         = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
 var userObject          = null;
+var rawResponse         = null;
 
 
 // AFTER DOCUMENTED LOADED
@@ -48,7 +49,7 @@ $(document).ready(function() {
         'deliveryArea': null,              // DELIVERY AREA
         'deliveryCharges':null,            // DELIVERY CHARGES
         'specialRequest':"",               // SPECIAL REQUEST FROM USER
-        'trans_id':""                      // TRANSACTION ID
+        'trans_id':""                      // SPECIAL REQUEST FROM USER
 
     };
 
@@ -57,238 +58,339 @@ $(document).ready(function() {
 });
 
 
+
+function onFilterChange() {
+
+    if(rawResponse == null) {
+
+        commonAjaxCall("/restapi/index.php/get_all_restaurants", {'city_id': selectedCityId}, getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER
+    }
+    else {
+
+        getAllRestaurants(rawResponse);
+
+    }
+}
+
+
 // GET ALL RESTAURANTS FROM COMMON AJAX CALL
 function  getAllRestaurants(response)
 {
+
+    rawResponse = response;
+
     var result = JSON.parse(response);
+
     allRestJson = result;   // MAKE SERVER RESPONSE GLOBAL FOR ACCESS IN OTHER FUNTIONS
 
     var allRestaurants = "";
 
     for(var x=0 ;x <result.length;x++)
     {
+        var isShow = false;
 
-        var temp = "";
-        var tagsString = fromTagsToString(result[x]);
-
-        var str2  = ' ';
-        var str1  = result[x].description_en;
-
-        // RESTAURANTS DESCRIPTION LENGTH CHECK
-        if (result[x].description_en.length > 200)
+        if((!$('#cb_milky').is(":checked")) && (!$('#cb_meat').is(":checked")) &&  (!$('#cb_health').is(":checked")) &&  (!$('#cb_pizzeria').is(":checked")) && (!$('#cb_hamburger').is(":checked"))
+        && (!$('#cb_sushi').is(":checked")) && (!$('#cb_mehadrin').is(":checked")) )
         {
-            var yourString = result[x].description_en ; //replace with your string.
-            var maxLength = 200 // maximum number of characters to extract
+            isShow = true;
+        }
+        else
+        {
 
-            //trim the string to the maximum length
-            var trimmedString = yourString.substr(0, maxLength);
+            for (var y = 0; y < result[x].tags.length; y++) {
 
-            //re-trim if we are in the middle of a word
-            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+                if ($('#cb_milky').is(":checked")) {
 
-            str1  = trimmedString;
-            str2  += result[x].description_en.replace(trimmedString,"");
+                    var tag = result[x].tags[y]['name_en'];
+
+
+                    if ((tag.toLowerCase()).includes('dairy')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_meat').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('meat')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_health').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('health')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_pizzeria').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('pizza')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_hamburger').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('burgers')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_sushi').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('sushi')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+                if ($('#cb_mehadrin').is(":checked")) {
+
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('mehadrin')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
+
+
+            }
+
         }
 
-        // RESTAURANT CURRENTLY ACTIVE
-        if  (result[x].availability || window.location.hostname == "dev.orderapp.com") //(result[x].availability)
-        {
+        if(isShow) {
 
-            temp +=
+            var temp = "";
+            var tagsString = fromTagsToString(result[x]);
 
-                '<div class="row separator">'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
-                '<div class="circular-logo">';
+            var str2 = ' ';
+            var str1 = result[x].description_en;
 
-            if(result[x].coming_soon == 0) {
-                temp += '<span class="status"></span>';
+            // RESTAURANTS DESCRIPTION LENGTH CHECK
+            if (result[x].description_en.length > 200) {
+                var yourString = result[x].description_en; //replace with your string.
+                var maxLength = 200 // maximum number of characters to extract
+
+                //trim the string to the maximum length
+                var trimmedString = yourString.substr(0, maxLength);
+
+                //re-trim if we are in the middle of a word
+                trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
+
+                str1 = trimmedString;
+                str2 += result[x].description_en.replace(trimmedString, "");
             }
-            else
+
+            // RESTAURANT CURRENTLY ACTIVE
+            if (result[x].availability || window.location.hostname == "dev.orderapp.com")
             {
-                temp += '<span class="status offline"></span>';
-            }
-                temp += '<div class="logo-container">'+
-                '<img class="rest_img" src="'+ result[x].logo + '">'+
-                '</div>'+
-                '<div class="arrow"></div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-8 col-sm-8 col-xs-8">'+
-                '<div class="row">'+
-                '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">' + result[x].name_en +
-                '<div class="title-frame">'+
-                '<span class="title">כשר</span>' +
-                '<div class="tooltip-popup"><p>'+result[x].hechsher_en+'</p></div>'+
-                '</div>'+
-                '</h2>'+
-                '<p class="detail">'+
-                str1+
-                '<span class="toggle-content">';
-
-            if (str2.length > 0)
-            {
-                temp += str2;
-            }
-
-            temp += '</span>'+
-                '<div class="more-toggle">';
-
-            if (str2.length > 0)
-            {
-                temp += '<span class="more"> more info </span>'+
-                    '<span class="sign"> + </span>';
-            }
-            // HIDE BUTTON ON SHORT DESCRIPTION
-            else
-            {
-                temp += '<span class="more" style="display: none"> more info </span>'+
-                    '<span class="sign" style="display: none"> + </span>';
-            }
-
-            temp +=
-                '</div>'+
-                '</p>'+
-                '</div>'+
-                '</div>'+
-                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
-                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">'+
-
-
-                // ONCLICK CALL OPEN GALLERY FUNCTION
-                '<a onclick="openGallery('+ x +')"   data-toggle="modal" data-target="#slider-popup">'+
-                '<img src="/en/img/gallery.png" alt="image description">'+
-                '</a>'+
-                '</div>'+
-                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address">' + '<span>'+result[x].address_en+'</span>' + '<div class="tooltip-popup"><p>'+result[x].address_en+'</p></div>' + '</span>'+
-
-                // ONCLICK CALL OPEN TIME FUNCTION
-                '<span onclick="openTime('+x+')" class="time-drop-down">'+result[x].today_timings+'<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
-                '<span class="rest-address"> Minimum '+result[x].min_amount+' NIS </span>'+
-
-
-                // ONCLICK CALL OPEN DISCOUNT FUNCTION
-                '<span class="discount-drop-down" onclick="openDiscount('+x+')">Delivery '+result[x].min_delivery+'NIS - '+result[x].max_delivery+'NIS <img src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">';
-
-
-            if(result[x].coming_soon == 0) {
 
                 temp +=
-                    '<div class="order-now-box">'+
-                    '<div onclick="order_now(' + x + ')" class="header" >' +
-                    'ORDER<br>' +
-                    'NOW';
+
+                    '<div class="row separator">' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content">' +
+                    '<div class="circular-logo">';
+
+                if (result[x].coming_soon == 0) {
+                    temp += '<span class="status"></span>';
+                }
+                else {
+                    temp += '<span class="status offline"></span>';
+                }
+                temp += '<div class="logo-container">' +
+                    '<img class="rest_img" src="' + result[x].logo + '">' +
+                    '</div>' +
+                    '<div class="arrow"></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                    '<div class="row">' +
+                    '<div class="col-md-12 col-sm-12 col-xs-12">' +
+                    '<h2 class="row-heading">' + result[x].name_en +
+                    '<div class="title-frame">' +
+                    '<span class="title">כשר</span>' +
+                    '<div class="tooltip-popup"><p>' + result[x].hechsher_en + '</p></div>' +
+                    '</div>' +
+                    '</h2>' +
+                    '<p class="detail">' +
+                    str1 +
+                    '<span class="toggle-content">';
+
+                if (str2.length > 0) {
+                    temp += str2;
+                }
+
+                temp += '</span>' +
+                    '<div class="more-toggle">';
+
+                if (str2.length > 0) {
+                    temp += '<span class="more"> more info </span>' +
+                        '<span class="sign"> + </span>';
+                }
+                // HIDE BUTTON ON SHORT DESCRIPTION
+                else {
+                    temp += '<span class="more" style="display: none"> more info </span>' +
+                        '<span class="sign" style="display: none"> + </span>';
+                }
+
+                temp +=
+                    '</div>' +
+                    '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row vertical-divider" style="margin-top:15px !important;">' +
+                    '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">' +
+
+
+                    // ONCLICK CALL OPEN GALLERY FUNCTION
+                    '<a onclick="openGallery(' + x + ')"   data-toggle="modal" data-target="#slider-popup">' +
+                    '<img src="/en/img/gallery.png" alt="image description">' +
+                    '</a>' +
+                    '</div>' +
+                    '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">' +
+                    '<span class="rest-address">' + '<span>' + result[x].address_en + '</span>' + '<div class="tooltip-popup"><p>' + result[x].address_en + '</p></div>' + '</span>' +
+
+                    // ONCLICK CALL OPEN TIME FUNCTION
+                    '<span onclick="openTime(' + x + ')" class="time-drop-down">' + result[x].today_timings + '<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">' +
+                    '<span class="rest-address"> Minimum ' + result[x].min_amount + ' NIS </span>' +
+
+
+                    // ONCLICK CALL OPEN DISCOUNT FUNCTION
+                    '<span class="discount-drop-down" onclick="openDiscount(' + x + ')">Delivery ' + result[x].min_delivery + 'NIS - ' + result[x].max_delivery + 'NIS <img src="/en/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">';
+
+
+                if (result[x].coming_soon == 0) {
+
+                    temp +=
+                        '<div class="order-now-box">' +
+                        '<div onclick="order_now(' + x + ')" class="header" >' +
+                        'ORDER<br>' +
+                        'NOW';
+                }
+                else {
+
+                    temp += '<div class="order-now-box offline">' +
+                        '<div class="header" >' +
+                        'Coming<br>' +
+                        'Soon';
+
+                }
+
+                temp += '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="custom-hr"></div>' +
+                    '</div>';
+
             }
+            //CURRENTLY NOT AVAILABLE
             else {
 
-                temp += '<div class="order-now-box offline">'+
-                    '<div class="header" >' +
-                    'Coming<br>' +
-                    'Soon';
+                temp +=
 
-            }
+                    '<div class="row separator">' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content">' +
+                    '<div class="circular-logo">' +
+                    '<span class="status offline"></span>' +
+                    '<div class="logo-container">' +
+                    '<img class="rest_img" src="' + result[x].logo + '">' +
+                    '</div>' +
+                    '<div class="arrow"></div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-8 col-sm-8 col-xs-8">' +
+                    '<div class="row">' +
+                    '<div class="col-md-12 col-sm-12 col-xs-12">' +
+                    '<h2 class="row-heading">' +
+                    result[x].name_en +
+                    '<div class="title-frame">' +
+                    '<span class="title">כשר</span>' +
+                    '<div class="tooltip-popup"><p>' + result[x].hechsher_en + '</p></div>' +
+                    '</div>' +
+                    '</h2>' +
+                    '<p class="detail">' +
+                    str1 +
+                    '<span class="toggle-content">';
 
-            temp += '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="custom-hr"></div>'+
-                '</div>';
+                if (str2.length > 0) {
+                    temp += str2;
+                }
 
-        }
-        //CURRENTLY NOT AVAILABLE
-        else {
+                temp += '</span>' +
+                    '<div class="more-toggle">';
 
-            temp +=
+                if (str2.length > 0) {
+                    temp += '<span class="more"> more info </span>' +
+                        '<span class="sign"> + </span>';
+                }
+                // HIDE BUTTON ON SHORT DESCRIPTION
+                else {
+                    temp += '<span class="more" style="display: none"> more info </span>' +
+                        '<span class="sign" style="display: none"> + </span>';
+                }
 
-                '<div class="row separator">'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content">'+
-                '<div class="circular-logo">'+
-                '<span class="status offline"></span>'+
-                '<div class="logo-container">'+
-                '<img class="rest_img" src="'+ result[x].logo + '">'+
-                '</div>'+
-                '<div class="arrow"></div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-8 col-sm-8 col-xs-8">'+
-                '<div class="row">'+
-                '<div class="col-md-12 col-sm-12 col-xs-12">'+
-                '<h2 class="row-heading">' +
-                result[x].name_en +
-                '<div class="title-frame">'+
-                '<span class="title">כשר</span>' +
-                '<div class="tooltip-popup"><p>'+result[x].hechsher_en+'</p></div>'+
-                '</div>'+
-                '</h2>'+
-                '<p class="detail">'+
-                str1+
-                '<span class="toggle-content">';
-
-            if (str2.length > 0)
-            {
-                temp += str2;
-            }
-
-            temp += '</span>'+
-                '<div class="more-toggle">';
-
-            if (str2.length > 0)
-            {
-                temp += '<span class="more"> more info </span>'+
-                    '<span class="sign"> + </span>';
-            }
-            // HIDE BUTTON ON SHORT DESCRIPTION
-            else
-            {
-                temp += '<span class="more" style="display: none"> more info </span>'+
-                    '<span class="sign" style="display: none"> + </span>';
-            }
-
-            temp +=
-                '</div>'+
-                '</p>'+
-                '</div>'+
-                '</div>'+
-                '<div class="row vertical-divider" style="margin-top:15px !important;">'+
-                '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">'+
+                temp +=
+                    '</div>' +
+                    '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="row vertical-divider" style="margin-top:15px !important;">' +
+                    '<div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">' +
 
 
-                // ONCLCIK CALL OPEN GALLERY FUNCTION
-                '<a onclick="openGallery('+ x +')"   data-toggle="modal" data-target="#slider-popup">'+
-                '<img src="/en/img/gallery.png" alt="image description">'+
-                '</a>'+
-                '</div>'+
-                '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">'+
-                '<span class="rest-address">'+ result[x].address_en +'</span>'+
+                    // ONCLCIK CALL OPEN GALLERY FUNCTION
+                    '<a onclick="openGallery(' + x + ')"   data-toggle="modal" data-target="#slider-popup">' +
+                    '<img src="/en/img/gallery.png" alt="image description">' +
+                    '</a>' +
+                    '</div>' +
+                    '<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">' +
+                    '<span class="rest-address">' + result[x].address_en + '</span>' +
 
 
-                // ONCLICK CALL OPEN TIME FUNCTION
-                '<span onclick="openTime('+x+')" class="time-drop-down">'+result[x].today_timings+'<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">'+
-                '<span class="rest-address"> Minimum '+result[x].min_amount+' NIS </span>'+
+                    // ONCLICK CALL OPEN TIME FUNCTION
+                    '<span onclick="openTime(' + x + ')" class="time-drop-down">' + result[x].today_timings + '<img style="padding-left: 5px;" src="/en/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '<div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">' +
+                    '<span class="rest-address"> Minimum ' + result[x].min_amount + ' NIS </span>' +
 
 
-                // ON CLICK CALL OPEN DISCOUNT FUNCTION
-                '<span class="discount-drop-down" onclick="openDiscount('+x+')">Delivery '+result[x].min_delivery+'NIS - '+result[x].max_delivery+'NIS <img src="/en/img/drop-down.png"></span>'+
-                '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">'+
-                '<div class="order-now-box offline">'+
-                '<div class="header">';
+                    // ON CLICK CALL OPEN DISCOUNT FUNCTION
+                    '<span class="discount-drop-down" onclick="openDiscount(' + x + ')">Delivery ' + result[x].min_delivery + 'NIS - ' + result[x].max_delivery + 'NIS <img src="/en/img/drop-down.png"></span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-2 col-sm-2 col-xs-2 center-content top-offset">' +
+                    '<div class="order-now-box offline">' +
+                    '<div class="header">';
 
-                if(result[x].coming_soon == 0) {
+                if (result[x].coming_soon == 0) {
 
-                    temp += 'ORDER<br>'+
-                    'NOW';
+                    temp += 'ORDER<br>' +
+                        'NOW';
                 }
                 else {
 
@@ -296,22 +398,22 @@ function  getAllRestaurants(response)
                         'Soon';
                 }
 
-               temp+= '</div>'+
-                '</div>'+
-                '</div>'+
-                '<div class="custom-hr"></div>'+
-                '</div>';
+                temp += '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="custom-hr"></div>' +
+                    '</div>';
+            }
+
+            allRestaurants += temp;
         }
-
-        allRestaurants += temp;
-
 
     }
 
-    // APPEND AL RESTAURANTS DATA TO FRONT
-    $("#scrollable1").append(allRestaurants);
+// APPEND AL RESTAURANTS DATA TO FRONT
+    $("#scrollable1").html(allRestaurants);
 
-    // APPEND LAST ROW
+// APPEND LAST ROW
     var lastRow = '<div class="row separator last">';
     $("#scrollable1").append(lastRow);
 

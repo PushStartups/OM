@@ -53,15 +53,37 @@ function getAllOrders()
     return $orders;
 }
 
+// GET ALL ORDERS FROM DATABASE (SHOWING ON ORDERS.PHP)
+function getAllB2BOrders()
+{
+    $orders = DB::query("select o.*, c.name as company_name, u.smooch_id as email from b2b_orders as o inner join company as c on o.company_id = c.id  inner join b2b_users as u on o.user_id = u.id order by o.id DESC ");
+    return $orders;
+}
+
 
 function getOrderItems($order_id)
 {
     $order_detail = DB::query("select * from order_detail where order_id = '$order_id'");
     return $order_detail;
 }
+
+
+function getOrderItemsB2B($order_id)
+{
+    $order_detail = DB::query("select * from b2b_order_detail where order_id = '$order_id'");
+    return $order_detail;
+}
+
+
+
 function getRestaurantNameByOrderId($order_id)
 {
     $orders = DB::queryFirstRow("select o.*, r.name_en as restaurant_name from user_orders as o  inner join restaurants as r on o.restaurant_id = r.id where o.id = '$order_id'");
+    return $orders;
+}
+function getCompanyNameByOrderId($order_id)
+{
+    $orders = DB::queryFirstRow("select o.*, c.name as company_name from b2b_orders as o  inner join company as c on o.company_id = c.id where o.id = '$order_id'");
     return $orders;
 }
 
@@ -78,17 +100,37 @@ function getTotalPriceOfSpecificOrder($order_id)
 
 function getPaymentMethod($order_id)
 {
-    $payment       =  DB::queryFirstRow("select total,payment_method from user_orders where id = '$order_id' ");
-    $payment_info  =  $payment['payment_method'];
-    $total         =  $payment['total'];
-    $transaction_id        =  $payment['transaction_id '];
+    $payment                =  DB::queryFirstRow("select * from user_orders where id = '$order_id' ");
+    $payment_info           =  $payment['payment_method'];
+    $total                  =  $payment['total'];
+    $transaction_id         =  $payment['transaction_id '];
+
     return array('payment_info' => $payment_info, 'total' => $total, 'transaction_id' => $transaction_id );
+
 }
 
+function getPaymentMethodB2B($order_id)
+{
+    $payment       =  DB::queryFirstRow("select * from b2b_orders where id = '$order_id' ");
+
+    $total                   =  $payment['total'];
+    $remaining_balance       =  $payment['discount'];
+    $transaction_id          =  $payment['transaction_id'];
+    $billing_amount          =  $payment['actual_total'];
+
+    return array('total' => $total, 'transaction_id' => $transaction_id, 'remaining_balance' => $remaining_balance ,'billing_amount' => $billing_amount );
+}
 
 function getRefundCount($order_id)
 {
     DB::query("select * from refund where order_id = '$order_id'");
+    return $refund_count = DB::count();
+}
+
+
+function getRefundCountB2B($order_id)
+{
+    DB::query("select * from b2b_refund where order_id = '$order_id'");
     return $refund_count = DB::count();
 }
 
@@ -104,6 +146,17 @@ function getTotalRefundAmount($order_id)
 {
     $total = 0;
     $orders = DB::query("select * from refund where order_id = '$order_id'");
+    foreach($orders as $order)
+    {
+        $total = $total + $order['amount'];
+    }
+    return $total;
+}
+
+function getTotalRefundAmountB2B($order_id)
+{
+    $total = 0;
+    $orders = DB::query("select * from b2b_refund where order_id = '$order_id'");
     foreach($orders as $order)
     {
         $total = $total + $order['amount'];

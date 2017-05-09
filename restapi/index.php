@@ -99,7 +99,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
         $restaurants = Array();
 
-        $results = DB::query("select * from restaurants  where city_id = '$id' and hide = 0 Order By coming_soon");
+        $results = DB::query("select * from restaurants  where city_id = '$id' and hide = 0 order by sort ASC ");
 
         $count = 0;
 
@@ -660,20 +660,23 @@ $app->post('/add_order', function ($request, $response, $args) {
             $discountValue = $user_order['discount'];
         }
 
-        $todayDate = Date("d/m/Y");
+        $todayDate   =  Date("d/m/Y");
+        $db_date     =  Date("Y-m-d");
+        $currentTime =  getCurrentTime();
+
 
         // CREATE A NEW ORDER AGAINST USER
         DB::insert('user_orders', array(
 
-            'user_id' => $user_id,
-            'restaurant_id' => $user_order['restaurantId'],
-            'total' => $user_order['total'],
+            'user_id'         => $user_id,
+            'restaurant_id'   => $user_order['restaurantId'],
+            'total'           => $user_order['total'],
             'coupon_discount' => $discountType,
-            'discount_value' => $discountValue,
-            "order_date" => DB::sqleval("NOW()"),
-            "platform_info" => $user_platform,
-            'payment_method' => $user_order['Cash_Card'],
-            'transaction_id' => $user_order['trans_id']
+            'discount_value'  => $discountValue,
+            "order_date"      => $db_date." ".$currentTime,
+            "platform_info"   => $user_platform,
+            'payment_method'  => $user_order['Cash_Card'],
+            'transaction_id'  => $user_order['trans_id']
         ));
 
 
@@ -2199,6 +2202,14 @@ function telegramAPI($bot_id, $chat_id, $text) {
     curl_close($ch);
 
 
+}
+function getCurrentTime(){
+
+    //CURRENT TIME OF ISRAEL
+    date_default_timezone_set("Asia/Jerusalem");
+    $currentTime           =    date("H:i:s");
+
+    return $currentTime;
 }
 
 ?>

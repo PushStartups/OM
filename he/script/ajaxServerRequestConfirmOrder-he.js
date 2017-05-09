@@ -139,11 +139,11 @@ function updateCartElements()
 
             if(foodCartData[x].detail != "") {
 
-                str += '<p>' + foodCartData[x].detail_he + ', special request : ' + foodCartData[x].specialRequest + '</p>';
+                str += '<p>' + foodCartData[x].detail_he + ', הערות : ' + foodCartData[x].specialRequest + '</p>';
             }
             else
             {
-                str += '<p>' + foodCartData[x].detail_he + ' special request : ' + foodCartData[x].specialRequest + '</p>';
+                str += '<p>' + foodCartData[x].detail_he + ' הערות : ' + foodCartData[x].specialRequest + '</p>';
             }
         }
         else {
