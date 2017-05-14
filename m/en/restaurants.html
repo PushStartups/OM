@@ -117,8 +117,10 @@
                     <strong>Order App</strong>
                 </a>
             </div>
-            <span class="title" id="rest-name-header"></span>
-            <img class="delivery" src="/m/en/img/delivery line.png">
+            <div class="title-box">
+                <span  class="title" id="rest-name-header"></span>
+                <a class="filter" href="#"  data-toggle="modal" data-target="#filter-popup"> <img src="/m/he/img/filter.png">  filter </a>
+            </div>
             <nav id="nav">
                 <ul>
 
@@ -215,6 +217,107 @@
 </div>
 
 
+
+<!-- filter POPUP -->
+<div class="modal fade"  id="filter-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page filter">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header new-red">
+                <h2>Filter</h2>
+                <span class="title-add total">Select Preferred Option</span>
+            </div>
+            <div class="box-frame new add">
+                <div class="list-item">
+                    <ul>
+                        <li id="dairy_click">
+                            <label class="switch">
+                                <input class="milky" id="cb_milky" onclick="onFilterChange()" type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                            <div  id="dairy-others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/milky.png">
+                                <span class="span">Dairy</span>
+                            </div>
+                        </li>
+                        <li  id="meat_click" >
+                            <label class="switch">
+                                <input  id="cb_meat" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="meat-others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/meat.png">
+                                <span class="span">Meat</span>
+                            </div>
+
+                        </li>
+                        <li id="health_click">
+                            <label  class="switch">
+                                <input id="cb_health" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="health-others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/health.png">
+                                <span class="span">Health</span>
+                            </div>
+
+                        </li>
+                        <li id="pizzeria_click">
+                            <label class="switch">
+                                <input id="cb_pizzeria" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="pizzeria-others"  class="new-txt pull-left">
+                                <img class="img" src="/en/img/pizzeria.png">
+                                <span class="span">Pizzeria</span>
+                            </div>
+                        </li>
+                        <li id="hamburger_click">
+                            <label class="switch">
+                                <input id="cb_hamburger" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="hamburger_others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/hambuger.png">
+                                <span class="span">Hamburger</span>
+                            </div>
+
+                        </li>
+                        <li id="sushi_click">
+                            <label class="switch">
+                                <input id="cb_sushi" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="sushi_extras" class="new-txt pull-left">
+                                <img class="img" src="/en/img/sushi.png">
+                                <span class="span">Sushi</span>
+                            </div>
+
+                        </li>
+                        <li id="mehadrin_click">
+                            <label class="switch">
+                                <input id="cb_mehadrin" type="checkbox" onclick="onFilterChange()" >
+                                <div class="slider round"></div>
+                            </label>
+                            <div  id="mehadrin_others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/mehadrin.png">
+                                <span class="span">Mehadrin</span>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="my-btn-holder">
+                <button onclick="addUserOrder();"  type="button" class="btn-submit">APPLY</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script src="/m/en/script/bootstrap.min.js"></script>
 <!--<script src="script/script.js"> </script>-->
 <script src="/m/en/script/jquery.accordion.js"> </script>
@@ -303,6 +406,99 @@
             $('body').css("overflow","hidden");
         }
 
+    });
+
+
+    $('#dairy_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_milky').click();
+    });
+
+    $('#dairy-others').on('click', function(e) {
+
+        $('#cb_milky').click();
+    });
+
+    $('#meat_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_meat').click();
+    });
+
+    $('#meat-others').on('click', function(e) {
+
+        $('#cb_meat').click();
+    });
+
+    $('#health_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_health').click();
+    });
+
+    $('#health-others').on('click', function(e) {
+
+        $('#cb_health').click();
+    });
+
+    $('#pizzeria_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_pizzeria').click();
+    });
+
+    $('#pizzeria-others').on('click', function(e) {
+
+        $('#cb_pizzeria').click();
+    });
+
+
+  $('#hamburger_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_hamburger').click();
+    });
+
+    $('#hamburger_others').on('click', function(e) {
+
+        $('#cb_hamburger').click();
+    });
+
+    $('#sushi_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_sushi').click();
+    });
+
+    $('#sushi_others').on('click', function(e) {
+
+        $('#cb_sushi').click();
+    });
+
+    $('#mehadrin_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_mehadrin').click();
+    });
+
+    $('#mehadrin_others').on('click', function(e) {
+
+        $('#cb_mehadrin').click();
     });
 
 

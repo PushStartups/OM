@@ -17,6 +17,21 @@
     <script src="/he/script/commonAjaxCall.js"></script>
 
 
+    <!--NOTIFICATION-->
+    <link rel="manifest" href="../manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(["init", {
+            appId: "968000e9-e5d1-44e3-b586-7b3a72d06e7c",
+            autoRegister: true,
+            notifyButton: {
+                enable: false /* Set to false to hide */
+            }
+        }]);
+    </script>
+    <!--NOTIFICATION ENDS-->
+
     <!-- Google Analytics -->
     <script>
         (function (i, s, o, g, r, a, m) {

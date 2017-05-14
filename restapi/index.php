@@ -200,6 +200,7 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "hechsher_en"          => $result["hechsher_en"],       // RESTAURANT HECHSHER
                 "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
                 "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
+                "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
                 "tags"                 => $tags,                        // RESTAURANT TAGS
                 "gallery"              => $galleryImages,               // RESTAURANT GALLERY
                 "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -251,22 +252,57 @@ $app->post('/categories_with_items', function ($request, $response, $args)
         $count2 = 0;
         foreach ($categories as $category) {
 
-            $items = DB::query("select * from items where category_id = '" . $category["id"] . "' and hide = '0'");
+            $items = array();
+
+            if($categories['business_offer'] == 0) {
+
+                $items = DB::query("select * from items where category_id = '" . $category["id"] . "' and hide = '0'");
+
+            }
+            else {
+
+                // BUSINESS LUNCH CATEGORY GET SELECTED ITEMS
+                $first_day_this_month = date('Y-m-01');
+                $firstDayOfMonth = $first_day_this_month;
+                $currentDate = date('Y-m-d');
+                $dtCurrent = new \DateTime($currentDate);
+                $dtFirstOfMonth = new \DateTime($firstDayOfMonth);
+                $numWeeks = 1 + (intval($dtCurrent->format("W")) -
+                        intval($dtFirstOfMonth->format("W")));
+
+                $dayOfWeek = date('l');
+
+                $businessItemsIds = DB::query("select item_id from business_lunch_detail where category_id = '" . $category["id"] . "' AND  week_day = '$dayOfWeek' AND week_cycle = '$numWeeks'");
+
+                foreach ($businessItemsIds as $businessItem) {
+
+                    $item = DB::query("select * from items where category_id = '" . $category["id"] . "' and hide = '0' and id = '".$businessItem['item_id']."'");
+
+                    array_push($items, $item);
+                }
+
+            }
 
             $count3 = 0;
             // CHECK FOR ITEMS PRICE ZERO
             foreach ($items as $item) {
+
                 if ($item['price'] == 0) {
+
                     $extras = DB::query("select * from extras where item_id = '" . $item["id"] . "' AND type = 'One' AND price_replace=1");
                     // EXTRAS WITH TYPE OME AND PRICE REPLACE 1
 
                     foreach ($extras as $extra) {
+
                         $subItems = DB::query("select * from subitems where extra_id = '" . $extra["id"] . "'");
                         $lowestPrice = $subItems[0]['price'];
+
                         foreach ($subItems as $subitem) {
+
                             if ($subitem['price'] < $lowestPrice) {
                                 $lowestPrice = $subitem['price'];
                             }
+
                         }
 
                         $items[$count3]['price'] = $lowestPrice;
@@ -274,6 +310,7 @@ $app->post('/categories_with_items', function ($request, $response, $args)
                     }
                     //break;
                 }
+
                 $count3++;
             }
 
@@ -369,6 +406,8 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         $success_validation =   "false";                              //  SUCCESS VALIDATION RESPONSE FOR USER
         $user_id            =   null;
 
+        $isUniqueUser       =   false;
+
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
         $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
@@ -379,7 +418,10 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
             DB::insert('users', array(
                 'smooch_id' => $email
             ));
+
             $user_id = DB::insertId();
+
+            $isUniqueUser = true;
         }
         else {
 
@@ -390,7 +432,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         // COUPON VALIDATION
         $coupon_code = strtoupper($coupon_code);
 
-        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city,$delivery_fee,$user_order);
+        $res = VoucherifyValidation($coupon_code,$user_id,($order_amount * 100),$restaurant_title,$restaurant_city,$delivery_fee,$user_order,$isUniqueUser);
 
 
         // RESPONSE RETURN TO REST API CALL
@@ -411,7 +453,7 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
 
 
-function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city,$delivery_fee,$user_order)
+function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$rest_city,$delivery_fee,$user_order,$isUniqueUser)
 {
 
     $apiID          = "6243c07e-fea0-4f0d-89f8-243d589db97b";
@@ -422,8 +464,9 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
     $result = DB::queryFirstRow("select * from users where id = '$user_id'");
 
-
     $Vid = $result['voucherify_id'];
+
+
 
     // USER NOT EXIST ON VOUCHERIFY
     if($Vid == "" || $Vid == null)
@@ -486,7 +529,9 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
         $metaData = [
 
             "restaurant" => $rest_title,
-            "city" => $rest_city
+            "city" => $rest_city,
+            "unique user" => $isUniqueUser
+
         ];
 
 
@@ -598,6 +643,164 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 }
 
 
+//  STORE USER INFORMATION
+$app->post('/add_new_user', function ($request, $response, $args) {
+
+    $resp               =   'error';
+    $user_email         =   $request->getParam('user_email');
+    $user_password      =   $request->getParam('user_password');
+
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_email . "'");
+
+    if (DB::count() == 0) {
+
+
+        $verification_code  =  rand(1000,5000);
+        $verification_code  =  md5($verification_code);
+
+
+        // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
+        DB::insert('users', array(
+
+            'smooch_id' => $user_email,
+            "user_name" => $user_email,
+            "password"  => $user_password,
+            "name" => '',
+            "login_verification_hash" => $verification_code
+        ));
+
+        sendVerificationEmail($verification_code,$user_email);
+
+        ob_end_clean();
+
+        $resp = 'success';
+
+    }
+    else{
+
+        if($getUser['login_verification_hash'] != "success")
+        {
+
+            $resp  = "verification_pending";
+
+        }
+        else{
+
+            $resp = "account_exist";
+        }
+
+
+    }
+
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($resp));
+    return $response;
+
+});
+
+
+// RESEND EMAIL FOR SIGNUP URL
+
+$app->post('/resend_signup_email', function ($request, $response, $args) {
+
+
+    $user_email   =   $request->getParam('user_email');
+    $resp = '';
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $user_email . "'");
+
+
+    if(DB::count() != 0) {
+
+        sendVerificationEmail($getUser['login_verification_hash'], $user_email);
+        $resp = 'success';
+    }
+    else{
+
+        $resp = 'error';
+    }
+
+    ob_end_clean();
+
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($resp));
+    return $response;
+
+});
+
+
+
+// RESEND EMAIL FOR SIGNUP URL
+
+$app->post('/user_login', function ($request, $response, $args) {
+
+    $resp = "error";
+
+    $user_email   =   $request->getParam('user_email');
+    $user_password      =   $request->getParam('user_password');
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select * from users where smooch_id = '$user_email' AND password = '$user_password'");
+
+    if (DB::count() != 0) {
+
+
+        if($getUser['login_verification_hash'] == 'success')
+        {
+            $resp = 'success';
+        }
+        else{
+
+            $resp = 'validation_error';
+
+        }
+
+    }
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($resp));
+    return $response;
+
+});
+
+
+
+
+$app->post('/reset_password', function ($request, $response, $args) {
+
+    $user_email   =   $request->getParam('user_email');
+    $resp = '';
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $user_email . "'");
+
+    if(DB::count() != 0) {
+
+        sendPassword($getUser['password'], $user_email);
+
+        ob_end_clean();
+
+        $resp = 'success';
+    }
+    else{
+
+        $resp = "error";
+    }
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($resp));
+    return $response;
+
+});
+
 
 //  STORE USER ORDER IN DATABASE
 $app->post('/add_order', function ($request, $response, $args) {
@@ -607,6 +810,7 @@ $app->post('/add_order', function ($request, $response, $args) {
         // GET ORDER RESPONSE FROM USER (CLIENT SIDE)
         $user_order = $request->getParam('user_order');
         $user_platform = $request->getParam('user_platform');
+        $browser_info = $request->getParam('browser_info');
         $user_id = null;
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
@@ -676,7 +880,8 @@ $app->post('/add_order', function ($request, $response, $args) {
             "order_date"      => $db_date." ".$currentTime,
             "platform_info"   => $user_platform,
             'payment_method'  => $user_order['Cash_Card'],
-            'transaction_id'  => $user_order['trans_id']
+            'transaction_id'  => $user_order['trans_id'],
+            'browser_info'    => $browser_info
         ));
 
 
@@ -860,8 +1065,18 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
             $user_id = $getUser['id'];
         }
 
+        $result = '';
 
-        $result = stripePaymentRequest(($amount*100),$user_order,$user_id,$creditCardNo,$expDate,$cvv);
+        if($user_order['language'] == 'en')
+        {
+            $result = stripePaymentRequest(($amount*100),$user_order,$user_id,$creditCardNo,$expDate,$cvv);
+        }
+        else{
+
+            $result = stripePaymentRequestHE(($amount*100),$user_order,$user_id,$creditCardNo,$expDate,$cvv);
+
+        }
+
 
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
@@ -1025,7 +1240,247 @@ function  stripePaymentRequest($amount,$user_order,$user_id,$creditCardNo,$expDa
     return $rest;
 }
 
+
+// STRIPE PAYMENT REQUEST HE
+
+function  stripePaymentRequestHE($amount,$user_order,$user_id,$creditCardNo,$expDate,$cvv)
+{
+    $rest = "Error";
+    $cgConf['tid']='8804324';
+    $cgConf['amount']=$amount;
+    $cgConf['user']='pushstart';
+    $cgConf['password']='OE2@38sz';
+    $cgConf['cg_gateway_url']="https://cgpay5.creditguard.co.il/xpo/Relay";
+
+    $poststring = 'user='.$cgConf['user'];
+    $poststring .= '&password='.$cgConf['password'];
+
+    /*Build Ashrait XML to post*/
+    $poststring.='&int_in=<ashrait>
+							<request>
+							<language>HEB</language>
+							<command>doDeal</command>
+							<requestId/>
+							<version>1000</version>
+							<doDeal>
+								<terminalNumber>'.$cgConf['tid'].'</terminalNumber>
+								<authNumber/>
+								<transactionCode>Phone</transactionCode>
+								<transactionType>Debit</transactionType>
+								<total>'.$cgConf['amount'].'</total>
+								<creditType>RegularCredit</creditType>
+								<cardNo>'.$creditCardNo.'</cardNo>
+								<cvv>'.$cvv.'</cvv>
+								<cardExpiration>'.$expDate.'</cardExpiration>
+								<validation>AutoComm</validation>
+								<numberOfPayments/>
+								<customerData>
+									<userData1>'.$user_order['email'].'</userData1>
+									<userData2/>
+									<userData3/>
+									<userData4/>
+									<userData5/>
+								</customerData>
+								<currency>ILS</currency>
+								<firstPayment/>
+								<periodicalPayment/>
+								<user>Push</user>	
+								
+								<invoice>
+
+									<invoiceCreationMethod>wait</invoiceCreationMethod>
+									
+									<invoiceDate/>
+									
+									<invoiceSubject>'.$user_order['restaurantTitle'].' Order# '.$user_id.'</invoiceSubject>
+									
+									<invoiceDiscount/>
+									
+									<invoiceDiscountRate/>
+									
+									<invoiceItemCode>'.$user_id.'</invoiceItemCode>
+									
+									<invoiceItemDescription>'.$user_order['restaurantTitle'].' food order from OrderApp</invoiceItemDescription>
+									
+									<invoiceItemQuantity>1</invoiceItemQuantity>
+									
+									<invoiceItemPrice>'.$amount.'</invoiceItemPrice>
+									
+									<invoiceTaxRate/>
+									
+									<invoiceComments/>
+									
+									<companyInfo>OrderApp</companyInfo>
+									
+									<sendMail>1</sendMail>
+									
+									<mailTo>'.$user_order['email'].'</mailTo>
+									
+									<isItemPriceWithTax>0</isItemPriceWithTax>
+									
+									<ccDate>'.date("Y-m-d").'</ccDate>
+									
+									<invoiceSignature/>
+									
+									<invoiceType>receipt</invoiceType>
+									
+									<DocNotMaam/>
+									
+								</invoice>	
+								
+							</doDeal>
+						</request>
+					</ashrait>';
+
+
+    //init curl connection
+    if( function_exists( "curl_init" )) {
+        $CR = curl_init();
+        curl_setopt($CR, CURLOPT_URL, $cgConf['cg_gateway_url']);
+        curl_setopt($CR, CURLOPT_POST, 1);
+        curl_setopt($CR, CURLOPT_FAILONERROR, true);
+        curl_setopt($CR, CURLOPT_POSTFIELDS, $poststring);
+        curl_setopt($CR, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($CR, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($CR, CURLOPT_FAILONERROR,true);
+
+
+        //actual curl execution perfom
+        $result = curl_exec( $CR );
+        $error = curl_error ( $CR );
+
+        // on error - die with error message
+        if( !empty( $error )) {
+            die($error);
+        }
+
+        curl_close($CR);
+
+        $result = mb_convert_encoding( $result, "HTML-ENTITIES", "UTF-8");
+
+        $xml = simplexml_load_string((string) $result);
+
+        if($xml->response->result[0] == 000)
+        {
+            $rest = [
+
+                "response" => 'success',
+                "trans_id" => (string) $xml->response->tranId[0]
+            ];
+
+        }
+        else{
+
+            $rest = [
+
+                "response" =>  (string) $xml->response->message[0]
+
+            ];
+
+        }
+
+    }
+
+    return $rest;
+}
+
+
+
+
 // CLIENT EMAILS
+
+
+function sendVerificationEmail($code,$email)
+{
+    $mailbody  = 'https://'.$_SERVER['HTTP_HOST']."/verification.php?key=".$code.'&email='.$email;
+
+    $mail = new PHPMailer;
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
+    //From email address and name
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
+
+
+    //To address and name
+    $mail->addAddress($email);     // SEND EMAIL TO USER
+
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(false);
+    $mail->Subject = 'OrderApp Verification';
+    $mail->Body = $mailbody;
+    $mail->AltBody = "OrderApp";
+
+    if (!$mail->send())
+    {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+    else
+    {
+        echo "Message has been sent successfully";
+    }
+
+
+}
+
+
+function sendPassword($password,$email)
+{
+    $mailbody  = 'your password is '.$password;
+
+    $mail = new PHPMailer;
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
+    //From email address and name
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
+
+
+    //To address and name
+    $mail->addAddress($email);     // SEND EMAIL TO USER
+
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(false);
+    $mail->Subject = 'Your Password Reset Request For OrderApp';
+    $mail->Body = $mailbody;
+    $mail->AltBody = "OrderApp";
+
+    if (!$mail->send())
+    {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+    }
+    else
+    {
+        echo "Message has been sent successfully";
+    }
+
+
+}
+
 
 // EMAIL ORDER SUMMARY ENGLISH VERSION
 function email_order_summary_english($user_order,$orderId,$todayDate)
@@ -2010,6 +2465,8 @@ function createBringgTask($user_order, $todayDate, $delivery_time) {
         return;
     }
 
+
+
     date_default_timezone_set('Asia/Jerusalem');
     $ScheduledAt = print_r($todayDate . 'T' . $delivery_time . ':00z',true);
 
@@ -2037,7 +2494,8 @@ function createBringgTask($user_order, $todayDate, $delivery_time) {
                 "name": "' . $user_order['restaurantTitleHe'] . '",
                 "phone": "026222862"
              },
-             "address":"Yigal Alon Ave 6, Beit Shemesh, Israel",
+             "address":"'.$user_order['deliveryAddress'].' ('.$user_order['deliveryArea'].')",
+             "restaurantAddress":"'.$user_order['restaurantAddress'].'"
             "allow_editing_inventory": "true", // Allow driver to edit the Inventory e.g. change quantities?
             "must_approve_inventory": "true",   // Driver must approve pick up inventory e.g. by scanning it. The driver won\'t be allowed to leave location without doing this.
             "allow_scanning_inventory": "true"  // Allow to scan inventory via phone camera (on the Driver App)

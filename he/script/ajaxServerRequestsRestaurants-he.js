@@ -29,6 +29,7 @@ $(document).ready(function() {
         'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
+        'pickup_hide': false,              // IS PICK UP OPTION HIDE
         'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
         'name': "",                        // USER NAME
         'email': "",                       // USER EMAIL
@@ -470,6 +471,13 @@ function order_now(clickedRestId) {
     userObject.restaurantTitle     = allRestJson[clickedRestId].name_en;
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
     userObject.restaurantAddress   = allRestJson[clickedRestId].address_he;
+
+
+    if(parseInt(allRestJson[clickedRestId].pickup_hide) == 1) {
+
+        userObject.pickup_hide = true;
+
+    }
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 

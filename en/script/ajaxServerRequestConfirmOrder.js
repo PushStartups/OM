@@ -48,8 +48,49 @@ $(document).ready(function() {
     $('#submitOrder').hide();
 
 
-    // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
-    $('#checkbox-id-12').prop('checked', true);
+    // CHECK IF USER IS ALREADY LOGIN
+
+    if(localStorage.getItem("USER_EMAIL") != undefined && localStorage.getItem("USER_EMAIL") != "" && localStorage.getItem("USER_EMAIL") != null) {
+
+
+        //  USER ALREADY LOGIN WELCOME USER
+
+        LoginSuccessFullState();
+
+    }
+    else
+    {
+        if(localStorage.getItem("IS_LOGIN") != undefined && localStorage.getItem("IS_LOGIN") != "" && localStorage.getItem("IS_LOGIN") != null) {
+
+
+            if(localStorage.getItem("IS_LOGIN") == 'true')
+            {
+                // DISPLAY LOGIN OPTION TO USER
+                SignInDefault();
+
+            }
+        }
+
+    }
+
+
+    if(userObject.pickup_hide == true)
+    {
+        $('#pickup_option').hide();
+        $('#checkbox-id-23').prop('checked', true);
+        $('#deliveryFieldsParent').addClass('show');
+
+    }
+    else {
+
+        // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
+        $('#checkbox-id-12').prop('checked', true);
+
+    }
+
+
+    $('.dropdown-nav').show();
+
 
     userObject.pickFromRestaurant = true;
 
@@ -787,7 +828,13 @@ function  callPage3() {
 
     }
 
-    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'ENG Desktop'},callPage3CallBack);
+
+
+
+    var browserName = BrowserInfo();
+
+
+    commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'ENG Desktop',"browser_info":browserName},callPage3CallBack);
 
 };
 
@@ -841,4 +888,107 @@ function goBack()
 
     // MOVING TO ORDER PAGE
     window.location.href = '/en/'+selectedCityName+"/"+ restaurantTitle+"/order";
+}
+
+
+// LOGIN / SIGN UP STATES
+
+function LoginSuccessFullState() {
+
+    var email = localStorage.getItem("USER_EMAIL");
+    var name  = localStorage.getItem("USER_NAME");
+
+    userObject.email = email;
+    userObject.name = name;
+
+    // DISPLAY LOGIN SUCCESS
+
+    $('#loginBtnText').html("Hi "+userObject.email);
+    $("#loginMessage").show();
+    $("#success-message").html("Hey "+name+", Nice to meet you :)");
+
+    // HIDE FORM S
+
+    $('#signup-message').hide();
+    $('#manual-signup').hide();
+    $('#signUpForm').hide();
+
+
+    $('#email_text').val(userObject.email);
+    $('#name_text').val(userObject.name);
+
+}
+
+
+function SignInDefault()
+{
+    $('#signin').show();
+    $('#signup').hide();
+
+
+}
+
+
+function BrowserInfo() {
+
+    var nVer = navigator.appVersion;
+    var nAgt = navigator.userAgent;
+    var browserName  = navigator.appName;
+    var fullVersion  = ''+parseFloat(navigator.appVersion);
+    var majorVersion = parseInt(navigator.appVersion,10);
+    var nameOffset,verOffset,ix;
+
+// In Opera, the true version is after "Opera" or after "Version"
+    if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+        browserName = "Opera";
+        fullVersion = nAgt.substring(verOffset+6);
+        if ((verOffset=nAgt.indexOf("Version"))!=-1)
+            fullVersion = nAgt.substring(verOffset+8);
+    }
+// In MSIE, the true version is after "MSIE" in userAgent
+    else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+        browserName = "Microsoft Internet Explorer";
+        fullVersion = nAgt.substring(verOffset+5);
+    }
+// In Chrome, the true version is after "Chrome"
+    else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+        browserName = "Chrome";
+        fullVersion = nAgt.substring(verOffset+7);
+    }
+// In Safari, the true version is after "Safari" or after "Version"
+    else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+        browserName = "Safari";
+        fullVersion = nAgt.substring(verOffset+7);
+        if ((verOffset=nAgt.indexOf("Version"))!=-1)
+            fullVersion = nAgt.substring(verOffset+8);
+    }
+// In Firefox, the true version is after "Firefox"
+    else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+        browserName = "Firefox";
+        fullVersion = nAgt.substring(verOffset+8);
+    }
+// In most other browsers, "name/version" is at the end of userAgent
+    else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) <
+        (verOffset=nAgt.lastIndexOf('/')) )
+    {
+        browserName = nAgt.substring(nameOffset,verOffset);
+        fullVersion = nAgt.substring(verOffset+1);
+        if (browserName.toLowerCase()==browserName.toUpperCase()) {
+            browserName = navigator.appName;
+        }
+    }
+// trim the fullVersion string at semicolon/space if present
+    if ((ix=fullVersion.indexOf(";"))!=-1)
+        fullVersion=fullVersion.substring(0,ix);
+    if ((ix=fullVersion.indexOf(" "))!=-1)
+        fullVersion=fullVersion.substring(0,ix);
+
+    majorVersion = parseInt(''+fullVersion,10);
+    if (isNaN(majorVersion)) {
+        fullVersion  = ''+parseFloat(navigator.appVersion);
+        majorVersion = parseInt(navigator.appVersion,10);
+    }
+
+    return browserName;
+
 }

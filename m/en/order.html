@@ -18,6 +18,8 @@
 
     <script type="text/javascript" src="/m/en/script/isMobileRedirect.js"></script>
     <script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -144,6 +146,7 @@
             </div>
             <ul class="top-list" >
                 <li><a data-toggle="modal" onclick="$('#popup-info').modal('show');"><img src="/m/en/img/alert.png"></a></li>
+                <li style="display:none" class="add-user"><a data-toggle="modal" onclick="$('#signup-popup').modal('show');"><img src="/m/en/img/ic_profile01.png"></a></li>
                 <li><a data-toggle="modal"   onclick="showCartElements(); updateCartElements();"><img src="/m/en/img/shopping-cart.png"><span class="price" id="count-badge">0</span></a> </li>
             </ul>
         </header>
@@ -159,251 +162,559 @@
         </div>
     </div>
 
+</div>
 
-    <!-- MINIMUM AMOUNT POPUP-->
-    <div class="modal fade"  id="email-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <h3 id="min_order"></h3>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- CARD EMPTY MESSAGE-->
-    <div class="modal fade"  id="cart-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="cart-holder">
-                    <img src="/m/en/img/shopping-cart01.png">
-                    <h3>Items in the cart will be gone</h3>
+<!-- log in POPUP-->
+<div class="modal fade"  id="login-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <form class="login-form">
+                <h2>Log In</h2>
+                <p>Log In and make the ordering process shorter</p>
+                <p>Didn't have account? <a href="#">Sign Up</a></p>
+                <div class="btn-holder">
+                    <button class="btn btn-facebook" type="button">Log In with Facebook</button>
+                    <button class="btn btn-google" type="button">Log In with Google</button>
                 </div>
-                <ul class="list">
-                    <li><a onclick="decision(false);" id="continue">Continue</a></li>
-                    <li><a onclick="decision(true);" id="cancel">Cancle</a></li>
-                </ul>
+                <div class="line">Or</div>
+
+                <!-- start login with email sectopm -->
+
+                <a class="login-email" href="#">Log In with Email and Password</a>
+
+                <!--<div class="login-section">-->
+                <!--<input class="form-control" type="email" placeholder="Email Address">-->
+                <!--<input class="form-control add" type="password" placeholder="Password">-->
+                <!--<a class="login-email text-left" href="#">Forgot password</a>-->
+                <!--<button class="btn btn-login" type="button">Log In</button>-->
+                <!--</div>-->
+
+                <!-- end login with email sectopm -->
+
+                <!-- start forget sectopm -->
+                <!--<div class="forget-section">-->
+                <!--<p>enter your email in order to reset your password</p>-->
+                <!--<input class="form-control add1" type="email" placeholder="Email Address">-->
+                <!--<button class="btn btn-login" type="button">Send</button>-->
+                <!--</div>-->
+                <!-- end forget sectopm -->
+
+                <a class="login-guest" href="#">Continue as guest</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="login-email" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <form class="login-form">
+                <h2>Log In</h2>
+                <p>Log In and make the ordering process shorter</p>
+                <p>Didn't have account? <a href="#">Sign Up</a></p>
+                <div class="btn-holder">
+                    <button class="btn btn-facebook" type="button">Log In with Facebook</button>
+                    <button class="btn btn-google" type="button">Log In with Google</button>
+                </div>
+                <div class="line">Or</div>
+
+                <!-- start login with email sectopm -->
+
+
+
+                <div class="login-section">
+                    <input class="form-control" type="email" placeholder="Email Address">
+                    <input class="form-control add" type="password" placeholder="Password">
+                    <a class="login-email text-left" href="#">Forgot password</a>
+                    <button class="btn btn-login" type="button">Log In</button>
+                </div>
+
+                <!-- end login with email sectopm -->
+
+                <!-- start forget sectopm -->
+                <!--<div class="forget-section">-->
+                <!--<p>enter your email in order to reset your password</p>-->
+                <!--<input class="form-control add1" type="email" placeholder="Email Address">-->
+                <!--<button class="btn btn-login" type="button">Send</button>-->
+                <!--</div>-->
+                <!-- end forget sectopm -->
+
+                <a class="login-guest" href="#">Continue as guest</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="forget-password" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <form class="login-form">
+                <h2>Log In</h2>
+                <p>Log In and make the ordering process shorter</p>
+                <p>Didn't have account? <a href="#">Sign Up</a></p>
+                <div class="btn-holder">
+                    <button class="btn btn-facebook" type="button">Log In with Facebook</button>
+                    <button class="btn btn-google" type="button">Log In with Google</button>
+                </div>
+                <div class="line">Or</div>
+
+                <!-- start forget sectopm -->
+                <div class="forget-section">
+                    <p>enter your email in order to reset your password</p>
+                    <input class="form-control add1" type="email" placeholder="Email Address">
+                    <button class="btn btn-login" type="button">Send</button>
+                </div>
+                <!-- end forget sectopm -->
+
+                <a class="login-guest" href="#">Continue as guest</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="welcome-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="welcom-popup">
+                <div class="user-img">
+                    <img src="/m/en/img/ic_profile.png">
+                </div>
+                <h3>Hey Dvora,<br> Nice to meet you :)</h3>
+                <a class="login-guest" href="#">Disconnect</a>
             </div>
         </div>
     </div>
+</div>
 
+<!-- start sign up popup -->
 
-    <!-- ON ITEM CLICK POPUP ITEM DETAIL  -->
-    <div class="modal fade"  id="order-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page order">
-            <div class="modal-content">
+<div class="modal fade"  id="signup-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="signup" >
+                <form class="login-form" id="signUpForm">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up and make the ordering process shorter</p>
+                    <p>Alredy have account? <a href="#">Log In</a></p>
+                    <div class="btn-holder">
+                        <button class="btn btn-facebook" type="button">Sign Up with Facebook</button>
+                        <button class="btn btn-google" type="button">Sign Up with Google</button>
+                    </div>
+                    <div class="line">Or</div>
 
-                <div class="box-frame new add">
-                    <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                    <div class="popup-header">
-                        <!--ORDER POPUP HEADER .. INCLUDES RESTAURANT NAME AND DESCRIPTION-->
-                        <div class="txt" id="order-popup-header"></div>
-                        <!--ITEM PRICE ON ORDER POPUP-->
-                        <span class="btn-nis" id="itemPriceOrderPopup"></span>
+                    <!--start login with email sectopm-->
+                    <div class="links" id="signup-message">
+                        <a id="signup-email-pass" class="login-email" href="#">Sign Up with Email and Password</a>
+                        <a class="login-guest asGuest" href="#">Continue as guest</a>
                     </div>
 
-                    <div class="wrap-col">
-                        <!--EXTRAS WITH TYPE ONE-->
-                        <div class="add-row first" id="parent_type_one" style="display: none;"></div>
-                        <!--EXTRAS WITH TYPE MULTIPLE-->
-                        <div class="add-row first" id="parent_type_multiple" style="display: none;"></div>
+                    <!--<div class="login-section" id="manual-signup">-->
+                    <!--<input id="signup-email" class="form-control" type="email" placeholder="Email Address">-->
+                    <!--<input id="signup-password" class="form-control" type="password" placeholder="Password">-->
+                    <!--<input id="signup-confirm-pass" class="form-control add" type="password" placeholder="Password">-->
+                    <!--<span style="display:none; font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-signup"></span>-->
+                    <!--<button id="signUp-btn" class="btn btn-login" type="button">Sign Up</button>-->
+                    <!--<a class="login-guest asGuest" href="#">Continue as guest</a>-->
+                    <!--</div>-->
 
-                        <div class="add-row">
-                            <h3>Special Requests</h3>
-                            <div class="text-holder row no-gutters">
-                                <div class="col-xs-2">
-                                    <img class="edit" src="/m/en/img/ic_edit.png">
-                                </div>
-                                <div class="col-xs-10">
-                                    <textarea id="special_request" placeholder="Type here"></textarea>
-                                    <img class="resize" src="/m/en/img/Path 2.png">
-                                </div>
+
+                    <!-- end login with email sectopm -->
+                    <!--<div class="" id="email_verification_message">-->
+                    <!--<p>In order to complete your registration, please click the link you recieved via email.</p>-->
+                    <!--<a class="login-guest" href="#">I did’nt get an email</a>-->
+                    <!--</div>-->
+
+                    <!-- start forget sectopm -->
+                    <!--<div class="forget-section re-enter">-->
+                    <!--<p>Please re-enter your email address</p>-->
+                    <!--<input class="form-control add1" type="email" placeholder="Email Address">-->
+                    <!--<button class="btn btn-login" type="button">Send</button>-->
+                    <!--<a class="login-guest" href="#">Continue as guest</a>-->
+                    <!--</div>-->
+                    <!-- end forget sectopm -->
+
+                </form>
+
+                <!--<div id="loginMessage" class="welcom-popup" style="display: none">-->
+                <!--<h3 id="success-message"></h3>-->
+                <!--<a  id="logout" class="login-guest" href="#">Disconnect</a>-->
+                <!--</div>-->
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="signup-email" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="signup" >
+                <form class="login-form" id="signUpForm">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up and make the ordering process shorter</p>
+                    <p>Alredy have account? <a href="#">Log In</a></p>
+                    <div class="btn-holder">
+                        <button class="btn btn-facebook" type="button">Sign Up with Facebook</button>
+                        <button class="btn btn-google" type="button">Sign Up with Google</button>
+                    </div>
+                    <div class="line">Or</div>
+                    <div class="login-section" id="manual-signup">
+                        <input id="signup-email" class="form-control" type="email" placeholder="Email Address">
+                        <input id="signup-password" class="form-control" type="password" placeholder="Password">
+                        <input id="signup-confirm-pass" class="form-control add" type="password" placeholder="Password">
+                        <span style="display:none; font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-signup"></span>
+                        <button id="signUp-btn" class="btn btn-login" type="button">Sign Up</button>
+                        <a class="login-guest asGuest" href="#">Continue as guest</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="signup-email-message" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="signup" >
+                <form class="login-form" id="signUpForm">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up and make the ordering process shorter</p>
+                    <p>Alredy have account? <a href="#">Log In</a></p>
+                    <div class="btn-holder">
+                        <button class="btn btn-facebook" type="button">Sign Up with Facebook</button>
+                        <button class="btn btn-google" type="button">Sign Up with Google</button>
+                    </div>
+                    <div class="line">Or</div>
+                    <div class="" id="email_verification_message">
+                        <p>In order to complete your registration, please click the link you recieved via email.</p>
+                        <a class="login-guest" href="#">I did’nt get an email</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="signup-forget" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="signup" >
+                <form class="login-form" id="signUpForm">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up and make the ordering process shorter</p>
+                    <p>Alredy have account? <a href="#">Log In</a></p>
+                    <div class="btn-holder">
+                        <button class="btn btn-facebook" type="button">Sign Up with Facebook</button>
+                        <button class="btn btn-google" type="button">Sign Up with Google</button>
+                    </div>
+                    <div class="line">Or</div>
+                    <!-- start forget sectopm -->
+                    <div class="forget-section re-enter">
+                        <p>Please re-enter your email address</p>
+                        <input class="form-control add1" type="email" placeholder="Email Address">
+                        <button class="btn btn-login" type="button">Send</button>
+                        <a class="login-guest" href="#">Continue as guest</a>
+                    </div>
+                    <!-- end forget sectopm -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"  id="signup-welcom-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="signup" >
+                <form class="login-form" id="signUpForm">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up and make the ordering process shorter</p>
+                    <p>Alredy have account? <a href="#">Log In</a></p>
+                    <div class="btn-holder">
+                        <button class="btn btn-facebook" type="button">Sign Up with Facebook</button>
+                        <button class="btn btn-google" type="button">Sign Up with Google</button>
+                    </div>
+                    <div class="line">Or</div>
+                    <div id="loginMessage" class="welcom-popup">
+                        <h3 id="success-message"></h3>
+                        <a  id="logout" class="login-guest" href="#">Disconnect</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- end sign up popup -->
+
+
+
+
+
+<!-- MINIMUM AMOUNT POPUP-->
+<div class="modal fade"  id="email-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3 id="min_order"></h3>
+        </div>
+    </div>
+</div>
+
+
+<!-- CARD EMPTY MESSAGE-->
+<div class="modal fade"  id="cart-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="cart-holder">
+                <img src="/m/en/img/shopping-cart01.png">
+                <h3>Items in the cart will be gone</h3>
+            </div>
+            <ul class="list">
+                <li><a onclick="decision(false);" id="continue">Continue</a></li>
+                <li><a onclick="decision(true);" id="cancel">Cancle</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ON ITEM CLICK POPUP ITEM DETAIL  -->
+<div class="modal fade"  id="order-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+
+            <div class="box-frame new add">
+                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header">
+                    <!--ORDER POPUP HEADER .. INCLUDES RESTAURANT NAME AND DESCRIPTION-->
+                    <div class="txt" id="order-popup-header"></div>
+                    <!--ITEM PRICE ON ORDER POPUP-->
+                    <span class="btn-nis" id="itemPriceOrderPopup"></span>
+                </div>
+
+                <div class="wrap-col">
+                    <!--EXTRAS WITH TYPE ONE-->
+                    <div class="add-row first" id="parent_type_one" style="display: none;"></div>
+                    <!--EXTRAS WITH TYPE MULTIPLE-->
+                    <div class="add-row first" id="parent_type_multiple" style="display: none;"></div>
+
+                    <div class="add-row">
+                        <h3>Special Requests</h3>
+                        <div class="text-holder row no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="/m/en/img/ic_edit.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <textarea id="special_request" placeholder="Type here"></textarea>
+                                <img class="resize" src="/m/en/img/Path 2.png">
                             </div>
                         </div>
+                    </div>
 
+                </div>
+            </div>
+
+        </div>
+        <div class="my-btn-holder">
+            <button onclick="addUserOrder();"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- RESTAURANT DETAIL POPUP -->
+<div class="modal fade"  id="popup-info" role="dialog">
+    <div class="modal-dialog modal-md mypopup info">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="row no-gutters">
+
+                <!--INFO POPUP FIRST SECTION-->
+                <div class="col-xs-12 first-col text-center" id="info-popup-header"></div>
+                <div class="col-xs-12 second-col">
+
+                    <div class="add-row first">
+                        <span class="title title0">Contact Info</span>
+                        <div class="table" id="info-popup-contact"></div>
+                    </div>
+
+                    <div class="add-row first">
+                        <span class="title">Opening Hours</span>
+                        <!--RESTAURANT TIMINGS IN INFO POPUP-->
+                        <table class="table" id="info-popup-timing"></table>
+                    </div>
+
+                    <div class="add-row first">
+                        <span class="title title2">Delivery Fee</span>
+                        <!--RESTAURAT DELIVERY CHARGES IN INFO POPUP-->
+                        <table class="table" id="info-popup-delivery-fee"></table>
+                    </div>
+
+                    <div class="add-row first">
+                        <span class="title title3">Gallery</span>
+                        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" id="info-popup-gallery">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+
+
+
+
+
+<!-- FOOD CARD POPUP-->
+<div class="modal fade"  id="food-cart-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header new-red">
+                <h2>my order</h2>
+                <span class="title-add total"></span>
+            </div>
+            <div class="box-frame new">
+                <!--SHOWING FOOD CAR DATA-->
+                <div class="wrap-col" id="food-cart-data"></div>
             </div>
             <div class="my-btn-holder">
-                <button onclick="addUserOrder();"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
+                <button data-dismiss="modal" onclick="OnOrderNowClicked()" type="button" class="btn-submit">ORDER NOW</button>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- RESTAURANT DETAIL POPUP -->
-    <div class="modal fade"  id="popup-info" role="dialog">
-        <div class="modal-dialog modal-md mypopup info">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="row no-gutters">
+<!-- CUSTOMER INFORMATION-->
+<div class="modal fade"  id="customer-info-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <span class="title-add"></span>
+                <ul class="header-links">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_profile01.png"></span>
+                        <h4>contact info</h4>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_checkin.png"></span>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt01.png"></span>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
+                    </li>
+                </ul>
+            </div>
 
-                    <!--INFO POPUP FIRST SECTION-->
-                    <div class="col-xs-12 first-col text-center" id="info-popup-header"></div>
-                    <div class="col-xs-12 second-col">
-
-                        <div class="add-row first">
-                            <span class="title title0">Contact Info</span>
-                            <div class="table" id="info-popup-contact"></div>
-                        </div>
-
-                        <div class="add-row first">
-                            <span class="title">Opening Hours</span>
-                            <!--RESTAURANT TIMINGS IN INFO POPUP-->
-                            <table class="table" id="info-popup-timing"></table>
-                        </div>
-
-                        <div class="add-row first">
-                            <span class="title title2">Delivery Fee</span>
-                            <!--RESTAURAT DELIVERY CHARGES IN INFO POPUP-->
-                            <table class="table" id="info-popup-delivery-fee"></table>
-                        </div>
-
-                        <div class="add-row first">
-                            <span class="title title3">Gallery</span>
-                            <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox" id="info-popup-gallery">
-
-                                </div>
+            <div class="box-frame new">
+                <div class="wrap-col">
+                    <div class="error-field" id="customer-name-field" >
+                        <div  class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="/m/en/img/ic_profile.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input id="customer-name" type="text" placeholder="Name of customer">
                             </div>
                         </div>
+                        <span class="error-span" id="name-error"></span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-    <!-- FOOD CARD POPUP-->
-    <div class="modal fade"  id="food-cart-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page order">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="popup-header new-red">
-                    <h2>my order</h2>
-                    <span class="title-add total"></span>
-                </div>
-                <div class="box-frame new">
-                    <!--SHOWING FOOD CAR DATA-->
-                    <div class="wrap-col" id="food-cart-data"></div>
-                </div>
-                <div class="my-btn-holder">
-                    <button data-dismiss="modal" onclick="OnOrderNowClicked()" type="button" class="btn-submit">ORDER NOW</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- CUSTOMER INFORMATION-->
-    <div class="modal fade"  id="customer-info-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page order">
-            <div class="modal-content">
-                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="popup-header red">
-                    <h2>ordering information</h2>
-                    <span class="title-add total"></span>
-                    <span class="title-add"></span>
-                    <ul class="header-links">
-                        <li class="active">
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_profile01.png"></span>
-                            <h4>contact info</h4>
-                        </li>
-                        <li>
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_checkin.png"></span>
-                        </li>
-                        <li>
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt01.png"></span>
-                        </li>
-                        <li>
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="box-frame new">
-                    <div class="wrap-col">
-                        <div class="error-field" id="customer-name-field" >
-                            <div  class="text-holder no-gutters">
-                                <div class="col-xs-2">
-                                    <img class="edit" src="/m/en/img/ic_profile.png">
-                                </div>
-                                <div class="col-xs-10">
-                                    <input id="customer-name" type="text" placeholder="Name of customer">
-                                </div>
+                    <div class="error-field" id="customer-email-field">
+                        <div class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit email" src="/m/en/img/ic_message.png">
                             </div>
-                            <span class="error-span" id="name-error"></span>
-                        </div>
-
-                        <div class="error-field" id="customer-email-field">
-                            <div class="text-holder no-gutters">
-                                <div class="col-xs-2">
-                                    <img class="edit email" src="/m/en/img/ic_message.png">
-                                </div>
-                                <div class="col-xs-10">
-                                    <input type="email" id="customer-email" placeholder="Email address">
-                                </div>
+                            <div class="col-xs-10">
+                                <input type="email" id="customer-email" placeholder="Email address">
                             </div>
-                            <span class="error-span" id="email-error"></span>
                         </div>
-
-                        <div class="error-field" id="customer-number-field">
-                            <div  class="text-holder no-gutters">
-                                <div class="col-xs-2">
-                                    <img class="edit my" src="/m/en/img/ic_phone.png">
-                                </div>
-                                <div class="col-xs-10">
-                                    <input type="text" id="customer-number" placeholder="Phone number">
-                                </div>
-                            </div>
-                            <span class="error-span" id="contact-error"></span>
-                        </div>
-
+                        <span class="error-span" id="email-error"></span>
                     </div>
+
+                    <div class="error-field" id="customer-number-field">
+                        <div  class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit my" src="/m/en/img/ic_phone.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" id="customer-number" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <span class="error-span" id="contact-error"></span>
+                    </div>
+
                 </div>
-                <div class="my-btn-holder">
-                    <button data-toggle="modal" onclick="validateCustomerInfo()" type="button" class="btn-submit">Delivery <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                </div>
+            </div>
+            <div class="my-btn-holder">
+                <button data-toggle="modal" onclick="validateCustomerInfo()" type="button" class="btn-submit">Delivery <i class="fa fa-angle-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!--DELIVERY INFORMATION POPUP -->
-    <div class="modal fade"  id="delivery-popup" role="dialog" style="height: 100%;">
-        <div class="modal-dialog modal-md menu-page order" style="height: 100%;">
-            <div class="modal-content" style="height: 100%;">
-                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="popup-header red">
-                    <h2>ordering information</h2>
-                    <span class="title-add total"></span>
-                    <span class="title-add"></span>
-                    <ul class="header-links add">
-                        <li class="active">
-                            <span class="img-box"><img class="edit" src="/m/en/img/loc.png"></span>
-                            <h4>Delivery</h4>
-                        </li>
-                        <li>
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt01.png"></span>
-                        </li>
-                        <li>
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
-                        </li>
+<!--DELIVERY INFORMATION POPUP -->
+<div class="modal fade"  id="delivery-popup" role="dialog" style="height: 100%;">
+    <div class="modal-dialog modal-md menu-page order" style="height: 100%;">
+        <div class="modal-content" style="height: 100%;">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <span class="title-add"></span>
+                <ul class="header-links add">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/loc.png"></span>
+                        <h4>Delivery</h4>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt01.png"></span>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
+                    </li>
 
-                    </ul>
-                </div>
-                <div class="box-frame new delivery">
-                    <div class="wrap-col">
-                        <div class="title-txt">
-                            <p>Delivery services will be available from 12:00. You will receive your order in about 60 minutes.</p>
-                        </div>
-                        <div class="slide-holder">
-                            <ul class="checkbox-list">
-                                <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span id="address-text"></span></label></li>
-                                <li> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> Delivery <span>Complete your details</span></label></li>
-                            </ul>
+                </ul>
+            </div>
+            <div class="box-frame new delivery">
+                <div class="wrap-col">
+                    <div class="title-txt">
+                        <p>Delivery services will be available from 12:00. You will receive your order in about 60 minutes.</p>
+                    </div>
+                    <div class="slide-holder">
+                        <ul class="checkbox-list">
+                            <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span id="address-text"></span></label></li>
+                            <li> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> Delivery <span>Complete your details</span></label></li>
+                        </ul>
+                        <form>
                             <div class="show-box" id="delivery-info" style="display: none">
                                 <div class="row no-gutters margin">
                                     <div class="col-xs-5">
@@ -413,7 +724,7 @@
                                                     <img class="edit" src="/m/en/img/ic_home.png">
                                                 </div>
                                                 <div class="col-xs-8">
-                                                    <input id="appt_no" type="text" placeholder="Apt. No.">
+                                                    <input id="appt_no" type="text" placeholder="Please enter Apt no and street address">
                                                 </div>
                                             </div>
                                             <span id="error-apt" class="error-span"></span>
@@ -426,7 +737,7 @@
                                                     <img class="edit edit1" src="/m/en/img/ic_checkin.png">
                                                 </div>
                                                 <div class="col-xs-9">
-                                                    <input id="address" type="text">
+                                                    <input id="address" placeholder="Additional Details, Floor no. entrance etc..." type="text">
                                                 </div>
                                             </div>
                                             <span id="error-address" class="error-span"></span>
@@ -445,257 +756,258 @@
                                     <span id="error-area" class="error-span"></span>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
+            </div>
 
-                <div class="my-btn-holder">
-                    <button data-toggle="modal" data-target="#customer-info-popup" data-dismiss="modal" type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
-                    <button onclick="deliveryAddress()" type="button" class="btn-summary">Summary <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                </div>
+            <div class="my-btn-holder">
+                <button data-toggle="modal" data-target="#customer-info-popup" data-dismiss="modal" type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button onclick="deliveryAddress()" type="button" class="btn-summary">Summary <i class="fa fa-angle-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- ORDER SUMMARY POPUP -->
-    <div class="modal fade"  id="summary-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page order">
-            <div class="modal-content">
-                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="popup-header red">
-                    <h2>ordering information</h2>
-                    <span class="title-add total"></span>
-                    <ul class="header-links add">
-                        <li class="active">
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt.png"></span>
-                            <h4>Summary</h4>
-                        </li>
-                        <li>
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
-                        </li>
+<!-- ORDER SUMMARY POPUP -->
+<div class="modal fade"  id="summary-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <ul class="header-links add">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt.png"></span>
+                        <h4>Summary</h4>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
+                    </li>
 
-                    </ul>
-                </div>
-                <div class="box-frame new summary">
-                    <div class="wrap-col">
+                </ul>
+            </div>
+            <div class="box-frame new summary">
+                <div class="wrap-col">
 
 
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="minimum-item add">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3>SubTotal</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span id="totalWithoutDiscount" class="nis"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="minimum-item" id="delivery-fee-parent">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3>Delivery</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span id="delivery-fee" class="nis"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="minimum-item" id="coupon-fee-parent">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3 id="coupon_detail">Coupon Code</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span id="coupon-fee" class="nis"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="minimum-item add1">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3>Total</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span  class="nis total"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-txt">
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="minimum-item add">
-                                    <div class="row no-gutters">
-                                        <div class="col-xs-6">
-                                            <h3>SubTotal</h3>
+                                <label id="sr-label" class="new-label">Special Requests</label>
+                            </div>
+                            <div id="sr" class="show-text">
+                                <div class="col-xs-12">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-2">
+                                            <img class="edit add" src="/m/en/img/ic_edit.png">
                                         </div>
-                                        <div class="col-xs-6">
-                                            <span id="totalWithoutDiscount" class="nis"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="minimum-item" id="delivery-fee-parent">
-                                    <div class="row no-gutters">
-                                        <div class="col-xs-6">
-                                            <h3>Delivery</h3>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <span id="delivery-fee" class="nis"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="minimum-item" id="coupon-fee-parent">
-                                    <div class="row no-gutters">
-                                        <div class="col-xs-6">
-                                            <h3 id="coupon_detail">Coupon Code</h3>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <span id="coupon-fee" class="nis"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="minimum-item add1">
-                                    <div class="row no-gutters">
-                                        <div class="col-xs-6">
-                                            <h3>Total</h3>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <span  class="nis total"></span>
+                                        <div class="col-xs-10">
+                                            <textarea id="specialRequestText" placeholder="Type here"></textarea>
+                                            <img class="resize" src="/m/en/img/Path 2.png">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="add-txt">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <label id="sr-label" class="new-label">Special Requests</label>
-                                </div>
-                                <div id="sr" class="show-text">
-                                    <div class="col-xs-12">
-                                        <div class="text-holder row no-gutters">
-                                            <div class="col-xs-2">
-                                                <img class="edit add" src="/m/en/img/ic_edit.png">
-                                            </div>
-                                            <div class="col-xs-10">
-                                                <textarea id="specialRequestText" placeholder="Type here"></textarea>
-                                                <img class="resize" src="/m/en/img/Path 2.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="row" id="coupon_parent">
+                            <div class="col-xs-12">
+                                <label id="cc-label" class="new-label">Use Coupon</label>
                             </div>
-                            <div class="row" id="coupon_parent">
-                                <div class="col-xs-12">
-                                    <label id="cc-label" class="new-label">Use Coupon</label>
-                                </div>
-                                <div id="coupon" class="show-text">
-                                    <div  class="col-xs-12">
-                                        <div class="text-holder error row no-gutters">
-                                            <div class="col-xs-10">
-                                                <input id="coupon-txt" class="add-box" type="text" placeholder="Coupon No.">
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <img  onclick="submitCoupon()" class="img-button" src="/m/en/img/arrow-btn.png">
-                                            </div>
+                            <div id="coupon" class="show-text">
+                                <div  class="col-xs-12">
+                                    <div class="text-holder error row no-gutters">
+                                        <div class="col-xs-10">
+                                            <input id="coupon-txt" class="add-box" type="text" placeholder="Coupon No.">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <img  onclick="submitCoupon()" class="img-button" src="/m/en/img/arrow-btn.png">
                                         </div>
                                     </div>
-                                    <div class="col-xs-12">
-                                        <span id="error-coupon" class="error-coupon"></span>
-                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <span id="error-coupon" class="error-coupon"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="my-btn-holder">
-                    <button  data-toggle="modal" data-target="#delivery-popup" data-dismiss="modal"   type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
-                    <button onclick="submit_summary()" type="button" class="btn-summary">Payment <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                </div>
+            </div>
+            <div class="my-btn-holder">
+                <button  data-toggle="modal" data-target="#delivery-popup" data-dismiss="modal"   type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button onclick="submit_summary()" type="button" class="btn-summary">Payment <i class="fa fa-angle-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- PAYMENT POPUP -->
-    <div class="modal fade"  id="payment-popup" role="dialog">
-        <div class="modal-dialog modal-md menu-page order">
-            <div class="modal-content">
-                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="popup-header red">
-                    <h2>ordering information</h2>
-                    <span class="title-add total"></span>
-                    <span class="title-add"></span>
-                    <ul class="header-links add">
-                        <li class="active">
-                            <span class="img-box"><img class="edit" src="/m/en/img/ic_cart-02.png"></span>
-                            <h4>Payment</h4>
+<!-- PAYMENT POPUP -->
+<div class="modal fade"  id="payment-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <span class="title-add"></span>
+                <ul class="header-links add">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart-02.png"></span>
+                        <h4>Payment</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="box-frame new payment">
+                <div class="wrap-col">
+                    <ul class="card-columns">
+                        <li id="cashBtn" class="active">
+                            <div  class="card-box image" onclick="selectCash()">
+                                <div class="card-col">
+                                    <span>Cash</span>
+                                    <img src="/m/en/img/card-img.png">
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ccBtn">
+                            <div  class="card-box" onclick="selectCC()">
+                                <div class="card-col">
+                                    <span>Credit card</span>
+                                    <img src="/m/en/img/card-images.png">
+                                </div>
+                            </div>
                         </li>
                     </ul>
-                </div>
-                <div class="box-frame new payment">
-                    <div class="wrap-col">
-                        <ul class="card-columns">
-                            <li id="cashBtn" class="active">
-                                <div  class="card-box image" onclick="selectCash()">
-                                    <div class="card-col">
-                                        <span>Cash</span>
-                                        <img src="/m/en/img/card-img.png">
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="ccBtn">
-                                <div  class="card-box" onclick="selectCC()">
-                                    <div class="card-col">
-                                        <span>Credit card</span>
-                                        <img src="/m/en/img/card-images.png">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="txt-frame">
-                            <div class="show-box" id="show_credit_card">
+                    <div class="txt-frame">
+                        <div class="show-box" id="show_credit_card">
 
-                                <form name="payment-form" id="payment-form" style="height:100%" method="POST">
-                                    <div class="error-field">
-                                        <div class="text-holder row no-gutters">
-                                            <div class="col-xs-12">
-                                                <input  id="user_name" type="text" placeholder="Name on card">
-                                            </div>
+                            <form name="payment-form" id="payment-form" style="height:100%" method="POST">
+                                <div class="error-field">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-12">
+                                            <input  id="user_name" type="text" placeholder="Name on card">
                                         </div>
-                                        <span class="error-span">error in field</span>
                                     </div>
-                                    <div class="error-field" id="error-card">
-                                        <div class="text-holder row no-gutters">
-                                            <div class="col-xs-12">
-                                                <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" type="text" placeholder="Card Number">
-                                            </div>
+                                    <span class="error-span">error in field</span>
+                                </div>
+                                <div class="error-field" id="error-card">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-12">
+                                            <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" type="text" placeholder="Card Number">
                                         </div>
-                                        <span class="error-span" id="error-card-no">error in field</span>
                                     </div>
-                                    <div class="error-field">
-                                        <div class="row no-gutters">
-                                            <div class="col-xs-7">
-                                                <div class="text-holder add row no-gutters col">
-                                                    <div class="col-xs-2">
-                                                        <img class="edit add2" src="/m/en/img/ic_calender.png">
-                                                    </div>
-                                                    <div class="col-xs-10">
-                                                        <div class="row no-gutters">
-                                                            <div class="col-xs-5">
-                                                                <input class="left-field" placeholder="MM" id="month" type="text" size="2" data-stripe="exp_month">
-                                                            </div>
-                                                            <div class="col-xs-1">
-                                                                <span class="devider"> / </span>
-                                                            </div>
-                                                            <div class="col-xs-5">
-                                                                <input class="right-field" placeholder="YY" maxlength="2" id="year" type="text" size="2" data-stripe="exp_year">
-                                                            </div>
+                                    <span class="error-span" id="error-card-no">error in field</span>
+                                </div>
+                                <div class="error-field">
+                                    <div class="row no-gutters">
+                                        <div class="col-xs-7">
+                                            <div class="text-holder add row no-gutters col">
+                                                <div class="col-xs-2">
+                                                    <img class="edit add2" src="/m/en/img/ic_calender.png">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-xs-5">
+                                                            <input class="left-field" placeholder="MM" id="month" type="text" size="2" data-stripe="exp_month">
+                                                        </div>
+                                                        <div class="col-xs-1">
+                                                            <span class="devider"> / </span>
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            <input class="right-field" placeholder="YY" maxlength="2" id="year" type="text" size="2" data-stripe="exp_year">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <span class="error-span" id="error-month">error in field</span>
                                             </div>
-                                            <div class="col-xs-5">
-                                                <div class="text-holder row no-gutters">
-                                                    <div class="col-xs-4">
-                                                        <img class="edit add3" src="/m/en/img/cvs-icon.png">
-                                                    </div>
-                                                    <div class="col-xs-8">
-                                                        <input type="text" id="cvv" placeholder="cvv" size="4" data-stripe="cvc">
-                                                    </div>
+                                            <span class="error-span" id="error-month">error in field</span>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <div class="text-holder row no-gutters">
+                                                <div class="col-xs-4">
+                                                    <img class="edit add3" src="/m/en/img/cvs-icon.png">
                                                 </div>
-                                                <span id="cvv-error" class="error-span">error in field</span>
+                                                <div class="col-xs-8">
+                                                    <input type="text" id="cvv" placeholder="cvv" size="4" data-stripe="cvc">
+                                                </div>
                                             </div>
+                                            <span id="cvv-error" class="error-span">error in field</span>
                                         </div>
                                     </div>
+                                </div>
 
 
-                                    <span style="color: red;font-size: 15px;" class="payment-errors"></span>
+                                <span style="color: red;font-size: 15px;" class="payment-errors"></span>
 
-                                    <div class="form-row" style="display: none">
-                                        <label>
-                                            <span>Billing ZIP Code</span>
-                                            <input type="text" size="6" data-stripe="address_zip" value="5">
-                                        </label>
-                                    </div>
+                                <div class="form-row" style="display: none">
+                                    <label>
+                                        <span>Billing ZIP Code</span>
+                                        <input type="text" size="6" data-stripe="address_zip" value="5">
+                                    </label>
+                                </div>
 
-                                </form>
+                            </form>
 
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="my-btn-holder">
-                    <button  data-toggle="modal" data-target="#summary-popup" data-dismiss="modal"  type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
-                    <button type="button" class="btn-summary" onclick="processPayment()">place order <i class="fa fa-angle-right" aria-hidden="true"></i></button>
-                </div>
+            </div>
+            <div class="my-btn-holder">
+                <button  data-toggle="modal" data-target="#summary-popup" data-dismiss="modal"  type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button type="button" class="btn-summary" onclick="processPayment()">place order <i class="fa fa-angle-right" aria-hidden="true"></i></button>
             </div>
         </div>
     </div>
+</div>
 
 
 </div>
@@ -761,7 +1073,7 @@
 
     $(document).ready(function() {
 
-
+       
         $("#payment-form").submit(function(e){
 
 

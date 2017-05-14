@@ -114,34 +114,23 @@ a:hover, a:focus {
 	position:absolute;
 	top:40px;
 	right:40px;
-	z-index: 999;
+	z-index: 9999999;
 }
 #nav ul{
-	padding:0 8px 0 20px;
+	padding:0;
 	margin:0;
 	list-style:none;
+	overflow:hidden;
+	font-family: 'HelveticaNeue';
 	font-size: 16px;
 	line-height:19px;
 	font-weight: 300;
 	text-align:left;
-	display: inline-block;
-	vertical-align: top;
-	border-left: 1px solid #fff;
-}
-#nav ul:first-child{border: none;}
-#nav ul:after{
-	display: block;
-	content: "";
-	clear: both;
 }
 #nav ul li{
 	display:inline-block;
 	vertical-align:middle;
-	padding:0 10px;
-	position: relative;
-}
-#nav ul:first-child li{
-	padding: 5px 10px 0;
+	padding:0 10px 0 0;
 }
 #nav ul li a{
 	display:block;
@@ -151,17 +140,6 @@ a:hover, a:focus {
 	padding:5px;
 	border-radius:4px;
 	border:1px solid #fff;
-}
-#header  #loginBtnText{
-	display:inline-block;
-	vertical-align: middle;
-	max-width:180px;
-	white-space: nowrap;
-	overflow:hidden !important;
-	text-overflow: ellipsis;
-	font-size: 16px;
-	line-height:19px;
-	font-weight: 300;
 }
 
 .blur-class {
@@ -1064,16 +1042,17 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 .error .custom-drop-down{border-color:#ff3838;}
 
 
+ login css
 .icon-user{
-	width: 20px;
-	margin: -5px 8px 0 0;
+	width: 25px;
+	margin: 0 5px;
 }
 
 .dropdown-nav{
 	padding: 20px;
 	position: absolute;
-	top:52px;
-	left: -100px;
+	top:100%;
+	left: -160px;
 	width: 330px;
 	border-radius: 18px;
 	font-family: 'Open Sans';
@@ -1083,18 +1062,6 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	color: #797979;
 	background-color: #f5f5f5;
 	box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.38);
-}
-.dropdown-nav:before{
-	width: 0;
-	height: 0;
-	border-width: 0 14px 22px 14px;
-	border-color: transparent transparent #F5F5F5 transparent;
-	border-style: solid;
-	position: absolute;
-	top: 0;
-	left: 50%;
-	margin: -22px 0 0 -14px;
-	content: "";
 }
 .dropdown-nav h2{
 	font-size: 33px;
@@ -1109,15 +1076,15 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 #nav .dropdown-nav p a{
 	color: #506ce5;
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 }
 .line{
 	display:block;
 	color:#9ea5ad;
-	font-size:16px;
-	line-height:20px;
+	font-size:20px;
+	line-height:38px;
 	text-transform:uppercase;
-	padding:21px 0;
+	padding:30px 0 10px;
 	position:relative;
 }
 .line:before,
@@ -1129,91 +1096,29 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	top:50%;
 	left:0;
 	background:#ccc;
-	margin:0;
+	margin:12px 0 0;
 }
 .line:after {
 	left:auto;
 	right:0;
 }
-.btn-holder{
-	overflow: hidden;
-}
-.btn-google,
 .btn-facebook{
-	width:100%;
-	height:45px;
-	float: none;
+	width:280px;
+	height:50px;
 	display:block;
-	margin:0 auto 9px;
-	background:#3b5998;
+	margin:0 auto;
+	background:#2a427b;
 	padding:10px 12px;
 	text-align:center;
 	font-size:18px;
 	line-height:28px;
 	font-weight:400;
 	color:#fff;
-	border:1px solid #3b5998;
-	border-radius:8px !important;
-	transition: all 1s;
+	border:1px solid #2a427b;
+	border-radius:3px;
 }
-.btn-google:hover,
 .btn-facebook:hover{
-	color:#3b5998;
-	background:#f5f5f5;
+	color:#2a427b;
+	background:#fff;
 	text-decoration:none;
 }
-.btn-google{
-	background:#dc4e41;
-	border-color: #dc4e41;
-	margin-left:0;
-}
-.btn-google:hover{
-	color: #dc4e41;
-}
-#nav .dropdown-nav .login-email{margin: 0 0 21px;}
-#nav .dropdown-nav .login-guest,
-#nav .dropdown-nav .login-email{
-	color: #506ce5;
-	display: block;
-}
-#nav .dropdown-nav .login-guest:hover,
-#nav .dropdown-nav .login-email:hover{color:#ff7f00;}
-
-.form-control{
-	height: 35px;
-	margin: 0 auto 9px;
-}
-.form-control.add{margin: 0 auto 12px;}
-.form-control.add1{margin: 0 auto 14px;}
-.btn-login{
-	width:190px;
-	height:45px;
-	float: none;
-	display:block;
-	margin:0 auto 9px;
-	background-image: linear-gradient(to right, #ff7f00, #fead5d);
-	padding:10px 12px;
-	text-align:center;
-	font-size:16px;
-	line-height:22px;
-	font-weight:400;
-	color:#fff;
-	border-radius:8px !important;
-	transition: all 1s;
-}
-.btn-login:hover{
-	color: #fff;
-	background-image: linear-gradient(to right, #fead5d, #ff7f00);
-}
-.welcom-popup{
-	overflow: hidden;
-}
-.welcom-popup h3{
-	font-size: 24px;
-	line-height: 27px;
-	color: #000;
-	margin: 0 0 28px;
-}
-.signin{display: none;}
-.login-section .btn-login{margin:0 auto 33px;}
-.re-enter .btn-login{margin:0 auto 19px;}

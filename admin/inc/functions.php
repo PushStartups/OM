@@ -113,7 +113,7 @@ function getPaymentMethod($order_id)
     $payment                =  DB::queryFirstRow("select * from user_orders where id = '$order_id' ");
     $payment_info           =  $payment['payment_method'];
     $total                  =  $payment['total'];
-    $transaction_id         =  $payment['transaction_id '];
+    $transaction_id         =  $payment['transaction_id'];
     $order_date             =  $payment['order_date'];
 
     return array('payment_info' => $payment_info, 'total' => $total, 'transaction_id' => $transaction_id, 'order_date' => $order_date );

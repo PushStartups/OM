@@ -28,6 +28,7 @@ $(document).ready(function() {
         'language': 'en',                  // USER LANGAGUE ENGLISH
         'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
+        'pickup_hide': false,              // IS PICK UP OPTION HIDE
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
         'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
         'name': "",                        // USER NAME
@@ -88,6 +89,7 @@ function  getAllRestaurants(response)
     for(var x=0 ;x <result.length;x++)
     {
         var isShow = false;
+
 
         if((!$('#cb_milky').is(":checked")) && (!$('#cb_meat').is(":checked")) &&  (!$('#cb_health').is(":checked")) &&  (!$('#cb_pizzeria').is(":checked")) && (!$('#cb_hamburger').is(":checked"))
         && (!$('#cb_sushi').is(":checked")) && (!$('#cb_mehadrin').is(":checked")) )
@@ -200,7 +202,7 @@ function  getAllRestaurants(response)
             }
 
             // RESTAURANT CURRENTLY ACTIVE
-            if (result[x].availability || window.location.hostname == "dev.orderapp.com")
+            if (result[x].availability || window.location.hostname == "dev.orderapp.com") //(result[x].availability)
             {
 
                 temp +=
@@ -448,6 +450,12 @@ function order_now(clickedRestId) {
     userObject.restaurantTitle     = allRestJson[clickedRestId].name_en;
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
     userObject.restaurantAddress   = allRestJson[clickedRestId].address_en;
+
+    if(parseInt(allRestJson[clickedRestId].pickup_hide) == 1) {
+
+        userObject.pickup_hide = true;
+
+    }
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 

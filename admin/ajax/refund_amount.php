@@ -40,10 +40,6 @@ $poststring.='&int_in=<ashrait>
 </ashrait>';
 
 
-
-
-
-
 //init curl connection
 if( function_exists( "curl_init" )) {
     $CR = curl_init();
@@ -88,12 +84,6 @@ if( function_exists( "curl_init" )) {
                 ));
                 $success = 1;
 
-
-            }
-            else if($str == "321")
-            {
-                echo json_encode("The credit amount is different than the charge deal amount");
-                $success = 321;
 
             }
             else{

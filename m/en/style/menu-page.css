@@ -496,6 +496,7 @@ a:hover, a:focus {
 	z-index: 9999;
 	border-radius: 3px;
 }
+.login-popup .close.black,
 .order .close.black{
 	color: #000;
 	font-size: 8vh;
@@ -510,6 +511,7 @@ a:hover, a:focus {
 	height: 88vh;
 	height: calc(100% - 12px);
 }
+.login-popup .close,
 .order .close{
 	top:5px;
 	left: 15px;
@@ -518,7 +520,11 @@ a:hover, a:focus {
 	line-height: 5vh;
 }
 .order.small .close{top:10px;}
-
+.login-popup .close{
+	color: #000;
+	font-size: 7vh;
+	line-height: 7vh;
+}
 /* get style from old popup */
 .no-gutters {
 	margin-right: 0;
@@ -1895,4 +1901,162 @@ and (max-device-width: 412px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
 	.order .header-links li{padding: 0 9vw 0 7vw;}
+}
+.top-list .add-user{
+	width: 15pt !important;
+}
+
+/* login style */
+.welcom-popup,
+.login-form{
+	padding: 5vh 5vh 3vh;
+	text-align: center;
+	color: #797979;
+	height: 96vh;
+	position: relative;
+}
+.login-popup h2{
+	font-size: 33px;
+	color: #000;
+	margin: 0 0 10px;
+}
+.login-popup p{
+	margin: 0 0 15px;
+	font-size: 16px;
+	line-height: 19px;
+}
+.login-popup p a{
+	color: #506ce5;
+	display: inline-block;
+	vertical-align: middle;
+}
+.line{
+	display:block;
+	color:#9ea5ad;
+	font-size:20px;
+	line-height:38px;
+	text-transform:uppercase;
+	padding:0 0 6px;
+	position:relative;
+}
+.line:before,
+.line:after {
+	width:42%;
+	height:1px;
+	content:"";
+	position:absolute;
+	top:50%;
+	left:0;
+	background:#ccc;
+	margin:-4px 0 0;
+}
+.line:after {
+	left:auto;
+	right:0;
+}
+.btn-holder{
+	overflow: hidden;
+}
+.btn-google,
+.btn-facebook{
+	width:100%;
+	height:45px;
+	float: none;
+	display:block;
+	margin:0 auto 9px;
+	background:#3b5998;
+	padding:10px 12px;
+	text-align:center;
+	font-size:18px;
+	line-height:22px;
+	font-weight:400;
+	color:#fff;
+	border:1px solid #3b5998;
+	border-radius:8px !important;
+	transition: all 1s;
+}
+.btn-google:hover,
+.btn-facebook:hover{
+	color:#3b5998;
+	background:#f5f5f5;
+	text-decoration:none;
+}
+.btn-google{
+	background:#dc4e41;
+	border-color: #dc4e41;
+	margin-left:0;
+}
+.btn-google:hover{
+	color: #dc4e41;
+}
+.login-popup .login-email{margin: 0 0 21px;}
+.login-popup .login-guest,
+.login-popup .login-email{
+	color: #506ce5;
+	display: block;
+	text-decoration: underline;
+}
+.login-popup .login-guest:hover,
+.login-popup .login-email:hover{color:#ff7f00;}
+.login-popup .login-guest{
+	position: absolute;
+	left: 0;
+	right:0;
+	bottom: 4vh;
+}
+
+.form-control{
+	height: 35px;
+	margin: 0 auto 9px;
+}
+.form-control.add{margin: 0 auto 12px;}
+.form-control.add1{margin: 0 auto 14px;}
+.btn-login{
+	width:190px;
+	height:45px;
+	float: none;
+	display:block;
+	margin:0 auto 9px;
+	background-image: linear-gradient(to right, #ff7f00, #fead5d);
+	padding:10px 12px;
+	text-align:center;
+	font-size:16px;
+	line-height:22px;
+	font-weight:400;
+	color:#fff;
+	border-radius:8px !important;
+	transition: all 1s;
+}
+.btn-login:hover{
+	color: #fff;
+	background-image: linear-gradient(to right, #fead5d, #ff7f00);
+}
+.welcom-popup{
+	overflow: hidden;
+}
+.welcom-popup h3{
+	font-size: 24px;
+	line-height: 27px;
+	color: #000;
+	margin: 0 0 28px;
+	text-align: center;
+}
+.signin{display: none;}
+.login-section .btn-login{margin:0 auto 33px;}
+.re-enter .btn-login{margin:0 auto 19px;}
+
+.user-img{
+	width:100pt;
+	height:100pt;
+	margin: 40px auto;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+	text-align: center;
+	line-height: 100pt;
+	display: block;
+	background: #f2f2f2;
+}
+.user-img img{
+	width: 50px;
 }

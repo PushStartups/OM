@@ -13,7 +13,7 @@ try {
     var_dump($output);
     var_dump($return_var);
 
-    $result = exec('mysql -h orderappdev.crv4lzhgi1gx.eu-central-1.rds.amazonaws.com -P 3306 -u root --password=orderapp  orderapp < /var/www/html/db_backups/' . $name . '.sql', $output, $return_var);
+    $result = exec('mysql -h production-orderapp.crv4lzhgi1gx.eu-central-1.rds.amazonaws.com -P 3306 -u root --password=orderapp  orderapp < /var/www/html/db_backups/' . $name . '.sql', $output, $return_var);
 
     var_dump($output);
     var_dump($return_var);

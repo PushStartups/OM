@@ -21,6 +21,8 @@
 
     <script type="text/javascript" src="/m/he/script/isMobileRedirect.js"></script>
     <script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=he&libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -97,6 +99,7 @@
             $('body').css("overflow","hidden");
         }
 
+       
     });
 
 
@@ -400,47 +403,49 @@
                                 <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> איסוף עצמי מהמסעדה <span>שדרות יגאל אלון 6, בית שמ</span></label></li>
                                 <li> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> משלוח <span>הזן את פרטי הכתובת למשלוח</span></label></li>
                             </ul>
-                            <div class="show-box" id="delivery-info" style="display: none">
-                                <div class="row no-gutters margin">
-                                    <div class="col-xs-5">
-                                        <div id="apt-parent">
-                                            <div class="text-holder row no-gutters">
-                                                <div class="col-xs-8">
-                                                    <input id="appt_no" type="text" placeholder="דירה מס '">
+                            <form>
+                                <div class="show-box" id="delivery-info" style="display: none">
+                                    <div class="row no-gutters margin">
+                                        <div class="col-xs-5">
+                                            <div id="apt-parent">
+                                                <div class="text-holder row no-gutters">
+                                                    <div class="col-xs-8">
+                                                        <input id="appt_no" type="text" placeholder="נא להזין כתובת לא וכתובת רחוב">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <img class="edit" src="/m/he/img/ic_home.png">
+                                                    </div>
                                                 </div>
-                                                <div class="col-xs-4">
-                                                    <img class="edit" src="/m/he/img/ic_home.png">
-                                                </div>
+                                                <span id="error-apt" class="error-span"></span>
                                             </div>
-                                            <span id="error-apt" class="error-span"></span>
+                                        </div>
+                                        <div class="col-xs-7">
+                                            <div id="address-parent">
+                                                <div class="text-holder row no-gutters">
+                                                    <div class="col-xs-9">
+                                                        <input  id="address" placeholder="פרטים נוספים, קומה מס ' וכו 'הכניסה ..." type="text">
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <img class="edit edit1" src="/m/he/img/ic_checkin.png">
+                                                    </div>
+                                                </div>
+                                                <span id="error-address" class="error-span"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-7">
-                                        <div id="address-parent">
-                                            <div class="text-holder row no-gutters">
-                                                <div class="col-xs-9">
-                                                    <input  id="address" type="text">
-                                                </div>
-                                                <div class="col-xs-3">
-                                                    <img class="edit edit1" src="/m/he/img/ic_checkin.png">
+                                    <div id="area_parent">
+                                        <div class="text-holder row no-gutters">
+                                            <div class="col-xs-12">
+                                                <div class="custom-select">
+                                                    <select id="delivery-areas">
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <span id="error-address" class="error-span"></span>
                                         </div>
+                                        <span id="error-area" class="error-span"></span>
                                     </div>
                                 </div>
-                                <div id="area_parent">
-                                    <div class="text-holder row no-gutters">
-                                        <div class="col-xs-12">
-                                            <div class="custom-select">
-                                                <select id="delivery-areas">
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span id="error-area" class="error-span"></span>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
