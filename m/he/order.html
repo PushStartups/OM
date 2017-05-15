@@ -37,7 +37,19 @@
         ga('send', 'pageview');
 
     </script>
+    <style>
+        /*.pac-container {*/
+        /*z-index: 10000 !important;*/
+        /*}*/
+        .pac-container {
+            background-color: #FFF;
+            z-index: 999999;
+            position: fixed;
+            display: inline-block;
+            float: left;
+        }
 
+    </style>
     <!-- End Google Analytics -->
     <!-- Facebook Pixel Code -->
     <script>
@@ -406,26 +418,28 @@
                             <form>
                                 <div class="show-box" id="delivery-info" style="display: none">
                                     <div class="row no-gutters margin">
-                                        <div class="col-xs-5">
+                                        <div class="col-xs-12">
                                             <div id="apt-parent">
                                                 <div class="text-holder row no-gutters">
-                                                    <div class="col-xs-8">
+                                                    <div class="col-xs-10">
                                                         <input id="appt_no" type="text" placeholder="נא להזין כתובת לא וכתובת רחוב">
                                                     </div>
-                                                    <div class="col-xs-4">
+                                                    <div class="col-xs-2">
                                                         <img class="edit" src="/m/he/img/ic_home.png">
                                                     </div>
                                                 </div>
                                                 <span id="error-apt" class="error-span"></span>
                                             </div>
                                         </div>
-                                        <div class="col-xs-7">
+                                    </div>
+                                    <div class="row no-gutters margin">
+                                        <div class="col-xs-12">
                                             <div id="address-parent">
                                                 <div class="text-holder row no-gutters">
-                                                    <div class="col-xs-9">
+                                                    <div class="col-xs-10">
                                                         <input  id="address" placeholder="פרטים נוספים, קומה מס ' וכו 'הכניסה ..." type="text">
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-xs-2">
                                                         <img class="edit edit1" src="/m/he/img/ic_checkin.png">
                                                     </div>
                                                 </div>
@@ -787,6 +801,12 @@
         $("#mycarousel").swipeleft(function () {
             $(this).carousel('next');
         });
+
+        $("#appt_no").geocomplete({
+                    details: "form",
+                    types: ["geocode", "establishment"],
+                }
+        );
 
 
     });

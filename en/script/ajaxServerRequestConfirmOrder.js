@@ -395,13 +395,13 @@ function deliveryAddress()
     }
     else
     {
-        if($("#appt-no").val() == "")
-        {
-            $("#appt-no").addClass("error");
-            $("#error-appt-no").html('*Required Field');
-            $("#error-appt-no").show();
-            return;
-        }
+        // if($("#appt-no").val() == "")
+        // {
+        //     $("#appt-no").addClass("error");
+        //     $("#error-appt-no").html('*Required Field');
+        //     $("#error-appt-no").show();
+        //     return;
+        // }
 
 
         if($("#address").val() == "")

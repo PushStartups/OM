@@ -400,7 +400,7 @@ function openDiscount(index) {
 
     for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
     {
-        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_en +' : Fee '+ allRestJson[index].delivery_fee[i].fee +' NIS</p>';
+        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_en +' : '+ allRestJson[index].delivery_fee[i].fee +' NIS</p>';
     }
 
     $("#discount-pop").html(temp);

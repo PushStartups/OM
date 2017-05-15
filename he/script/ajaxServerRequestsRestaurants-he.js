@@ -541,7 +541,7 @@ function openDiscount(index) {
 
     for (i = 0; i < allRestJson[index].delivery_fee.length; i++)
     {
-        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_he +' : דמי משלוח '+ allRestJson[index].delivery_fee[i].fee +' ש"ח</p>';
+        temp += '<p>'+ allRestJson[index].delivery_fee[i].area_he +' : '+ allRestJson[index].delivery_fee[i].fee +' ש"ח</p>';
 
     }
 
