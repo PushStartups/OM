@@ -277,7 +277,6 @@ function onItemSelected (x,y)
     multipleTypeSubItems  = [];                       // REINITIALIZE ALL SUB ITEMS SELECTED BY USER TYPE MULTIPLE (MULTIPLE SELECTION)
     itemPrice             = result.categories_items[currentCategoryId].items[currentItemIndex].price;
 
-
     $('#special_request').val("");
 
 
@@ -426,6 +425,7 @@ function onItemSelectedCallBack(response)
             if(extras.extra_with_subitems[x].subitems.length != 0)
             {
                 var multiTypeItemSet = [];
+
                 // SUB ITEMS WITH MULTIPLE SELECTABLE OPTIONS
 
                 multipleTypeStr += '<div class="add-row">' +
@@ -438,14 +438,14 @@ function onItemSelectedCallBack(response)
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_en.capitalize() + '</label></li>';
                     }
@@ -456,8 +456,10 @@ function onItemSelectedCallBack(response)
                     // UPDATE VALUE FROM CHECK BOX SELECTION
                     var subItem = {};
                     subItem[extras.extra_with_subitems[x].subitems[y].name_en] = null;
-                    multipleTypeSubItems.push(subItem);
+                    multiTypeItemSet.push(subItem);
                 }
+
+                multipleTypeSubItems.push(multiTypeItemSet);
 
                 multipleTypeStr += '</ul>';
                 multipleTypeStr += '</div>';
@@ -546,7 +548,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
             }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
-            multipleTypeSubItems[index][name] = subItem;
+            multipleTypeSubItems[extraIndex][index][name] = subItem;
 
 
         }
@@ -554,11 +556,11 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
             var countSelectedItems = 0;
 
-            for(var x =0;x<multipleTypeSubItems.length;x++)
+            for(var x =0;x<multipleTypeSubItems[extraIndex].length;x++)
             {
-                for (var key in multipleTypeSubItems[x]) {
+                for (var key in multipleTypeSubItems[extraIndex][x]) {
 
-                    if (multipleTypeSubItems[x][key] != null && multipleTypeSubItems[x][key] != undefined) {
+                    if (multipleTypeSubItems[extraIndex][x][key] != null && multipleTypeSubItems[extraIndex][x][key] != undefined) {
                         countSelectedItems++;
                     }
                 }
@@ -583,6 +585,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
                     container.animate({
 
                         scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+
                     },500)
 
                 }, 300);
@@ -601,7 +604,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
                 }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
-                multipleTypeSubItems[index][name] = subItem;
+                multipleTypeSubItems[extraIndex][index][name] = subItem;
 
             }
         }
@@ -612,8 +615,9 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     else
     {
-        multipleTypeSubItems[index][name] = null;
-
+        multipleTypeSubItems[extraIndex][index][name] = null;
+        var errorId = "#error-"+extraIndex;
+        $(errorId).html('');
     }
 
 
@@ -650,19 +654,21 @@ function updatedSelectedItemPrice() {
 
     for (var y = 0; y <  multipleTypeSubItems.length; y++) {
 
-        for (var key in  multipleTypeSubItems[y]) {
+        for (var t = 0; t <  multipleTypeSubItems[y].length; t++) {
 
-            if ( multipleTypeSubItems[y][key] != null) {
+            for (var key in  multipleTypeSubItems[y][t]) {
 
-                if (convertFloat( multipleTypeSubItems[y][key].subItemPrice) != 0) {
+                if (multipleTypeSubItems[y][t][key] != null) {
 
-                    sum   = convertFloat(sum) + convertFloat(multipleTypeSubItems[y][key].subItemPrice);
+                    if (convertFloat(multipleTypeSubItems[y][t][key].subItemPrice) != 0) {
+
+                        sum = convertFloat(sum) + convertFloat(multipleTypeSubItems[y][t][key].subItemPrice);
+
+                    }
 
                 }
-
             }
         }
-
     }
 
 
@@ -720,6 +726,23 @@ function addUserOrder()
     $('#parent_type_one').hide();
     $('#parent_type_multiple').hide();
 
+
+
+
+    // Convert Multi Type 2D array to One Type Array
+
+    var multiItemsArray = [];
+
+    for(var x =0;x<multipleTypeSubItems.length;x++)
+    {
+        for(var y=0;y<multipleTypeSubItems[x].length;y++)
+        {
+            multiItemsArray.push(multipleTypeSubItems[x][y]);
+        }
+    }
+
+
+    multipleTypeSubItems = multiItemsArray;
 
     // SAVE ORDER TO SERVER AGAINST USER
     var order = {

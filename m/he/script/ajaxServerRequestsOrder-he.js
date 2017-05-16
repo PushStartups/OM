@@ -372,11 +372,10 @@ function onItemSelectedCallBack(response)
 
         else
         {
-
             if(extras.extra_with_subitems[x].subitems.length != 0)
             {
+                var multiTypeItemSet = [];
                 // SUB ITEMS WITH MULTIPLE SELECTABLE OPTIONS
-
 
                 if(!first)
                 {
@@ -390,6 +389,7 @@ function onItemSelectedCallBack(response)
 
 
                 multipleTypeStr +=  '<h3>'+extras.extra_with_subitems[x].name_he+'</h3>' +
+                    '<span id="error-'+x+'"  style=" color: red; display: block; text-align: right; margin-bottom: 16px;"></span>'+
                     '<ul id="subItems" class="checkbox-list">';
 
 
@@ -398,14 +398,14 @@ function onItemSelectedCallBack(response)
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multiTypeItemSet.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_he+" [+"+extras.extra_with_subitems[x].subitems[y].price+"]"+'</label></li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multipleTypeSubItems.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multiTypeItemSet.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_he + '</label></li>';
                     }
@@ -416,15 +416,13 @@ function onItemSelectedCallBack(response)
                     // UPDATE VALUE FROM CHECK BOX SELECTION
                     var subItem = {};
                     subItem[extras.extra_with_subitems[x].subitems[y].name_he] = null;
-                    multipleTypeSubItems.push(subItem);
+                    multiTypeItemSet.push(subItem);
 
                 }
 
+                multipleTypeSubItems.push(multiTypeItemSet);
+
                 multipleTypeStr += '</ul>';
-
-
-
-
                 $('#parent_type_multiple').show();
             }
         }
@@ -512,7 +510,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
             }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
-            multipleTypeSubItems[index][name] = subItem;
+            multipleTypeSubItems[extraIndex][index][name] = subItem;
 
 
         }
@@ -521,11 +519,11 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
             var countSelectedItems = 0;
 
-            for(var x =0;x<multipleTypeSubItems.length;x++)
+            for(var x =0;x<multipleTypeSubItems[extraIndex].length;x++)
             {
-                for (var key in multipleTypeSubItems[x]) {
+                for (var key in multipleTypeSubItems[extraIndex][x]) {
 
-                    if (multipleTypeSubItems[x][key] != null && multipleTypeSubItems[x][key] != undefined) {
+                    if (multipleTypeSubItems[extraIndex][x][key] != null && multipleTypeSubItems[extraIndex][x][key] != undefined) {
                         countSelectedItems++;
                     }
                 }
@@ -533,8 +531,26 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
             if(countSelectedItems >= limit)
             {
-                alert("limit over");
+                // alert("limit over");
+                var errorId = "#error-"+extraIndex;
+
+                $(errorId).html(' הגבול הוא ' + limit);
+
                 $(id).prop('checked', false);
+
+                setTimeout(function(){
+
+                    var container = $('.box-frame.new'),
+                        scrollTo = $(errorId);
+
+                    // Or you can animate the scrolling:
+                    container.animate({
+
+                        scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop() - 30
+                    },500)
+
+                }, 300);
+
             }
             else {
 
@@ -548,7 +564,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
                 }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
-                multipleTypeSubItems[index][name] = subItem;
+                multipleTypeSubItems[extraIndex][index][name] = subItem;
 
             }
 
@@ -560,7 +576,9 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     else
     {
-        multipleTypeSubItems[index][name] = null;
+        multipleTypeSubItems[extraIndex][index][name] = null;
+        var errorId = "#error-"+extraIndex;
+        $(errorId).html('');
 
     }
 
@@ -599,21 +617,22 @@ function updatedSelectedItemPrice() {
 
     for (var y = 0; y <  multipleTypeSubItems.length; y++) {
 
-        for (var key in  multipleTypeSubItems[y]) {
+        for (var t = 0; t <  multipleTypeSubItems[y].length; t++) {
 
-            if ( multipleTypeSubItems[y][key] != null) {
+            for (var key in  multipleTypeSubItems[y][t]) {
 
-                if (convertFloat( multipleTypeSubItems[y][key].subItemPrice) != 0) {
+                if (multipleTypeSubItems[y][t][key] != null) {
 
-                    sum   = convertFloat(sum) + convertFloat(multipleTypeSubItems[y][key].subItemPrice);
+                    if (convertFloat(multipleTypeSubItems[y][t][key].subItemPrice) != 0) {
+
+                        sum = convertFloat(sum) + convertFloat(multipleTypeSubItems[y][t][key].subItemPrice);
+
+                    }
 
                 }
-
             }
         }
-
     }
-
 
     selectedItemPrice = convertFloat(sum) + convertFloat(replace);
 
@@ -669,6 +688,23 @@ function addUserOrder()
 
     $('#parent_type_one').hide();
     $('#parent_type_multiple').hide();
+
+
+    // Convert Multi Type 2D array to One Type Array
+
+    var multiItemsArray = [];
+
+    for(var x =0;x<multipleTypeSubItems.length;x++)
+    {
+        for(var y=0;y<multipleTypeSubItems[x].length;y++)
+        {
+            multiItemsArray.push(multipleTypeSubItems[x][y]);
+        }
+    }
+
+
+    multipleTypeSubItems = multiItemsArray;
+
 
 
     // SAVE ORDER TO SERVER AGAINST USER

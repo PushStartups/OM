@@ -5,7 +5,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/style/restaurants.css" afterPath="$PROJECT_DIR$/m/en/style/restaurants.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/style/restaurants-he.css" afterPath="$PROJECT_DIR$/m/he/style/restaurants-he.css" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,41 +28,7 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ajaxServerRequestsOrder.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="427" column="24" lean-forward="false" selection-start-line="427" selection-start-column="24" selection-end-line="427" selection-end-column="24" />
-              <folding>
-                <marker date="1494927610576" expanded="true" signature="12154:12169" ph="..." />
-                <marker date="1494927610576" expanded="true" signature="12215:12293" ph="..." />
-                <marker date="1494927610576" expanded="true" signature="12395:12409" ph="..." />
-                <marker date="1494927610576" expanded="true" signature="14295:14332" ph="..." />
-                <marker date="1494927610576" expanded="true" signature="14442:14509" ph="..." />
-                <marker date="1494927610576" expanded="true" signature="14443:14453" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxServerRequestsOrder-he.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="579" column="44" lean-forward="false" selection-start-line="579" selection-start-column="44" selection-end-line="579" selection-end-column="44" />
-              <folding>
-                <marker date="1494923100182" expanded="true" signature="12171:12186" ph="..." />
-                <marker date="1494923100182" expanded="true" signature="12232:12309" ph="..." />
-                <marker date="1494923100182" expanded="true" signature="12411:12425" ph="..." />
-                <marker date="1494923100182" expanded="true" signature="14251:14289" ph="..." />
-                <marker date="1494923100182" expanded="true" signature="14399:14467" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,13 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onClickDairyRow</find>
-      <find>login</find>
-      <find>cb_milk</find>
-      <find>cb_meat</find>
-      <find>health_click</find>
-      <find>#login</find>
-      <find>dairy</find>
       <find>dairy_others</find>
       <find>dairy-others</find>
       <find>dairy_click</find>
@@ -98,9 +60,16 @@
       <find>scrollable-area</find>
       <find>.scrollable-area.popup</find>
       <find>setTimeout</find>
-      <find>alert</find>
       <find>multipleTypeStr</find>
+      <find>add_or</find>
+      <find>email_for_kitchen</find>
+      <find>error</find>
+      <find>box-frame</find>
+      <find>Or you can animate the scrolling:</find>
+      <find>#error-</find>
       <find>multipleTypeSubItems</find>
+      <find>error-</find>
+      <find>alert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,7 +105,6 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" />
         <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsRestaurants-he.js" />
-        <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/he/.htaccess" />
         <option value="$PROJECT_DIR$/he/error.html" />
@@ -162,9 +130,10 @@
         <option value="$PROJECT_DIR$/he/confirm-order.html" />
         <option value="$PROJECT_DIR$/he/restaurants.html" />
         <option value="$PROJECT_DIR$/restapi/index.php" />
-        <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
-        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
+        <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+        <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
       </list>
     </option>
   </component>
@@ -214,20 +183,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="restapi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -839,14 +794,7 @@
       <workItem from="1494764115981" duration="1890000" />
       <workItem from="1494838171198" duration="88000" />
       <workItem from="1494855911873" duration="5667000" />
-      <workItem from="1494918173576" duration="6544000" />
-    </task>
-    <task id="LOCAL-00070" summary="small changes 3rd party integration">
-      <created>1491379031095</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1491379031097</updated>
+      <workItem from="1494918173576" duration="15260000" />
     </task>
     <task id="LOCAL-00071" summary="small changes 3rd party integration">
       <created>1491385212011</created>
@@ -1184,11 +1132,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494918222806</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="DB update + code latest">
+      <created>1494927623818</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1494927623818</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="881128000" />
+    <option name="totallyTimeSpent" value="889844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1207,7 +1162,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118708454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12739871" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15618336" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1279,13 +1234,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/m/he/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="83" lean-forward="false" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ajaxServerRequestsOrder.js" />
     <entry file="file://$PROJECT_DIR$/en/complete-order.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1308,13 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="49" column="43" lean-forward="false" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="1614" column="5" lean-forward="false" selection-start-line="1614" selection-start-column="5" selection-end-line="1614" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1504,13 +1445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="146" column="40" lean-forward="false" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/en/img/cs_logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1558,19 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="1659" column="0" lean-forward="true" selection-start-line="1659" selection-start-column="0" selection-end-line="1659" selection-end-column="0" />
-          <folding>
-            <marker date="1494855022627" expanded="true" signature="11649:11718" ph="..." />
-            <marker date="1494855022627" expanded="true" signature="12160:12238" ph="..." />
-            <marker date="1494855022627" expanded="true" signature="14137:14206" ph="..." />
-            <marker date="1494855022627" expanded="true" signature="31302:31321" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -1590,20 +1511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="579" column="44" lean-forward="false" selection-start-line="579" selection-start-column="44" selection-end-line="579" selection-end-column="44" />
-          <folding>
-            <marker date="1494923100182" expanded="true" signature="12171:12186" ph="..." />
-            <marker date="1494923100182" expanded="true" signature="12232:12309" ph="..." />
-            <marker date="1494923100182" expanded="true" signature="12411:12425" ph="..." />
-            <marker date="1494923100182" expanded="true" signature="14251:14289" ph="..." />
-            <marker date="1494923100182" expanded="true" signature="14399:14467" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1614,8 +1521,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
+        <state relative-caret-position="1125">
+          <caret line="2299" column="12" lean-forward="true" selection-start-line="2299" selection-start-column="12" selection-end-line="2299" selection-end-column="12" />
           <folding>
             <marker date="1494927092305" expanded="true" signature="1006:1026" ph="select * fro... cities" />
             <marker date="1494927092305" expanded="true" signature="1663:1718" ph="select * fro... default_settings" />
@@ -1844,17 +1751,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="228" column="16" lean-forward="false" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="1262" column="23" lean-forward="true" selection-start-line="1262" selection-start-column="23" selection-end-line="1262" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="626" column="28" lean-forward="true" selection-start-line="625" selection-start-column="6" selection-end-line="626" selection-end-column="28" />
+          <folding>
+            <marker date="1494934877371" expanded="true" signature="12171:12186" ph="..." />
+            <marker date="1494934877371" expanded="true" signature="12232:12309" ph="..." />
+            <marker date="1494934877371" expanded="true" signature="12411:12425" ph="..." />
+            <marker date="1494934877371" expanded="true" signature="14295:14333" ph="..." />
+            <marker date="1494934877371" expanded="true" signature="14443:14511" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="427" column="24" lean-forward="false" selection-start-line="427" selection-start-column="24" selection-end-line="427" selection-end-column="24" />
+        <state relative-caret-position="757">
+          <caret line="618" column="7" lean-forward="true" selection-start-line="618" selection-start-column="7" selection-end-line="619" selection-end-column="28" />
           <folding>
-            <marker date="1494927610576" expanded="true" signature="12154:12169" ph="..." />
-            <marker date="1494927610576" expanded="true" signature="12215:12293" ph="..." />
-            <marker date="1494927610576" expanded="true" signature="12395:12409" ph="..." />
-            <marker date="1494927610576" expanded="true" signature="14295:14332" ph="..." />
-            <marker date="1494927610576" expanded="true" signature="14442:14509" ph="..." />
-            <marker date="1494927610576" expanded="true" signature="14443:14453" ph="..." />
+            <marker date="1494934877345" expanded="true" signature="12153:12168" ph="..." />
+            <marker date="1494934877345" expanded="true" signature="12214:12292" ph="..." />
+            <marker date="1494934877345" expanded="true" signature="12394:12408" ph="..." />
+            <marker date="1494934877345" expanded="true" signature="14295:14332" ph="..." />
+            <marker date="1494934877345" expanded="true" signature="14442:14509" ph="..." />
+            <marker date="1494934877345" expanded="true" signature="14443:14453" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="580" column="28" lean-forward="false" selection-start-line="580" selection-start-column="28" selection-end-line="580" selection-end-column="28" />
+          <folding>
+            <marker date="1494937045879" expanded="true" signature="11672:11741" ph="..." />
+            <marker date="1494937045879" expanded="true" signature="12171:12248" ph="..." />
+            <marker date="1494937045879" expanded="true" signature="14188:14257" ph="..." />
+            <marker date="1494937045879" expanded="true" signature="14523:14591" ph="..." />
+            <marker date="1494937045879" expanded="true" signature="32783:32803" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="583" column="28" lean-forward="false" selection-start-line="583" selection-start-column="28" selection-end-line="583" selection-end-column="28" />
+          <folding>
+            <marker date="1494937023376" expanded="true" signature="11649:11718" ph="..." />
+            <marker date="1494937023376" expanded="true" signature="12160:12238" ph="..." />
+            <marker date="1494937023376" expanded="true" signature="14180:14249" ph="..." />
+            <marker date="1494937023376" expanded="true" signature="14515:14582" ph="..." />
+            <marker date="1494937023376" expanded="true" signature="32660:32679" ph="..." />
           </folding>
         </state>
       </provider>
