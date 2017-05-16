@@ -238,7 +238,6 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
 
 $app->post('/categories_with_items', function ($request, $response, $args)
 {
-
     try {
 
         $id = $request->getParam('restaurantId');
@@ -250,33 +249,39 @@ $app->post('/categories_with_items', function ($request, $response, $args)
         $categories = DB::query("select * from categories where menu_id = '" . $menu['id'] . "'");
 
         $count2 = 0;
+
+        $items = '';
+
         foreach ($categories as $category) {
 
             $items = array();
 
-            if($categories['business_offer'] == 0) {
+            if($category['business_offer'] == 0) {
 
                 $items = DB::query("select * from items where category_id = '" . $category["id"] . "' and hide = '0'");
 
             }
             else {
 
-                // BUSINESS LUNCH CATEGORY GET SELECTED ITEMS
+//                // BUSINESS LUNCH CATEGORY GET SELECTED ITEMS
                 $first_day_this_month = date('Y-m-01');
                 $firstDayOfMonth = $first_day_this_month;
+
                 $currentDate = date('Y-m-d');
-                $dtCurrent = new \DateTime($currentDate);
-                $dtFirstOfMonth = new \DateTime($firstDayOfMonth);
-                $numWeeks = 1 + (intval($dtCurrent->format("W")) -
-                        intval($dtFirstOfMonth->format("W")));
+
+                $dtCurrent      = DateTime::createFromFormat('Y-m-d', $currentDate);
+                $dtFirstOfMonth = DateTime::createFromFormat('Y-m-d', $firstDayOfMonth);
+
+                $numWeeks = 1 + (intval($dtCurrent->format("W")) - intval($dtFirstOfMonth->format("W")));
 
                 $dayOfWeek = date('l');
 
                 $businessItemsIds = DB::query("select item_id from business_lunch_detail where category_id = '" . $category["id"] . "' AND  week_day = '$dayOfWeek' AND week_cycle = '$numWeeks'");
 
+
                 foreach ($businessItemsIds as $businessItem) {
 
-                    $item = DB::query("select * from items where category_id = '" . $category["id"] . "' and hide = '0' and id = '".$businessItem['item_id']."'");
+                    $item = DB::queryFirstRow("select * from items where category_id = '" . $category["id"] . "' and hide = '0' and id = '".$businessItem['item_id']."'");
 
                     array_push($items, $item);
                 }
@@ -284,6 +289,7 @@ $app->post('/categories_with_items', function ($request, $response, $args)
             }
 
             $count3 = 0;
+
             // CHECK FOR ITEMS PRICE ZERO
             foreach ($items as $item) {
 
@@ -323,7 +329,7 @@ $app->post('/categories_with_items', function ($request, $response, $args)
         $data = [
             "menu_name_en" => $menu['name_en'],               // MENU NAME EN
             "menu_name_he" => $menu['name_he'],               // MENU NAME HE
-            "categories_items" => $categories                    // CATEGORIES AND ITEMS
+            "categories_items" => $categories                 // CATEGORIES AND ITEMS
         ];
 
 

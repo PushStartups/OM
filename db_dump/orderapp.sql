@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 15, 2017 at 02:00 PM
+-- Generation Time: May 14, 2017 at 10:35 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=90 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=89 ;
 
 --
 -- Dumping data for table `b2b_orders`
@@ -104,8 +104,7 @@ INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`
 (85, 4, 2, 0, 16, 84, '2017-05-08', '', ''),
 (86, 3, 2, 0, 32, 68, '2017-05-08', '', ''),
 (87, 1, 2, 0, 12, 38, '2017-05-10', '', ''),
-(88, 5, 6, 0, 44, 16, '2017-05-10', '', ''),
-(89, 1, 2, 0, 88, 912, '2017-05-15', '', '');
+(88, 5, 6, 0, 44, 16, '2017-05-10', '', '');
 
 -- --------------------------------------------------------
 
@@ -122,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=71 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=70 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
@@ -169,8 +168,7 @@ INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `s
 (66, 85, 1, 'Beet, Apple, Carrot, Celery', 16, ''),
 (67, 86, 2, 'Beet, Apple, Carrot, Celery', 16, ''),
 (68, 87, 1, 'Fanta', 12, ''),
-(69, 88, 1, 'Angus Salad', 44, ''),
-(70, 89, 1, 'Angus Salad', 88, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4), portobello mushroom (+4)');
+(69, 88, 1, 'Angus Salad', 44, '');
 
 -- --------------------------------------------------------
 
@@ -220,8 +218,8 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'test@orderapp.com', 'TEST', 'test', 'test', 912, '2017-05-15', '000000', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
-(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 50, '2017-04-06', '00000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'test@orderapp.com', 'TEST', 'test', 'test', 38, '2017-05-10', '000000', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 50, '2017-05-11', '00000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (4, 'mark@pushstartups.com', 'Avi', 'mark', 'mark', 84, '2017-05-08', '000000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 60, '2017-05-11', '000000000', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (6, 'dvora@pushstartups.com', 'Dvora', 'dvora', 'dvora', 60, '2017-05-10', '000000000', 'Dvora Test', 0, 'english', NULL, NULL, NULL, NULL, 6, '');
@@ -239,38 +237,16 @@ CREATE TABLE IF NOT EXISTS `business_lunch_detail` (
   `week_day` varchar(255) NOT NULL,
   `week_cycle` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `business_lunch_detail`
 --
 
 INSERT INTO `business_lunch_detail` (`id`, `category_id`, `item_id`, `week_day`, `week_cycle`) VALUES
-(4, 731, 3534, 'Sunday', 1),
-(5, 731, 3535, 'Sunday', 1),
-(6, 731, 3536, 'Sunday', 1),
-(7, 731, 3537, 'Monday', 1),
-(8, 731, 3538, 'Monday', 1),
-(9, 731, 3539, 'Tuesday', 1),
-(10, 731, 3540, 'Tuesday', 1),
-(11, 731, 3541, 'Wednesday', 1),
-(12, 731, 3542, 'Wednesday', 1),
-(13, 731, 3543, 'Wednesday', 1),
-(14, 731, 3544, 'Thursday', 1),
-(15, 731, 3545, 'Thursday', 1),
-(16, 731, 3546, 'Thursday', 1),
-(17, 731, 3548, 'Sunday', 2),
-(18, 731, 3549, 'Sunday', 2),
-(19, 731, 3554, 'Sunday', 2),
-(20, 731, 3550, 'Monday', 2),
-(21, 731, 3551, 'Monday', 2),
-(22, 731, 3552, 'Tuesday', 2),
-(23, 731, 3553, 'Tuesday', 2),
-(24, 731, 3554, 'Wednesday', 2),
-(25, 731, 3555, 'Wednesday', 2),
-(26, 731, 3556, 'Thursday', 2),
-(27, 731, 3557, 'Thursday', 2),
-(28, 731, 3558, 'Thursday', 2);
+(1, 721, 3455, 'Sunday', 2),
+(2, 721, 3456, 'Sunday', 2),
+(3, 721, 3454, 'Sunday', 1);
 
 -- --------------------------------------------------------
 
@@ -547,13 +523,6 @@ INSERT INTO `categories` (`id`, `menu_id`, `is_discount`, `name_en`, `name_he`, 
 (722, 23, 0, 'Flavored schnitzel', 'שניצל בטעמים', 0, '', 801),
 (723, 23, 0, 'Sides', 'תוספות', 0, '', 802),
 (724, 23, 0, 'Salads', 'סלטים', 0, '', 803),
-(725, 41, 0, 'BAGUETTE', 'בגט', 0, '', 804),
-(726, 41, 0, 'PITA', 'פיתה', 0, '', 805),
-(727, 41, 0, 'PLATE', 'צלחת', 0, '', 806),
-(728, 41, 0, 'SALADS ', 'סלטים', 0, '', 807),
-(729, 41, 0, 'APPETIZERS ', 'נשנושים', 0, '', 808),
-(730, 41, 0, 'DRINKS ', 'שתייה', 0, '', 809),
-(731, 41, 0, 'BUSINESS LUNCH', 'ארוחה עסקית', 0, '', 810),
 (99999, 99999, 0, 'ex', 'ex', 0, NULL, 0);
 
 -- --------------------------------------------------------
@@ -588,7 +557,6 @@ CREATE TABLE IF NOT EXISTS `company` (
   `name` varchar(100) NOT NULL,
   `delivery_address` varchar(255) NOT NULL,
   `discount` int(11) NOT NULL,
-  `discount_type` varchar(255) NOT NULL DEFAULT 'daily',
   `voting` int(11) NOT NULL,
   `last_voting_id` int(11) NOT NULL DEFAULT '-1',
   `last_voting_date` date NOT NULL,
@@ -599,11 +567,11 @@ CREATE TABLE IF NOT EXISTS `company` (
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `discount_type`, `voting`, `last_voting_id`, `last_voting_date`) VALUES
-(1, 'cisco', '', 0, 'daily', 0, -1, '0000-00-00'),
-(2, 'test company', 'beit semish gali no 4', 1000, 'monthly', 1, 1, '2017-05-15'),
-(3, 'company 2', 'Nishat colony delecia bakery k uper', 50, 'daily', 0, -1, '0000-00-00'),
-(6, 'Rael', 'rael test', 60, 'daily', 0, 6, '2017-04-09');
+INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `voting`, `last_voting_id`, `last_voting_date`) VALUES
+(1, 'cisco', '', 0, 0, -1, '0000-00-00'),
+(2, 'test company', 'beit semish gali no 4', 50, 1, 1, '2017-05-11'),
+(3, 'company 2', 'Nishat colony delecia bakery k uper', 35, 0, -1, '0000-00-00'),
+(6, 'Rael', 'rael test', 60, 0, 6, '2017-04-09');
 
 -- --------------------------------------------------------
 
@@ -698,7 +666,7 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `vote_timing_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `vote_timing_id` (`vote_timing_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1473 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1468 ;
 
 --
 -- Dumping data for table `company_voting`
@@ -707,11 +675,11 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`) VALUES
 (162, 6, 8, 0, 6),
 (163, 6, 5, 0, 6),
-(1468, 2, 1, 0, 1),
-(1469, 2, 2, 0, 1),
-(1470, 2, 3, 0, 1),
-(1471, 2, 12, 0, 1),
-(1472, 2, 16, 0, 1);
+(1463, 2, 1, 1, 1),
+(1464, 2, 2, 0, 1),
+(1465, 2, 3, 1, 1),
+(1466, 2, 12, 1, 1),
+(1467, 2, 16, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -774,7 +742,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=175 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=167 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -933,15 +901,7 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (163, 'Beit Shemesh', 'בית שמש', 15, 40),
 (164, 'Ramat Beit Shemesh A', 'רמת בית שמש א', 25, 40),
 (165, 'Ramat Beit Shemesh B', 'רמת בית שמש ב', 25, 40),
-(166, 'Ramat Beit Shemesh C', 'רמת בית שמש ג', 25, 40),
-(167, 'Beit Shemesh', 'בית שמש', 25, 41),
-(168, 'Ramat Beit Shemesh A', 'רמת בית שמש א', 25, 41),
-(169, 'Ramat Beit Shemesh B', 'רמת בית שמש ב', 25, 41),
-(170, 'Ramat Beit Shemesh C', 'רמת בית שמש ג', 25, 41),
-(171, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 38),
-(172, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 39),
-(173, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 40),
-(174, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 41);
+(166, 'Ramat Beit Shemesh C', 'רמת בית שמש ג', 25, 40);
 
 -- --------------------------------------------------------
 
@@ -2497,83 +2457,6 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9268, 3479, 'Add-ons', 'Multiple', 0, 'תוספות', 0, 545),
 (9269, 3480, 'Sauces', 'Multiple', 0, 'רטבים', 0, 546),
 (9270, 3480, 'Add-ons', 'Multiple', 0, 'תוספות', 0, 547),
-(9271, 3481, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 548),
-(9272, 3482, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 549),
-(9273, 3483, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 550),
-(9274, 3484, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 551);
-INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name_he`, `limit`, `sort`) VALUES
-(9275, 3485, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 552),
-(9276, 3486, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 553),
-(9277, 3487, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 554),
-(9278, 3488, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 555),
-(9279, 3489, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 556),
-(9280, 3490, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 557),
-(9281, 3491, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 558),
-(9282, 3492, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 559),
-(9283, 3493, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 560),
-(9284, 3494, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 561),
-(9285, 3495, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 562),
-(9286, 3496, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 563),
-(9287, 3497, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 564),
-(9288, 3498, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 565),
-(9289, 3499, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 566),
-(9290, 3500, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 567),
-(9291, 3501, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 568),
-(9292, 3502, 'addons to sandwich', 'Multiple', 0, 'תוספות למנה', 0, 569),
-(9293, 3514, 'Salad Dressing', 'Multiple', 0, 'רוטב לסלט', 0, 570),
-(9294, 3515, 'Salad Dressing', 'Multiple', 0, 'רוטב לסלט', 0, 571),
-(9295, 3516, 'Salad Dressing', 'Multiple', 0, 'רוטב לסלט', 0, 572),
-(9296, 3517, 'Salad Dressing', 'Multiple', 0, 'רוטב לסלט', 0, 573),
-(9297, 3534, 'Sunday 1', 'Multiple', 0, '| יום א 1', 0, 574),
-(9298, 3534, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 575),
-(9299, 3535, 'Sunday 1', 'Multiple', 0, '| יום א 1', 0, 576),
-(9300, 3535, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 577),
-(9301, 3536, 'Sunday 1', 'Multiple', 0, '| יום א 1', 0, 578),
-(9302, 3536, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 579),
-(9303, 3537, 'Monday 1', 'Multiple', 0, 'יום ב 1', 0, 580),
-(9304, 3537, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 581),
-(9305, 3538, 'Monday 1', 'Multiple', 0, 'יום ב 1', 0, 582),
-(9306, 3538, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 583),
-(9307, 3539, 'Tuesday 1', 'Multiple', 0, 'יום ב 1', 0, 584),
-(9308, 3539, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 585),
-(9309, 3540, 'Tuesday 1', 'Multiple', 0, 'יום ב 1', 0, 586),
-(9310, 3540, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 587),
-(9311, 3541, 'Wednesday 1', 'Multiple', 0, 'יום ד 1', 0, 588),
-(9312, 3541, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 589),
-(9313, 3542, 'Wednesday 1', 'Multiple', 0, 'יום ד 1', 0, 590),
-(9314, 3542, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 591),
-(9315, 3543, 'Wednesday 1', 'Multiple', 0, 'יום ד 1', 0, 592),
-(9316, 3543, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 593),
-(9317, 3544, 'Thursday 1', 'Multiple', 0, 'יום ה 1', 0, 594),
-(9318, 3544, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 595),
-(9319, 3545, 'Thursday 1', 'Multiple', 0, 'יום ה 1', 0, 596),
-(9320, 3545, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 597),
-(9321, 3546, 'Thursday 1', 'Multiple', 0, 'יום ה 1', 0, 598),
-(9322, 3546, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 599),
-(9323, 3547, 'SUNDAY 2', 'Multiple', 0, 'יום א 2', 0, 600),
-(9324, 3547, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 601),
-(9325, 3548, 'SUNDAY 2', 'Multiple', 0, 'יום א 2', 0, 602),
-(9326, 3548, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 603),
-(9327, 3549, 'SUNDAY 2', 'Multiple', 0, 'יום א 2', 0, 604),
-(9328, 3549, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 605),
-(9329, 3550, 'Monday 2', 'Multiple', 0, 'יום ב 2', 0, 606),
-(9330, 3550, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 607),
-(9331, 3551, 'Monday 2', 'Multiple', 0, 'יום ב 2', 0, 608),
-(9332, 3551, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 609),
-(9333, 3552, 'TUESDAY 2', 'Multiple', 0, 'יום ג 2', 0, 610),
-(9334, 3552, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 611),
-(9335, 3553, 'TUESDAY 2', 'Multiple', 0, 'יום ג 2', 0, 612),
-(9336, 3553, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 613),
-(9337, 3554, 'Wednesday 2', 'Multiple', 0, 'יום ב 2', 0, 614),
-(9338, 3554, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 615),
-(9339, 3555, 'Wednesday 2', 'Multiple', 0, 'יום ב 2', 0, 616),
-(9340, 3555, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 617),
-(9341, 3556, 'Thursday 2', 'Multiple', 0, 'יום ה 2', 0, 618),
-(9342, 3556, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 619),
-(9343, 3557, 'Thursday 2', 'Multiple', 0, 'יום ה 2', 0, 620),
-(9344, 3557, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 621),
-(9345, 3558, 'Thursday 2', 'Multiple', 0, 'יום ה 2', 0, 622),
-(9346, 3558, 'Salads (choice of two with main)', 'Multiple', 0, 'סלטים - אפשר לבחור 2 עם נמה עיקרית', 0, 623),
 (99999, 99999, 'ex', '', 0, 'ex', 0, 0);
 
 -- --------------------------------------------------------
@@ -4204,85 +4087,6 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (3478, 724, 0, 'Chili schnitzel salad (spicy)', 'סלט שניצל צילי (נגיעות ', '', '', 30, 748),
 (3479, 724, 0, 'Pesto schnitzel salad', 'סלט שניצל פסטו', '', '', 30, 749),
 (3480, 724, 0, 'Health salad ', 'סלט בריאות', '', '', 20, 750),
-(3481, 725, 0, 'Omelette with herbs in a baguette', 'חביתת ירק בבגט', '', '', 20, 751),
-(3482, 725, 0, 'Shakshuka in a baguette', 'שקשוקה בבגט', '', '', 22, 752),
-(3483, 725, 0, 'Tuna in a baguette', 'טונה בבגט', '', '', 24, 753),
-(3484, 725, 0, 'Fried Schnitzel in a baguette', 'שניצל מטוגן בבגט', '', '', 28, 754),
-(3485, 725, 0, 'House Kebab in a baguette', 'קבב הבית בבגט', '', '', 30, 755),
-(3486, 725, 0, 'Grilled chicken breast in a baguette', 'חזה עוף על האש בבגט', '', '', 30, 756),
-(3487, 725, 0, 'Chicken breast with stir-fry vegetables in a baguette ', 'חזה עוף עם ירקות מוקפצים בבגט', '', '', 30, 757),
-(3488, 725, 0, 'Chicken liver with onion in a baguette', ' כבד עוף עם בצל בבגט', '', '', 30, 758),
-(3489, 725, 0, 'Schwarma in a baguette', 'שווארמה בבגט', '', '', 34, 759),
-(3490, 725, 0, 'Jerusalem mixed grill in a baguette ', 'מעורב ירושלמי בבגט', '', '', 34, 760),
-(3491, 725, 0, 'Spring chicken in a baguette', 'פרגיות בבגט', '', '', 34, 761),
-(3492, 726, 0, 'Omelette with herbs in a pita', 'חביתת ירק בפיתה', '', '', 20, 762),
-(3493, 726, 0, 'Shakshuka in a pita', 'שקשוקה בפיתה', '', '', 22, 763),
-(3494, 726, 0, 'Tuna in a pita', 'טונה בפיתה', '', '', 24, 764),
-(3495, 726, 0, 'Fried Schnitzel in a pita', 'שניצל מטוגן בפיתה', '', '', 28, 765),
-(3496, 726, 0, 'House Kabab in a pita', 'קבב הבית בפיתה', '', '', 30, 766),
-(3497, 726, 0, 'Grilled chicken breast in a pita', 'חזה עוף על האש בפיתה', '', '', 30, 767),
-(3498, 726, 0, 'Chicken breast with stir-fry vegatables in a pita', 'חזה עוף עם ירקות מוקפצים בפיתה', '', '', 30, 768),
-(3499, 726, 0, 'Chicken liver with onion in a pita', 'כבד עוף עם בצל בפיתה', '', '', 30, 769),
-(3500, 726, 0, 'Schwarma in a pita', 'שווארמה בפיתה', '', '', 34, 770),
-(3501, 726, 0, 'Jerusalem mixed grill in a pita', 'מעורב ירושלמי בפיתה', '', '', 34, 771),
-(3502, 726, 0, 'Spring chicken in a pita', 'פרגיות בפיתה', '', '', 34, 772),
-(3503, 727, 0, 'Omelette with herbs on a plate', 'חביתת ירק בצלחת', '', '', 30, 773),
-(3504, 727, 0, 'Shakshuka on a plate', 'שקשוקה בצלחת', '', '', 30, 774),
-(3505, 727, 0, 'Tuna on a plate', 'טונה בצלחת', '', '', 30, 775),
-(3506, 727, 0, 'Fried Schnitzel on a plate', 'שניצל מטוגן בצלחת', '', '', 34, 776),
-(3507, 727, 0, 'House Kabab on a plate', 'קבב הבית בצלחת', '', '', 34, 777),
-(3508, 727, 0, 'Grilled chicken breast on a plate', 'חזה עוף על האש בצלחת', '', '', 34, 778),
-(3509, 727, 0, 'Chicken breast with stir-fried vegetables on a plate', 'חזה עוף עם ירקות מוקפצים בצלחת', '', '', 34, 779),
-(3510, 727, 0, 'Chicken liver with onion on a plate', ' כבד עוף עם בצל בצלחת', '', '', 34, 780),
-(3511, 727, 0, 'Schwarma on a plate', 'שווארמה בצלחת', '', '', 36, 781),
-(3512, 727, 0, 'Jerusalem mixed grill on a plate', 'מעורב ירושלמי בצלחת', '', '', 36, 782),
-(3513, 727, 0, 'Spring chicken on a plate', 'פרגיות בצלחת', '', '', 36, 783),
-(3514, 728, 0, 'Tuna & Egg Salad', 'סלט טונה + ביצה קשה', '', '', 34, 784),
-(3515, 728, 0, 'Chicken breast salad', 'סלט חזה עוף', '', '', 34, 785),
-(3516, 728, 0, 'Liver & onion salad', 'סלט כבדי עוף עם בצל', '', '', 34, 786),
-(3517, 728, 0, 'Spring chicken salad', 'סלט פרגיות', '', '', 36, 787),
-(3518, 729, 0, 'Kubbeh Soup', 'מרק קובה', '', '', 26, 788),
-(3519, 729, 0, 'French Fries', 'צ''יפס', '', '', 10, 789),
-(3520, 730, 0, 'Coca Cola', 'קולה', '', '', 8, 790),
-(3521, 730, 0, 'Coca Cola Zero', 'קולה זירו', '', '', 8, 791),
-(3522, 730, 0, 'Sprite', 'ספרייט', '', '', 8, 792),
-(3523, 730, 0, 'Sprite Zero', 'ספרייט זירו', '', '', 8, 793),
-(3524, 730, 0, 'Fanta', 'פנטה', '', '', 8, 794),
-(3525, 730, 0, 'Grapefruit Juice', 'אשכוליות', '', '', 8, 795),
-(3526, 730, 0, 'Grape Juice', 'ענבים', '', '', 8, 796),
-(3527, 730, 0, 'Orange Juice', 'תפוזים', '', '', 8, 797),
-(3528, 730, 0, 'Water with flavour', 'מים בטעמים', '', '', 8, 798),
-(3529, 730, 0, 'Ice Tea', 'אייס תה', '', '', 8, 799),
-(3530, 730, 0, 'Black Beer', 'בירה שחורה', '', '', 8, 800),
-(3531, 730, 0, 'Water', 'מים מינרלים', '', '', 7, 801),
-(3532, 730, 0, 'Soda', 'סודה', '', '', 7, 802),
-(3533, 730, 0, 'Energy drink', 'משקה אנרגיה', '', '', 6, 803),
-(3534, 731, 0, 'Meatballs with peas', 'אפונה תוספות', '', '', 29, 804),
-(3535, 731, 0, 'Chicken pieces in sweet and sour tempura', 'עם תוספות אורז לבן פירה בטטה שעועית ירוקה ברוטב', '', '', 29, 805),
-(3536, 731, 0, 'Schwarma', 'שווארמה על עמוד', '', '', 29, 806),
-(3537, 731, 0, 'Goulash in sauce', 'בשר גולש ברוטב', '', '', 29, 807),
-(3538, 731, 0, 'Moroccan style St Peter''s Fish', 'דג נסיכה בנוסח מרוקאי', '', '', 29, 808),
-(3539, 731, 0, 'Grilled quarter chicken', 'רבע עוף בגריל', '', '', 29, 809),
-(3540, 731, 0, 'Meat borekas with mushroom sauce', 'בורקס בשר ברוטב פטריות', '', '', 29, 810),
-(3541, 731, 0, 'House Burger (optional: in a bun)', 'המבורגר הבית אפשר בלחמניה', '', '', 29, 811),
-(3542, 731, 0, 'Chicken patties', 'קציצות עוף', '', '', 29, 812),
-(3543, 731, 0, 'Mafrum (brisket)', 'מפרום', '', '', 29, 813),
-(3544, 731, 0, 'Kubbeh', 'קובה בסיגנונות שונים', '', '', 29, 814),
-(3545, 731, 0, 'Beef strips with stir-fried vegetables', 'רצועות בקר עם ירקות מוקפצים', '', '', 29, 815),
-(3546, 731, 0, 'Chicken livers', 'כבד עוף', '', '', 29, 816),
-(3547, 731, 0, 'Chicken breast with stir-fried vegetables', 'חזה עוף ירקות מוקפצים', '', '', 29, 817),
-(3548, 731, 0, 'Schwarma', 'שווארמה על עמוד', '', '', 29, 818),
-(3549, 731, 0, 'Lasagna', 'לזניה', '', '', 29, 819),
-(3550, 731, 0, 'Fried fish', 'דג מטוגן תבשיל', '', '', 29, 820),
-(3551, 731, 0, 'Goulash stew in sauce', 'תבשיל גולש ברוטב', '', '', 29, 821),
-(3552, 731, 0, 'Superito Chicken', 'סופריטו עוף', '', '', 29, 822),
-(3553, 731, 0, 'Meat stuffed eggplant', 'חציל ממולא בשר', '', '', 29, 823);
-INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en`, `desc_he`, `price`, `sort`) VALUES
-(3554, 731, 0, 'Chicken breast stuffed with vegetables', 'חזה עוף ממלא בירקות', '', '', 29, 824),
-(3555, 731, 0, 'Humous and mince meat', 'תבשיל חומוס בשר', '', '', 29, 825),
-(3556, 731, 0, 'Kubbeh', 'קובה', '', '', 29, 826),
-(3557, 731, 0, 'Fish patties in sauce', 'קציצות דגים ברוטב', '', '', 29, 827),
-(3558, 731, 0, 'Stuffed artichokes', 'ארטישוק ממולא', '', '', 29, 828),
 (99999, 99999, 0, 'ex', 'ex', '', '', 0, 0);
 
 -- --------------------------------------------------------
@@ -4338,7 +4142,6 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (30, 30, 'Lunch', 'ארוחת צהריים', 130),
 (32, 32, 'Lunch', 'ארוחת צהריים', 132),
 (37, 37, 'Lunch', 'ארוחת צהריים', 132),
-(41, 41, 'Lunch', 'ארוחת צהריים', 138),
 (99999, 99999, 'ex', 'ex', 0);
 
 -- --------------------------------------------------------
@@ -4356,7 +4159,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=696 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=695 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -4441,8 +4244,7 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (691, 544, 1, 'Shawarma', 33, 'Bread Type:Pita, Veal, Techina, Chummus, Amba, Spicy, Babaghanoush'),
 (692, 545, 2, 'Shawarma', 33, 'Bread Type:Pita, Veal'),
 (693, 546, 1, 'Angus Salad', 84, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4)'),
-(694, 547, 1, 'Angus Salad', 88, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4), portobello mushroom (+4)'),
-(695, 548, 2, 'Chicken breast in honey and mustard sauce', 34, 'Mushroom (+3)');
+(694, 547, 1, 'Angus Salad', 88, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4), portobello mushroom (+4)');
 
 -- --------------------------------------------------------
 
@@ -4500,7 +4302,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `sort` int(11) DEFAULT '0',
   `pickup_hide` smallint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100004 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100003 ;
 
 --
 -- Dumping data for table `restaurants`
@@ -4545,8 +4347,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (37, 'SHALOM FELAFEL', 'שלום פלאפל', 0, '544798732', 50, 1, 0, '/m/en/img/shalom-falafel.png', 'When you do something well, you stick to it. Shalom Felafel serves up only the freshest, tastiest felafel and omelettes, which you can supplement with fries and a drink. Simple and easy!', 'שלום פלאפל מגיש רק את הפלאפל הטעים והחביתות הטריים ביותר, שאפשר להוסיף עם צ''יפס ומשקה. פשוט וקל!', 'Shimshon Junction Gas Station, opposite Eshtaol', 'מתחם תחנת דלק שמשון, אשטעול', 'Rabbanut Matei Yehuda', 'רבנות מטי יהודה', 37, 0),
 (38, 'Allegria', 'אלגריה', 1, '0777503730', 50, 1, 0, '/m/en/img/cs-logo.png', 'Allegria restaurant excels in grilled meats of every type, but they all have something in common: they are fresh and delicious. The chef has created a varied and creative menu of meat and fish which are roasted on an authentic charcoal grill. Every portion comes with house salads, which are freshly prepared daily. ', '"מסעדת אלגריה יש בשרים על האש שמשאירים טעם של עוד. אנו מעניקים את כל הטוב שבעולם – בשרים משובחים, טריים והכי חשוב – טעימים. הכול זאת, לצד מגוון רחב של תוספות וסלטים מושלמים.\r\nשף המסעדה שלנו, מאיר בן הרוש, הצליח ליצור תפריט מגוון ומדהים של שלל מנות בשרים ודגים אשר נצלים על גריל פחמים אותנטי. כל מנה מוגשת ליד סלטי הבית, שמדי יום ביומו מוכנים במקום על ידי צוות הטבחים שלנו.\r\n"', 'Canion Naimi, Derech Rabin 2, Beit Shemesh', 'קניון נעימי, דרך רבין 2, בית שמש', 'Badatz Beit Yosef', 'בד''''ץ בית יוסף', 40, 0),
 (39, 'Le''echol Etzel Julie', 'לאכול אצל ג''ולי', 1, '053-755-2019', 50, 1, 0, '/m/en/img/cs-logo.png', 'Genuine Moroccan food, cooked with love by Julie, who is the sister of the famous TV chef, Jackie Azoulai.  Julie cooks from the heart and serves up richly flavored meat, fish and vegetable dishes which are now available for delivery to you.', '"\r\nארוחות צהריים  כל יום החל מ11:30 בבוקר.\r\nאוכל ביתי, מרוקאי.\r\nאוכל מוכן לשבת כל יום שישי החל מ8:30 בבוקר.\r\nכל סוגי הבשרים, עופות תוספות ממולאים, סלטים ביתיים פרנות מרוקאיות ועוד."', 'Derech Rabin 17, Beit Shemesh', 'דרך רבין 17, בית שמש ', 'Mehadrin Machpud', 'מחפוד - מהדיון', 41, 0),
-(40, 'Mesubin', 'מסובין', 1, '991-1778', 50, 1, 0, '/m/en/img/cs-logo.png', 'Deluxe meat restaurant whose specialization is in its quality steaks is now available on Orderapp.  Choose from meat and chicken on skewers, burgers, steaks and the amazing taboon casseroles. All this, with a Rav Rubin Hechsher.', 'מסעדת בשרי דלוקס אשר ההתמחות הוא בסטייקים איכותו זמינה כעת על Orderapp. בחרו מתוך בשר ועוף על שיפודים, המבורגרים, סטייקים ותבשילי טבון מדהימים. כל זה, עם הכשר של רב רובין.', 'Paz Gas Station, Yigal Allon 2, Beit Shemesh', 'תחמת דלת פז, יגאל אלון 2, בית שמש', 'Mehadrin Rav Rubin', 'מהדרין - רב רובין', 42, 0),
-(41, 'GANIR', 'גניר', 1, '', 50, 1, 0, '/m/en/img/ganir_logo.png', 'Meat restaurant situated in the Har-Tuv industrial zone and has a family atmosphere. ', 'מסעדת גניר שוכנת באיזור תעשייה הר-טוב. אווירה ביתית ואוכל ביתי מעולה', '2 Hahar, Har Tuv Industrial Zone	', '	2 ההר, אזור תעשייה הר-טוב\n', 'Rabbanut Matei Yehuda', 'רבנות מטה יהודה', 43, 0),
+(40, 'Mesubin', 'מסובין', 1, '991-1778', 0, 1, 0, '/m/en/img/cs-logo.png', 'Deluxe meat restaurant whose specialization is in its quality steaks is now available on Orderapp.  Choose from meat and chicken on skewers, burgers, steaks and the amazing taboon casseroles. All this, with a Rav Rubin Hechsher.', 'מסעדת בשרי דלוקס אשר ההתמחות הוא בסטייקים איכותו זמינה כעת על Orderapp. בחרו מתוך בשר ועוף על שיפודים, המבורגרים, סטייקים ותבשילי טבון מדהימים. כל זה, עם הכשר של רב רובין.', 'Paz Gas Station, Yigal Allon 2, Beit Shemesh', 'תחמת דלת פז, יגאל אלון 2, בית שמש', 'Mehadrin Rav Rubin', 'מהדרין - רב רובין', 42, 0),
 (99999, 'ex', 'ex', 0, '', 0, 1, 1, '', '', '', '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
@@ -4561,7 +4362,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_gallery` (
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=155 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=152 ;
 
 --
 -- Dumping data for table `restaurant_gallery`
@@ -4695,10 +4496,7 @@ INSERT INTO `restaurant_gallery` (`id`, `restaurant_id`, `url`) VALUES
 (148, 33, '/m/en/img/cs_gallery.png'),
 (149, 34, '/m/en/img/cs_gallery.png'),
 (150, 35, '/m/en/img/cs_gallery.png'),
-(151, 36, '/m/en/img/cs_gallery.png'),
-(152, 41, '/m/en/img/ganir_gallery/1.jpg'),
-(153, 41, '/m/en/img/ganir_gallery/2.jpg'),
-(154, 41, '/m/en/img/ganir_gallery/3.jpg');
+(151, 36, '/m/en/img/cs_gallery.png');
 
 -- --------------------------------------------------------
 
@@ -4713,7 +4511,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_tags` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=84 ;
 
 --
 -- Dumping data for table `restaurant_tags`
@@ -4791,9 +4589,7 @@ INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
 (80, 38, 2),
 (81, 38, 6),
 (82, 39, 2),
-(83, 40, 2),
-(84, 41, 2),
-(85, 41, 38);
+(83, 40, 2);
 
 -- --------------------------------------------------------
 
@@ -4810,7 +4606,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25568 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24924 ;
 
 --
 -- Dumping data for table `subitems`
@@ -14434,651 +14230,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (24920, 9270, 'Red onion', 'בצל סגול', 0, 1884),
 (24921, 9270, 'Mushroom', 'פטריות', 0, 1885),
 (24922, 9270, 'Carrot', 'גזר', 0, 1886),
-(24923, 9270, 'Red cabbage', 'כרוב אדום', 0, 1887),
-(24924, 9271, 'Hummus', 'חומוס', 0, 1888),
-(24925, 9271, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1889),
-(24926, 9271, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1890),
-(24927, 9271, 'Purple Cabbage', 'כרוב סגול', 0, 1891),
-(24928, 9271, 'White Cabbage', 'כרוב לבן', 0, 1892),
-(24929, 9271, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1893),
-(24930, 9271, 'Lettuce', 'חסה', 0, 1894),
-(24931, 9271, 'Tuna', 'טונה', 0, 1895),
-(24932, 9271, 'Fried Eggplant', 'חציל מטוגן', 0, 1896),
-(24933, 9271, 'Pickled Lemons', 'לימון כבוש', 0, 1897),
-(24934, 9272, 'Hummus', 'חומוס', 0, 1898),
-(24935, 9272, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1899),
-(24936, 9272, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1900),
-(24937, 9272, 'Purple Cabbage', 'כרוב סגול', 0, 1901),
-(24938, 9272, 'White Cabbage', 'כרוב לבן', 0, 1902),
-(24939, 9272, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1903),
-(24940, 9272, 'Lettuce', 'חסה', 0, 1904),
-(24941, 9272, 'Tuna', 'טונה', 0, 1905),
-(24942, 9272, 'Fried Eggplant', 'חציל מטוגן', 0, 1906),
-(24943, 9272, 'Pickled Lemons', 'לימון כבוש', 0, 1907),
-(24944, 9273, 'Hummus', 'חומוס', 0, 1908),
-(24945, 9273, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1909),
-(24946, 9273, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1910),
-(24947, 9273, 'Purple Cabbage', 'כרוב סגול', 0, 1911),
-(24948, 9273, 'White Cabbage', 'כרוב לבן', 0, 1912),
-(24949, 9273, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1913),
-(24950, 9273, 'Lettuce', 'חסה', 0, 1914),
-(24951, 9273, 'Tuna', 'טונה', 0, 1915),
-(24952, 9273, 'Fried Eggplant', 'חציל מטוגן', 0, 1916),
-(24953, 9273, 'Pickled Lemons', 'לימון כבוש', 0, 1917),
-(24954, 9274, 'Hummus', 'חומוס', 0, 1918),
-(24955, 9274, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1919),
-(24956, 9274, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1920),
-(24957, 9274, 'Purple Cabbage', 'כרוב סגול', 0, 1921),
-(24958, 9274, 'White Cabbage', 'כרוב לבן', 0, 1922),
-(24959, 9274, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1923),
-(24960, 9274, 'Lettuce', 'חסה', 0, 1924),
-(24961, 9274, 'Tuna', 'טונה', 0, 1925),
-(24962, 9274, 'Fried Eggplant', 'חציל מטוגן', 0, 1926),
-(24963, 9274, 'Pickled Lemons', 'לימון כבוש', 0, 1927),
-(24964, 9275, 'Hummus', 'חומוס', 0, 1928),
-(24965, 9275, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1929),
-(24966, 9275, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1930),
-(24967, 9275, 'Purple Cabbage', 'כרוב סגול', 0, 1931),
-(24968, 9275, 'White Cabbage', 'כרוב לבן', 0, 1932),
-(24969, 9275, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1933),
-(24970, 9275, 'Lettuce', 'חסה', 0, 1934),
-(24971, 9275, 'Tuna', 'טונה', 0, 1935),
-(24972, 9275, 'Fried Eggplant', 'חציל מטוגן', 0, 1936),
-(24973, 9275, 'Pickled Lemons', 'לימון כבוש', 0, 1937),
-(24974, 9276, 'Hummus', 'חומוס', 0, 1938),
-(24975, 9276, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1939),
-(24976, 9276, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1940),
-(24977, 9276, 'Purple Cabbage', 'כרוב סגול', 0, 1941),
-(24978, 9276, 'White Cabbage', 'כרוב לבן', 0, 1942),
-(24979, 9276, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1943),
-(24980, 9276, 'Lettuce', 'חסה', 0, 1944),
-(24981, 9276, 'Tuna', 'טונה', 0, 1945),
-(24982, 9276, 'Fried Eggplant', 'חציל מטוגן', 0, 1946),
-(24983, 9276, 'Pickled Lemons', 'לימון כבוש', 0, 1947),
-(24984, 9277, 'Hummus', 'חומוס', 0, 1948),
-(24985, 9277, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1949),
-(24986, 9277, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1950),
-(24987, 9277, 'Purple Cabbage', 'כרוב סגול', 0, 1951),
-(24988, 9277, 'White Cabbage', 'כרוב לבן', 0, 1952),
-(24989, 9277, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1953),
-(24990, 9277, 'Lettuce', 'חסה', 0, 1954),
-(24991, 9277, 'Tuna', 'טונה', 0, 1955),
-(24992, 9277, 'Fried Eggplant', 'חציל מטוגן', 0, 1956),
-(24993, 9277, 'Pickled Lemons', 'לימון כבוש', 0, 1957),
-(24994, 9278, 'Hummus', 'חומוס', 0, 1958),
-(24995, 9278, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1959),
-(24996, 9278, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1960),
-(24997, 9278, 'Purple Cabbage', 'כרוב סגול', 0, 1961),
-(24998, 9278, 'White Cabbage', 'כרוב לבן', 0, 1962),
-(24999, 9278, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1963),
-(25000, 9278, 'Lettuce', 'חסה', 0, 1964),
-(25001, 9278, 'Tuna', 'טונה', 0, 1965),
-(25002, 9278, 'Fried Eggplant', 'חציל מטוגן', 0, 1966),
-(25003, 9278, 'Pickled Lemons', 'לימון כבוש', 0, 1967),
-(25004, 9279, 'Hummus', 'חומוס', 0, 1968),
-(25005, 9279, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1969),
-(25006, 9279, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1970),
-(25007, 9279, 'Purple Cabbage', 'כרוב סגול', 0, 1971),
-(25008, 9279, 'White Cabbage', 'כרוב לבן', 0, 1972),
-(25009, 9279, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1973),
-(25010, 9279, 'Lettuce', 'חסה', 0, 1974),
-(25011, 9279, 'Tuna', 'טונה', 0, 1975),
-(25012, 9279, 'Fried Eggplant', 'חציל מטוגן', 0, 1976),
-(25013, 9279, 'Pickled Lemons', 'לימון כבוש', 0, 1977),
-(25014, 9280, 'Hummus', 'חומוס', 0, 1978),
-(25015, 9280, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1979),
-(25016, 9280, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1980),
-(25017, 9280, 'Purple Cabbage', 'כרוב סגול', 0, 1981),
-(25018, 9280, 'White Cabbage', 'כרוב לבן', 0, 1982),
-(25019, 9280, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1983),
-(25020, 9280, 'Lettuce', 'חסה', 0, 1984),
-(25021, 9280, 'Tuna', 'טונה', 0, 1985),
-(25022, 9280, 'Fried Eggplant', 'חציל מטוגן', 0, 1986),
-(25023, 9280, 'Pickled Lemons', 'לימון כבוש', 0, 1987),
-(25024, 9281, 'Hummus', 'חומוס', 0, 1988),
-(25025, 9281, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1989),
-(25026, 9281, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 1990),
-(25027, 9281, 'Purple Cabbage', 'כרוב סגול', 0, 1991),
-(25028, 9281, 'White Cabbage', 'כרוב לבן', 0, 1992),
-(25029, 9281, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 1993),
-(25030, 9281, 'Lettuce', 'חסה', 0, 1994),
-(25031, 9281, 'Tuna', 'טונה', 0, 1995),
-(25032, 9281, 'Fried Eggplant', 'חציל מטוגן', 0, 1996),
-(25033, 9281, 'Pickled Lemons', 'לימון כבוש', 0, 1997),
-(25034, 9282, 'Hummus', 'חומוס', 0, 1998),
-(25035, 9282, 'Red Schug (spicy!)', 'סחוג אדום', 0, 1999),
-(25036, 9282, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2000),
-(25037, 9282, 'Purple Cabbage', 'כרוב סגול', 0, 2001),
-(25038, 9282, 'White Cabbage', 'כרוב לבן', 0, 2002),
-(25039, 9282, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2003),
-(25040, 9282, 'Lettuce', 'חסה', 0, 2004),
-(25041, 9282, 'Tuna', 'טונה', 0, 2005),
-(25042, 9282, 'Fried Eggplant', 'חציל מטוגן', 0, 2006),
-(25043, 9282, 'Pickled Lemons', 'לימון כבוש', 0, 2007),
-(25044, 9283, 'Hummus', 'חומוס', 0, 2008),
-(25045, 9283, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2009),
-(25046, 9283, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2010),
-(25047, 9283, 'Purple Cabbage', 'כרוב סגול', 0, 2011),
-(25048, 9283, 'White Cabbage', 'כרוב לבן', 0, 2012),
-(25049, 9283, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2013),
-(25050, 9283, 'Lettuce', 'חסה', 0, 2014),
-(25051, 9283, 'Tuna', 'טונה', 0, 2015),
-(25052, 9283, 'Fried Eggplant', 'חציל מטוגן', 0, 2016),
-(25053, 9283, 'Pickled Lemons', 'לימון כבוש', 0, 2017),
-(25054, 9284, 'Hummus', 'חומוס', 0, 2018),
-(25055, 9284, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2019),
-(25056, 9284, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2020),
-(25057, 9284, 'Purple Cabbage', 'כרוב סגול', 0, 2021),
-(25058, 9284, 'White Cabbage', 'כרוב לבן', 0, 2022),
-(25059, 9284, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2023),
-(25060, 9284, 'Lettuce', 'חסה', 0, 2024),
-(25061, 9284, 'Tuna', 'טונה', 0, 2025),
-(25062, 9284, 'Fried Eggplant', 'חציל מטוגן', 0, 2026),
-(25063, 9284, 'Pickled Lemons', 'לימון כבוש', 0, 2027),
-(25064, 9285, 'Hummus', 'חומוס', 0, 2028),
-(25065, 9285, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2029),
-(25066, 9285, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2030),
-(25067, 9285, 'Purple Cabbage', 'כרוב סגול', 0, 2031),
-(25068, 9285, 'White Cabbage', 'כרוב לבן', 0, 2032),
-(25069, 9285, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2033),
-(25070, 9285, 'Lettuce', 'חסה', 0, 2034),
-(25071, 9285, 'Tuna', 'טונה', 0, 2035),
-(25072, 9285, 'Fried Eggplant', 'חציל מטוגן', 0, 2036),
-(25073, 9285, 'Pickled Lemons', 'לימון כבוש', 0, 2037),
-(25074, 9286, 'Hummus', 'חומוס', 0, 2038),
-(25075, 9286, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2039),
-(25076, 9286, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2040),
-(25077, 9286, 'Purple Cabbage', 'כרוב סגול', 0, 2041),
-(25078, 9286, 'White Cabbage', 'כרוב לבן', 0, 2042),
-(25079, 9286, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2043),
-(25080, 9286, 'Lettuce', 'חסה', 0, 2044),
-(25081, 9286, 'Tuna', 'טונה', 0, 2045),
-(25082, 9286, 'Fried Eggplant', 'חציל מטוגן', 0, 2046),
-(25083, 9286, 'Pickled Lemons', 'לימון כבוש', 0, 2047),
-(25084, 9287, 'Hummus', 'חומוס', 0, 2048),
-(25085, 9287, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2049),
-(25086, 9287, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2050),
-(25087, 9287, 'Purple Cabbage', 'כרוב סגול', 0, 2051),
-(25088, 9287, 'White Cabbage', 'כרוב לבן', 0, 2052),
-(25089, 9287, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2053),
-(25090, 9287, 'Lettuce', 'חסה', 0, 2054),
-(25091, 9287, 'Tuna', 'טונה', 0, 2055),
-(25092, 9287, 'Fried Eggplant', 'חציל מטוגן', 0, 2056),
-(25093, 9287, 'Pickled Lemons', 'לימון כבוש', 0, 2057),
-(25094, 9288, 'Hummus', 'חומוס', 0, 2058),
-(25095, 9288, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2059),
-(25096, 9288, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2060),
-(25097, 9288, 'Purple Cabbage', 'כרוב סגול', 0, 2061),
-(25098, 9288, 'White Cabbage', 'כרוב לבן', 0, 2062),
-(25099, 9288, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2063),
-(25100, 9288, 'Lettuce', 'חסה', 0, 2064),
-(25101, 9288, 'Tuna', 'טונה', 0, 2065),
-(25102, 9288, 'Fried Eggplant', 'חציל מטוגן', 0, 2066),
-(25103, 9288, 'Pickled Lemons', 'לימון כבוש', 0, 2067),
-(25104, 9289, 'Hummus', 'חומוס', 0, 2068),
-(25105, 9289, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2069),
-(25106, 9289, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2070),
-(25107, 9289, 'Purple Cabbage', 'כרוב סגול', 0, 2071),
-(25108, 9289, 'White Cabbage', 'כרוב לבן', 0, 2072),
-(25109, 9289, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2073),
-(25110, 9289, 'Lettuce', 'חסה', 0, 2074),
-(25111, 9289, 'Tuna', 'טונה', 0, 2075),
-(25112, 9289, 'Fried Eggplant', 'חציל מטוגן', 0, 2076),
-(25113, 9289, 'Pickled Lemons', 'לימון כבוש', 0, 2077),
-(25114, 9290, 'Hummus', 'חומוס', 0, 2078),
-(25115, 9290, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2079),
-(25116, 9290, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2080),
-(25117, 9290, 'Purple Cabbage', 'כרוב סגול', 0, 2081),
-(25118, 9290, 'White Cabbage', 'כרוב לבן', 0, 2082),
-(25119, 9290, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2083),
-(25120, 9290, 'Lettuce', 'חסה', 0, 2084),
-(25121, 9290, 'Tuna', 'טונה', 0, 2085),
-(25122, 9290, 'Fried Eggplant', 'חציל מטוגן', 0, 2086),
-(25123, 9290, 'Pickled Lemons', 'לימון כבוש', 0, 2087),
-(25124, 9291, 'Hummus', 'חומוס', 0, 2088),
-(25125, 9291, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2089),
-(25126, 9291, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2090),
-(25127, 9291, 'Purple Cabbage', 'כרוב סגול', 0, 2091),
-(25128, 9291, 'White Cabbage', 'כרוב לבן', 0, 2092),
-(25129, 9291, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2093),
-(25130, 9291, 'Lettuce', 'חסה', 0, 2094),
-(25131, 9291, 'Tuna', 'טונה', 0, 2095),
-(25132, 9291, 'Fried Eggplant', 'חציל מטוגן', 0, 2096),
-(25133, 9291, 'Pickled Lemons', 'לימון כבוש', 0, 2097),
-(25134, 9292, 'Hummus', 'חומוס', 0, 2098),
-(25135, 9292, 'Red Schug (spicy!)', 'סחוג אדום', 0, 2099),
-(25136, 9292, 'Green Schug (spicy!)', 'סחוג ירוק', 0, 2100),
-(25137, 9292, 'Purple Cabbage', 'כרוב סגול', 0, 2101),
-(25138, 9292, 'White Cabbage', 'כרוב לבן', 0, 2102),
-(25139, 9292, 'Israel Vegitable Salad', 'סלט ישראלי', 0, 2103),
-(25140, 9292, 'Lettuce', 'חסה', 0, 2104),
-(25141, 9292, 'Tuna', 'טונה', 0, 2105),
-(25142, 9292, 'Fried Eggplant', 'חציל מטוגן', 0, 2106),
-(25143, 9292, 'Pickled Lemons', 'לימון כבוש', 0, 2107),
-(25144, 9293, 'Thousand island', 'אלף האיים', 0, 2108),
-(25145, 9293, 'Tahini ', 'טחינה', 0, 2109),
-(25146, 9293, 'sweet chilli', 'צ''ילי מתוק', 0, 2110),
-(25147, 9293, 'BBQ', 'ברקביקיו', 0, 2111),
-(25148, 9293, 'honey vinaigrette', 'ויניגרט דבש', 0, 2112),
-(25149, 9293, 'Garlic & gill', 'שום שמיר', 0, 2113),
-(25150, 9294, 'Thousand island', 'אלף האיים', 0, 2114),
-(25151, 9294, 'Tahini ', 'טחינה', 0, 2115),
-(25152, 9294, 'sweet chilli', 'צ''ילי מתוק', 0, 2116),
-(25153, 9294, 'BBQ', 'ברקביקיו', 0, 2117),
-(25154, 9294, 'honey vinaigrette', 'ויניגרט דבש', 0, 2118),
-(25155, 9294, 'Garlic & gill', 'שום שמיר', 0, 2119),
-(25156, 9295, 'Thousand island', 'אלף האיים', 0, 2120),
-(25157, 9295, 'Tahini ', 'טחינה', 0, 2121),
-(25158, 9295, 'sweet chilli', 'צ''ילי מתוק', 0, 2122),
-(25159, 9295, 'BBQ', 'ברקביקיו', 0, 2123),
-(25160, 9295, 'honey vinaigrette', 'ויניגרט דבש', 0, 2124),
-(25161, 9295, 'Garlic & gill', 'שום שמיר', 0, 2125),
-(25162, 9296, 'Thousand island', 'אלף האיים', 0, 2126),
-(25163, 9296, 'Tahini ', 'טחינה', 0, 2127),
-(25164, 9296, 'sweet chilli', 'צ''ילי מתוק', 0, 2128),
-(25165, 9296, 'BBQ', 'ברקביקיו', 0, 2129),
-(25166, 9296, 'honey vinaigrette', 'ויניגרט דבש', 0, 2130),
-(25167, 9296, 'Garlic & gill', 'שום שמיר', 0, 2131),
-(25168, 9297, 'White rice', 'אורז לבן', 0, 2132),
-(25169, 9297, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2133),
-(25170, 9297, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2134),
-(25171, 9298, 'Lettuce', 'חסה', 0, 2135),
-(25172, 9298, 'Israeli Salad', 'סלט ישראלי', 0, 2136),
-(25173, 9298, 'Fried eggplant', 'חציל מטוגן', 0, 2137),
-(25174, 9298, 'Tuna', 'טונה', 0, 2138),
-(25175, 9298, 'Hummus', 'חומוס', 0, 2139),
-(25176, 9298, 'Red cabbage', 'כרוב אדום', 0, 2140),
-(25177, 9298, 'White cabbage', 'כרוב לבן', 0, 2141),
-(25178, 9298, 'Sweetcorn', 'תירס', 0, 2142),
-(25179, 9298, 'Carrot', 'גזר', 0, 2143),
-(25180, 9298, 'Raw onion', 'בצל חי', 0, 2144),
-(25181, 9298, 'Red pepper', 'פלפל אדום', 0, 2145),
-(25182, 9298, 'Pickles', 'חמוצים', 0, 2146),
-(25183, 9298, 'Tomatoes', 'עגבניות', 0, 2147),
-(25184, 9299, 'White rice', 'אורז לבן', 0, 2148),
-(25185, 9299, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2149),
-(25186, 9299, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2150),
-(25187, 9300, 'Lettuce', 'חסה', 0, 2151),
-(25188, 9300, 'Israeli Salad', 'סלט ישראלי', 0, 2152),
-(25189, 9300, 'Fried eggplant', 'חציל מטוגן', 0, 2153),
-(25190, 9300, 'Tuna', 'טונה', 0, 2154),
-(25191, 9300, 'Hummus', 'חומוס', 0, 2155),
-(25192, 9300, 'Red cabbage', 'כרוב אדום', 0, 2156),
-(25193, 9300, 'White cabbage', 'כרוב לבן', 0, 2157),
-(25194, 9300, 'Sweetcorn', 'תירס', 0, 2158),
-(25195, 9300, 'Carrot', 'גזר', 0, 2159),
-(25196, 9300, 'Raw onion', 'בצל חי', 0, 2160),
-(25197, 9300, 'Red pepper', 'פלפל אדום', 0, 2161),
-(25198, 9300, 'Pickles', 'חמוצים', 0, 2162),
-(25199, 9300, 'Tomatoes', 'עגבניות', 0, 2163),
-(25200, 9301, 'White rice', 'אורז לבן', 0, 2164),
-(25201, 9301, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2165),
-(25202, 9301, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2166),
-(25203, 9302, 'Lettuce', 'חסה', 0, 2167),
-(25204, 9302, 'Israeli Salad', 'סלט ישראלי', 0, 2168),
-(25205, 9302, 'Fried eggplant', 'חציל מטוגן', 0, 2169),
-(25206, 9302, 'Tuna', 'טונה', 0, 2170),
-(25207, 9302, 'Hummus', 'חומוס', 0, 2171),
-(25208, 9302, 'Red cabbage', 'כרוב אדום', 0, 2172),
-(25209, 9302, 'White cabbage', 'כרוב לבן', 0, 2173),
-(25210, 9302, 'Sweetcorn', 'תירס', 0, 2174),
-(25211, 9302, 'Carrot', 'גזר', 0, 2175),
-(25212, 9302, 'Raw onion', 'בצל חי', 0, 2176),
-(25213, 9302, 'Red pepper', 'פלפל אדום', 0, 2177),
-(25214, 9302, 'Pickles', 'חמוצים', 0, 2178),
-(25215, 9302, 'Tomatoes', 'עגבניות', 0, 2179),
-(25216, 9303, 'White rice', 'אורז לבן', 0, 2180),
-(25217, 9303, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2181),
-(25218, 9303, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2182),
-(25219, 9304, 'Lettuce', 'חסה', 0, 2183),
-(25220, 9304, 'Israeli Salad', 'סלט ישראלי', 0, 2184),
-(25221, 9304, 'Fried eggplant', 'חציל מטוגן', 0, 2185),
-(25222, 9304, 'Tuna', 'טונה', 0, 2186),
-(25223, 9304, 'Hummus', 'חומוס', 0, 2187),
-(25224, 9304, 'Red cabbage', 'כרוב אדום', 0, 2188),
-(25225, 9304, 'White cabbage', 'כרוב לבן', 0, 2189),
-(25226, 9304, 'Sweetcorn', 'תירס', 0, 2190),
-(25227, 9304, 'Carrot', 'גזר', 0, 2191),
-(25228, 9304, 'Raw onion', 'בצל חי', 0, 2192),
-(25229, 9304, 'Red pepper', 'פלפל אדום', 0, 2193),
-(25230, 9304, 'Pickles', 'חמוצים', 0, 2194),
-(25231, 9304, 'Tomatoes', 'עגבניות', 0, 2195),
-(25232, 9305, 'White rice', 'אורז לבן', 0, 2196),
-(25233, 9305, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2197),
-(25234, 9305, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2198),
-(25235, 9306, 'Lettuce', 'חסה', 0, 2199),
-(25236, 9306, 'Israeli Salad', 'סלט ישראלי', 0, 2200),
-(25237, 9306, 'Fried eggplant', 'חציל מטוגן', 0, 2201),
-(25238, 9306, 'Tuna', 'טונה', 0, 2202),
-(25239, 9306, 'Hummus', 'חומוס', 0, 2203),
-(25240, 9306, 'Red cabbage', 'כרוב אדום', 0, 2204),
-(25241, 9306, 'White cabbage', 'כרוב לבן', 0, 2205),
-(25242, 9306, 'Sweetcorn', 'תירס', 0, 2206),
-(25243, 9306, 'Carrot', 'גזר', 0, 2207),
-(25244, 9306, 'Raw onion', 'בצל חי', 0, 2208),
-(25245, 9306, 'Red pepper', 'פלפל אדום', 0, 2209),
-(25246, 9306, 'Pickles', 'חמוצים', 0, 2210),
-(25247, 9306, 'Tomatoes', 'עגבניות', 0, 2211),
-(25248, 9307, 'White rice', 'אורז לבן', 0, 2212),
-(25249, 9307, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2213),
-(25250, 9307, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2214),
-(25251, 9308, 'Lettuce', 'חסה', 0, 2215),
-(25252, 9308, 'Israeli Salad', 'סלט ישראלי', 0, 2216),
-(25253, 9308, 'Fried eggplant', 'חציל מטוגן', 0, 2217),
-(25254, 9308, 'Tuna', 'טונה', 0, 2218),
-(25255, 9308, 'Hummus', 'חומוס', 0, 2219),
-(25256, 9308, 'Red cabbage', 'כרוב אדום', 0, 2220),
-(25257, 9308, 'White cabbage', 'כרוב לבן', 0, 2221),
-(25258, 9308, 'Sweetcorn', 'תירס', 0, 2222),
-(25259, 9308, 'Carrot', 'גזר', 0, 2223),
-(25260, 9308, 'Raw onion', 'בצל חי', 0, 2224),
-(25261, 9308, 'Red pepper', 'פלפל אדום', 0, 2225),
-(25262, 9308, 'Pickles', 'חמוצים', 0, 2226),
-(25263, 9308, 'Tomatoes', 'עגבניות', 0, 2227),
-(25264, 9309, 'White rice', 'אורז לבן', 0, 2228),
-(25265, 9309, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2229),
-(25266, 9309, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2230),
-(25267, 9310, 'Lettuce', 'חסה', 0, 2231),
-(25268, 9310, 'Israeli Salad', 'סלט ישראלי', 0, 2232),
-(25269, 9310, 'Fried eggplant', 'חציל מטוגן', 0, 2233),
-(25270, 9310, 'Tuna', 'טונה', 0, 2234),
-(25271, 9310, 'Hummus', 'חומוס', 0, 2235),
-(25272, 9310, 'Red cabbage', 'כרוב אדום', 0, 2236),
-(25273, 9310, 'White cabbage', 'כרוב לבן', 0, 2237),
-(25274, 9310, 'Sweetcorn', 'תירס', 0, 2238),
-(25275, 9310, 'Carrot', 'גזר', 0, 2239),
-(25276, 9310, 'Raw onion', 'בצל חי', 0, 2240),
-(25277, 9310, 'Red pepper', 'פלפל אדום', 0, 2241),
-(25278, 9310, 'Pickles', 'חמוצים', 0, 2242),
-(25279, 9310, 'Tomatoes', 'עגבניות', 0, 2243),
-(25280, 9311, 'White rice', 'אורז לבן', 0, 2244),
-(25281, 9311, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2245),
-(25282, 9311, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2246),
-(25283, 9312, 'Lettuce', 'חסה', 0, 2247),
-(25284, 9312, 'Israeli Salad', 'סלט ישראלי', 0, 2248),
-(25285, 9312, 'Fried eggplant', 'חציל מטוגן', 0, 2249),
-(25286, 9312, 'Tuna', 'טונה', 0, 2250),
-(25287, 9312, 'Hummus', 'חומוס', 0, 2251),
-(25288, 9312, 'Red cabbage', 'כרוב אדום', 0, 2252),
-(25289, 9312, 'White cabbage', 'כרוב לבן', 0, 2253),
-(25290, 9312, 'Sweetcorn', 'תירס', 0, 2254),
-(25291, 9312, 'Carrot', 'גזר', 0, 2255),
-(25292, 9312, 'Raw onion', 'בצל חי', 0, 2256),
-(25293, 9312, 'Red pepper', 'פלפל אדום', 0, 2257),
-(25294, 9312, 'Pickles', 'חמוצים', 0, 2258),
-(25295, 9312, 'Tomatoes', 'עגבניות', 0, 2259),
-(25296, 9313, 'White rice', 'אורז לבן', 0, 2260),
-(25297, 9313, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2261),
-(25298, 9313, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2262),
-(25299, 9314, 'Lettuce', 'חסה', 0, 2263),
-(25300, 9314, 'Israeli Salad', 'סלט ישראלי', 0, 2264),
-(25301, 9314, 'Fried eggplant', 'חציל מטוגן', 0, 2265),
-(25302, 9314, 'Tuna', 'טונה', 0, 2266),
-(25303, 9314, 'Hummus', 'חומוס', 0, 2267),
-(25304, 9314, 'Red cabbage', 'כרוב אדום', 0, 2268),
-(25305, 9314, 'White cabbage', 'כרוב לבן', 0, 2269),
-(25306, 9314, 'Sweetcorn', 'תירס', 0, 2270),
-(25307, 9314, 'Carrot', 'גזר', 0, 2271),
-(25308, 9314, 'Raw onion', 'בצל חי', 0, 2272),
-(25309, 9314, 'Red pepper', 'פלפל אדום', 0, 2273),
-(25310, 9314, 'Pickles', 'חמוצים', 0, 2274),
-(25311, 9314, 'Tomatoes', 'עגבניות', 0, 2275),
-(25312, 9315, 'White rice', 'אורז לבן', 0, 2276),
-(25313, 9315, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2277),
-(25314, 9315, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2278),
-(25315, 9316, 'Lettuce', 'חסה', 0, 2279),
-(25316, 9316, 'Israeli Salad', 'סלט ישראלי', 0, 2280),
-(25317, 9316, 'Fried eggplant', 'חציל מטוגן', 0, 2281),
-(25318, 9316, 'Tuna', 'טונה', 0, 2282),
-(25319, 9316, 'Hummus', 'חומוס', 0, 2283),
-(25320, 9316, 'Red cabbage', 'כרוב אדום', 0, 2284),
-(25321, 9316, 'White cabbage', 'כרוב לבן', 0, 2285),
-(25322, 9316, 'Sweetcorn', 'תירס', 0, 2286),
-(25323, 9316, 'Carrot', 'גזר', 0, 2287),
-(25324, 9316, 'Raw onion', 'בצל חי', 0, 2288),
-(25325, 9316, 'Red pepper', 'פלפל אדום', 0, 2289),
-(25326, 9316, 'Pickles', 'חמוצים', 0, 2290),
-(25327, 9316, 'Tomatoes', 'עגבניות', 0, 2291),
-(25328, 9317, 'White rice', 'אורז לבן', 0, 2292),
-(25329, 9317, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2293),
-(25330, 9317, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2294),
-(25331, 9318, 'Lettuce', 'חסה', 0, 2295),
-(25332, 9318, 'Israeli Salad', 'סלט ישראלי', 0, 2296),
-(25333, 9318, 'Fried eggplant', 'חציל מטוגן', 0, 2297),
-(25334, 9318, 'Tuna', 'טונה', 0, 2298),
-(25335, 9318, 'Hummus', 'חומוס', 0, 2299),
-(25336, 9318, 'Red cabbage', 'כרוב אדום', 0, 2300),
-(25337, 9318, 'White cabbage', 'כרוב לבן', 0, 2301),
-(25338, 9318, 'Sweetcorn', 'תירס', 0, 2302),
-(25339, 9318, 'Carrot', 'גזר', 0, 2303),
-(25340, 9318, 'Raw onion', 'בצל חי', 0, 2304),
-(25341, 9318, 'Red pepper', 'פלפל אדום', 0, 2305),
-(25342, 9318, 'Pickles', 'חמוצים', 0, 2306),
-(25343, 9318, 'Tomatoes', 'עגבניות', 0, 2307),
-(25344, 9319, 'White rice', 'אורז לבן', 0, 2308),
-(25345, 9319, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2309),
-(25346, 9319, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2310),
-(25347, 9320, 'Lettuce', 'חסה', 0, 2311),
-(25348, 9320, 'Israeli Salad', 'סלט ישראלי', 0, 2312),
-(25349, 9320, 'Fried eggplant', 'חציל מטוגן', 0, 2313),
-(25350, 9320, 'Tuna', 'טונה', 0, 2314),
-(25351, 9320, 'Hummus', 'חומוס', 0, 2315),
-(25352, 9320, 'Red cabbage', 'כרוב אדום', 0, 2316),
-(25353, 9320, 'White cabbage', 'כרוב לבן', 0, 2317),
-(25354, 9320, 'Sweetcorn', 'תירס', 0, 2318),
-(25355, 9320, 'Carrot', 'גזר', 0, 2319),
-(25356, 9320, 'Raw onion', 'בצל חי', 0, 2320),
-(25357, 9320, 'Red pepper', 'פלפל אדום', 0, 2321),
-(25358, 9320, 'Pickles', 'חמוצים', 0, 2322),
-(25359, 9320, 'Tomatoes', 'עגבניות', 0, 2323),
-(25360, 9321, 'White rice', 'אורז לבן', 0, 2324),
-(25361, 9321, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2325),
-(25362, 9321, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2326),
-(25363, 9322, 'Lettuce', 'חסה', 0, 2327),
-(25364, 9322, 'Israeli Salad', 'סלט ישראלי', 0, 2328),
-(25365, 9322, 'Fried eggplant', 'חציל מטוגן', 0, 2329),
-(25366, 9322, 'Tuna', 'טונה', 0, 2330),
-(25367, 9322, 'Hummus', 'חומוס', 0, 2331),
-(25368, 9322, 'Red cabbage', 'כרוב אדום', 0, 2332),
-(25369, 9322, 'White cabbage', 'כרוב לבן', 0, 2333),
-(25370, 9322, 'Sweetcorn', 'תירס', 0, 2334),
-(25371, 9322, 'Carrot', 'גזר', 0, 2335),
-(25372, 9322, 'Raw onion', 'בצל חי', 0, 2336),
-(25373, 9322, 'Red pepper', 'פלפל אדום', 0, 2337),
-(25374, 9322, 'Pickles', 'חמוצים', 0, 2338),
-(25375, 9322, 'Tomatoes', 'עגבניות', 0, 2339),
-(25376, 9323, 'White rice', 'אורז לבן', 0, 2340),
-(25377, 9323, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2341),
-(25378, 9323, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2342),
-(25379, 9324, 'Lettuce', 'חסה', 0, 2343),
-(25380, 9324, 'Israeli Salad', 'סלט ישראלי', 0, 2344),
-(25381, 9324, 'Fried eggplant', 'חציל מטוגן', 0, 2345),
-(25382, 9324, 'Tuna', 'טונה', 0, 2346),
-(25383, 9324, 'Hummus', 'חומוס', 0, 2347),
-(25384, 9324, 'Red cabbage', 'כרוב אדום', 0, 2348),
-(25385, 9324, 'White cabbage', 'כרוב לבן', 0, 2349),
-(25386, 9324, 'Sweetcorn', 'תירס', 0, 2350),
-(25387, 9324, 'Carrot', 'גזר', 0, 2351),
-(25388, 9324, 'Raw onion', 'בצל חי', 0, 2352),
-(25389, 9324, 'Red pepper', 'פלפל אדום', 0, 2353),
-(25390, 9324, 'Pickles', 'חמוצים', 0, 2354),
-(25391, 9324, 'Tomatoes', 'עגבניות', 0, 2355),
-(25392, 9325, 'White rice', 'אורז לבן', 0, 2356),
-(25393, 9325, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2357),
-(25394, 9325, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2358),
-(25395, 9326, 'Lettuce', 'חסה', 0, 2359),
-(25396, 9326, 'Israeli Salad', 'סלט ישראלי', 0, 2360),
-(25397, 9326, 'Fried eggplant', 'חציל מטוגן', 0, 2361),
-(25398, 9326, 'Tuna', 'טונה', 0, 2362),
-(25399, 9326, 'Hummus', 'חומוס', 0, 2363),
-(25400, 9326, 'Red cabbage', 'כרוב אדום', 0, 2364),
-(25401, 9326, 'White cabbage', 'כרוב לבן', 0, 2365),
-(25402, 9326, 'Sweetcorn', 'תירס', 0, 2366),
-(25403, 9326, 'Carrot', 'גזר', 0, 2367),
-(25404, 9326, 'Raw onion', 'בצל חי', 0, 2368),
-(25405, 9326, 'Red pepper', 'פלפל אדום', 0, 2369),
-(25406, 9326, 'Pickles', 'חמוצים', 0, 2370),
-(25407, 9326, 'Tomatoes', 'עגבניות', 0, 2371),
-(25408, 9327, 'White rice', 'אורז לבן', 0, 2372),
-(25409, 9327, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2373),
-(25410, 9327, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2374),
-(25411, 9328, 'Lettuce', 'חסה', 0, 2375),
-(25412, 9328, 'Israeli Salad', 'סלט ישראלי', 0, 2376),
-(25413, 9328, 'Fried eggplant', 'חציל מטוגן', 0, 2377),
-(25414, 9328, 'Tuna', 'טונה', 0, 2378),
-(25415, 9328, 'Hummus', 'חומוס', 0, 2379),
-(25416, 9328, 'Red cabbage', 'כרוב אדום', 0, 2380),
-(25417, 9328, 'White cabbage', 'כרוב לבן', 0, 2381),
-(25418, 9328, 'Sweetcorn', 'תירס', 0, 2382),
-(25419, 9328, 'Carrot', 'גזר', 0, 2383),
-(25420, 9328, 'Raw onion', 'בצל חי', 0, 2384),
-(25421, 9328, 'Red pepper', 'פלפל אדום', 0, 2385),
-(25422, 9328, 'Pickles', 'חמוצים', 0, 2386),
-(25423, 9328, 'Tomatoes', 'עגבניות', 0, 2387),
-(25424, 9329, 'White rice', 'אורז לבן', 0, 2388),
-(25425, 9329, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2389),
-(25426, 9329, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2390),
-(25427, 9330, 'Lettuce', 'חסה', 0, 2391),
-(25428, 9330, 'Israeli Salad', 'סלט ישראלי', 0, 2392),
-(25429, 9330, 'Fried eggplant', 'חציל מטוגן', 0, 2393),
-(25430, 9330, 'Tuna', 'טונה', 0, 2394),
-(25431, 9330, 'Hummus', 'חומוס', 0, 2395),
-(25432, 9330, 'Red cabbage', 'כרוב אדום', 0, 2396),
-(25433, 9330, 'White cabbage', 'כרוב לבן', 0, 2397),
-(25434, 9330, 'Sweetcorn', 'תירס', 0, 2398),
-(25435, 9330, 'Carrot', 'גזר', 0, 2399),
-(25436, 9330, 'Raw onion', 'בצל חי', 0, 2400),
-(25437, 9330, 'Red pepper', 'פלפל אדום', 0, 2401),
-(25438, 9330, 'Pickles', 'חמוצים', 0, 2402),
-(25439, 9330, 'Tomatoes', 'עגבניות', 0, 2403),
-(25440, 9331, 'White rice', 'אורז לבן', 0, 2404),
-(25441, 9331, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2405),
-(25442, 9331, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2406),
-(25443, 9332, 'Lettuce', 'חסה', 0, 2407),
-(25444, 9332, 'Israeli Salad', 'סלט ישראלי', 0, 2408),
-(25445, 9332, 'Fried eggplant', 'חציל מטוגן', 0, 2409),
-(25446, 9332, 'Tuna', 'טונה', 0, 2410),
-(25447, 9332, 'Hummus', 'חומוס', 0, 2411),
-(25448, 9332, 'Red cabbage', 'כרוב אדום', 0, 2412),
-(25449, 9332, 'White cabbage', 'כרוב לבן', 0, 2413),
-(25450, 9332, 'Sweetcorn', 'תירס', 0, 2414),
-(25451, 9332, 'Carrot', 'גזר', 0, 2415),
-(25452, 9332, 'Raw onion', 'בצל חי', 0, 2416),
-(25453, 9332, 'Red pepper', 'פלפל אדום', 0, 2417),
-(25454, 9332, 'Pickles', 'חמוצים', 0, 2418),
-(25455, 9332, 'Tomatoes', 'עגבניות', 0, 2419),
-(25456, 9333, 'White rice', 'אורז לבן', 0, 2420),
-(25457, 9333, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2421),
-(25458, 9333, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2422),
-(25459, 9334, 'Lettuce', 'חסה', 0, 2423),
-(25460, 9334, 'Israeli Salad', 'סלט ישראלי', 0, 2424),
-(25461, 9334, 'Fried eggplant', 'חציל מטוגן', 0, 2425),
-(25462, 9334, 'Tuna', 'טונה', 0, 2426),
-(25463, 9334, 'Hummus', 'חומוס', 0, 2427),
-(25464, 9334, 'Red cabbage', 'כרוב אדום', 0, 2428),
-(25465, 9334, 'White cabbage', 'כרוב לבן', 0, 2429),
-(25466, 9334, 'Sweetcorn', 'תירס', 0, 2430),
-(25467, 9334, 'Carrot', 'גזר', 0, 2431),
-(25468, 9334, 'Raw onion', 'בצל חי', 0, 2432),
-(25469, 9334, 'Red pepper', 'פלפל אדום', 0, 2433),
-(25470, 9334, 'Pickles', 'חמוצים', 0, 2434),
-(25471, 9334, 'Tomatoes', 'עגבניות', 0, 2435),
-(25472, 9335, 'White rice', 'אורז לבן', 0, 2436),
-(25473, 9335, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2437),
-(25474, 9335, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2438),
-(25475, 9336, 'Lettuce', 'חסה', 0, 2439),
-(25476, 9336, 'Israeli Salad', 'סלט ישראלי', 0, 2440),
-(25477, 9336, 'Fried eggplant', 'חציל מטוגן', 0, 2441),
-(25478, 9336, 'Tuna', 'טונה', 0, 2442),
-(25479, 9336, 'Hummus', 'חומוס', 0, 2443),
-(25480, 9336, 'Red cabbage', 'כרוב אדום', 0, 2444),
-(25481, 9336, 'White cabbage', 'כרוב לבן', 0, 2445),
-(25482, 9336, 'Sweetcorn', 'תירס', 0, 2446),
-(25483, 9336, 'Carrot', 'גזר', 0, 2447),
-(25484, 9336, 'Raw onion', 'בצל חי', 0, 2448),
-(25485, 9336, 'Red pepper', 'פלפל אדום', 0, 2449),
-(25486, 9336, 'Pickles', 'חמוצים', 0, 2450),
-(25487, 9336, 'Tomatoes', 'עגבניות', 0, 2451),
-(25488, 9337, 'White rice', 'אורז לבן', 0, 2452),
-(25489, 9337, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2453),
-(25490, 9337, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2454),
-(25491, 9338, 'Lettuce', 'חסה', 0, 2455),
-(25492, 9338, 'Israeli Salad', 'סלט ישראלי', 0, 2456),
-(25493, 9338, 'Fried eggplant', 'חציל מטוגן', 0, 2457),
-(25494, 9338, 'Tuna', 'טונה', 0, 2458),
-(25495, 9338, 'Hummus', 'חומוס', 0, 2459),
-(25496, 9338, 'Red cabbage', 'כרוב אדום', 0, 2460),
-(25497, 9338, 'White cabbage', 'כרוב לבן', 0, 2461),
-(25498, 9338, 'Sweetcorn', 'תירס', 0, 2462),
-(25499, 9338, 'Carrot', 'גזר', 0, 2463),
-(25500, 9338, 'Raw onion', 'בצל חי', 0, 2464),
-(25501, 9338, 'Red pepper', 'פלפל אדום', 0, 2465),
-(25502, 9338, 'Pickles', 'חמוצים', 0, 2466),
-(25503, 9338, 'Tomatoes', 'עגבניות', 0, 2467),
-(25504, 9339, 'White rice', 'אורז לבן', 0, 2468),
-(25505, 9339, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2469),
-(25506, 9339, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2470),
-(25507, 9340, 'Lettuce', 'חסה', 0, 2471),
-(25508, 9340, 'Israeli Salad', 'סלט ישראלי', 0, 2472),
-(25509, 9340, 'Fried eggplant', 'חציל מטוגן', 0, 2473),
-(25510, 9340, 'Tuna', 'טונה', 0, 2474),
-(25511, 9340, 'Hummus', 'חומוס', 0, 2475),
-(25512, 9340, 'Red cabbage', 'כרוב אדום', 0, 2476),
-(25513, 9340, 'White cabbage', 'כרוב לבן', 0, 2477),
-(25514, 9340, 'Sweetcorn', 'תירס', 0, 2478),
-(25515, 9340, 'Carrot', 'גזר', 0, 2479),
-(25516, 9340, 'Raw onion', 'בצל חי', 0, 2480),
-(25517, 9340, 'Red pepper', 'פלפל אדום', 0, 2481),
-(25518, 9340, 'Pickles', 'חמוצים', 0, 2482),
-(25519, 9340, 'Tomatoes', 'עגבניות', 0, 2483),
-(25520, 9341, 'White rice', 'אורז לבן', 0, 2484),
-(25521, 9341, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2485),
-(25522, 9341, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2486),
-(25523, 9342, 'Lettuce', 'חסה', 0, 2487),
-(25524, 9342, 'Israeli Salad', 'סלט ישראלי', 0, 2488),
-(25525, 9342, 'Fried eggplant', 'חציל מטוגן', 0, 2489),
-(25526, 9342, 'Tuna', 'טונה', 0, 2490),
-(25527, 9342, 'Hummus', 'חומוס', 0, 2491),
-(25528, 9342, 'Red cabbage', 'כרוב אדום', 0, 2492),
-(25529, 9342, 'White cabbage', 'כרוב לבן', 0, 2493),
-(25530, 9342, 'Sweetcorn', 'תירס', 0, 2494),
-(25531, 9342, 'Carrot', 'גזר', 0, 2495),
-(25532, 9342, 'Raw onion', 'בצל חי', 0, 2496),
-(25533, 9342, 'Red pepper', 'פלפל אדום', 0, 2497),
-(25534, 9342, 'Pickles', 'חמוצים', 0, 2498),
-(25535, 9342, 'Tomatoes', 'עגבניות', 0, 2499),
-(25536, 9343, 'White rice', 'אורז לבן', 0, 2500),
-(25537, 9343, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2501),
-(25538, 9343, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2502),
-(25539, 9344, 'Lettuce', 'חסה', 0, 2503),
-(25540, 9344, 'Israeli Salad', 'סלט ישראלי', 0, 2504),
-(25541, 9344, 'Fried eggplant', 'חציל מטוגן', 0, 2505),
-(25542, 9344, 'Tuna', 'טונה', 0, 2506),
-(25543, 9344, 'Hummus', 'חומוס', 0, 2507),
-(25544, 9344, 'Red cabbage', 'כרוב אדום', 0, 2508),
-(25545, 9344, 'White cabbage', 'כרוב לבן', 0, 2509),
-(25546, 9344, 'Sweetcorn', 'תירס', 0, 2510),
-(25547, 9344, 'Carrot', 'גזר', 0, 2511),
-(25548, 9344, 'Raw onion', 'בצל חי', 0, 2512),
-(25549, 9344, 'Red pepper', 'פלפל אדום', 0, 2513),
-(25550, 9344, 'Pickles', 'חמוצים', 0, 2514),
-(25551, 9344, 'Tomatoes', 'עגבניות', 0, 2515),
-(25552, 9345, 'White rice', 'אורז לבן', 0, 2516),
-(25553, 9345, 'Green beans in sauce', 'שעועית ירוקה ברוטב', 0, 2517),
-(25554, 9345, 'Mashed sweet potatoes', 'פירה בטטה', 0, 2518),
-(25555, 9346, 'Lettuce', 'חסה', 0, 2519),
-(25556, 9346, 'Israeli Salad', 'סלט ישראלי', 0, 2520),
-(25557, 9346, 'Fried eggplant', 'חציל מטוגן', 0, 2521),
-(25558, 9346, 'Tuna', 'טונה', 0, 2522),
-(25559, 9346, 'Hummus', 'חומוס', 0, 2523),
-(25560, 9346, 'Red cabbage', 'כרוב אדום', 0, 2524),
-(25561, 9346, 'White cabbage', 'כרוב לבן', 0, 2525),
-(25562, 9346, 'Sweetcorn', 'תירס', 0, 2526),
-(25563, 9346, 'Carrot', 'גזר', 0, 2527),
-(25564, 9346, 'Raw onion', 'בצל חי', 0, 2528),
-(25565, 9346, 'Red pepper', 'פלפל אדום', 0, 2529),
-(25566, 9346, 'Pickles', 'חמוצים', 0, 2530),
-(25567, 9346, 'Tomatoes', 'עגבניות', 0, 2531);
+(24923, 9270, 'Red cabbage', 'כרוב אדום', 0, 1887);
 
 -- --------------------------------------------------------
 
@@ -15091,7 +14243,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
 
 --
 -- Dumping data for table `tags`
@@ -15133,8 +14285,7 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 (34, 'Ice cream, waffles, desserts', 'קיונוחים, גלידות, וופלים '),
 (35, 'Felafel', 'פלאפל'),
 (36, 'Coffee, dairy cafe', 'בית קפה'),
-(37, 'Mehadrin', ''),
-(38, 'Business', 'עֵסֶק');
+(37, 'Mehadrin', '');
 
 -- --------------------------------------------------------
 
@@ -15165,7 +14316,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=635 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=634 ;
 
 --
 -- Dumping data for table `users`
@@ -15281,12 +14432,11 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discou
 (620, 'gujg@fghh.com', '', 'gujg@fghh.com', 'h', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
 (621, 'kpk10@gmail.com', '', 'kpk10@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
 (627, 'avi@puahstartups.com', 'TEST TEST', '', '', 0, '0000-00-00', '000000000', 'דרך יצחק רבין 23, בית שמש, ישראל', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(628, 'test@orderapp.com', 'Test', '', '', 0, '0000-00-00', '000000', '45', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL),
+(628, 'test@orderapp.com', 'test', '', '', 0, '0000-00-00', '000000', 'Аллея Кастельяна, 1, Мадрид, Испания', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL),
 (629, 'tasawarmahmood24@gmail.com', 'test', 'tasawarmahmood24@gmail.com', '123', 0, '0000-00-00', '000000', 'SDF, Terminal Drive, Louisville, KY, United States', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', '34609bdc08a07ace4e1526bbb1777673'),
 (631, 'muhammad.iftikhar.aftab@gmail.com', '', 'muhammad.iftikhar.aftab@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
 (632, 'dvora@pushstartups.com', '', 'dvora@pushstartups.com', '025832037', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
-(633, 'asdfhjjsdjksher@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_wQxbHwTV7O85zmo21NPOw84c', NULL),
-(634, 'DODO@pushstartups.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_00w4vq3BCg73gh6oWK8oC0yz', NULL);
+(633, 'asdfhjjsdjksher@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_wQxbHwTV7O85zmo21NPOw84c', NULL);
 
 -- --------------------------------------------------------
 
@@ -15323,7 +14473,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=549 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=548 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -15393,8 +14543,7 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (544, 629, 3, 91, NULL, 0, '2017-05-11 11:45:30', 'ENG Desktop', 'CASH', '', NULL),
 (545, 628, 3, 91, NULL, 0, '2017-05-12 12:26:01', 'ENG Desktop', 'CASH', '', NULL),
 (546, 614, 1, 109, NULL, 0, '2017-05-13 00:07:52', 'ENG Desktop', 'CASH', '', 'Chrome'),
-(547, 614, 1, 113, NULL, 0, '2017-05-13 00:10:04', 'ENG Desktop', 'CASH', '', 'Firefox'),
-(548, 628, 17, 83, 'fixed value', 10, '2017-05-15 16:52:10', 'ENG mobile', 'CASH', '', NULL);
+(547, 614, 1, 113, NULL, 0, '2017-05-13 00:10:04', 'ENG Desktop', 'CASH', '', 'Firefox');
 
 -- --------------------------------------------------------
 
@@ -15433,6 +14582,15 @@ CREATE TABLE IF NOT EXISTS `user_votes` (
   KEY `vote_timing_id` (`vote_timing_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=237 ;
 
+--
+-- Dumping data for table `user_votes`
+--
+
+INSERT INTO `user_votes` (`id`, `user_id`, `restaurant_id`, `vote_timing_id`) VALUES
+(201, 3, 1, 1),
+(210, 4, 12, 1),
+(236, 1, 3, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -15453,7 +14611,7 @@ CREATE TABLE IF NOT EXISTS `vote_timings` (
 --
 
 INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`) VALUES
-(1, 2, '21:00:00', '23:00:00'),
+(1, 2, '09:00:00', '13:00:00'),
 (4, 6, '16:05:00', '17:00:00'),
 (5, 6, '21:00:00', '23:00:00'),
 (6, 6, '11:00:00', '13:00:00');
@@ -15475,7 +14633,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=297 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=288 ;
 
 --
 -- Dumping data for table `weekly_availibility`
@@ -15747,14 +14905,7 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (284, 40, 'Wednesday', 'יום ד', '12:00', '12:00', '24:00', '24:00'),
 (285, 40, 'Thursday', 'יום ה', '12:00', '12:00', '24:00', '24:00'),
 (286, 40, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
-(287, 40, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור'),
-(290, 41, 'Sunday', 'יום א', '10:00', '10:00', '16:30', '16:30'),
-(291, 41, 'Monday', 'יום ב', '10:00', '10:00', '16:30', '16:30'),
-(292, 41, 'Tuesday', 'יום ג', '10:00', '10:00', '16:30', '16:30'),
-(293, 41, 'Wednesday', 'יום ד', '10:00', '10:00', '16:30', '16:30'),
-(294, 41, 'Thursday', 'יום ה', '10:00', '10:00', '16:30', '16:30'),
-(295, 41, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
-(296, 41, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור');
+(287, 40, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור');
 
 --
 -- Constraints for dumped tables
