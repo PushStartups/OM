@@ -2411,6 +2411,8 @@ function email_for_mark2($user_order,$orderId,$todayDate)
 
 
     $mailbody .= '\n';
+    $mailbody .= 'Total Without Discount : '.$user_order['totalWithoutDiscount'];
+    $mailbody .= '\n';
     $mailbody .= 'Total : '.$user_order['total'];
 
     $mailbody .= '\n';

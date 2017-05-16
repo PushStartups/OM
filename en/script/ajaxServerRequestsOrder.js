@@ -422,12 +422,15 @@ function onItemSelectedCallBack(response)
 
         else
         {
+
             if(extras.extra_with_subitems[x].subitems.length != 0)
             {
+                var multiTypeItemSet = [];
                 // SUB ITEMS WITH MULTIPLE SELECTABLE OPTIONS
 
                 multipleTypeStr += '<div class="add-row">' +
                     '<label style="text-align: left; margin-bottom: 20px">' + extras.extra_with_subitems[x].name_en + '</label>'+
+                    '<span id="error-'+x+'"  style=" color: red; display: block; text-align: left; margin-bottom: 16px;"></span>'+
                     '<ul class="checkbox-list">';
 
                 for (var y = 0; y < extras.extra_with_subitems[x].subitems.length; y++)
@@ -563,8 +566,28 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
             if(countSelectedItems >= limit)
             {
-                alert("limit over");
+               // alert("limit over");
+
+                var errorId = "#error-"+extraIndex;
+
+                $(errorId).html('The limit is '+limit);
+
                 $(id).prop('checked', false);
+
+                setTimeout(function(){
+
+                    var container = $('#scrollable2'),
+                        scrollTo = $(errorId);
+
+                    // Or you can animate the scrolling:
+                    container.animate({
+
+                        scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+                    },500)
+
+                }, 300);
+
+
             }
             else {
 
@@ -674,7 +697,7 @@ function addUserOrder()
 
                 setTimeout(function(){
 
-                    var container = $('.scrollable-area.popup'),
+                    var container = $('#scrollable2'),
                         scrollTo = $(parent);
 
                     // Or you can animate the scrolling:
