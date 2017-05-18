@@ -28,8 +28,10 @@ DB::query("set names utf8");
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin-skins.min.css">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <!-- SmartAdmin RTL Support -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin-rtl.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/clockpicker.css">
 
     <!-- We recommend you use "your_style.css" to override SmartAdmin
          specific styles this will also ensure you retrain your customization with each SmartAdmin update.
@@ -111,7 +113,8 @@ DB::query("set names utf8");
 				<span> Last updated on: 12/12/2013 9:43AM
 						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
 							<i class="fa fa-refresh"></i>
-						</button> </span>
+						</button>
+                </span>
             <!-- end footer -->
 
         </div>
@@ -140,8 +143,12 @@ DB::query("set names utf8");
                     <?php  } ?>
                 </ul>
             </li>
+
             <li>
                 <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
+            </li>
+            <li>
+                <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>
             </li>
             <li>
                 <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>

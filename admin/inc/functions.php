@@ -189,3 +189,31 @@ function getAllCities()
     $cities = DB::query("select * from cities");
     return $cities;
 }
+
+//GET ALL B2B COMPANIES
+function getAllCompanies()
+{
+    $cities = DB::query("select * from company");
+    return $cities;
+}
+
+function getRestaurantsOfSpecificCompany($company_id)
+{
+    $restaurants = DB::query("select company_rest.*, restaurants.name_en as restaurants_name from company_rest inner join restaurants on company_rest.rest_id = restaurants.id where company_id = '$company_id'");
+    return  $restaurants;
+}
+
+//GET COMPANY NAME
+function getCompanyName($company_id)
+{
+    $company = DB::queryFirstRow("select * from company where id = '$company_id'");
+    return  $company['name'];
+}
+
+
+//GET USERS OF SPECIFIC COMPANY
+function getUsersOfSpecificCompany($companies_id){
+
+    $company = DB::query("select * from b2b_users where company_id = '$companies_id'");
+    return $company;
+}

@@ -6,7 +6,7 @@
     </div>
 </div>
 <!-- END PAGE FOOTER -->
-
+<?php  require_once 'inc/initDb.php'; ?>
 <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
 Note: These tiles are completely responsive,
 you can add as many as you like
@@ -21,13 +21,15 @@ you can add as many as you like
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
 <script>
     if (!window.jQuery) {
         document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
     }
 </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script>
     if (!window.jQuery.ui) {
         document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
@@ -101,6 +103,9 @@ you can add as many as you like
 <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
 <script src="js/custom/restaurants.js"></script>
 <script src="js/custom/refund.js"></script>
+<script src="js/custom/add-new-company.js"></script>
+<script src="js/custom/clockpicker.js"></script>
+<script src="js/custom/add-company-user.js"></script>
 <script type="text/javascript">
     hideLoading();
 </script>
@@ -108,8 +113,16 @@ you can add as many as you like
 
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
+    $('.clockpicker').clockpicker();
+
+
     $(document).ready(function() {
 
+//        $("#address").geocomplete({
+//                details: "form",
+//                types: ["geocode", "establishment"],
+//            }
+//        );
         pageSetUp();
 
         /* // DOM Position key index //
@@ -296,6 +309,44 @@ you can add as many as you like
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(ga, s);
     })();
+    var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+
+
+    var pausecontent = new Array();
+    <?php
+
+    $arr = DB::query("select * from restaurants");
+    foreach($arr as $name ){ ?>
+    pausecontent.push("<?php echo $name['name_en']; ?>");
+    <?php } ?>
+
+        $( "#rest_name" ).autocomplete({
+            source: pausecontent
+        });
+
 </script>
 
 </body>
