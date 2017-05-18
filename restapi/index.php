@@ -19,15 +19,25 @@ DB::query("set names utf8");
 
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
+{
     define("EMAIL","devorders@orderapp.com");
+    define("B2BEMAIL","devb2b.orderapp.com");
+}
 
 // QA SERVER
-else if($_SERVER['HTTP_HOST'] == "qa.orderapp.com")
+else if($_SERVER['HTTP_HOST'] == "qa.orderapp.com"){
+
     define("EMAIL","qaorders@orderapp.com");
+    define("B2BEMAIL","qab2b.orderapp.com");
+}
+
 
 // PRODUCTION SERVER
 else
+{
     define("EMAIL","orders@orderapp.com");
+    define("B2BEMAIL","b2b.orderapp.com");
+}
 
 
 
@@ -1283,10 +1293,10 @@ function email_to_b2b_users($email,$password,$username)
     $mailbody .= '</tr>';
     $mailbody .= '<tr>';
     $mailbody .= '<td align="left" valign="top" width="100%" bgcolor="#FFFFFF" style="padding: 50px 25px; background: #fff;">';
-    $mailbody .= '<p>Hi '.$username.' <br>Your login details are as follows:</p>';
+    $mailbody .= '<p>Hi '.$username.' <br><br>Your login details are as follows:</p>';
     $mailbody .= '<p><b>Username : </b> '.$username.'</p>';
     $mailbody .= '<p><b>Password : </b> '.$password.'</p><br>';
-    $mailbody .= '<p>Visit Website :<a style="color: #3b5998; text-decoration: none;" href="#">https://devb2b.orderapp.com/en/</a></p>';
+    $mailbody .= '<p>Visit Website : <a style="color: #3b5998; text-decoration: none;" href="#">'.B2BEMAIL.'</a></p>';
     $mailbody .= '</td>';
     $mailbody .= '</tr>';
     $mailbody .= '<tr>';
