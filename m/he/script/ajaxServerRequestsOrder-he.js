@@ -398,14 +398,14 @@ function onItemSelectedCallBack(response)
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multiTypeItemSet.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_he+" [+"+extras.extra_with_subitems[x].subitems[y].price+"]"+'</label></li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' + x + ',' + y + ',' + multiTypeItemSet.length + ')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
                             ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
                             + extras.extra_with_subitems[x].subitems[y].name_he + '</label></li>';
                     }
@@ -483,7 +483,7 @@ function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , 
 
 
 // ON MULTIPLE TYPE EXTRA SELECTED
-function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
+function onExtraSubItemSelected(ex,extraIndex, subItemIndex, index, e)  {
 
     var id = '#checkbox-id-'+extraIndex+subItemIndex;
 
@@ -510,7 +510,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
             }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
-            multipleTypeSubItems[extraIndex][index][name] = subItem;
+            multipleTypeSubItems[ex][index][name] = subItem;
 
 
         }
@@ -519,11 +519,11 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
             var countSelectedItems = 0;
 
-            for(var x =0;x<multipleTypeSubItems[extraIndex].length;x++)
+            for(var x =0;x<multipleTypeSubItems[ex].length;x++)
             {
-                for (var key in multipleTypeSubItems[extraIndex][x]) {
+                for (var key in multipleTypeSubItems[ex][x]) {
 
-                    if (multipleTypeSubItems[extraIndex][x][key] != null && multipleTypeSubItems[extraIndex][x][key] != undefined) {
+                    if (multipleTypeSubItems[ex][x][key] != null && multipleTypeSubItems[ex][x][key] != undefined) {
                         countSelectedItems++;
                     }
                 }
@@ -564,7 +564,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
                 }; // QUANTITY OF SUB-ITEM BY DEFAULT 1
 
 
-                multipleTypeSubItems[extraIndex][index][name] = subItem;
+                multipleTypeSubItems[ex][index][name] = subItem;
 
             }
 
@@ -576,7 +576,7 @@ function onExtraSubItemSelected(extraIndex, subItemIndex, index) {
 
     else
     {
-        multipleTypeSubItems[extraIndex][index][name] = null;
+        multipleTypeSubItems[ex][index][name] = null;
         var errorId = "#error-"+extraIndex;
         $(errorId).html('');
 

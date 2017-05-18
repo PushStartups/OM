@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/img/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/110_burger/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/APPETIZERS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/BAGUETTE.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/BUSINESS LUNCH.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/DRINKS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/PITA.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/PLATE.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/ganir/SALADS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/COMBINATIONS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/DESSERTS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/DRINKS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/INSIDE OUT.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/KAMPAI'S SPECIAL ROLLS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/KID'S MEAL.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/MAKI-ROLL.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/NIGIRI SUSHI.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/RICE.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/SASHIMI.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/SOUPS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/STARTERS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/kampai/WOK-FRIED NOODLES.png" />
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="DB update + code latest">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/haturki/BUSINESS MEAL.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/schnitzel/FLAVORED SCHNITZEL.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/schnitzel/SALADS.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/schnitzel/SIDES.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,9 +43,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dairy-others</find>
-      <find>dairy_click</find>
-      <find>hamburger-others</find>
       <find>hamburger_others</find>
       <find>add-</find>
       <find>place</find>
@@ -83,10 +66,13 @@
       <find>box-frame</find>
       <find>Or you can animate the scrolling:</find>
       <find>#error-</find>
-      <find>multipleTypeSubItems</find>
       <find>error-</find>
       <find>alert</find>
       <find>delivery_fee</find>
+      <find>selectedItemPriceOrg</find>
+      <find>multipleTypeSubItems</find>
+      <find>onExtraSubItemSelected</find>
+      <find>multipleTypeSubItems</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,9 +212,9 @@
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\img\categories" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\img" />
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\he" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\script" />
     </key>
@@ -815,14 +801,7 @@
       <workItem from="1495001305644" duration="302000" />
       <workItem from="1495032616915" duration="516000" />
       <workItem from="1495096210319" duration="329000" />
-      <workItem from="1495096553729" duration="2783000" />
-    </task>
-    <task id="LOCAL-00077" summary="Mobile EN / HE Complete &#10;DB Update">
-      <created>1492508179837</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1492508179840</updated>
+      <workItem from="1495096553729" duration="6531000" />
     </task>
     <task id="LOCAL-00078" summary="Mobile EN / HE Complete &#10;DB Update&#10;DESKTOP EN / HE Complete">
       <created>1492525233852</created>
@@ -1160,11 +1139,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495096971707</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="DB update + code latest">
+      <created>1495100782103</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1495100782104</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="895512000" />
+    <option name="totallyTimeSpent" value="899260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1532,34 +1518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="626" column="28" lean-forward="true" selection-start-line="625" selection-start-column="6" selection-end-line="626" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="618" column="7" lean-forward="true" selection-start-line="618" selection-start-column="7" selection-end-line="619" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="580" column="28" lean-forward="false" selection-start-line="580" selection-start-column="28" selection-end-line="580" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="583" column="28" lean-forward="false" selection-start-line="583" selection-start-column="28" selection-end-line="583" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="919">
@@ -1793,6 +1751,62 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_dump/orderapp(1).sql" />
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="524" column="70" lean-forward="false" selection-start-line="524" selection-start-column="31" selection-end-line="524" selection-end-column="70" />
+          <folding>
+            <marker date="1495103379800" expanded="true" signature="12153:12168" ph="..." />
+            <marker date="1495103379800" expanded="true" signature="12214:12292" ph="..." />
+            <marker date="1495103379800" expanded="true" signature="12394:12408" ph="..." />
+            <marker date="1495103379800" expanded="true" signature="14295:14332" ph="..." />
+            <marker date="1495103379800" expanded="true" signature="14442:14509" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="533" column="70" lean-forward="true" selection-start-line="533" selection-start-column="9" selection-end-line="533" selection-end-column="70" />
+          <folding>
+            <marker date="1495103663591" expanded="true" signature="12171:12186" ph="..." />
+            <marker date="1495103663591" expanded="true" signature="12232:12309" ph="..." />
+            <marker date="1495103663591" expanded="true" signature="12411:12425" ph="..." />
+            <marker date="1495103663591" expanded="true" signature="14295:14333" ph="..." />
+            <marker date="1495103663591" expanded="true" signature="14443:14511" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="516" column="36" lean-forward="false" selection-start-line="516" selection-start-column="34" selection-end-line="516" selection-end-column="36" />
+          <folding>
+            <marker date="1495104071814" expanded="true" signature="11649:11718" ph="..." />
+            <marker date="1495104071814" expanded="true" signature="12160:12238" ph="..." />
+            <marker date="1495104071814" expanded="true" signature="14180:14249" ph="..." />
+            <marker date="1495104071814" expanded="true" signature="14515:14582" ph="..." />
+            <marker date="1495104071814" expanded="true" signature="32680:32699" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1709">
+          <caret line="578" column="31" lean-forward="false" selection-start-line="578" selection-start-column="31" selection-end-line="578" selection-end-column="31" />
+          <folding>
+            <marker date="1495104342944" expanded="true" signature="11672:11741" ph="..." />
+            <marker date="1495104342944" expanded="true" signature="12171:12248" ph="..." />
+            <marker date="1495104342944" expanded="true" signature="14188:14257" ph="..." />
+            <marker date="1495104342944" expanded="true" signature="14523:14591" ph="..." />
+            <marker date="1495104342944" expanded="true" signature="32804:32824" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
