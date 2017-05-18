@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 18, 2017 at 10:49 AM
+-- Generation Time: May 18, 2017 at 12:00 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -440,7 +440,7 @@ INSERT INTO `categories` (`id`, `menu_id`, `is_discount`, `name_en`, `name_he`, 
 (126, 14, 0, 'DRINKS - FAMILY SIZED', ' שתיה- גדולה', 0, '/m/en/img/categories/pizzaland/DRINK-FAMILY SIZE.png', 228),
 (132, 15, 0, 'Deals', 'עסקאות', 0, '/m/en/img/categories/110_burger/1.png', 232),
 (133, 15, 0, 'Sides', 'תוספות ליד', 0, '/m/en/img/categories/110_burger/1.png', 233),
-(134, 15, 0, 'Drinks', 'שתייה', 0, '/m/en/img/categories/110_burger/1.png', 236),
+(134, 15, 0, 'Drinks', 'שתייה', 0, '/m/en/img/categories/angus/Angus Drinks.png', 236),
 (135, 15, 0, '110 X 1', '1x110', 0, '/m/en/img/categories/110_burger/1.png', 239),
 (136, 15, 0, '110 X 2', '2x110', 0, '/m/en/img/categories/110_burger/1.png', 242),
 (137, 15, 0, '110 X 3', '3x110', 0, '/m/en/img/categories/110_burger/1.png', 245),
@@ -601,7 +601,7 @@ INSERT INTO `categories` (`id`, `menu_id`, `is_discount`, `name_en`, `name_he`, 
 (743, 33, 0, 'DESSERTS', 'קינוחים', 0, '/m/en/img/categories/kampai/DESSERTS.png', 822),
 (744, 33, 0, 'DRINKS', 'שתיה', 0, '/m/en/img/categories/kampai/DRINKS.png', 823),
 (99999, 99999, 0, 'ex', 'ex', 0, NULL, 0),
-(100031, 2, 0, 'Meshulashim Deals', 'דילים', 0, '/m/en/img/categories/mesh/', 112);
+(100031, 2, 0, 'Meshulashim Deals', 'דילים', 0, '/m/en/img/categories/mesh/Pizza.png', 112);
 
 -- --------------------------------------------------------
 
@@ -1160,7 +1160,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100027 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100028 ;
 
 --
 -- Dumping data for table `extras`
@@ -2775,8 +2775,9 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9352, 3591, 'Kid''s Meal Drink', 'One', 0, 'ארוכת ילדים שתייה לבחירה (שדה חובה)', 0, 632),
 (9353, 3592, 'Kid''s Meal Drink', 'One', 0, 'ארוכת ילדים שתייה לבחירה (שדה חובה)', 0, 633),
 (9354, 2740, 'Toppings', 'Multiple', 0, 'תוספות', 0, 0),
-(9355, 3656, 'Toppings Free ', 'Multiple', 0, ' תוספות מעל', 0, 634),
-(9356, 3656, 'Toppings Charge', 'Multiple', 0, ' תוספות מעל', 0, 635),
+(9355, 3656, 'Pizza 1 Toppings Charge', 'Multiple', 0, 'פיצה 1 תוספות בתשלום', 0, 634),
+(9356, 3656, 'Pizza 2 Toppings Charge', 'Multiple', 0, 'פיצה 2 תוספות בתשלום', 0, 635),
+(9357, 3656, 'Pizza 3 Toppings Charge', 'Multiple', 0, 'פיצה 3 תוספות בתשלום', 0, 636),
 (99999, 99999, 'ex', '', 0, 'ex', 0, 0),
 (100021, 3405, 'גודל (שדה חובה)', '', 0, 'גודל (שדה חובה)', 0, 9212);
 
@@ -3591,7 +3592,7 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (1540, 136, 0, 'Chicken sandwich', 'צ''יקן סנדביץ'' 110', '', '', 39, 914),
 (1541, 136, 0, 'Sirloin sandwich', 'סינטה 110', '', '', 49, 915),
 (1542, 137, 0, 'Classic burger', 'בורגר 110 קלאסי', '', '', 49, 916),
-(1543, 138, 0, 'Kid''s meal', 'ארות ילדים', '', '', 35, 917),
+(1543, 138, 0, 'Kid''s meal', 'ארות ילדים', 'Chicken tenders, fries, drink ', 'שניצלונים + צ''יפס + שתייה', 35, 917),
 (1544, 135, 0, 'Veggie burger (150g)', 'צמחוני', '', '', 29, 918),
 (1601, 161, 0, 'Japanese pickles', 'חמוצים יפניים', 'Cabbage, carrot, cucumber and pepper in a sweet marinade, garnished with sesame seeds', 'כרוב, גזר, מלפפון ופלפלים בתחמיץ מתקתק עם קישוט של שומשום מעל', 15, 922),
 (1602, 161, 0, 'Edamame', 'אדממה', 'Steamed soybean pods served with coarse salt and lemon', 'תרמילי סויה מאודים מוגש עם מלח גס ולימון', 17, 923),
@@ -5102,7 +5103,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25852 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25871 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15421,7 +15422,26 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (25848, 9356, 'Onions', 'בצל', 5, 2788),
 (25849, 9356, 'Olives', 'זיתים', 5, 2789),
 (25850, 9356, 'Corn', 'תירס', 5, 2790),
-(25851, 9356, 'Vegan Cheese', 'גבינה טבעונית', 10, 2791);
+(25851, 9356, 'Vegan Cheese', 'גבינה טבעונית', 10, 2791),
+(25852, 9357, 'Tomatoes', 'עגבניות', 5, 2792),
+(25853, 9357, 'Mushrooms', 'פטריות', 5, 2793),
+(25854, 9357, 'Onions', 'בצל', 5, 2794),
+(25855, 9357, 'Olives', 'זיתים', 5, 2795),
+(25856, 9357, 'Corn', 'תירס', 5, 2796),
+(25857, 9357, 'Vegan Cheese', 'גבינה טבעונית', 10, 2797),
+(25858, 2232, 'Sunny side down', 'ביצה הפוכה', 3, 2581),
+(25859, 2236, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25860, 2240, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25861, 2244, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25862, 2248, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25863, 2254, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25864, 2256, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25865, 2258, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25866, 2260, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25867, 2262, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25868, 2264, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25869, 2266, 'Sunny side down', 'ביצה הפוכה', 3, 0),
+(25870, 2268, 'Sunny side down', 'ביצה הפוכה', 3, 0);
 
 -- --------------------------------------------------------
 
