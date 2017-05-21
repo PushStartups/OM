@@ -10,20 +10,19 @@ $(function () {
         $(this).find(".options").slideToggle();
     })
 
-
     $('body').on('click', '.more-toggle', function(e) {
 
         var that = this;
         $(this).siblings().find(".toggle-content").fadeToggle().promise().done(function () {
-            if ($(that).find(".more").text().indexOf("more") != -1) {
-                $(that).find(".more").text("פחות מידע")
+            if ($(that).find(".more").text() == "קרא עוד") {
+                $(that).find(".more").text("קרא פחות")
                 $(that).find(".sign").text("-")
             }
             else {
                 $(that).find(".more").text("קרא עוד")
                 $(that).find(".sign").text("+")
             }
-        });;
+        });
 
     })
 

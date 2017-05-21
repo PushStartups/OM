@@ -1502,6 +1502,7 @@ function selectCC() {
     $('#cashBtn').removeClass('active');
     $('#ccBtn').addClass('active');
     $('#show_credit_card').addClass('show');
+    $('#cash-text').hide();
 
 }
 
@@ -1510,6 +1511,7 @@ function selectCash() {
     $('#cashBtn').addClass('active');
     $('#ccBtn').removeClass('active');
     $('#show_credit_card').removeClass('show');
+    $('#cash-text').show();
 }
 
 

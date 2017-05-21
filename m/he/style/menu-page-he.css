@@ -847,10 +847,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	background-size: 100%;
 }
 .info .close{
-	position: absolute;
+	position: fixed;
 	top: 2px;
-	right: 13px;
-	color: #fff;
+	right: 10px;
+	color: #000;
 	z-index: 99;
 	font-size: 35px;
 	line-height:35px;

@@ -256,7 +256,7 @@ function  getAllRestaurants(response)
                     '<a data-toggle="modal" onclick="openDiscount(' + x + ')" data-target="#address-popup" href="#"><div class="address-add">' + result[x].address_en + '</div><span>delivery Fee</span></a>' +
                     '</li>' +
                     '<li>' +
-                    '<a data-toggle="modal" onclick="openTime(' + x + ')" data-target="#time-popup" href="#"><span>Open Now</span>' + result[x].today_timings + '</a>' +
+                    '<a data-toggle="modal" onclick="openTime(' + x + ')" data-target="#time-popup" href="#"><span>Close Now</span>' + result[x].today_timings + '</a>' + 
                     '</li>' +
                     '<li class="last text-center">' +
                     '<a  onclick="openGallery(' + x + ')"  href="#"><img  src="/m/en/img/gallery-img.png"> Gallery</a>' +

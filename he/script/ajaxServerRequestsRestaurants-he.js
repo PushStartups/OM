@@ -264,20 +264,16 @@ function  getAllRestaurants(response)
                     '<div class="more-toggle">';
 
 
-                if (str2.length > 0) {
-                    temp +=
-
-                        '<span class="more"> מידע נוסף </span>' +
+                if (str2.length > 0)
+                {
+                    temp += '<span class="more">קרא עוד</span>'+
                         '<span class="sign"> + </span>';
-
                 }
                 // HIDE BUTTON ON SHORT DESCRIPTION
-                else {
-                    temp +=
-
-                        '<span class="more" style="display: none"> מידע נוסף </span>' +
+                else
+                {
+                    temp += '<span class="more" style="display: none">קרא עוד</span>'+
                         '<span class="sign" style="display: none"> + </span>';
-
                 }
 
                 temp +=
@@ -375,20 +371,16 @@ function  getAllRestaurants(response)
                     '<div class="more-toggle">';
 
 
-                if (str2.length > 0) {
-                    temp +=
-
-                        '<span class="more"> מידע נוסף </span>' +
+                if (str2.length > 0)
+                {
+                    temp += '<span class="more">קרא עוד</span>'+
                         '<span class="sign"> + </span>';
-
                 }
                 // HIDE BUTTON ON SHORT DESCRIPTION
-                else {
-                    temp +=
-
-                        '<span class="more" style="display: none"> מידע נוסף </span>' +
+                else
+                {
+                    temp += '<span class="more" style="display: none">קרא עוד</span>'+
                         '<span class="sign" style="display: none"> + </span>';
-
                 }
 
                 temp +=

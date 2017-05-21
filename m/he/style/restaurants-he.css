@@ -753,18 +753,24 @@ input:checked + .slider:before {
 #filter-popup .modal-dialog {
 	position: relative;
 	width: 94%;
+	height: 90%;
 	margin: 3%;
-	height: 96vh;
 }
 
-#filter-popup .modal-content{	border-radius: 6px !important; border: 0; height: 100%;}
+#filter-popup .modal-content{
+	border-radius: 6px !important;
+	border: 0;
+	height: 100%;
+	min-height: 400px;
+	max-width: 450px;
+}
 #filter-popup .box-frame {
 	padding: 0 6vw 6vw;
-	height: calc(100% - 140px);
+	height: calc(100% - 155px);
 	border-radius: 6px;
 	position: relative;
 	overflow: hidden;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 
 #filter-popup .popup-header{
@@ -821,10 +827,13 @@ a:focus{color: #fff;}
 .my-btn-holder{
 	position: absolute;
 	left: 0;
-	right:0;
+	right: 0;
 	bottom: 0;
-	z-index: 999999;
 	overflow: hidden;
+	background: #fff;
+	padding: 5px 0 0;
+	z-index: 999;
+	border-radius: 0 0 6px 6px;
 }
 #filter-popup .btn-submit {
 	width: 100%;
