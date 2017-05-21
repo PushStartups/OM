@@ -181,20 +181,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_dump" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -811,21 +797,7 @@
       <workItem from="1495217959042" duration="335000" />
       <workItem from="1495220525916" duration="363000" />
       <workItem from="1495341573145" duration="2969000" />
-      <workItem from="1495345904088" duration="5200000" />
-    </task>
-    <task id="LOCAL-00081" summary="23 April Update Staging (Build 1.0)&#10;&#10;update rest timings&#10;">
-      <created>1492935244107</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1492935244107</updated>
-    </task>
-    <task id="LOCAL-00082" summary="23 April Update Staging (Build 1.0)&#10;&#10;fonts update&#10;">
-      <created>1492935784998</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1492935784999</updated>
+      <workItem from="1495345904088" duration="5385000" />
     </task>
     <task id="LOCAL-00083" summary="23 April Update Staging (Build 1.0)&#10;updates new&#10;">
       <created>1492940833000</created>
@@ -1156,11 +1128,25 @@
       <option name="project" value="LOCAL" />
       <updated>1495353897134</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="DB update + code latest">
+      <created>1495353955920</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1495353955920</updated>
+    </task>
+    <task id="LOCAL-00131" summary="DB update + code latest">
+      <created>1495354093967</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1495354093967</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="908992000" />
+    <option name="totallyTimeSpent" value="909177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
