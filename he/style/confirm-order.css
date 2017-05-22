@@ -119,6 +119,7 @@ a:hover, a:focus {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+#header .container.new{background: none; box-shadow: none;}
 /*#header.shrink{*/
 	/*min-height: 190px;*/
 	/*padding: 40px 0 90px;*/
@@ -1043,6 +1044,10 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 		margin: 0 0 6px;
 		font-size: 20px;
 		line-height: 22px;
+	}
+	.btn-left,
+	#nav{
+		display: none;
 	}
 }
 

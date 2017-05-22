@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,18 +17,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!--NOTIFICATION-->
+
+    <script>
+
+    </script>
+
     <link rel="manifest" href="/m/en/script/manifest.json">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
     <script>
-        var OneSignal = window.OneSignal || [];
-        OneSignal.push(["init", {
-            appId: "968000e9-e5d1-44e3-b586-7b3a72d06e7c",
-            autoRegister: true,
-            notifyButton: {
-                enable: false /* Set to false to hide */
-            }
-        }]);
+        if(window.location.hostname != "staging.orderapp.com")
+        {
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                appId: "968000e9-e5d1-44e3-b586-7b3a72d06e7c",
+                autoRegister: true,
+                notifyButton: {
+                    enable: false /* Set to false to hide */
+                }
+            }]);
+        }
     </script>
+
     <!--NOTIFICATION ENDS-->
 
     <!-- Google Analytics -->

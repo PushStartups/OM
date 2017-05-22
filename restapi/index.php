@@ -10,6 +10,8 @@ use Voucherify\VoucherifyClient;
 use Voucherify\VoucherBuilder;
 use Voucherify\CustomerBuilder;
 use Voucherify\ClientException;
+use Mailgun\Mailgun;
+
 
 
 DB::query("set names utf8");
@@ -659,6 +661,35 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 }
 
 
+
+//  MAIL GUN API EMAIL VALIDATOR
+$app->post('/validate_email', function ($request, $response, $args) {
+
+    $email  = $request->getParam('email');
+
+//    # Instantiate the client.
+
+    $mgClient = new Mailgun('pubkey-bdbdde601ba26a9d5d1adb7f003284a9');
+
+    $validateAddress = $email;
+//
+//    # Issue the call to the client.
+    $result = $mgClient->get("address/validate", array('address' => $validateAddress));
+//
+//    # is_valid is 0 or 1
+    $isValid = $result->http_response_body->is_valid;
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($isValid));
+    return $response;
+
+});
+
+
+
+
+
 //  STORE USER INFORMATION
 $app->post('/add_new_user', function ($request, $response, $args) {
 
@@ -759,7 +790,7 @@ $app->post('/user_login', function ($request, $response, $args) {
 
     $resp = "error";
 
-    $user_email   =   $request->getParam('user_email');
+    $user_email         =   $request->getParam('user_email');
     $user_password      =   $request->getParam('user_password');
 
     //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
@@ -1011,6 +1042,40 @@ $app->post('/send_email_to_b2b_users', function ($request, $response, $args) {
     $response = $response->withJson(json_encode('success'));
     return $response;
 
+});
+
+
+
+$app->post('/native_app', function ($request, $response, $args) {
+
+
+    $email          = $request->getParam('email');
+    $name           = $request->getParam('name');
+    $provider       = $request->getParam('provider');
+    $uid            = $request->getParam('uid');
+    $contact        = $request->getParam('contact');
+
+
+//CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $uid . "'");
+
+    if (DB::count() == 0) {
+
+
+        DB::insert('users', array(
+
+            'smooch_id' => $uid,
+            "contact" => $contact,
+            "name" => $name,
+
+        ));
+
+    }
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode('success'));
+    return $response;
 });
 
 $app->post('/tcs_printer', function ($request, $response, $args) {

@@ -22,7 +22,6 @@ if(isset($_GET['key']))
 
         <script>
 
-
             localStorage.setItem("IS_LOGIN","true");
             window.location.href = '/en/confirm-order';
 

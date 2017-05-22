@@ -747,7 +747,7 @@ a:hover, a:focus {
 	font-size: 30px;
 	line-height: 30px;
 	position: absolute;
-	bottom: -2px;
+	bottom: 13px;
 	left: 10px;
 	z-index: 7;
 }
