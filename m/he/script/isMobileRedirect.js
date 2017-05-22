@@ -91,7 +91,7 @@ if(!isMobile.any())
 
     }
 
-    else if(window.location.hostname == "staging.orderapp.com")
+    else if(window.location.hostname == "app.orderapp.com")
     {
         if (location.protocol != 'https:')
         {
@@ -100,11 +100,11 @@ if(!isMobile.any())
 
         if(USER_LANGUAGE == 'EN') {
 
-            window.location.href = 'https://staging.orderapp.com/en/';
+            window.location.href = 'https://app.orderapp.com/en/';
         }
         else
         {
-            window.location.href = 'https://staging.orderapp.com/he/';
+            window.location.href = 'https://app.orderapp.com/he/';
         }
     }
 }

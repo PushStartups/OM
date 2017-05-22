@@ -87,7 +87,7 @@ if(isMobile.any())
             window.location.href = 'https://qa.orderapp.com/m/he/';
         }
     }
-    else if(window.location.hostname == "staging.orderapp.com")
+    else if(window.location.hostname == "app.orderapp.com")
     {
 
         if (location.protocol != 'https:')
@@ -97,12 +97,12 @@ if(isMobile.any())
 
         if(USER_LANGUAGE == 'EN') {
 
-            window.location.href = 'https://staging.orderapp.com/m/en/';
+            window.location.href = 'https://app.orderapp.com/m/en/';
         }
         else {
 
 
-            window.location.href = 'https://staging.orderapp.com/m/he/';
+            window.location.href = 'https://app.orderapp.com/m/he/';
         }
     }
 
