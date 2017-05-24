@@ -159,19 +159,19 @@ button {
     border: none;
     margin: 0;
 }
-.dropdown-menu::-webkit-scrollbar {
-    width: 0;
-	background:inherit;
-}
+/*.dropdown-menu::-webkit-scrollbar {*/
+    /*width: 0;*/
+	/*background:inherit;*/
+/*}*/
 
-.dropdown-menu::-webkit-scrollbar-track {
-    display: none;
-	background:inherit;
-}
-.dropdown-menu::-webkit-scrollbar-thumb {
-    display: none;
-	background:inherit;
-}
+/*.dropdown-menu::-webkit-scrollbar-track {*/
+    /*display: none;*/
+	/*background:inherit;*/
+/*}*/
+/*.dropdown-menu::-webkit-scrollbar-thumb {*/
+    /*display: none;*/
+	/*background:inherit;*/
+/*}*/
 #wrapper{
 	overflow:hidden;
 	position:relative;
@@ -266,7 +266,6 @@ button {
 	margin:0;
 	list-style:none;
 	overflow:hidden;
-	font-family: 'HelveticaNeue';
 	font-size: 16px;
 	line-height:19px;
 	font-weight: 300;
@@ -308,11 +307,11 @@ button {
 	background-color: #fff;
 	border:0;
 	margin:0;
-	-webkit-appearance:none;
-	-moz-appearance: none;
-	-ms-appearance: none;
-	-o-appearance: none;
-	appearance: none;
+	/*-webkit-appearance:none;*/
+	/*-moz-appearance: none;*/
+	/*-ms-appearance: none;*/
+	/*-o-appearance: none;*/
+	/*appearance: none;*/
 	position:relative;
 }
 .form .dropdown .caret{
@@ -326,12 +325,12 @@ button {
 }
 .scrollable-menu {
     height: auto;
-    max-height: 125px; 
-    /*overflow-x: visible;
-    overflow-y: scroll;*/
+    max-height: 127px;
+    overflow-x: visible;
+    overflow-y: scroll;
 }
 .form .dropdown ul{
-	padding:11px 25px;
+	padding:11px 25px 4px;
 	text-align:left;
 	font-size:24px;
 	line-height:27px;

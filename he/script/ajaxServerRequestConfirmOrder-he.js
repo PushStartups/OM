@@ -778,6 +778,12 @@ function  callPage3() {
 
     }
 
+    if(userObject.totalWithoutDiscount == null || userObject.totalWithoutDiscount == "")
+    {
+        userObject.totalWithoutDiscount = userObject.total;
+    }
+
+
     var browserName = BrowserInfo();
 
 

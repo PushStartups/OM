@@ -824,12 +824,16 @@ function  callPage3() {
 
         var  newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
 
-        userObject.total = newTotal;
 
+
+        userObject.total = newTotal;
     }
 
 
-
+    if(userObject.totalWithoutDiscount == null || userObject.totalWithoutDiscount == "")
+    {
+        userObject.totalWithoutDiscount = userObject.total;
+    }
 
     var browserName = BrowserInfo();
 

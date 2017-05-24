@@ -664,24 +664,33 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
 //  MAIL GUN API EMAIL VALIDATOR
 $app->post('/validate_email', function ($request, $response, $args) {
-
-    $email  = $request->getParam('email');
-
-//    # Instantiate the client.
-
-    $mgClient = new Mailgun('pubkey-bdbdde601ba26a9d5d1adb7f003284a9');
-
-    $validateAddress = $email;
 //
-//    # Issue the call to the client.
-    $result = $mgClient->get("address/validate", array('address' => $validateAddress));
+    $email      = $request->getParam('email');
+    $emailErr   = false;
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+        $emailErr = true;
+    }
+
+
 //
-//    # is_valid is 0 or 1
-    $isValid = $result->http_response_body->is_valid;
+////    # Instantiate the client.
+//
+//    $mgClient = new Mailgun('pubkey-bdbdde601ba26a9d5d1adb7f003284a9');
+//
+//    $validateAddress = $email;
+////
+////    # Issue the call to the client.
+//    $result = $mgClient->get("address/validate", array('address' => $validateAddress));
+////
+////    # is_valid is 0 or 1
+//    $isValid = $result->http_response_body->is_valid;
+
 
     // RESPONSE RETURN TO REST API CALL
     $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode($isValid));
+    $response = $response->withJson(json_encode($emailErr));
     return $response;
 
 });
@@ -1423,7 +1432,6 @@ function email_to_b2b_users($email,$password,$username)
     }
 
 }
-
 
 
 

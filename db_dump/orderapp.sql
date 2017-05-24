@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 22, 2017 at 12:50 PM
+-- Generation Time: May 24, 2017 at 09:59 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=138 ;
 
 --
 -- Dumping data for table `b2b_orders`
@@ -118,7 +118,42 @@ INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`
 (99, 1, 2, 0, 53, 644, '2017-05-22', '', ''),
 (100, 1, 2, 0, 37, 607, '2017-05-22', '', ''),
 (101, 1, 2, 0, 34, 573, '2017-05-22', '', ''),
-(102, 1, 2, 0, 37, 536, '2017-05-22', '', '');
+(102, 1, 2, 0, 37, 536, '2017-05-22', '', ''),
+(103, 1, 2, 0, 37, 499, '2017-05-22', '', ''),
+(104, 1, 2, 0, 37, 462, '2017-05-22', '', ''),
+(105, 1, 2, 0, 37, 425, '2017-05-22', '', ''),
+(106, 1, 2, 0, 37, 388, '2017-05-22', '', ''),
+(107, 1, 2, 0, 37, 351, '2017-05-22', '', ''),
+(108, NULL, 3, 0, 36, 14, '2017-05-22', '', ''),
+(109, NULL, 2, 179, 179, 0, '2017-05-23', '', ''),
+(110, NULL, 2, 71, 71, 0, '2017-05-23', '', ''),
+(111, 1, 2, 0, 75, 925, '2017-05-23', '', ''),
+(112, 1, 2, 0, 150, 775, '2017-05-23', '', ''),
+(113, 4, 3, 0, 85, 15, '2017-05-23', '', ''),
+(114, 3, 2, 0, 105, 895, '2017-05-23', '', ''),
+(115, 3, 2, 0, 37, 858, '2017-05-23', '', ''),
+(116, 1, 2, 0, 68, 707, '2017-05-23', '', ''),
+(117, 1, 2, 0, 68, 639, '2017-05-23', '', ''),
+(118, 1, 2, 0, 150, 489, '2017-05-23', '', ''),
+(119, 1, 2, 0, 150, 339, '2017-05-23', '', ''),
+(120, NULL, 2, 150, 150, 0, '2017-05-23', '', ''),
+(121, 65, 2, 75, 75, 0, '2017-05-23', '', ''),
+(122, 1, 2, 140, 150, 0, '2017-05-23', '', ''),
+(123, 1, 2, 75, 75, 0, '2017-05-23', '', ''),
+(124, 1, 2, 68, 68, 0, '2017-05-23', '', '31647489'),
+(125, 1, 2, 143, 143, 0, '2017-05-23', '', '31647649'),
+(126, 1, 2, 75, 75, 0, '2017-05-23', '', '31648032'),
+(127, 1, 2, 75, 75, 0, '2017-05-23', '', '31648612'),
+(128, 1, 2, 68, 68, 0, '2017-05-23', '', '31649058'),
+(129, 1, 2, 68, 68, 0, '2017-05-23', '', '31649213'),
+(130, 1, 2, 0, 71, 429, '2017-05-23', '', ''),
+(131, 1, 2, 66, 66, 0, '2017-05-23', '', '31663104'),
+(132, 1, 2, 150, 150, 0, '2017-05-23', '', '31663550'),
+(133, 1, 2, 68, 68, 0, '2017-05-23', '', '31663621'),
+(134, 1, 2, 136, 136, 0, '2017-05-23', '', '31663745'),
+(135, 1, 2, 75, 75, 0, '2017-05-23', '', ''),
+(136, 1, 2, 75, 75, 0, '2017-05-23', '', ''),
+(137, 1, 2, 0, 68, 432, '2017-05-23', '', '');
 
 -- --------------------------------------------------------
 
@@ -135,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=84 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=120 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
@@ -196,7 +231,43 @@ INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `s
 (80, 99, 1, 'סלט אנגוס', 53, '170 grams chicken breast (+15.3)'),
 (81, 100, 1, 'סלט אנגוס', 37, ''),
 (82, 101, 1, 'אנגוס בורגר', 34, ''),
-(83, 102, 1, 'Angus Salad', 37, '');
+(83, 102, 1, 'Angus Salad', 37, ''),
+(84, 103, 1, 'Angus Salad', 37, ''),
+(85, 104, 1, 'סלט אנגוס', 37, ''),
+(86, 105, 1, 'סלט אנגוס', 37, ''),
+(87, 106, 1, 'סלט אנגוס', 37, ''),
+(88, 107, 1, 'סלט אנגוס', 37, ''),
+(89, 108, 1, 'נודלס צמחוני', 36, ''),
+(90, 109, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(91, 109, 1, 'Pargit Tortilla', 29, 'Thousand Island, Sweet Chilli, Lettuce'),
+(92, 110, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), portobello mushroom (+3.4)'),
+(93, 111, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Garlic Mayo, Sweet Chilli, Spicy Chilli'),
+(94, 112, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Ketchup'),
+(95, 113, 1, 'Xl Pie', 85, 'Onions (+5), Mushrooms (+5), Olives (+5), Tomatoes (+5)'),
+(96, 114, 2, 'Angus Burger', 53, 'Ketchup, Bbq, Tomato, Onions, Pickles, Fried onions, 170 grams chicken breast (+15.3), portobello mushroom (+3.4)'),
+(97, 115, 1, 'Angus Tortilla', 37, 'Bbq, Thousand Island, Garlic Mayo, Onions, Pickles, Fried onions, Egg (+3.4), portobello mushroom (+3.4)'),
+(98, 116, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(99, 117, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(100, 118, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Ketchup'),
+(101, 119, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Bbq, Thousand Island, Spicy Chilli'),
+(102, 120, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Bbq, Thousand Island, Garlic Mayo, Spicy Chilli'),
+(103, 121, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Ketchup'),
+(104, 122, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4), Ketchup'),
+(105, 123, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(106, 124, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(107, 125, 2, 'Angus Salad', 71, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4)'),
+(108, 126, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(109, 127, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(110, 128, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(111, 129, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(112, 130, 1, 'Angus Salad', 71, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4)'),
+(113, 131, 1, 'Chicken Salad', 66, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(114, 132, 2, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(115, 133, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(116, 134, 2, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(117, 135, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(118, 136, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(119, 137, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)');
 
 -- --------------------------------------------------------
 
@@ -260,16 +331,16 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=65 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `b2b_users`
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'ahmadworkspace@gmail.com', 'TEST', 'test', 'test', 536, '2017-05-22', '000000', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
-(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 50, '2017-04-06', '00000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
-(4, 'mark@pushstartups.com', 'Avi', 'mark', 'mark', 84, '2017-05-08', '000000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'muhammad.iftikhar.aftab@gmail.com', 'TEST', 'test', 'test', 432, '2017-05-23', '000000', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 858, '2017-05-23', '00000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(4, 'test@orderapp.com', 'Avi', 'mark', 'mark', 15, '2017-05-23', '000000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 3, ''),
 (5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 25, '2017-05-22', '000000000', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (6, 'dvora@pushstartups.com', 'Dvora', 'dvora', 'dvora', 60, '2017-05-10', '000000000', 'Dvora Test', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (7, 'oded@orderapp.com', 'Oded', 'oded', 'oded', 8, '0000-00-00', '0', '2 hahr', 0, 'english', NULL, NULL, NULL, NULL, 7, '0'),
@@ -277,7 +348,9 @@ INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `di
 (9, 'Michelle@pstein.com', ' Michelle Frankel', 'Michelle', 'frank_321', 1000, '0000-00-00', '058-7707921', 'Yitchak Rabin 13', 0, 'english', NULL, NULL, NULL, NULL, 9, '0'),
 (10, 'Lavibraces@gmail.com', 'Blumi ', 'Blumi ', 'Smile613', 1000, '0000-00-00', '527685627', '1 Tamar, Ramat Beit Shemesh', 0, 'english', NULL, NULL, NULL, NULL, 10, '0'),
 (11, 'Miri.pozner@dosentrx.com', 'Miri Pozner ', 'Miri', 'dosentrx123', 1000, '0000-00-00', '527349883', '2 Hahar', 0, 'english', NULL, NULL, NULL, NULL, 11, '0'),
-(12, 'Ram@sperolaw.com', 'Rochelle Ram', 'Rochelle', 'spero123', 1000, '0000-00-00', '542026959', '10 Hatasiya', 0, 'english', NULL, NULL, NULL, NULL, 12, '0');
+(12, 'Ram@sperolaw.com', 'Rochelle Ram', 'Rochelle', 'spero123', 1000, '0000-00-00', '542026959', '10 Hatasiya', 0, 'english', NULL, NULL, NULL, NULL, 12, '0'),
+(65, 'test3@gmail.com', NULL, '', '', 0, '2017-05-23', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(66, 'ahmadworkspace@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -696,8 +769,8 @@ CREATE TABLE IF NOT EXISTS `company` (
 
 INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `discount_type`, `voting`, `last_voting_id`, `last_voting_date`, `hide_payment`) VALUES
 (1, 'cisco', '', 0, 'daily', 0, -1, '0000-00-00', 0),
-(2, 'test company', 'beit semish gali no 4', 1000, 'monthly', 1, 1, '2017-05-19', 1),
-(3, 'company 2', 'Nishat colony delecia bakery k uper', 50, 'daily', 0, -1, '0000-00-00', 0),
+(2, 'test company', 'beit semish gali no 4', 1000, 'monthly', 1, 1, '2017-05-22', 0),
+(3, 'company 2', 'Nishat colony delecia bakery k uper', 100, 'daily', 0, -1, '0000-00-00', 0),
 (6, 'Rael', 'rael test', 60, 'daily', 0, 6, '2017-04-09', 0),
 (7, 'ODED', '2 hahar', 1000, 'monthly', 0, 6, '0000-00-00', 0),
 (8, 'Goldrock Capital', '16 Hatasiya ', 1000, 'monthly', 0, -1, '0000-00-00', 0),
@@ -854,14 +927,14 @@ CREATE TABLE IF NOT EXISTS `company_timing` (
 
 INSERT INTO `company_timing` (`id`, `company_id`, `week_en`, `week_he`, `opening_time`, `closing_time`, `opening_time_he`, `closing_time_he`) VALUES
 (1, 2, 'Monday', 'יום ב', '07:00', '23:59', '11:00', '23:59'),
-(2, 2, 'Tuesday', 'יום ג', '08:00', '21:00', '08:00', '21:00'),
-(3, 2, 'Wednesday', 'יום ד', '07:00', '22:00', '07:00', '22:00'),
+(2, 2, 'Tuesday', 'יום ג', '05:00', '23:59', '05:00', '23:59'),
+(3, 2, 'Wednesday', 'יום ד', '07:00', '23:50', '07:00', '23:50'),
 (4, 2, 'Thursday', 'יום ה', '08:00', '23:00', '08:00', '09:00'),
 (5, 2, 'Friday', 'ששי', '07:00', '23:00', '07:00', '23:00'),
 (6, 2, 'Saturday', 'שבת', 'Closed', 'Closed', 'סגור', 'סגור'),
 (7, 2, 'Sunday', 'יום א', '06:00', '23:00', 'סגור', 'סגור'),
 (8, 3, 'Monday', '', '11:00', '21:00', '', ''),
-(9, 3, 'Tuesday', '', '11:00', '21:00', '', ''),
+(9, 3, 'Tuesday', '', '9:00', '21:00', '9:00', '21:00'),
 (10, 3, 'Wednesday', '', '11:00', '21:00', '', ''),
 (11, 3, 'Thursday', '', '11:00', '21:00', '', ''),
 (12, 3, 'Friday', '', '11:00', '21:00', '', ''),
@@ -945,7 +1018,7 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
   `vote_timing_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `vote_timing_id` (`vote_timing_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1480 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1487 ;
 
 --
 -- Dumping data for table `company_voting`
@@ -954,13 +1027,13 @@ CREATE TABLE IF NOT EXISTS `company_voting` (
 INSERT INTO `company_voting` (`id`, `company_id`, `restaurant_id`, `vote_count`, `vote_timing_id`) VALUES
 (162, 6, 8, 0, 6),
 (163, 6, 5, 0, 6),
-(1473, 2, 1, 0, 1),
-(1474, 2, 2, 0, 1),
-(1475, 2, 3, 0, 1),
-(1476, 2, 12, 0, 1),
-(1477, 2, 16, 0, 1),
-(1478, 2, 11, 0, 1),
-(1479, 2, 22, 0, 1);
+(1480, 2, 1, 0, 1),
+(1481, 2, 2, 0, 1),
+(1482, 2, 3, 0, 1),
+(1483, 2, 12, 0, 1),
+(1484, 2, 16, 0, 1),
+(1485, 2, 11, 0, 1),
+(1486, 2, 22, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1217,7 +1290,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100045 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100047 ;
 
 --
 -- Dumping data for table `extras`
@@ -2850,6 +2923,8 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9372, 3469, 'Add-ons', 'Multiple', 0, 'תוספות', 0, 535),
 (9373, 3469, 'Sauces', 'Multiple', 0, 'רטבים', 0, 536),
 (9999, 3405, 'גודל (שדה חובה)', '', 0, 'גודל (שדה חובה)', 0, 9212),
+(10000, 3401, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 487),
+(10001, 3403, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 491),
 (99999, 99999, 'ex', '', 0, 'ex', 0, 0);
 
 -- --------------------------------------------------------
@@ -4367,9 +4442,9 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (3318, 614, 0, 'Lotus party', ' בלאגן עם לוטוס', 'Caramel milkshake with whipped cream, an ice cream cone, halva, lotus biscuit and toffee syrup', 'מילקשייק ריבת חלב בתוספת קצפת, גביע גלידה, חלבה, לוטוס וסירופ טופי מפנק', 35, 718),
 (3319, 614, 0, 'Strawberries and cream', 'התות שבקצפת', 'Strawberry milkshake with whipped cream, sour strips, cotton candy, colorful candy, kisses and marshmellow ', 'מילקשייק תות עם קצפת, חמצוצים, שיערות סבתא, סוכריות צבעוניות, נשיקות ומרשמלו', 35, 719),
 (3320, 614, 0, 'Snowstorm ', 'מפולת שלגים', 'Vanilla milkshake with whipped cream, marshmellow, mekupelet chocolate, chocolate candies, kisses and sour strips', 'מילקשייק וניל בתוספת קצפת, מרשמלו, מקופלת, עדשים, נשיקות וחמצוצים', 35, 720),
-(3401, 701, 0, 'Half a portion in a laffa', 'חצי מנה בלאפה', '', '', 12, 722),
+(3401, 701, 0, 'In laffa', 'בלאפה', '', '', 12, 722),
 (3402, 701, 0, 'In a baguette', 'באגט', '', '', 22, 723),
-(3403, 701, 0, 'Half a portion in a pita', 'חצי מנה בפיתה', '', '', 9, 724),
+(3403, 701, 0, 'In a pita', 'בפיתה', '', '', 9, 724),
 (3404, 702, 0, 'Plain omelette', 'חביתה', '', '', 17, 725),
 (3405, 702, 0, 'Herbs omelette ', 'חביתת ירק', '', '', 17, 726),
 (3407, 703, 0, 'In a laffa ', 'מנה בלאפה', '', '', 24, 728),
@@ -4642,7 +4717,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100000 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100002 ;
 
 --
 -- Dumping data for table `menus`
@@ -4700,7 +4775,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=700 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=701 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -4790,7 +4865,8 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (696, 549, 3, 'Shawarma', 33, 'Bread Type:Pita, Veal'),
 (697, 550, 1, 'Special offer - 3 Large Pizzas for 99 Shekel', 129, 'PIZZA 1 Onions (+5), PIZZA 1 Olives (+5), PIZZA 2 Tomatoes (+5), PIZZA 2 Mushrooms (+5), PIZZA 3 Onions (+5), PIZZA 3 Olives (+5)'),
 (698, 551, 2, 'Angus Salad', 44, ''),
-(699, 552, 3, 'Chicken in tempura', 33, '');
+(699, 552, 3, 'Chicken in tempura', 33, ''),
+(700, 553, 2, 'Shawarma', 39, 'Bread Type:Baguette, Spring Chicken, French Fries, Fried Onions, Tomatoes');
 
 -- --------------------------------------------------------
 
@@ -4848,7 +4924,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `sort` int(11) DEFAULT '0',
   `pickup_hide` smallint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100005 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100006 ;
 
 --
 -- Dumping data for table `restaurants`
@@ -4857,7 +4933,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`, `min_amount`, `city_id`, `hide`, `logo`, `description_en`, `description_he`, `address_en`, `address_he`, `hechsher_en`, `hechsher_he`, `sort`, `pickup_hide`) VALUES
 (1, 'Angus', 'אנגוס', 0, '97225609533', 50, 1, 0, '/m/en/img/angos_logo.png', 'Angus is an entrecote bar located in the heart of Bet Shemesh. \nWe have a large selection of fresh, excellent quality chicken and meat dishes. Choose from: chicken tortilla, chicken sandwiches, entrecote sandwiches, duck breast sandwiches, decadent salads, a variety of side dishes and more. That''s not all - try our delicious business options!', 'מסעדת אנגוס אנטריקוט בר הכשרה בבית-שמש ידועה בתפריט העשיר והמפתה שלה, הכולל מבחר נתחי בשר ועוף טריים ואיכותיים. לבחירתכם: טורטייה במילוי פרגית ועוף, כריכים מעולים עם שלל מילויים (אנטריקוט, חזה אווז ופרגית), סלטים מפנקים, מגוון תוספות ועוד. זה לא הכול – נסו את העסקיות המשתלמות של אנגוס!', 'Yitzhak Rabin Road 5, Beit Shemesh', 'דרך יצחק רבין 5,בית שמש', 'Rabbanut Bet Shemesh', 'רבנות בית שמש', 2, 0),
 (2, 'Meshulashim', 'פיצה משולשים', 0, '97225609532', 50, 1, 0, '/m/en/img/meshulashim_logo.png', 'The best pizza in Bet Shemesh. We only use fresh products in our classic dishes. It''s the type of place Bet Shemesh has been yearning for. Try one of the creative ones such as our spicy pizza or go classic with our margarita pizza. Either way, you gotta get a pizza here!', 'הפיצריה כשרה ומגישה מבחר של מנות כגון פיצות, פסטות ברטבים עשירים, סלטים מירקות טריים הנחתכים במקום, בורקסים בטעמים וכן גם טוסטים. ניתן להזמין את הפיצות הטעימות של משולשים גם ללא גלוטן.', '\nSderot Yigal Allon 6, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Mehadrin Rav Landau', 'כשר למהדרין הרב לנדא ', 3, 0),
-(3, 'Bandora', 'בנדורה', 0, '972772200051', 50, 1, 1, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canion Shaarei Ha''Ir, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף', 1, 0),
+(3, 'Bandora', 'בנדורה', 0, '972772200051', 50, 1, 0, '/m/en/img/bandora_logo.png', 'Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.', 'בנדורה היא שילוב מנצח של בשר שווארמה איכותי, אשר שוכב על גחלים וניצלה בצורה מסורתית, המעניק לבשר השווארמה טעמים וארומה ייחודיים, טעמים המגיעים אלנו מהכפרים הרחוקים של תורכיה, ירדן, סוריה ומצרים.', 'Sderot Yigal Allon 6, Canion Shaarei Ha''Ir, Beit Shemesh', 'שד'' יגאל אלון 6, קניון שער העיר, בית שמש', 'Badatz Beit Yosef', 'בד"ץ בית יוסף', 1, 0),
 (4, 'Roza', 'רוזה', 0, '97225609527', 50, 1, 0, '/m/en/img/roza_logo.png', 'Restaurant serving you a meat menu that includes sandwiches, different types of meat, salads, pastas, burgers, children''s meals & more', 'מסעדה המגיש לכם מנות בשריות אשר כוללות סנדוויצ''ים  ,סוגים שונים של בשרים, סלטים , פסטות, המבורגרים , ארוחות ילדים ועוד', 'Canion Big Fashion Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Harav Mutzafi', ' בד"ץ הרב מוצפי', 4, 0),
 (5, 'Japan Japan', 'ג''אפן ג''אפן', 0, '97225609531', 50, 1, 0, '/m/en/img/japan_logo.png', 'JapanJapan serves Pan-Asian style food, specifically dishes from Japan, China and Thailand, with influences of Eastern Asian cuisine. JapanJapan carries a varied menu where you can enjoy over 80 dishes. You can choose from 15 types each of meat and chicken dishes, not to mention a varied selection of noodles and a huge sushi menu.', 'המנות של ג’אפן ג’אפן הן בסגנון פאן-אסייתי. הקו הקולינרי המוביל של הרשת הוא יפן-סין-תאילנד. אך עם זאת, תוכלו למצוא בתפריט גם השפעות ממדינות נוספות במזרח אסיה. לרשת ג’אפן ג’אפן תפריט מגוון בו תוכלו להינות מכ-80 מנות שונות. תוכלו לבחור מבין כ-15 סוגי מנות בשרים וכ-15 סוגי מנות עוף. להנאתכם, הרשת מציעה גם מבחר מנות נודלס ותפריט סושי עם מבחר עצום.', 'Sderot Yigal Allon 3,  Beit Shemesh', 'קניון ביג פאשן, יגאל אלון 3', 'Mehadrin Beit Yosef', 'בד"ץ בית יוסף', 5, 0),
 (6, 'OSHI OSHI', 'אושי אושי', 0, '972772201290', 70, 2, 0, '/m/en/img/oshi_logo.jpg', 'OSHI OSHI prides itself in its huge selection of high quality and creative sushi.  Along with its extensive sushi menu, the restaurant offers a large range of starters, soups and a selection of delicious stir-fries.  All of these high quality dishes are provided speedily and at competitive prices. ', 'אושי אושי מתמחה בהכנת סושי איכותי, אותנטי, מגוון ויצירתי. מטרת הרשת היא להביא לקהל הרחב את איכות מוצרינו, במקצועיות, בזריזות ובמחיר השווה לכל נפש. הרשת פזורה ברחבי הארץ בקניונים ובסביבתם לנוחות לקוחותינו. הרשת כמו כן גם מבצעת שירות משלוחים מסניפיה.', 'Lev Reut Commercial Center, Reut', ' מרכז מסחרי לב <br> רעות', 'Badatz Beit Yosef', 'כשר מהדרין בד''''ץ בית יוסף', 1, 0),
@@ -4884,8 +4960,8 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (27, 'Pizza Shemesh', 'פיצה שמש', 1, '', 50, 1, 0, '/m/en/img/pizza_shemesh.png', 'The cheapest pizza in town! If you''re on a budget but don''t want to compromise on quality ingredients,  then order from Pizza Shemesh.  They''ve made a commitment to bring their customers just that. To prove their point, they offer a family pie that contains 100% Terra Yellow cheese from only 19.90 NIS.  And remember - delicious doesn''t always mean expensive!', '"פיצה שמש בית שמש חרטה על דגלה להביא ללקוחותיה את המחיר הטוב ביותר עבור מגש פיצה ללא התפשרות על איכות החומרים \r\nאנו מציעים מגש משפחתית הכולל 100 אחוז גבינה צהובה של ״טרה״ החל מ19.90 ש״ח בלבד.\r\nותמיד תזכרו - אין יותר טעים יש יותר יקר !"', 'Derech Rabin 15, Beit Shemesh', 'דרל רבין 15, בית שמשמ', 'Badatz Beit Yosef', ' בד"ץ בית יוסף', 27, 0),
 (28, 'Menfis', 'מנפיס', 1, '', 50, 2, 0, '/m/en/img/menfis.png', '', '', '443 - on road 443, beside the Sonol gas station at Shilat junction', 'צומת שילת (ת. דלק סונול), מודיעין', 'Hamoatza Ezorit Chevel Modiin', 'המועצה אזורית חבל מודיעין', 33, 0),
 (29, 'Bagel Cafe ', 'בייגל קפה', 1, '', 50, 2, 0, '/m/en/img/begal_cafe.png', '', '', '', '', 'Mehadrin Rabbanut Modiin', 'מהדרין רבנות מודיעין', 34, 0),
-(30, 'Cafe In', 'קפה אין', 1, '', 50, 2, 0, '/m/en/img/cafe_in.png', '', '', 'Merkaz Lev Ha''Emek, Emek HaEla 80, Modiin', 'מרכז לב העמק, עמק האלה 80, מודיעין', 'Mehadrin Rabbanut Modiin', 'מהדרין רבנות מודיעין', 35, 0),
-(32, 'Greg Cafe', 'קפה גרג', 1, '97225609534', 50, 2, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe is the place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Hamelachot 5, Yishpro Center, Modiin', 'שד'' המלאכות 5, מרכז ישפרו, מודיעין', 'Badatz Beit Yosef', ' בד"ץ בית יוסף', 40, 0),
+(30, 'Cafe In', 'קפה אין', 0, '', 50, 2, 0, '/m/en/img/cafe_in.png', '', '', 'Merkaz Lev Ha''Emek, Emek HaEla 80, Modiin', 'מרכז לב העמק, עמק האלה 80, מודיעין', 'Mehadrin Rabbanut Modiin', 'מהדרין רבנות מודיעין', 35, 0),
+(32, 'Gerg Café (Modiin)', 'גרג קפה (מודיעין)', 1, '97225609534', 50, 2, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe is the place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Hamelachot 5, Yishpro Center, Modiin', 'שד'' המלאכות 5, מרכז ישפרו, מודיעין', 'Badatz Beit Yosef', ' בד"ץ בית יוסף', 40, 0),
 (33, 'Kampai Street Wok', 'קמפאי סטריט ווק', 1, '', 50, 2, 0, '/m/en/img/kampai.png', '"Kampai (""Cheers"" in Japanese) has set a new standard in Pan Asian cuisine. With a wide menu including sushi, wok stirfries, Asian grill and more.\r\nThe menu combines food with culinary fusion, with no flavor enhancers or preservatives. Kampai Street Wok prides itself on its accurate balance of flavors, colors and health."', '"קמפאי (""לחיים"" ביפנית) הציבה סטנדרט חדש של המטבח פאן אסייתי תוס. תפריט רחב רחב הכולל סושי, מנותק ווק, גריל אסייתי ועוד.\r\nתפריט של קמפאי סטריט ווקל משלב אוכל עם פיוז''ן קולינרי'', ללא מחזקי טעם או חומרים משמרים.\r\nקמפאי סטריט ווק מפיץ את בשורת המטבח עם איזון מדויק של טעמים, צבעים ובריאות.\r\n"', 'Hamelachot 22, Yishpro Center, Modiin', 'Hamelachot 22, Yishpro Center, Modiin', 'Rabbanut Modiin', 'רבנות מודיעין', 37, 0),
 (34, 'Haburganim - Buchman', 'הבורגנים', 1, '', 50, 2, 0, '/m/en/img/haburganim.png', 'Haburganim is the most special kosher burger place. Enjoy a unique culinary experience, including hand-made small burgers made with special care in a range of flavors that will make you want to try each one and keep on eating!  Our fries are made with a secret recipe and we have a host of other finger-licking dishes, all available for home delivery or pick up.', '"הבורגנים – מסעדת המבורגרים כשרה הכי מיוחדת שאי פעם תפגשו!\r\nתוכלו ליהנות מחוויה קולינארית שונה וייחודית, הכוללת המבורגרים קטנים הנעשים בעבודת יד ובהשקעה רבה ומגיעים במגוון טעמים שפשוט יתחשק לכם לטעום את כולם ולהמשיך לנגוס בהם עוד ועוד... צ''יפס בטעם סודי וממכר ללקק את האצבעות... ועוד שפע של מנות ייחודיות אחרות. !\r\n את כל המנות הנפלאות תוכלו לקבל עד לביתכם באמצעות שירות המשלוחים"', 'Moriah Center, Leah Imenu 2, Modiin', 'מרכז מוריה, לאה אימנו 2, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין', 38, 0),
 (35, 'Mike Burger', 'מייק בורגר', 1, '', 50, 2, 0, '/m/en/img/mike_burger.png', '"Not just burgers...\r\nWe also have chicken breast, schwarma, chicken, kebabs and entrecote carpaccio. So if you wake up in the morning with a strong desire for a dish that is not a hamburger, there is no doubt that you will find something good to eat here. Our planchas are always ready to receive the finest meats in their new home - a hot baguette, a rolled tortilla, or a plate full of goodness. And like any self-respecting menu, there are decadent and filling desserts."', '"לא רק המבורגר\r\nיש לנו גם חזה עוף, שווארמה, פרגית, קבב וקרפצ’יו אנטריקוט. כך שאם קמתם בבוקר עם חשק עז למנה שהיא לא המבורגר, אין ספק שתמצאו אצלנו משהו טוב לאכול. הפלנצ’ה שלנו מוכנה תמיד לקבלת הבשרים המשובחים בביתם החדש – בגט חם, טורטייה מגולגלת או צלחת מלאה כל טוב. וכמו בכל תפריט שמכבד את עצמו, ישנם קינוחים שיסגרו לכם את הפינה סופית.."', 'Modiin Center, Tze''elon 21, Modiin', 'צאלון 21 , מודיעין סנטר', 'Mehadrin Beit Yosef', 'מהדרין בית יוסף', 39, 0),
@@ -5063,7 +5139,7 @@ CREATE TABLE IF NOT EXISTS `restaurant_tags` (
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=87 ;
 
 --
 -- Dumping data for table `restaurant_tags`
@@ -5143,7 +5219,8 @@ INSERT INTO `restaurant_tags` (`id`, `restaurant_id`, `tag_id`) VALUES
 (82, 39, 2),
 (83, 40, 2),
 (84, 41, 2),
-(85, 41, 38);
+(85, 41, 38),
+(86, 32, 17);
 
 -- --------------------------------------------------------
 
@@ -5160,7 +5237,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26051 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26057 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15654,7 +15731,11 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (26047, 9373, 'Garlic', 'שום', 0, 2986),
 (26048, 9373, 'BBQ', 'ברביקיו', 0, 2987),
 (26049, 9373, 'Mustard', 'חרדל', 0, 2988),
-(26050, 9373, 'Honey mustard', 'חרדל דבש', 0, 2989);
+(26050, 9373, 'Honey mustard', 'חרדל דבש', 0, 2989),
+(26053, 10000, 'Half portion', ' חצי מנה', 0, 0),
+(26054, 10000, 'Full portion', ' מנה', 10, 0),
+(26055, 10001, 'Half portion', ' חצי מנה', 0, 0),
+(26056, 10001, 'Full portion', ' מנה', 10, 0);
 
 -- --------------------------------------------------------
 
@@ -15721,152 +15802,157 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `smooch_id` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `discount` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `contact` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `state` int(16) NOT NULL DEFAULT '0',
   `language` varchar(255) NOT NULL DEFAULT 'english',
-  `payment_url` varchar(255) DEFAULT NULL,
-  `extras` varchar(255) DEFAULT NULL,
-  `restaurant_id` int(16) DEFAULT NULL,
-  `role_id` int(11) DEFAULT NULL,
-  `company_id` int(11) DEFAULT NULL,
   `voucherify_id` varchar(255) NOT NULL,
   `login_verification_hash` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `restaurant_id` (`restaurant_id`),
-  KEY `company_id` (`company_id`),
-  KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=639 ;
+  `provider` text,
+  `uid` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=654 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`, `login_verification_hash`) VALUES
-(514, 'd@gmail.com', 'דבורה', '', '', 0, '0000-00-00', '0000000000', 'Gad ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(515, 'avi@pushstartups.com', 'avi`', '', '', 0, '0000-00-00', '00000000', 'דרך יצחק רבין, בית שמש, ישראל', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Lg0NdearFMFvIXbhjs8Mfr3C', NULL),
-(516, 'mark@pushstartups.com', 'test', '', '', 0, '0000-00-00', '0000000000', 'hahar', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(517, 'sdf@dsf.com', 'sdf', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_REq8J85r2Vk3TJbuyTP5fD9h', NULL),
-(518, 'hdhd@fjfjkf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_QThfg69G5vDtrvA9QDjtMwch', NULL),
-(519, 'hdhd@jfkf.com', 'Hdbdh', '', '', 0, '0000-00-00', '3736463773', 'Xbbcbx', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_tnz9yfNdK17C62rvNWAbhtsi', NULL),
-(520, 'sdf@sadf.com', 'dsf', '', '', 0, '0000-00-00', '0000000', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(521, 'muhammad.iftikhdddar.aftab@gmail.com', 'Muhammad Iftikhar', '', '', 0, '0000-00-00', '343434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_bBwqLOdGswtJgCN5QORyQNT5', NULL),
-(522, 'muhammad.iftikfffhar.aftab@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_OfCzgvY3yxO2gBZQZF7l7zf4', NULL),
-(523, 'sdfsdfdsf', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_e6BxxCr04ORr1l3wbP482bhV', NULL),
-(524, 'asd@asdfadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_IBsxwtYJI6H9pTKE13nClmzF', NULL),
-(525, 'sdxxxf@sadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_czLs8j7t7ixFKrjDINySy2NR', NULL),
-(526, 'xcxcxc@xcxcxc.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZaBzzs6SlYBqWsdp3UQG9QQZ', NULL),
-(527, 'asf@asdf.com', 'a', '', '', 0, '0000-00-00', '345', 'sfa', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(528, 'sdg@dsf.asdf', 'sgfd', '', '', 0, '0000-00-00', '2345', 'eryt', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(529, 'sdf@sdf.com', 'sdf', '', '', 0, '0000-00-00', '0000', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_vjGejGcyBjVKinS74fUmb4ti', NULL),
-(530, 'afd@ad.sadf', 'asdf', '', '', 0, '0000-00-00', '456', 'dsg', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(531, 'a@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_5VyXPgAWi88xD5ydfOXsGBAq', NULL),
-(532, 'adsf@saf.ds', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Dwl1latafZ9uOSLSIijtQxZS', NULL),
-(533, 'ac@ds.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_uLMNY9NOxlBd02X4SRLuQzP8', NULL),
-(534, 'ssdg@sdg.dfg', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_3NulSKGbm1f4m2Pf2TUCsbWB', NULL),
-(535, 'sdfsdf@sdffsdf.com', 'sdf', '', '', 0, '0000-00-00', '0000000', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(536, 'kjb@jkh.kh', 'khjfg', '', '', 0, '0000-00-00', '867', 'lkjh', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(537, 'sdf@sadf.asdf', 'asdfa', '', '', 0, '0000-00-00', '1234', 'wer', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(538, 'adf@asdf.cadas', 'asdf', '', '', 0, '0000-00-00', '12341', '1234', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(539, 'asdf@asf.com', 'asdf', '', '', 0, '0000-00-00', '1234', '12341', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(540, 'ssadasdf@asdf.adsff', 'dsafsd', '', '', 0, '0000-00-00', '1243', '123', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(541, 'tasawar@mahmood.com', 'tasawar', '', '', 0, '0000-00-00', '321', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(542, 'ts@ga.com', 'Tas', '', '', 0, '0000-00-00', '8765', 'Gav', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(543, 'adsf@dsf.com', 'dsf', '', '', 0, '0000-00-00', '345345', 'dsf', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_gSN7vBOv17247Zk1d6tp5k0d', NULL),
-(544, 'testmark@gmail.com', 'test', '', '', 0, '0000-00-00', '3453434', 'dfgdfg', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xJAcAvDsMpnGfcmknZdQyKi9', NULL),
-(545, 'etst@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_6bLDoK8iTMBNFBRyA1ASU679', NULL),
-(546, 'teste@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_o3XtkVtoBaiaJELFMHFmMGDU', NULL),
-(547, 'f@f.com', 'Test', '', '', 0, '0000-00-00', '0000', 'F', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(548, 'asd@sadf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_XwoVqfliijF40Tm3ulJTkFq7', NULL),
-(549, 'sdfdff@dsfcvcvv.com', 'sdfffffdfdfdfd', '', '', 0, '0000-00-00', '343434', 'sdfsdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(550, 'ali_lums@gmail.com', 'Ali Shoail LUMS', '', '', 0, '0000-00-00', '343434', 'sdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(551, 'sfdg@dsf.com', 'sfv', '', '', 0, '0000-00-00', '34545', 'sgf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(552, 'shaibii@gmail.com', 'shoaib', '', '', 0, '0000-00-00', '12342314', '1234', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(553, 'aaa@asdf.com', 'asdf', '', '', 0, '0000-00-00', '3142', 'asdf', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(554, 'asdf@asdef.casdf', 'asdf', '', '', 0, '0000-00-00', '234', '23', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(555, 'asdf@asdf.asdf', 'asdf', '', '', 0, '0000-00-00', '3453425', '345', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(556, 'iftikhar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_l2gX0ueMyZZCInpwvLQQef1p', NULL),
-(557, 'ffff@ddddsss.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_3489ZqDBucItKwlGT8kZdkpq', NULL),
-(558, 'sdf@df.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_GNrQpD7CiEQ6LLD8YILTKhO5', NULL),
-(559, 'sdsssf@dkkkf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_CmRolzNhrGjzMQQUfrXimJ8T', NULL),
-(560, 'test@test.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_J0BFjmWQulQ2mbv2iZZR0slr', NULL),
-(561, 's@ws.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_2ubTe0V65XIURGE7k6xG06qJ', NULL),
-(562, 'd@d.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_c88BWMHJ2qWhdGuHOH0NObIU', NULL),
-(563, 'sdffff@dfdfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_cAdeGZ798pu1W9BXsHHN7BQt', NULL),
-(564, 'vhmnbn@cbb.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_DCXjtVVSrRblVKQ0a6SYXSHb', NULL),
-(565, 'iftikhaaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZMCzXP6HcR85HLKoA8S9zWv3', NULL),
-(566, 'iftikhadddaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_6dUuJlv7rAjdtJyLod2cV8RB', NULL),
-(567, 'iftikhadssdddaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_D4ihekw4yA8RSfjS1kKNXHOB', NULL),
-(568, 'iftdsdddaar_yahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_KyMRVWYVkDWk7POhTwGkIY51', NULL),
-(569, 'iftdsdddaar_yvvvahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_WkW8jaJ3PjKei1gIBruwI41x', NULL),
-(570, 'iftdsdddaar_yvvssdvahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xFO0JqpJLoXkw0d01LNGuu1b', NULL),
-(571, 'iftdsssfdddaar_yvvssdvahoo@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_xBdzg44uaAMrGWPlo259GmdF', NULL),
-(572, 'ahmad@gfmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_6ViYS2iEKaZeBJ4YkJPLVI2h', NULL),
-(573, 'ahmasdfsdfd@gfmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_i2yZJc3rNQAVzcNqV86SOHl7', NULL),
-(574, 'ahmasdfsdfsdfsdfd@gsdffmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Cyu4SpzM5U33g90u8658wnZd', NULL),
-(575, 'ahmadfgsdfsdfsdfsdfd@gsdffmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_IfuUOzijy5rRnUJh36cNqkD3', NULL),
-(576, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_efQxMWNI25PYkkptBALM2c8J', NULL),
-(577, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_H8Dr8E0IxSUhWzwSmOBX60NW', NULL),
-(578, 'ahmadfgsdfsdfsdfsdfd@gsdffmdsfdfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_fFTuws12Q3O1hz68gJMpCaW4', NULL),
-(579, 'ahmfsdfsdfd@gsdffmdsfdfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_f026L8JHPIVtSF5quMPGODmN', NULL),
-(580, 'ahmfsdfsdfd@gsfgsdfail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_uwFS2zLFSesHUJecKEFeC5U7', NULL),
-(581, 'rrr@abcdgmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_8tDBIOiY98K4VoVJ7skalHF8', NULL),
-(582, 'sdf@sd.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZGiB4wBprVQePmGOolxiJX00', NULL),
-(583, 'gmgjh@rtrt.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_de1y6GYOBGhST1cUTWoGqgOA', NULL),
-(584, 'dsf@dsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_kPszysYTGXTLbcBBMsWBftT4', NULL),
-(585, 'erer@rtrt.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_FLSE3uT32RnZ5JRpPgb4FDuI', NULL),
-(586, 'erer@sdfgfg.vom', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_FAxWBKALnFA1s2GT0CR2BjKa', NULL),
-(587, 'rrr@rrr.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_LQqJw9tRhoxwrZpn3tmYJX7b', NULL),
-(588, 'cvcvcv@mvmvmv.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_SUVnakXVHPSDYRB0uRNOzACw', NULL),
-(589, 'cvcv@xcvcv.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_sU3PaGkDDARMAsDQaECoOsYb', NULL),
-(590, 'sdfsdf@dsfsdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_yX7k25gmd9XI74Iglf7yO7bg', NULL),
-(591, 'asdasd@dsfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_AGcamoHHf4kmmwm8nP36GG4N', NULL),
-(592, 'sdfsdf@dfdf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_ZZ0tO1xkjZetRcCwZveotFUh', NULL),
-(593, 'svcxvwf@yuyu.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_1ZkCgcnwNFjYBYMC8AizQrjT', NULL),
-(594, 'shoaib.it002@gmail.com', 'shoaib akram', '', '', 0, '0000-00-00', '090078601', '12', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_jp36Z1zsMbkyvW7Z4CXbtPfq', NULL),
-(595, 'sadf@dsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(596, 'sdfdsf@ds.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(597, 'sadf@df.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(598, 'sfd@dsf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(599, 'asd@df.com', 'asdf', '', '', 0, '0000-00-00', '2334', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(600, 'asd@f.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(601, 'asdf@df.com', 'asd', '', '', 0, '0000-00-00', '3434', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(602, 'sdaf@sf.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(603, 'jgfjh@sdfg.com', 'fjg', '', '', 0, '0000-00-00', '0000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(604, 'dafs@sadf.com', 'adsf', '', '', 0, '0000-00-00', '0000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(605, 'ahmadworkspace@gmail.com', 'Testing', '', '', 0, '0000-00-00', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(606, 'Testing@Testing.com', 'Testing', '', '', 0, '0000-00-00', '000000', 'Testing', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(607, 'kpk@gmail.com', '', 'kpk@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(608, 'kpk2@gmail.com', '', 'kpk2@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(609, 'kpk3@gmail.com', '', 'kpk3@gmail.com', 'kpk1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(610, 'kok@gmail.com', '', 'kok@gmail.com', '3434', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(611, 'kok2@gmail.com', '', 'kok2@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(612, 'kok3@gmail.com', '', 'kok3@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(613, 'kok4@gmail.com', '', 'kok4@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(614, 'test@gmail.com', 'Test', 'test@gmail.com', '1234', 0, '0000-00-00', '000000', 'Dasfa ir ko, Kareivių gatvė, Vilnius, Lithuania', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(615, 'cool@gmail.com', '', 'cool@gmail.com', 'cool1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(616, 'jkj@gmailc.com', '', 'jkj@gmailc.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(617, 'rael@pushstartups.com', '', 'rael@pushstartups.com', 'rael', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
-(618, 'adb@ancn.com', '', 'adb@ancn.com', 'rael', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(619, 'ddsfas@afa.com', '', 'ddsfas@afa.com', 'zev', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(620, 'gujg@fghh.com', '', 'gujg@fghh.com', 'h', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(621, 'kpk10@gmail.com', '', 'kpk10@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(627, 'avi@puahstartups.com', 'TEST TEST', '', '', 0, '0000-00-00', '000000000', 'דרך יצחק רבין 23, בית שמש, ישראל', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL),
-(628, 'test@orderapp.com', 'rael ', '', '', 0, '0000-00-00', '000000', 'HaHar Street, Judean Foothills, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL),
-(629, 'tasawarmahmood24@gmail.com', 'test', 'tasawarmahmood24@gmail.com', '123', 0, '0000-00-00', '000000', 'SDF, Terminal Drive, Louisville, KY, United States', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', '34609bdc08a07ace4e1526bbb1777673'),
-(631, 'msdsdsuhammad.iftikhar.aftab@gmail.com', '', 'muhammad.iftikhar.aftab@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
-(632, 'dvora@pushstartups.com', '', 'dvora@pushstartups.com', '025832037', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
-(633, 'asdfhjjsdjksher@a.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_wQxbHwTV7O85zmo21NPOw84c', NULL),
-(634, 'DODO@pushstartups.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_00w4vq3BCg73gh6oWK8oC0yz', NULL),
-(635, 'rael@orderapp.com', '', 'rael@orderapp.com', 'rael', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'a1d50185e7426cbb0acad1e6ca74b9aa'),
-(636, 'muhaddmmad.iftikhar.aftab@gmail.comdddd', '', 'muhammad.iftikhar.aftab@gmail.com', 'test', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
-(637, 'muhammad.iftikhar.aftab@gmail.com', '', 'muhammad.iftikhar.aftab@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success'),
-(638, 'testing@ordeapp.com', 'Testing', '', '', 0, '0000-00-00', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `user_name`, `password`, `name`, `contact`, `address`, `language`, `voucherify_id`, `login_verification_hash`, `provider`, `uid`) VALUES
+(514, 'd@gmail.com', '', '', 'דבורה', '0000000000', 'Gad ', 'english', '', NULL, '', ''),
+(515, 'avi@pushstartups.com', '', '', 'avi`', '00000000', 'דרך יצחק רבין, בית שמש, ישראל', 'english', 'cust_Lg0NdearFMFvIXbhjs8Mfr3C', NULL, '', ''),
+(516, 'mark@pushstartups.com', '', '', 'test', '0000000000', 'hahar', 'english', '', NULL, '', ''),
+(517, 'sdf@dsf.com', '', '', 'sdf', '3434', '', 'english', 'cust_REq8J85r2Vk3TJbuyTP5fD9h', NULL, '', ''),
+(518, 'hdhd@fjfjkf.com', '', '', NULL, NULL, NULL, 'english', 'cust_QThfg69G5vDtrvA9QDjtMwch', NULL, '', ''),
+(519, 'hdhd@jfkf.com', '', '', 'Hdbdh', '3736463773', 'Xbbcbx', 'english', 'cust_tnz9yfNdK17C62rvNWAbhtsi', NULL, '', ''),
+(520, 'sdf@sadf.com', '', '', 'dsf', '0000000', 'sdf', 'english', '', NULL, '', ''),
+(521, 'muhammad.iftikhdddar.aftab@gmail.com', '', '', 'Muhammad Iftikhar', '343434', '', 'english', 'cust_bBwqLOdGswtJgCN5QORyQNT5', NULL, '', ''),
+(522, 'muhammad.iftikfffhar.aftab@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_OfCzgvY3yxO2gBZQZF7l7zf4', NULL, '', ''),
+(523, 'sdfsdfdsf', '', '', NULL, NULL, NULL, 'english', 'cust_e6BxxCr04ORr1l3wbP482bhV', NULL, '', ''),
+(524, 'asd@asdfadf.com', '', '', NULL, NULL, NULL, 'english', 'cust_IBsxwtYJI6H9pTKE13nClmzF', NULL, '', ''),
+(525, 'sdxxxf@sadf.com', '', '', NULL, NULL, NULL, 'english', 'cust_czLs8j7t7ixFKrjDINySy2NR', NULL, '', ''),
+(526, 'xcxcxc@xcxcxc.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZaBzzs6SlYBqWsdp3UQG9QQZ', NULL, '', ''),
+(527, 'asf@asdf.com', '', '', 'a', '345', 'sfa', 'english', '', NULL, '', ''),
+(528, 'sdg@dsf.asdf', '', '', 'sgfd', '2345', 'eryt', 'english', '', NULL, '', ''),
+(529, 'sdf@sdf.com', '', '', 'sdf', '0000', 'sdf', 'english', 'cust_vjGejGcyBjVKinS74fUmb4ti', NULL, '', ''),
+(530, 'afd@ad.sadf', '', '', 'asdf', '456', 'dsg', 'english', '', NULL, '', ''),
+(531, 'a@a.com', '', '', NULL, NULL, NULL, 'english', 'cust_5VyXPgAWi88xD5ydfOXsGBAq', NULL, '', ''),
+(532, 'adsf@saf.ds', '', '', NULL, NULL, NULL, 'english', 'cust_Dwl1latafZ9uOSLSIijtQxZS', NULL, '', ''),
+(533, 'ac@ds.com', '', '', NULL, NULL, NULL, 'english', 'cust_uLMNY9NOxlBd02X4SRLuQzP8', NULL, '', ''),
+(534, 'ssdg@sdg.dfg', '', '', NULL, NULL, NULL, 'english', 'cust_3NulSKGbm1f4m2Pf2TUCsbWB', NULL, '', ''),
+(535, 'sdfsdf@sdffsdf.com', '', '', 'sdf', '0000000', 'sdf', 'english', '', NULL, '', ''),
+(536, 'kjb@jkh.kh', '', '', 'khjfg', '867', 'lkjh', 'english', '', NULL, '', ''),
+(537, 'sdf@sadf.asdf', '', '', 'asdfa', '1234', 'wer', 'english', '', NULL, '', ''),
+(538, 'adf@asdf.cadas', '', '', 'asdf', '12341', '1234', 'english', '', NULL, '', ''),
+(539, 'asdf@asf.com', '', '', 'asdf', '1234', '12341', 'english', '', NULL, '', ''),
+(540, 'ssadasdf@asdf.adsff', '', '', 'dsafsd', '1243', '123', 'english', '', NULL, '', ''),
+(541, 'tasawar@mahmood.com', '', '', 'tasawar', '321', 'sdf', 'english', '', NULL, '', ''),
+(542, 'ts@ga.com', '', '', 'Tas', '8765', 'Gav', 'english', '', NULL, '', ''),
+(543, 'adsf@dsf.com', '', '', 'dsf', '345345', 'dsf', 'english', 'cust_gSN7vBOv17247Zk1d6tp5k0d', NULL, '', ''),
+(544, 'testmark@gmail.com', '', '', 'test', '3453434', 'dfgdfg', 'english', 'cust_xJAcAvDsMpnGfcmknZdQyKi9', NULL, '', ''),
+(545, 'etst@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_6bLDoK8iTMBNFBRyA1ASU679', NULL, '', ''),
+(546, 'teste@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_o3XtkVtoBaiaJELFMHFmMGDU', NULL, '', ''),
+(547, 'f@f.com', '', '', 'Test', '0000', 'F', 'english', '', NULL, '', ''),
+(548, 'asd@sadf.com', '', '', NULL, NULL, NULL, 'english', 'cust_XwoVqfliijF40Tm3ulJTkFq7', NULL, '', ''),
+(549, 'sdfdff@dsfcvcvv.com', '', '', 'sdfffffdfdfdfd', '343434', 'sdfsdf', 'english', '', NULL, '', ''),
+(550, 'ali_lums@gmail.com', '', '', 'Ali Shoail LUMS', '343434', 'sdf', 'english', '', NULL, '', ''),
+(551, 'sfdg@dsf.com', '', '', 'sfv', '34545', 'sgf', 'english', '', NULL, '', ''),
+(552, 'shaibii@gmail.com', '', '', 'shoaib', '12342314', '1234', 'english', '', NULL, '', ''),
+(553, 'aaa@asdf.com', '', '', 'asdf', '3142', 'asdf', 'english', '', NULL, '', ''),
+(554, 'asdf@asdef.casdf', '', '', 'asdf', '234', '23', 'english', '', NULL, '', ''),
+(555, 'asdf@asdf.asdf', '', '', 'asdf', '3453425', '345', 'english', '', NULL, '', ''),
+(556, 'iftikhar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_l2gX0ueMyZZCInpwvLQQef1p', NULL, '', ''),
+(557, 'ffff@ddddsss.com', '', '', NULL, NULL, NULL, 'english', 'cust_3489ZqDBucItKwlGT8kZdkpq', NULL, '', ''),
+(558, 'sdf@df.com', '', '', NULL, NULL, NULL, 'english', 'cust_GNrQpD7CiEQ6LLD8YILTKhO5', NULL, '', ''),
+(559, 'sdsssf@dkkkf.com', '', '', NULL, NULL, NULL, 'english', 'cust_CmRolzNhrGjzMQQUfrXimJ8T', NULL, '', ''),
+(560, 'test@test.com', '', '', NULL, NULL, NULL, 'english', 'cust_J0BFjmWQulQ2mbv2iZZR0slr', NULL, '', ''),
+(561, 's@ws.com', '', '', NULL, NULL, NULL, 'english', 'cust_2ubTe0V65XIURGE7k6xG06qJ', NULL, '', ''),
+(562, 'd@d.com', '', '', NULL, NULL, NULL, 'english', 'cust_c88BWMHJ2qWhdGuHOH0NObIU', NULL, '', ''),
+(563, 'sdffff@dfdfdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_cAdeGZ798pu1W9BXsHHN7BQt', NULL, '', ''),
+(564, 'vhmnbn@cbb.com', '', '', NULL, NULL, NULL, 'english', 'cust_DCXjtVVSrRblVKQ0a6SYXSHb', NULL, '', ''),
+(565, 'iftikhaaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZMCzXP6HcR85HLKoA8S9zWv3', NULL, '', ''),
+(566, 'iftikhadddaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_6dUuJlv7rAjdtJyLod2cV8RB', NULL, '', ''),
+(567, 'iftikhadssdddaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_D4ihekw4yA8RSfjS1kKNXHOB', NULL, '', ''),
+(568, 'iftdsdddaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_KyMRVWYVkDWk7POhTwGkIY51', NULL, '', ''),
+(569, 'iftdsdddaar_yvvvahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_WkW8jaJ3PjKei1gIBruwI41x', NULL, '', ''),
+(570, 'iftdsdddaar_yvvssdvahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_xFO0JqpJLoXkw0d01LNGuu1b', NULL, '', ''),
+(571, 'iftdsssfdddaar_yvvssdvahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_xBdzg44uaAMrGWPlo259GmdF', NULL, '', ''),
+(572, 'ahmad@gfmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_6ViYS2iEKaZeBJ4YkJPLVI2h', NULL, '', ''),
+(573, 'ahmasdfsdfd@gfmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_i2yZJc3rNQAVzcNqV86SOHl7', NULL, '', ''),
+(574, 'ahmasdfsdfsdfsdfd@gsdffmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_Cyu4SpzM5U33g90u8658wnZd', NULL, '', ''),
+(575, 'ahmadfgsdfsdfsdfsdfd@gsdffmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_IfuUOzijy5rRnUJh36cNqkD3', NULL, '', ''),
+(576, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgail.com', '', '', NULL, NULL, NULL, 'english', 'cust_efQxMWNI25PYkkptBALM2c8J', NULL, '', ''),
+(577, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_H8Dr8E0IxSUhWzwSmOBX60NW', NULL, '', ''),
+(578, 'ahmadfgsdfsdfsdfsdfd@gsdffmdsfdfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_fFTuws12Q3O1hz68gJMpCaW4', NULL, '', ''),
+(579, 'ahmfsdfsdfd@gsdffmdsfdfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_f026L8JHPIVtSF5quMPGODmN', NULL, '', ''),
+(580, 'ahmfsdfsdfd@gsfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_uwFS2zLFSesHUJecKEFeC5U7', NULL, '', ''),
+(581, 'rrr@abcdgmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_8tDBIOiY98K4VoVJ7skalHF8', NULL, '', ''),
+(582, 'sdf@sd.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZGiB4wBprVQePmGOolxiJX00', NULL, '', ''),
+(583, 'gmgjh@rtrt.com', '', '', NULL, NULL, NULL, 'english', 'cust_de1y6GYOBGhST1cUTWoGqgOA', NULL, '', ''),
+(584, 'dsf@dsf.com', '', '', NULL, NULL, NULL, 'english', 'cust_kPszysYTGXTLbcBBMsWBftT4', NULL, '', ''),
+(585, 'erer@rtrt.com', '', '', NULL, NULL, NULL, 'english', 'cust_FLSE3uT32RnZ5JRpPgb4FDuI', NULL, '', ''),
+(586, 'erer@sdfgfg.vom', '', '', NULL, NULL, NULL, 'english', 'cust_FAxWBKALnFA1s2GT0CR2BjKa', NULL, '', ''),
+(587, 'rrr@rrr.com', '', '', NULL, NULL, NULL, 'english', 'cust_LQqJw9tRhoxwrZpn3tmYJX7b', NULL, '', ''),
+(588, 'cvcvcv@mvmvmv.com', '', '', NULL, NULL, NULL, 'english', 'cust_SUVnakXVHPSDYRB0uRNOzACw', NULL, '', ''),
+(589, 'cvcv@xcvcv.com', '', '', NULL, NULL, NULL, 'english', 'cust_sU3PaGkDDARMAsDQaECoOsYb', NULL, '', ''),
+(590, 'sdfsdf@dsfsdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_yX7k25gmd9XI74Iglf7yO7bg', NULL, '', ''),
+(591, 'asdasd@dsfdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_AGcamoHHf4kmmwm8nP36GG4N', NULL, '', ''),
+(592, 'sdfsdf@dfdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZZ0tO1xkjZetRcCwZveotFUh', NULL, '', ''),
+(593, 'svcxvwf@yuyu.com', '', '', NULL, NULL, NULL, 'english', 'cust_1ZkCgcnwNFjYBYMC8AizQrjT', NULL, '', ''),
+(594, 'shoaib.it002@gmail.com', '', '', 'shoaib akram', '090078601', '12', 'english', 'cust_jp36Z1zsMbkyvW7Z4CXbtPfq', NULL, '', ''),
+(595, 'sadf@dsf.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
+(596, 'sdfdsf@ds.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
+(597, 'sadf@df.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
+(598, 'sfd@dsf.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
+(599, 'asd@df.com', '', '', 'asdf', '2334', '', 'english', '', NULL, '', ''),
+(600, 'asd@f.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
+(601, 'asdf@df.com', '', '', 'asd', '3434', '', 'english', '', NULL, '', ''),
+(602, 'sdaf@sf.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
+(603, 'jgfjh@sdfg.com', '', '', 'fjg', '0000', '', 'english', '', NULL, '', ''),
+(604, 'dafs@sadf.com', '', '', 'adsf', '0000', '', 'english', '', NULL, '', ''),
+(605, 'ahmadworkspace@gmail.com', '', '', 'Testing', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 'english', '', NULL, '', ''),
+(606, 'Testing@Testing.com', '', '', 'Testing', '000000', 'Testing', 'english', '', NULL, '', ''),
+(607, 'kpk@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(608, 'kpk2@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(609, 'kpk3@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(610, 'kok@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(611, 'kok2@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(612, 'kok3@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(613, 'kok4@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(614, 'test@gmail.com', '', '', 'Test', '000000', 'Dasfa ir ko, Kareivių gatvė, Vilnius, Lithuania', 'english', '', NULL, '', ''),
+(615, 'cool@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(616, 'jkj@gmailc.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(617, 'rael@pushstartups.com', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
+(618, 'adb@ancn.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(619, 'ddsfas@afa.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(620, 'gujg@fghh.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(621, 'kpk10@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
+(627, 'avi@puahstartups.com', '', '', 'TEST TEST', '000000000', 'דרך יצחק רבין 23, בית שמש, ישראל', 'english', '', NULL, '', ''),
+(628, 'test@orderapp.com', '', '', 'TEST', '000000', 'sdf', 'english', 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL, '', ''),
+(629, 'tasawarmahmood24@gmail.com', '', '', 'test', '000000', 'SDF, Terminal Drive, Louisville, KY, United States', 'english', '', '34609bdc08a07ace4e1526bbb1777673', '', ''),
+(631, 'msdsdsuhammad.iftikhar.aftab@gmail.com', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
+(632, 'dvora@pushstartups.com', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
+(633, 'asdfhjjsdjksher@a.com', '', '', NULL, NULL, NULL, 'english', 'cust_wQxbHwTV7O85zmo21NPOw84c', NULL, '', ''),
+(634, 'DODO@pushstartups.com', '', '', NULL, NULL, NULL, 'english', 'cust_00w4vq3BCg73gh6oWK8oC0yz', NULL, '', ''),
+(635, 'rael@orderapp.com', '', '', '', NULL, NULL, 'english', '', 'a1d50185e7426cbb0acad1e6ca74b9aa', '', ''),
+(636, 'muhaddmmad.iftikhar.aftab@gmail.comdddd', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
+(638, 'testing@ordeapp.com', '', '', 'Testing', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 'english', '', NULL, '', ''),
+(639, '', '', '', '', '972000000000', NULL, 'english', '', NULL, '', ''),
+(640, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwOGYyNDg3NTZiNWY2ZWU0ZGQ0YzVkODBiNTU4NTA5OTdmZmRlN2YifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItY3ZpMGRnbXZuZ3IyYnVtanIxZGhzcGg5OW12Y2xvZ3UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItY3ZpMGRnbXZuZ3IyYnVtanIxZGhzcGg5', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, '', ''),
+(641, '972333333333', '', '', '', '972333333333', NULL, 'english', '', NULL, '', ''),
+(642, 'EAAIJEdqSv3ABAAvbjlKjc5DlpZAtH9oZCkOZBZBJ9pED1mKggduNZCmq9dCbjwuxqhZBnefg9dcEZCykjivON77BI8PAqwhYSZCKqDK2mTscaEE9vcpF60ersRyI7zEcokE05vjVZAvZCzkPdHO7s1vAVzK2C5eHWsfm4q5jF5oyZBgzKkESKALSCh2OFPXnit9kUEJq9JxWZCPhO8DgrrsIfOWfBs7YSddqqWZBn7wTEauLncQZDZD', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, '', ''),
+(643, 'EAAIJEdqSv3ABABJACT6AOVDZBDaG5CFO1O5ZBlpWYVHHkYutIbOJ0bpB6h4OOMDZAgyxSqC6lv0TAINVxifo6f5gxXhUfqEc0EgujqiNvTZB6zgMvKR1Ua5JHcXMBnlVzgWE2CfKkD1CF3EHQtiKKY7qbpQa1OZCZCQEPuMairIYwTiWTmRrG4LLt06Bh2g2KPvDYkUytPeCGpRfj8WlYV6TJsmymqegIZD', '', '', 'Aharon Mendlowitz', '', NULL, 'english', '', NULL, '', ''),
+(644, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwOGYyNDg3NTZiNWY2ZWU0ZGQ0YzVkODBiNTU4NTA5OTdmZmRlN2YifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, '', ''),
+(645, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU0MDc4NCwiZXhwIjoxNDk1NTQ0Mzg0LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.iDM1l3kZ4pwAjbd733HTnKE2IdUHhAxGhClskVFwoIDAsd0YEaskEqxHAZtjVxMvAP_4jtigX41YGkhtMpdZ41iyPb5Ey7aT6Hmt8KPxJWvW9ArR1AR_qj7g96wbUtsSGfkfAGkPfO6aEoK6B5lIRNL5ck96GQI-DIXHdHjJoO4Bx--J34HoWnXd3i-TOgdX1sESv6UoK5PczFZHgBuWiWlMFaqv4OTozLQsINmaPeDuDNOXm43DJiz7PMFvUcYbRfH38Vvsq0NSgy0eq9seJT8uayDVnFD7i617iqw7TMRiXMT2Jh9AUrT_BO7C6IVQJwhNHr_5ssXgXcoWm4bvfA'),
+(646, 'EAAIJEdqSv3ABAH08B9Vx3HDc9pe4ZAqRAerLeBHHZCGt59dLUgaS2Jh4vSszGt1ScqiiRM5T9s9WSAMovFjEM6MEC6BmRyWj69sghwJGUAdkp3edWGrZA3Bq2ws7LBnLLdolnlyyGqxLUeiJjWrzPsMJaZADqzVJdT7AZBlok4gN0XP8KxrjjlHIlETyxGh4JmnjZAniRVReGs9X8zg5Wwmc7mDh1r0NyIJBUaSVy0ZBwZDZD', '', '', 'Aharon Mendlowitz', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAH08B9Vx3HDc9pe4ZAqRAerLeBHHZCGt59dLUgaS2Jh4vSszGt1ScqiiRM5T9s9WSAMovFjEM6MEC6BmRyWj69sghwJGUAdkp3edWGrZA3Bq2ws7LBnLLdolnlyyGqxLUeiJjWrzPsMJaZADqzVJdT7AZBlok4gN0XP8KxrjjlHIlETyxGh4JmnjZAniRVReGs9X8zg5Wwmc7mDh1r0NyIJBUaSVy0ZBwZDZD'),
+(647, 'EAAIJEdqSv3ABANXhjlzWnEcHkBZBUpz1A3xamCop5zJsBj3neIZBC4a3p7uZA3Bxx8oB2T8pJZCBhi9pYGlEZCrpHwDdQoZASBiZCsLYbyE1bPZC89DmZBhrOKq80cG0ITgxiVZCA3prMkf5SaQgBIdk4gNFJ5dJuWjz7jauixYyHkfUgYq015iJVSdTiiWbW6Fg3YmwZBNSoNoaKhZCxgpFifrnUVAz2IiS1QGv1uDVdUg0HQZDZD', '', '', 'Avi Push', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABANXhjlzWnEcHkBZBUpz1A3xamCop5zJsBj3neIZBC4a3p7uZA3Bxx8oB2T8pJZCBhi9pYGlEZCrpHwDdQoZASBiZCsLYbyE1bPZC89DmZBhrOKq80cG0ITgxiVZCA3prMkf5SaQgBIdk4gNFJ5dJuWjz7jauixYyHkfUgYq015iJVSdTiiWbW6Fg3YmwZBNSoNoaKhZCxgpFifrnUVAz2IiS1QGv1uDVdUg0HQZDZD'),
+(648, 'EAAIJEdqSv3ABAElblhvWWw5BGn5lHOtdJmJQVaVCZCSJgE93QKzlc1jBIWP6Qrib4ZAtSVQiVUdzZA3rdVpoJRu7YyzVMuhrgHMOi18JkS2RgpU1dWT4RoHLgDK2syuJGjJG2zZB7RNpCEmhs7gaiwifYQiSyVJw1ZBm9bt0yCg37CEbZA4xjcQsD1G0ZAL4WZCwnjVAayv5b5v0NOOWrZBJuYLFGDdHdMidPaoyf5uKyQgZDZD', '', '', 'Aharon Mendlowitz', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAElblhvWWw5BGn5lHOtdJmJQVaVCZCSJgE93QKzlc1jBIWP6Qrib4ZAtSVQiVUdzZA3rdVpoJRu7YyzVMuhrgHMOi18JkS2RgpU1dWT4RoHLgDK2syuJGjJG2zZB7RNpCEmhs7gaiwifYQiSyVJw1ZBm9bt0yCg37CEbZA4xjcQsD1G0ZAL4WZCwnjVAayv5b5v0NOOWrZBJuYLFGDdHdMidPaoyf5uKyQgZDZD'),
+(649, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU0OTMxNSwiZXhwIjoxNDk1NTUyOTE1LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.FVUIImneMkQ9CaJ1TK5GbcR54fGwGUAM__JO1fhL7YvDH_8bTB6WTsZ2AZot3mbqTbFpoPq70WEUjM8z7fiCZQrpNy1XZi4qTvfSutHh-DLzz6QvAZCFLLSk6y6KX5zUJYKWIaIpnpjO0BHFIAEYu3XjjK-Ebx0vQHKZ8Z-xJY_WM27txycdufnsMH8b68AHQOkw2OqO7uQ2DlwtL-3aem3lYeE1FNufFnlwUSeVgpl9pmWwjdg7iXnJ5I2-WsSCF7PmArv1TP6H9X_hJAxet8e1D5yn8utgI1vyyQoTd1KHj0y_n5Qm0hqtK45TvBOAe6y3KK7r3EFlq3QUc7EynA'),
+(650, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU4Mjk5NCwiZXhwIjoxNDk1NTg2NTk0LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.cV0GhWy35YfjAvM3BYyjs9M8so6ei21YTEKA3BWw6-qwFoKpO_kW6g_F2bhKri06R-lJLv6u-Ak2tOSl3bVYkKo9cUqicYe16wH5EkR520qlTu11A-Qc3OF1EaCA4ClU2S0kS8VPCmknqb7qUFcbj6glxG0PA2yIkuemLDC4en6Hmx6MaAfK8M5nB3fjCidFC9NU5oMpzEWW4mPDhyawhWjo6jT5oGYofOxWYSxrSKKESyYLIW00at4A-LZl-i6dFI6iUuS5pJilkHHQI2Va0SuBkDkSazTSG62ridt_gyrMPyiVxClPWL9U0xviOOFyN5bFfFymD_UEjRh75T8DWA'),
+(651, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Aaron Hunter', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDE0MDE4MTY0MTc3NjkwMzc0OTYiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImFhcm9uQHB1c2hzdGFydHVwcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDk1NjA3OTE1LCJleHAiOjE0OTU2MTE1MTUsIm5hbWUiOiJBYXJvbiBIdW50ZXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy01ajVENjFXdnNQWS9BQUFBQUFBQUFBSS9BQUFBQUFBQUFBcy9QcElLX0F4NllRby9zOTYtYy9waG90by5qcGciLCJnaXZlbl9uYW1lIjoiQWFyb24iLCJmYW1pbHlfbmFtZSI6Ikh1bnRlciIsImxvY2FsZSI6ImVuIn0.SCxdXv0VboVFUR4D50mPuTic4U2HZ9Woj-RAg56zFt6IjylE6q7bScURU3tFDjRDimvWJKnbW5IwepJbYVZroNm2ndduAXIhFI1GBtUCyuSn3W2NMVY9VPD4K8KY1Yhni4nfd2k5hDIurbkvukX9__-CCKeHpEo34_1bGVe1JDB-12FvC34DZZTQ0XDKoRoTMp6nrodshn208-6oxtptJAgrsbJx3ajOuPAe-_oBdkbSG9eT_X-hGueaBAv7Dt_aV9QKUekDCneiVCx2gtfMxGLIG-2cuUwH9Vxqa52kTTjB-CQ3B2i_rNoBqjtkKOck6BzRzjSqG-WONiHoYBxqKA'),
+(652, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Avi Aloush', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ3Mjk2ODc2NDM3MDA5MDMxMzEiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImF2aUBwdXNoc3RhcnR1cHMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTYxMjU2NSwiZXhwIjoxNDk1NjE2MTY1LCJuYW1lIjoiQXZpIEFsb3VzaCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vLXRNMDVabENGNjJrL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBeVlCRjUxMjBjeFBLRE5rMVVPaUFHNF9hQjQ1Z0ZaLXcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkF2aSIsImZhbWlseV9uYW1lIjoiQWxvdXNoIiwibG9jYWxlIjoiZW4ifQ.XORr9qMzjgvnmlpD1wj6WZWrYnYp2R5Avddk_p6sPDwnXRygHxN97XgNUwMiVpjsRg3abzXpceNd6JZdSvuarHfvGG9NAjOWLoO3G6CS3_3KyAzsKdeDCvyUCdHrCdTdQKSfpKB-r7q9v7Zww8iKFylA7SUjsrhFPtFAfIP0kgrgJrUcbAvyIEeUU9rlfBej7yqRxpTWCN4rn6Zs4jGL75A42SqG2daH_Csb8h69hKYWI2tj0fM9dnfSdcD0C-VrhTXlDTKLvBbI7kjDkSrgtCWydu-POvYn4E7qLY7N_SAo9zpirS1HZVqweUFWFrSLdNvPIs9DGEzlyVMb_zMo0w'),
+(653, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad.iftikhar.aftab@gmail.com', '1234', '', NULL, NULL, 'english', '', 'd7a84628c025d30f7b2c52c958767e76', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -15903,7 +15989,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=553 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=554 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -15978,7 +16064,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (549, 628, 3, 114, 'fixed value', 10, '2017-05-18 13:38:35', 'ENG Desktop', 'CASH', '', 'Chrome'),
 (550, 628, 2, 154, NULL, 0, '2017-05-18 17:42:00', 'ENG Desktop', 'CASH', '', 'Chrome'),
 (551, 638, 1, 113, NULL, 0, '2017-05-22 14:34:20', 'HE Desktop', 'CASH', '', 'Chrome'),
-(552, 605, 6, 106, NULL, 0, '2017-05-22 14:37:25', 'HE Desktop', 'CASH', '', 'Chrome');
+(552, 605, 6, 106, NULL, 0, '2017-05-22 14:37:25', 'HE Desktop', 'CASH', '', 'Chrome'),
+(553, 628, 3, 103, NULL, 0, '2017-05-23 16:00:44', 'ENG Desktop', 'CASH', '', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -16068,14 +16155,14 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
 INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `opening_time_he`, `closing_time`, `closing_time_he`) VALUES
 (8, 1, 'Sunday', 'יום א', '11:30', '11:30', '19:00', '19:00'),
 (9, 1, 'Monday', 'יום ב', '11:30', '11:30', '23:00', '23:00'),
-(10, 1, 'Tuesday', 'יום ג', '11:30', '11:30', '23:00', '23:00'),
+(10, 1, 'Tuesday', 'יום ג', '9:00', '9:00', '23:00', '23:00'),
 (11, 1, 'Wednesday', 'יום ד', '11:30', '11:30', '23:00', '23:00'),
 (12, 1, 'Thursday', 'יום ה', '11:30', '11:30', '23:00', '23:00'),
 (13, 1, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
 (14, 1, 'Saturday', 'שבת', '20:30', '20:30', '23:00', '23:00'),
 (15, 2, 'Sunday', 'יום א', '11:30', '11:30', '19:00', '19:00'),
 (16, 2, 'Monday', 'יום ב', '11:30', '11:30', '23:00', '23:00'),
-(17, 2, 'Tuesday', 'יום ג', '11:30', '11:30', '23:00', '23:00'),
+(17, 2, 'Tuesday', 'יום ג', '9:00', '9:00', '23:00', '23:00'),
 (18, 2, 'Wednesday', 'יום ד', '11:30', '11:30', '23:00', '23:00'),
 (19, 2, 'Thursday', 'יום ה', '11:30', '11:30', '23:00', '23:00'),
 (20, 2, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
@@ -16438,14 +16525,6 @@ ALTER TABLE `restaurant_tags`
 --
 ALTER TABLE `subitems`
   ADD CONSTRAINT `subitems_ibfk_1` FOREIGN KEY (`extra_id`) REFERENCES `extras` (`id`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
-  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`),
-  ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`role_id`) REFERENCES `user_roles` (`id`);
 
 --
 -- Constraints for table `user_orders`
