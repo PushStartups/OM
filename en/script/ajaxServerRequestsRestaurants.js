@@ -25,6 +25,7 @@ $(document).ready(function() {
 // USER ORDER INFORMATION
     userObject = {
 
+        'uid' : '',                        // UNIQUE USER ID
         'language': 'en',                  // USER LANGAGUE ENGLISH
         'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE

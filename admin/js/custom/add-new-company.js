@@ -249,3 +249,32 @@ function add_company_restaurant(company_id,url)
 }
 
 
+$('input[name=onoffswitchcompany]').change(function(){
+    if($(this).is(':checked')) {
+
+        change_vote_status($(this).attr("id"),'1');
+    } else {
+
+        change_vote_status($(this).attr("id"),'0');
+
+    }
+});
+
+function change_vote_status(company_id,val)
+{
+   // alert(company_id);
+    //alert(val);
+    addLoading();
+    $.ajax({
+        url:"ajax/change_vote_status.php",
+        method:"post",
+        data:{id:company_id,val:val},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+        }
+    });
+}
+
+

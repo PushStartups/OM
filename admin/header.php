@@ -32,6 +32,8 @@ DB::query("set names utf8");
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin-rtl.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/clockpicker.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/cropper.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/croppermain.css">
 
     <!-- We recommend you use "your_style.css" to override SmartAdmin
          specific styles this will also ensure you retrain your customization with each SmartAdmin update.
@@ -46,7 +48,7 @@ DB::query("set names utf8");
     <link rel="icon" href="img/favicon/favicon.png" type="image/x-icon">
 
     <!-- #GOOGLE FONT -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
     <!-- #APP SCREEN / ICONS -->
     <!-- Specifying a Webpage Icon for Web Clip
@@ -64,8 +66,9 @@ DB::query("set names utf8");
     <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
     <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
     <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+  
 </head>
 <body class="">
 <img id="loader" style="z-index: 99999;" class="loader-css" src="<?=WEB_PATH?>/en/img/loader.gif" >

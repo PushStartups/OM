@@ -20,7 +20,7 @@ you can add as many as you like
 <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
 <script>
@@ -43,7 +43,6 @@ you can add as many as you like
 <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
 
 <!-- BOOTSTRAP JS -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
 
 <!-- CUSTOM NOTIFICATION -->
 <script src="js/notification/SmartNotification.min.js"></script>
@@ -106,6 +105,10 @@ you can add as many as you like
 <script src="js/custom/add-new-company.js"></script>
 <script src="js/custom/clockpicker.js"></script>
 <script src="js/custom/add-company-user.js"></script>
+<script src="js/custom/add-new-restaurant.js"></script>
+<script src="js/custom/add-new-category.js"></script>
+<script src="js/custom/add-choices-addons.js"></script>
+
 <script type="text/javascript">
     hideLoading();
 </script>

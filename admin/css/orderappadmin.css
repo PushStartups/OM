@@ -133,3 +133,9 @@ a {
     height: auto;
     display: none;
 }
+
+.btn-purple {
+    color: #fff;
+    background-color: #833be7;
+    border-color: #8402f3;
+}

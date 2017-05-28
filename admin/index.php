@@ -7,6 +7,7 @@ else{
 	$city_id = 1;
 }
 ?>
+
 <!-- END NAVIGATION -->
 
 <!-- MAIN PANEL -->
@@ -44,10 +45,37 @@ else{
 					</li>
 				</ul>
 				<!-- end sparks -->
-			</div>
+			</div><br>
+<!--			<div align="center" class="col-xs-12 col-sm-5 col-md-5 col-lg-8">-->
+<!--				<!-- sparks -->
+<!--				<ul id="sparks">-->
+<!--					<li class="sparks-info">-->
+<!---->
+<!--					</li>-->
+<!--					<li class="sparks-info">-->
+<!---->
+<!--						<a style="text-decoration: none" href="add-new-restaurant.php"><div class="btn btn-purple btn-lg">-->
+<!--							<i class="fa fa-plus"></i>-->
+<!--							Add Restaurant-->
+<!--						</div></a>-->
+<!--					</li>-->
+<!--					<li class="sparks-info">-->
+<!---->
+<!--					</li>-->
+<!---->
+<!--				</ul>-->
+<!--				<!-- end sparks -->
+<!--			</div>-->
 			<!-- end col -->
 
 		</div>
+		<br>
+		<div align="center">
+			<a style="text-decoration: none" href="add-new-restaurant.php"><div class="btn btn-purple btn-lg">
+					<i class="fa fa-plus"></i>
+					Add Restaurant
+				</div></a>
+		</div><br><br>
 		<!-- end row -->
 
 		<!--
@@ -92,14 +120,16 @@ else{
 											<th data-hide="phone,tablet">City</th>
 											<th data-hide="phone,tablet">Hide/Show</th>
 											<th data-hide="phone,tablet">Rank</th>
-											<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Action</th>
+											<th data-hide="phone,tablet">Add Categories</th>
+											<th data-hide="phone,tablet">Add Timings</th>
+											<th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Action</th>
 										</tr>
 										</thead>
 										<tbody>
 										<?php
 										//GETTING ALL RESTAURANTS
 										$restaurant = getAllRestaurantsByCity($city_id);
-										foreach($restaurant as $restaurants){ $i = 0;
+										foreach($restaurant as $restaurants) { $i = 0;
 
 											?>
 											<tr>
@@ -123,6 +153,10 @@ else{
 														<button onclick="change_rank('<?=$restaurants['id']?>','<?=$city_id?>')" class="btn btn-labeled btn-primary add"><i class="fa fa-fw fa-save"></i> Save </button>
 													</div>
 												</td>
+
+												<td><a style="text-decoration: none" href="add-new-category.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Categories </button></a></td>
+												<td><a style="text-decoration: none" href="add-restaurant-timing.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-pink  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Timings </button></a></td>
+
 												<td><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></td>
 
 											</tr>
@@ -130,6 +164,7 @@ else{
 
 										</tbody>
 									</table>
+
 
 								</div>
 								<!-- end widget content -->

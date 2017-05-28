@@ -66,8 +66,10 @@ include "header.php";
                                         <th data-hide="phone, tablet">Delivery Address</th>
                                         <th data-hide="phone, tablet">Discount Type</th>
                                         <th data-hide="phone, tablet">Discount</th>
-                                        <th data-hide="phone, tablet">Add Restaurants</th>
+                                        <th data-hide="phone, tablet">Voting</th>
                                         <th data-hide="phone, tablet">Add Users</th>
+                                        <th data-hide="phone, tablet">Add Restaurants</th>
+
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -84,8 +86,19 @@ include "header.php";
                                             <td><?=$companies['delivery_address']?></td>
                                             <td><?=$companies['discount_type']?></td>
                                             <td><?=$companies['discount']?></td>
-                                            <td><a href="add-company-restaurant.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Restaurants </button></a></td>
+                                            <td>
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="onoffswitchcompany" class="onoffswitch-checkbox" id="<?=$companies['id']?>" <?php if($companies['voting'] == '1'){ ?> checked <?php } ?>>
+                                                    <label class="onoffswitch-label" for="<?=$companies['id']?>">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+
                                             <td><a href="add-company-users.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Users </button></a></td>
+
+                                            <td><a href="add-company-restaurant.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Restaurants </button></a></td>
                                             <td><a href="companies-detail.php?companies_id=<?=$companies['id']?>"><button disabled class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> Detail </button></a></td>
                                         </tr>
                                     <?php } ?>

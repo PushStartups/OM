@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 24, 2017 at 09:59 AM
+-- Generation Time: May 28, 2017 at 05:38 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `b2b_orders` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=138 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=142 ;
 
 --
 -- Dumping data for table `b2b_orders`
@@ -153,7 +153,11 @@ INSERT INTO `b2b_orders` (`id`, `user_id`, `company_id`, `total`, `actual_total`
 (134, 1, 2, 136, 136, 0, '2017-05-23', '', '31663745'),
 (135, 1, 2, 75, 75, 0, '2017-05-23', '', ''),
 (136, 1, 2, 75, 75, 0, '2017-05-23', '', ''),
-(137, 1, 2, 0, 68, 432, '2017-05-23', '', '');
+(137, 1, 2, 0, 68, 432, '2017-05-23', '', ''),
+(138, 3, 2, 0, 31, 827, '2017-05-24', '', ''),
+(139, 5, 6, 30, 90, 0, '2017-05-24', '', ''),
+(140, 1, 2, 75, 75, 0, '2017-05-24', '', ''),
+(141, 5, 6, 40, 40, 0, '2017-05-24', '', '31703210');
 
 -- --------------------------------------------------------
 
@@ -170,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `b2b_order_detail` (
   `sub_items` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=120 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=124 ;
 
 --
 -- Dumping data for table `b2b_order_detail`
@@ -267,7 +271,11 @@ INSERT INTO `b2b_order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `s
 (116, 134, 2, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
 (117, 135, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
 (118, 136, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
-(119, 137, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)');
+(119, 137, 1, 'Angus Salad', 68, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3)'),
+(120, 138, 1, 'Angus Tortilla', 31, 'Bbq, Thousand Island'),
+(121, 139, 3, 'One Chicken hearts skewer', 30, 'סוג לחם :פיתה, Amba, Techina, Spicy Schug'),
+(122, 140, 1, 'Angus Salad', 75, '150 grams goose breast or entrecote (+15.3), 170 grams chicken breast (+15.3), Egg (+3.4), portobello mushroom (+3.4)'),
+(123, 141, 1, 'One entrecote Skewer', 40, 'סוג לחם :לאפה, Techina, Spicy Schug, Sweet Chili');
 
 -- --------------------------------------------------------
 
@@ -331,17 +339,17 @@ CREATE TABLE IF NOT EXISTS `b2b_users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `b2b_users`
 --
 
 INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `discount`, `date`, `contact`, `address`, `state`, `language`, `payment_url`, `extras`, `restaurant_id`, `role_id`, `company_id`, `voucherify_id`) VALUES
-(1, 'muhammad.iftikhar.aftab@gmail.com', 'TEST', 'test', 'test', 432, '2017-05-23', '000000', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
-(3, 'avi@pushstartups.com', 'Avi', 'avi', 'avi', 858, '2017-05-23', '00000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(1, 'muhammad.iftikhar.aftab@gmail.com', 'TEST', 'test', 'test', 0, '2017-05-24', '000000', 'Gujranwala', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
+(3, 'avi+1@pushstartups.com', 'Avi', 'avi', 'avi', 827, '2017-05-24', '00000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 2, ''),
 (4, 'test@orderapp.com', 'Avi', 'mark', 'mark', 15, '2017-05-23', '000000000', 'abcd ISRAEL', 0, 'english', NULL, NULL, NULL, NULL, 3, ''),
-(5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 25, '2017-05-22', '000000000', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
+(5, 'rael@pushstartups.com', 'Rael', 'rael', 'rael', 0, '2017-05-24', '000000000', 'Rael Test', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (6, 'dvora@pushstartups.com', 'Dvora', 'dvora', 'dvora', 60, '2017-05-10', '000000000', 'Dvora Test', 0, 'english', NULL, NULL, NULL, NULL, 6, ''),
 (7, 'oded@orderapp.com', 'Oded', 'oded', 'oded', 8, '0000-00-00', '0', '2 hahr', 0, 'english', NULL, NULL, NULL, NULL, 7, '0'),
 (8, 'karen@goldrockcap.com ', 'Karen Aizensthtat', 'Karen', 'Karen1981', 1000, '0000-00-00', '546313570', '16 Hatasiya', 0, 'english', NULL, NULL, NULL, NULL, 8, '0'),
@@ -350,7 +358,10 @@ INSERT INTO `b2b_users` (`id`, `smooch_id`, `name`, `user_name`, `password`, `di
 (11, 'Miri.pozner@dosentrx.com', 'Miri Pozner ', 'Miri', 'dosentrx123', 1000, '0000-00-00', '527349883', '2 Hahar', 0, 'english', NULL, NULL, NULL, NULL, 11, '0'),
 (12, 'Ram@sperolaw.com', 'Rochelle Ram', 'Rochelle', 'spero123', 1000, '0000-00-00', '542026959', '10 Hatasiya', 0, 'english', NULL, NULL, NULL, NULL, 12, '0'),
 (65, 'test3@gmail.com', NULL, '', '', 0, '2017-05-23', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
-(66, 'ahmadworkspace@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '');
+(66, 'ahmadworkspace@gmail.com', NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, ''),
+(69, 'avi@pushstartups.com', 'avi', 'avi', 'avi5219', 500, '2017-05-25', '0', 'hahar 2', 0, 'english', NULL, NULL, NULL, NULL, 20, '0'),
+(70, 'mark@pushstartups.com', 'mark', 'mark', 'mark3700', 500, '2017-05-25', '0', 'hahar 2', 0, 'english', NULL, NULL, NULL, NULL, 20, '0'),
+(77, 'tasawarmahmood24@gmail.com', 'tasawar', 'tasawar', 'tasawar5278', 0, '2017-05-25', '0', 'test', 0, 'english', NULL, NULL, NULL, NULL, 1, '0');
 
 -- --------------------------------------------------------
 
@@ -718,10 +729,18 @@ INSERT INTO `categories` (`id`, `menu_id`, `is_discount`, `name_en`, `name_he`, 
 (742, 33, 0, 'COMBINATIONS', 'קומבינציות', 0, '/m/en/img/categories/kampai/COMBINATIONS.png', 821),
 (743, 33, 0, 'DESSERTS', 'קינוחים', 0, '/m/en/img/categories/kampai/DESSERTS.png', 822),
 (744, 33, 0, 'DRINKS', 'שתיה', 0, '/m/en/img/categories/kampai/DRINKS.png', 823),
-(745, 42, 0, 'Meat', 'בשר', 0, NULL, 991),
-(746, 42, 0, 'Business', 'עסקי', 0, NULL, 992),
-(99999, 99999, 0, 'ex', 'ex', 0, NULL, 0),
-(100031, 2, 0, 'Meshulashim Deals', 'דילים', 0, '/m/en/img/categories/mesh/Pizza.png', 112);
+(747, 2, 0, 'Meshulashim Deals', 'דילים', 0, '/m/en/img/categories/mesh/Pizza.png', 112),
+(748, 43, 0, 'testing category', 'fvlfdvuu', 0, '/m/en/img/categories/testing/testing category.png', 113),
+(749, 44, 0, 'saled', 'סלט', 0, '/m/en/img/categories/rael test/saled.png', 114),
+(750, 47, 1, 'humus', 'חומוס', 0, '/m/en/img/categories/avi bamba/humus.png', 115),
+(751, 48, 0, 'tttt', 'tttt', 0, '/m/en/img/categories/1/tttt.png', 116),
+(752, 49, 0, 'main dish', 'מנה עיקרית', 0, '/m/en/img/categories/Alegria/main dish.png', 117),
+(753, 49, 0, 'kids meal', 'ארוחת ילדים', 0, '/m/en/img/categories/Alegria/kids meal.png', 118),
+(754, 50, 0, 'kids meal', 'ארוחת ילדים', 0, '/m/en/img/categories/one/multiple check/kids meal.png', 119),
+(755, 50, 0, 'DESSERTS', '???????', 0, '/m/en/img/categories/kampai/DESSERTS.png', 120),
+(756, 50, 0, 'DESSERTS', '???????', 0, '/m/en/img/categories/kampai/DESSERTS.png', 121),
+(757, 50, 0, 'DESSERTS', '???????', 0, '/m/en/img/categories/kampai/DESSERTS.png', 122),
+(99999, 99999, 0, 'ex', 'ex', 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -761,7 +780,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `last_voting_date` date NOT NULL,
   `hide_payment` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `company`
@@ -784,7 +803,8 @@ INSERT INTO `company` (`id`, `name`, `delivery_address`, `discount`, `discount_t
 (16, 'Telangana', 'Telangana, India', 100, 'daily', 0, -1, '0000-00-00', 0),
 (17, 'raels test comp', 'HaHar Street 2, Judean Foothills, Israel', 1000, 'monthly', 0, -1, '0000-00-00', 0),
 (18, 'ahmad khalid', 'Lahore', 100, 'daily', 0, -1, '0000-00-00', 0),
-(19, 'Asad', 'LAhore', 100, 'daily', 0, -1, '0000-00-00', 0);
+(19, 'Asad', 'LAhore', 100, 'daily', 0, -1, '0000-00-00', 0),
+(20, 'test avi 1', 'test delivery', 500, 'daily', 0, -1, '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -799,7 +819,7 @@ CREATE TABLE IF NOT EXISTS `company_rest` (
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`),
   KEY `rest_id` (`rest_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=101 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=103 ;
 
 --
 -- Dumping data for table `company_rest`
@@ -900,7 +920,9 @@ INSERT INTO `company_rest` (`id`, `company_id`, `rest_id`) VALUES
 (95, 2, 11),
 (96, 2, 22),
 (98, 19, 1),
-(99, 19, 9);
+(99, 19, 9),
+(101, 20, 1),
+(102, 20, 3);
 
 -- --------------------------------------------------------
 
@@ -919,7 +941,7 @@ CREATE TABLE IF NOT EXISTS `company_timing` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=101 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
 
 --
 -- Dumping data for table `company_timing`
@@ -1002,7 +1024,14 @@ INSERT INTO `company_timing` (`id`, `company_id`, `week_en`, `week_he`, `opening
 (97, 19, 'Thursday', 'יום ה', '09:00', '09:00', '09:00', '09:00'),
 (98, 19, 'Friday', 'ששי', 'Closed', 'Closed', 'סגור', 'סגור'),
 (99, 19, 'Saturday', 'שבת', 'Closed', 'Closed', 'סגור', 'סגור'),
-(100, 19, 'Sunday', 'יום א', '09:00', '09:00', '09:00', '09:00');
+(100, 19, 'Sunday', 'יום א', '09:00', '09:00', '09:00', '09:00'),
+(101, 20, 'Monday', 'יום ב', '01:00', '20:00', '01:00', '20:00'),
+(102, 20, 'Tuesday', 'יום ג', '01:00', '21:00', '01:00', '21:00'),
+(103, 20, 'Wednesday', 'יום ד', '01:00', '21:00', '01:00', '21:00'),
+(104, 20, 'Thursday', 'יום ה', '01:00', '21:00', '01:00', '21:00'),
+(105, 20, 'Friday', 'ששי', '01:00', '21:00', '01:00', '21:00'),
+(106, 20, 'Saturday', 'שבת', '01:00', '20:00', '01:00', '20:00'),
+(107, 20, 'Sunday', 'יום א', '01:00', '20:00', '01:00', '20:00');
 
 -- --------------------------------------------------------
 
@@ -1290,7 +1319,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100047 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100049 ;
 
 --
 -- Dumping data for table `extras`
@@ -2925,7 +2954,16 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9999, 3405, 'גודל (שדה חובה)', '', 0, 'גודל (שדה חובה)', 0, 9212),
 (10000, 3401, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 487),
 (10001, 3403, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 491),
-(99999, 99999, 'ex', '', 0, 'ex', 0, 0);
+(10002, 100029, 'Sauces', '0', 0, 'Sauces', 2, 492),
+(10003, 100030, 'Size', '1', 0, 'גודל', 2, 493),
+(10004, 100031, 'meat', '0', 0, 'בשר', 5, 494),
+(10005, 100032, 'ttttt', 'Multiple', 0, 'ttttt', 2, 495),
+(10006, 100034, 'hot addon', '1', 0, 'תוספת חמה', 0, 496),
+(10007, 100035, 'Addons', 'Multiple', 0, 'Addons heb', 0, 497),
+(10008, 100036, 'salads', 'One', 0, 'סלטים', 0, 498),
+(99999, 99999, 'ex', '', 0, 'ex', 0, 0),
+(100047, 100035, 'Toppings', 'Multiple', 0, '?????? ???', 0, 0),
+(100048, 100035, 'Bread Type', 'One', 1, '???', 0, 171);
 
 -- --------------------------------------------------------
 
@@ -2981,7 +3019,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100025 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100046 ;
 
 --
 -- Dumping data for table `items`
@@ -4697,11 +4735,19 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (3653, 744, 0, 'Heineken', 'הייניקן', '', '', 25, 923),
 (3654, 744, 0, 'Singha beer', 'בירה סינגה', '', '', 23, 924),
 (3655, 744, 0, 'Starong Bao Beer', 'בירה סטרונג באו', '', '', 26, 925),
-(3656, 100031, 0, 'Special offer - 3 Large Pizzas for 99 Shekel', 'פיצות משפחתיות ב-99 ש''''ח x3\r\n', '', '', 99, 926),
+(3656, 747, 0, 'Special offer - 3 Large Pizzas for 99 Shekel', 'פיצות משפחתיות ב-99 ש''''ח x3\r\n', '', '', 99, 926),
 (99999, 99999, 0, 'ex', 'ex', '', '', 0, 0),
 (100022, 40, 0, '#12 Hot crispy chicken salad ', 'סלט עוף קריספי חם', 'Baby mixed leaves, cucumber, cherry tomatoes, portobello mushrooms, beansprouts and cashew nuts in an Asian citrus vinaigrette ', 'מיקס עלי בייבי, מלפפון, עגבניות שרי, פטריות פורטובלו, נבטים, ואגוזי קשיו קלויים בויניגרט הדרים אסייאתי\r\n', 38, 328),
 (100023, 41, 0, '#17 Asian Vegetable Soup ', 'מרק ירקות אסייאטי', 'Chinese vegetable soup with aromatic chicken strips, vegetables and bean noodles', ' מרק ירקות סיני מציר עוף ארומטי ושלל ירקות ואיטריות שעוית\r\n', 16, 332),
-(100024, 304, 0, 'Baguette Shakshuka', 'באגט שקשוקה', '', '', 29, 2018);
+(100024, 304, 0, 'Baguette Shakshuka', 'באגט שקשוקה', '', '', 29, 2018),
+(100029, 748, 0, 'Testing Item', 'Testing Item', 'Testing Item', 'Testing Item', 10, 334),
+(100030, 749, 0, 'tuna salad', 'סלט טונה', 'akdalvnf jakfjv', 'גהמכךהמ', 34, 2020),
+(100031, 750, 0, 'humus egg', 'חומוס ביצה', 'humus egg humus egg', ' חומוס ביצה חומוס ביצה', 18, 336),
+(100032, 751, 0, 'tttt', 'ttt', 'ttt', 'ttt', 10, 2022),
+(100033, 752, 0, 'steak', 'סטייק אנטריקוט', 'steak', 'סטייק אנטריקוט', 109, 338),
+(100034, 753, 0, 'spring chicken', 'פרגיות', 'פרגיות', 'spring chicken', 45, 2024),
+(100035, 754, 0, 'spring chicken ', 'פרגיות', 'Description', 'Description HEB', 45, 340),
+(100036, 753, 0, 'chiken breast', 'חזה עוף', 'chicken breast', 'חזה עוף', 45, 2026);
 
 -- --------------------------------------------------------
 
@@ -4717,7 +4763,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100002 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100003 ;
 
 --
 -- Dumping data for table `menus`
@@ -4758,6 +4804,15 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (33, 33, 'Lunch', '', 139),
 (37, 37, 'Lunch', 'ארוחת צהריים', 132),
 (41, 41, 'Lunch', 'ארוחת צהריים', 138),
+(42, 42, 'Lunch', 'ארוחת צהריים', 139),
+(43, 43, 'Lunch', 'ארוחת צהריים', 140),
+(44, 44, 'Lunch', 'ארוחת צהריים', 141),
+(45, 45, 'Lunch', 'ארוחת צהריים', 142),
+(46, 46, 'Lunch', 'ארוחת צהריים', 143),
+(47, 47, 'Lunch', 'ארוחת צהריים', 144),
+(48, 48, 'Lunch', 'ארוחת צהריים', 145),
+(49, 49, 'Lunch', 'ארוחת צהריים', 146),
+(50, 50, 'Lunch', 'ארוחת צהריים', 147),
 (99999, 99999, 'ex', 'ex', 0);
 
 -- --------------------------------------------------------
@@ -4775,7 +4830,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=701 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=702 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -4866,7 +4921,8 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (697, 550, 1, 'Special offer - 3 Large Pizzas for 99 Shekel', 129, 'PIZZA 1 Onions (+5), PIZZA 1 Olives (+5), PIZZA 2 Tomatoes (+5), PIZZA 2 Mushrooms (+5), PIZZA 3 Onions (+5), PIZZA 3 Olives (+5)'),
 (698, 551, 2, 'Angus Salad', 44, ''),
 (699, 552, 3, 'Chicken in tempura', 33, ''),
-(700, 553, 2, 'Shawarma', 39, 'Bread Type:Baguette, Spring Chicken, French Fries, Fried Onions, Tomatoes');
+(700, 553, 2, 'Shawarma', 39, 'Bread Type:Baguette, Spring Chicken, French Fries, Fried Onions, Tomatoes'),
+(701, 554, 2, 'Shawarma', 33, 'Bread Type:Pita, Spring Chicken, French Fries, Roasted Peppers, Chummus');
 
 -- --------------------------------------------------------
 
@@ -4962,7 +5018,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (29, 'Bagel Cafe ', 'בייגל קפה', 1, '', 50, 2, 0, '/m/en/img/begal_cafe.png', '', '', '', '', 'Mehadrin Rabbanut Modiin', 'מהדרין רבנות מודיעין', 34, 0),
 (30, 'Cafe In', 'קפה אין', 0, '', 50, 2, 0, '/m/en/img/cafe_in.png', '', '', 'Merkaz Lev Ha''Emek, Emek HaEla 80, Modiin', 'מרכז לב העמק, עמק האלה 80, מודיעין', 'Mehadrin Rabbanut Modiin', 'מהדרין רבנות מודיעין', 35, 0),
 (32, 'Gerg Café (Modiin)', 'גרג קפה (מודיעין)', 1, '97225609534', 50, 2, 0, '/m/en/img/greg_logo.jpg', 'Greg Cafe is the place for high quality dairy food and excellent coffee.  With a very extensive food and drinks menu, Greg caters for all tastes. The cafe prides itself in offering a large vegan menu, full of healthy, tasty options.  There are also different fish and pasta dishes, along with breakfasts, sandwiches and the most decadent salads you''ll ever have. Their takeaway service is as top notch as their eat in experience; you won''t be disappointed. ', 'התפריט עשיר ומגוון הכולל: ארוחות בוקר, פסטות, פיצות, דגים, טוסטים, סלטים ועוד.', 'Hamelachot 5, Yishpro Center, Modiin', 'שד'' המלאכות 5, מרכז ישפרו, מודיעין', 'Badatz Beit Yosef', ' בד"ץ בית יוסף', 40, 0),
-(33, 'Kampai Street Wok', 'קמפאי סטריט ווק', 1, '', 50, 2, 0, '/m/en/img/kampai.png', '"Kampai (""Cheers"" in Japanese) has set a new standard in Pan Asian cuisine. With a wide menu including sushi, wok stirfries, Asian grill and more.\r\nThe menu combines food with culinary fusion, with no flavor enhancers or preservatives. Kampai Street Wok prides itself on its accurate balance of flavors, colors and health."', '"קמפאי (""לחיים"" ביפנית) הציבה סטנדרט חדש של המטבח פאן אסייתי תוס. תפריט רחב רחב הכולל סושי, מנותק ווק, גריל אסייתי ועוד.\r\nתפריט של קמפאי סטריט ווקל משלב אוכל עם פיוז''ן קולינרי'', ללא מחזקי טעם או חומרים משמרים.\r\nקמפאי סטריט ווק מפיץ את בשורת המטבח עם איזון מדויק של טעמים, צבעים ובריאות.\r\n"', 'Hamelachot 22, Yishpro Center, Modiin', 'Hamelachot 22, Yishpro Center, Modiin', 'Rabbanut Modiin', 'רבנות מודיעין', 37, 0),
+(33, 'Kampai Street Wok', 'קמפאי סטריט ווק', 0, '', 50, 2, 0, '/m/en/img/kampai.png', '"Kampai (""Cheers"" in Japanese) has set a new standard in Pan Asian cuisine. With a wide menu including sushi, wok stirfries, Asian grill and more.\r\nThe menu combines food with culinary fusion, with no flavor enhancers or preservatives. Kampai Street Wok prides itself on its accurate balance of flavors, colors and health."', '"קמפאי (""לחיים"" ביפנית) הציבה סטנדרט חדש של המטבח פאן אסייתי תוס. תפריט רחב רחב הכולל סושי, מנותק ווק, גריל אסייתי ועוד.\r\nתפריט של קמפאי סטריט ווקל משלב אוכל עם פיוז''ן קולינרי'', ללא מחזקי טעם או חומרים משמרים.\r\nקמפאי סטריט ווק מפיץ את בשורת המטבח עם איזון מדויק של טעמים, צבעים ובריאות.\r\n"', 'Hamelachot 22, Yishpro Center, Modiin', 'Hamelachot 22, Yishpro Center, Modiin', 'Rabbanut Modiin', 'רבנות מודיעין', 37, 0),
 (34, 'Haburganim - Buchman', 'הבורגנים', 1, '', 50, 2, 0, '/m/en/img/haburganim.png', 'Haburganim is the most special kosher burger place. Enjoy a unique culinary experience, including hand-made small burgers made with special care in a range of flavors that will make you want to try each one and keep on eating!  Our fries are made with a secret recipe and we have a host of other finger-licking dishes, all available for home delivery or pick up.', '"הבורגנים – מסעדת המבורגרים כשרה הכי מיוחדת שאי פעם תפגשו!\r\nתוכלו ליהנות מחוויה קולינארית שונה וייחודית, הכוללת המבורגרים קטנים הנעשים בעבודת יד ובהשקעה רבה ומגיעים במגוון טעמים שפשוט יתחשק לכם לטעום את כולם ולהמשיך לנגוס בהם עוד ועוד... צ''יפס בטעם סודי וממכר ללקק את האצבעות... ועוד שפע של מנות ייחודיות אחרות. !\r\n את כל המנות הנפלאות תוכלו לקבל עד לביתכם באמצעות שירות המשלוחים"', 'Moriah Center, Leah Imenu 2, Modiin', 'מרכז מוריה, לאה אימנו 2, מודיעין', 'Rabbanut Modiin', 'רבנות מודיעין', 38, 0),
 (35, 'Mike Burger', 'מייק בורגר', 1, '', 50, 2, 0, '/m/en/img/mike_burger.png', '"Not just burgers...\r\nWe also have chicken breast, schwarma, chicken, kebabs and entrecote carpaccio. So if you wake up in the morning with a strong desire for a dish that is not a hamburger, there is no doubt that you will find something good to eat here. Our planchas are always ready to receive the finest meats in their new home - a hot baguette, a rolled tortilla, or a plate full of goodness. And like any self-respecting menu, there are decadent and filling desserts."', '"לא רק המבורגר\r\nיש לנו גם חזה עוף, שווארמה, פרגית, קבב וקרפצ’יו אנטריקוט. כך שאם קמתם בבוקר עם חשק עז למנה שהיא לא המבורגר, אין ספק שתמצאו אצלנו משהו טוב לאכול. הפלנצ’ה שלנו מוכנה תמיד לקבלת הבשרים המשובחים בביתם החדש – בגט חם, טורטייה מגולגלת או צלחת מלאה כל טוב. וכמו בכל תפריט שמכבד את עצמו, ישנם קינוחים שיסגרו לכם את הפינה סופית.."', 'Modiin Center, Tze''elon 21, Modiin', 'צאלון 21 , מודיעין סנטר', 'Mehadrin Beit Yosef', 'מהדרין בית יוסף', 39, 0),
 (36, 'Que Riko', 'קה-ריקו', 1, '', 50, 2, 0, '/m/en/img/que_riko.png', 'At Pizzeria Que Rico, we have a wide range of products which can be delivered to your home from pizzas, pastas, salads, salads, pastries to our sweet corner where you''ll find Belgian waffles and Dutch pancakes with a range of delicious sauces, high quality ice cream, milkshakes and refreshing fruit shakes.', '"ב”פיצה קה-ריקו” תמצאו מגוון רחב של מוצרים במשלוח עד אליכם הביתה או במקום, החל מפיצות, פסטות, סלטים, מלווחים, זיוות ועד לפינת המתוקים שלנו ששם תמצאו וופל בלגי ופנקייק הולנדי עם מגוון של רטבים טעימים, גלידות איכותיות, מילקשייק ופרישייק מרעננים\r\n"', 'Merzaz Lev HaEmek, Emek HaElah 80, Modiin', 'עמק האלה 80, מרכז "לב העמק", מודיעין', 'Mehadrin Badatz Beit Yosef', 'מהדרין בד''''ץ יוסף', 36, 0),
@@ -4972,6 +5028,14 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (40, 'Mesubin', 'מסובין', 1, '991-1778', 50, 1, 0, '/m/en/img/cs-logo.png', 'Deluxe meat restaurant whose specialization is in its quality steaks is now available on Orderapp.  Choose from meat and chicken on skewers, burgers, steaks and the amazing taboon casseroles. All this, with a Rav Rubin Hechsher.', 'מסעדת בשרי דלוקס אשר ההתמחות הוא בסטייקים איכותו זמינה כעת על Orderapp. בחרו מתוך בשר ועוף על שיפודים, המבורגרים, סטייקים ותבשילי טבון מדהימים. כל זה, עם הכשר של רב רובין.', 'Paz Gas Station, Yigal Allon 2, Beit Shemesh', 'תחמת דלת פז, יגאל אלון 2, בית שמש', 'Mehadrin Rav Rubin', 'מהדרין - רב רובין', 42, 0),
 (41, 'GANIR', 'גניר', 1, '', 50, 1, 0, '/m/en/img/ganir_logo.png', 'Meat restaurant situated in the Har-Tuv industrial zone and has a family atmosphere. ', 'מסעדת גניר שוכנת באיזור תעשייה הר-טוב. אווירה ביתית ואוכל ביתי מעולה', '2 Hahar, Har Tuv Industrial Zone	', '	2 ההר, אזור תעשייה הר-טוב\n', 'Rabbanut Matei Yehuda', 'רבנות מטה יהודה', 38, 0),
 (42, 'Judica', 'ג''ודיקה', 1, '523288020,  029926070', 50, 1, 0, '/m/en/img/cs-logo.png', 'New meat restaurant in the Har-Tuv industrial zone. Fresh, homemade food at reasonable prices', 'מסעדת חדשה באיזור תעשייה הר-טוב. אוכל ביתי וטרי במחירים סבירים.', '2 Hamelacha, Har Tuv Industrial area', 'המלאכה 2, אזור תעשייה הר-טוב א', 'Kasher l''mehadrin', 'כשר מהדרין', 43, 0),
+(43, 'testing', 'drhugiu', 0, '5465456465', 0, 1, 0, '/m/en/img/cs-logo.png', 'jhvghcjxjyc', 'blivuyu', 'hbliuhvuyuy', 'hlvuvuycuy', 'iulyiucuy', 'iubiupbivyi', 44, 1),
+(44, 'rael test', 'גלג גשגח', 0, '0004294', 0, 1, 0, '/m/en/img/cs-logo.png', 'fvfvgfbgsb', 'כהכהכה', '2 hahar', '2 ההר', 'jdakd', 'גשהכש', 45, 1),
+(45, 'q', 'qw', 0, '11', 0, 1, 1, '/m/en/img/cs-logo.png', 'testing', 'testing', '1', '1', '1', '1', 0, 1),
+(46, '1', '1', 1, '1', 0, 1, 1, '/m/en/img/cs-logo.png', '1', '1', '1', '1', '1', '1', 0, 1),
+(47, 'avi bamba', 'בומבילה', 0, '0500089787', 0, 1, 1, '/m/en/img/cs_logo.png', 'bla bla', 'בלה בלה', 'coco 2', 'קוקו 2', 'badaz', 'בדץ', 0, 1),
+(48, '1', '1', 0, '1', 0, 1, 1, '/m/en/img/cs-logo.png', '1', '1', '1', '1', '1', '1', 0, 1),
+(49, 'Alegria', 'אלגריה', 0, '0508978676', 0, 1, 0, '/m/en/img/cs_logo.png', 'alegria meat', 'אלגריה בשרים', 'xx yy zz', 'זז סס אא', 'badaz', 'בד"ץ', 0, 1),
+(50, 'one/multiple check', 'one/multiple check heb', 0, '00000000000', 0, 1, 0, '/m/en/img/cs-logo.png', 'sfsfsfsf', 'sdfssdfs heb', 'address ', 'address  heb', 'badaz', 'בדץ', 0, 1),
 (99999, 'ex', 'ex', 0, '', 0, 1, 1, '', '', '', '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
@@ -5234,10 +5298,10 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
-  `sort` int(11) NOT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26057 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26075 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15735,7 +15799,26 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (26053, 10000, 'Half portion', ' חצי מנה', 0, 0),
 (26054, 10000, 'Full portion', ' מנה', 10, 0),
 (26055, 10001, 'Half portion', ' חצי מנה', 0, 0),
-(26056, 10001, 'Full portion', ' מנה', 10, 0);
+(26056, 10001, 'Full portion', ' מנה', 10, 0),
+(26057, 10002, 'Thousand Island', 'Thousand Island', 0, 2),
+(26058, 10002, 'Ketchup', 'Ketchup', 0, 2),
+(26059, 10002, 'Garlic Sauce', 'Garlic Sauce', 0, 4),
+(26060, 10003, 'large', 'גדול', 36, 4),
+(26061, 10003, 'medium', 'Nדיום', 5, 6),
+(26062, 10004, 'meat', 'בשר', 5, 6);
+INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`) VALUES
+(26063, 10005, 'ttt', 'ttt', 10, 8),
+(26064, 10006, 'fries', 'ציפס', 0, 8),
+(26065, 10006, 'rice', 'אורז', 0, 10),
+(26066, 10006, 'smash pottatow', 'פירה', 0, 10),
+(26067, 10007, 'fries', 'ציפס', 0, 12),
+(26068, 10007, 'rice', 'אורז', 0, 12),
+(26069, 10007, 'onion rings', 'טבעות בצל', 0, 14),
+(26070, 10008, 'vage', 'ירקות', 0, 14),
+(26071, 10008, 'cabge', 'חסה', 0, 16),
+(26072, 10008, 'egg plan salad', 'חצילים', 0, 16),
+(26073, 10007, 'Spicy chili', '???? ????', 0, NULL),
+(26074, 10007, 'large', '????', 36, NULL);
 
 -- --------------------------------------------------------
 
@@ -15805,6 +15888,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
   `contact` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `language` varchar(255) NOT NULL DEFAULT 'english',
@@ -15812,147 +15896,167 @@ CREATE TABLE IF NOT EXISTS `users` (
   `login_verification_hash` varchar(255) DEFAULT NULL,
   `provider` text,
   `uid` text,
+  `is_signup` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=654 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=679 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `smooch_id`, `user_name`, `password`, `name`, `contact`, `address`, `language`, `voucherify_id`, `login_verification_hash`, `provider`, `uid`) VALUES
-(514, 'd@gmail.com', '', '', 'דבורה', '0000000000', 'Gad ', 'english', '', NULL, '', ''),
-(515, 'avi@pushstartups.com', '', '', 'avi`', '00000000', 'דרך יצחק רבין, בית שמש, ישראל', 'english', 'cust_Lg0NdearFMFvIXbhjs8Mfr3C', NULL, '', ''),
-(516, 'mark@pushstartups.com', '', '', 'test', '0000000000', 'hahar', 'english', '', NULL, '', ''),
-(517, 'sdf@dsf.com', '', '', 'sdf', '3434', '', 'english', 'cust_REq8J85r2Vk3TJbuyTP5fD9h', NULL, '', ''),
-(518, 'hdhd@fjfjkf.com', '', '', NULL, NULL, NULL, 'english', 'cust_QThfg69G5vDtrvA9QDjtMwch', NULL, '', ''),
-(519, 'hdhd@jfkf.com', '', '', 'Hdbdh', '3736463773', 'Xbbcbx', 'english', 'cust_tnz9yfNdK17C62rvNWAbhtsi', NULL, '', ''),
-(520, 'sdf@sadf.com', '', '', 'dsf', '0000000', 'sdf', 'english', '', NULL, '', ''),
-(521, 'muhammad.iftikhdddar.aftab@gmail.com', '', '', 'Muhammad Iftikhar', '343434', '', 'english', 'cust_bBwqLOdGswtJgCN5QORyQNT5', NULL, '', ''),
-(522, 'muhammad.iftikfffhar.aftab@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_OfCzgvY3yxO2gBZQZF7l7zf4', NULL, '', ''),
-(523, 'sdfsdfdsf', '', '', NULL, NULL, NULL, 'english', 'cust_e6BxxCr04ORr1l3wbP482bhV', NULL, '', ''),
-(524, 'asd@asdfadf.com', '', '', NULL, NULL, NULL, 'english', 'cust_IBsxwtYJI6H9pTKE13nClmzF', NULL, '', ''),
-(525, 'sdxxxf@sadf.com', '', '', NULL, NULL, NULL, 'english', 'cust_czLs8j7t7ixFKrjDINySy2NR', NULL, '', ''),
-(526, 'xcxcxc@xcxcxc.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZaBzzs6SlYBqWsdp3UQG9QQZ', NULL, '', ''),
-(527, 'asf@asdf.com', '', '', 'a', '345', 'sfa', 'english', '', NULL, '', ''),
-(528, 'sdg@dsf.asdf', '', '', 'sgfd', '2345', 'eryt', 'english', '', NULL, '', ''),
-(529, 'sdf@sdf.com', '', '', 'sdf', '0000', 'sdf', 'english', 'cust_vjGejGcyBjVKinS74fUmb4ti', NULL, '', ''),
-(530, 'afd@ad.sadf', '', '', 'asdf', '456', 'dsg', 'english', '', NULL, '', ''),
-(531, 'a@a.com', '', '', NULL, NULL, NULL, 'english', 'cust_5VyXPgAWi88xD5ydfOXsGBAq', NULL, '', ''),
-(532, 'adsf@saf.ds', '', '', NULL, NULL, NULL, 'english', 'cust_Dwl1latafZ9uOSLSIijtQxZS', NULL, '', ''),
-(533, 'ac@ds.com', '', '', NULL, NULL, NULL, 'english', 'cust_uLMNY9NOxlBd02X4SRLuQzP8', NULL, '', ''),
-(534, 'ssdg@sdg.dfg', '', '', NULL, NULL, NULL, 'english', 'cust_3NulSKGbm1f4m2Pf2TUCsbWB', NULL, '', ''),
-(535, 'sdfsdf@sdffsdf.com', '', '', 'sdf', '0000000', 'sdf', 'english', '', NULL, '', ''),
-(536, 'kjb@jkh.kh', '', '', 'khjfg', '867', 'lkjh', 'english', '', NULL, '', ''),
-(537, 'sdf@sadf.asdf', '', '', 'asdfa', '1234', 'wer', 'english', '', NULL, '', ''),
-(538, 'adf@asdf.cadas', '', '', 'asdf', '12341', '1234', 'english', '', NULL, '', ''),
-(539, 'asdf@asf.com', '', '', 'asdf', '1234', '12341', 'english', '', NULL, '', ''),
-(540, 'ssadasdf@asdf.adsff', '', '', 'dsafsd', '1243', '123', 'english', '', NULL, '', ''),
-(541, 'tasawar@mahmood.com', '', '', 'tasawar', '321', 'sdf', 'english', '', NULL, '', ''),
-(542, 'ts@ga.com', '', '', 'Tas', '8765', 'Gav', 'english', '', NULL, '', ''),
-(543, 'adsf@dsf.com', '', '', 'dsf', '345345', 'dsf', 'english', 'cust_gSN7vBOv17247Zk1d6tp5k0d', NULL, '', ''),
-(544, 'testmark@gmail.com', '', '', 'test', '3453434', 'dfgdfg', 'english', 'cust_xJAcAvDsMpnGfcmknZdQyKi9', NULL, '', ''),
-(545, 'etst@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_6bLDoK8iTMBNFBRyA1ASU679', NULL, '', ''),
-(546, 'teste@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_o3XtkVtoBaiaJELFMHFmMGDU', NULL, '', ''),
-(547, 'f@f.com', '', '', 'Test', '0000', 'F', 'english', '', NULL, '', ''),
-(548, 'asd@sadf.com', '', '', NULL, NULL, NULL, 'english', 'cust_XwoVqfliijF40Tm3ulJTkFq7', NULL, '', ''),
-(549, 'sdfdff@dsfcvcvv.com', '', '', 'sdfffffdfdfdfd', '343434', 'sdfsdf', 'english', '', NULL, '', ''),
-(550, 'ali_lums@gmail.com', '', '', 'Ali Shoail LUMS', '343434', 'sdf', 'english', '', NULL, '', ''),
-(551, 'sfdg@dsf.com', '', '', 'sfv', '34545', 'sgf', 'english', '', NULL, '', ''),
-(552, 'shaibii@gmail.com', '', '', 'shoaib', '12342314', '1234', 'english', '', NULL, '', ''),
-(553, 'aaa@asdf.com', '', '', 'asdf', '3142', 'asdf', 'english', '', NULL, '', ''),
-(554, 'asdf@asdef.casdf', '', '', 'asdf', '234', '23', 'english', '', NULL, '', ''),
-(555, 'asdf@asdf.asdf', '', '', 'asdf', '3453425', '345', 'english', '', NULL, '', ''),
-(556, 'iftikhar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_l2gX0ueMyZZCInpwvLQQef1p', NULL, '', ''),
-(557, 'ffff@ddddsss.com', '', '', NULL, NULL, NULL, 'english', 'cust_3489ZqDBucItKwlGT8kZdkpq', NULL, '', ''),
-(558, 'sdf@df.com', '', '', NULL, NULL, NULL, 'english', 'cust_GNrQpD7CiEQ6LLD8YILTKhO5', NULL, '', ''),
-(559, 'sdsssf@dkkkf.com', '', '', NULL, NULL, NULL, 'english', 'cust_CmRolzNhrGjzMQQUfrXimJ8T', NULL, '', ''),
-(560, 'test@test.com', '', '', NULL, NULL, NULL, 'english', 'cust_J0BFjmWQulQ2mbv2iZZR0slr', NULL, '', ''),
-(561, 's@ws.com', '', '', NULL, NULL, NULL, 'english', 'cust_2ubTe0V65XIURGE7k6xG06qJ', NULL, '', ''),
-(562, 'd@d.com', '', '', NULL, NULL, NULL, 'english', 'cust_c88BWMHJ2qWhdGuHOH0NObIU', NULL, '', ''),
-(563, 'sdffff@dfdfdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_cAdeGZ798pu1W9BXsHHN7BQt', NULL, '', ''),
-(564, 'vhmnbn@cbb.com', '', '', NULL, NULL, NULL, 'english', 'cust_DCXjtVVSrRblVKQ0a6SYXSHb', NULL, '', ''),
-(565, 'iftikhaaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZMCzXP6HcR85HLKoA8S9zWv3', NULL, '', ''),
-(566, 'iftikhadddaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_6dUuJlv7rAjdtJyLod2cV8RB', NULL, '', ''),
-(567, 'iftikhadssdddaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_D4ihekw4yA8RSfjS1kKNXHOB', NULL, '', ''),
-(568, 'iftdsdddaar_yahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_KyMRVWYVkDWk7POhTwGkIY51', NULL, '', ''),
-(569, 'iftdsdddaar_yvvvahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_WkW8jaJ3PjKei1gIBruwI41x', NULL, '', ''),
-(570, 'iftdsdddaar_yvvssdvahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_xFO0JqpJLoXkw0d01LNGuu1b', NULL, '', ''),
-(571, 'iftdsssfdddaar_yvvssdvahoo@gmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_xBdzg44uaAMrGWPlo259GmdF', NULL, '', ''),
-(572, 'ahmad@gfmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_6ViYS2iEKaZeBJ4YkJPLVI2h', NULL, '', ''),
-(573, 'ahmasdfsdfd@gfmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_i2yZJc3rNQAVzcNqV86SOHl7', NULL, '', ''),
-(574, 'ahmasdfsdfsdfsdfd@gsdffmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_Cyu4SpzM5U33g90u8658wnZd', NULL, '', ''),
-(575, 'ahmadfgsdfsdfsdfsdfd@gsdffmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_IfuUOzijy5rRnUJh36cNqkD3', NULL, '', ''),
-(576, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgail.com', '', '', NULL, NULL, NULL, 'english', 'cust_efQxMWNI25PYkkptBALM2c8J', NULL, '', ''),
-(577, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_H8Dr8E0IxSUhWzwSmOBX60NW', NULL, '', ''),
-(578, 'ahmadfgsdfsdfsdfsdfd@gsdffmdsfdfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_fFTuws12Q3O1hz68gJMpCaW4', NULL, '', ''),
-(579, 'ahmfsdfsdfd@gsdffmdsfdfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_f026L8JHPIVtSF5quMPGODmN', NULL, '', ''),
-(580, 'ahmfsdfsdfd@gsfgsdfail.com', '', '', NULL, NULL, NULL, 'english', 'cust_uwFS2zLFSesHUJecKEFeC5U7', NULL, '', ''),
-(581, 'rrr@abcdgmail.com', '', '', NULL, NULL, NULL, 'english', 'cust_8tDBIOiY98K4VoVJ7skalHF8', NULL, '', ''),
-(582, 'sdf@sd.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZGiB4wBprVQePmGOolxiJX00', NULL, '', ''),
-(583, 'gmgjh@rtrt.com', '', '', NULL, NULL, NULL, 'english', 'cust_de1y6GYOBGhST1cUTWoGqgOA', NULL, '', ''),
-(584, 'dsf@dsf.com', '', '', NULL, NULL, NULL, 'english', 'cust_kPszysYTGXTLbcBBMsWBftT4', NULL, '', ''),
-(585, 'erer@rtrt.com', '', '', NULL, NULL, NULL, 'english', 'cust_FLSE3uT32RnZ5JRpPgb4FDuI', NULL, '', ''),
-(586, 'erer@sdfgfg.vom', '', '', NULL, NULL, NULL, 'english', 'cust_FAxWBKALnFA1s2GT0CR2BjKa', NULL, '', ''),
-(587, 'rrr@rrr.com', '', '', NULL, NULL, NULL, 'english', 'cust_LQqJw9tRhoxwrZpn3tmYJX7b', NULL, '', ''),
-(588, 'cvcvcv@mvmvmv.com', '', '', NULL, NULL, NULL, 'english', 'cust_SUVnakXVHPSDYRB0uRNOzACw', NULL, '', ''),
-(589, 'cvcv@xcvcv.com', '', '', NULL, NULL, NULL, 'english', 'cust_sU3PaGkDDARMAsDQaECoOsYb', NULL, '', ''),
-(590, 'sdfsdf@dsfsdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_yX7k25gmd9XI74Iglf7yO7bg', NULL, '', ''),
-(591, 'asdasd@dsfdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_AGcamoHHf4kmmwm8nP36GG4N', NULL, '', ''),
-(592, 'sdfsdf@dfdf.com', '', '', NULL, NULL, NULL, 'english', 'cust_ZZ0tO1xkjZetRcCwZveotFUh', NULL, '', ''),
-(593, 'svcxvwf@yuyu.com', '', '', NULL, NULL, NULL, 'english', 'cust_1ZkCgcnwNFjYBYMC8AizQrjT', NULL, '', ''),
-(594, 'shoaib.it002@gmail.com', '', '', 'shoaib akram', '090078601', '12', 'english', 'cust_jp36Z1zsMbkyvW7Z4CXbtPfq', NULL, '', ''),
-(595, 'sadf@dsf.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
-(596, 'sdfdsf@ds.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
-(597, 'sadf@df.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
-(598, 'sfd@dsf.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
-(599, 'asd@df.com', '', '', 'asdf', '2334', '', 'english', '', NULL, '', ''),
-(600, 'asd@f.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
-(601, 'asdf@df.com', '', '', 'asd', '3434', '', 'english', '', NULL, '', ''),
-(602, 'sdaf@sf.com', '', '', NULL, NULL, NULL, 'english', '', NULL, '', ''),
-(603, 'jgfjh@sdfg.com', '', '', 'fjg', '0000', '', 'english', '', NULL, '', ''),
-(604, 'dafs@sadf.com', '', '', 'adsf', '0000', '', 'english', '', NULL, '', ''),
-(605, 'ahmadworkspace@gmail.com', '', '', 'Testing', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 'english', '', NULL, '', ''),
-(606, 'Testing@Testing.com', '', '', 'Testing', '000000', 'Testing', 'english', '', NULL, '', ''),
-(607, 'kpk@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(608, 'kpk2@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(609, 'kpk3@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(610, 'kok@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(611, 'kok2@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(612, 'kok3@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(613, 'kok4@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(614, 'test@gmail.com', '', '', 'Test', '000000', 'Dasfa ir ko, Kareivių gatvė, Vilnius, Lithuania', 'english', '', NULL, '', ''),
-(615, 'cool@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(616, 'jkj@gmailc.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(617, 'rael@pushstartups.com', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
-(618, 'adb@ancn.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(619, 'ddsfas@afa.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(620, 'gujg@fghh.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(621, 'kpk10@gmail.com', '', '', '', NULL, NULL, 'english', '', NULL, '', ''),
-(627, 'avi@puahstartups.com', '', '', 'TEST TEST', '000000000', 'דרך יצחק רבין 23, בית שמש, ישראל', 'english', '', NULL, '', ''),
-(628, 'test@orderapp.com', '', '', 'TEST', '000000', 'sdf', 'english', 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL, '', ''),
-(629, 'tasawarmahmood24@gmail.com', '', '', 'test', '000000', 'SDF, Terminal Drive, Louisville, KY, United States', 'english', '', '34609bdc08a07ace4e1526bbb1777673', '', ''),
-(631, 'msdsdsuhammad.iftikhar.aftab@gmail.com', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
-(632, 'dvora@pushstartups.com', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
-(633, 'asdfhjjsdjksher@a.com', '', '', NULL, NULL, NULL, 'english', 'cust_wQxbHwTV7O85zmo21NPOw84c', NULL, '', ''),
-(634, 'DODO@pushstartups.com', '', '', NULL, NULL, NULL, 'english', 'cust_00w4vq3BCg73gh6oWK8oC0yz', NULL, '', ''),
-(635, 'rael@orderapp.com', '', '', '', NULL, NULL, 'english', '', 'a1d50185e7426cbb0acad1e6ca74b9aa', '', ''),
-(636, 'muhaddmmad.iftikhar.aftab@gmail.comdddd', '', '', '', NULL, NULL, 'english', '', 'success', '', ''),
-(638, 'testing@ordeapp.com', '', '', 'Testing', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 'english', '', NULL, '', ''),
-(639, '', '', '', '', '972000000000', NULL, 'english', '', NULL, '', ''),
-(640, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwOGYyNDg3NTZiNWY2ZWU0ZGQ0YzVkODBiNTU4NTA5OTdmZmRlN2YifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItY3ZpMGRnbXZuZ3IyYnVtanIxZGhzcGg5OW12Y2xvZ3UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItY3ZpMGRnbXZuZ3IyYnVtanIxZGhzcGg5', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, '', ''),
-(641, '972333333333', '', '', '', '972333333333', NULL, 'english', '', NULL, '', ''),
-(642, 'EAAIJEdqSv3ABAAvbjlKjc5DlpZAtH9oZCkOZBZBJ9pED1mKggduNZCmq9dCbjwuxqhZBnefg9dcEZCykjivON77BI8PAqwhYSZCKqDK2mTscaEE9vcpF60ersRyI7zEcokE05vjVZAvZCzkPdHO7s1vAVzK2C5eHWsfm4q5jF5oyZBgzKkESKALSCh2OFPXnit9kUEJq9JxWZCPhO8DgrrsIfOWfBs7YSddqqWZBn7wTEauLncQZDZD', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, '', ''),
-(643, 'EAAIJEdqSv3ABABJACT6AOVDZBDaG5CFO1O5ZBlpWYVHHkYutIbOJ0bpB6h4OOMDZAgyxSqC6lv0TAINVxifo6f5gxXhUfqEc0EgujqiNvTZB6zgMvKR1Ua5JHcXMBnlVzgWE2CfKkD1CF3EHQtiKKY7qbpQa1OZCZCQEPuMairIYwTiWTmRrG4LLt06Bh2g2KPvDYkUytPeCGpRfj8WlYV6TJsmymqegIZD', '', '', 'Aharon Mendlowitz', '', NULL, 'english', '', NULL, '', ''),
-(644, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwOGYyNDg3NTZiNWY2ZWU0ZGQ0YzVkODBiNTU4NTA5OTdmZmRlN2YifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, '', ''),
-(645, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU0MDc4NCwiZXhwIjoxNDk1NTQ0Mzg0LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.iDM1l3kZ4pwAjbd733HTnKE2IdUHhAxGhClskVFwoIDAsd0YEaskEqxHAZtjVxMvAP_4jtigX41YGkhtMpdZ41iyPb5Ey7aT6Hmt8KPxJWvW9ArR1AR_qj7g96wbUtsSGfkfAGkPfO6aEoK6B5lIRNL5ck96GQI-DIXHdHjJoO4Bx--J34HoWnXd3i-TOgdX1sESv6UoK5PczFZHgBuWiWlMFaqv4OTozLQsINmaPeDuDNOXm43DJiz7PMFvUcYbRfH38Vvsq0NSgy0eq9seJT8uayDVnFD7i617iqw7TMRiXMT2Jh9AUrT_BO7C6IVQJwhNHr_5ssXgXcoWm4bvfA'),
-(646, 'EAAIJEdqSv3ABAH08B9Vx3HDc9pe4ZAqRAerLeBHHZCGt59dLUgaS2Jh4vSszGt1ScqiiRM5T9s9WSAMovFjEM6MEC6BmRyWj69sghwJGUAdkp3edWGrZA3Bq2ws7LBnLLdolnlyyGqxLUeiJjWrzPsMJaZADqzVJdT7AZBlok4gN0XP8KxrjjlHIlETyxGh4JmnjZAniRVReGs9X8zg5Wwmc7mDh1r0NyIJBUaSVy0ZBwZDZD', '', '', 'Aharon Mendlowitz', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAH08B9Vx3HDc9pe4ZAqRAerLeBHHZCGt59dLUgaS2Jh4vSszGt1ScqiiRM5T9s9WSAMovFjEM6MEC6BmRyWj69sghwJGUAdkp3edWGrZA3Bq2ws7LBnLLdolnlyyGqxLUeiJjWrzPsMJaZADqzVJdT7AZBlok4gN0XP8KxrjjlHIlETyxGh4JmnjZAniRVReGs9X8zg5Wwmc7mDh1r0NyIJBUaSVy0ZBwZDZD'),
-(647, 'EAAIJEdqSv3ABANXhjlzWnEcHkBZBUpz1A3xamCop5zJsBj3neIZBC4a3p7uZA3Bxx8oB2T8pJZCBhi9pYGlEZCrpHwDdQoZASBiZCsLYbyE1bPZC89DmZBhrOKq80cG0ITgxiVZCA3prMkf5SaQgBIdk4gNFJ5dJuWjz7jauixYyHkfUgYq015iJVSdTiiWbW6Fg3YmwZBNSoNoaKhZCxgpFifrnUVAz2IiS1QGv1uDVdUg0HQZDZD', '', '', 'Avi Push', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABANXhjlzWnEcHkBZBUpz1A3xamCop5zJsBj3neIZBC4a3p7uZA3Bxx8oB2T8pJZCBhi9pYGlEZCrpHwDdQoZASBiZCsLYbyE1bPZC89DmZBhrOKq80cG0ITgxiVZCA3prMkf5SaQgBIdk4gNFJ5dJuWjz7jauixYyHkfUgYq015iJVSdTiiWbW6Fg3YmwZBNSoNoaKhZCxgpFifrnUVAz2IiS1QGv1uDVdUg0HQZDZD'),
-(648, 'EAAIJEdqSv3ABAElblhvWWw5BGn5lHOtdJmJQVaVCZCSJgE93QKzlc1jBIWP6Qrib4ZAtSVQiVUdzZA3rdVpoJRu7YyzVMuhrgHMOi18JkS2RgpU1dWT4RoHLgDK2syuJGjJG2zZB7RNpCEmhs7gaiwifYQiSyVJw1ZBm9bt0yCg37CEbZA4xjcQsD1G0ZAL4WZCwnjVAayv5b5v0NOOWrZBJuYLFGDdHdMidPaoyf5uKyQgZDZD', '', '', 'Aharon Mendlowitz', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAElblhvWWw5BGn5lHOtdJmJQVaVCZCSJgE93QKzlc1jBIWP6Qrib4ZAtSVQiVUdzZA3rdVpoJRu7YyzVMuhrgHMOi18JkS2RgpU1dWT4RoHLgDK2syuJGjJG2zZB7RNpCEmhs7gaiwifYQiSyVJw1ZBm9bt0yCg37CEbZA4xjcQsD1G0ZAL4WZCwnjVAayv5b5v0NOOWrZBJuYLFGDdHdMidPaoyf5uKyQgZDZD'),
-(649, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU0OTMxNSwiZXhwIjoxNDk1NTUyOTE1LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.FVUIImneMkQ9CaJ1TK5GbcR54fGwGUAM__JO1fhL7YvDH_8bTB6WTsZ2AZot3mbqTbFpoPq70WEUjM8z7fiCZQrpNy1XZi4qTvfSutHh-DLzz6QvAZCFLLSk6y6KX5zUJYKWIaIpnpjO0BHFIAEYu3XjjK-Ebx0vQHKZ8Z-xJY_WM27txycdufnsMH8b68AHQOkw2OqO7uQ2DlwtL-3aem3lYeE1FNufFnlwUSeVgpl9pmWwjdg7iXnJ5I2-WsSCF7PmArv1TP6H9X_hJAxet8e1D5yn8utgI1vyyQoTd1KHj0y_n5Qm0hqtK45TvBOAe6y3KK7r3EFlq3QUc7EynA'),
-(650, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU4Mjk5NCwiZXhwIjoxNDk1NTg2NTk0LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.cV0GhWy35YfjAvM3BYyjs9M8so6ei21YTEKA3BWw6-qwFoKpO_kW6g_F2bhKri06R-lJLv6u-Ak2tOSl3bVYkKo9cUqicYe16wH5EkR520qlTu11A-Qc3OF1EaCA4ClU2S0kS8VPCmknqb7qUFcbj6glxG0PA2yIkuemLDC4en6Hmx6MaAfK8M5nB3fjCidFC9NU5oMpzEWW4mPDhyawhWjo6jT5oGYofOxWYSxrSKKESyYLIW00at4A-LZl-i6dFI6iUuS5pJilkHHQI2Va0SuBkDkSazTSG62ridt_gyrMPyiVxClPWL9U0xviOOFyN5bFfFymD_UEjRh75T8DWA'),
-(651, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Aaron Hunter', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDE0MDE4MTY0MTc3NjkwMzc0OTYiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImFhcm9uQHB1c2hzdGFydHVwcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDk1NjA3OTE1LCJleHAiOjE0OTU2MTE1MTUsIm5hbWUiOiJBYXJvbiBIdW50ZXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy01ajVENjFXdnNQWS9BQUFBQUFBQUFBSS9BQUFBQUFBQUFBcy9QcElLX0F4NllRby9zOTYtYy9waG90by5qcGciLCJnaXZlbl9uYW1lIjoiQWFyb24iLCJmYW1pbHlfbmFtZSI6Ikh1bnRlciIsImxvY2FsZSI6ImVuIn0.SCxdXv0VboVFUR4D50mPuTic4U2HZ9Woj-RAg56zFt6IjylE6q7bScURU3tFDjRDimvWJKnbW5IwepJbYVZroNm2ndduAXIhFI1GBtUCyuSn3W2NMVY9VPD4K8KY1Yhni4nfd2k5hDIurbkvukX9__-CCKeHpEo34_1bGVe1JDB-12FvC34DZZTQ0XDKoRoTMp6nrodshn208-6oxtptJAgrsbJx3ajOuPAe-_oBdkbSG9eT_X-hGueaBAv7Dt_aV9QKUekDCneiVCx2gtfMxGLIG-2cuUwH9Vxqa52kTTjB-CQ3B2i_rNoBqjtkKOck6BzRzjSqG-WONiHoYBxqKA'),
-(652, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Avi Aloush', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ3Mjk2ODc2NDM3MDA5MDMxMzEiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImF2aUBwdXNoc3RhcnR1cHMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTYxMjU2NSwiZXhwIjoxNDk1NjE2MTY1LCJuYW1lIjoiQXZpIEFsb3VzaCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vLXRNMDVabENGNjJrL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBeVlCRjUxMjBjeFBLRE5rMVVPaUFHNF9hQjQ1Z0ZaLXcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkF2aSIsImZhbWlseV9uYW1lIjoiQWxvdXNoIiwibG9jYWxlIjoiZW4ifQ.XORr9qMzjgvnmlpD1wj6WZWrYnYp2R5Avddk_p6sPDwnXRygHxN97XgNUwMiVpjsRg3abzXpceNd6JZdSvuarHfvGG9NAjOWLoO3G6CS3_3KyAzsKdeDCvyUCdHrCdTdQKSfpKB-r7q9v7Zww8iKFylA7SUjsrhFPtFAfIP0kgrgJrUcbAvyIEeUU9rlfBej7yqRxpTWCN4rn6Zs4jGL75A42SqG2daH_Csb8h69hKYWI2tj0fM9dnfSdcD0C-VrhTXlDTKLvBbI7kjDkSrgtCWydu-POvYn4E7qLY7N_SAo9zpirS1HZVqweUFWFrSLdNvPIs9DGEzlyVMb_zMo0w'),
-(653, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad.iftikhar.aftab@gmail.com', '1234', '', NULL, NULL, 'english', '', 'd7a84628c025d30f7b2c52c958767e76', NULL, NULL);
+INSERT INTO `users` (`id`, `smooch_id`, `user_name`, `password`, `name`, `email`, `contact`, `address`, `language`, `voucherify_id`, `login_verification_hash`, `provider`, `uid`, `is_signup`) VALUES
+(514, 'd@gmail.com', '', '', 'דבורה', '', '0000000000', 'Gad ', 'english', '', NULL, '', '', 0),
+(515, 'avi@pushstartups.com', '', '', 'avi`', '', '00000000', 'דרך יצחק רבין, בית שמש, ישראל', 'english', 'cust_Lg0NdearFMFvIXbhjs8Mfr3C', NULL, '', '', 0),
+(516, 'mark@pushstartups.com', '', '', 'test', '', '0000000000', 'hahar', 'english', '', NULL, '', '', 0),
+(517, 'sdf@dsf.com', '', '', 'sdf', '', '3434', '', 'english', 'cust_REq8J85r2Vk3TJbuyTP5fD9h', NULL, '', '', 0),
+(518, 'hdhd@fjfjkf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_QThfg69G5vDtrvA9QDjtMwch', NULL, '', '', 0),
+(519, 'hdhd@jfkf.com', '', '', 'Hdbdh', '', '3736463773', 'Xbbcbx', 'english', 'cust_tnz9yfNdK17C62rvNWAbhtsi', NULL, '', '', 0),
+(520, 'sdf@sadf.com', '', '', 'dsf', '', '0000000', 'sdf', 'english', '', NULL, '', '', 0),
+(521, 'muhammad.iftikhdddar.aftab@gmail.com', '', '', 'Muhammad Iftikhar', '', '343434', '', 'english', 'cust_bBwqLOdGswtJgCN5QORyQNT5', NULL, '', '', 0),
+(522, 'muhammad.iftikfffhar.aftab@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_OfCzgvY3yxO2gBZQZF7l7zf4', NULL, '', '', 0),
+(523, 'sdfsdfdsf', '', '', NULL, '', NULL, NULL, 'english', 'cust_e6BxxCr04ORr1l3wbP482bhV', NULL, '', '', 0),
+(524, 'asd@asdfadf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_IBsxwtYJI6H9pTKE13nClmzF', NULL, '', '', 0),
+(525, 'sdxxxf@sadf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_czLs8j7t7ixFKrjDINySy2NR', NULL, '', '', 0),
+(526, 'xcxcxc@xcxcxc.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_ZaBzzs6SlYBqWsdp3UQG9QQZ', NULL, '', '', 0),
+(527, 'asf@asdf.com', '', '', 'a', '', '345', 'sfa', 'english', '', NULL, '', '', 0),
+(528, 'sdg@dsf.asdf', '', '', 'sgfd', '', '2345', 'eryt', 'english', '', NULL, '', '', 0),
+(529, 'sdf@sdf.com', '', '', 'sdf', '', '0000', 'sdf', 'english', 'cust_vjGejGcyBjVKinS74fUmb4ti', NULL, '', '', 0),
+(530, 'afd@ad.sadf', '', '', 'asdf', '', '456', 'dsg', 'english', '', NULL, '', '', 0),
+(531, 'a@a.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_5VyXPgAWi88xD5ydfOXsGBAq', NULL, '', '', 0),
+(532, 'adsf@saf.ds', '', '', NULL, '', NULL, NULL, 'english', 'cust_Dwl1latafZ9uOSLSIijtQxZS', NULL, '', '', 0),
+(533, 'ac@ds.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_uLMNY9NOxlBd02X4SRLuQzP8', NULL, '', '', 0),
+(534, 'ssdg@sdg.dfg', '', '', NULL, '', NULL, NULL, 'english', 'cust_3NulSKGbm1f4m2Pf2TUCsbWB', NULL, '', '', 0),
+(535, 'sdfsdf@sdffsdf.com', '', '', 'sdf', '', '0000000', 'sdf', 'english', '', NULL, '', '', 0),
+(536, 'kjb@jkh.kh', '', '', 'khjfg', '', '867', 'lkjh', 'english', '', NULL, '', '', 0),
+(537, 'sdf@sadf.asdf', '', '', 'asdfa', '', '1234', 'wer', 'english', '', NULL, '', '', 0),
+(538, 'adf@asdf.cadas', '', '', 'asdf', '', '12341', '1234', 'english', '', NULL, '', '', 0),
+(539, 'asdf@asf.com', '', '', 'asdf', '', '1234', '12341', 'english', '', NULL, '', '', 0),
+(540, 'ssadasdf@asdf.adsff', '', '', 'dsafsd', '', '1243', '123', 'english', '', NULL, '', '', 0),
+(541, 'tasawar@mahmood.com', '', '', 'tasawar', '', '321', 'sdf', 'english', '', NULL, '', '', 0),
+(542, 'ts@ga.com', '', '', 'Tas', '', '8765', 'Gav', 'english', '', NULL, '', '', 0),
+(543, 'adsf@dsf.com', '', '', 'dsf', '', '345345', 'dsf', 'english', 'cust_gSN7vBOv17247Zk1d6tp5k0d', NULL, '', '', 0),
+(544, 'testmark@gmail.com', '', '', 'test', '', '3453434', 'dfgdfg', 'english', 'cust_xJAcAvDsMpnGfcmknZdQyKi9', NULL, '', '', 0),
+(545, 'etst@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_6bLDoK8iTMBNFBRyA1ASU679', NULL, '', '', 0),
+(546, 'teste@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_o3XtkVtoBaiaJELFMHFmMGDU', NULL, '', '', 0),
+(547, 'f@f.com', '', '', 'Test', '', '0000', 'F', 'english', '', NULL, '', '', 0),
+(548, 'asd@sadf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_XwoVqfliijF40Tm3ulJTkFq7', NULL, '', '', 0),
+(549, 'sdfdff@dsfcvcvv.com', '', '', 'sdfffffdfdfdfd', '', '343434', 'sdfsdf', 'english', '', NULL, '', '', 0),
+(550, 'ali_lums@gmail.com', '', '', 'Ali Shoail LUMS', '', '343434', 'sdf', 'english', '', NULL, '', '', 0),
+(551, 'sfdg@dsf.com', '', '', 'sfv', '', '34545', 'sgf', 'english', '', NULL, '', '', 0),
+(552, 'shaibii@gmail.com', '', '', 'shoaib', '', '12342314', '1234', 'english', '', NULL, '', '', 0),
+(553, 'aaa@asdf.com', '', '', 'asdf', '', '3142', 'asdf', 'english', '', NULL, '', '', 0),
+(554, 'asdf@asdef.casdf', '', '', 'asdf', '', '234', '23', 'english', '', NULL, '', '', 0),
+(555, 'asdf@asdf.asdf', '', '', 'asdf', '', '3453425', '345', 'english', '', NULL, '', '', 0),
+(556, 'iftikhar_yahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_l2gX0ueMyZZCInpwvLQQef1p', NULL, '', '', 0),
+(557, 'ffff@ddddsss.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_3489ZqDBucItKwlGT8kZdkpq', NULL, '', '', 0),
+(558, 'sdf@df.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_GNrQpD7CiEQ6LLD8YILTKhO5', NULL, '', '', 0),
+(559, 'sdsssf@dkkkf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_CmRolzNhrGjzMQQUfrXimJ8T', NULL, '', '', 0),
+(560, 'test@test.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_J0BFjmWQulQ2mbv2iZZR0slr', NULL, '', '', 0),
+(561, 's@ws.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_2ubTe0V65XIURGE7k6xG06qJ', NULL, '', '', 0),
+(562, 'd@d.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_c88BWMHJ2qWhdGuHOH0NObIU', NULL, '', '', 0),
+(563, 'sdffff@dfdfdf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_cAdeGZ798pu1W9BXsHHN7BQt', NULL, '', '', 0),
+(564, 'vhmnbn@cbb.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_DCXjtVVSrRblVKQ0a6SYXSHb', NULL, '', '', 0),
+(565, 'iftikhaaar_yahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_ZMCzXP6HcR85HLKoA8S9zWv3', NULL, '', '', 0),
+(566, 'iftikhadddaar_yahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_6dUuJlv7rAjdtJyLod2cV8RB', NULL, '', '', 0),
+(567, 'iftikhadssdddaar_yahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_D4ihekw4yA8RSfjS1kKNXHOB', NULL, '', '', 0),
+(568, 'iftdsdddaar_yahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_KyMRVWYVkDWk7POhTwGkIY51', NULL, '', '', 0),
+(569, 'iftdsdddaar_yvvvahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_WkW8jaJ3PjKei1gIBruwI41x', NULL, '', '', 0),
+(570, 'iftdsdddaar_yvvssdvahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_xFO0JqpJLoXkw0d01LNGuu1b', NULL, '', '', 0),
+(571, 'iftdsssfdddaar_yvvssdvahoo@gmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_xBdzg44uaAMrGWPlo259GmdF', NULL, '', '', 0),
+(572, 'ahmad@gfmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_6ViYS2iEKaZeBJ4YkJPLVI2h', NULL, '', '', 0),
+(573, 'ahmasdfsdfd@gfmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_i2yZJc3rNQAVzcNqV86SOHl7', NULL, '', '', 0),
+(574, 'ahmasdfsdfsdfsdfd@gsdffmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_Cyu4SpzM5U33g90u8658wnZd', NULL, '', '', 0),
+(575, 'ahmadfgsdfsdfsdfsdfd@gsdffmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_IfuUOzijy5rRnUJh36cNqkD3', NULL, '', '', 0),
+(576, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_efQxMWNI25PYkkptBALM2c8J', NULL, '', '', 0),
+(577, 'ahmadfgsdfsdfsdfsdfd@gsdffmdfgsdfail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_H8Dr8E0IxSUhWzwSmOBX60NW', NULL, '', '', 0),
+(578, 'ahmadfgsdfsdfsdfsdfd@gsdffmdsfdfgsdfail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_fFTuws12Q3O1hz68gJMpCaW4', NULL, '', '', 0),
+(579, 'ahmfsdfsdfd@gsdffmdsfdfgsdfail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_f026L8JHPIVtSF5quMPGODmN', NULL, '', '', 0),
+(580, 'ahmfsdfsdfd@gsfgsdfail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_uwFS2zLFSesHUJecKEFeC5U7', NULL, '', '', 0),
+(581, 'rrr@abcdgmail.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_8tDBIOiY98K4VoVJ7skalHF8', NULL, '', '', 0),
+(582, 'sdf@sd.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_ZGiB4wBprVQePmGOolxiJX00', NULL, '', '', 0),
+(583, 'gmgjh@rtrt.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_de1y6GYOBGhST1cUTWoGqgOA', NULL, '', '', 0),
+(584, 'dsf@dsf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_kPszysYTGXTLbcBBMsWBftT4', NULL, '', '', 0),
+(585, 'erer@rtrt.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_FLSE3uT32RnZ5JRpPgb4FDuI', NULL, '', '', 0),
+(586, 'erer@sdfgfg.vom', '', '', NULL, '', NULL, NULL, 'english', 'cust_FAxWBKALnFA1s2GT0CR2BjKa', NULL, '', '', 0),
+(587, 'rrr@rrr.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_LQqJw9tRhoxwrZpn3tmYJX7b', NULL, '', '', 0),
+(588, 'cvcvcv@mvmvmv.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_SUVnakXVHPSDYRB0uRNOzACw', NULL, '', '', 0),
+(589, 'cvcv@xcvcv.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_sU3PaGkDDARMAsDQaECoOsYb', NULL, '', '', 0),
+(590, 'sdfsdf@dsfsdf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_yX7k25gmd9XI74Iglf7yO7bg', NULL, '', '', 0),
+(591, 'asdasd@dsfdf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_AGcamoHHf4kmmwm8nP36GG4N', NULL, '', '', 0),
+(592, 'sdfsdf@dfdf.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_ZZ0tO1xkjZetRcCwZveotFUh', NULL, '', '', 0),
+(593, 'svcxvwf@yuyu.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_1ZkCgcnwNFjYBYMC8AizQrjT', NULL, '', '', 0),
+(594, 'shoaib.it002@gmail.com', '', '', 'shoaib akram', '', '090078601', '12', 'english', 'cust_jp36Z1zsMbkyvW7Z4CXbtPfq', NULL, '', '', 0),
+(595, 'sadf@dsf.com', '', '', NULL, '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(596, 'sdfdsf@ds.com', '', '', NULL, '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(597, 'sadf@df.com', '', '', NULL, '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(598, 'sfd@dsf.com', '', '', NULL, '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(599, 'asd@df.com', '', '', 'asdf', '', '2334', '', 'english', '', NULL, '', '', 0),
+(600, 'asd@f.com', '', '', NULL, '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(601, 'asdf@df.com', '', '', 'asd', '', '3434', '', 'english', '', NULL, '', '', 0),
+(602, 'sdaf@sf.com', '', '', NULL, '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(603, 'jgfjh@sdfg.com', '', '', 'fjg', '', '0000', '', 'english', '', NULL, '', '', 0),
+(604, 'dafs@sadf.com', '', '', 'adsf', '', '0000', '', 'english', '', NULL, '', '', 0),
+(605, 'ahmadworkspace@gmail.com', '', '', 'Testing', '', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 'english', '', NULL, '', '', 0),
+(606, 'Testing@Testing.com', '', '', 'Testing', '', '000000', 'Testing', 'english', '', NULL, '', '', 0),
+(607, 'kpk@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(608, 'kpk2@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(609, 'kpk3@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(610, 'kok@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(611, 'kok2@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(612, 'kok3@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(613, 'kok4@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(614, 'test@gmail.com', '', '', 'Test', '', '000000', 'Dasfa ir ko, Kareivių gatvė, Vilnius, Lithuania', 'english', '', NULL, '', '', 0),
+(615, 'cool@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(616, 'jkj@gmailc.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(617, 'rael@pushstartups.com', '', '', '', '', NULL, NULL, 'english', '', 'success', '', '', 0),
+(618, 'adb@ancn.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(619, 'ddsfas@afa.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(620, 'gujg@fghh.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(621, 'kpk10@gmail.com', '', '', '', '', NULL, NULL, 'english', '', NULL, '', '', 0),
+(627, 'avi@puahstartups.com', '', '', 'TEST TEST', '', '000000000', 'דרך יצחק רבין 23, בית שמש, ישראל', 'english', '', NULL, '', '', 0),
+(628, 'test@orderapp.com', '', '', 'TEST', '', '000000', 'sdf', 'english', 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL, '', '', 0),
+(629, 'tasawarmahmood24@gmail.com', '', '', 'test', '', '000000', 'SDF, Terminal Drive, Louisville, KY, United States', 'english', '', '34609bdc08a07ace4e1526bbb1777673', '', '', 0),
+(631, 'msdsdsuhammad.iftikhar.aftab@gmail.com', '', '', '', '', NULL, NULL, 'english', '', 'success', '', '', 0),
+(632, 'dvora@pushstartups.com', '', '', '', '', NULL, NULL, 'english', '', 'success', '', '', 0),
+(633, 'asdfhjjsdjksher@a.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_wQxbHwTV7O85zmo21NPOw84c', NULL, '', '', 0),
+(634, 'DODO@pushstartups.com', '', '', NULL, '', NULL, NULL, 'english', 'cust_00w4vq3BCg73gh6oWK8oC0yz', NULL, '', '', 0),
+(635, 'rael@orderapp.com', '', '', '', '', NULL, NULL, 'english', '', 'a1d50185e7426cbb0acad1e6ca74b9aa', '', '', 0),
+(636, 'muhaddmmad.iftikhar.aftab@gmail.comdddd', '', '', '', '', NULL, NULL, 'english', '', 'success', '', '', 0),
+(638, 'testing@ordeapp.com', '', '', 'Testing', '', '000000', 'Testing Grounds, City Road, Southbank, Victoria, Australia', 'english', '', NULL, '', '', 0),
+(639, '', '', '', '', '', '972000000000', NULL, 'english', '', NULL, '', '', 0),
+(640, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwOGYyNDg3NTZiNWY2ZWU0ZGQ0YzVkODBiNTU4NTA5OTdmZmRlN2YifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItY3ZpMGRnbXZuZ3IyYnVtanIxZGhzcGg5OW12Y2xvZ3UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItY3ZpMGRnbXZuZ3IyYnVtanIxZGhzcGg5', '', '', 'Artem Mkrtchyan', '', '', NULL, 'english', '', NULL, '', '', 0),
+(641, '972333333333', '', '', '', '', '972333333333', NULL, 'english', '', NULL, '', '', 0),
+(642, 'EAAIJEdqSv3ABAAvbjlKjc5DlpZAtH9oZCkOZBZBJ9pED1mKggduNZCmq9dCbjwuxqhZBnefg9dcEZCykjivON77BI8PAqwhYSZCKqDK2mTscaEE9vcpF60ersRyI7zEcokE05vjVZAvZCzkPdHO7s1vAVzK2C5eHWsfm4q5jF5oyZBgzKkESKALSCh2OFPXnit9kUEJq9JxWZCPhO8DgrrsIfOWfBs7YSddqqWZBn7wTEauLncQZDZD', '', '', 'Artem Mkrtchyan', '', '', NULL, 'english', '', NULL, '', '', 0),
+(643, 'EAAIJEdqSv3ABABJACT6AOVDZBDaG5CFO1O5ZBlpWYVHHkYutIbOJ0bpB6h4OOMDZAgyxSqC6lv0TAINVxifo6f5gxXhUfqEc0EgujqiNvTZB6zgMvKR1Ua5JHcXMBnlVzgWE2CfKkD1CF3EHQtiKKY7qbpQa1OZCZCQEPuMairIYwTiWTmRrG4LLt06Bh2g2KPvDYkUytPeCGpRfj8WlYV6TJsmymqegIZD', '', '', 'Aharon Mendlowitz', '', '', NULL, 'english', '', NULL, '', '', 0),
+(644, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjMwOGYyNDg3NTZiNWY2ZWU0ZGQ0YzVkODBiNTU4NTA5OTdmZmRlN2YifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', '', NULL, 'english', '', NULL, '', '', 0),
+(645, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU0MDc4NCwiZXhwIjoxNDk1NTQ0Mzg0LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.iDM1l3kZ4pwAjbd733HTnKE2IdUHhAxGhClskVFwoIDAsd0YEaskEqxHAZtjVxMvAP_4jtigX41YGkhtMpdZ41iyPb5Ey7aT6Hmt8KPxJWvW9ArR1AR_qj7g96wbUtsSGfkfAGkPfO6aEoK6B5lIRNL5ck96GQI-DIXHdHjJoO4Bx--J34HoWnXd3i-TOgdX1sESv6UoK5PczFZHgBuWiWlMFaqv4OTozLQsINmaPeDuDNOXm43DJiz7PMFvUcYbRfH38Vvsq0NSgy0eq9seJT8uayDVnFD7i617iqw7TMRiXMT2Jh9AUrT_BO7C6IVQJwhNHr_5ssXgXcoWm4bvfA', 0),
+(646, 'EAAIJEdqSv3ABAH08B9Vx3HDc9pe4ZAqRAerLeBHHZCGt59dLUgaS2Jh4vSszGt1ScqiiRM5T9s9WSAMovFjEM6MEC6BmRyWj69sghwJGUAdkp3edWGrZA3Bq2ws7LBnLLdolnlyyGqxLUeiJjWrzPsMJaZADqzVJdT7AZBlok4gN0XP8KxrjjlHIlETyxGh4JmnjZAniRVReGs9X8zg5Wwmc7mDh1r0NyIJBUaSVy0ZBwZDZD', '', '', 'Aharon Mendlowitz', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAH08B9Vx3HDc9pe4ZAqRAerLeBHHZCGt59dLUgaS2Jh4vSszGt1ScqiiRM5T9s9WSAMovFjEM6MEC6BmRyWj69sghwJGUAdkp3edWGrZA3Bq2ws7LBnLLdolnlyyGqxLUeiJjWrzPsMJaZADqzVJdT7AZBlok4gN0XP8KxrjjlHIlETyxGh4JmnjZAniRVReGs9X8zg5Wwmc7mDh1r0NyIJBUaSVy0ZBwZDZD', 0),
+(647, 'EAAIJEdqSv3ABANXhjlzWnEcHkBZBUpz1A3xamCop5zJsBj3neIZBC4a3p7uZA3Bxx8oB2T8pJZCBhi9pYGlEZCrpHwDdQoZASBiZCsLYbyE1bPZC89DmZBhrOKq80cG0ITgxiVZCA3prMkf5SaQgBIdk4gNFJ5dJuWjz7jauixYyHkfUgYq015iJVSdTiiWbW6Fg3YmwZBNSoNoaKhZCxgpFifrnUVAz2IiS1QGv1uDVdUg0HQZDZD', '', '', 'Avi Push', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABANXhjlzWnEcHkBZBUpz1A3xamCop5zJsBj3neIZBC4a3p7uZA3Bxx8oB2T8pJZCBhi9pYGlEZCrpHwDdQoZASBiZCsLYbyE1bPZC89DmZBhrOKq80cG0ITgxiVZCA3prMkf5SaQgBIdk4gNFJ5dJuWjz7jauixYyHkfUgYq015iJVSdTiiWbW6Fg3YmwZBNSoNoaKhZCxgpFifrnUVAz2IiS1QGv1uDVdUg0HQZDZD', 0),
+(648, 'EAAIJEdqSv3ABAElblhvWWw5BGn5lHOtdJmJQVaVCZCSJgE93QKzlc1jBIWP6Qrib4ZAtSVQiVUdzZA3rdVpoJRu7YyzVMuhrgHMOi18JkS2RgpU1dWT4RoHLgDK2syuJGjJG2zZB7RNpCEmhs7gaiwifYQiSyVJw1ZBm9bt0yCg37CEbZA4xjcQsD1G0ZAL4WZCwnjVAayv5b5v0NOOWrZBJuYLFGDdHdMidPaoyf5uKyQgZDZD', '', '', 'Aharon Mendlowitz', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAElblhvWWw5BGn5lHOtdJmJQVaVCZCSJgE93QKzlc1jBIWP6Qrib4ZAtSVQiVUdzZA3rdVpoJRu7YyzVMuhrgHMOi18JkS2RgpU1dWT4RoHLgDK2syuJGjJG2zZB7RNpCEmhs7gaiwifYQiSyVJw1ZBm9bt0yCg37CEbZA4xjcQsD1G0ZAL4WZCwnjVAayv5b5v0NOOWrZBJuYLFGDdHdMidPaoyf5uKyQgZDZD', 0),
+(649, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjQzMWQ2Njc5MDZjNzRkZjVjZjViNDhjZWZiNWZiOGFjZjdiMmZjOWIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItam5mbXNxbGQ3amJxOWtsdG5pYWNoc2pxNmpydTRlM2suYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU0OTMxNSwiZXhwIjoxNDk1NTUyOTE1LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.FVUIImneMkQ9CaJ1TK5GbcR54fGwGUAM__JO1fhL7YvDH_8bTB6WTsZ2AZot3mbqTbFpoPq70WEUjM8z7fiCZQrpNy1XZi4qTvfSutHh-DLzz6QvAZCFLLSk6y6KX5zUJYKWIaIpnpjO0BHFIAEYu3XjjK-Ebx0vQHKZ8Z-xJY_WM27txycdufnsMH8b68AHQOkw2OqO7uQ2DlwtL-3aem3lYeE1FNufFnlwUSeVgpl9pmWwjdg7iXnJ5I2-WsSCF7PmArv1TP6H9X_hJAxet8e1D5yn8utgI1vyyQoTd1KHj0y_n5Qm0hqtK45TvBOAe6y3KK7r3EFlq3QUc7EynA', 0),
+(650, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Artem Mkrtchyan', '', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDc5ODc0ODUxNDEyMzg3NjgxNzQiLCJlbWFpbCI6ImEucy5ta3J0Y2h5YW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTU4Mjk5NCwiZXhwIjoxNDk1NTg2NTk0LCJuYW1lIjoiQXJ0ZW0gTWtydGNoeWFuIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8tQWIxM3VJZFlJMEUvQUFBQUFBQUFBQUkvQUFBQUFBQUFBRUEvX0ZEbkR0UzZmNFkvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkFydGVtIiwiZmFtaWx5X25hbWUiOiJNa3J0Y2h5YW4iLCJsb2NhbGUiOiJlbiJ9.cV0GhWy35YfjAvM3BYyjs9M8so6ei21YTEKA3BWw6-qwFoKpO_kW6g_F2bhKri06R-lJLv6u-Ak2tOSl3bVYkKo9cUqicYe16wH5EkR520qlTu11A-Qc3OF1EaCA4ClU2S0kS8VPCmknqb7qUFcbj6glxG0PA2yIkuemLDC4en6Hmx6MaAfK8M5nB3fjCidFC9NU5oMpzEWW4mPDhyawhWjo6jT5oGYofOxWYSxrSKKESyYLIW00at4A-LZl-i6dFI6iUuS5pJilkHHQI2Va0SuBkDkSazTSG62ridt_gyrMPyiVxClPWL9U0xviOOFyN5bFfFymD_UEjRh75T8DWA', 0),
+(651, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Aaron Hunter', '', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDE0MDE4MTY0MTc3NjkwMzc0OTYiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImFhcm9uQHB1c2hzdGFydHVwcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNDk1NjA3OTE1LCJleHAiOjE0OTU2MTE1MTUsIm5hbWUiOiJBYXJvbiBIdW50ZXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy01ajVENjFXdnNQWS9BQUFBQUFBQUFBSS9BQUFBQUFBQUFBcy9QcElLX0F4NllRby9zOTYtYy9waG90by5qcGciLCJnaXZlbl9uYW1lIjoiQWFyb24iLCJmYW1pbHlfbmFtZSI6Ikh1bnRlciIsImxvY2FsZSI6ImVuIn0.SCxdXv0VboVFUR4D50mPuTic4U2HZ9Woj-RAg56zFt6IjylE6q7bScURU3tFDjRDimvWJKnbW5IwepJbYVZroNm2ndduAXIhFI1GBtUCyuSn3W2NMVY9VPD4K8KY1Yhni4nfd2k5hDIurbkvukX9__-CCKeHpEo34_1bGVe1JDB-12FvC34DZZTQ0XDKoRoTMp6nrodshn208-6oxtptJAgrsbJx3ajOuPAe-_oBdkbSG9eT_X-hGueaBAv7Dt_aV9QKUekDCneiVCx2gtfMxGLIG-2cuUwH9Vxqa52kTTjB-CQ3B2i_rNoBqjtkKOck6BzRzjSqG-WONiHoYBxqKA', 0),
+(652, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Avi Aloush', '', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ3Mjk2ODc2NDM3MDA5MDMxMzEiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImF2aUBwdXNoc3RhcnR1cHMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTYxMjU2NSwiZXhwIjoxNDk1NjE2MTY1LCJuYW1lIjoiQXZpIEFsb3VzaCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vLXRNMDVabENGNjJrL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBeVlCRjUxMjBjeFBLRE5rMVVPaUFHNF9hQjQ1Z0ZaLXcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkF2aSIsImZhbWlseV9uYW1lIjoiQWxvdXNoIiwibG9jYWxlIjoiZW4ifQ.XORr9qMzjgvnmlpD1wj6WZWrYnYp2R5Avddk_p6sPDwnXRygHxN97XgNUwMiVpjsRg3abzXpceNd6JZdSvuarHfvGG9NAjOWLoO3G6CS3_3KyAzsKdeDCvyUCdHrCdTdQKSfpKB-r7q9v7Zww8iKFylA7SUjsrhFPtFAfIP0kgrgJrUcbAvyIEeUU9rlfBej7yqRxpTWCN4rn6Zs4jGL75A42SqG2daH_Csb8h69hKYWI2tj0fM9dnfSdcD0C-VrhTXlDTKLvBbI7kjDkSrgtCWydu-POvYn4E7qLY7N_SAo9zpirS1HZVqweUFWFrSLdNvPIs9DGEzlyVMb_zMo0w', 0),
+(654, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Avi Aloush', '', '', NULL, 'english', '', NULL, NULL, NULL, 0),
+(655, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Aaron Hunter', 'aaron@pushstartups.com', '', NULL, 'english', '', NULL, 'Android_GPlus', NULL, 0),
+(656, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjFlZTRkOWU3ZGNmZWYyMTVkMTMzYzdlZDdhYzg3Yzk1ZjhkOGU3MTIifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Avi Aloush', 'avi@pushstartups.com', '', NULL, 'english', '', NULL, 'Android_GPlus', NULL, 0),
+(662, 'EAAIJEdqSv3ABABMrd40ZBoKq66t1pxQGLWZBqBuRppWtHZC07VMMTz8xRcdxpq7JfyftGX5jEWCHSspKTeImCCPvbixpoYTYyyNmAZAcef0JeKxAH0nPUbLuquE68699fG8tY3sS3COTvYjUXZC2JSuCg0gSKw39AYMKy6y653QcbClvqrGk0eE5q46W1HqWqBwZA6X0IYgIMZA9XQ9zdiM', '', '', 'Farrah Dobuler', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABABMrd40ZBoKq66t1pxQGLWZBqBuRppWtHZC07VMMTz8xRcdxpq7JfyftGX5jEWCHSspKTeImCCPvbixpoYTYyyNmAZAcef0JeKxAH0nPUbLuquE68699fG8tY3sS3COTvYjUXZC2JSuCg0gSKw39AYMKy6y653QcbClvqrGk0eE5q46W1HqWqBwZA6X0IYgIMZA9XQ9zdiM', 0),
+(663, '2Ju6bauXPyNIQyTzGRjvEwtKKip2', '', '', 'Muhammad Iftikhar', 'muhammad.iftikhar.aftab@gmail.com', '000000', 'TEST', 'english', '', NULL, 'google.com', '2Ju6bauXPyNIQyTzGRjvEwtKKip2', 0),
+(664, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NjJjOTNhZTczNmNjZDA3NDZmYmRhZjNmNzcwNDUwMWRkY2VhYTQifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Avi Aloush', 'avi@pushstartups.com', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NjJjOTNhZTczNmNjZDA3NDZmYmRhZjNmNzcwNDUwMWRkY2VhYTQifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTQ3Mjk2ODc2NDM3MDA5MDMxMzEiLCJoZCI6InB1c2hzdGFydHVwcy5jb20iLCJlbWFpbCI6ImF2aUBwdXNoc3RhcnR1cHMuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbSIsImlhdCI6MTQ5NTcxMTg2OCwiZXhwIjoxNDk1NzE1NDY4LCJuYW1lIjoiQXZpIEFsb3VzaCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vLXRNMDVabENGNjJrL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBeVlCRjUxMjBjeFBLRE5rMVVPaUFHNF9hQjQ1Z0ZaLXcvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkF2aSIsImZhbWlseV9uYW1lIjoiQWxvdXNoIiwibG9jYWxlIjoiZW4ifQ.vqZCnBUt4RFsoeCm0WjNh5j8Ji-n3fG5bkiPfpFg5oxEyYl-M0TEsFPG_rmbYfNmKvcnpYaHC538Xw3RbnA92YQOjmkifbROCeCVTTMaD0SOi9qnOGIg3FBwgCtcdxvydcGjirjY57xN6p4je9rRMYX2OP919QckmtxW0S5daYu2-sfmNyowvo4ufYwfc0IqsjTDYTp4iKHM7-ZEYL4Z2-QIe2ZPdR6I6Uw4SFEfqvVMIPUobkOaROiMNp_CKZY-gjXUWVA_Da4SwXf3mzvO-AIKaav2coD7CI1LRTu1D8dQWsjCyqOUvvshdfPAL5d4sf9YDm--RmqUD8v39zLBkQ', 0),
+(665, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NjJjOTNhZTczNmNjZDA3NDZmYmRhZjNmNzcwNDUwMWRkY2VhYTQifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Orders Catch', 'orders@orderapp.com', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NjJjOTNhZTczNmNjZDA3NDZmYmRhZjNmNzcwNDUwMWRkY2VhYTQifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTM5Njk3NjcyODE3NzI4OTM5MTAiLCJoZCI6Im9yZGVyYXBwLmNvbSIsImVtYWlsIjoib3JkZXJzQG9yZGVyYXBwLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE0OTU3MTE5MDAsImV4cCI6MTQ5NTcxNTUwMCwibmFtZSI6Ik9yZGVycyBDYXRjaCIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLXl5YTl1YVFTaERNL0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBeVlCRjU0bUp4S19rR1hMRnM5WUtWdFJ1Sjl0aFdJbkEvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6Ik9yZGVycyIsImZhbWlseV9uYW1lIjoiQ2F0Y2giLCJsb2NhbGUiOiJlbiJ9.pGz6jWgNgyjqBLcWLx7vgyBTo3VQi7Ubc0XciI-5gY7OFIrxfpF45lmmw0WBGOcnPEf50vqy9wvVE00oON5TifwAf-YQmFjhEjWKWtwPXHS62YTszszv_yNlPN_CU-lc6ZVUtZ8pQi5JyojeSgqZluO-PBqhyzfGKO_SLJubqEMOSaZMVHx3AwJSuQQIZKu9DgK73Gb6wXfwO4LYHbsA5g46xuWU1GB7B3T9oPKAQ1qbFjOl3DE2nh60pWVwI_WT93kxs7OFHAiBb6cBYBs2qIdFecrjzbiRNgVjOZ6oSPq-f_tnXequkbziANbOHGksxk0l45y3OkEKhO0TolHf3A', 0),
+(666, '972542042134', '', '', '', '', '972542042134', NULL, 'english', '', NULL, 'android_phone', '972542042134', 0),
+(667, 'raeltest@orderapp.com', 'raeltest@orderapp.com', 'rael', '', 'raeltest@orderapp.com', NULL, NULL, 'english', '', 'success', NULL, NULL, 0),
+(668, 'muhammad.iftikhar.aftab@gmail.com', 'muhammad.iftikhar.aftab@gmail.com', '1234', '', 'muhammad.iftikhar.aftab@gmail.com', NULL, NULL, 'english', '', '1a6727711b84fd1efbb87fc565199d13', NULL, NULL, 1),
+(669, 'AOTKxPIirZUF8PaZV5IJFhtXnu63', '', '', 'Rael Push', '', '', NULL, 'english', '', NULL, 'facebook.com', 'AOTKxPIirZUF8PaZV5IJFhtXnu63', 0),
+(670, 'FV7jkJINRWNFkkUrpcosuaA3YW92', '', '', 'OrderApp Admin', '', '', NULL, 'english', '', NULL, 'google.com', 'FV7jkJINRWNFkkUrpcosuaA3YW92', 0),
+(671, '972546623095', '', '', '', '', '972546623095', NULL, 'english', '', NULL, 'android_phone', '972546623095', 0),
+(672, 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NjJjOTNhZTczNmNjZDA3NDZmYmRhZjNmNzcwNDUwMWRkY2VhYTQifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3', '', '', 'Cherie Albucher', 'albuchercherie@gmail.com', '', NULL, 'english', '', NULL, 'Android_GPlus', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjA4NjJjOTNhZTczNmNjZDA3NDZmYmRhZjNmNzcwNDUwMWRkY2VhYTQifQ.eyJhenAiOiI0MjIxMzk5MDc2ODItZ2tzdjlwM2V2bG5kbW90dTVkOHFzMWJucWJ0NGZybDcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MjIxMzk5MDc2ODItNGQwazI1Y3M5YTEwcHFha3I3Yjl1ODM3YjZpZHJoOGEuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTE4MjY1NTI5MjQyMjk1OTYxNDgiLCJlbWFpbCI6ImFsYnVjaGVyY2hlcmllQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJpYXQiOjE0OTU3MzY2MTgsImV4cCI6MTQ5NTc0MDIxOCwibmFtZSI6IkNoZXJpZSBBbGJ1Y2hlciIsInBpY3R1cmUiOiJodHRwczovL2xoNS5nb29nbGV1c2VyY29udGVudC5jb20vLUo2OVlIVS1QY2g4L0FBQUFBQUFBQUFJL0FBQUFBQUFBQUFBL0FBeVlCRjZ5QjV2UkVWX1FxT1hjM3UzMDJVZ29UUEJDdUEvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IkNoZXJpZSIsImZhbWlseV9uYW1lIjoiQWxidWNoZXIiLCJsb2NhbGUiOiJpdyJ9.Y-ADaApcCItk1Dg9J_Mnwr-q8O5krNNxF2y_DqH3KnARYkOzLK25PCk11j3vTw7aXizRBJpmXfFXRpuZ9nocVPAI2bcEvEUZkzzubO1Mt9TiHer75jBfSU-akitaDuFCWa-YZwCVbU01Tbol2ctGj1AlXMNWNB549SbE6LLui29pPeaqL36BOPUcrQSZdx_e0bm2o0i67XTapZtABeEYAU0fg2MGYk_VKS0f4X0s6zp24AcuUnJ0SJke66nYY6Y3Yml4nrzyK3BSQZ2t7mw2u6f8Cr-Jqg1eKWhVAcLwlGysAeYbyRgV08fqeTknuMZHRUyS9AkJ4g4MCZAtNbHa5w', 0),
+(673, '972586295292', '', '', '', '', '972586295292', NULL, 'english', '', NULL, 'android_phone', '972586295292', 0),
+(674, 'EAAIJEdqSv3ABAAcJFwZBBIwEXRZA3NZBUoDosR5zqC5MI3dqrr25bzBbWs4gz7lH9uf9xHnthAWIUOHCI5WralDo0CcIUrQd0TPYeENLEt5WZCBbJd4lQh8YDeR1ZBS8kjgYrd2HYRpZClGcn8dsN2EKDGcp80Mb5CRyPjvBr1KI9RVXzPwu3iDUqAtAhKn6AsLWTx8ytMuw0mk8dIv3b3', '', '', 'Meira ''Strauss'' Lerner', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAAcJFwZBBIwEXRZA3NZBUoDosR5zqC5MI3dqrr25bzBbWs4gz7lH9uf9xHnthAWIUOHCI5WralDo0CcIUrQd0TPYeENLEt5WZCBbJd4lQh8YDeR1ZBS8kjgYrd2HYRpZClGcn8dsN2EKDGcp80Mb5CRyPjvBr1KI9RVXzPwu3iDUqAtAhKn6AsLWTx8ytMuw0mk8dIv3b3', 0),
+(675, 'EAAIJEdqSv3ABAB6z1Eu7CFpXGZAsLBcZAG2pUmaBZBkrSGPsgaxLAYZCQ16U7UjWvdNt1oY23ViUtZAB52ht4GJPSZCVt2WHhhW5UBSUeNSvnw2f9TKmpg4cQ41k3hGjBeKTNnZAfNxwXq4DtK1Uey8O2ktZBJOS3hZC8WgiqV5Pz0SuPZALjaWtuVOEddAFZAxKrvArSJ7wRXs8rrJ1f5ulDBp', '', '', 'Alexander Lev', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAB6z1Eu7CFpXGZAsLBcZAG2pUmaBZBkrSGPsgaxLAYZCQ16U7UjWvdNt1oY23ViUtZAB52ht4GJPSZCVt2WHhhW5UBSUeNSvnw2f9TKmpg4cQ41k3hGjBeKTNnZAfNxwXq4DtK1Uey8O2ktZBJOS3hZC8WgiqV5Pz0SuPZALjaWtuVOEddAFZAxKrvArSJ7wRXs8rrJ1f5ulDBp', 0),
+(676, 'EAAIJEdqSv3ABAJ55NRzIrZBZBORB0G1AGIh0rsgZC7pbbm56ekV8PtsVZAabAZC3nYY9GHGjUZAcck1rxZA9rmrsnKxWZAZAgEhUljM3tSyPCZCCt7ne1KlgEStmk1IZCmMSeecoriA4ee5BZCbGWH6AXjASKRxP0g0896oREwcq1ZAhZA9mF6BbfrxjnwZAzQURiRvTHxzFTCjYSGB8zglJEtaZCVs6', '', '', 'Mor Kalmar', '', '', NULL, 'english', '', NULL, 'Android_Facebook', 'EAAIJEdqSv3ABAJ55NRzIrZBZBORB0G1AGIh0rsgZC7pbbm56ekV8PtsVZAabAZC3nYY9GHGjUZAcck1rxZA9rmrsnKxWZAZAgEhUljM3tSyPCZCCt7ne1KlgEStmk1IZCmMSeecoriA4ee5BZCbGWH6AXjASKRxP0g0896oREwcq1ZAhZA9mF6BbfrxjnwZAzQURiRvTHxzFTCjYSGB8zglJEtaZCVs6', 0),
+(677, '972546845009', '', '', '', '', '972546845009', NULL, 'english', '', NULL, 'android_phone', '972546845009', 0),
+(678, '972587642019', '', '', '', '', '972587642019', NULL, 'english', '', NULL, 'android_phone', '972587642019', 0);
 
 -- --------------------------------------------------------
 
@@ -15989,7 +16093,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=554 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=555 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -16065,7 +16169,8 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (550, 628, 2, 154, NULL, 0, '2017-05-18 17:42:00', 'ENG Desktop', 'CASH', '', 'Chrome'),
 (551, 638, 1, 113, NULL, 0, '2017-05-22 14:34:20', 'HE Desktop', 'CASH', '', 'Chrome'),
 (552, 605, 6, 106, NULL, 0, '2017-05-22 14:37:25', 'HE Desktop', 'CASH', '', 'Chrome'),
-(553, 628, 3, 103, NULL, 0, '2017-05-23 16:00:44', 'ENG Desktop', 'CASH', '', 'Chrome');
+(553, 628, 3, 103, NULL, 0, '2017-05-23 16:00:44', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(554, 663, 3, 91, NULL, 0, '2017-05-25 10:46:54', 'ENG Desktop', 'CASH', '', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -16146,18 +16251,18 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=318 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=332 ;
 
 --
 -- Dumping data for table `weekly_availibility`
 --
 
 INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `opening_time_he`, `closing_time`, `closing_time_he`) VALUES
-(8, 1, 'Sunday', 'יום א', '11:30', '11:30', '19:00', '19:00'),
+(8, 1, 'Wednesday', 'יום ד', '08:30', '08:30', '  01:05  ', '  01:05  '),
 (9, 1, 'Monday', 'יום ב', '11:30', '11:30', '23:00', '23:00'),
 (10, 1, 'Tuesday', 'יום ג', '9:00', '9:00', '23:00', '23:00'),
 (11, 1, 'Wednesday', 'יום ד', '11:30', '11:30', '23:00', '23:00'),
-(12, 1, 'Thursday', 'יום ה', '11:30', '11:30', '23:00', '23:00'),
+(12, 1, 'Sunday', 'יום א', '12:55', '12:55', '         01:05         ', '         01:05         '),
 (13, 1, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
 (14, 1, 'Saturday', 'שבת', '20:30', '20:30', '23:00', '23:00'),
 (15, 2, 'Sunday', 'יום א', '11:30', '11:30', '19:00', '19:00'),
@@ -16439,7 +16544,14 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (314, 42, 'Wednesday', 'יום ד', '16:00', '16:00', '7:00', '7:00'),
 (315, 42, 'Thursday', 'יום ה', '16:00', '16:00', '7:00', '7:00'),
 (316, 42, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
-(317, 42, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור');
+(317, 42, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור'),
+(318, 43, 'Sunday', 'יום א', '         02:15         ', '         02:15         ', '        01:05        ', '        01:05        '),
+(319, 43, 'Monday', 'יום ב', '          02:15          ', '          02:15          ', '    08:45    ', '    08:45    '),
+(320, 43, 'Tuesday', 'יום ג', '          02:15          ', '          02:15          ', '         01:05         ', '         01:05         '),
+(321, 43, 'Wednesday', 'יום ד', '        02:15        ', '        02:15        ', '     12:00     ', '     12:00     '),
+(322, 43, 'Thursday', 'יום ה', '         02:15         ', '         02:15         ', '        01:05        ', '        01:05        '),
+(323, 43, 'Friday', 'ששי', '          02:15          ', '          02:15          ', '        04:30        ', '        04:30        '),
+(324, 43, 'Saturday', 'שבת', '        02:15        ', '        02:15        ', '      12:35      ', '      12:35      ');
 
 --
 -- Constraints for dumped tables

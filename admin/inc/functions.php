@@ -70,6 +70,15 @@ function getOrderItems($order_id)
     return $order_detail;
 }
 
+//GET ALL TIMINGS OF RESTAURANTS
+function getAllTimings($restaurant_id)
+{
+    $timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
+    return $timings;
+}
+
+
+
 
 
 function getOrderItemsB2B($order_id)
@@ -216,4 +225,32 @@ function getUsersOfSpecificCompany($companies_id){
 
     $company = DB::query("select * from b2b_users where company_id = '$companies_id'");
     return $company;
+}
+
+
+// GET MENU ID FROM RESTAURANT ID
+function getMenuId($restaurant_id)
+{
+    $menu = DB::queryFirstRow("select id from menus where restaurant_id = '$restaurant_id'");
+    return  $menu['id'];
+}
+
+function getAllCategories($menu_id)
+{
+     return $categories = DB::query("select * from categories where menu_id = '$menu_id'");
+
+}
+
+function getItemsFromCategoryId($category_id)
+{
+
+    return $items = DB::query("select * from items where category_id = '$category_id'");
+
+}
+
+//GET CATEGORY NAME
+function getCategoryName($category_id)
+{
+    $category = DB::queryFirstRow("select name_en from categories where id = '$category_id'");
+    return  $category['name_en'];
 }

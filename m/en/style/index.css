@@ -137,19 +137,19 @@ button {
     border: none;
     margin: 0;
 }
-.dropdown-menu::-webkit-scrollbar {
-    width: 0;
-	background:inherit;
-}
+/*.dropdown-menu::-webkit-scrollbar {*/
+    /*width: 0;*/
+	/*background:inherit;*/
+/*}*/
 
-.dropdown-menu::-webkit-scrollbar-track {
-    display: none;
-	background:inherit;
-}
-.dropdown-menu::-webkit-scrollbar-thumb {
-    display: none;
-	background:inherit;
-}
+/*.dropdown-menu::-webkit-scrollbar-track {*/
+    /*display: none;*/
+	/*background:inherit;*/
+/*}*/
+/*.dropdown-menu::-webkit-scrollbar-thumb {*/
+    /*display: none;*/
+	/*background:inherit;*/
+/*}*/
 #wrapper{
 	overflow:hidden;
 	position:relative;
@@ -356,8 +356,8 @@ button {
 .scrollable-menu {
     height: auto;
     max-height: 125px; 
-    /*overflow-x: visible;
-    overflow-y: scroll;*/
+    overflow-x: visible;
+    overflow-y: scroll;
 }
 .form .dropdown ul{
 	padding:11px 25px;

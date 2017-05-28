@@ -434,7 +434,8 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
 
             // USER NOT EXIST IN DATABASE, SO CREATE USER IN DATABASE
             DB::insert('users', array(
-                'smooch_id' => $email
+                'smooch_id' => $email,
+                'email' => $email
             ));
 
             $user_id = DB::insertId();
@@ -724,7 +725,9 @@ $app->post('/add_new_user', function ($request, $response, $args) {
             "user_name" => $user_email,
             "password"  => $user_password,
             "name" => '',
-            "login_verification_hash" => $verification_code
+            "email" => $user_email,
+            "login_verification_hash" => $verification_code,
+            "is_signup" => 1
         ));
 
         sendVerificationEmail($verification_code,$user_email);
@@ -736,18 +739,41 @@ $app->post('/add_new_user', function ($request, $response, $args) {
     }
     else{
 
-        if($getUser['login_verification_hash'] != "success")
+
+        if($getUser['is_signup'] == 0)
         {
+            $verification_code  =  rand(1000,5000);
+            $verification_code  =  md5($verification_code);
 
-            $resp  = "verification_pending";
+            DB::update('users', array(
+
+                'smooch_id' => $user_email,
+                "user_name" => $user_email,
+                "password"  => $user_password,
+                "email" => $user_email,
+                "login_verification_hash" => $verification_code,
+                "is_signup" => 1
+            ), 'smooch_id = %s', $user_email);
+
+            sendVerificationEmail($verification_code,$user_email);
+
+            ob_end_clean();
+
+            $resp = 'success';
 
         }
-        else{
+        else {
 
-            $resp = "account_exist";
+            if ($getUser['login_verification_hash'] != "success") {
+
+                $resp = "verification_pending";
+
+            } else {
+
+                $resp = "account_exist";
+            }
+
         }
-
-
     }
 
 
@@ -793,6 +819,33 @@ $app->post('/resend_signup_email', function ($request, $response, $args) {
 
 
 
+
+$app->post('/get_user', function ($request, $response, $args) {
+
+    $resp = "not found";
+    $user_smooch_id = $request->getParam('smooch_id');
+
+    $getUser = DB::queryFirstRow("select * from users where smooch_id = '$user_smooch_id'");
+
+    if (DB::count() == 0) {
+
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($resp));
+        return $response;
+
+    }
+
+
+    // RESPONSE RETURN TO REST API CALL
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($getUser));
+    return $response;
+
+});
+
+
+
 // RESEND EMAIL FOR SIGNUP URL
 
 $app->post('/user_login', function ($request, $response, $args) {
@@ -814,7 +867,7 @@ $app->post('/user_login', function ($request, $response, $args) {
         }
         else{
 
-            $resp = 'validation_error';
+            $resp = 'success';
 
         }
 
@@ -868,9 +921,19 @@ $app->post('/add_order', function ($request, $response, $args) {
         $user_platform = $request->getParam('user_platform');
         $browser_info = $request->getParam('browser_info');
         $user_id = null;
+        $getUser = null;
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
-        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_order['email'] . "'");
+
+
+        if($user_order['uid'] != '')
+        {
+            $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_order['uid'] . "'");
+        }
+        else{
+
+            $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_order['email'] . "'");
+        }
 
         if (DB::count() == 0) {
 
@@ -878,6 +941,7 @@ $app->post('/add_order', function ($request, $response, $args) {
             DB::insert('users', array(
 
                 'smooch_id' => $user_order['email'],
+                'email' => $user_order['email'],
                 "contact" => $user_order['contact'],
                 "address" => $user_order['deliveryAddress'],
                 "name" => $user_order['name']
@@ -891,7 +955,7 @@ $app->post('/add_order', function ($request, $response, $args) {
 
             DB::update('users', array(
 
-                'smooch_id' => $user_order['email'],
+                'email' => $user_order['email'],
                 "contact" => $user_order['contact'],
                 "address" => $user_order['deliveryAddress'],
                 "name" => $user_order['name']
@@ -1054,9 +1118,9 @@ $app->post('/send_email_to_b2b_users', function ($request, $response, $args) {
 });
 
 
-
 $app->post('/native_app', function ($request, $response, $args) {
 
+    $getUser = "";
 
     $email          = $request->getParam('email');
     $name           = $request->getParam('name');
@@ -1070,22 +1134,28 @@ $app->post('/native_app', function ($request, $response, $args) {
 
     if (DB::count() == 0) {
 
-
         DB::insert('users', array(
 
             'smooch_id' => $uid,
+            'provider' => $provider,
+            'email' => $email,
             "contact" => $contact,
             "name" => $name,
+            "uid" => $uid
 
         ));
+
+        $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $uid . "'");
 
     }
 
     // RESPONSE RETURN TO REST API CALL
     $response = $response->withStatus(202);
-    $response = $response->withJson(json_encode('success'));
+    $response = $response->withJson(json_encode($getUser));
     return $response;
+
 });
+
 
 $app->post('/tcs_printer', function ($request, $response, $args) {
 

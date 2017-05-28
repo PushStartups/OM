@@ -50,7 +50,8 @@ $(document).ready(function() {
 
     // CHECK IF USER IS ALREADY LOGIN
 
-    if(localStorage.getItem("USER_EMAIL") != undefined && localStorage.getItem("USER_EMAIL") != "" && localStorage.getItem("USER_EMAIL") != null) {
+
+    if(localStorage.getItem("USER_SMOOCH_ID") != undefined && localStorage.getItem("USER_SMOOCH_ID") != "" && localStorage.getItem("USER_SMOOCH_ID") != null) {
 
 
         //  USER ALREADY LOGIN WELCOME USER
@@ -67,6 +68,7 @@ $(document).ready(function() {
             {
                 // DISPLAY LOGIN OPTION TO USER
                 SignInDefault();
+                userObject.smooch_id = '';
 
             }
         }
@@ -899,28 +901,49 @@ function goBack()
 
 function LoginSuccessFullState() {
 
-    var email = localStorage.getItem("USER_EMAIL");
-    var name  = localStorage.getItem("USER_NAME");
+    var email     =     ""
+    var smooch_id =     localStorage.getItem("USER_SMOOCH_ID");
+    var name      =     "";
 
-    userObject.email = email;
-    userObject.name = name;
-
-    // DISPLAY LOGIN SUCCESS
-
-    $('#loginBtnText').html("Hi "+userObject.email);
-    $("#loginMessage").show();
-    $("#success-message").html("Hey "+name+", Nice to meet you :)");
-
-    // HIDE FORM S
-
-    $('#signup-message').hide();
-    $('#manual-signup').hide();
-    $('#signUpForm').hide();
+    commonAjaxCall("/restapi/index.php/get_user",{"smooch_id":smooch_id},getUserLogin);
 
 
-    $('#email_text').val(userObject.email);
-    $('#name_text').val(userObject.name);
+}
 
+function getUserLogin(response) {
+
+    resp = JSON.parse(response);
+
+    if(resp == "not found")
+    {
+        localStorage.setItem("USER_SMOOCH_ID","");
+        SignInDefault();
+    }
+    else {
+
+        userObject.uid = resp.smooch_id;
+        userObject.email = resp.email;
+        userObject.name = resp.name;
+        userObject.contact = resp.contact;
+
+        // DISPLAY LOGIN SUCCESS
+
+        $('#loginBtnText').html("Hi "+userObject.email);
+        $("#loginMessage").show();
+        $("#success-message").html("Hey "+name+", Nice to meet you :)");
+
+        // HIDE FORM S
+
+        $('#signup-message').hide();
+        $('#manual-signup').hide();
+        $('#signUpForm').hide();
+
+
+        $('#email_text').val(userObject.email);
+        $('#name_text').val(userObject.name);
+        $('#contact_text').val(userObject.contact);
+
+    }
 }
 
 
@@ -928,8 +951,6 @@ function SignInDefault()
 {
     $('#signin').show();
     $('#signup').hide();
-
-
 }
 
 
