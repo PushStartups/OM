@@ -749,7 +749,6 @@ function addUserOrder()
         "itemId"             : result.categories_items[currentCategoryId].items[currentItemIndex].id,
         "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemIndex].price,
         "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
-        "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
         "itemNameHe"         : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
         "qty"                : 1 ,
         "subItemsOneType"    : oneTypeSubItems,
