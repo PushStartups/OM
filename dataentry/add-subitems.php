@@ -43,7 +43,7 @@ else
                 <button name="Import" type="submit" class="btn btn-primary"  data-loading-text="Loading...">
                     Import CSV File
                 </button><br>
-                *Please Download the sample CSV file. <a href="sample-subitems.csv" download>Click Here</a>
+                *Please see the sample CSV file link. <a target="_blank" href="https://docs.google.com/spreadsheets/d/15DeOW-ZHI734O0F22juE5kEuffymjfTQCzmG00h1uqE/edit?usp=sharing">Click Here</a>
             </form>
         </div><br><br>
 

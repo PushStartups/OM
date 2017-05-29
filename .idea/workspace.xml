@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/insert_delivery_address.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sample-extras.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sample-extras.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-restaurant.php" afterPath="$PROJECT_DIR$/admin/add-new-restaurant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-choices-addons.php" afterPath="$PROJECT_DIR$/admin/add-choices-addons.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-category.php" afterPath="$PROJECT_DIR$/admin/add-new-category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-items.php" afterPath="$PROJECT_DIR$/admin/add-new-items.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-restaurant-timing.php" afterPath="$PROJECT_DIR$/admin/add-restaurant-timing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/inc/functions.php" afterPath="$PROJECT_DIR$/admin/inc/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-new-restaurant.php" afterPath="$PROJECT_DIR$/dataentry/add-new-restaurant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/ajax/insert_new_restaurant.php" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_restaurant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/header.php" afterPath="$PROJECT_DIR$/dataentry/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/import-category.php" afterPath="$PROJECT_DIR$/dataentry/import-category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/inc/functions.php" afterPath="$PROJECT_DIR$/dataentry/inc/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/js/custom/add-new-category.js" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/js/custom/add-new-restaurant.js" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-restaurant.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-subitems.php" afterPath="$PROJECT_DIR$/admin/add-subitems.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-choices-addons.php" afterPath="$PROJECT_DIR$/dataentry/add-choices-addons.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-new-category.php" afterPath="$PROJECT_DIR$/dataentry/add-new-category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-new-items.php" afterPath="$PROJECT_DIR$/dataentry/add-new-items.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-subitems.php" afterPath="$PROJECT_DIR$/dataentry/add-subitems.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/sample-category.csv" afterPath="$PROJECT_DIR$/dataentry/sample-category.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/sample-items.csv" afterPath="$PROJECT_DIR$/dataentry/sample-items.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
@@ -197,20 +198,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_dump" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -847,14 +834,7 @@
       <workItem from="1495871137919" duration="1127000" />
       <workItem from="1495947810760" duration="7418000" />
       <workItem from="1495978890207" duration="599000" />
-      <workItem from="1496035696845" duration="4988000" />
-    </task>
-    <task id="LOCAL-00090" summary="Updates&#10;&#10;">
-      <created>1493040886808</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1493040886808</updated>
+      <workItem from="1496035696845" duration="7113000" />
     </task>
     <task id="LOCAL-00091" summary="Updates IOS keyboard Bug Issue Resolved&#10;&#10;">
       <created>1493103718091</created>
@@ -1192,11 +1172,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496042231821</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="DB update + code latest">
+      <created>1496047273468</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1496047273468</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="965758000" />
+    <option name="totallyTimeSpent" value="967883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -1890,14 +1877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -2155,6 +2134,14 @@
             <marker date="1496041652033" expanded="true" signature="144483:144556" ph="..." />
             <marker date="1496041652033" expanded="true" signature="144682:144753" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

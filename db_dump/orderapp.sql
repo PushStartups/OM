@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2017 at 08:39 AM
+-- Generation Time: May 29, 2017 at 09:26 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -1313,7 +1313,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100053 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100054 ;
 
 --
 -- Dumping data for table `extras`
@@ -2937,7 +2937,8 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9999, 3405, 'גודל (שדה חובה)', '', 0, 'גודל (שדה חובה)', 0, 9212),
 (10000, 3401, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 487),
 (10001, 3403, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 491),
-(100052, 100053, 'Sauces', 'Multiple', 0, 'Testing', 2, 488);
+(100052, 100053, 'Sauces', 'Multiple', 0, 'Testing', 2, 488),
+(100053, 100054, 'Sauces', 'Multiple', 0, 'Testing', 2, 492);
 
 -- --------------------------------------------------------
 
@@ -2993,7 +2994,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100054 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100055 ;
 
 --
 -- Dumping data for table `items`
@@ -4702,7 +4703,8 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (100048, 758, 0, 'creamy halva', 'חצי שמנת', '', '', 0, 2554),
 (100049, 758, 0, 'creamy esspresso', 'אספרסו שמנת', '', '', 0, 2554),
 (100050, 758, 0, 'creamy maple', 'אדר שמנת', '', '', 0, 2554),
-(100053, 100063, 0, 'Testing', 'Testing', 'Testing', 'Testing', 10, 2556);
+(100053, 100063, 0, 'Testing', 'Testing', 'Testing', 'Testing', 10, 2556),
+(100054, 100064, 0, 'Testing', 'Testing', 'qwerty', 'qwerty', 10, 2556);
 
 -- --------------------------------------------------------
 
@@ -5239,7 +5241,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26082 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26084 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15708,7 +15710,9 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (26055, 10001, 'Half portion', ' חצי מנה', 0, 0),
 (26056, 10001, 'Full portion', ' מנה', 8, 0),
 (26080, 100052, 'Spicy chili', '???? ?????', 0, NULL),
-(26081, 100052, 'large', '???? ?????', 36, NULL);
+(26081, 100052, 'large', '???? ?????', 36, NULL),
+(26082, 100053, 'Hello', 'אוכל אסיית', 10, NULL),
+(26083, 100053, 'Hello', 'אוכל אסיית', 20, NULL);
 
 -- --------------------------------------------------------
 

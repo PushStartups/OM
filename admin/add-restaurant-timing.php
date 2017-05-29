@@ -393,58 +393,13 @@ else
                                 </div>
 
 
-                                <div>
-
-                                    <div class="jarviswidget-editbox">
-                                        <!-- This area used as dropdown edit box -->
-                                    </div>
-
-                                    <div class="widget-body">
-
                                 <div onclick="show_delivery_address()" class="btn btn-primary btn-lg" style="margin-top: 2%;">
                                     <i class="fa fa-plus"></i>
                                     Delivery Address
                                 </div>
 
-                                <div id="add-delivery-address" style="display: none">
-                                    <form method="post">
-                                        <fieldset>
-
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input class="form-control" id="area_en" name="area_en" placeholder="Enter Address" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_en_error"></span>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label dir="rtl">כתובת</label>
-                                                <input style="direction:RTL;" class="form-control" id="area_he" name="area_he"  type="text">
-                                                <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_he_error"></span>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Fees</label>
-                                                <input class="form-control" id="fee" name="fee" placeholder="Enter Fees" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="fee_error"></span>
-                                            </div>
-
-
-
-
-                                        </fieldset>
-                                        <div class="form-actions">
-                                            <div onclick="add_delivery_address('<?=$restaurant_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
-                                                <i class="fa fa-save"></i>
-                                                Submit
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
-                                </div>
-                                <!-- end widget content -->
-                            </div>
-                            <!-- end widget div -->
+
                         </div>
 
                     </div>
@@ -452,6 +407,70 @@ else
 
             </div>
 
+
+
+
+            <div class="row">
+                <!-- NEW WIDGET START -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+
+
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+
+
+                            <div id="add-delivery-address" style="display: none">
+                                <form method="post">
+                                    <fieldset>
+
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input class="form-control" id="area_en" name="area_en" placeholder="Enter Address" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_en_error"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label dir="rtl">כתובת</label>
+                                            <input style="direction:RTL;" class="form-control" id="area_he" name="area_he"  type="text">
+                                            <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_he_error"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Fees</label>
+                                            <input class="form-control" id="fee" name="fee" placeholder="Enter Fees" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="fee_error"></span>
+                                        </div>
+
+
+
+
+                                    </fieldset>
+                                    <div class="form-actions">
+                                        <div onclick="add_delivery_address('<?=$restaurant_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
+                                            <i class="fa fa-save"></i>
+                                            Submit
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </article>
+
+            </div>
 
         </section>
 
