@@ -13,6 +13,7 @@ body {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+	min-width:960px !important;
 }
 * {max-height: 1000000px;}
 .parent-bottom,
@@ -196,6 +197,10 @@ a:hover, a:focus {
 	display: block;
 	content: '';
 	clear: both;
+}
+#header .container{
+	width:70vw !important;
+	min-width:960px !important;
 }
 .container.new{
 	width:70vw !important;
@@ -943,6 +948,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 		line-height: 22px;
 	}
 }
+@media only screen and (max-width: 1199px){#header  #loginBtnText{max-width: 98px;}}
 
 
 
@@ -1149,7 +1155,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	padding:10px 12px;
 	text-align:center;
 	font-size:18px;
-	line-height:28px;
+	line-height:23px;
 	font-weight:400;
 	color:#fff;
 	border:1px solid #3b5998;

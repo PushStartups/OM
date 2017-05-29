@@ -89,7 +89,7 @@
         <header id="header">
             <div class="container">
                 <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-auto">
+                    <div class="col-xs-12">
                         <div class="logo">
                             <a href="../">
                                 <div class="logo-img">
@@ -204,7 +204,7 @@
                 </ul>
                 <ul>
                     <li data-toggle="modal" data-target="#about"><a href="#">About</a></li>
-                    <li style="visibility: hidden"><a class="active" href="#">HE</a></li>
+                    <li style="display: none;"><a class="active" href="#">HE</a></li>
                 </ul>
             </nav>
         </header>
@@ -1520,14 +1520,22 @@
             $("#email_text").val(primaryEmail);
             $("#name_text").val(name);
 
-            userObject.email = primaryEmail;
+            if(primaryEmail != null)
+            {
+                userObject.email = primaryEmail;
+            }
+            else {
+
+                userObject.email = "";
+            }
+
             userObject.name = name;
 
             $('#signin').hide();
             $('#signup').show();
 
 
-            $('#loginBtnText').html("Hi "+userObject.email);
+            $('#loginBtnText').html("Hi "+userObject.name);
             $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
 
             $("#email_verification_message").hide();
@@ -1632,15 +1640,21 @@
             $("#email_text").val(primaryEmail);
             $("#name_text").val(name);
 
+            if(primaryEmail != null)
+            {
+                userObject.email = primaryEmail;
+            }
+            else {
 
-            userObject.email = primaryEmail;
+                userObject.email = "";
+            }
+
             userObject.name = name;
 
             $('#signin').hide();
             $('#signup').show();
 
-
-            $('#loginBtnText').html("Hi "+userObject.email);
+            $('#loginBtnText').html("Hi "+userObject.name);
             $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
 
             $("#email_verification_message").hide();

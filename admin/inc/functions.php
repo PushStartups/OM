@@ -237,7 +237,7 @@ function getMenuId($restaurant_id)
 
 function getAllCategories($menu_id)
 {
-     return $categories = DB::query("select * from categories where menu_id = '$menu_id'");
+    return $categories = DB::query("select * from categories where menu_id = '$menu_id'");
 
 }
 
@@ -253,4 +253,58 @@ function getCategoryName($category_id)
 {
     $category = DB::queryFirstRow("select name_en from categories where id = '$category_id'");
     return  $category['name_en'];
+}
+
+function getItemName($item_id)
+{
+    $item = DB::queryFirstRow("select name_en from items where id = '$item_id'");
+    return  $item['name_en'];
+}
+
+function getExtraName($extra_id)
+{
+    $extra = DB::queryFirstRow("select name_en from extras where id = '$extra_id'");
+    return  $extra['name_en'];
+}
+
+function getExtrasFromItemId($item_id)
+{
+    return $extras = DB::query("select * from extras where item_id = '$item_id'");
+}
+
+function getSubItemsFromItemId($extra_id)
+{
+    return $subItems = DB::query("select * from subitems where extra_id = '$extra_id'");
+}
+
+function getRestaurantName($restaurant_id)
+{
+    $restaurant = DB::queryFirstRow("select name_en from restaurants where id = '$restaurant_id'");
+    return  $restaurant['name_en'];
+}
+
+function getSubItem($subitem_id)
+{
+    return $subitem = DB::queryFirstRow("select * from subitems where id = '$subitem_id'");
+
+}
+
+function getExtra($extra_id)
+{
+    return $extra = DB::queryFirstRow("select * from extras where id = '$extra_id'");
+}
+
+function getItem($item_id)
+{
+    return $item = DB::queryFirstRow("select * from items where id = '$item_id'");
+}
+
+function getCategory($category_id)
+{
+    return $category = DB::queryFirstRow("select * from categories where id = '$category_id'");
+}
+
+function getRestaurant($restaurant_id)
+{
+    return $restaurant = DB::queryFirstRow("select * from restaurants where id = '$restaurant_id'");
 }
