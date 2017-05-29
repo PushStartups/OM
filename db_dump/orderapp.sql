@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2017 at 09:26 AM
--- Server version: 5.5.54
+-- Generation Time: May 29, 2017 at 10:07 AM
+-- Server version: 5.5.56
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -450,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `image_url` text,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100066 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100073 ;
 
 --
 -- Dumping data for table `categories`
@@ -731,9 +731,17 @@ INSERT INTO `categories` (`id`, `menu_id`, `is_discount`, `name_en`, `name_he`, 
 (744, 33, 0, 'DRINKS', 'שתיה', 0, '/m/en/img/categories/kampai/DRINKS.png', 823),
 (747, 2, 0, 'Meshulashim Deals', 'דילים', 0, '/m/en/img/categories/mesh/Pizza.png', 112),
 (758, 21, 0, 'I''m Screamy', 'אני צועקת', 0, '/m/en/img/categories/rebar/screamy.jpg', 408),
-(100063, 100011, 0, 'Testing', 'Testing', 0, '/m/en/img/categories/test/testing.png', 113),
-(100064, 0, 0, 'Testing', 'Testing', 0, '/m/en/img/categories//testing.png', 409),
-(100065, 0, 0, '2Testig', '2Testig', 0, '/m/en/img/categories//2testig.png', 114);
+(99999, 99999, 0, 'ex', 'ex', 0, NULL, 0),
+(100063, 100011, 0, 'Hamburger', 'המבורגר', 0, '', 409),
+(100064, 100011, 0, 'Drinks', 'שתייה', 0, '', 1),
+(100065, 100016, 0, 'Bagels', 'בייגל', 0, '', 410),
+(100066, 100016, 0, 'HB Sandwich', 'HB סנדוויץ''', 0, '', 2),
+(100067, 100016, 0, 'Salad bar', 'סלט בר', 0, '', 411),
+(100068, 100016, 0, 'Morning Special', 'מבצע בוקר', 0, '', 3),
+(100069, 100016, 0, 'Specials', 'ארוחות', 0, '', 412),
+(100070, 100016, 0, 'Hot drinks', 'שתיה חמה', 0, '', 4),
+(100071, 100016, 0, 'Cold drinks', 'שתיה קרה', 0, '', 413),
+(100072, 100016, 0, 'Desserts', 'קינוחים', 0, '', 5);
 
 -- --------------------------------------------------------
 
@@ -1118,7 +1126,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=189 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=187 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -1293,8 +1301,7 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (183, 'Ramat Beit Shemesh A', 'רמת בית שמש א', 25, 42),
 (184, 'Ramat Beit Shemesh B', 'רמת בית שמש ב', 25, 42),
 (185, 'Ramat Beit Shemesh C', 'רמת בית שמש ג', 25, 42),
-(186, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 42),
-(188, 'GHHGGNG', 'GMHMHGM', 12, 100015);
+(186, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 42);
 
 -- --------------------------------------------------------
 
@@ -1313,7 +1320,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100054 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100058 ;
 
 --
 -- Dumping data for table `extras`
@@ -2937,8 +2944,12 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9999, 3405, 'גודל (שדה חובה)', '', 0, 'גודל (שדה חובה)', 0, 9212),
 (10000, 3401, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 487),
 (10001, 3403, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 491),
-(100052, 100053, 'Sauces', 'Multiple', 0, 'Testing', 2, 488),
-(100053, 100054, 'Sauces', 'Multiple', 0, 'Testing', 2, 492);
+(100052, 100053, 'Chips', 'Multiple', 0, 'ציפס', 2, 488),
+(100053, 100067, 'size', 'One', 0, 'גודל', 1, 492),
+(100054, 100068, 'Bagel type', 'One', 0, 'סוג בייגל', 12, 489),
+(100055, 100069, 'Size', 'One', 1, 'גודל', 1, 493),
+(100056, 100070, 'Size', 'One', 1, 'גודל', 1, 490),
+(100057, 100071, 'Size', 'One', 1, 'גודל', 1, 494);
 
 -- --------------------------------------------------------
 
@@ -2994,7 +3005,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100055 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100072 ;
 
 --
 -- Dumping data for table `items`
@@ -4695,6 +4706,7 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (3654, 744, 0, 'Singha beer', 'בירה סינגה', '', '', 23, 924),
 (3655, 744, 0, 'Starong Bao Beer', 'בירה סטרונג באו', '', '', 26, 925),
 (3656, 747, 0, 'Special offer - 3 Large Pizzas for 99 Shekel', 'פיצות משפחתיות ב-99 ש''''ח x3\r\n', '', '', 99, 926),
+(99999, 99999, 0, 'ex', 'ex', '', '', 0, 0),
 (100022, 40, 0, '#12 Hot crispy chicken salad ', 'סלט עוף קריספי חם', 'Baby mixed leaves, cucumber, cherry tomatoes, portobello mushrooms, beansprouts and cashew nuts in an Asian citrus vinaigrette ', 'מיקס עלי בייבי, מלפפון, עגבניות שרי, פטריות פורטובלו, נבטים, ואגוזי קשיו קלויים בויניגרט הדרים אסייאתי\r\n', 38, 328),
 (100023, 41, 0, '#17 Asian Vegetable Soup ', 'מרק ירקות אסייאטי', 'Chinese vegetable soup with aromatic chicken strips, vegetables and bean noodles', ' מרק ירקות סיני מציר עוף ארומטי ושלל ירקות ואיטריות שעוית\r\n', 16, 332),
 (100024, 304, 0, 'Baguette Shakshuka', 'באגט שקשוקה', '', '', 29, 2018),
@@ -4703,8 +4715,25 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (100048, 758, 0, 'creamy halva', 'חצי שמנת', '', '', 0, 2554),
 (100049, 758, 0, 'creamy esspresso', 'אספרסו שמנת', '', '', 0, 2554),
 (100050, 758, 0, 'creamy maple', 'אדר שמנת', '', '', 0, 2554),
-(100053, 100063, 0, 'Testing', 'Testing', 'Testing', 'Testing', 10, 2556),
-(100054, 100064, 0, 'Testing', 'Testing', 'qwerty', 'qwerty', 10, 2556);
+(100053, 100063, 0, 'raels burger', 'רייל בורדר', 'dalkvfamdv flvkmfadv afdlkvmaf ', 'גךלהצגכשה כגהלכצגהךש', 35, 2556),
+(100054, 100064, 0, 'Coke', 'קולה', 'dl;ava;', 'כךשצ', 8, 2556),
+(100055, 100063, 0, 'ldkam', '???', 'djasdn', '??????', 39, 140),
+(100056, 100063, 0, 'djsj', '?????', 'djssdksd', '?????', 34, 141),
+(100057, 100065, 0, 'plain', 'רגיל', 'Plain bagel', 'בייגל רגיל', 5, 142),
+(100058, 100065, 0, 'whole wheat', 'קמח מלא', 'whole wheat bagel', 'בייגל מקמח מלא', 5, 143),
+(100059, 100065, 0, 'everything', 'מעורב', 'everything bagel', 'בייגל מעורב', 5, 144),
+(100060, 100065, 0, 'onion', 'בצל', 'onion bagel', 'בייגל בצל', 5, 145),
+(100061, 100065, 0, 'garlic', 'שום', 'garlic bagel', 'בייגל שום', 5, 146),
+(100062, 100065, 0, 'za''atar', 'זעתר', 'za''atar bagel', 'בייגל זעתר', 5, 147),
+(100063, 100065, 0, 'salt', 'מלח', 'salt bagel', 'בייגל מלח', 5, 148),
+(100064, 100065, 0, 'sesame', 'שומשום', 'sesame bagel', 'בייגל שומשום', 5, 149),
+(100065, 100065, 0, 'poppy seed', 'פרג', 'poppy seed bagel', 'פרג בייגל', 5, 150),
+(100066, 100065, 0, 'cinnamon and raisin', 'קימון וצימוקים', 'cinnamon and raisin bagel', 'בייגל קינמון וצימוקים', 5, 151),
+(100067, 100070, 0, 'Cappuccino', 'הפוך', 'Espresso, hot milk, frothed milk', 'אספרסו, חלב חם, חלב מוקצף', 11, 152),
+(100068, 100066, 0, 'Butter bagel', 'בייגל חמאה', 'Butter bagel', 'בייגל חמאה', 12, 153),
+(100069, 100070, 0, 'Mocca', 'קפה מוקה', 'Espresso, warm frothed milk, cocoa', 'אספרסו, חלב מוקצף חם, קקאו', 11, 154),
+(100070, 100070, 0, 'Hot Chocolate', 'שוקו', 'Hot milk, cocoa, frothed milk', 'חלב חם, קקאו, חלב מוקצף', 11, 155),
+(100071, 100070, 0, 'Nescafe', 'נס קפה', 'Nescafe with water or milk', 'נס קפה על בסיס חלב או מים', 10, 156);
 
 -- --------------------------------------------------------
 
@@ -4720,7 +4749,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100015 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100017 ;
 
 --
 -- Dumping data for table `menus`
@@ -4929,7 +4958,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `sort` int(11) DEFAULT '0',
   `pickup_hide` smallint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100019 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100021 ;
 
 --
 -- Dumping data for table `restaurants`
@@ -5241,7 +5270,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26084 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26099 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15709,10 +15738,25 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (26054, 10000, 'Full portion', ' מנה', 10, 0),
 (26055, 10001, 'Half portion', ' חצי מנה', 0, 0),
 (26056, 10001, 'Full portion', ' מנה', 8, 0),
-(26080, 100052, 'Spicy chili', '???? ?????', 0, NULL),
-(26081, 100052, 'large', '???? ?????', 36, NULL),
-(26082, 100053, 'Hello', 'אוכל אסיית', 10, NULL),
-(26083, 100053, 'Hello', 'אוכל אסיית', 20, NULL);
+(26080, 100052, 'soy', 'סוי', 0, 2),
+(26081, 100052, 'ketchup', 'קטשופ', 0, 2),
+(26082, 100052, 'BBQ', 'בשקפגכה', 4, 4),
+(26083, 100053, 'small', 'קטן', 0, 4),
+(26084, 100053, 'large', 'גדול', 2, 6),
+(26085, 100054, 'plain', 'רגיל', 0, NULL),
+(26086, 100054, 'whole wheat', 'קמח מלא', 0, NULL),
+(26087, 100054, 'everything', 'מעורב', 0, NULL),
+(26088, 100054, 'onion ', 'בצל', 0, NULL),
+(26089, 100054, 'garlic', 'שום', 0, NULL),
+(26090, 100054, 'za''atar', 'זעתר', 0, NULL),
+(26091, 100054, 'salt', 'מלח', 0, NULL),
+(26092, 100054, 'sesame', 'שומשום', 0, NULL),
+(26093, 100054, 'poppy seed', 'פרג', 0, NULL),
+(26094, 100054, 'cinnamon and raisins', 'קינמון וצימוקים', 0, NULL),
+(26095, 100055, 'small', 'קטן', 0, 2),
+(26096, 100055, 'large', 'גדול', 2, 2),
+(26097, 100056, 'Small', 'קטן', 0, NULL),
+(26098, 100056, 'Large', 'גדול', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -15792,7 +15836,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `uid` text,
   `is_signup` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=692 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=693 ;
 
 --
 -- Dumping data for table `users`
@@ -15960,7 +16004,8 @@ INSERT INTO `users` (`id`, `smooch_id`, `user_name`, `password`, `name`, `email`
 (688, 'tdr6Sz30hvd6q2pq2BjbaceV8ER2', '', '', 'Rael Pushstart', '', '', NULL, 'english', '', NULL, 'facebook.com', 'tdr6Sz30hvd6q2pq2BjbaceV8ER2', 0),
 (689, '972584303438', '', '', '', '', '972584303438', NULL, 'english', '', NULL, 'android_phone', '972584303438', 0),
 (690, '972549535232', '', '', '', '', '972549535232', NULL, 'english', '', NULL, 'android_phone', '972549535232', 0),
-(691, 'F8LyjQzvWNbmx7dwwdqNLBDKne43', '', '', 'Tasawar Mahmood', '', '', NULL, 'english', '', NULL, 'facebook.com', 'F8LyjQzvWNbmx7dwwdqNLBDKne43', 0);
+(691, 'F8LyjQzvWNbmx7dwwdqNLBDKne43', '', '', 'Tasawar Mahmood', '', '', NULL, 'english', '', NULL, 'facebook.com', 'F8LyjQzvWNbmx7dwwdqNLBDKne43', 0),
+(692, 'dambo@gmail.com', 'dambo@gmail.com', '12345qwert', '', 'dambo@gmail.com', NULL, NULL, 'english', '', '19eca5979ccbb752778e6c5f090dc9b6', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -16156,7 +16201,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
   `closing_time_he` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=367 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=381 ;
 
 --
 -- Dumping data for table `weekly_availibility`
@@ -16164,7 +16209,7 @@ CREATE TABLE IF NOT EXISTS `weekly_availibility` (
 
 INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, `opening_time`, `opening_time_he`, `closing_time`, `closing_time_he`) VALUES
 (8, 1, 'Wednesday', 'יום ד', '08:30', '08:30', '  01:05  ', '  01:05  '),
-(9, 1, 'Monday', 'יום ב', '11:30', '11:30', '23:00', '23:00'),
+(9, 1, 'Monday', 'יום ב', '9:00', '11:30', '23:00', '23:00'),
 (10, 1, 'Tuesday', 'יום ג', '9:00', '9:00', '23:00', '23:00'),
 (11, 1, 'Monday', 'יום ב', '11:38', '11:38', '   22:45   ', '   22:45   '),
 (12, 1, 'Sunday', 'יום א', '12:55', '12:55', '         01:05         ', '         01:05         '),
@@ -16413,7 +16458,7 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (269, 37, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
 (270, 37, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
 (271, 37, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
-(272, 37, 'Friday', 'ששי', 'close', 'close', 'close', 'close'),
+(272, 37, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
 (273, 37, 'Saturday', 'שבת', '20:30', '20:30', '23:00', '23:00'),
 (274, 39, 'Sunday', 'יום א', '08:00', '08:00', '19:00', '19:00'),
 (275, 39, 'Monday', 'יום ב', '08:00', '08:00', '17:00', '17:00'),
