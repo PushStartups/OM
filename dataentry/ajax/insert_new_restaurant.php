@@ -16,11 +16,17 @@ $secondlastMenu = DB::queryFirstRow("SELECT * FROM menus ORDER BY id DESC  LIMIT
 $secondlastMenuId = $secondlastMenu['id'];
 $secondlastMenuSort = $secondlastMenu['sort'];
 
+
+
 $menuId   = $secondlastMenuId + 1;
 $menuSort = $secondlastMenuSort + 1;
 
 $baseFromJavascript   = $_POST['logo'];
 $name_en   = $_POST['name_en'];
+
+//GET THE MAX SORT
+$max = DB::queryFirstRow("SELECT MAX( sort ) AS max FROM restaurants");
+$sort = $max['max']+1;
 
 
 $image_url = "/m/en/img/".strtolower($_POST['name_en'])."_logo.png";
@@ -42,6 +48,7 @@ DB::insert('restaurants', array(
     "hechsher_he"           =>      $_POST['hechsher_he'],
     "pickup_hide"           =>      $_POST['pickup_hide'],
     "min_amount"           =>       $_POST['min_amount'],
+    "sort"                 =>       $sort
 
 ));
 

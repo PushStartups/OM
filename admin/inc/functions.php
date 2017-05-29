@@ -70,14 +70,6 @@ function getOrderItems($order_id)
     return $order_detail;
 }
 
-//GET ALL TIMINGS OF RESTAURANTS
-function getAllTimings($restaurant_id)
-{
-    $timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
-    return $timings;
-}
-
-
 
 
 
@@ -226,6 +218,24 @@ function getUsersOfSpecificCompany($companies_id){
     $company = DB::query("select * from b2b_users where company_id = '$companies_id'");
     return $company;
 }
+
+
+
+//GET ALL TIMINGS OF RESTAURANTS
+function getAllTimings($restaurant_id)
+{
+    $timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
+    return $timings;
+}
+
+
+//GET ALL DELIVERY ADDRESS OF RESTAURANTS
+function getAllDeliveryAddress($restaurant_id)
+{
+    $delivery_address = DB::query("select * from delivery_fee where restaurant_id = '$restaurant_id'");
+    return $delivery_address;
+}
+
 
 
 // GET MENU ID FROM RESTAURANT ID

@@ -204,7 +204,7 @@ function add_restaurant() {
 function save_imagee(rest_id)
 {
     $.ajax({
-        url: "http://dev.orderapp.com/restapi/index.php/insert_new_restaurant",
+        url: "http://"+window.location.hostname+"/restapi/index.php/insert_new_restaurant",
         type: 'POST',
         data: {rest_id:rest_id},
         success: function (data) {

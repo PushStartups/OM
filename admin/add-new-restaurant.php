@@ -70,12 +70,7 @@ include "header.php";
                                                 <input class="form-control" id="min_amount" name="min_amount" placeholder="Enter Amount" type="text">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="min_amount_error"></span>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label>Sort</label>
-                                                <input class="form-control" id="sort" name="sort" placeholder="Sorting" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="sort_error"></span>
-                                            </div>
+                                            
 
                                             <div class="form-group">
                                                 <label>Pickup</label>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2017 at 07:14 AM
+-- Generation Time: May 29, 2017 at 08:39 AM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -450,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `image_url` text,
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100063 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100066 ;
 
 --
 -- Dumping data for table `categories`
@@ -731,7 +731,9 @@ INSERT INTO `categories` (`id`, `menu_id`, `is_discount`, `name_en`, `name_he`, 
 (744, 33, 0, 'DRINKS', 'שתיה', 0, '/m/en/img/categories/kampai/DRINKS.png', 823),
 (747, 2, 0, 'Meshulashim Deals', 'דילים', 0, '/m/en/img/categories/mesh/Pizza.png', 112),
 (758, 21, 0, 'I''m Screamy', 'אני צועקת', 0, '/m/en/img/categories/rebar/screamy.jpg', 408),
-(99999, 99999, 0, 'ex', 'ex', 0, NULL, 0);
+(100063, 100011, 0, 'Testing', 'Testing', 0, '/m/en/img/categories/test/testing.png', 113),
+(100064, 0, 0, 'Testing', 'Testing', 0, '/m/en/img/categories//testing.png', 409),
+(100065, 0, 0, '2Testig', '2Testig', 0, '/m/en/img/categories//2testig.png', 114);
 
 -- --------------------------------------------------------
 
@@ -1116,7 +1118,7 @@ CREATE TABLE IF NOT EXISTS `delivery_fee` (
   `fee` int(11) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=187 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=189 ;
 
 --
 -- Dumping data for table `delivery_fee`
@@ -1291,7 +1293,8 @@ INSERT INTO `delivery_fee` (`id`, `area_en`, `area_he`, `fee`, `restaurant_id`) 
 (183, 'Ramat Beit Shemesh A', 'רמת בית שמש א', 25, 42),
 (184, 'Ramat Beit Shemesh B', 'רמת בית שמש ב', 25, 42),
 (185, 'Ramat Beit Shemesh C', 'רמת בית שמש ג', 25, 42),
-(186, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 42);
+(186, 'Har Tuv Industrial Zone', 'אזור תעשייה הר טוב', 25, 42),
+(188, 'GHHGGNG', 'GMHMHGM', 12, 100015);
 
 -- --------------------------------------------------------
 
@@ -1310,7 +1313,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100052 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100053 ;
 
 --
 -- Dumping data for table `extras`
@@ -2933,7 +2936,8 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (9373, 3469, 'Sauces', 'Multiple', 0, 'רטבים', 0, 536),
 (9999, 3405, 'גודל (שדה חובה)', '', 0, 'גודל (שדה חובה)', 0, 9212),
 (10000, 3401, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 487),
-(10001, 3403, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 491);
+(10001, 3403, 'גודל (שדה חובה)', 'One', 0, 'גודל (שדה חובה)', 0, 491),
+(100052, 100053, 'Sauces', 'Multiple', 0, 'Testing', 2, 488);
 
 -- --------------------------------------------------------
 
@@ -2989,7 +2993,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100053 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100054 ;
 
 --
 -- Dumping data for table `items`
@@ -4690,7 +4694,6 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (3654, 744, 0, 'Singha beer', 'בירה סינגה', '', '', 23, 924),
 (3655, 744, 0, 'Starong Bao Beer', 'בירה סטרונג באו', '', '', 26, 925),
 (3656, 747, 0, 'Special offer - 3 Large Pizzas for 99 Shekel', 'פיצות משפחתיות ב-99 ש''''ח x3\r\n', '', '', 99, 926),
-(99999, 99999, 0, 'ex', 'ex', '', '', 0, 0),
 (100022, 40, 0, '#12 Hot crispy chicken salad ', 'סלט עוף קריספי חם', 'Baby mixed leaves, cucumber, cherry tomatoes, portobello mushrooms, beansprouts and cashew nuts in an Asian citrus vinaigrette ', 'מיקס עלי בייבי, מלפפון, עגבניות שרי, פטריות פורטובלו, נבטים, ואגוזי קשיו קלויים בויניגרט הדרים אסייאתי\r\n', 38, 328),
 (100023, 41, 0, '#17 Asian Vegetable Soup ', 'מרק ירקות אסייאטי', 'Chinese vegetable soup with aromatic chicken strips, vegetables and bean noodles', ' מרק ירקות סיני מציר עוף ארומטי ושלל ירקות ואיטריות שעוית\r\n', 16, 332),
 (100024, 304, 0, 'Baguette Shakshuka', 'באגט שקשוקה', '', '', 29, 2018),
@@ -4698,7 +4701,8 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (100047, 758, 0, 'creamy peanut butter', 'חמאת בוטנים שמנת', '', '', 0, 2554),
 (100048, 758, 0, 'creamy halva', 'חצי שמנת', '', '', 0, 2554),
 (100049, 758, 0, 'creamy esspresso', 'אספרסו שמנת', '', '', 0, 2554),
-(100050, 758, 0, 'creamy maple', 'אדר שמנת', '', '', 0, 2554);
+(100050, 758, 0, 'creamy maple', 'אדר שמנת', '', '', 0, 2554),
+(100053, 100063, 0, 'Testing', 'Testing', 'Testing', 'Testing', 10, 2556);
 
 -- --------------------------------------------------------
 
@@ -4714,7 +4718,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100011 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100015 ;
 
 --
 -- Dumping data for table `menus`
@@ -4923,7 +4927,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `sort` int(11) DEFAULT '0',
   `pickup_hide` smallint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100015 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100019 ;
 
 --
 -- Dumping data for table `restaurants`
@@ -4970,8 +4974,7 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (39, 'Le''echol Etzel Julie', 'לאכול אצל ג''ולי', 1, '053-755-2019', 50, 1, 0, '/m/en/img/cs-logo.png', 'Genuine Moroccan food, cooked with love by Julie, who is the sister of the famous TV chef, Jackie Azoulai.  Julie cooks from the heart and serves up richly flavored meat, fish and vegetable dishes which are now available for delivery to you.', '"\r\nארוחות צהריים  כל יום החל מ11:30 בבוקר.\r\nאוכל ביתי, מרוקאי.\r\nאוכל מוכן לשבת כל יום שישי החל מ8:30 בבוקר.\r\nכל סוגי הבשרים, עופות תוספות ממולאים, סלטים ביתיים פרנות מרוקאיות ועוד."', 'Derech Rabin 17, Beit Shemesh', 'דרך רבין 17, בית שמש ', 'Mehadrin Machpud', 'מחפוד - מהדרין ', 41, 0),
 (40, 'Mesubin', 'מסובין', 1, '991-1778', 50, 1, 0, '/m/en/img/cs-logo.png', 'Deluxe meat restaurant whose specialization is in its quality steaks is now available on Orderapp.  Choose from meat and chicken on skewers, burgers, steaks and the amazing taboon casseroles. All this, with a Rav Rubin Hechsher.', 'מסעדת בשרי דלוקס אשר ההתמחות הוא בסטייקים איכותו זמינה כעת על Orderapp. בחרו מתוך בשר ועוף על שיפודים, המבורגרים, סטייקים ותבשילי טבון מדהימים. כל זה, עם הכשר של רב רובין.', 'Paz Gas Station, Yigal Allon 2, Beit Shemesh', 'תחמת דלת פז, יגאל אלון 2, בית שמש', 'Mehadrin Rav Rubin', 'מהדרין - רב רובין', 42, 0),
 (41, 'GANIR', 'גניר', 1, '', 50, 1, 0, '/m/en/img/ganir_logo.png', 'Meat restaurant situated in the Har-Tuv industrial zone and has a family atmosphere. ', 'מסעדת גניר שוכנת באיזור תעשייה הר-טוב. אווירה ביתית ואוכל ביתי מעולה', '2 Hahar, Har Tuv Industrial Zone	', '	2 ההר, אזור תעשייה הר-טוב\n', 'Rabbanut Matei Yehuda', 'רבנות מטה יהודה', 38, 0),
-(42, 'Judica', 'ג''ודיקה', 1, '523288020,  029926070', 50, 1, 0, '/m/en/img/cs-logo.png', 'New meat restaurant in the Har-Tuv industrial zone. Fresh, homemade food at reasonable prices', 'מסעדת חדשה באיזור תעשייה הר-טוב. אוכל ביתי וטרי במחירים סבירים.', '2 Hamelacha, Har Tuv Industrial area', 'המלאכה 2, אזור תעשייה הר-טוב א', 'Kasher l''mehadrin', 'כשר מהדרין', 43, 0),
-(99999, 'ex', 'ex', 0, '', 0, 1, 1, '', '', '', '', '', '', '', 0, 0);
+(42, 'Judica', 'ג''ודיקה', 1, '523288020,  029926070', 50, 1, 0, '/m/en/img/cs-logo.png', 'New meat restaurant in the Har-Tuv industrial zone. Fresh, homemade food at reasonable prices', 'מסעדת חדשה באיזור תעשייה הר-טוב. אוכל ביתי וטרי במחירים סבירים.', '2 Hamelacha, Har Tuv Industrial area', 'המלאכה 2, אזור תעשייה הר-טוב א', 'Kasher l''mehadrin', 'כשר מהדרין', 43, 0);
 
 -- --------------------------------------------------------
 
@@ -5236,7 +5239,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26080 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26082 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15703,7 +15706,9 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (26053, 10000, 'Half portion', ' חצי מנה', 0, 0),
 (26054, 10000, 'Full portion', ' מנה', 10, 0),
 (26055, 10001, 'Half portion', ' חצי מנה', 0, 0),
-(26056, 10001, 'Full portion', ' מנה', 8, 0);
+(26056, 10001, 'Full portion', ' מנה', 8, 0),
+(26080, 100052, 'Spicy chili', '???? ?????', 0, NULL),
+(26081, 100052, 'large', '???? ?????', 36, NULL);
 
 -- --------------------------------------------------------
 
@@ -16404,7 +16409,7 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (269, 37, 'Tuesday', 'יום ג', '11:30', '11:30', '23:30', '23:30'),
 (270, 37, 'Wednesday', 'יום ד', '11:30', '11:30', '23:30', '23:30'),
 (271, 37, 'Thursday', 'יום ה', '11:30', '11:30', '23:30', '23:30'),
-(272, 37, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
+(272, 37, 'Friday', 'ששי', 'close', 'close', 'close', 'close'),
 (273, 37, 'Saturday', 'שבת', '20:30', '20:30', '23:00', '23:00'),
 (274, 39, 'Sunday', 'יום א', '08:00', '08:00', '19:00', '19:00'),
 (275, 39, 'Monday', 'יום ב', '08:00', '08:00', '17:00', '17:00'),

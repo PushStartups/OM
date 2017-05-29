@@ -32,8 +32,7 @@ DB::query("set names utf8");
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin-rtl.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/clockpicker.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/cropper.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/croppermain.css">
+ 
 
     <!-- We recommend you use "your_style.css" to override SmartAdmin
          specific styles this will also ensure you retrain your customization with each SmartAdmin update.
@@ -147,18 +146,18 @@ DB::query("set names utf8");
                 </ul>
             </li>
 
-            <li>
-                <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
-            </li>
-            <li>
-                <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>
-            </li>
-            <li>
-                <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>
-            </li>
-            <li>
-                <a href="logout.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-sign-out"></i> <span class="menu-item-parent">Sign Out</span></a>
-            </li>
+<!--            <li>-->
+<!--                <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="logout.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-sign-out"></i> <span class="menu-item-parent">Sign Out</span></a>-->
+<!--            </li>-->
         </ul>
     </nav>
 

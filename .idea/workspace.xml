@@ -2,1007 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/font-awesome/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/font-awesome/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.2/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.2/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/summernote.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/ajax-loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/alpha.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/female.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/male.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/sunny-big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/sunny.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/clear.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/colorblind-friendly/pt1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/colorblind-friendly/pt2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/colorblind-friendly/pt3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/cover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/cs_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/basic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/chat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/demo-smartbig-alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/demo-smartmedium-alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/demo-smartsmall-alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/detail-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/detail-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/e-comm/detail-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/hero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/image-placeholder-64x64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/iphoneview.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/layout-collapse-minified.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/layout-collapse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/layout-hidden.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/layout-menutop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/layout-rtl-menutop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/layout-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-glass.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-google.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-material.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-pixel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/layout-skins/skin-ultralight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/m1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/m2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/m3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/newsletter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/responseimg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/s1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/s2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/s3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/sa-demo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/sample.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/sidebar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/sidebarhero.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/site-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/site-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/video.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/widget-colorpicker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/dropzone/spritemap.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/dropzone/spritemap@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/favicon/favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/flags/de.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/flags/es.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/flags/flags.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/flags/us.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/glass.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/gradient/login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/hue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/Image.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/Nav_bar_back_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/Path 2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/Shopping-Cart-10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/X.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/add-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/alert.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-new-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg-opener.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/burger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/cards.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/cart-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/check.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/check02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/checked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/checked01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/cola.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/cola2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/cvs-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/delivery line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/delivery-desktop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/delivery-feed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/delivery-mobile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/drop-down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/drop_down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/fb-button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/fries.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/gallery-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/gallery.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/gp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/header--.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/header-.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/header-bg-new.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/header-bg-rtl.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/header-sm-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/home-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_calender.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_checkin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_close_black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_cvs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_message.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_phone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_reduce.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_status.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_timer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_visa_small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ic_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/icon01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/img1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/juice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/left_bottom-old.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/left_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/left_bottom_new.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/link.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/loader.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/loc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/logo-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/logo-credit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/logo-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/meal_vector.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/menu1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/menu2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/menu3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/menu4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/meshulashim-salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/new-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/next.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/ok_active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/onion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/pci-dss.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/pin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/pizza1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/pizza_pie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/pizza_slice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/popup-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/rest1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/restaurants-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/right_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/roza-appetizers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/salad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/salad1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/scoter-desk-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/scoter-m-he.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/shopping-cart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/small_visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_caviar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_sashimi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_sashimi2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_six.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_tamago.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_two.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/sushi_two2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/top_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/tw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/uncheck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/uncheck01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/img/winner-badge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/invoice/americanexpress.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/invoice/mastercard.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/invoice/paypal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/invoice/visa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jcrop/Jcrop.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_flat_0_999999_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_glass_75_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-bg_inset-soft_95_fef1ec_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_428bca_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_555555_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_999999_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_f0ad4e_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_f6cf3b_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/jqueryui/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo-.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo-blacknwhite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo-blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo-o.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo-pale.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/mappin-default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/minus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/mybg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/divider.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/graphy-xs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/graphy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/lightpaperfibers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/movable.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/nistri-xs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/nistri.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/overlay-pattern.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/paper-xs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/paper.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/pattern.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/sneaker_mesh_fabric-xs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/sneaker_mesh_fabric.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/tileable_wood_texture-xs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/tileable_wood_texture.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/plus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/realestate/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/realestate/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/realestate/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/realestate/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/realestate/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/realestate/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/restaurants-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/ribbon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sa-dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sa-default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/saturation.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/select2-spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/ipad-landscape.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/ipad-portrait.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/iphone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/sptouch-icon-iphone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/touch-icon-ipad-retina.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/touch-icon-ipad.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/splash/touch-icon-iphone-retina.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-18.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-20-bw.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-20.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-21.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-22.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-23.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-24.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-full-9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-18.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-20.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-21.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-22.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-23.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-24.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/superbox/superbox-thumb-9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/versions/ajaxversion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/versions/angularversion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/versions/dotnetversion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/versions/htmlversion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/versions/phpversion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/versions/reactversion.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/violate.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/voicecommand/active-btn.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/vt-menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/about/dialogs/logo_ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/fakeobjects/images/spacer.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/flash/images/placeholder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/images/hiddenfield.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/iframe/images/placeholder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/image/images/noimage.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/link/images/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/link/images/hidpi/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/magicline/images/hidpi/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/magicline/images/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/pagebreak/images/pagebreak.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_address.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_blockquote.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_div.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_h1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_h2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_h3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_h4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_h5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_h6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_p.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/showblocks/images/block_pre.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/angel_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/angry_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/broken_heart.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/confused_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/cry_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/devil_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/embaressed_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/embarrassed_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/envelope.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/heart.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/kiss.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/lightbulb.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/omg_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/regular_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/sad_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/shades_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/teeth_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/thumbs_down.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/thumbs_up.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/tongue_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/tounge_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/images/wink_smile.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/templates/templates/images/template1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/templates/templates/images/template2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/templates/templates/images/template3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/assets/inlineall/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/assets/sample.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/hidpi/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/hidpi/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/hidpi/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/hidpi/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/images/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/swf/copy_csv_xls.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/swf/copy_csv_xls_pdf.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/bigbox.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/bigbox.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/messagebox.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/messagebox.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/smallbox.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/smallbox.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/voice_alert.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/voice_alert.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/voice_off.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/voice_off.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/voice_on.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/voice_on.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/rebar/screamy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/add-subitems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/edit_category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/edit_extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/edit_item.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/edit_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/edit_subitem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/insert-timing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/insert_new_extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/insert_new_subitem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/edit-category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/edit-extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/edit-items.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/edit-restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/edit-subitems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/import-category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/import-extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/import-items.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/import-subitems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert_new_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/add-choices-addons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/add-subitem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/edit-category.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/edit-extra.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/edit-item.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/edit-restaurant.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/edit-subitem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sample-category.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sample-items.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sample-subitems.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-choices-addons.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-company-restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-company-users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-new-category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-new-company.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-new-items.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-new-restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-restaurant-timing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/add-subitems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/add_new_company.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/add_new_restaurant_in_company.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/change_hide_status.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/change_rank.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/change_vote_status.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/delete_company_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/delete_company_user.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/demowidget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/edit_category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/edit_extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/edit_item.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/edit_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/edit_subitem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/email-compose.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/email-opened.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/email-reply.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/email-template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/email/email-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/insert-timing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_item.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_subitem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/modal-content/modal-voicecommand.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/notify/mail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/notify/notifications.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/notify/tasks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/refund_amount.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/suggest_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/ajax/website-template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/b2b-order-detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/b2b-orders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/companies.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/clockpicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/croppermain.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/demo.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/invoice.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/lockscreen.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/orderappadmin-production-plugins.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/orderappadmin-production.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/orderappadmin-rtl.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/orderappadmin-skins.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/orderappadmin.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/css/your_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/dashboard-social.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/data/dataList.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/edit-category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/edit-extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/edit-items.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/edit-restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/edit-subitems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/font-awesome/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/font-awesome/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/font-awesome/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.2/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.2/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.2/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.2/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/fontawesome4.5/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/summernote.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/fonts/summernote.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/footer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/header.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/avatars/copyright.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/demo/copyright.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/glass-image-copyright.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/invoice/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/img/pattern/license-info.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/import-category.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/import-extras.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/import-items.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/import-subitems.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/import-users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/inc/Pagination.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/inc/constants.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/inc/functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/inc/initDb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/inc/meekrodb.2.3.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/inc/render.inc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/insert_new_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/app.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/app.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/bootstrap/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-choices-addons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-company-user.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-category.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-company.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-item.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-restaurant.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-timing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-subitem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/clockpicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/cropper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/edit-category.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/edit-extra.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/edit-item.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/edit-restaurant.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/edit-subitem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/refund.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/restaurants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/custom/tether.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/demo.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/libs/jquery-2.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/libs/jquery-2.1.1.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/libs/jquery-ui-1.10.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/notification/SmartNotification.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-duallistbox/jquery.bootstrap-duallistbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-progressbar/bootstrap-progressbar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-slider/bootstrap-slider.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-tags/bootstrap-tagsinput-angular.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-tags/dist/bootstrap-tagsinput.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstraptree/bootstrap-tree.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/bootstrapValidator.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/ar_MA.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/be_NL.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/bg_BG.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/cs_CZ.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/da_DK.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/de_DE.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/en_US.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/es_CL.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/es_ES.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/fr_FR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/gr_EL.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/hu_HU.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/it_IT.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/nl_NL.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/pl_PL.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/pt_BR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/tr_TR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/vi_VN.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/zh_CN.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/bootstrapvalidator/language/zh_TW.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/chartjs/chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/CHANGES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/adapters/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/build-config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/ckeditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/contents.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/bn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/bs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/en-au.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/en-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/en-gb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/fo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/about/dialogs/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/clipboard/dialogs/paste.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/colordialog/dialogs/colordialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/dialog/dialogDefinition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/div/dialogs/div.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/find/dialogs/find.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/flash/dialogs/flash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/hiddenfield.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/radio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/select.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/textarea.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/forms/dialogs/textfield.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/iframe/dialogs/iframe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/image/dialogs/image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/link/dialogs/anchor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/link/dialogs/link.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/liststyle/dialogs/liststyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/pastefromword/filter/default.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/preview/preview.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/scayt/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/scayt/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/scayt/dialogs/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/scayt/dialogs/toolbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/smiley/dialogs/smiley.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/specialchar/dialogs/specialchar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/table/dialogs/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/tabletools/dialogs/tableCell.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/templates/dialogs/templates.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/templates/dialogs/templates.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/templates/templates/default.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/dialogs/ciframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/dialogs/tmp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/dialogs/wsc.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/dialogs/wsc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/api.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/appendto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/assets/outputxhtml/outputxhtml.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/assets/posteddata.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/assets/sample.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/assets/uilanguages/languages.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/datafiltering.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/divreplace.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/inlineall.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/inlinebycode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/inlinetextarea.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/jquery.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/dialog/assets/my_dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/dialog/dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/enterkey/enterkey.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/htmlwriter/outputforflash.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/htmlwriter/outputhtml.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/magicline/magicline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/toolbar/toolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/plugins/wysiwygarea/fullpage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/readonly.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/replacebyclass.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/replacebycode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/sample.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/sample.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/sample_posteddata.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/tabindex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/uicolor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/uilanguages.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/samples/xhtmlstyle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/dialog_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/dialog_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/dialog_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/dialog_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/dialog_opera.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/editor_gecko.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/editor_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/editor_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/editor_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/editor_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/skins/moono/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ckeditor/styles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/clockpicker/clockpicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/colorpicker/bootstrap-colorpicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/cssemotions/jquery.cssemoticons.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatable-responsive/datatables.responsive.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/dataTables.bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/dataTables.colReorder.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/dataTables.colVis.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/dataTables.tableTools.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/datatables/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/delete-table-row/delete-table-row.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/dropzone/dropzone-amd-module.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/dropzone/dropzone.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/dygraphs/demo-data.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/dygraphs/dygraph-combined.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/fastclick/fastclick.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.colorhelpers.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.canvas.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.categories.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.crosshair.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.cust.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.errorbars.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.fillbetween.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.image.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.navigate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.orderBar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.pie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.resize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.selection.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.stack.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.symbol.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.threshold.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.time.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/flot/jquery.flot.tooltip.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/fuelux/wizard/wizard.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/fullcalendar/-jquery.fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/fullcalendar/jquery.fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/gmap3/gmap3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/highChartCore/highcharts-custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/highchartTable/jquery.highchartTable.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ie-placeholder_/jquery.placeholder.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ion-slider/ion.rangeSlider-backup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/ion-slider/ion.rangeSlider.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jcrop/jquery.Jcrop.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jcrop/jquery.color.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jqgrid/grid.locale-en.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jqgrid/jquery.jqGrid.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jquery-form/jquery-form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jquery-nestable/jquery.nestable.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/jquery-validate/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/js-migrate/jquery-migrate-1.2.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/knob/jquery.knob.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/markdown/bootstrap-markdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/markdown/markdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/markdown/to-markdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/masked-input/jquery.maskedinput.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/maxlength/bootstrap-maxlength.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/moment/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/morris/morris-chart-settings.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/morris/morris.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/morris/raphael.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/msie-fix/jquery.mb.browser.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/multiselect/bootstrap-multiselect.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/noUiSlider/jquery.nouislider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/noUiSlider/jquery.nouislider.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/pace/pace.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/select2/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/select2/select2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/selectToUISlider/selectToUISlider.jQuery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/slimscroll/jquery.slimscroll.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/sparkline/jquery.sparkline.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/summernote/summernote.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/superbox/superbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/throttle-denounce/jquery.ba-throttle-debounce.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/typeahead/typeahead.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/typeahead/typeaheadjs.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/vectormap/jquery-jvectormap-1.1.1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/vectormap/jquery-jvectormap-1.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/vectormap/jquery-jvectormap-1.2.2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/vectormap/jquery-jvectormap-world-mill-en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/x-editable/jquery.mockjax.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/x-editable/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/plugin/x-editable/x-editable.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/smart-chat-ui/smart.chat.manager.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/smart-chat-ui/smart.chat.ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/smartwidgets/jarvis.widget.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/js/speech/voicecommand.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/logout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/order-detail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/orders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/php/demo-comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/php/demo-contacts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/php/demo-register.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sample-category.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sample-items.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sample-subitems.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sample.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sound/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/suggest_restaurant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/xml/gmap/pins.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/insert_delivery_address.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-choices-addons.php" afterPath="$PROJECT_DIR$/admin/add-choices-addons.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-category.php" afterPath="$PROJECT_DIR$/admin/add-new-category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-items.php" afterPath="$PROJECT_DIR$/admin/add-new-items.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-restaurant.php" afterPath="$PROJECT_DIR$/admin/add-new-restaurant.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-restaurant-timing.php" afterPath="$PROJECT_DIR$/admin/add-restaurant-timing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/insert_new_category.php" afterPath="$PROJECT_DIR$/admin/ajax/insert_new_category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/insert_new_restaurant.php" afterPath="$PROJECT_DIR$/admin/ajax/insert_new_restaurant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/footer.php" afterPath="$PROJECT_DIR$/admin/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/inc/functions.php" afterPath="$PROJECT_DIR$/admin/inc/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-category.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-item.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-restaurant.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-restaurant.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-new-restaurant.php" afterPath="$PROJECT_DIR$/dataentry/add-new-restaurant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/ajax/insert_new_restaurant.php" afterPath="$PROJECT_DIR$/dataentry/ajax/insert_new_restaurant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/header.php" afterPath="$PROJECT_DIR$/dataentry/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/import-category.php" afterPath="$PROJECT_DIR$/dataentry/import-category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/inc/functions.php" afterPath="$PROJECT_DIR$/dataentry/inc/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/js/custom/add-new-category.js" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-category.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/js/custom/add-new-restaurant.js" afterPath="$PROJECT_DIR$/dataentry/js/custom/add-new-restaurant.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/confirm-order.css" afterPath="$PROJECT_DIR$/en/style/confirm-order.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/confirm-order.html" afterPath="$PROJECT_DIR$/he/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/style/confirm-order.css" afterPath="$PROJECT_DIR$/he/style/confirm-order.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1184,52 +197,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="restapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="en" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1880,14 +847,7 @@
       <workItem from="1495871137919" duration="1127000" />
       <workItem from="1495947810760" duration="7418000" />
       <workItem from="1495978890207" duration="599000" />
-      <workItem from="1496035696845" duration="3565000" />
-    </task>
-    <task id="LOCAL-00089" summary="Updates&#10;&#10;">
-      <created>1493039456490</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1493039456491</updated>
+      <workItem from="1496035696845" duration="4988000" />
     </task>
     <task id="LOCAL-00090" summary="Updates&#10;&#10;">
       <created>1493040886808</created>
@@ -2225,11 +1185,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495952703503</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="DB update + code latest">
+      <created>1496042231819</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1496042231821</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="964335000" />
+    <option name="totallyTimeSpent" value="965758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
@@ -2628,274 +1595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="864" column="11" lean-forward="false" selection-start-line="864" selection-start-column="11" selection-end-line="864" selection-end-column="11" />
-          <folding>
-            <marker date="1496041652033" expanded="true" signature="1175:1195" ph="select * fro... cities" />
-            <marker date="1496041652033" expanded="true" signature="33949:33994" ph="select * fro... categories" />
-            <marker date="1496041652033" expanded="true" signature="34187:34244" ph="select resta... menus" />
-            <marker date="1496041652033" expanded="true" signature="34286:34354" ph="select * fro... restaurants" />
-            <marker date="1496041652033" expanded="true" signature="35304:35371" ph="update categ... " />
-            <marker date="1496041652033" expanded="true" signature="67768:67814" ph="select * fro... restaurants" />
-            <marker date="1496041652033" expanded="true" signature="68421:68484" ph="update resta... " />
-            <marker date="1496041652033" expanded="true" signature="68809:68864" ph="select * fro... default_settings" />
-            <marker date="1496041652033" expanded="true" signature="69541:69620" ph="select * fro... restaurants" />
-            <marker date="1496041652033" expanded="true" signature="69779:69859" ph="select tag_i... restaurant_tags" />
-            <marker date="1496041652033" expanded="true" signature="70039:70092" ph="select * fro... tags" />
-            <marker date="1496041652033" expanded="true" signature="70260:70340" ph="select url f... restaurant_gallery" />
-            <marker date="1496041652033" expanded="true" signature="70484:70563" ph="select * fro... weekly_availibility" />
-            <marker date="1496041652033" expanded="true" signature="71923:71991" ph="select * fro... delivery_fee" />
-            <marker date="1496041652033" expanded="true" signature="75555:75610" ph="select * fro... menus" />
-            <marker date="1496041652033" expanded="true" signature="75719:75781" ph="select * fro... categories" />
-            <marker date="1496041652033" expanded="true" signature="75995:76075" ph="select * fro... items" />
-            <marker date="1496041652033" expanded="true" signature="76710:76855" ph="select item_... business_lunch_detail" />
-            <marker date="1496041652033" expanded="true" signature="76972:77092" ph="select * fro... items" />
-            <marker date="1496041652033" expanded="true" signature="77372:77467" ph="select * fro... extras" />
-            <marker date="1496041652033" expanded="true" signature="77634:77696" ph="select * fro... subitems" />
-            <marker date="1496041652033" expanded="true" signature="79346:79393" ph="select * fro... extras" />
-            <marker date="1496041652033" expanded="true" signature="79565:79628" ph="select * fro... subitems" />
-            <marker date="1496041652033" expanded="true" signature="81310:81367" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="82850:82891" ph="select * fro... users" />
-            <marker date="1496041652033" expanded="true" signature="83405:83478" ph="update users... " />
-            <marker date="1496041652033" expanded="true" signature="88487:88557" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="90556:90615" ph="select * fro... users" />
-            <marker date="1496041652033" expanded="true" signature="91180:91235" ph="select * fro... users" />
-            <marker date="1496041652033" expanded="true" signature="91967:92050" ph="select * fro... users" />
-            <marker date="1496041652033" expanded="true" signature="92665:92724" ph="select * fro... users" />
-            <marker date="1496041652033" expanded="true" signature="93626:93703" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="93774:93853" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="98965:99028" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="99341:99404" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="101110:101185" ph="select id,sm... users" />
-            <marker date="1496041652033" expanded="true" signature="102902:105024" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="102919:105008" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="103051:104991" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="103541:103710" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="103850:104964" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="106322:106565" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="106333:106565" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="106679:106699" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="106812:106951" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="107046:107134" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="107201:107258" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="107367:107460" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="107632:107669" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="107932:107970" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="108125:108147" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="108267:108302" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="108472:108507" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="108676:108711" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="108882:108917" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="109089:109124" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="109295:109330" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="109625:109655" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="109667:109705" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="111634:113756" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="111651:113740" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="111783:113723" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="112273:112442" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="112582:113696" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="117854:117875" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="117911:117991" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118027:118049" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118145:118301" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118338:118378" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118413:118443" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118485:118515" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118623:118640" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118733:118763" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="118807:118813" ph="&amp;nbsp;" />
-            <marker date="1496041652033" expanded="true" signature="118874:118891" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="119044:119072" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="119161:119236" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="119276:119325" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="119446:119484" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="119524:119530" ph="&amp;nbsp;" />
-            <marker date="1496041652033" expanded="true" signature="119544:119558" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="119695:119745" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="120232:120249" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="120505:120580" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="120620:120669" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="120785:120823" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="120838:120853" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121080:121179" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121268:121303" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121342:121356" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121407:121445" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121461:121476" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121606:121641" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121680:121694" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121750:121788" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="121804:121819" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122118:122153" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122196:122210" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122305:122343" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122359:122374" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122519:122554" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122597:122611" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122683:122721" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122737:122752" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="122978:123012" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123045:123059" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123156:123203" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123255:123290" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123337:123352" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123442:123492" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123527:123542" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123558:123569" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123666:123703" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123793:123843" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123878:123893" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="123909:123920" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124018:124055" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124148:124198" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124233:124268" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124284:124297" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124462:124499" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124684:124721" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124854:124904" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124939:124954" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="124970:124981" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="125079:125116" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="125207:125257" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="125292:125307" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="125323:125335" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="125432:125469" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127192:127213" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127250:127349" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127535:127557" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127593:127749" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127788:127828" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127863:127893" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="127938:127954" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128025:128043" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128072:128102" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128223:128253" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128351:128368" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128612:128640" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128728:128803" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128840:128889" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="128928:128943" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="129043:129049" ph="&amp;nbsp;" />
-            <marker date="1496041652033" expanded="true" signature="129166:129194" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="129283:129333" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="129500:129531" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="129677:129708" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="129864:129895" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130079:130178" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130267:130302" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130340:130360" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130376:130391" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130483:130518" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130620:130655" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130693:130713" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130729:130744" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="130842:130877" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131062:131108" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131134:131168" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131278:131381" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131433:131468" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131515:131549" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131641:131691" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131725:131763" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131827:131842" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131856:131867" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="131989:132039" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132073:132111" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132178:132193" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132207:132218" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132341:132391" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132489:132527" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132719:132757" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132871:132906" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="132921:132933" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133062:133112" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133147:133185" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133249:133265" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133279:133290" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133416:133466" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133501:133539" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133610:133626" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="133642:133654" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="135490:135511" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="135548:135647" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="135833:135855" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="135891:136047" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136086:136126" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136161:136191" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136236:136252" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136323:136341" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136370:136400" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136521:136551" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136649:136666" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="136910:136938" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137026:137101" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137138:137187" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137226:137241" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137341:137347" ph="&amp;nbsp;" />
-            <marker date="1496041652033" expanded="true" signature="137464:137492" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137581:137631" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137798:137829" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="137975:138006" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138162:138193" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138434:138480" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138506:138540" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138649:138748" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138837:138872" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138910:138930" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="138946:138961" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139053:139088" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139190:139225" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139263:139283" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139299:139314" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139412:139447" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139573:139676" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139728:139763" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139810:139844" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="139936:139986" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140020:140058" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140122:140137" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140151:140162" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140284:140334" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140368:140406" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140473:140488" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140502:140513" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140636:140686" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="140784:140822" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141014:141052" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141166:141201" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141216:141228" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141357:141407" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141442:141480" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141544:141560" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141574:141585" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141711:141761" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141796:141834" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141905:141921" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="141937:141949" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="143624:143804" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="143649:143716" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="143749:143792" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="143843:143912" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="143977:144038" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="144164:144305" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="144369:144412" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="144483:144556" ph="..." />
-            <marker date="1496041652033" expanded="true" signature="144682:144753" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/confirm-order.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1682">
@@ -3187,6 +1886,274 @@
             <marker date="1496041504708" expanded="true" signature="67175:67531" ph="{...}" />
             <marker date="1496041504708" expanded="true" signature="67569:68255" ph="{...}" />
             <marker date="1496041504708" expanded="true" signature="68335:68405" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_dump/orderapp.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restapi/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="39" column="42" lean-forward="false" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <marker date="1496041652033" expanded="true" signature="1175:1195" ph="select * fro... cities" />
+            <marker date="1496041652033" expanded="true" signature="33949:33994" ph="select * fro... categories" />
+            <marker date="1496041652033" expanded="true" signature="34187:34244" ph="select resta... menus" />
+            <marker date="1496041652033" expanded="true" signature="34286:34354" ph="select * fro... restaurants" />
+            <marker date="1496041652033" expanded="true" signature="35304:35371" ph="update categ... " />
+            <marker date="1496041652033" expanded="true" signature="67768:67814" ph="select * fro... restaurants" />
+            <marker date="1496041652033" expanded="true" signature="68421:68484" ph="update resta... " />
+            <marker date="1496041652033" expanded="true" signature="68809:68864" ph="select * fro... default_settings" />
+            <marker date="1496041652033" expanded="true" signature="69541:69620" ph="select * fro... restaurants" />
+            <marker date="1496041652033" expanded="true" signature="69779:69859" ph="select tag_i... restaurant_tags" />
+            <marker date="1496041652033" expanded="true" signature="70039:70092" ph="select * fro... tags" />
+            <marker date="1496041652033" expanded="true" signature="70260:70340" ph="select url f... restaurant_gallery" />
+            <marker date="1496041652033" expanded="true" signature="70484:70563" ph="select * fro... weekly_availibility" />
+            <marker date="1496041652033" expanded="true" signature="71923:71991" ph="select * fro... delivery_fee" />
+            <marker date="1496041652033" expanded="true" signature="75555:75610" ph="select * fro... menus" />
+            <marker date="1496041652033" expanded="true" signature="75719:75781" ph="select * fro... categories" />
+            <marker date="1496041652033" expanded="true" signature="75995:76075" ph="select * fro... items" />
+            <marker date="1496041652033" expanded="true" signature="76710:76855" ph="select item_... business_lunch_detail" />
+            <marker date="1496041652033" expanded="true" signature="76972:77092" ph="select * fro... items" />
+            <marker date="1496041652033" expanded="true" signature="77372:77467" ph="select * fro... extras" />
+            <marker date="1496041652033" expanded="true" signature="77634:77696" ph="select * fro... subitems" />
+            <marker date="1496041652033" expanded="true" signature="79346:79393" ph="select * fro... extras" />
+            <marker date="1496041652033" expanded="true" signature="79565:79628" ph="select * fro... subitems" />
+            <marker date="1496041652033" expanded="true" signature="81310:81367" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="82850:82891" ph="select * fro... users" />
+            <marker date="1496041652033" expanded="true" signature="83405:83478" ph="update users... " />
+            <marker date="1496041652033" expanded="true" signature="88487:88557" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="90556:90615" ph="select * fro... users" />
+            <marker date="1496041652033" expanded="true" signature="91180:91235" ph="select * fro... users" />
+            <marker date="1496041652033" expanded="true" signature="91967:92050" ph="select * fro... users" />
+            <marker date="1496041652033" expanded="true" signature="92665:92724" ph="select * fro... users" />
+            <marker date="1496041652033" expanded="true" signature="93626:93703" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="93774:93853" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="98965:99028" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="99341:99404" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="101110:101185" ph="select id,sm... users" />
+            <marker date="1496041652033" expanded="true" signature="102902:105024" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="102919:105008" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="103051:104991" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="103541:103710" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="103850:104964" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="106322:106565" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="106333:106565" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="106679:106699" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="106812:106951" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="107046:107134" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="107201:107258" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="107367:107460" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="107632:107669" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="107932:107970" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="108125:108147" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="108267:108302" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="108472:108507" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="108676:108711" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="108882:108917" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="109089:109124" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="109295:109330" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="109625:109655" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="109667:109705" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="111634:113756" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="111651:113740" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="111783:113723" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="112273:112442" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="112582:113696" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="117854:117875" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="117911:117991" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118027:118049" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118145:118301" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118338:118378" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118413:118443" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118485:118515" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118623:118640" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118733:118763" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="118807:118813" ph="&amp;nbsp;" />
+            <marker date="1496041652033" expanded="true" signature="118874:118891" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="119044:119072" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="119161:119236" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="119276:119325" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="119446:119484" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="119524:119530" ph="&amp;nbsp;" />
+            <marker date="1496041652033" expanded="true" signature="119544:119558" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="119695:119745" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="120232:120249" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="120505:120580" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="120620:120669" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="120785:120823" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="120838:120853" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121080:121179" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121268:121303" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121342:121356" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121407:121445" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121461:121476" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121606:121641" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121680:121694" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121750:121788" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="121804:121819" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122118:122153" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122196:122210" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122305:122343" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122359:122374" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122519:122554" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122597:122611" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122683:122721" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122737:122752" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="122978:123012" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123045:123059" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123156:123203" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123255:123290" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123337:123352" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123442:123492" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123527:123542" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123558:123569" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123666:123703" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123793:123843" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123878:123893" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="123909:123920" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124018:124055" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124148:124198" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124233:124268" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124284:124297" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124462:124499" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124684:124721" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124854:124904" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124939:124954" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="124970:124981" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="125079:125116" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="125207:125257" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="125292:125307" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="125323:125335" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="125432:125469" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127192:127213" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127250:127349" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127535:127557" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127593:127749" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127788:127828" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127863:127893" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="127938:127954" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128025:128043" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128072:128102" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128223:128253" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128351:128368" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128612:128640" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128728:128803" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128840:128889" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="128928:128943" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="129043:129049" ph="&amp;nbsp;" />
+            <marker date="1496041652033" expanded="true" signature="129166:129194" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="129283:129333" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="129500:129531" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="129677:129708" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="129864:129895" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130079:130178" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130267:130302" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130340:130360" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130376:130391" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130483:130518" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130620:130655" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130693:130713" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130729:130744" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="130842:130877" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131062:131108" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131134:131168" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131278:131381" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131433:131468" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131515:131549" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131641:131691" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131725:131763" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131827:131842" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131856:131867" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="131989:132039" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132073:132111" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132178:132193" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132207:132218" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132341:132391" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132489:132527" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132719:132757" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132871:132906" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="132921:132933" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133062:133112" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133147:133185" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133249:133265" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133279:133290" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133416:133466" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133501:133539" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133610:133626" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="133642:133654" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="135490:135511" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="135548:135647" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="135833:135855" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="135891:136047" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136086:136126" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136161:136191" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136236:136252" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136323:136341" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136370:136400" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136521:136551" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136649:136666" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="136910:136938" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137026:137101" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137138:137187" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137226:137241" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137341:137347" ph="&amp;nbsp;" />
+            <marker date="1496041652033" expanded="true" signature="137464:137492" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137581:137631" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137798:137829" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="137975:138006" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138162:138193" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138434:138480" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138506:138540" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138649:138748" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138837:138872" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138910:138930" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="138946:138961" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139053:139088" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139190:139225" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139263:139283" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139299:139314" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139412:139447" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139573:139676" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139728:139763" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139810:139844" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="139936:139986" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140020:140058" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140122:140137" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140151:140162" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140284:140334" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140368:140406" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140473:140488" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140502:140513" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140636:140686" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="140784:140822" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141014:141052" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141166:141201" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141216:141228" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141357:141407" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141442:141480" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141544:141560" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141574:141585" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141711:141761" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141796:141834" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141905:141921" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="141937:141949" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="143624:143804" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="143649:143716" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="143749:143792" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="143843:143912" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="143977:144038" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="144164:144305" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="144369:144412" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="144483:144556" ph="..." />
+            <marker date="1496041652033" expanded="true" signature="144682:144753" ph="..." />
           </folding>
         </state>
       </provider>

@@ -6,6 +6,68 @@ if(isset($_GET['id']))
     $restaurant_id = $_GET['id'];
 
     $timings = getAllTimings($restaurant_id);
+
+    $count = 1;
+    $week1[] ="";
+    $week2[] ="";
+    $week3[] ="";
+    $week4[] ="";
+    $week5[] ="";
+    $week6[] ="";
+    $week7[] ="";
+
+    foreach ($timings as $time)
+    {
+        if($count == 1)
+        {
+            $week1['id']                    =  $time['id'];
+            $week1['opening_time']          =   $time['opening_time'];
+            $week1['closing_time']          =   $time['closing_time'];
+        }
+        if($count == 2)
+        {
+            $week2['id']                    =  $time['id'];
+            $week2['opening_time']          =   $time['opening_time'];
+            $week2['closing_time']          =   $time['closing_time'];
+        }
+        if($count == 3)
+        {
+            $week3['id']                    =  $time['id'];
+            $week3['opening_time']          =   $time['opening_time'];
+            $week3['closing_time']          =   $time['closing_time'];
+        }
+        if($count == 4)
+        {
+            $week4['id']                    =  $time['id'];
+            $week4['opening_time']          =   $time['opening_time'];
+            $week4['closing_time']          =   $time['closing_time'];
+        }
+        if($count == 5)
+        {
+            $week5['id']                    =  $time['id'];
+            $week5['opening_time']          =   $time['opening_time'];
+            $week5['closing_time']          =   $time['closing_time'];
+        }
+        if($count == 6)
+        {
+            $week6['id']                    =  $time['id'];
+            $week6['opening_time']          =   $time['opening_time'];
+            $week6['closing_time']          =   $time['closing_time'];
+        }
+        if($count == 7)
+        {
+            $week7['id']                    =  $time['id'];
+            $week7['opening_time']          =   $time['opening_time'];
+            $week7['closing_time']          =   $time['closing_time'];
+        }
+        $count++;
+
+    }
+
+
+    $delivery_address = getAllDeliveryAddress($restaurant_id);
+
+
 }
 else
 {
@@ -13,63 +75,7 @@ else
 }
 
 
-$timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
-$count = 1;
-$week1[] ="";
-$week2[] ="";
-$week3[] ="";
-$week4[] ="";
-$week5[] ="";
-$week6[] ="";
-$week7[] ="";
 
-foreach ($timings as $time)
-{
-    if($count == 1)
-    {
-        $week1['id']                    =  $time['id'];
-        $week1['opening_time']          =   $time['opening_time'];
-        $week1['closing_time']          =   $time['closing_time'];
-    }
-    if($count == 2)
-    {
-        $week2['id']                    =  $time['id'];
-        $week2['opening_time']          =   $time['opening_time'];
-        $week2['closing_time']          =   $time['closing_time'];
-    }
-    if($count == 3)
-    {
-        $week3['id']                    =  $time['id'];
-        $week3['opening_time']          =   $time['opening_time'];
-        $week3['closing_time']          =   $time['closing_time'];
-    }
-    if($count == 4)
-    {
-        $week4['id']                    =  $time['id'];
-        $week4['opening_time']          =   $time['opening_time'];
-        $week4['closing_time']          =   $time['closing_time'];
-    }
-    if($count == 5)
-    {
-        $week5['id']                    =  $time['id'];
-        $week5['opening_time']          =   $time['opening_time'];
-        $week5['closing_time']          =   $time['closing_time'];
-    }
-    if($count == 6)
-    {
-        $week6['id']                    =  $time['id'];
-        $week6['opening_time']          =   $time['opening_time'];
-        $week6['closing_time']          =   $time['closing_time'];
-    }
-    if($count == 7)
-    {
-        $week7['id']                    =  $time['id'];
-        $week7['opening_time']          =   $time['opening_time'];
-        $week7['closing_time']          =   $time['closing_time'];
-    }
-    $count++;
-
-}
 
 
 ?>
@@ -111,7 +117,7 @@ foreach ($timings as $time)
 
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Restaurants</h2>
+                            <h2>Restaurants Timing</h2>
                         </header>
 
                         <!-- widget div-->
@@ -356,8 +362,89 @@ foreach ($timings as $time)
                                 </form>
 
 
-                            </div>
+                                <!--   RESTAURANT DELIVERY ADDRESS AND FEES-->
 
+                                <div class="widget-body no-padding">
+                                    <table class="table table-striped table-bordered table-hover" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th data-class="expand"><i class="fa fa-fw fa-address-card  text-muted hidden-md hidden-sm hidden-xs"></i> Address</th>
+                                            <th data-hide="expand"><i class="fa-fw fa fa-address-card  text-muted hidden-md hidden-sm hidden-xs"></i> כתובת </th>
+                                            <th data-hide="phone"><i class="fa-fw fa fa-money  text-muted hidden-md hidden-sm hidden-xs"></i> Fees </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+
+                                        foreach($delivery_address as $delivery) {
+
+                                            ?>
+                                            <tr>
+
+                                                <td><?=$delivery['area_en']?></td>
+                                                <td><?=$delivery['area_he']?></td>
+                                                <td><?=$delivery['fee']?></td>
+
+                                            </tr>
+                                        <?php  } ?>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div>
+
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+                                    </div>
+
+                                    <div class="widget-body">
+
+                                <div onclick="show_delivery_address()" class="btn btn-primary btn-lg" style="margin-top: 2%;">
+                                    <i class="fa fa-plus"></i>
+                                    Delivery Address
+                                </div>
+
+                                <div id="add-delivery-address" style="display: none">
+                                    <form method="post">
+                                        <fieldset>
+
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <input class="form-control" id="area_en" name="area_en" placeholder="Enter Address" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_en_error"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label dir="rtl">כתובת</label>
+                                                <input style="direction:RTL;" class="form-control" id="area_he" name="area_he"  type="text">
+                                                <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_he_error"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Fees</label>
+                                                <input class="form-control" id="fee" name="fee" placeholder="Enter Fees" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="fee_error"></span>
+                                            </div>
+
+
+
+
+                                        </fieldset>
+                                        <div class="form-actions">
+                                            <div onclick="add_delivery_address('<?=$restaurant_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
+                                                <i class="fa fa-save"></i>
+                                                Submit
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                                </div>
+                                <!-- end widget content -->
+                            </div>
+                            <!-- end widget div -->
                         </div>
 
                     </div>

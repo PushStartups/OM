@@ -1,3 +1,14 @@
+
+function show_delivery_address()
+{
+    $("#add-delivery-address").show();
+}
+
+
+
+
+
+
 $('#sunday_start_time').bind('input', function() {
 
     document.getElementById('error_sunday_start_time').innerHTML = "";
@@ -79,6 +90,37 @@ $('#saturday_start_time').bind('input', function() {
 $('#saturday_end_time').bind('input', function() {
 
     document.getElementById('error_saturday_end_time').innerHTML = "";
+
+});
+
+
+
+
+
+
+$('#area_en').bind('input', function() {
+
+    document.getElementById('area_en_error').innerHTML = "";
+
+});
+
+$('#area_he').bind('input', function() {
+
+    document.getElementById('area_he_error').innerHTML = "";
+
+});
+
+
+$('#fee').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('fee_error').innerHTML = "Wrong Number!";
+    }
+    else
+    {
+        document.getElementById('fee_error').innerHTML = "";
+    }
 
 });
 
@@ -260,3 +302,70 @@ function add_timing(restaurant_id,url)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ADDING DELIVERY ADDRESS
+
+function add_delivery_address(restaurant_id,url)
+{
+
+    var area_en       =  $('#area_en').val();
+    var area_he       =  $('#area_he').val();
+    var fee           =  $('#fee').val();
+
+
+
+    if (area_en == "")
+    {
+        $('#area_en_error').html('Required*');
+        return;
+    }
+    if (area_he == "")
+    {
+        $('#area_he_error').html('Required*');
+        return;
+    }
+    if (fee == "")
+    {
+        $('#fee_error').html('Required*');
+        return;
+    }
+
+
+    var postForm = { //Fetch form data
+
+        'restaurant_id'           :  restaurant_id,
+
+        'area_en'       :  $('#area_en').val(),
+        'area_he'       :  $('#area_he').val(),
+        'fee'           :  $('#fee').val(),
+
+    };
+
+
+
+    addLoading();
+    $.ajax({
+        url:"ajax/insert_delivery_address.php",
+        method:"post",
+        data:postForm,
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("Adrress added successfully");
+            window.location.href = url;
+        }
+    });
+}

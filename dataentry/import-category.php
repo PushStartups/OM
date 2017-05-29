@@ -28,8 +28,6 @@ if(isset($_POST["Import"])){
                 $sort                   =   $secondlastSortId + 1;
                 DB::query("set names utf8");
                 DB::insert('categories', array(
-
-                    "id"                    =>      $id,
                     "menu_id"               =>      $menu_id,
                     "is_discount"           =>      $getData[0],
                     "name_en"               =>      $getData[1],
