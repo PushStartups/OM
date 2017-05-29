@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/sample-extras.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataentry/sample-extras.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-choices-addons.php" afterPath="$PROJECT_DIR$/admin/add-choices-addons.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-category.php" afterPath="$PROJECT_DIR$/admin/add-new-category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-items.php" afterPath="$PROJECT_DIR$/admin/add-new-items.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-restaurant-timing.php" afterPath="$PROJECT_DIR$/admin/add-restaurant-timing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-subitems.php" afterPath="$PROJECT_DIR$/admin/add-subitems.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-choices-addons.php" afterPath="$PROJECT_DIR$/dataentry/add-choices-addons.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-new-category.php" afterPath="$PROJECT_DIR$/dataentry/add-new-category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-new-items.php" afterPath="$PROJECT_DIR$/dataentry/add-new-items.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/add-subitems.php" afterPath="$PROJECT_DIR$/dataentry/add-subitems.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/sample-category.csv" afterPath="$PROJECT_DIR$/dataentry/sample-category.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataentry/sample-items.csv" afterPath="$PROJECT_DIR$/dataentry/sample-items.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -834,14 +820,7 @@
       <workItem from="1495871137919" duration="1127000" />
       <workItem from="1495947810760" duration="7418000" />
       <workItem from="1495978890207" duration="599000" />
-      <workItem from="1496035696845" duration="7113000" />
-    </task>
-    <task id="LOCAL-00091" summary="Updates IOS keyboard Bug Issue Resolved&#10;&#10;">
-      <created>1493103718091</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1493103718106</updated>
+      <workItem from="1496035696845" duration="7162000" />
     </task>
     <task id="LOCAL-00092" summary="htaccess issues resolved&#10;Code added for Native App&#10;&#10;">
       <created>1493111750146</created>
@@ -1179,11 +1158,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496047273468</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="DB update + code latest">
+      <created>1496050185513</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1496050185513</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="967883000" />
+    <option name="totallyTimeSpent" value="967932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
