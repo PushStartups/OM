@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2017 at 10:07 AM
--- Server version: 5.5.56
+-- Generation Time: May 29, 2017 at 10:25 AM
+-- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -1320,7 +1320,7 @@ CREATE TABLE IF NOT EXISTS `extras` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100058 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100056 ;
 
 --
 -- Dumping data for table `extras`
@@ -2947,9 +2947,7 @@ INSERT INTO `extras` (`id`, `item_id`, `name_en`, `type`, `price_replace`, `name
 (100052, 100053, 'Chips', 'Multiple', 0, 'ציפס', 2, 488),
 (100053, 100067, 'size', 'One', 0, 'גודל', 1, 492),
 (100054, 100068, 'Bagel type', 'One', 0, 'סוג בייגל', 12, 489),
-(100055, 100069, 'Size', 'One', 1, 'גודל', 1, 493),
-(100056, 100070, 'Size', 'One', 1, 'גודל', 1, 490),
-(100057, 100071, 'Size', 'One', 1, 'גודל', 1, 494);
+(100055, 100069, 'Size', 'One', 1, 'גודל', 1, 493);
 
 -- --------------------------------------------------------
 
@@ -3005,7 +3003,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `sort` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100072 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100071 ;
 
 --
 -- Dumping data for table `items`
@@ -4729,11 +4727,10 @@ INSERT INTO `items` (`id`, `category_id`, `hide`, `name_en`, `name_he`, `desc_en
 (100064, 100065, 0, 'sesame', 'שומשום', 'sesame bagel', 'בייגל שומשום', 5, 149),
 (100065, 100065, 0, 'poppy seed', 'פרג', 'poppy seed bagel', 'פרג בייגל', 5, 150),
 (100066, 100065, 0, 'cinnamon and raisin', 'קימון וצימוקים', 'cinnamon and raisin bagel', 'בייגל קינמון וצימוקים', 5, 151),
-(100067, 100070, 0, 'Cappuccino', 'הפוך', 'Espresso, hot milk, frothed milk', 'אספרסו, חלב חם, חלב מוקצף', 11, 152),
+(100067, 100070, 0, 'cappuccino', 'הפוך', 'espresso, hot milk, frothed milk', 'אספרסו, חלב חם, חלב מוקצף', 11, 152),
 (100068, 100066, 0, 'Butter bagel', 'בייגל חמאה', 'Butter bagel', 'בייגל חמאה', 12, 153),
 (100069, 100070, 0, 'Mocca', 'קפה מוקה', 'Espresso, warm frothed milk, cocoa', 'אספרסו, חלב מוקצף חם, קקאו', 11, 154),
-(100070, 100070, 0, 'Hot Chocolate', 'שוקו', 'Hot milk, cocoa, frothed milk', 'חלב חם, קקאו, חלב מוקצף', 11, 155),
-(100071, 100070, 0, 'Nescafe', 'נס קפה', 'Nescafe with water or milk', 'נס קפה על בסיס חלב או מים', 10, 156);
+(100070, 100070, 0, 'Hot Chocolate', 'שוקו', 'Hot milk, cocoa, frothed milk', 'חלב חם, קקאו, חלב מוקצף', 11, 155);
 
 -- --------------------------------------------------------
 
@@ -4790,7 +4787,8 @@ INSERT INTO `menus` (`id`, `restaurant_id`, `name_en`, `name_he`, `sort`) VALUES
 (33, 33, 'Lunch', 'ארוחת צהריים', 139),
 (37, 37, 'Lunch', 'ארוחת צהריים', 132),
 (41, 41, 'Lunch', 'ארוחת צהריים', 138),
-(42, 42, 'Lunch', 'ארוחת צהריים', 139);
+(42, 42, 'Lunch', 'ארוחת צהריים', 139),
+(100016, 100020, 'Lunch', 'ארוחת צהריים', 139);
 
 -- --------------------------------------------------------
 
@@ -5005,7 +5003,8 @@ INSERT INTO `restaurants` (`id`, `name_en`, `name_he`, `coming_soon`, `contact`,
 (39, 'Le''echol Etzel Julie', 'לאכול אצל ג''ולי', 1, '053-755-2019', 50, 1, 0, '/m/en/img/cs-logo.png', 'Genuine Moroccan food, cooked with love by Julie, who is the sister of the famous TV chef, Jackie Azoulai.  Julie cooks from the heart and serves up richly flavored meat, fish and vegetable dishes which are now available for delivery to you.', '"\r\nארוחות צהריים  כל יום החל מ11:30 בבוקר.\r\nאוכל ביתי, מרוקאי.\r\nאוכל מוכן לשבת כל יום שישי החל מ8:30 בבוקר.\r\nכל סוגי הבשרים, עופות תוספות ממולאים, סלטים ביתיים פרנות מרוקאיות ועוד."', 'Derech Rabin 17, Beit Shemesh', 'דרך רבין 17, בית שמש ', 'Mehadrin Machpud', 'מחפוד - מהדרין ', 41, 0),
 (40, 'Mesubin', 'מסובין', 1, '991-1778', 50, 1, 0, '/m/en/img/cs-logo.png', 'Deluxe meat restaurant whose specialization is in its quality steaks is now available on Orderapp.  Choose from meat and chicken on skewers, burgers, steaks and the amazing taboon casseroles. All this, with a Rav Rubin Hechsher.', 'מסעדת בשרי דלוקס אשר ההתמחות הוא בסטייקים איכותו זמינה כעת על Orderapp. בחרו מתוך בשר ועוף על שיפודים, המבורגרים, סטייקים ותבשילי טבון מדהימים. כל זה, עם הכשר של רב רובין.', 'Paz Gas Station, Yigal Allon 2, Beit Shemesh', 'תחמת דלת פז, יגאל אלון 2, בית שמש', 'Mehadrin Rav Rubin', 'מהדרין - רב רובין', 42, 0),
 (41, 'GANIR', 'גניר', 1, '', 50, 1, 0, '/m/en/img/ganir_logo.png', 'Meat restaurant situated in the Har-Tuv industrial zone and has a family atmosphere. ', 'מסעדת גניר שוכנת באיזור תעשייה הר-טוב. אווירה ביתית ואוכל ביתי מעולה', '2 Hahar, Har Tuv Industrial Zone	', '	2 ההר, אזור תעשייה הר-טוב\n', 'Rabbanut Matei Yehuda', 'רבנות מטה יהודה', 38, 0),
-(42, 'Judica', 'ג''ודיקה', 1, '523288020,  029926070', 50, 1, 0, '/m/en/img/cs-logo.png', 'New meat restaurant in the Har-Tuv industrial zone. Fresh, homemade food at reasonable prices', 'מסעדת חדשה באיזור תעשייה הר-טוב. אוכל ביתי וטרי במחירים סבירים.', '2 Hamelacha, Har Tuv Industrial area', 'המלאכה 2, אזור תעשייה הר-טוב א', 'Kasher l''mehadrin', 'כשר מהדרין', 43, 0);
+(42, 'Judica', 'ג''ודיקה', 1, '523288020,  029926070', 50, 1, 0, '/m/en/img/cs-logo.png', 'New meat restaurant in the Har-Tuv industrial zone. Fresh, homemade food at reasonable prices', 'מסעדת חדשה באיזור תעשייה הר-טוב. אוכל ביתי וטרי במחירים סבירים.', '2 Hamelacha, Har Tuv Industrial area', 'המלאכה 2, אזור תעשייה הר-טוב א', 'Kasher l''mehadrin', 'כשר מהדרין', 43, 0),
+(100020, 'Holy Bagel ', 'הולי בייגל', 0, '0542567787', 50, 2, 0, '', 'Try our sandwiches, special breakfasts, quiches and salads at the Holy Bagel American Diner located in Modi''in, where we also grind our own coffee beans and make delicious desserts.  ', 'הולי בייגל סניף מודיעין הינו מזנון בסגנון אמריקאי המגיש מגוון כריכים, ארוחות בוקר, לזניות, קישים, סלטים בהרכבה עצמית ועוד. \nבנוסף, מגישים קפה אספרסו בטחינה עצמית וקינוחים. ', 'Avnei Hachoshen 15', 'אבני החושן 15', 'Mehadrin', 'מהדרין', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -5270,7 +5269,7 @@ CREATE TABLE IF NOT EXISTS `subitems` (
   `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `extra_id` (`extra_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26099 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26097 ;
 
 --
 -- Dumping data for table `subitems`
@@ -15754,9 +15753,7 @@ INSERT INTO `subitems` (`id`, `extra_id`, `name_en`, `name_he`, `price`, `sort`)
 (26093, 100054, 'poppy seed', 'פרג', 0, NULL),
 (26094, 100054, 'cinnamon and raisins', 'קינמון וצימוקים', 0, NULL),
 (26095, 100055, 'small', 'קטן', 0, 2),
-(26096, 100055, 'large', 'גדול', 2, 2),
-(26097, 100056, 'Small', 'קטן', 0, NULL),
-(26098, 100056, 'Large', 'גדול', 2, NULL);
+(26096, 100055, 'large', 'גדול', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -16494,7 +16491,14 @@ INSERT INTO `weekly_availibility` (`id`, `restaurant_id`, `week_en`, `week_he`, 
 (314, 42, 'Wednesday', 'יום ד', '16:00', '16:00', '7:00', '7:00'),
 (315, 42, 'Thursday', 'יום ה', '16:00', '16:00', '7:00', '7:00'),
 (316, 42, 'Friday', 'ששי', 'close', 'סגור', 'close', 'סגור'),
-(317, 42, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור');
+(317, 42, 'Saturday', 'שבת', 'close', 'סגור', 'close', 'סגור'),
+(374, 100020, 'Sunday', 'יום א', '07:30', '07:30', '22:00', '22:00'),
+(375, 100020, 'Monday', 'יום ב', '07:30', '07:30', '22:00', '22:00'),
+(376, 100020, 'Tuesday', 'יום ג', '07:30', '07:30', '22:00', '22:00'),
+(377, 100020, 'Wednesday', 'יום ד', '07:30', '07:30', '22:00', '22:00'),
+(378, 100020, 'Thursday', 'יום ה', '07:30', '07:30', '22:00', '22:00'),
+(379, 100020, 'Friday', 'ששי', '07:30', '07:30', '13:00', '13:00'),
+(380, 100020, 'Saturday', 'שבת', 'Closed', 'סגור', 'Closed', 'סגור');
 
 --
 -- Constraints for dumped tables

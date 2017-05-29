@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db_dump/orderapp1.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
     </list>
@@ -836,14 +835,7 @@
       <workItem from="1495871137919" duration="1127000" />
       <workItem from="1495947810760" duration="7418000" />
       <workItem from="1495978890207" duration="599000" />
-      <workItem from="1496035696845" duration="8069000" />
-    </task>
-    <task id="LOCAL-00093" summary="DB update&#10;&#10;">
-      <created>1493123586790</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1493123586790</updated>
+      <workItem from="1496035696845" duration="8688000" />
     </task>
     <task id="LOCAL-00094" summary="DB update + code&#10;&#10;">
       <created>1493279311462</created>
@@ -1181,11 +1173,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496050235114</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="DB update + code latest">
+      <created>1496052723745</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1496052723745</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="968839000" />
+    <option name="totallyTimeSpent" value="969458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
