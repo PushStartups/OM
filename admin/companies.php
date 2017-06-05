@@ -99,7 +99,7 @@ include "header.php";
                                             <td><a href="add-company-users.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Users </button></a></td>
 
                                             <td><a href="add-company-restaurant.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Restaurants </button></a></td>
-                                            <td><a href="companies-detail.php?companies_id=<?=$companies['id']?>"><button disabled class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> Detail </button></a></td>
+                                            <td><a href="edit-company.php?id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> Detail </button></a></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

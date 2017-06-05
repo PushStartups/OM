@@ -22,7 +22,23 @@ $('#limit').bind('input', function() {
 
 });
 
+function delete_extras(extra_id,url)
+{
+    addLoading();
+    $.ajax({
+        url:"ajax/delete_extra.php",
+        method:"post",
+        data:{extra_id:extra_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("Extras deleted successfully");
+            window.location.href = url;
+        }
+    });
 
+}
 
 function update_extras(extra_id,url)
 {

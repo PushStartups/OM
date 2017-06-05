@@ -90,7 +90,8 @@ else
                                             <th data-hide="phone"><i class="fa-fw fa fa-tags text-muted hidden-md hidden-sm hidden-xs"></i> Hide/Show </th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-tags text-muted hidden-md hidden-sm hidden-xs"></i> Price </th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-plus text-muted hidden-md hidden-sm hidden-xs"></i> Add Choices & Addons </th>
-                                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Action</th>
+                                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Edit</th>
+                                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -107,6 +108,8 @@ else
                                                 <td><?=$item['price']?></td>
                                                 <td><a style="text-decoration: none" href="add-choices-addons.php?id=<?=$item['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Choices & Addons </button></a></td>
                                                 <td><a href="edit-items.php?id=<?=$item['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+                                                <td><a onclick="delete_item('<?=$item['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+
                                             </tr>
                                         <?php  } ?>
 

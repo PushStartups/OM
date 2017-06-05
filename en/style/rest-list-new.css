@@ -15,7 +15,6 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 }
-
 .blur-class {
 	-webkit-filter: opacity(.2);
 	filter: opacity(.2);

@@ -21,7 +21,7 @@ else
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Update SubItem</h1>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Update Restaurant</h1>
             </div>
 
         </div>
@@ -48,16 +48,22 @@ else
                                 <div class="widget-body">
 
                                     <form  method="post" enctype="multipart/form-data">
+                                        <div class="form-actions">
+                                            <div onclick="delete_restaurant('<?=$restaurant_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-danger btn-lg">
+                                                <i class="fa fa-save"></i>
+                                                Delete Restaurant
+                                            </div>
+                                        </div>
                                         <fieldset>
                                             <input name="authenticity_token" type="hidden">
 
                                             <input id="path1" name="editorImagePath1" type = "hidden" >
-<!--                                            <div class="form-group">-->
-<!--                                                <label>Restaurant Logo</label>-->
-<!--                                                <input class="form-control" accept="image/*" name="logo" id="logo" onchange="readURL(this,1);"  type="file">-->
-<!--                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>-->
-<!--                                                <img style="display:block" id="new_image1" src="#" alt="" width="105" height="105" />-->
-<!--                                            </div>-->
+                                            <div class="form-group">
+                                                <label>Restaurant Logo</label>
+                                                <input class="form-control" accept="image/*" name="logo" id="logo" onchange="previewEditFile();"  type="file">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>
+                                                <br><img style="display:block" id="edit_logo1" src="<?=WEB_PATH.$restaurant['logo'] ?>" alt="" width="105" height="105" />
+                                            </div>
                                             <div class="form-group">
                                                 <label>Restaurant Name</label>
                                                 <input class="form-control" id="name_en" name="name_en" value="<?=$restaurant['name_en']?>" placeholder="Enter Restaurant" type="text">
@@ -80,12 +86,7 @@ else
                                                 <input class="form-control" id="min_amount" name="min_amount" value="<?=$restaurant['min_amount']?>" placeholder="Enter Amount" type="text">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="min_amount_error"></span>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label>Sort</label>
-                                                <input class="form-control" id="sort" name="sort" value="<?=$restaurant['sort']?>" placeholder="Sorting" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="sort_error"></span>
-                                            </div>
+                                            
 
                                             <div class="form-group">
                                                 <label>Pickup</label>
@@ -117,7 +118,6 @@ else
                                                         <?php }
                                                     }
                                                     ?>
-
                                                 </select>
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;"></span>
                                             </div>
@@ -219,7 +219,32 @@ else
     </div>
     <!-- END MAIN CONTENT -->
 </div>
+<script>
+    globalEditLogo = null;
+    //alert(globalEditLogo);
+    function previewEditFile() {
 
+        var file    = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+
+        reader.onload = function (e) {
+
+                $('#edit_logo1').attr('src', e.target.result);
+
+        }
+
+        reader.addEventListener("load", function () {
+
+            globalEditLogo = reader.result;
+           // alert(globalEditLogo);
+
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
 
 <div id="divBackground" style="position: fixed; z-index: 999; height: 100%; width: 100%;

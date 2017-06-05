@@ -187,7 +187,10 @@ a:hover, a:focus {
 	text-align:left;
 	border-right: 1px solid #fff;
 }
-#nav ul:first-child{border: none;}
+#nav ul:first-child{
+	border: none;
+	margin: -4px 0 0;
+}
 #nav ul:after{
 	display: block;
 	content: "";

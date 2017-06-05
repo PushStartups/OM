@@ -104,99 +104,109 @@
                     </div>
                 </div>
             </div>
-            <nav id="nav" style="display: none;">
+            <nav id="nav">
                 <ul>
                     <li>
-                        <a href="#"><img class="icon-user" src="/en/img/ic_profile01.png"> <span id="loginBtnText">התחברות</span></a>
-                        <div class="dropdown-nav">
-                            <div class="signin">
+                        <a  id="login-btn" href="#"><img class="icon-user" src="/en/img/ic_profile01.png"> <span id="loginBtnText" dir="ltr">התחברות</span></a>
+                        <div class="dropdown-nav"  id="dropdown-nav" >
+                            <div class="signin" id="signin" style="display: none">
                                 <form class="login-form">
                                     <h2>התחברות</h2>
                                     <p>התחבר והפוך את תהליך ההזמנה לקצר יותר</p>
-                                    <p>עדיין אין לך חשבון?  <a href="#">הירשם</a></p>
+                                    <p>עדיין אין לך חשבון?  <a onclick="switchToSignUp()" href="#">הירשם</a></p>
                                     <div class="btn-holder">
-                                        <button class="btn btn-facebook" type="button">התחבר באמצעות פייסבוק</button>
-                                        <button class="btn btn-google" type="button">התחבר באמצעות גוגל</button>
+                                        <button onclick="myFacebookLogin()" class="btn btn-facebook" type="button">התחבר באמצעות פייסבוק</button>
+                                        <button id="google-btn-2" class="btn btn-google" type="button">התחבר באמצעות גוגל</button>
                                     </div>
                                     <div class="line">או</div>
 
                                     <!-- start login with email sectopm -->
 
-                                    <a class="login-email" href="#">הירשם באמצעות דואר אלקטרוני וסיסמה</a>
-                                    <div class="login-section">
-                                        <input class="form-control" type="email" placeholder="דואר אלקטרוני">
-                                        <input class="form-control add" type="password" placeholder="סיסמה">
-                                        <a class="login-email text-left" href="#">שכחתי סיסמה</a>
-                                        <button class="btn btn-login" type="button">התחבר</button>
+                                    <a id="login_with_email_pass" onclick="expand_login()" class="login-email" href="#">הירשם באמצעות דואר אלקטרוני וסיסמה</a>
+
+                                    <div  id="login_email" class="login-section" style="display: none">
+                                        <input id="email-login" class="form-control" type="email" placeholder="דואר אלקטרוני">
+                                        <input id="password-login" class="form-control add" type="password" placeholder="סיסמה">
+                                        <a onclick="forgetPassword()" class="login-email text-left" href="#">שכחתי סיסמה</a>
+                                        <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-login"></span>
+
+                                        <button onclick="loginUser()" class="btn btn-login" type="button">התחבר</button>
                                     </div>
 
                                     <!-- end login with email sectopm -->
 
                                     <!-- start forget sectopm -->
 
-                                    <!--<div class="forget-section">-->
-                                    <!--<p>הזן את הדוא"ל שלך כדי לאפס את הסיסמה שלך</p>-->
-                                    <!--<input class="form-control add1" type="email" placeholder="דואר אלקטרוני">-->
-                                    <!--<button class="btn btn-login" type="button">לִשְׁלוֹחַ</button>-->
-                                    <!--</div>-->
+                                    <div id="forget_pass_sec" class="forget-section" style="display: none">
+                                        <p>הזן את הדוא"ל שלך כדי לאפס את הסיסמה שלך</p>
+                                        <input id="rest-pass-email" class="form-control add1" type="email" placeholder="דואר אלקטרוני">
+                                        <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-reset"></span>
+                                        <button id="rest-pass-request" class="btn btn-login" type="button">לִשְׁלוֹחַ</button>
+                                    </div>
 
                                     <!-- end forget sectopm -->
 
+
+                                    <div class="" id="email_reset_message" style="display: none">
+                                        <p style="text-align: left">אנו שולחים לך קישור לאיפוס הסיסמה שלך בדוא"ל</p>
+                                        <a style="text-align: left; margin-bottom: 40px" onclick="restPasswordResend()" class="login-guest" href="#">לא קיבלתי דוא"ל</a>
+                                    </div>
+
+
+                                    <a  class="login-guest asGuest" href="#">המשך כאורח</a>
+
+
                                     <!--<a class="login-guest" href="#">המשך כאורח</a>-->
+
                                 </form>
-                                <!--<div class="welcom-popup">-->
-                                <!--<h3>היי דבורה, טוב לראות אותך כאן :)</h3>-->
-                                <!--<a class="login-guest" href="#">התנתק</a>-->
-                                <!--</div>-->
                             </div>
-                            <!--<div class="signup">-->
-                            <!--<form class="login-form">-->
-                            <!--<h2>הירשם</h2>-->
-                            <!--<p>הרשמה ולהפוך את תהליך ההזמנה קצר יותר</p>-->
-                            <!--<p>Alredy have account? <a href="#">התחברות</a></p>-->
-                            <!--<div class="btn-holder">-->
-                            <!--<button class="btn btn-facebook" type="button">התחבר באמצעות פייסבוק</button>-->
-                            <!--<button class="btn btn-google" type="button">התחבר באמצעות גוגל</button>-->
-                            <!--</div>-->
-                            <!--<div class="line">או</div>-->
 
-                            <!--&lt;!&ndash; start login with email sectopm &ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="links">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<a class="login-email" href="#">הירשם באמצעות דוא"ל וסיסמה</a>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<a class="login-guest" href="#">המשך כאורח</a>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                            <!--&lt;!&ndash;<div class="login-section">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input class="form-control" type="email" placeholder="דואר אלקטרוני">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input class="form-control" type="password" placeholder="סיסמה">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input class="form-control add" type="password" placeholder=" אשר סיסמה">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<button class="btn btn-login" type="button">הירשם</button>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<a class="login-guest" href="#">המשך כאורח</a>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <div id="signup" class="signup" >
+                                <form class="login-form" id="signUpForm">
+                                    <h2>הירשם</h2>
+                                    <p>הרשמה ולהפוך את תהליך ההזמנה קצר יותר</p>
+                                    <p>Alredy כבר יש לך חשבון? <a onclick="switchToLogin()" href="#">התחברות</a></p>
+                                    <div class="btn-holder">
+                                        <button onclick="myFacebookLogin()" class="btn btn-facebook" type="button">להירשם עם Facebook</button>
+                                        <button  id="google-btn"  class="btn btn-google " type="button">הירשם באמצעות Google</button>
+                                    </div>
+                                    <div class="line">אוֹ</div>
 
-                            <!--&lt;!&ndash; end login with email sectopm &ndash;&gt;-->
+                                    <!--start login with email sectopm-->
+                                    <div class="links" id="signup-message">
+                                        <a id="signup-email-pass" class="login-email" href="#">הירשם באמצעות דוא"ל וסיסמה</a>
+                                        <a class="login-guest asGuest" href="#">המשך כאורח</a>
+                                    </div>
 
-                            <!--<div class="">-->
-                            <!--<p>על מנת להשלים את ההרשמה שלך, לחץ על הקישור שקיבלת בדוא"ל.</p>-->
-                            <!--<a class="login-guest" href="#">לא קיבלתי דוא"ל</a>-->
-                            <!--</div>-->
+                                    <div class="login-section" id="manual-signup" style="display: none">
+                                        <input id="signup-email" class="form-control" type="email" placeholder='כתובת דוא"ל'>
+                                        <input id="signup-password" class="form-control" type="password" placeholder="סיסמה">
+                                        <input id="signup-confirm-pass" class="form-control add" type="password" placeholder="סיסמה">
+                                        <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-signup"></span>
+                                        <button id="signUp-btn" class="btn btn-login" type="button">הירשם</button>
+                                        <a class="login-guest asGuest" href="#">המשך כאורח</a>
+                                    </div>
 
-                            <!--&lt;!&ndash; start forget sectopm &ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="forget-section re-enter">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<p>הזן מחדש את כתובת האימייל שלך</p>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input class="form-control add1" type="email" placeholder="דואר אלקטרוני">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<button class="btn btn-login" type="button">לִשְׁלוֹחַ</button>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<a class="login-guest" href="#">המשך כאורח</a>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--&lt;!&ndash; end forget sectopm &ndash;&gt;-->
 
-                            <!--</form>-->
+                                    <!-- end login with email sectopm -->
+                                    <div class="" id="email_verification_message" style="display: none">
+                                        <p>על מנת להשלים את ההרשמה שלך, לחץ על הקישור שקיבלת בדוא"ל.</p>
+                                        <a  onclick="resendValidationLink()" class="login-guest" href="#">לא קיבלתי דוא"ל</a>
+                                    </div>
 
-                            <!--&lt;!&ndash;<div class="welcom-popup">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<h3>היי דבורה, טוב לראות אותך כאן :)</h3>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<a class="login-guest" href="#">התנתק</a>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                            <!--</div>-->
+
+                                </form>
+
+
+                                <div id="loginMessage" class="welcom-popup" style="display: none">
+                                    <h3 id="success-message"></h3>
+                                    <a  id="logout" class="login-guest" href="#">להתנתק</a>
+                                </div>
+
+
+                            </div>
+
                         </div>
                     </li>
                 </ul>
@@ -678,6 +688,7 @@
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=he&libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
 
 
@@ -960,8 +971,647 @@
 
 </script>
 
+<script>
+
+    $('#login-btn').click(function(e){
+
+        if($("#dropdown-nav").is(':visible'))
+        {
+            $('#dropdown-nav').hide();
+            $('#signup-email').val('');
+            $('#signup-password').val('');
+            $('#signup-confirm-pass').val('');
+            $('#error-signup').html('');
+
+        }
+        else {
+
+
+            $('#dropdown-nav').show();
+
+        }
+
+        e.stopPropagation();
+
+
+    });
+
+
+
+    $(document).click(function(e){
+
+        if(!(document.getElementById('dropdown-nav').contains(e.target)))
+        {
+            $('#dropdown-nav').hide();
+            $('#error-signup').html('');
+            $('#signup-email').val('');
+            $('#signup-password').val('');
+            $('#signup-confirm-pass').val('');
+        }
+
+    });
+
+
+
+    $('.asGuest').click(function(e) {
+
+
+        $('#dropdown-nav').hide();
+
+
+    });
+
+
+    $('#signup-email-pass').click(function(e) {
+
+
+        $('#signup-message').hide();
+        $('#manual-signup').show();
+
+
+    });
+
+
+
+    var email              =  $('#signup-email').val();
+    var password           =  $('#signup-password').val();
+    var confirmPassword    =  $('#signup-confirm-pass').val();
+
+
+    // VALIDATE USER SIGN UP
+
+    $('#signUp-btn').click(function(e) {
+
+        $('#error-signup').val('');
+
+
+        email              =  $('#signup-email').val();
+        password           =  $('#signup-password').val();
+        confirmPassword    =  $('#signup-confirm-pass').val();
+
+
+        if(email == "")
+        {
+            $('#error-signup').html('Email required*');
+            return;
+        }
+        else if(password == "")
+        {
+            $('#error-signup').html('Password required*');
+            return;
+        }
+        else if(confirmPassword == "")
+        {
+            $('#error-signup').html('Confirm Password required*');
+            return;
+        }
+        else if(!validateEmail(email))
+        {
+
+            $('#error-signup').html('Invalid Email!');
+            return;
+        }
+
+        else if(password != confirmPassword)
+        {
+
+            $('#error-signup').html('Password not match');
+            return;
+        }
+
+
+        commonAjaxCall("/restapi/index.php/validate_email",{"email": email},validateEmailCallBack);
+
+    });
+
+    function validateEmailCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == true) {
+
+            commonAjaxCall("/restapi/index.php/add_new_user",{"user_email": email,"user_password": password},addNewUserCallBack);
+        }
+        else {
+
+            $('#error-signup').html('Invalid email not exist');
+        }
+
+    }
+
+
+    $('#logout').click(function(e) {
+
+        localStorage.setItem("USER_EMAIL",'');
+        localStorage.setItem("USER_SMOOCH_ID",'');
+        localStorage.setItem("USER_NAME",'');
+
+        $('#signup-message').show();
+        $('#manual-signup').hide();
+        $("#loginMessage").hide();
+        $('#signUpForm').show();
+
+        $('#loginBtnText').html("Login");
+
+    });
+
+
+    function addNewUserCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success" || resp == "verification_pending")
+        {
+            userObject.email = email;
+            userObject.name = '';
+
+            localStorage.setItem("USER_EMAIL",email);
+            localStorage.setItem("USER_SMOOCH_ID",email);
+            localStorage.setItem("USER_NAME",'');
+
+            $('#signin').hide();
+            $('#signup').show();
+
+            $('#email_text').val(userObject.email);
+            $('#name_text').val(userObject.name);
+
+            $('#loginBtnText').html("Hi "+userObject.email);
+            $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+            $("#email_verification_message").hide();
+            $("#loginMessage").show();
+            $('#signup-message').hide();
+            $('#signUpForm').hide();
+            $('#manual-signup').hide();
+
+            $('#email-login').val('');
+            $('#password-login').val('');
+
+
+        }
+        else if(resp == "account_exist") {
+
+
+            $('#error-signup').html('נראה שכבר יש לך חשבון, לחץ על היכנס למעלה');
+
+
+        }
+
+    }
+
+
+    function resendValidationLink() {
+
+
+        commonAjaxCall("/restapi/index.php/resend_signup_email",{"user_email": email},resendCallBack);
+
+    }
+
+    function resendCallBack(response) {}
+
+
+    var login_email       =  '';
+    var login_password    =  '';
+
+    function loginUser()
+    {
+        $('#error-login').html('');
+
+        login_email       =  $('#email-login').val();
+        login_password    =  $('#password-login').val();
+
+        if(login_email == "")
+        {
+            $('#error-login').html('Email required*');
+            return;
+        }
+        else if(login_password == "")
+        {
+            $('#error-login').html('Password required*');
+            return;
+        }
+        else if(!validateEmail(login_email))
+        {
+            $('#error-login').html('Invalid Email!');
+            return;
+        }
+
+        commonAjaxCall("/restapi/index.php/user_login",{"user_email": login_email,"user_password": login_password},loginUserCallBack);
+
+    }
+
+
+
+    function loginUserCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success")
+        {
+            localStorage.setItem("USER_EMAIL",login_email);
+            localStorage.setItem("USER_SMOOCH_ID",login_email);
+            localStorage.setItem("USER_NAME",'');
+
+            userObject.email = login_email;
+            userObject.name = '';
+
+            $('#signin').hide();
+            $('#signup').show();
+
+            $("#email_text").val(userObject.email);
+
+
+            $('#loginBtnText').html("Hi "+userObject.email);
+            $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+            $("#email_verification_message").hide();
+            $("#loginMessage").show();
+            $('#signup-message').hide();
+            $('#signUpForm').hide();
+            $('#manual-signup').hide();
+
+            $('#email-login').val('');
+            $('#password-login').val('');
+        }
+        else if(resp == "error")
+        {
+
+            $('#error-login').html('Email or Password incorrect!');
+
+        }
+        else if(resp == "validation_error")
+        {
+            $('#signin').hide();
+            $('#signup').show();
+
+            email = login_email;
+
+            $("#email_verification_message").show();
+            $("#loginMessage").hide();
+            $('#signup-message').hide();
+            $('#manual-signup').hide();
+
+
+        }
+
+    }
+
+    function switchToLogin()
+    {
+        $('#signup').hide();
+        $('#signin').show();
+    }
+
+    function switchToSignUp()
+    {
+        $('#signin').hide();
+        $('#signup').show();
+    }
+
+    function forgetPassword() {
+
+        $('#login_email').hide();
+        $('#forget_pass_sec').show();
+    }
+
+    function expand_login() {
+
+        $('#login_email').show();
+        $('#forget_pass_sec').hide();
+        $('#email_reset_message').hide();
+    }
+
+
+    $('#rest-pass-request').click(function(e) {
+
+        $('#error-reset').html('');
+
+        var emailRest   =  $('#rest-pass-email').val();
+
+        if(emailRest == "")
+        {
+            $('#error-reset').html('Enter Email!');
+
+            return;
+        }
+        else if(!validateEmail(emailRest))
+        {
+            $('#error-reset').html('Invalid Email!');
+
+            return;
+        }
+
+        commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
+
+    });
+
+
+    function restPassCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success")
+        {
+            $('#email_reset_message').show();
+            $('#forget_pass_sec').hide();
+
+        }
+        else {
+
+            $('#error-reset').html('Not find this email!');
+        }
+
+    }
+
+    function restPasswordResend() {
+
+        var emailRest   =  $('#rest-pass-email').val();
+
+        commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
+    }
+
+    //FACEBOOK LOGIN
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '572922239565680',
+            xfbml      : true,
+            version    : 'v2.9'
+        });
+    };
+
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function myFacebookLogin() {
+
+        FB.login(function(response)
+        {
+            if (response.authResponse)
+            {
+                getUserInformation();
+            }
+            else
+            {console.log('User cancelled login or did not fully authorize.');
+            }
+
+        }, {scope: 'email'});
+
+        function getUserInformation() {
+
+            FB.api('/me', { locale: 'en_US', fields: 'name, email' },
+
+                function(response) {
+
+                    isSocial = true;
+
+
+                    var name = "";
+                    var primaryEmail = "";
+                    var provider = "";
+                    var uid = "";
+                    var contact = "";
+
+                    try {
+
+                        name = response.name;
+                    }
+                    catch (exp)
+                    {
+                        name = "";
+                    }
+
+
+                    try {
+
+                        primaryEmail = response.email;
+                    }
+                    catch (exp)
+                    {
+                        primaryEmail = "";
+                    }
+
+
+                    try {
+
+                        provider = "facebook";
+                    }
+                    catch (exp)
+                    {
+                        provider = "";
+                    }
+
+                    try {
+
+                        uid = response.id;
+                    }
+                    catch (exp)
+                    {
+                        uid = "";
+                    }
+
+                    try {
+
+                        contact = "";
+                    }
+                    catch (exp)
+                    {
+                        contact = "";
+                    }
+
+
+
+                    localStorage.setItem("USER_EMAIL",primaryEmail);
+                    localStorage.setItem("USER_SMOOCH_ID",uid);
+                    localStorage.setItem("USER_NAME",name);
+                    $("#email_text").val(primaryEmail);
+                    $("#name_text").val(name);
+
+                    if(primaryEmail != null)
+                    {
+                        userObject.email = primaryEmail;
+                    }
+                    else {
+
+                        userObject.email = "";
+                    }
+
+                    userObject.name = name;
+
+                    $('#signin').hide();
+                    $('#signup').show();
+
+
+                    $('#loginBtnText').html("Hi "+userObject.name);
+                    $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+                    $("#email_verification_message").hide();
+                    $("#loginMessage").show();
+                    $('#signup-message').hide();
+                    $('#signUpForm').hide();
+                    $('#manual-signup').hide();
+
+                    $('#email-login').val('');
+                    $('#password-login').val('');
+
+                    commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+
+
+                });
+        }
+    }
+
+    // GOOGLE SIGN IN
+    var googleUser = {};
+
+
+    var startApp = function() {
+        gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+
+                'client_id' : '116247344094-kbebvthkdfclmocoj7fi6jo75b0llvjv.apps.googleusercontent.com',
+                'cookiepolicy' : 'single_host_origin',
+                'callback' : 'onSignInCallback',
+                'approvalprompt':'auto',
+                'setAccessType' : 'online',
+                'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+            });
+
+            attachSignin(document.getElementById('google-btn'));
+            attachSignin(document.getElementById('google-btn-2'));
+        });
+    };
+
+    function attachSignin(element) {
+
+        console.log(element.id);
+        auth2.attachClickHandler(element, {},
+
+            function(googleUser)
+            {
+
+                sessionStorage.token = googleUser.getAuthResponse().access_token;
+                console.log(googleUser);
+
+                var name = "";
+                var primaryEmail = "";
+                var provider = "";
+                var uid = "";
+                var contact = "";
+
+                try {
+
+                    name = googleUser.getBasicProfile().getName();
+                }
+                catch (exp)
+                {
+                    name = "";
+                }
+
+
+                try {
+
+                    primaryEmail = googleUser.getBasicProfile().getEmail();
+                }
+                catch (exp)
+                {
+                    primaryEmail = "";
+                }
+
+
+                try {
+
+                    provider = "google";
+                }
+                catch (exp)
+                {
+                    provider = "";
+                }
+
+                try {
+
+                    uid = googleUser.getBasicProfile().getId();
+                }
+                catch (exp)
+                {
+                    uid = "";
+                }
+
+                try {
+
+                    contact = "";
+                }
+                catch (exp)
+                {
+                    contact = "";
+                }
+
+
+
+
+                localStorage.setItem("USER_EMAIL",primaryEmail);
+                localStorage.setItem("USER_SMOOCH_ID",uid);
+                localStorage.setItem("USER_NAME",name);
+                $("#email_text").val(primaryEmail);
+                $("#name_text").val(name);
+
+                if(primaryEmail != null)
+                {
+                    userObject.email = primaryEmail;
+                }
+                else {
+
+                    userObject.email = "";
+                }
+
+                userObject.name = name;
+
+                $('#signin').hide();
+                $('#signup').show();
+
+                $('#loginBtnText').html("Hi "+userObject.name);
+                $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+                $("#email_verification_message").hide();
+                $("#loginMessage").show();
+                $('#signup-message').hide();
+                $('#signUpForm').hide();
+                $('#manual-signup').hide();
+
+                $('#email-login').val('');
+                $('#password-login').val('');
+
+
+                commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+            },
+            function(error) {
+
+                alert(JSON.stringify(error, undefined, 2));
+            });
+    }
+
+    startApp();
+</script>
+
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="/he/script/commonAjaxCall.js"></script>
+
+<script>
+
+    function singUpUser(response) {
+
+        resp = JSON.parse(response);
+    }
+
+</script>
+
 
 
 <script src="https://cdn.smooch.io/smooch.min.js"></script>
@@ -971,6 +1621,7 @@
         Smooch.sendMessage("HEBREW HEBREW");
     });
 </script>
+
 
 </body>
 </html>

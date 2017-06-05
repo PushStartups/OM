@@ -91,7 +91,8 @@ else
                                             <th data-hide="phone"> Price Replace </th>
                                             <th data-hide="phone"> Limit </th>
                                             <th data-hide="phone"> Add SubItems</th>
-                                            <th data-hide="phone,tablet"> Action</th>
+                                            <th data-hide="phone,tablet"> Edit</th>
+                                            <th data-hide="phone,tablet"> Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -108,6 +109,8 @@ else
                                                 <td><?=$extra['limit']?></td>
                                                 <td><a style="text-decoration: none" href="add-subitems.php?id=<?=$extra['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add SubItems </button></a></td>
                                                 <td><a href="edit-extras.php?id=<?=$extra['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+                                                <td><a onclick="delete_extras('<?=$extra['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+
                                             </tr>
                                         <?php  }
                                         ?>

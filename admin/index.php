@@ -7,7 +7,19 @@ else{
 	$city_id = 1;
 }
 ?>
-
+<style>
+	.bg-color-orange {
+		background-color: #FF6600 !important;
+	}
+	.btn-purple {
+		color: #fff;
+		background-color: #a949be;
+		border-color: #8f2ca5;
+	}
+	.bg-color-pink {
+		background-color: #d75b85 !important;
+	}
+</style>
 <!-- END NAVIGATION -->
 
 <!-- MAIN PANEL -->
@@ -46,27 +58,7 @@ else{
 				</ul>
 				<!-- end sparks -->
 			</div><br>
-<!--			<div align="center" class="col-xs-12 col-sm-5 col-md-5 col-lg-8">-->
-<!--				<!-- sparks -->
-<!--				<ul id="sparks">-->
-<!--					<li class="sparks-info">-->
-<!---->
-<!--					</li>-->
-<!--					<li class="sparks-info">-->
-<!---->
-<!--						<a style="text-decoration: none" href="add-new-restaurant.php"><div class="btn btn-purple btn-lg">-->
-<!--							<i class="fa fa-plus"></i>-->
-<!--							Add Restaurant-->
-<!--						</div></a>-->
-<!--					</li>-->
-<!--					<li class="sparks-info">-->
-<!---->
-<!--					</li>-->
-<!---->
-<!--				</ul>-->
-<!--				<!-- end sparks -->
-<!--			</div>-->
-			<!-- end col -->
+
 
 		</div>
 		<br>
@@ -76,14 +68,7 @@ else{
 					Add Restaurant
 				</div></a>
 		</div><br><br>
-		<!-- end row -->
 
-		<!--
-        The ID "widget-grid" will start to initialize all widgets below
-        You do not need to use widgets if you dont want to. Simply remove
-        the <section></section> and you can use wells or panels instead  -->
-
-		<!-- widget grid -->
 		<section id="widget-grid" class="">
 			<!-- row -->
 			<div class="row">
@@ -102,12 +87,9 @@ else{
 
 								<!-- widget edit box -->
 								<div class="jarviswidget-editbox">
-									<!-- This area used as dropdown edit box -->
 
 								</div>
-								<!-- end widget edit box -->
 
-								<!-- widget content -->
 								<div class="widget-body no-padding">
 
 									<table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
@@ -121,7 +103,8 @@ else{
 											<th data-hide="phone,tablet">Rank</th>
 										
 											<th data-hide="phone,tablet">Add Categories</th>
-											<th data-hide="phone,tablet">Add Timings</th>
+											<th data-hide="phone,tablet">Add Timings & Delivery Address</th>
+											<th data-hide="phone,tablet">Add Tags</th>
 											<th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Action</th>
 										</tr>
 										</thead>
@@ -155,9 +138,10 @@ else{
 
 
 												<td><a style="text-decoration: none" href="add-new-category.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Categories </button></a></td>
-												<td><a style="text-decoration: none" href="add-restaurant-timing.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-pink  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Timings </button></a></td>
+												<td><a style="text-decoration: none" href="add-restaurant-timing.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-pink  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Timings & Delivery Address </button></a></td>
+												<td><a style="text-decoration: none" href="add-tags.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-orange txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Tags </button></a></td>
 
-												<td><a href="edit-restaurant.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;" disabled><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+												<td><a href="edit-restaurant.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;" ><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
 
 											</tr>
 										<?php  } ?>

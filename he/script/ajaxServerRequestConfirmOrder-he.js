@@ -49,6 +49,38 @@ $(document).ready(function() {
     $('#submitOrder').hide();
 
 
+
+
+    // CHECK IF USER IS ALREADY LOGIN
+
+
+    if(localStorage.getItem("USER_SMOOCH_ID") != undefined && localStorage.getItem("USER_SMOOCH_ID") != "" && localStorage.getItem("USER_SMOOCH_ID") != null) {
+
+
+        //  USER ALREADY LOGIN WELCOME USER
+
+        LoginSuccessFullState();
+
+    }
+    else
+    {
+        if(localStorage.getItem("IS_LOGIN") != undefined && localStorage.getItem("IS_LOGIN") != "" && localStorage.getItem("IS_LOGIN") != null) {
+
+
+            if(localStorage.getItem("IS_LOGIN") == 'true')
+            {
+                // DISPLAY LOGIN OPTION TO USER
+                SignInDefault();
+                userObject.smooch_id = '';
+
+            }
+        }
+
+    }
+
+
+
+
     if(userObject.pickup_hide == true)
     {
         $('#pickup_option').hide();
@@ -843,6 +875,64 @@ function goBack()
     window.location.href = '/he/'+selectedCityName+"/"+ restaurantTitle+"/order";
 }
 
+
+
+
+// LOGIN / SIGN UP STATES
+
+function LoginSuccessFullState() {
+
+    var email     =     ""
+    var smooch_id =     localStorage.getItem("USER_SMOOCH_ID");
+    var name      =     "";
+
+    commonAjaxCall("/restapi/index.php/get_user",{"smooch_id":smooch_id},getUserLogin);
+
+
+}
+
+function getUserLogin(response) {
+
+    resp = JSON.parse(response);
+
+    if(resp == "not found")
+    {
+        localStorage.setItem("USER_SMOOCH_ID","");
+        SignInDefault();
+    }
+    else {
+
+        userObject.uid = resp.smooch_id;
+        userObject.email = resp.email;
+        userObject.name = resp.name;
+        userObject.contact = resp.contact;
+
+        // DISPLAY LOGIN SUCCESS
+
+        $('#loginBtnText').html("Hi "+userObject.email);
+        $("#loginMessage").show();
+        $("#success-message").html("היי "+name+", נעים להכיר אותך :)");
+
+        // HIDE FORM S
+
+        $('#signup-message').hide();
+        $('#manual-signup').hide();
+        $('#signUpForm').hide();
+
+
+        $('#email_text').val(userObject.email);
+        $('#name_text').val(userObject.name);
+        $('#contact_text').val(userObject.contact);
+
+    }
+}
+
+
+function SignInDefault()
+{
+    $('#signin').show();
+    $('#signup').hide();
+}
 
 
 

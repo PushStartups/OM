@@ -930,7 +930,7 @@ function getUserLogin(response) {
 
         $('#loginBtnText').html("Hi "+userObject.email);
         $("#loginMessage").show();
-        $("#success-message").html("Hey "+name+", Nice to meet you :)");
+        $("#success-message").html("Hey "+resp.name+", Nice to meet you :)");
 
         // HIDE FORM S
 

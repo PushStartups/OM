@@ -94,7 +94,8 @@ else
                                             <th data-hide="phone"><i class="fa-fw fa fa-info text-muted hidden-md hidden-sm hidden-xs"></i> שֵׁם </th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-tags text-muted hidden-md hidden-sm hidden-xs"></i> Is Discount </th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-plus text-muted hidden-md hidden-sm hidden-xs"></i> Add Items </th>
-                                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Action</th>
+                                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Edit</th>
+                                            <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -112,6 +113,7 @@ else
                                                 <td><?=$category['is_discount']?></td>
                                                 <td><a style="text-decoration: none" href="add-new-items.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Items </button></a></td>
                                                 <td><a href="edit-category.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+                                                <td><a onclick="delete_category('<?=$category['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
 
                                             </tr>
                                         <?php  } ?>
@@ -127,14 +129,20 @@ else
 
                 </div>
                 <!-- SHOW CATEGORIES END-->
-            <?php  } ?>
+            <?php  }  ?>
             <script>
                 globalImgCat = null;
+                $('#image1').hide();
                 function previewFilee() {
 
                     var file    = document.querySelector('input[id=logo1]').files[0];
                     var reader  = new FileReader();
+                    $('#image1').show();
+                    reader.onload = function (e) {
 
+                        $('#image1').attr('src', e.target.result);
+
+                    }
                     reader.addEventListener("load", function () {
 
                        // alert(reader.result);
@@ -187,6 +195,7 @@ else
                                                 <label>Category Mobile Logo</label>
                                                 <input class="form-control" accept="image/*" name="logo1" id="logo1" onchange="previewFilee();"  type="file">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>
+                                                <img style="display: none"  id="image1" src="#" alt="" width="400" height="105" />
                                                 <!--                                                                                            <img style="display:block" id="new_image1" src="#" alt="" width="500" height="105" />-->
                                             </div>
 

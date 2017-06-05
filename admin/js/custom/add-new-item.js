@@ -60,7 +60,7 @@ function add_new_item(category_id,url)
 
     if(name_he == "")
     {
-        $('#name_he_error').html('Required');
+        $('#name_he_error').html('Required*');
         return;
     }
 

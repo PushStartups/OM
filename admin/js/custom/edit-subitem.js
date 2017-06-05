@@ -23,7 +23,23 @@ $('#price').bind('input', function() {
 
 });
 
+function delete_subitem(subitem_id,url)
+{
 
+    addLoading();
+    $.ajax({
+        url:"ajax/delete_subitem.php",
+        method:"post",
+        data:{subitem_id:subitem_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("Subitems deleted successfully");
+            window.location.href = url;
+        }
+    });
+}
 
 
 function edit_subitems(subitem_id,url)

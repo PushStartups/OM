@@ -801,6 +801,58 @@ function generateTotalUpdateFoodCart()
         // PUSH MAIN ITEM  FOOD CART OBJECT
         foodCartData.push(cartItem);
 
+
+
+        // CHECK MULTIPLE SELECTABLE SUB ITEMS
+
+
+        for (var y = 0; y < order.multiItemsOneType.length; y++)
+        {
+
+            for (var key in order.multiItemsOneType[y])
+            {
+                if(order.multiItemsOneType[y][key] != null)
+                {
+                    if(convertFloat(order.multiItemsOneType[y][key].subItemPrice) != 0)
+                    {
+                        sumTotalAmount = convertFloat(convertFloat(sumTotalAmount) + (convertFloat(order.multiItemsOneType[y][key].subItemPrice) * convertFloat(order.multiItemsOneType[y][key].qty)));
+
+                        if(cartItem.detail == "")
+                        {
+                            cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
+                            cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
+
+                        }
+                        else
+                        {
+                            cartItem.detail +=  ", "+order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
+                            cartItem.detail_he +=  ", "+order.multiItemsOneType[y][key].subItemNameHe+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
+
+                        }
+                    }
+                    else
+                    {
+                        // THOSE ITEMS HAVE PRICE ZERO WILL NOT DISPLAY AS CART ITEM AND DISPLAY AS
+
+                        if(cartItem.detail == "")
+                        {
+                            cartItem.detail +=  order.multiItemsOneType[y][key].subItemName;
+                            cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe;
+                        }
+                        else
+                        {
+                            cartItem.detail +=  ", "+order.multiItemsOneType[y][key].subItemName;
+                            cartItem.detail_he +=  ", "+order.multiItemsOneType[y][key].subItemNameHe;
+                        }
+                    }
+                }
+
+
+            }
+
+
+        }
+
         // CHECK ONE TYPE SUB ITEMS IF ANY
 
         for (var y = 0; y < order.subItemsOneType.length; y++)
@@ -878,55 +930,7 @@ function generateTotalUpdateFoodCart()
 
         }
 
-        // CHECK MULTIPLE SELECTABLE SUB ITEMS
 
-
-        for (var y = 0; y < order.multiItemsOneType.length; y++)
-        {
-
-            for (var key in order.multiItemsOneType[y])
-            {
-                if(order.multiItemsOneType[y][key] != null)
-                {
-                    if(convertFloat(order.multiItemsOneType[y][key].subItemPrice) != 0)
-                    {
-                        sumTotalAmount = convertFloat(convertFloat(sumTotalAmount) + (convertFloat(order.multiItemsOneType[y][key].subItemPrice) * convertFloat(order.multiItemsOneType[y][key].qty)));
-
-                        if(cartItem.detail == "")
-                        {
-                            cartItem.detail +=  order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
-                            cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
-
-                        }
-                        else
-                        {
-                            cartItem.detail +=  ", "+order.multiItemsOneType[y][key].subItemName+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
-                            cartItem.detail_he +=  ", "+order.multiItemsOneType[y][key].subItemNameHe+" (+"+order.multiItemsOneType[y][key].subItemPrice+")";
-
-                        }
-                    }
-                    else
-                    {
-                        // THOSE ITEMS HAVE PRICE ZERO WILL NOT DISPLAY AS CART ITEM AND DISPLAY AS
-
-                        if(cartItem.detail == "")
-                        {
-                            cartItem.detail +=  order.multiItemsOneType[y][key].subItemName;
-                            cartItem.detail_he +=  order.multiItemsOneType[y][key].subItemNameHe;
-                        }
-                        else
-                        {
-                            cartItem.detail +=  ", "+order.multiItemsOneType[y][key].subItemName;
-                            cartItem.detail_he +=  ", "+order.multiItemsOneType[y][key].subItemNameHe;
-                        }
-                    }
-                }
-
-
-            }
-
-
-        }
 
         // TOTAL OF ITEM WITH SUB ITEMS
         cartItem.price = convertFloat(((convertFloat(orderAmount) + convertFloat(sumTotalAmount)) / convertFloat(order.qty)));

@@ -37,7 +37,22 @@ $('#price').bind('input', function() {
 
 });
 
-
+function delete_item(item_id,url)
+{
+    addLoading();
+    $.ajax({
+        url:"ajax/delete_item.php",
+        method:"post",
+        data:{item_id:item_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("Subitems deleted successfully");
+            window.location.href = url;
+        }
+    });
+}
 
 function edit_item(item_id,url)
 {

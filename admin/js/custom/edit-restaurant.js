@@ -165,14 +165,12 @@ function update_restaurant(rest_id)
     }
 
 
-
-
-
-    var postForm = { //Fetch form data
+    var postForm =
+    { //Fetch form data
         'name_en'                 :  $('#name_en').val(),
         'name_he'                 :  $('#name_he').val(),
         'city_id'                 :  $('#city').val(),
-        'logo'                    :  $('input[name=logo]').val(),
+        'logo'                    :  globalEditLogo,
 
         'contact'                 :  $('#contact').val(),
 
@@ -190,11 +188,13 @@ function update_restaurant(rest_id)
         'hechsher_he'             :  $('#hechsher_he').val(),
         'pickup_hide'             :  $('#pickup_hide').val(),
         'min_amount'              :  $('#min_amount').val(),
-        'rest_id'                 : rest_id
+        'rest_id'                 :  rest_id
 
 
     };
+    
 
+    // IF URL IS FROM SUPER ADMIN
     addLoading();
     $.ajax({
         url:"ajax/edit_restaurant.php",
@@ -202,9 +202,50 @@ function update_restaurant(rest_id)
         data: postForm,
         success:function(data)
         {
+
+           // alert(globalEditLogo);
+           // alert(data);
+            if(globalEditLogo != null)
+            {
+               // save_imagee_edit(data);
+            }
             hideLoading();
+            //alert("restaurant updated successfully");
+            //window.location.href = "index.php?id="+city_id;
+        }
+    });
+
+}
+
+function delete_restaurant(restaurant_id,url)
+{
+    addLoading();
+    $.ajax({
+        url:"ajax/delete_restaurant.php",
+        method:"post",
+        data:{restaurant_id:restaurant_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("Restaurant deleted successfully");
+            window.location.href = "index.php";
+        }
+    });
+}
+
+
+function save_imagee_edit(rest_id)
+{
+    alert(window.location.hostname);
+    $.ajax({
+        url: "http://"+window.location.hostname+"/restapi/index.php/update_restaurant_logo",
+        type: 'POST',
+        data: {rest_id:rest_id},
+        success: function (data) {
             alert("restaurant updated successfully");
-            window.location.href = "index.php?id="+city_id;
+            hideLoading();
+           // window.location.href = "index.php";
         }
     });
 }

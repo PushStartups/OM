@@ -70,6 +70,14 @@ function getOrderItems($order_id)
     return $order_detail;
 }
 
+//GET ALL TIMINGS OF RESTAURANTS
+function getAllTimings($restaurant_id)
+{
+    $timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
+    return $timings;
+}
+
+
 
 
 
@@ -211,6 +219,19 @@ function getCompanyName($company_id)
     return  $company['name'];
 }
 
+//GET ALL COMPANIES
+function getSpecificCompanies($company_id)
+{
+    $edit_company = DB::queryFirstRow("select * from company where id = '$company_id'");
+    return  $edit_company;
+}
+//GET ALL COMPANIES TIMINGS
+function getSpecificCompanyTiming($company_id)
+{
+    $edit_company_time = DB::query("select * from company_timing where company_id = '$company_id'");
+    return  $edit_company_time;
+}
+
 
 //GET USERS OF SPECIFIC COMPANY
 function getUsersOfSpecificCompany($companies_id){
@@ -218,24 +239,6 @@ function getUsersOfSpecificCompany($companies_id){
     $company = DB::query("select * from b2b_users where company_id = '$companies_id'");
     return $company;
 }
-
-
-
-//GET ALL TIMINGS OF RESTAURANTS
-function getAllTimings($restaurant_id)
-{
-    $timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
-    return $timings;
-}
-
-
-//GET ALL DELIVERY ADDRESS OF RESTAURANTS
-function getAllDeliveryAddress($restaurant_id)
-{
-    $delivery_address = DB::query("select * from delivery_fee where restaurant_id = '$restaurant_id'");
-    return $delivery_address;
-}
-
 
 
 // GET MENU ID FROM RESTAURANT ID
@@ -317,4 +320,44 @@ function getCategory($category_id)
 function getRestaurant($restaurant_id)
 {
     return $restaurant = DB::queryFirstRow("select * from restaurants where id = '$restaurant_id'");
+}
+
+function getTagsOfSpecificRestaurant($restaurant_id)
+{
+    return $tags = DB::query("select * from tags inner join restaurant_tags on tags.id = restaurant_tags.tag_id where restaurant_tags.restaurant_id = '$restaurant_id' ");
+}
+
+function getSpecificTags($tags_id)
+{
+    return $tags = DB::queryFirstRow("select * from tags  where id = '$tags_id' ");
+}
+
+
+function getSpecificTagsRestaurant($tags_id)
+{
+    return $tags = DB::query("select * from restaurants inner join restaurant_tags on restaurants.id = restaurant_tags.tag_id where restaurant_tags.restaurant_id = '$tags_id' ");
+}
+
+//GET ALL DELIVERY ADDRESS OF RESTAURANTS
+function getAllDeliveryAddress($restaurant_id)
+{
+    $delivery_address = DB::query("select * from delivery_fee where restaurant_id = '$restaurant_id'");
+    return $delivery_address;
+}
+//GET ALL DELIVERY ADDRESS OF RESTAURANTS
+function getSpecificDeliveryAddress($delivery_id)
+{
+    $delivery_address = DB::queryFirstRow("select * from delivery_fee where id = '$delivery_id'");
+    return $delivery_address;
+}
+
+function getSpecificCity($city_id)
+{
+    $city = DB::queryFirstRow("select * from cities where id = '$city_id'");
+    return $city;
+}
+
+function getAllTags()
+{
+    return $tags= DB::query("select * from tags");
 }

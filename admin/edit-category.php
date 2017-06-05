@@ -44,7 +44,32 @@ else
                                 <div class="jarviswidget-editbox">
                                     <!-- This area used as dropdown edit box -->
                                 </div>
+                                <script>
+                                    globalEditCategoryLogo = null;
+                                    //alert(globalEditLogo);
+                                    function previewEditFileCategory() {
 
+                                        var file    = document.querySelector('input[type=file]').files[0];
+                                        var reader  = new FileReader();
+
+                                        reader.onload = function (e) {
+
+                                            $('#edit_logo1_category').attr('src', e.target.result);
+
+                                        }
+
+                                        reader.addEventListener("load", function () {
+
+                                            globalEditCategoryLogo = reader.result;
+                                            // alert(globalEditLogo);
+
+                                        }, false);
+
+                                        if (file) {
+                                            reader.readAsDataURL(file);
+                                        }
+                                    }
+                                </script>
                                 <div class="widget-body">
 
                                     <form>
@@ -53,12 +78,12 @@ else
 
                                             <input id="path1" name="editorImagePath1" type = "hidden" >
 
-                                            <!--                                            <div class="form-group">-->
-                                            <!--                                                <label>Category Mobile Logo</label>-->
-                                            <!--                                                <input class="form-control" name="logo1" id="file" onchange="readURL(this,1);"  type="file">-->
-                                            <!--                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>-->
-                                            <!--                                                <img style="display:block" id="new_image1" src="#" alt="" width="256" height="256" />-->
-                                            <!--                                            </div>-->
+                                            <div class="form-group">
+                                                <label>Category Mobile Logo</label>
+                                                <input class="form-control" name="logo1" id="file" onchange="previewEditFileCategory();"  type="file">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>
+                                                <img style="display:block" id="edit_logo1_category" src="<?=WEB_PATH.$category['image_url'] ?>" alt="" width="440" height="100" />
+                                            </div>
 
                                             <div class="form-group">
                                                 <label>Category Name</label>

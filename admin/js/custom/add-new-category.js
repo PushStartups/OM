@@ -57,6 +57,24 @@ function add_new_category(menu_id,url)
 
     };
 
+    var url      = window.location.href;
+    var restapi_url = "";
+
+    substring1 = "dataentry";
+    substring2 = "admin";
+
+    // IF URL IS FROM DATAENTRY
+    var dataentry = url.includes(substring1);
+    if(dataentry == true)
+    {
+        restapi_url = "http://"+window.location.hostname+"/restapi/index.php/save_category_image_dataentry";
+    }
+    else
+    {
+        restapi_url = "http://"+window.location.hostname+"/restapi/index.php/save_category_image";
+    }
+
+
     addLoading();
     $.ajax({
         url:"ajax/insert_new_category.php",
@@ -65,20 +83,18 @@ function add_new_category(menu_id,url)
         dataType:"json",
         success:function(data)
         {
-            save_image(data,menu_id,url);
-          //  hideLoading();
-          //  alert("Category added successfully");
-          //  window.location.href = url;
+            save_image(data,menu_id,url,restapi_url);
+
         }
     });
 }
 
-function save_image(cat_id,menu_id,url)
+function save_image(cat_id,menu_id,url,restapi_url)
 {
     //alert(cat_id);
     //alert(menu_id);
     $.ajax({
-        url: "http://dev.orderapp.com/restapi/index.php/save_category_image",
+        url:  restapi_url,
         type: 'POST',
         data: {cat_id:cat_id,menu_id:menu_id},
         success: function (data) {

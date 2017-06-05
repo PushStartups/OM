@@ -16,7 +16,7 @@ include "header.php";
 
         </div>
         <div id="myform">
-            <section id="widget-grid"  id="myform">
+            <section id="widget-grid">
                 <!-- row -->
                 <div class="row">
                     <!-- NEW WIDGET START -->
@@ -199,6 +199,11 @@ include "header.php";
 
         var file    = document.querySelector('input[type=file]').files[0];
         var reader  = new FileReader();
+        reader.onload = function (e) {
+
+            $('#new_image1').attr('src', e.target.result);
+
+        }
 
         reader.addEventListener("load", function () {
 

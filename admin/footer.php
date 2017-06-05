@@ -20,9 +20,9 @@ you can add as many as you like
 <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
+<script src="js/custom/customap.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc&callback=initMap"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>-->
 <script>
     if (!window.jQuery) {
         document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
@@ -100,6 +100,7 @@ you can add as many as you like
 <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
 <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+
 <script src="js/custom/restaurants.js"></script>
 <script src="js/custom/refund.js"></script>
 <script src="js/custom/add-new-company.js"></script>
@@ -116,6 +117,16 @@ you can add as many as you like
 <script src="js/custom/edit-extra.js"></script>
 <script src="js/custom/edit-subitem.js"></script>
 <script src="js/custom/add-new-timing.js"></script>
+<script src="js/custom/add-new-tags.js"></script>
+<script src="js/custom/edit-company.js"></script>
+<!--<script src="js/custom/bootstrap-3.3.2.min.js"></script>-->
+<script src="js/custom/bootstrap-multiselect.js"></script>
+<script src="js/custom/edit-delivery-address.js"></script>
+<script src="js/custom/edit-tags.js"></script>
+<script src="js/custom/edit-tag-restaurant.js"></script>
+<script src="js/custom/edit-city.js"></script>
+<script src="js/custom/add-new-city.js"></script>
+
 
 <script type="text/javascript">
     hideLoading();
@@ -136,23 +147,6 @@ you can add as many as you like
 //        );
         pageSetUp();
 
-        /* // DOM Position key index //
-
-         l - Length changing (dropdown)
-         f - Filtering input (search)
-         t - The Table! (datatable)
-         i - Information (records)
-         p - Pagination (paging)
-         r - pRocessing
-         < and > - div elements
-         <"#id" and > - div with an id
-         <"class" and > - div with a class
-         <"#id.class" and > - div with an id and class
-
-         Also see: http://legacy.datatables.net/usage/features
-         */
-
-        /* BASIC ;*/
         var responsiveHelper_dt_basic = undefined;
         var responsiveHelper_datatable_fixed_column = undefined;
         var responsiveHelper_datatable_col_reorder = undefined;
@@ -346,17 +340,50 @@ you can add as many as you like
     ];
 
 
-    var pausecontent = new Array();
+
+    globalTag = null;
+
+
+
+    // TAGS AUTOCOMPLETE
+
+
+    var tags = new Array();
     <?php
 
-    $arr = DB::query("select * from restaurants");
-    foreach($arr as $name ){ ?>
-    pausecontent.push("<?php echo $name['name_en']; ?>");
+    $arr1 = DB::query("select * from tags");
+    foreach($arr1 as $tag_name ){ ?>
+    tags.push("<?php echo $tag_name['name_en']; ?>");
     <?php } ?>
 
-        $( "#rest_name" ).autocomplete({
-            source: pausecontent
+    $( "#tag_name_en" ).autocomplete({
+        source: tags,
+        select: function (event, ui) {
+            globalTag = ui.item.label;
+            auto_hebrew_tags(ui.item.label);
+
+        },
+    });
+
+    // TAGS HE AUTOCOMPLETE
+    var tags_he = new Array();
+    <?php
+
+    $arr1 = DB::query("select * from tags");
+    foreach($arr1 as $tag_name ){ ?>
+    tags_he.push("<?php echo $tag_name['name_he']; ?>");
+    <?php } ?>
+
+    $( "#tag_name_he" ).autocomplete({
+        source: tags_he
+    });
+
+
+    $(document).ready(function() {
+        $('#rest_name').multiselect({
+            maxHeight: '300',
         });
+    });
 
 </script>
 

@@ -3,6 +3,34 @@ require_once '../inc/initDb.php';
 session_start();
 DB::query("set names utf8");
 
+$data  =   $_POST['logo'];
+$resp = "chaa";
+if($data != "") {
+    $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
+
+    $name_logo = preg_replace('/\s*/', '', $_POST['name_en']);
+
+    $name_logo = strtolower($name_logo);
+
+    if (!is_dir("../../m/en/img")) {
+        mkdir("../../m/en/img", 0777);
+
+    }
+    $filepath = '../../m/en/img/' . $name_logo . "_logo.png"; // or image.jpg
+
+
+    $image_url = "";
+    if (file_put_contents($filepath, $data)) {
+        $image_url = "/m/en/img/" . $name_logo . "_logo.png";
+        $resp = "workingg";
+
+    } else {
+
+        $resp = "not working";
+        $image_url = "/m/en/img/cs-logo.png";
+
+    }
+}
 
 
 
@@ -26,4 +54,16 @@ DB::update('restaurants', array(
 );
 
 
-echo json_encode("success");
+//if($baseFromJavascript != "")
+//{
+//    DB::update('restaurants', array(
+//        "logo"               =>      $_POST['logo'],
+//
+//    ), "id=%d", $_POST['rest_id']
+//    );
+//
+//}
+
+
+
+echo json_encode($resp);

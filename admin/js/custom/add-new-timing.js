@@ -133,27 +133,27 @@ $('#fee').bind('input', function() {
 function add_timing(restaurant_id,url)
 {
 
-    var sunday_start_time       =  $('#sunday_start_time').val().trim();
-    var sunday_end_time         =  $('#sunday_end_time').val().trim();
+    var sunday_start_time       =  $('#sunday_start_time').val();
+    var sunday_end_time         =  $('#sunday_end_time').val();
 
-    var monday_start_time       =  $('#monday_start_time').val().trim();
-    var monday_end_time         =  $('#monday_end_time').val().trim();
+    var monday_start_time       =  $('#monday_start_time').val();
+    var monday_end_time         =  $('#monday_end_time').val();
 
-    var tuesday_start_time      =  $('#tuesday_start_time').val().trim();
-    var tuesday_end_time        =  $('#tuesday_end_time').val().trim();
+    var tuesday_start_time      =  $('#tuesday_start_time').val();
+    var tuesday_end_time        =  $('#tuesday_end_time').val();
 
 
-    var wednesday_start_time    =  $('#wednesday_start_time').val().trim();
-    var wednesday_end_time      =  $('#wednesday_end_time').val().trim();
+    var wednesday_start_time    =  $('#wednesday_start_time').val();
+    var wednesday_end_time      =  $('#wednesday_end_time').val();
 
-    var thursday_start_time     =  $('#thursday_start_time').val().trim();
-    var thursday_end_time       =  $('#thursday_end_time').val().trim();
+    var thursday_start_time     =  $('#thursday_start_time').val();
+    var thursday_end_time       =  $('#thursday_end_time').val();
 
-    var friday_start_time       =  $('#friday_start_time').val().trim();
-    var friday_end_time         =  $('#friday_end_time').val().trim();
+    var friday_start_time       =  $('#friday_start_time').val();
+    var friday_end_time         =  $('#friday_end_time').val();
 
-    var saturday_start_time     =  $('#saturday_start_time').val().trim();
-    var saturday_end_time       =  $('#saturday_end_time').val().trim();
+    var saturday_start_time     =  $('#saturday_start_time').val();
+    var saturday_end_time       =  $('#saturday_end_time').val();
 
 
 
@@ -296,7 +296,7 @@ function add_timing(restaurant_id,url)
         {
             hideLoading();
             alert("Timing added successfully");
-            window.location.href = url;
+           // window.location.href = url;
         }
     });
 }

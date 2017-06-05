@@ -117,13 +117,14 @@
                                     <p>Didn't have account? <a onclick="switchToSignUp()" href="#">Sign Up</a></p>
                                     <div class="btn-holder">
                                         <button onclick="myFacebookLogin()" class="btn btn-facebook" type="button">Log In with Facebook</button>
-                                        <button id="google-btn-2" onclick="myGoogleLogin()"  class="btn btn-google google-btn" type="button">Log In with Google</button>
+                                        <button id="google-btn-2" class="btn btn-google google-btn" type="button">Log In with Google</button>
                                     </div>
                                     <div class="line">Or</div>
 
                                     <!-- start login with email sectopm -->
 
                                     <a id="login_with_email_pass" onclick="expand_login()"  class="login-email" href="#">Log In with Email and Password</a>
+
                                     <div id="login_email" class="login-section" style="display: none">
                                         <input id="email-login" class="form-control" type="email" placeholder="Email Address">
                                         <input id="password-login" class="form-control add" type="password" placeholder="Password">
@@ -162,7 +163,7 @@
                                     <p>Alredy have account? <a onclick="switchToLogin()" href="#">Log In</a></p>
                                     <div class="btn-holder">
                                         <button onclick="myFacebookLogin()" class="btn btn-facebook" type="button">Sign Up with Facebook</button>
-                                        <button onclick="myGoogleLogin()" id="google-btn"  class="btn btn-google " type="button">Sign Up with Google</button>
+                                        <button  id="google-btn"  class="btn btn-google " type="button">Sign Up with Google</button>
                                     </div>
                                     <div class="line">Or</div>
 
@@ -1223,6 +1224,7 @@
 
         $('#login_email').show();
         $('#forget_pass_sec').hide();
+        $('#email_reset_message').hide();
     }
 
 
@@ -1258,7 +1260,7 @@
         {
             $('#email_reset_message').show();
             $('#forget_pass_sec').hide();
-            $('#login_with_email_pass').hide();
+
         }
         else {
 
@@ -1274,150 +1276,274 @@
         commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
     }
 
-    //    //FACEBOOK LOGIN
-    //    window.fbAsyncInit = function() {
-    //        FB.init({
-    //            appId      : '126495791241571',
-    //            xfbml      : true,
-    //            version    : 'v2.9'
-    //        });
-    //    };
-    //
-    //
-    //    (function(d, s, id){
-    //        var js, fjs = d.getElementsByTagName(s)[0];
-    //        if (d.getElementById(id)) {return;}
-    //        js = d.createElement(s); js.id = id;
-    //        js.src = "//connect.facebook.net/en_US/sdk.js";
-    //        fjs.parentNode.insertBefore(js, fjs);
-    //    }(document, 'script', 'facebook-jssdk'));
-    //
-    //    function myFacebookLogin() {
-    //
-    //        FB.login(function(response)
-    //        {
-    //            if (response.authResponse)
-    //            {
-    //                getUserInformation();
-    //            }
-    //            else
-    //            {console.log('User cancelled login or did not fully authorize.');
-    //            }
-    //
-    //        }, {scope: 'email'});
-    //
-    //        function getUserInformation() {
-    //
-    //            FB.api('/me', { locale: 'en_US', fields: 'name, email' },
-    //                function(response) {
-    //                    isSocial = true;
-    //                    var name = response.name;
-    //                    console.log(name);
-    //                    var primaryEmail = response.email;
-    //
-    //                    console.log(primaryEmail);
-    //
-    //                    localStorage.setItem("USER_EMAIL",primaryEmail);
-    //                    localStorage.setItem("USER_NAME",name);
-    //                    $("#email_text").val(primaryEmail);
-    //                    $("#name_text").val(name);
-    //
-    //                    userObject.email = primaryEmail;
-    //                    userObject.name = name;
-    //
-    //                    $('#signin').hide();
-    //                    $('#signup').show();
-    //
-    //
-    //                    $('#loginBtnText').html("Hi "+userObject.email);
-    //                    $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
-    //
-    //                    $("#email_verification_message").hide();
-    //                    $("#loginMessage").show();
-    //                    $('#signup-message').hide();
-    //                    $('#signUpForm').hide();
-    //                    $('#manual-signup').hide();
-    //
-    //                    $('#email-login').val('');
-    //                    $('#password-login').val('');
-    //                });
-    //        }
-    //    }
-    //
-    //    // GOOGLE SIGN IN
-    //    var googleUser = {};
-    //
-    //
-    //    var startApp = function() {
-    //        gapi.load('auth2', function(){
-    //            // Retrieve the singleton for the GoogleAuth library and set up the client.
-    //            auth2 = gapi.auth2.init({
-    //
-    //                'client_id' : '116247344094-kbebvthkdfclmocoj7fi6jo75b0llvjv.apps.googleusercontent.com',
-    //                'cookiepolicy' : 'single_host_origin',
-    //                'callback' : 'onSignInCallback',
-    //                'approvalprompt':'auto',
-    //                'setAccessType' : 'online',
-    //                'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
-    //            });
-    //
-    //            attachSignin(document.getElementById('google-btn'));
-    //            attachSignin(document.getElementById('google-btn-2'));
-    //        });
-    //    };
-    //
-    //    function attachSignin(element) {
-    //
-    //
-    //        console.log(element.id);
-    //        auth2.attachClickHandler(element, {},
-    //
-    //            function(googleUser)
-    //            {
-    //
-    //                sessionStorage.token = googleUser.getAuthResponse().access_token;
-    //                console.log(googleUser);
-    //
-    //
-    //                var primaryEmail = googleUser.getBasicProfile().getEmail();
-    //                // console.log(primaryEmail);
-    //                var displayName = googleUser.getBasicProfile().getName();
-    //                // console.log(displayName);
-    //
-    //
-    //
-    //                localStorage.setItem("USER_EMAIL",primaryEmail);
-    //                localStorage.setItem("USER_NAME",displayName);
-    //
-    //                userObject.email = primaryEmail;
-    //                userObject.name = displayName;
-    //
-    //                $("#email_text").val(primaryEmail);
-    //                $("#name_text").val(displayName);
-    //
-    //                $('#signin').hide();
-    //                $('#signup').show();
-    //
-    //
-    //                $('#loginBtnText').html("Hi "+userObject.email);
-    //                $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
-    //
-    //                $("#email_verification_message").hide();
-    //                $("#loginMessage").show();
-    //                $('#signup-message').hide();
-    //                $('#signUpForm').hide();
-    //                $('#manual-signup').hide();
-    //
-    //                $('#email-login').val('');
-    //                $('#password-login').val('');
-    //            },
-    //            function(error) {
-    //
-    //                alert(JSON.stringify(error, undefined, 2));
-    //            });
-    //    }
-    //
-    //                startApp();
+    //FACEBOOK LOGIN
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '572922239565680',
+            xfbml      : true,
+            version    : 'v2.9'
+        });
+    };
+
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function myFacebookLogin() {
+
+        FB.login(function(response)
+        {
+            if (response.authResponse)
+            {
+                getUserInformation();
+            }
+            else
+            {console.log('User cancelled login or did not fully authorize.');
+            }
+
+        }, {scope: 'email'});
+
+        function getUserInformation() {
+
+            FB.api('/me', { locale: 'en_US', fields: 'name, email' },
+
+                function(response) {
+
+                    isSocial = true;
+
+
+                    var name = "";
+                    var primaryEmail = "";
+                    var provider = "";
+                    var uid = "";
+                    var contact = "";
+
+                    try {
+
+                        name = response.name;
+                    }
+                    catch (exp)
+                    {
+                        name = "";
+                    }
+
+
+                    try {
+
+                        primaryEmail = response.email;
+                    }
+                    catch (exp)
+                    {
+                        primaryEmail = "";
+                    }
+
+
+                    try {
+
+                        provider = "facebook";
+                    }
+                    catch (exp)
+                    {
+                        provider = "";
+                    }
+
+                    try {
+
+                        uid = response.id;
+                    }
+                    catch (exp)
+                    {
+                        uid = "";
+                    }
+
+                    try {
+
+                        contact = "";
+                    }
+                    catch (exp)
+                    {
+                        contact = "";
+                    }
+
+
+
+                    localStorage.setItem("USER_EMAIL",primaryEmail);
+                    localStorage.setItem("USER_SMOOCH_ID",uid);
+                    localStorage.setItem("USER_NAME",name);
+                    $("#email_text").val(primaryEmail);
+                    $("#name_text").val(name);
+
+                    if(primaryEmail != null)
+                    {
+                        userObject.email = primaryEmail;
+                    }
+                    else {
+
+                        userObject.email = "";
+                    }
+
+                    userObject.name = name;
+
+                    $('#signin').hide();
+                    $('#signup').show();
+
+
+                    $('#loginBtnText').html("Hi "+userObject.name);
+                    $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
+
+                    $("#email_verification_message").hide();
+                    $("#loginMessage").show();
+                    $('#signup-message').hide();
+                    $('#signUpForm').hide();
+                    $('#manual-signup').hide();
+
+                    $('#email-login').val('');
+                    $('#password-login').val('');
+
+                    commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+
+
+                });
+        }
+    }
+
+    // GOOGLE SIGN IN
+    var googleUser = {};
+
+
+    var startApp = function() {
+        gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+
+                'client_id' : '116247344094-kbebvthkdfclmocoj7fi6jo75b0llvjv.apps.googleusercontent.com',
+                'cookiepolicy' : 'single_host_origin',
+                'callback' : 'onSignInCallback',
+                'approvalprompt':'auto',
+                'setAccessType' : 'online',
+                'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+            });
+
+            attachSignin(document.getElementById('google-btn'));
+            attachSignin(document.getElementById('google-btn-2'));
+        });
+    };
+
+    function attachSignin(element) {
+
+        console.log(element.id);
+        auth2.attachClickHandler(element, {},
+
+            function(googleUser)
+            {
+
+                sessionStorage.token = googleUser.getAuthResponse().access_token;
+                console.log(googleUser);
+
+                var name = "";
+                var primaryEmail = "";
+                var provider = "";
+                var uid = "";
+                var contact = "";
+
+                try {
+
+                    name = googleUser.getBasicProfile().getName();
+                }
+                catch (exp)
+                {
+                    name = "";
+                }
+
+
+                try {
+
+                    primaryEmail = googleUser.getBasicProfile().getEmail();
+                }
+                catch (exp)
+                {
+                    primaryEmail = "";
+                }
+
+
+                try {
+
+                    provider = "google";
+                }
+                catch (exp)
+                {
+                    provider = "";
+                }
+
+                try {
+
+                    uid = googleUser.getBasicProfile().getId();
+                }
+                catch (exp)
+                {
+                    uid = "";
+                }
+
+                try {
+
+                    contact = "";
+                }
+                catch (exp)
+                {
+                    contact = "";
+                }
+
+
+
+
+                localStorage.setItem("USER_EMAIL",primaryEmail);
+                localStorage.setItem("USER_SMOOCH_ID",uid);
+                localStorage.setItem("USER_NAME",name);
+                $("#email_text").val(primaryEmail);
+                $("#name_text").val(name);
+
+                if(primaryEmail != null)
+                {
+                    userObject.email = primaryEmail;
+                }
+                else {
+
+                    userObject.email = "";
+                }
+
+                userObject.name = name;
+
+                $('#signin').hide();
+                $('#signup').show();
+
+                $('#loginBtnText').html("Hi "+userObject.name);
+                $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
+
+                $("#email_verification_message").hide();
+                $("#loginMessage").show();
+                $('#signup-message').hide();
+                $('#signUpForm').hide();
+                $('#manual-signup').hide();
+
+                $('#email-login').val('');
+                $('#password-login').val('');
+
+
+                commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+            },
+            function(error) {
+
+                alert(JSON.stringify(error, undefined, 2));
+            });
+    }
+
+    startApp();
 </script>
 
 
@@ -1425,300 +1551,20 @@
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="/en/script/commonAjaxCall.js"></script>
 
-
-<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
 <script>
 
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDa5zx-TNfPwBq-WpSA6oxOhf0rK2pZ5eU",
-        authDomain: "orderapp-cf060.firebaseapp.com",
-        databaseURL: "https://orderapp-cf060.firebaseio.com",
-        projectId: "orderapp-cf060",
-        storageBucket: "orderapp-cf060.appspot.com",
-        messagingSenderId: "422139907682"
-    };
-    firebase.initializeApp(config);
-
-
-    // FireBase with FB Login
-
-    var provider = new firebase.auth.FacebookAuthProvider();
-
-    provider.addScope('email');
-
-    function myFacebookLogin() {
-
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-
-            //console.log(user);
-
-            isSocial = true;
-
-            var name = "";
-            var primaryEmail = "";
-            var provider = "";
-            var uid = "";
-            var contact = "";
-
-            try {
-
-                name = user.displayName;
-            }
-            catch (exp)
-            {
-                name = "";
-            }
-
-
-            try {
-
-                primaryEmail = user.email;
-            }
-            catch (exp)
-            {
-                primaryEmail = "";
-            }
-
-
-            try {
-
-                provider = result.credential.providerId;
-            }
-            catch (exp)
-            {
-                provider = "";
-            }
-
-            try {
-
-                uid = user.uid;
-            }
-            catch (exp)
-            {
-                uid = "";
-            }
-
-            try {
-
-                contact = user.phoneNumber;
-            }
-            catch (exp)
-            {
-                contact = "";
-            }
-
-
-
-            localStorage.setItem("USER_EMAIL",primaryEmail);
-            localStorage.setItem("USER_SMOOCH_ID",uid);
-            localStorage.setItem("USER_NAME",name);
-            $("#email_text").val(primaryEmail);
-            $("#name_text").val(name);
-
-            if(primaryEmail != null)
-            {
-                userObject.email = primaryEmail;
-            }
-            else {
-
-                userObject.email = "";
-            }
-
-            userObject.name = name;
-
-            $('#signin').hide();
-            $('#signup').show();
-
-
-            $('#loginBtnText').html("Hi "+userObject.name);
-            $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
-
-            $("#email_verification_message").hide();
-            $("#loginMessage").show();
-            $('#signup-message').hide();
-            $('#signUpForm').hide();
-            $('#manual-signup').hide();
-
-            $('#email-login').val('');
-            $('#password-login').val('');
-
-            commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
-
-            // ...
-        }).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-        });
-
-    }
-
-
-    var googleProvider = new firebase.auth.GoogleAuthProvider();
-
-    // GOOGLE FIREBASE LOGIN
-    function myGoogleLogin()
-    {
-        firebase.auth().signInWithPopup(googleProvider).then(function(result) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-
-            //console.log(user);
-            isSocial = true;
-
-            var name = "";
-            var primaryEmail = "";
-            var provider = "";
-            var uid = "";
-            var contact = "";
-
-            try {
-
-                name = user.displayName;
-            }
-            catch (exp)
-            {
-                name = "";
-            }
-
-
-            try {
-
-                primaryEmail = user.email;
-            }
-            catch (exp)
-            {
-                primaryEmail = "";
-            }
-
-
-            try {
-
-                provider = result.credential.providerId;
-            }
-            catch (exp)
-            {
-                provider = "";
-            }
-
-            try {
-
-                uid = user.uid;
-            }
-            catch (exp)
-            {
-                uid = "";
-            }
-
-            try {
-
-                contact = user.phoneNumber;
-            }
-            catch (exp)
-            {
-                contact = "";
-            }
-
-
-
-
-            localStorage.setItem("USER_EMAIL",primaryEmail);
-            localStorage.setItem("USER_SMOOCH_ID",uid);
-            localStorage.setItem("USER_NAME",name);
-            $("#email_text").val(primaryEmail);
-            $("#name_text").val(name);
-
-            if(primaryEmail != null)
-            {
-                userObject.email = primaryEmail;
-            }
-            else {
-
-                userObject.email = "";
-            }
-
-            userObject.name = name;
-
-            $('#signin').hide();
-            $('#signup').show();
-
-            $('#loginBtnText').html("Hi "+userObject.name);
-            $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
-
-            $("#email_verification_message").hide();
-            $("#loginMessage").show();
-            $('#signup-message').hide();
-            $('#signUpForm').hide();
-            $('#manual-signup').hide();
-
-            $('#email-login').val('');
-            $('#password-login').val('');
-
-
-            commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
-
-            // ...
-        }).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-        });
-
-    }
-
-
-    function singUpUser() {
+    function singUpUser(response) {
 
         resp = JSON.parse(response);
-
-        userObject.uid = resp.smooch_id;
-        userObject.email = resp.email;
-        userObject.name = resp.name;
-        userObject.contact = resp.contact;
-
-        // DISPLAY LOGIN SUCCESS
-
-        $('#loginBtnText').html("Hi "+userObject.email);
-        $("#loginMessage").show();
-        $("#success-message").html("Hey "+name+", Nice to meet you :)");
-
-        // HIDE FORM S
-
-        $('#signup-message').hide();
-        $('#manual-signup').hide();
-        $('#signUpForm').hide();
-
-
-        $('#email_text').val(userObject.email);
-        $('#name_text').val(userObject.name);
-        $('#contact_text').val(userObject.contact);
-
     }
 
 
 </script>
+
 <script src="https://cdn.smooch.io/smooch.min.js"></script>
 <script>
     Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
 </script>
-
 
 </body>
 </html>

@@ -3,7 +3,7 @@ include "header.php";
 
 if(isset($_GET['id']))
 {
-    $restaurant_id = $_GET['id'];
+     $restaurant_id = $_GET['id'];
 
     $timings = getAllTimings($restaurant_id);
 
@@ -80,8 +80,6 @@ else
 
 ?>
 
-
-
 <style>
     .logo-table {
         width: 220px;
@@ -98,16 +96,14 @@ else
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-briefcase "></i> Add Restaurant Timings</h1>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-clock-o"></i> Add Restaurant Timings</h1>
             </div>
 
         </div>
 
         <!-- widget grid -->
 
-        <section id="widget-grid"  id="myform">
-
-
+        <section id="widget-grid">
 
             <div class="row">
                 <!-- NEW WIDGET START -->
@@ -360,43 +356,7 @@ else
                                     </div>
 
                                 </form>
-
-
                                 <!--   RESTAURANT DELIVERY ADDRESS AND FEES-->
-
-                                <div class="widget-body no-padding">
-                                    <table class="table table-striped table-bordered table-hover" width="100%">
-                                        <thead>
-                                        <tr>
-                                            <th data-class="expand"><i class="fa fa-fw fa-address-card  text-muted hidden-md hidden-sm hidden-xs"></i> Address</th>
-                                            <th data-hide="expand"><i class="fa-fw fa fa-address-card  text-muted hidden-md hidden-sm hidden-xs"></i> כתובת </th>
-                                            <th data-hide="phone"><i class="fa-fw fa fa-money  text-muted hidden-md hidden-sm hidden-xs"></i> Fees </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-
-                                        foreach($delivery_address as $delivery) {
-
-                                            ?>
-                                            <tr>
-
-                                                <td><?=$delivery['area_en']?></td>
-                                                <td><?=$delivery['area_he']?></td>
-                                                <td><?=$delivery['fee']?></td>
-
-                                            </tr>
-                                        <?php  } ?>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
-
-                                <div onclick="show_delivery_address()" class="btn btn-primary btn-lg" style="margin-top: 2%;">
-                                    <i class="fa fa-plus"></i>
-                                    Delivery Address
-                                </div>
 
                             </div>
 
@@ -408,33 +368,42 @@ else
             </div>
 
 
+            <div class="row">
 
+                <!-- col -->
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-truck"></i> Add Delivery Address</h1>
+                </div>
+
+            </div>
 
             <div class="row">
                 <!-- NEW WIDGET START -->
                 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <div style="display: none" id="add-delivery-address" >
+                        <div  class="jarviswidget jarviswidget-color-darken" id="wid-id-3" data-widget-editbutton="false">
+                            <div>
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
 
+                                </div>
+                                <!-- end widget edit box -->
+                                <style>
+                                    .map_canvas {
+                                        width: 500px;
+                                        height: 300px;
+                                        margin: 10px 20px 10px 0;
+                                    }
 
-                        <div>
-
-                            <!-- widget edit box -->
-                            <div class="jarviswidget-editbox">
-                                <!-- This area used as dropdown edit box -->
-
-                            </div>
-                            <!-- end widget edit box -->
-
-                            <!-- widget content -->
-
-
-                            <div id="add-delivery-address" style="display: none">
+                                </style>
+                                <!-- widget content -->
                                 <form method="post">
                                     <fieldset>
 
                                         <div class="form-group">
-                                            <label>Address</label>
+                                            <label>Delivery Address</label>
                                             <input class="form-control" id="area_en" name="area_en" placeholder="Enter Address" type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_en_error"></span>
                                         </div>
@@ -444,16 +413,17 @@ else
                                             <input style="direction:RTL;" class="form-control" id="area_he" name="area_he"  type="text">
                                             <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="area_he_error"></span>
                                         </div>
+                                        <div style="display:none" class="row form-group">
+                                            <div id="map" class="map_canvas"></div>
+                                        </div>
+                                        <input type="hidden" id="lat" name="lat" value="">
+                                        <input type="hidden" id="lng" name="lng" value="">
 
                                         <div class="form-group">
                                             <label>Fees</label>
                                             <input class="form-control" id="fee" name="fee" placeholder="Enter Fees" type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="fee_error"></span>
                                         </div>
-
-
-
-
                                     </fieldset>
                                     <div class="form-actions">
                                         <div onclick="add_delivery_address('<?=$restaurant_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
@@ -464,14 +434,65 @@ else
                                 </form>
                             </div>
                         </div>
-
-
-
                     </div>
+                    <div onclick="show_delivery_address()" class="btn btn-primary btn-lg" style="margin-top: 2%;">
+                        <i class="fa fa-plus"></i>
+                        Add Delivery Address
+                    </div><br>
+
                 </article>
 
-            </div>
+            </div><br>
+            <div class="row">
+                <!-- NEW WIDGET START -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false">
 
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-cutlery"></i> </span>
+                            <h2>Delivery Address </h2>
+                        </header>
+                        <!-- widget div-->
+                        <div>
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+                            </div>
+                            <div class="widget-body no-padding">
+                                <table class="table table-striped table-bordered table-hover" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th data-class="expand"><i class="fa fa-fw fa-address-card  text-muted hidden-md hidden-sm hidden-xs"></i> Address</th>
+                                        <th data-hide="expand"><i class="fa-fw fa fa-address-card  text-muted hidden-md hidden-sm hidden-xs"></i> כתובת </th>
+                                        <th data-hide="phone"><i class="fa-fw fa fa-money  text-muted hidden-md hidden-sm hidden-xs"></i> Fees </th>
+                                        <th data-hide="phone"><i class="fa-fw fa   text-muted hidden-md hidden-sm hidden-xs"></i> Edit </th>
+                                        <th data-hide="phone"><i class="fa-fw fa   text-muted hidden-md hidden-sm hidden-xs"></i> Delete </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+
+                                    foreach($delivery_address as $delivery) {
+
+                                        ?>
+                                        <tr>
+
+                                            <td><?=$delivery['area_en']?></td>
+                                            <td><?=$delivery['area_he']?></td>
+                                            <td><?=$delivery['fee']?></td>
+
+                                            <td><a href="edit-address.php?id=<?=$delivery['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+                                            <td><a onclick="delete_delivery_address('<?=$delivery['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete </button></a></td>
+                                        </tr>
+                                    <?php  } ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- end widget grid -->

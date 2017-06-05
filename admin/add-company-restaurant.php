@@ -56,31 +56,48 @@ if(isset($_GET['companies_id']))
 
                             <div class="widget-body">
 
-                                <form>
+                                <form method="post" enctype="multipart/form-data" action="ajax/insert_company_restaurant.php">
                                     <fieldset>
                                         <input name="authenticity_token" type="hidden">
                                         <div class="form-group">
                                             <label>Restaurant Name</label>
-                                            <input class="form-control" id="rest_name" name="rest_name" placeholder="Enter Restaurant Name" type="text">
+<!--                                            <input class="form-control" id="rest_name" name="rest_name" placeholder="Enter Restaurant Name" type="text">-->
+                                            <select id="rest_name" name="rest_name[]" multiple="multiple" class="form-control" required>
+                                                <?php
+                                                $rest_ids = DB::query("SELECT company_rest.rest_id FROM company_rest INNER JOIN restaurants ON company_rest.rest_id = restaurants.id WHERE company_id =  '$companies_id'");
+
+
+
+                                                foreach ($rest_ids as $r) {
+                                                    $row[] = $r['rest_id'];
+                                                }
+                                                $qry1 = " select  * from  restaurants where id not in('" . implode("','", $row) . "') ";
+
+                                                $restaurant = db::query($qry1);
+
+                                                    foreach($restaurant as $rest)
+                                                    { ?>
+                                                        <option value="<?=$rest['id']?>"><?=$rest['name_en']?></option>;
+                                                    <?php
+                                                    }
+                                                ?>
+
+
+
+                                            </select>
+                                            <input type="hidden" value="<?=$companies_id?>" id="company_id" name="company_id">
+                                            <input type="hidden" value="<?=$_SERVER['REQUEST_URI']?>" id="url" name="url">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-name"></span>
                                         </div>
                                     </fieldset>
                                     <div class="form-actions">
-                                        <div onclick="add_company_restaurant('<?=$companies_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary">
-                                            <i class="fa fa-save"></i>
-                                            Save
-                                        </div>
+
+                                    <input type="submit" value="Submit" class="btn btn-primary">
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
 
                     <?php if(!empty($restaurants)){  ?>
                     <!-- Widget ID (each widget will need unique ID)-->

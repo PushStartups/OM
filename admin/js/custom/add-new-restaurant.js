@@ -189,28 +189,46 @@ function add_restaurant() {
 
     addLoading();
 
+
+    var url      = window.location.href;
+    var restapi_url = "";
+
+    substring1 = "dataentry";
+    substring2 = "admin";
+
+    // IF URL IS FROM DATAENTRY
+    var dataentry = url.includes(substring1);
+    if(dataentry == true)
+    {
+        restapi_url = "http://"+window.location.hostname+"/restapi/index.php/insert_new_restaurant_dataentry";
+    }
+    else
+    {
+         restapi_url = "http://"+window.location.hostname+"/restapi/index.php/insert_new_restaurant";
+    }
+
     $.ajax({
         url: "ajax/insert_new_restaurant.php",
         type: 'POST',
         data: postForm,
         success: function (data) {
-            save_imagee(data);
+            save_imagee(data,restapi_url);
             //hideLoading();
 
         }
     });
 }
 
-function save_imagee(rest_id)
+function save_imagee(rest_id,restapi_url)
 {
     $.ajax({
-        url: "http://dev.orderapp.com/restapi/index.php/insert_new_restaurant",
+        url: restapi_url,
         type: 'POST',
         data: {rest_id:rest_id},
         success: function (data) {
             alert("restaurant added successfully");
             hideLoading();
-             //window.location.href = "index.php";
+             window.location.href = "index.php";
         }
     });
 }

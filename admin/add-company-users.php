@@ -110,7 +110,7 @@ include "header.php";
                                             <th >Discount</th>
                                             <th >Contact</th>
                                             <th >Language</th>
-<!--                                            <th>Delete</th>-->
+                                            <!--                                            <th>Delete</th>-->
                                         </tr>
                                         </thead>
 
@@ -154,12 +154,79 @@ include "header.php";
 
             <div class="row">
 
-                <!-- a blank row to get started -->
-                <div class="col-sm-12">
-                    <!-- your contents here -->
+                <!-- col -->
+                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+                    <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-users "></i> Add Users</h1>
                 </div>
 
             </div>
+
+            <div class="row">
+                <!-- NEW WIDGET START -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <div style="display: none" id="add-users" >
+                        <div  class="jarviswidget jarviswidget-color-darken" id="wid-id-3" data-widget-editbutton="false">
+                            <div>
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+
+                                </div>
+                                <!-- end widget edit box -->
+
+                                <!-- widget content -->
+                                <form method="post">
+                                    <fieldset>
+
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input class="form-control" id="name" name="name" placeholder="Enter Name" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="name_error"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" id="smooch_id" name="smooch_id" placeholder="Enter Email" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="email_error"></span>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label>Contact</label>
+                                            <input class="form-control" id="contact" name="contact" placeholder="Enter Contact" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="contact_error"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input class="form-control" id="address" name="address" placeholder="Enter Address" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="address_error"></span>
+                                        </div>
+
+                                        <input type="hidden" name="companies_id" id="companies_id" value="<?=$companies_id;?>"
+
+                                    </fieldset>
+                                    <div class="form-actions">
+                                        <div onclick="add_new_user('<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
+                                            <i class="fa fa-save"></i>
+                                            Submit
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="show_add_new_user()" class="btn btn-primary btn-lg" style="margin-top: 2%;">
+                        <i class="fa fa-plus"></i>
+                        Add User
+                    </div><br>
+
+                </article>
+
+            </div><br>
+
 
             <!-- end row -->
 

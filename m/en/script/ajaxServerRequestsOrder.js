@@ -45,6 +45,33 @@ $( document ).ready(function() {
     selectedRest                = JSON.parse(localStorage.getItem("SELECTED_REST"));             // MINIMUM ORDER LIMIT
 
 
+
+    if(localStorage.getItem("USER_SMOOCH_ID") != undefined && localStorage.getItem("USER_SMOOCH_ID") != "" && localStorage.getItem("USER_SMOOCH_ID") != null) {
+
+
+        //  USER ALREADY LOGIN WELCOME USER
+
+        LoginSuccessFullState();
+
+    }
+    else
+    {
+        if(localStorage.getItem("IS_LOGIN") != undefined && localStorage.getItem("IS_LOGIN") != "" && localStorage.getItem("IS_LOGIN") != null) {
+
+
+            if(localStorage.getItem("IS_LOGIN") == 'true')
+            {
+                // DISPLAY LOGIN OPTION TO USER
+                SignInDefault();
+                userObject.smooch_id = '';
+
+            }
+        }
+
+    }
+
+
+
     // SET RESTAURANT TITLE
     $('#rest-title').html(restName);
 
@@ -1728,10 +1755,74 @@ function callPage3CallBack(response) {
 }
 
 
+// LOGIN / SIGN UP STATES
+
+function LoginSuccessFullState() {
+
+    var email     =     ""
+    var smooch_id =     localStorage.getItem("USER_SMOOCH_ID");
+    var name      =     "";
+
+    commonAjaxCall("/restapi/index.php/get_user",{"smooch_id":smooch_id},getUserLogin);
+
+
+}
+
+function getUserLogin(response) {
+
+    resp = JSON.parse(response);
+
+    if(resp == "not found")
+    {
+        localStorage.setItem("USER_SMOOCH_ID","");
+        SignInDefault();
+    }
+    else {
+
+        userObject.uid = resp.smooch_id;
+        userObject.email = resp.email;
+        userObject.name = resp.name;
+        userObject.contact = resp.contact;
+
+        // DISPLAY LOGIN SUCCESS
+
+        $("#loginMessage").show();
+        $("#success-message").html("Hey "+resp.name+", Nice to meet you :)");
+
+        // HIDE FORM S
+
+        $('#signup-message').hide();
+        $('#manual-signup').hide();
+        $('#signUpForm').hide();
+
+        $('#signup-popup').modal('hide');
+        $('#login-popup').modal('hide');
+        $('#welcome-popup').modal('hide');
+
+
+        $('#customer-email').val(userObject.email);
+        $('#customer-name').val(userObject.name);
+        $('#customer-number').val(userObject.contact);
+
+    }
+}
+
+
+
+function SignInDefault()
+{
+    $('#signup-popup').modal('hide');
+    $('#login-popup').modal('show');
+    $('#welcome-popup').modal('hide');
+
+}
+
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
+
+
 
 function convertFloat(num)
 {

@@ -1909,12 +1909,27 @@ and (orientation: portrait) {
 /* login style */
 .welcom-popup,
 .login-form{
-	padding: 5vh 5vh 3vh;
+	padding: 5vh 5vh 7vh;
 	text-align: center;
 	color: #797979;
 	height: 96vh;
+	overflow-y: scroll;
 	position: relative;
 }
+.links{
+	overflow: hidden;
+	position: relative;
+	min-height:100px;
+}
+.login-popup .links .login-guest{bottom: 0;}
+#email_reset_message,
+.forget-section,
+.login-section{
+	overflow: hidden;
+	position: relative;
+	padding: 0 0 25px;
+}
+.forget-section{padding: 0 0 45px;}
 .login-popup h2{
 	font-size: 33px;
 	color: #000;

@@ -3,7 +3,7 @@
     overflow: hidden;
 }
 .baron__scroller {
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     -ms-overflow-style: none;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

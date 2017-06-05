@@ -32,9 +32,7 @@ DB::query("set names utf8");
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin-rtl.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/orderappadmin.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/clockpicker.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/cropper.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/croppermain.css">
-
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-multiselect.css">
     <!-- We recommend you use "your_style.css" to override SmartAdmin
          specific styles this will also ensure you retrain your customization with each SmartAdmin update.
     <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
@@ -134,10 +132,12 @@ DB::query("set names utf8");
             <!--				<a href="dashboard-social.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>-->
             <!--			</li>-->
             <li>
+
                 <a href="#" title="Restaurant"><i class="fa fa-lg fa-fw fa-cutlery"></i> <span class="menu-item-parent">Restaurants</span></a>
                 <ul>
                     <?php  $city = getAllCities();
-                    foreach ($city as $cities){
+                    foreach ($city as $cities)
+                    {
 
                     ?>
                     <li>
@@ -146,9 +146,14 @@ DB::query("set names utf8");
                     <?php  } ?>
                 </ul>
             </li>
-
+            <li>
+                <a href="tags.php" title="Tags"><i class="fa fa-lg fa-fw fa-tags"></i> <span class="menu-item-parent">Tags</span></a>
+            </li>
             <li>
                 <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
+            </li>
+            <li>
+                <a href="cities.php" title="Cities"><i class="fa fa-lg fa-fw fa-building"></i> <span class="menu-item-parent">Cities</span></a>
             </li>
             <li>
                 <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>
