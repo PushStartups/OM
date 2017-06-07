@@ -56,7 +56,7 @@ $app->post('/get_all_cities', function ($request, $response, $args)
     try{
 
         // MINIMUM ORDER AMOUNT
-        $cities = DB::query("select * from cities");
+        $cities = DB::query("select * from cities where hide = 0");
 
         // RESPONSE RETURN TO REST API CALL
         $response = $response->withStatus(202);
@@ -1378,14 +1378,15 @@ $app->post('/add_order', function ($request, $response, $args) {
         $chat_id = "-165732759";
 
 
-        telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
+       telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
 
-        ob_end_clean();
+       ob_end_clean();
+
 
 
         // SEND EMAIL TO KITCHEN
 
-       // email_for_kitchen($user_order, $orderId, $todayDate);
+        email_for_kitchen($user_order, $orderId, $todayDate);
 
         ob_end_clean();
 
@@ -1397,9 +1398,9 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         ob_end_clean();
 
-//
-//         CLIENT EMAIL
-//         EMAIL ORDER SUMMARY
+
+       //  CLIENT EMAIL
+      //   EMAIL ORDER SUMMARY
 
         if ($user_order['language'] == 'en') {
 
@@ -1559,6 +1560,81 @@ function TCS_Service_Printer()
 
 
     return $response->getBody();
+}
+
+function test_email(){
+
+
+
+    $mailbody = '<h2>Ahmad</h2>';
+
+
+
+
+    $mail = new PHPMailer;
+
+
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->SMTPDebug = 3;                                               // Enable verbose debug output
+
+    $mail->isSMTP();
+    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";
+
+
+
+
+
+    //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
+    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
+
+
+
+    //From email address and name
+    $mail->From = "order@orderapp.com";
+    $mail->FromName = "OrderApp";
+
+
+    //To address and name
+    $mail->addAddress("ahmadworkspace@gmail.com");                    //SEND ADMIN EMAIL
+
+
+
+
+
+
+    //Address to which recipient will reply
+    $mail->addReplyTo("order@orderapp.com", "Reply");
+
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(false);
+    $mail->Subject = "B2B OrderApp Credentials Info";
+    $mail->Body = $mailbody;
+    $mail->AltBody = "OrderApp";
+
+
+
+
+
+    if (!$mail->send())
+    {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+
+    }
+    else
+    {
+        echo "Message has been sent successfully";
+
+    }
+
+
 }
 
 
