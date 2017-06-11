@@ -1,336 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Or/BAGUETTE .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Or/TOASTS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/sunday.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="DB update + code latest">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/email/email-list.html" afterPath="$PROJECT_DIR$/admin/ajax/email/email-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/modal-content/modal-voicecommand.html" afterPath="$PROJECT_DIR$/admin/ajax/modal-content/modal-voicecommand.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/notify/mail.html" afterPath="$PROJECT_DIR$/admin/ajax/notify/mail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/notify/notifications.html" afterPath="$PROJECT_DIR$/admin/ajax/notify/notifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/notify/tasks.html" afterPath="$PROJECT_DIR$/admin/ajax/notify/tasks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/img/glass-image-copyright.txt" afterPath="$PROJECT_DIR$/admin/img/glass-image-copyright.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/img/invoice/license.txt" afterPath="$PROJECT_DIR$/admin/img/invoice/license.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/img/pattern/license-info.txt" afterPath="$PROJECT_DIR$/admin/img/pattern/license-info.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/sound/license.txt" afterPath="$PROJECT_DIR$/admin/sound/license.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/xml/gmap/pins.xml" afterPath="$PROJECT_DIR$/admin/xml/gmap/pins.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/.htaccess" afterPath="$PROJECT_DIR$/en/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/fonts/helveticaneue/freefontsdownload.txt" afterPath="$PROJECT_DIR$/en/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/front-end/rest-list-new.html" afterPath="$PROJECT_DIR$/en/front-end/rest-list-new.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/error.html" afterPath="$PROJECT_DIR$/error.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/.htaccess" afterPath="$PROJECT_DIR$/he/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/fonts/helveticaneue/freefontsdownload.txt" afterPath="$PROJECT_DIR$/he/fonts/helveticaneue/freefontsdownload.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/.htaccess" afterPath="$PROJECT_DIR$/m/en/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/popup-height-before/.htaccess" afterPath="$PROJECT_DIR$/m/en/popup-height-before/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/popup-height-before/menu-page.html" afterPath="$PROJECT_DIR$/m/en/popup-height-before/menu-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/popup-height-before/style/dropdown.css" afterPath="$PROJECT_DIR$/m/en/popup-height-before/style/dropdown.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/popup-height-before/style/index.css" afterPath="$PROJECT_DIR$/m/en/popup-height-before/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/popup-height-before/style/menu-page.css" afterPath="$PROJECT_DIR$/m/en/popup-height-before/style/menu-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/popup-height-before/style/restaurants.css" afterPath="$PROJECT_DIR$/m/en/popup-height-before/style/restaurants.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/.htaccess" afterPath="$PROJECT_DIR$/m/he/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/index.html" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/menu-page.html" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/menu-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/restaurants.html" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/restaurants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/ajaxServerRequestsIndex.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/ajaxServerRequestsIndex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/ajaxServerRequestsRestaurants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/commonAjaxCall.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/commonAjaxCall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/jquery-1.8.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/jquery.accordion.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/jquery.accordion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/jquery.mobile.custom.min.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/jquery.mobile.custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/script/script.js" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/script/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/style/dropdown.css" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/style/dropdown.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/style/index.css" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/style/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/style/menu-page.css" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/style/menu-page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/bckup/style/restaurants.css" afterPath="$PROJECT_DIR$/m/he/front-end/bckup/style/restaurants.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/feedback.html" afterPath="$PROJECT_DIR$/m/he/front-end/feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/index-he.html" afterPath="$PROJECT_DIR$/m/he/front-end/index-he.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/menu-page-he.html" afterPath="$PROJECT_DIR$/m/he/front-end/menu-page-he.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/restaurants.html" afterPath="$PROJECT_DIR$/m/he/front-end/restaurants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/ajaxServerRequestsIndex.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/ajaxServerRequestsIndex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/ajaxServerRequestsRestaurants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/commonAjaxCall.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/commonAjaxCall.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/jcf.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/jcf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/jcf.scrollable.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/jcf.scrollable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/jquery-1.8.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/jquery.accordion.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/jquery.accordion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/jquery.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/jquery.mobile.custom.min.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/jquery.mobile.custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/script/script.js" afterPath="$PROJECT_DIR$/m/he/front-end/script/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/style/dropdown.css" afterPath="$PROJECT_DIR$/m/he/front-end/style/dropdown.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/style/feedback.css" afterPath="$PROJECT_DIR$/m/he/front-end/style/feedback.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/style/index-he.css" afterPath="$PROJECT_DIR$/m/he/front-end/style/index-he.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/style/menu-page-he.css" afterPath="$PROJECT_DIR$/m/he/front-end/style/menu-page-he.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/front-end/style/restaurants-he.css" afterPath="$PROJECT_DIR$/m/he/front-end/style/restaurants-he.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rds.php" afterPath="$PROJECT_DIR$/rds.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/LICENSE" afterPath="$PROJECT_DIR$/restapi/PHPMailer/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/PHPMailerAutoload.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/PHPMailerAutoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/README.md" afterPath="$PROJECT_DIR$/restapi/PHPMailer/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/SECURITY" afterPath="$PROJECT_DIR$/restapi/PHPMailer/SECURITY" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/changelog.md" afterPath="$PROJECT_DIR$/restapi/PHPMailer/changelog.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/class.phpmailer.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/class.phpmailer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/class.phpmaileroauth.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/class.phpmaileroauth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/class.phpmaileroauthgoogle.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/class.phpmaileroauthgoogle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/class.pop3.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/class.pop3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/class.smtp.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/class.smtp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/composer.json" afterPath="$PROJECT_DIR$/restapi/PHPMailer/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/composer.lock" afterPath="$PROJECT_DIR$/restapi/PHPMailer/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/Callback_function_notes.txt" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/Callback_function_notes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/DomainKeys_notes.txt" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/DomainKeys_notes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/Note_for_SMTP_debugging.txt" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/Note_for_SMTP_debugging.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/extending.html" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/extending.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/faq.html" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/faq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/generatedocs.sh" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/generatedocs.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/docs/pop3_article.txt" afterPath="$PROJECT_DIR$/restapi/PHPMailer/docs/pop3_article.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/DKIM.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/DKIM.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/code_generator.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/code_generator.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/contents.html" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/contents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/contentsutf8.html" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/contentsutf8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/exceptions.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/exceptions.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/gmail.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/gmail.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/gmail_xoauth.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/gmail_xoauth.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/index.html" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/mail.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/mail.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/mailing_list.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/mailing_list.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/pop_before_smtp.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/pop_before_smtp.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/XRegExp.js" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/XRegExp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/shAutoloader.js" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/shAutoloader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/shBrushPhp.js" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/shBrushPhp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/shLegacy.js" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/scripts/shLegacy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/send_file_upload.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/send_file_upload.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/send_multiple_file_upload.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/send_multiple_file_upload.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/sendmail.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/sendmail.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/signed-mail.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/signed-mail.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/smtp.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/smtp.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/smtp_check.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/smtp_check.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/smtp_no_auth.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/smtp_no_auth.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/ssl_options.phps" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/ssl_options.phps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCore.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCore.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreDefault.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreDefault.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreDjango.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreDjango.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreEclipse.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreEclipse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreEmacs.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreEmacs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreFadeToGrey.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreFadeToGrey.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreMDUltra.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreMDUltra.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreMidnight.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreMidnight.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreRDark.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shCoreRDark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeAppleScript.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeAppleScript.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeDefault.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeDefault.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeDjango.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeDjango.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeEclipse.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeEclipse.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeEmacs.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeEmacs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeFadeToGrey.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeFadeToGrey.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeMDUltra.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeMDUltra.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeMidnight.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeMidnight.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeRDark.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeRDark.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeVisualStudio.css" afterPath="$PROJECT_DIR$/restapi/PHPMailer/examples/styles/shThemeVisualStudio.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/extras/EasyPeasyICS.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/extras/EasyPeasyICS.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/extras/README.md" afterPath="$PROJECT_DIR$/restapi/PHPMailer/extras/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/extras/htmlfilter.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/extras/htmlfilter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/extras/ntlm_sasl_client.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/extras/ntlm_sasl_client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/get_oauth_token.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/get_oauth_token.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-am.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-am.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ar.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-az.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-az.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-be.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-be.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-bg.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-bg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-br.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-br.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ca.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ch.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ch.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-cz.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-cz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-da.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-da.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-de.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-de.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-el.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-el.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-eo.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-eo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-es.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-es.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-et.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-et.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fa.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fi.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fo.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fr.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-fr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-gl.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-gl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-he.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-he.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-hr.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-hr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-hu.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-hu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-id.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-id.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-it.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-it.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ja.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ja.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ka.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ka.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ko.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ko.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-lt.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-lt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-lv.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-lv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ms.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-nl.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-nl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-no.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-no.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-pl.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-pl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-pt.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-pt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ro.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ru.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-ru.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-se.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-se.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-sk.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-sk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-sl.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-sl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-sr.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-sr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-tr.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-tr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-uk.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-uk.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-vi.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-vi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-zh.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-zh.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-zh_cn.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/language/phpmailer.lang-zh_cn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/bootstrap.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/fakepopserver.sh" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/fakepopserver.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/fakesendmail.sh" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/fakesendmail.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/phpmailerLangTest.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/phpmailerLangTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/phpmailerTest.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/phpmailerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/runfakepopserver.sh" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/runfakepopserver.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/test_callback.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/test_callback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/test/testbootstrap-dist.php" afterPath="$PROJECT_DIR$/restapi/PHPMailer/test/testbootstrap-dist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/PHPMailer/travis.phpunit.xml.dist" afterPath="$PROJECT_DIR$/restapi/PHPMailer/travis.phpunit.xml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/composer.json" afterPath="$PROJECT_DIR$/restapi/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/inc/Pagination.class.php" afterPath="$PROJECT_DIR$/restapi/inc/Pagination.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/inc/initDb.php" afterPath="$PROJECT_DIR$/restapi/inc/initDb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/inc/meekrodb.2.3.class.php" afterPath="$PROJECT_DIR$/restapi/inc/meekrodb.2.3.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/inc/render.inc.php" afterPath="$PROJECT_DIR$/restapi/inc/render.inc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/stripe/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/restapi/stripe/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/stripe/charge.php" afterPath="$PROJECT_DIR$/restapi/stripe/charge.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/LICENSE" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/README.md" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/composer.json" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/composer.lock" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/package.xml" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/package.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/phpunit.xml.dist" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/phpunit.xml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/run-tests.sh" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/run-tests.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/BeforeValidException.php" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/BeforeValidException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/ExpiredException.php" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/ExpiredException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/JWT.php" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/JWT.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/SignatureInvalidException.php" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/src/SignatureInvalidException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/tests/JWTTest.php" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/tests/JWTTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/tests/autoload.php.dist" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/tests/autoload.php.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/tests/bootstrap.php" afterPath="$PROJECT_DIR$/restapi/vendor/firebase/php-jwt/tests/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/README.md" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/composer.json" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/phpunit.xml" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/phpunit.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/AppUser.php" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/AppUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/Client.php" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/Conversation.php" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/Conversation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/Model/Message.php" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/src/Model/Message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/tests/ClientTest.php" afterPath="$PROJECT_DIR$/restapi/vendor/frankandoak/smooch-api/tests/ClientTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/CHANGELOG.md" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/LICENSE" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/README.md" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/UPGRADING.md" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/UPGRADING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/composer.json" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Client.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/ClientInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/ClientInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/SessionCookieJar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Cookie/SetCookie.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/BadResponseException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/ConnectException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/GuzzleException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/SeekException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/SeekException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/ServerException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/TooManyRedirectsException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Exception/TransferException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlFactoryInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/CurlMultiHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/MockHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/HandlerStack.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/HandlerStack.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/MessageFormatter.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/MessageFormatter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Middleware.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Middleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Pool.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/Pool.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/RedirectMiddleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/RequestOptions.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/RequestOptions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/RetryMiddleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/TransferStats.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/TransferStats.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/UriTemplate.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/UriTemplate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/functions.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/functions_include.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/guzzle/src/functions_include.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/CHANGELOG.md" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/LICENSE" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/Makefile" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/README.md" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/composer.json" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/AggregateException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/AggregateException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/CancellationException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/CancellationException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/Coroutine.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/Coroutine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/EachPromise.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/EachPromise.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/FulfilledPromise.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/FulfilledPromise.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/Promise.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/Promise.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/PromiseInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/PromiseInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/PromisorInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/PromisorInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/RejectedPromise.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/RejectedPromise.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/RejectionException.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/RejectionException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/TaskQueue.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/TaskQueue.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/TaskQueueInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/TaskQueueInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/functions.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/functions_include.php" afterPath="$PROJECT_DIR$/restapi/vendor/guzzlehttp/promises/src/functions_include.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/CHANGELOG" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/CHANGELOG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/LICENSE" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/README.rst" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/README.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/composer.json" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/README.md" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/config.m4" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/config.m4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/config.w32" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/config.w32" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/php_pimple.h" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/php_pimple.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/pimple.c" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/pimple.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/pimple_compat.h" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/pimple_compat.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/001.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/001.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/002.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/002.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/003.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/003.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/004.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/004.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/005.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/005.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/006.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/006.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/007.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/007.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/008.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/008.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/009.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/009.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/010.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/010.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/011.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/011.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/012.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/012.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/013.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/013.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/014.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/014.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/015.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/015.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/016.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/016.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/017.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/017.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/017_1.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/017_1.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/018.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/018.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/019.phpt" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/019.phpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/bench.phpb" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/bench.phpb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/bench_shared.phpb" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/ext/pimple/tests/bench_shared.phpb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/phpunit.xml.dist" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/phpunit.xml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Container.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Container.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/ServiceProviderInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/ServiceProviderInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Invokable.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Invokable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/NonInvokable.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/NonInvokable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/PimpleServiceProvider.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/PimpleServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Service.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/Fixtures/Service.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/PimpleServiceProviderInterfaceTest.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/PimpleServiceProviderInterfaceTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/PimpleTest.php" afterPath="$PROJECT_DIR$/restapi/vendor/pimple/pimple/src/Pimple/Tests/PimpleTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/CHANGELOG.md" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/LICENSE" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/README.md" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/composer.json" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/MessageInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/MessageInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/RequestInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/RequestInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/ResponseInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/ResponseInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/ServerRequestInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/ServerRequestInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/StreamInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/StreamInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/UploadedFileInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/UploadedFileInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/UriInterface.php" afterPath="$PROJECT_DIR$/restapi/vendor/psr/http-message/src/UriInterface.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -350,7 +23,7 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -481,8 +154,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1186" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -522,9 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -537,13 +207,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../devdata" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../B2B/OAB2B" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/en/script/order.html" />
@@ -1191,14 +878,9 @@
       <workItem from="1496857103597" duration="632000" />
       <workItem from="1496867868621" duration="613000" />
       <workItem from="1496869452112" duration="300000" />
-      <workItem from="1496874381502" duration="103000" />
-    </task>
-    <task id="LOCAL-00097" summary="DB update + code latest &#10;&#10;">
-      <created>1493375289861</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1493375289861</updated>
+      <workItem from="1496874381502" duration="158000" />
+      <workItem from="1496924952724" duration="40000" />
+      <workItem from="1497181624078" duration="41000" />
     </task>
     <task id="LOCAL-00098" summary="DB update + code latest &#10;&#10;">
       <created>1493536771644</created>
@@ -1536,11 +1218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496654834984</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="DB update + code latest">
+      <created>1496874498310</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1496874498310</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1025077000" />
+    <option name="totallyTimeSpent" value="1025213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1552,7 +1241,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1568,7 +1257,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30917874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15245202" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19213313" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1770,13 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/error.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1867">
-          <caret line="204" column="68" lean-forward="false" selection-start-line="204" selection-start-column="68" selection-end-line="204" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_PLUGINS_DIR$/php/lib/php.jar!/stubs/mbstring/mbstring.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
@@ -1830,13 +1512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2585">
           <caret line="309" column="12" lean-forward="false" selection-start-line="309" selection-start-column="12" selection-end-line="309" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="241" column="68" lean-forward="false" selection-start-line="241" selection-start-column="68" selection-end-line="241" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1896,269 +1571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="1473" column="19" lean-forward="false" selection-start-line="1473" selection-start-column="13" selection-end-line="1473" selection-end-column="19" />
-          <folding>
-            <element signature="e#270#302#0#PHP" expanded="true" />
-            <marker date="1496872495335" expanded="true" signature="1291:1311" ph="select * fro... cities" />
-            <marker date="1496872495335" expanded="true" signature="1291:1326" ph="select * fro... cities" />
-            <marker date="1496872495335" expanded="true" signature="2000:2045" ph="select * fro... categories" />
-            <marker date="1496872495335" expanded="true" signature="2238:2295" ph="select resta... menus" />
-            <marker date="1496872495335" expanded="true" signature="2337:2405" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="3355:3422" ph="update categ... " />
-            <marker date="1496872495335" expanded="true" signature="3825:3870" ph="select * fro... categories" />
-            <marker date="1496872495335" expanded="true" signature="4338:4395" ph="select resta... menus" />
-            <marker date="1496872495335" expanded="true" signature="4583:4634" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="6044:6111" ph="update categ... " />
-            <marker date="1496872495335" expanded="true" signature="6570:6616" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="7306:7369" ph="update resta... " />
-            <marker date="1496872495335" expanded="true" signature="7713:7759" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="8748:8811" ph="update resta... " />
-            <marker date="1496872495335" expanded="true" signature="9180:9226" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="9840:9903" ph="update resta... " />
-            <marker date="1496872495335" expanded="true" signature="10231:10286" ph="select * fro... default_settings" />
-            <marker date="1496872495335" expanded="true" signature="10963:11042" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="11201:11281" ph="select tag_i... restaurant_tags" />
-            <marker date="1496872495335" expanded="true" signature="11461:11514" ph="select * fro... tags" />
-            <marker date="1496872495335" expanded="true" signature="11682:11762" ph="select url f... restaurant_gallery" />
-            <marker date="1496872495335" expanded="true" signature="11906:11985" ph="select * fro... weekly_availibility" />
-            <marker date="1496872495335" expanded="true" signature="13345:13413" ph="select * fro... delivery_fee" />
-            <marker date="1496872495335" expanded="true" signature="16977:17032" ph="select * fro... menus" />
-            <marker date="1496872495335" expanded="true" signature="17141:17203" ph="select * fro... categories" />
-            <marker date="1496872495335" expanded="true" signature="17417:17497" ph="select * fro... items" />
-            <marker date="1496872495335" expanded="true" signature="18132:18277" ph="select item_... business_lunch_detail" />
-            <marker date="1496872495335" expanded="true" signature="18394:18514" ph="select * fro... items" />
-            <marker date="1496872495335" expanded="true" signature="18794:18889" ph="select * fro... extras" />
-            <marker date="1496872495335" expanded="true" signature="19056:19118" ph="select * fro... subitems" />
-            <marker date="1496872495335" expanded="true" signature="20768:20815" ph="select * fro... extras" />
-            <marker date="1496872495335" expanded="true" signature="20987:21050" ph="select * fro... subitems" />
-            <marker date="1496872495335" expanded="true" signature="22732:22789" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="24272:24313" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="24827:24900" ph="update users... " />
-            <marker date="1496872495335" expanded="true" signature="29909:29979" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="31971:32030" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="32595:32650" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="33382:33465" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="34080:34139" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="35041:35118" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="35189:35268" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="40377:40429" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="40742:40794" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="43910:43985" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="45702:47824" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="45719:47808" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="45851:47791" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="46341:46510" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="46650:47764" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49122:49365" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49133:49365" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49479:49499" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49612:49751" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49846:49934" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50001:50058" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50167:50260" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50432:50469" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50732:50770" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50925:50947" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51067:51102" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51272:51307" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51476:51511" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51682:51717" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51889:51924" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="52095:52130" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="52425:52455" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="52467:52505" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="54434:56556" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="54451:56540" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="54583:56523" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="55073:55242" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="55382:56496" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60654:60675" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60711:60791" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60827:60849" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60945:61101" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61138:61178" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61213:61243" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61285:61315" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61423:61440" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61533:61563" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61607:61613" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="61674:61691" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61844:61872" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61961:62036" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62076:62125" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62246:62284" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62324:62330" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="62344:62358" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62495:62545" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63032:63049" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63305:63380" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63420:63469" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63585:63623" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63638:63653" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63880:63979" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64068:64103" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64142:64156" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64207:64245" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64261:64276" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64406:64441" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64480:64494" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64550:64588" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64604:64619" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64918:64953" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64996:65010" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65105:65143" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65159:65174" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65319:65354" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65397:65411" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65483:65521" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65537:65552" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65778:65812" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65845:65859" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65956:66003" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66055:66090" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66137:66152" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66242:66292" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66327:66342" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66358:66369" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66466:66503" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66593:66643" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66678:66693" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66709:66720" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66818:66855" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66948:66998" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67033:67068" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67084:67097" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67262:67299" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67484:67521" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67654:67704" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67739:67754" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67770:67781" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67879:67916" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68007:68057" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68092:68107" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68123:68135" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68232:68269" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="69992:70013" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70050:70149" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70335:70357" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70393:70549" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70588:70628" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70663:70693" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70738:70754" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70825:70843" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70872:70902" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71023:71053" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71151:71168" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71412:71440" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71528:71603" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71640:71689" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71728:71743" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71843:71849" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="71966:71994" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72083:72133" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72300:72331" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72477:72508" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72664:72695" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72879:72978" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73067:73102" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73140:73160" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73176:73191" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73283:73318" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73420:73455" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73493:73513" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73529:73544" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73642:73677" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73862:73908" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73934:73968" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74078:74181" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74233:74268" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74315:74349" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74441:74491" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74525:74563" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74627:74642" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74656:74667" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74789:74839" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74873:74911" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74978:74993" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75007:75018" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75141:75191" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75289:75327" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75519:75557" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75671:75706" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75721:75733" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75862:75912" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75947:75985" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76049:76065" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76079:76090" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76216:76266" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76301:76339" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76410:76426" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76442:76454" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78290:78311" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78348:78447" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78633:78655" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78691:78847" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78886:78926" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78961:78991" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79036:79052" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79123:79141" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79170:79200" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79321:79351" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79449:79466" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79710:79738" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79826:79901" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79938:79987" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80026:80041" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80141:80147" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="80264:80292" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80381:80431" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80598:80629" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80775:80806" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80962:80993" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81234:81280" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81306:81340" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81449:81548" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81637:81672" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81710:81730" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81746:81761" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81853:81888" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81990:82025" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82063:82083" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82099:82114" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82212:82247" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82373:82476" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82528:82563" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82610:82644" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82736:82786" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82820:82858" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82922:82937" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82951:82962" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83084:83134" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83168:83206" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83273:83288" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83302:83313" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83436:83486" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83584:83622" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83814:83852" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83966:84001" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84016:84028" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84157:84207" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84242:84280" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84344:84360" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84374:84385" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84511:84561" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84596:84634" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84705:84721" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84737:84749" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86424:86604" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86449:86516" ph="..." />
-            <marker date="1496872495335" expanded="false" signature="86549:86592" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86643:86712" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86777:86838" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86964:87105" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="87169:87212" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="87283:87356" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="87482:87553" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2223,7 +1635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2231,269 +1642,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="58" column="64" lean-forward="false" selection-start-line="58" selection-start-column="64" selection-end-line="58" selection-end-column="64" />
-          <folding>
-            <element signature="e#270#302#0#PHP" expanded="true" />
-            <marker date="1496872495335" expanded="true" signature="1291:1311" ph="select * fro... cities" />
-            <marker date="1496872495335" expanded="true" signature="1291:1326" ph="select * fro... cities" />
-            <marker date="1496872495335" expanded="true" signature="2000:2045" ph="select * fro... categories" />
-            <marker date="1496872495335" expanded="true" signature="2238:2295" ph="select resta... menus" />
-            <marker date="1496872495335" expanded="true" signature="2337:2405" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="3355:3422" ph="update categ... " />
-            <marker date="1496872495335" expanded="true" signature="3825:3870" ph="select * fro... categories" />
-            <marker date="1496872495335" expanded="true" signature="4338:4395" ph="select resta... menus" />
-            <marker date="1496872495335" expanded="true" signature="4583:4634" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="6044:6111" ph="update categ... " />
-            <marker date="1496872495335" expanded="true" signature="6570:6616" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="7306:7369" ph="update resta... " />
-            <marker date="1496872495335" expanded="true" signature="7713:7759" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="8748:8811" ph="update resta... " />
-            <marker date="1496872495335" expanded="true" signature="9180:9226" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="9840:9903" ph="update resta... " />
-            <marker date="1496872495335" expanded="true" signature="10231:10286" ph="select * fro... default_settings" />
-            <marker date="1496872495335" expanded="true" signature="10963:11042" ph="select * fro... restaurants" />
-            <marker date="1496872495335" expanded="true" signature="11201:11281" ph="select tag_i... restaurant_tags" />
-            <marker date="1496872495335" expanded="true" signature="11461:11514" ph="select * fro... tags" />
-            <marker date="1496872495335" expanded="true" signature="11682:11762" ph="select url f... restaurant_gallery" />
-            <marker date="1496872495335" expanded="true" signature="11906:11985" ph="select * fro... weekly_availibility" />
-            <marker date="1496872495335" expanded="true" signature="13345:13413" ph="select * fro... delivery_fee" />
-            <marker date="1496872495335" expanded="true" signature="16977:17032" ph="select * fro... menus" />
-            <marker date="1496872495335" expanded="true" signature="17141:17203" ph="select * fro... categories" />
-            <marker date="1496872495335" expanded="true" signature="17417:17497" ph="select * fro... items" />
-            <marker date="1496872495335" expanded="true" signature="18132:18277" ph="select item_... business_lunch_detail" />
-            <marker date="1496872495335" expanded="true" signature="18394:18514" ph="select * fro... items" />
-            <marker date="1496872495335" expanded="true" signature="18794:18889" ph="select * fro... extras" />
-            <marker date="1496872495335" expanded="true" signature="19056:19118" ph="select * fro... subitems" />
-            <marker date="1496872495335" expanded="true" signature="20768:20815" ph="select * fro... extras" />
-            <marker date="1496872495335" expanded="true" signature="20987:21050" ph="select * fro... subitems" />
-            <marker date="1496872495335" expanded="true" signature="22732:22789" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="24272:24313" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="24827:24900" ph="update users... " />
-            <marker date="1496872495335" expanded="true" signature="29909:29979" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="31971:32030" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="32595:32650" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="33382:33465" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="34080:34139" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="35041:35118" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="35189:35268" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="40377:40429" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="40742:40794" ph="select * fro... users" />
-            <marker date="1496872495335" expanded="true" signature="43910:43985" ph="select id,sm... users" />
-            <marker date="1496872495335" expanded="true" signature="45702:47824" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="45719:47808" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="45851:47791" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="46341:46510" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="46650:47764" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49122:49365" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49133:49365" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49479:49499" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49612:49751" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="49846:49934" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50001:50058" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50167:50260" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50432:50469" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50732:50770" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="50925:50947" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51067:51102" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51272:51307" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51476:51511" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51682:51717" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="51889:51924" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="52095:52130" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="52425:52455" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="52467:52505" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="54434:56556" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="54451:56540" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="54583:56523" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="55073:55242" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="55382:56496" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60654:60675" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60711:60791" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60827:60849" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="60945:61101" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61138:61178" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61213:61243" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61285:61315" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61423:61440" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61533:61563" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61607:61613" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="61674:61691" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61844:61872" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="61961:62036" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62076:62125" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62246:62284" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62324:62330" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="62344:62358" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="62495:62545" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63032:63049" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63305:63380" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63420:63469" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63585:63623" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63638:63653" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="63880:63979" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64068:64103" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64142:64156" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64207:64245" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64261:64276" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64406:64441" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64480:64494" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64550:64588" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64604:64619" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64918:64953" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="64996:65010" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65105:65143" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65159:65174" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65319:65354" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65397:65411" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65483:65521" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65537:65552" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65778:65812" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65845:65859" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="65956:66003" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66055:66090" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66137:66152" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66242:66292" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66327:66342" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66358:66369" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66466:66503" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66593:66643" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66678:66693" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66709:66720" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66818:66855" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="66948:66998" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67033:67068" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67084:67097" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67262:67299" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67484:67521" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67654:67704" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67739:67754" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67770:67781" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="67879:67916" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68007:68057" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68092:68107" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68123:68135" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="68232:68269" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="69992:70013" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70050:70149" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70335:70357" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70393:70549" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70588:70628" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70663:70693" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70738:70754" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70825:70843" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="70872:70902" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71023:71053" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71151:71168" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71412:71440" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71528:71603" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71640:71689" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71728:71743" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="71843:71849" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="71966:71994" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72083:72133" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72300:72331" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72477:72508" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72664:72695" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="72879:72978" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73067:73102" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73140:73160" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73176:73191" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73283:73318" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73420:73455" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73493:73513" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73529:73544" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73642:73677" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73862:73908" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="73934:73968" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74078:74181" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74233:74268" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74315:74349" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74441:74491" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74525:74563" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74627:74642" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74656:74667" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74789:74839" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74873:74911" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="74978:74993" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75007:75018" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75141:75191" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75289:75327" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75519:75557" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75671:75706" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75721:75733" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75862:75912" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="75947:75985" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76049:76065" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76079:76090" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76216:76266" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76301:76339" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76410:76426" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="76442:76454" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78290:78311" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78348:78447" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78633:78655" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78691:78847" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78886:78926" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="78961:78991" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79036:79052" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79123:79141" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79170:79200" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79321:79351" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79449:79466" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79710:79738" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79826:79901" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="79938:79987" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80026:80041" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80141:80147" ph="&amp;nbsp;" />
-            <marker date="1496872495335" expanded="true" signature="80264:80292" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80381:80431" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80598:80629" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80775:80806" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="80962:80993" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81234:81280" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81306:81340" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81449:81548" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81637:81672" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81710:81730" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81746:81761" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81853:81888" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="81990:82025" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82063:82083" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82099:82114" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82212:82247" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82373:82476" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82528:82563" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82610:82644" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82736:82786" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82820:82858" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82922:82937" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="82951:82962" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83084:83134" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83168:83206" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83273:83288" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83302:83313" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83436:83486" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83584:83622" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83814:83852" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="83966:84001" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84016:84028" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84157:84207" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84242:84280" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84344:84360" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84374:84385" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84511:84561" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84596:84634" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84705:84721" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="84737:84749" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86424:86604" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86449:86516" ph="..." />
-            <marker date="1496872495335" expanded="false" signature="86549:86592" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86643:86712" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86777:86838" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="86964:87105" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="87169:87212" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="87283:87356" ph="..." />
-            <marker date="1496872495335" expanded="true" signature="87482:87553" ph="..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="204" column="68" lean-forward="false" selection-start-line="204" selection-start-column="68" selection-end-line="204" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
         </state>
       </provider>
     </entry>
