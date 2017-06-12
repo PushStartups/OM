@@ -69,12 +69,11 @@ include "header.php";
 
                                             <th data-hide="phone, tablet">Tag Name HE</th>
 
-                                            <th >View</th>
-
                                             <th >Edit</th>
 
                                             <th >Delete</th>
 
+                                            <!--                                            <th>Action</th>-->
                                         </tr>
                                         </thead>
 
@@ -90,8 +89,6 @@ include "header.php";
                                                 <td><?=$tag['name_en']?></td>
 
                                                 <td><?=$tag['name_he']?></td>
-
-                                                <td><a href="view-restaurants.php?id=<?=$tag['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-eye"></i> View Restaurants </button></a></td>
 
                                                 <td><a href="edit-tag.php?id=<?=$tag['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
 

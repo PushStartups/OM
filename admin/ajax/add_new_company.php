@@ -5,6 +5,7 @@ DB::query("set names utf8");
 DB::insert('company', array(
     "name"              =>  $_POST['name'],
     "delivery_address"  =>  $_POST['address'],
+    "min_order"         =>  $_POST['min_order'],
     "discount"          =>  $_POST['amount'],
     "discount_type"     =>  $_POST['discount_type'],
     "voting"            =>  0

@@ -10,11 +10,11 @@ $success = 0;
 //CREDIT GUARD PAYMENT DETAIL
 
 
-$cgConf['tid']='0962922';
+$cgConf['tid']='8804324';
 $cgConf['amount'] = $refund_amount;
-$cgConf['user']='israel';
-$cgConf['password']='Israeli1.';
-$cgConf['cg_gateway_url']="https://cguat2.creditguard.co.il/xpo/Relay";
+$cgConf['user']='pushstart';
+$cgConf['password']='OE2@38sz';
+$cgConf['cg_gateway_url']="https://cgpay5.creditguard.co.il/xpo/Relay";
 
 $poststring = 'user='.$cgConf['user'];
 $poststring .= '&password='.$cgConf['password'];

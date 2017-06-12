@@ -37,19 +37,25 @@ if($data != "") {
 
     $image_url = "";
     if (file_put_contents($filepath, $data)) {
-        $image_url = "/m/en/img/" . $name_logo . "_logo.png";
+
+        $image_url = "/m/en/img/categories/".$restaurant['name_en']."/".$menu_id['name_en'].".png";
+
         $resp = "workingg"." ".$restaurant['name_en']." ".$menu_id['name_en'];
 
-    } else {
+    }
+    else
+    {
 
         $resp = "not working";
+
         $image_url = "/m/en/img/cs-logo.png";
 
     }
+    DB::update('categories', array(
+        "image_url"        =>      $image_url,
+    ), "id=%d", $_POST['category_id']
+    );
 }
-
-
-
 
 
 DB::update('categories', array(

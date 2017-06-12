@@ -48,7 +48,7 @@ function cancel_order(total,order_id,url,transaction_id)
 
     addLoading();
     $.ajax({
-        url:"ajax/refund_amount.php",
+        url:"ajax/cancel_amount.php",
         method:"post",
         data:{refund_amount:parseInt(refund_amount),order_id:order_id,transaction_id:transaction_id},
         dataType:"json",

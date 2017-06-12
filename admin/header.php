@@ -132,7 +132,6 @@ DB::query("set names utf8");
             <!--				<a href="dashboard-social.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>-->
             <!--			</li>-->
             <li>
-
                 <a href="#" title="Restaurant"><i class="fa fa-lg fa-fw fa-cutlery"></i> <span class="menu-item-parent">Restaurants</span></a>
                 <ul>
                     <?php  $city = getAllCities();
@@ -153,13 +152,13 @@ DB::query("set names utf8");
                 <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
             </li>
             <li>
-                <a href="cities.php" title="Cities"><i class="fa fa-lg fa-fw fa-building"></i> <span class="menu-item-parent">Cities</span></a>
-            </li>
-            <li>
                 <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>
             </li>
             <li>
                 <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>
+            </li>
+            <li>
+                <a href="b2b-rest-discounts.php" title="Orders"><i class="fa fa-lg fa-fw fa-tags"></i> <span class="menu-item-parent">B2B Rest Disc</span></a>
             </li>
             <li>
                 <a href="logout.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-sign-out"></i> <span class="menu-item-parent">Sign Out</span></a>

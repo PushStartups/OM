@@ -4,7 +4,7 @@ session_start();
 DB::query("set names utf8");
 
 $data  =   $_POST['logo'];
-$resp = "chaa";
+$resp = "0";
 if($data != "") {
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
 
@@ -22,7 +22,7 @@ if($data != "") {
     $image_url = "";
     if (file_put_contents($filepath, $data)) {
         $image_url = "/m/en/img/" . $name_logo . "_logo.png";
-        $resp = "workingg";
+        $resp = "working";
 
     } else {
 
@@ -52,6 +52,15 @@ DB::update('restaurants', array(
 
 ), "id=%d", $_POST['rest_id']
 );
+
+if($resp != "0")
+{
+    DB::update('restaurants', array(
+        "logo"               =>      $image_url,
+    ), "id=%d", $_POST['rest_id']
+    );
+}
+
 
 
 //if($baseFromJavascript != "")

@@ -191,6 +191,7 @@ DB::update('company', array(
     "name"              =>  $_POST['name'],
     "delivery_address"  =>  $_POST['address'],
     "discount"          =>  $_POST['amount'],
+    "min_order"          =>  $_POST['min_order'],
     "discount_type"     =>  $_POST['discount_type'],
 
 ),  "id=%d",    $company_id   );

@@ -21,7 +21,7 @@ you can add as many as you like
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 <script src="js/custom/customap.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc&callback=initMap"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc&callback=initMap"></script>
 <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>-->
 <script>
     if (!window.jQuery) {
@@ -123,10 +123,8 @@ you can add as many as you like
 <script src="js/custom/bootstrap-multiselect.js"></script>
 <script src="js/custom/edit-delivery-address.js"></script>
 <script src="js/custom/edit-tags.js"></script>
-<script src="js/custom/edit-tag-restaurant.js"></script>
-<script src="js/custom/edit-city.js"></script>
-<script src="js/custom/add-new-city.js"></script>
-
+<script src="js/custom/edit-b2b-rest-disc.js"></script>
+<script src="js/custom/add-rest-company-discount.js"></script>
 
 <script type="text/javascript">
     hideLoading();
@@ -376,6 +374,37 @@ you can add as many as you like
 
     $( "#tag_name_he" ).autocomplete({
         source: tags_he
+    });
+
+
+
+
+    // ADD REST COMPANY DISCOUNT >>>> company name
+  var compnay_disc = new Array();
+    <?php
+
+    $arr11 = DB::query("select * from company");
+    foreach($arr11 as $company_name ){ ?>
+    compnay_disc.push("<?php echo $company_name['name']; ?>");
+    <?php } ?>
+
+    $( "#company" ).autocomplete({
+        source: compnay_disc
+    });
+
+
+
+    // ADD REST COMPANY DISCOUNT >>>>> restaurant name
+  var rest_name = new Array();
+    <?php
+
+    $arr12 = DB::query("select * from restaurants");
+    foreach($arr12 as $restaurant_name ){ ?>
+    rest_name.push("<?php echo $restaurant_name['name_en']; ?>");
+    <?php } ?>
+
+    $( "#restaurant" ).autocomplete({
+        source: rest_name
     });
 
 

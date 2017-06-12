@@ -23,7 +23,7 @@ function delete_category(category_id,url)
         success:function(data)
         {
             hideLoading();
-            alert("Subitems deleted successfully");
+            alert("Category deleted successfully");
             window.location.href = url;
         }
     });
@@ -63,7 +63,7 @@ function edit_category(category_id,url)
         'category_id'                 :   category_id
 
     };
-    alert(globalEditCategoryLogo);
+    //alert(globalEditCategoryLogo);
     addLoading();
     $.ajax({
         url:"ajax/edit_category.php",
@@ -73,8 +73,8 @@ function edit_category(category_id,url)
         success:function(data)
         {
             hideLoading();
-            alert("Category added successfully");
-            //window.location.href = url;
+            alert("Category edited successfully");
+
         }
     });
 }

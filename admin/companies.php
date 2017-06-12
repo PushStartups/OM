@@ -64,6 +64,7 @@ include "header.php";
                                         <th data-class="expand">Company ID</th>
                                         <th >Company Name</th>
                                         <th data-hide="phone, tablet">Delivery Address</th>
+                                        <th data-hide="phone, tablet">Minimum Order</th>
                                         <th data-hide="phone, tablet">Discount Type</th>
                                         <th data-hide="phone, tablet">Discount</th>
                                         <th data-hide="phone, tablet">Voting</th>
@@ -84,6 +85,7 @@ include "header.php";
                                             <td><?=$companies['id']?></td>
                                             <td><?=$companies['name']?></td>
                                             <td><?=$companies['delivery_address']?></td>
+                                            <td><?=$companies['min_order']?></td>
                                             <td><?=$companies['discount_type']?></td>
                                             <td><?=$companies['discount']?></td>
                                             <td>

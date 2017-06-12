@@ -53,6 +53,12 @@ include "header.php";
                                         <div class="form-group">
                                             <label>Delivery Address</label>
                                             <input class="form-control" id="address" name="address" placeholder="Enter Delivery Address" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-address"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Minimum Order</label>
+                                            <input class="form-control" id="min_order" name="min_order" placeholder="Enter Minimum Order" type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_min_order"></span>
                                         </div>
                                         <div class="form-group">
                                             <label>Discount Type </label>

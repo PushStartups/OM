@@ -121,6 +121,11 @@ include "header.php";
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_address"></span>
                                         </div>
                                         <div class="form-group">
+                                            <label>Minimum Order</label>
+                                            <input class="form-control" id="min_order" name="min_order" value="<?=$edit_company['min_order'];?>"  type="text">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_min_order"></span>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Discount Type </label>
                                             <select id="discount_type" name="discount_type" class="form-control">
                                                 <?php if($edit_company['discount_type'] == "daily"){ ?>

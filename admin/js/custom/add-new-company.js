@@ -1,6 +1,55 @@
+
+$('#name').bind('input', function() {
+
+    document.getElementById('error_name').innerHTML = "";
+
+});
+
+$('#address').bind('input', function() {
+
+    document.getElementById('error_address').innerHTML = "";
+
+});
+
+
+$('#amount').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('error_amount').innerHTML = "Wrong Number!";
+    }
+    else
+    {
+        document.getElementById('error_amount').innerHTML = "";
+    }
+
+});
+
+$('#min_order').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('error_min_order').innerHTML = "Wrong Number!";
+    }
+    else
+    {
+        document.getElementById('error_min_order').innerHTML = "";
+    }
+
+});
+
+
+
+
+
+
+
+
+
 function add_company()
 {
     var address                 =  $('#address').val();
+    var min_order               =  $('#min_order').val();
     var name                    =  $('#name').val();
     var amount                  =  $('#amount').val();
     var discount_type           =  $('#discount_type').val();
@@ -40,16 +89,32 @@ function add_company()
         $('#error-address').html('Address Required*');
         return;
     }
+
+    if(min_order == "")
+    {
+        $('#error_min_order').html('Minimum Amount Required*');
+        return;
+    }
     if(discount_type == "")
     {
         $('#error-discount-type').html('Discount Type Required*');
         return;
     }
+
+
     if(amount == "")
     {
         $('#error-amount').html('Amount Required*');
         return;
     }
+
+    if(min_order == "")
+    {
+        $('#error_min_order').html('Amount Required*');
+        return;
+    }
+
+
 
 
 
@@ -147,6 +212,7 @@ function add_company()
 
     var postForm = { //Fetch form data
         'address'                 :  $('#address').val(),
+        'min_order'                 :  $('#min_order').val(),
         'name'                    :  $('#name').val(),
         'amount'                  :  $('#amount').val(),
         'discount_type'           :  $('#discount_type').val(),

@@ -24,7 +24,7 @@ if(isset($_POST["Import"])){
                     "extra_id"          => $extra_id,
                     "name_en"           => $getData[0],
                     "name_he"           => $getData[1],
-                    "price"             => $getData[2],
+                    "price"             => $getData[2]
 
                 ));
 

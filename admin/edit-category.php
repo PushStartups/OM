@@ -21,7 +21,7 @@ else
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Update SubItem</h1>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Update Category</h1>
             </div>
 
         </div>
@@ -47,7 +47,8 @@ else
                                 <script>
                                     globalEditCategoryLogo = null;
                                     //alert(globalEditLogo);
-                                    function previewEditFileCategory() {
+                                    function previewEditFileCategory()
+                                    {
 
                                         var file    = document.querySelector('input[type=file]').files[0];
                                         var reader  = new FileReader();
