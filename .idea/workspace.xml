@@ -23,7 +23,18 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="orderapp_restaurants.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db_dump/orderapp_restaurants.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -195,8 +206,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -239,18 +250,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\he\script" />
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0" />
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
-      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/db_dump" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\img\categories" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\en\img" />
       <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\he" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\m\he\script" />
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0" />
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\db_dump" />
+      <recent name="C:\wamp64\www\Website_2.0\orderapp-website-2.0\en" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -905,14 +916,8 @@
       <workItem from="1497468493069" duration="187000" />
       <workItem from="1497512291040" duration="2371000" />
       <workItem from="1497525735263" duration="966000" />
-      <workItem from="1497528842176" duration="10000" />
-    </task>
-    <task id="LOCAL-00103" summary="DB update + code latest &#10;&#10;">
-      <created>1493559708396</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1493559708396</updated>
+      <workItem from="1497528842176" duration="65000" />
+      <workItem from="1497529527015" duration="30000" />
     </task>
     <task id="LOCAL-00104" summary="DB update + code latest">
       <created>1493801053233</created>
@@ -1250,11 +1255,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497526107100</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="DB update + code latest">
+      <created>1497528855283</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1497528855283</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1041045000" />
+    <option name="totallyTimeSpent" value="1041130000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

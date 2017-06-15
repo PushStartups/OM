@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 15, 2017 at 12:11 PM
+-- Generation Time: Jun 15, 2017 at 12:22 PM
 -- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
@@ -18198,32 +18198,6 @@ INSERT INTO `tags` (`id`, `name_en`, `name_he`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vote_timings`
---
-
-CREATE TABLE IF NOT EXISTS `vote_timings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `company_id` int(11) NOT NULL,
-  `voting_start` time NOT NULL,
-  `voting_end` time NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `company_id` (`company_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `vote_timings`
---
-
-INSERT INTO `vote_timings` (`id`, `company_id`, `voting_start`, `voting_end`) VALUES
-(1, 2, '22:00:00', '23:00:00'),
-(4, 6, '16:05:00', '17:00:00'),
-(5, 6, '21:00:00', '23:00:00'),
-(6, 6, '11:00:00', '13:00:00'),
-(7, 20, '12:31:00', '12:40:00');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `weekly_availibility`
 --
 
@@ -18852,12 +18826,6 @@ ALTER TABLE `restaurant_tags`
 --
 ALTER TABLE `subitems`
   ADD CONSTRAINT `subitems_ibfk_1` FOREIGN KEY (`extra_id`) REFERENCES `extras` (`id`);
-
---
--- Constraints for table `vote_timings`
---
-ALTER TABLE `vote_timings`
-  ADD CONSTRAINT `vote_timings_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
