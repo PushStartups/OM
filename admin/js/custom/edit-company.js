@@ -38,6 +38,23 @@ $('#min_order').bind('input', function() {
 });
 
 
+function delete_company(company_id)
+{
+    addLoading();
+    $.ajax({
+        url:"ajax/delete_company.php",
+        method:"post",
+        data:{company_id:company_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("Company deleted successfully");
+            window.location.href = "companies.php";
+        }
+    });
+}
+
 
 
 

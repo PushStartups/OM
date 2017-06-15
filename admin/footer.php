@@ -125,6 +125,7 @@ you can add as many as you like
 <script src="js/custom/edit-tags.js"></script>
 <script src="js/custom/edit-b2b-rest-disc.js"></script>
 <script src="js/custom/add-rest-company-discount.js"></script>
+<script src="js/custom/add-company-delivery.js"></script>
 
 <script type="text/javascript">
     hideLoading();
@@ -300,6 +301,7 @@ you can add as many as you like
 
 <!-- Your GOOGLE ANALYTICS CODE Below -->
 <script type="text/javascript">
+
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
     _gaq.push(['_trackPageview']);
@@ -348,7 +350,7 @@ you can add as many as you like
 
     var tags = new Array();
     <?php
-
+    DB::useDB('orderapp_restaurants');
     $arr1 = DB::query("select * from tags");
     foreach($arr1 as $tag_name ){ ?>
     tags.push("<?php echo $tag_name['name_en']; ?>");
@@ -366,7 +368,7 @@ you can add as many as you like
     // TAGS HE AUTOCOMPLETE
     var tags_he = new Array();
     <?php
-
+    DB::useDB('orderapp_restaurants');
     $arr1 = DB::query("select * from tags");
     foreach($arr1 as $tag_name ){ ?>
     tags_he.push("<?php echo $tag_name['name_he']; ?>");
@@ -382,7 +384,7 @@ you can add as many as you like
     // ADD REST COMPANY DISCOUNT >>>> company name
   var compnay_disc = new Array();
     <?php
-
+    DB::useDB('orderapp_b2b');
     $arr11 = DB::query("select * from company");
     foreach($arr11 as $company_name ){ ?>
     compnay_disc.push("<?php echo $company_name['name']; ?>");
@@ -397,7 +399,7 @@ you can add as many as you like
     // ADD REST COMPANY DISCOUNT >>>>> restaurant name
   var rest_name = new Array();
     <?php
-
+    DB::useDB('orderapp_restaurants');
     $arr12 = DB::query("select * from restaurants");
     foreach($arr12 as $restaurant_name ){ ?>
     rest_name.push("<?php echo $restaurant_name['name_en']; ?>");
@@ -406,13 +408,13 @@ you can add as many as you like
     $( "#restaurant" ).autocomplete({
         source: rest_name
     });
-
-
     $(document).ready(function() {
         $('#rest_name').multiselect({
             maxHeight: '300',
         });
     });
+
+
 
 </script>
 

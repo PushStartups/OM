@@ -108,6 +108,12 @@ include "header.php";
                             <div class="widget-body">
 
                                 <form>
+                                    <div class="form-actions">
+                                        <div onclick="delete_company('<?=$companies_id?>')" class="btn btn-danger btn-lg">
+                                            <i class="fa fa-save"></i>
+                                            Delete Company
+                                        </div>
+                                    </div>
                                     <fieldset>
                                         <input name="authenticity_token" type="hidden">
                                         <div class="form-group">
@@ -129,11 +135,11 @@ include "header.php";
                                             <label>Discount Type </label>
                                             <select id="discount_type" name="discount_type" class="form-control">
                                                 <?php if($edit_company['discount_type'] == "daily"){ ?>
-                                                <option value="daily" selected>daily</option>
-                                                <option value="monthly">monthly</option>
+                                                    <option value="daily" selected>daily</option>
+                                                    <option value="monthly">monthly</option>
                                                 <?php  } else { ?>
-                                                <option value="daily">daily</option>
-                                                <option value="monthly" selected>monthly</option>
+                                                    <option value="daily">daily</option>
+                                                    <option value="monthly" selected>monthly</option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -192,7 +198,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="sunday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week1['opening_time'];?>">
+                                                                                       value="<?php echo $week7['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week1['id']; ?>" id="week1_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -204,7 +210,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="sunday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week1['closing_time'];?>">
+                                                                                       value="<?php echo $week7['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -222,7 +228,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="monday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week2['opening_time'];?>">
+                                                                                       value="<?php echo $week1['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week2['id']; ?>" id="week2_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -234,7 +240,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="monday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week2['closing_time'];?>">
+                                                                                       value="<?php echo $week1['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -251,7 +257,7 @@ include "header.php";
 
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="tuesday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week3['opening_time'];?>">
+                                                                                       value="<?php echo $week2['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week3['id']; ?>" id="week3_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -262,7 +268,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="tuesday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week3['closing_time'];?>">
+                                                                                       value="<?php echo $week2['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -278,7 +284,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="wednesday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week4['opening_time'];?>">
+                                                                                       value="<?php echo $week3['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week4['id']; ?>" id="week4_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -290,7 +296,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="wednesday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week4['closing_time'];?>">
+                                                                                       value="<?php echo $week3['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -306,7 +312,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="thursday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week5['opening_time'];?>">
+                                                                                       value="<?php echo $week4['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week5['id']; ?>" id="week5_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -317,7 +323,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="thursday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week5['closing_time'];?>">
+                                                                                       value="<?php echo $week4['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -333,7 +339,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="friday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week6['opening_time'];?>">
+                                                                                       value="<?php echo $week5['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week6['id']; ?>" id="week6_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -344,7 +350,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="friday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week6['closing_time'];?>">
+                                                                                       value="<?php echo $week5['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>
@@ -361,7 +367,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="saturday_start_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week7['opening_time'];?>">
+                                                                                       value="<?php echo $week6['opening_time'];?>">
                                                                                 <input type="hidden" value="<?php echo $week7['id']; ?>" id="week7_id"/>
                                                                                 <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-time"></span>
@@ -372,7 +378,7 @@ include "header.php";
                                                                         <td>
                                                                             <div class="input-group form-group clockpicker">
                                                                                 <input type="text" id="saturday_end_time" class="form-control" placeholder="Select Time"
-                                                                                       value="<?php echo $week7['closing_time'];?>">
+                                                                                       value="<?php echo $week6['closing_time'];?>">
                                                                                 <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-time"></span>
                                                         </span>

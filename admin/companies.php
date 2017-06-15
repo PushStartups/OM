@@ -68,6 +68,7 @@ include "header.php";
                                         <th data-hide="phone, tablet">Discount Type</th>
                                         <th data-hide="phone, tablet">Discount</th>
                                         <th data-hide="phone, tablet">Voting</th>
+                                        <th data-hide="phone, tablet">Delivery Timings</th>
                                         <th data-hide="phone, tablet">Add Users</th>
                                         <th data-hide="phone, tablet">Add Restaurants</th>
 
@@ -98,6 +99,9 @@ include "header.php";
                                                 </div>
                                             </td>
 
+                                            <td>
+                                                <a href="add-company-delivery.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-warning  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Delivery Time </button></a>
+                                            </td>
                                             <td><a href="add-company-users.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Users </button></a></td>
 
                                             <td><a href="add-company-restaurant.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Restaurants </button></a></td>

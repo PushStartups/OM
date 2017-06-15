@@ -9,10 +9,11 @@ $company_id = $_POST['company_id'];
 $email = $_POST['smooch_id'];
 $password = $_POST['name'].rand(100,9999);
 $username = strtolower($_POST['name']);
-
+DB::useDB('orderapp_b2b');
 $company = DB::queryFirstRow("SELECT * FROM company where id = '$company_id'");
 $discount = $company['discount'];
 
+DB::useDB('orderapp_b2b');
 
 DB::insert('b2b_users', array(
 

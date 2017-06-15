@@ -2,6 +2,9 @@
 require_once '../inc/initDb.php';
 DB::query("set names utf8");
 
+
+DB::useDB('orderapp_b2b');
+
 DB::insert('company', array(
     "name"              =>  $_POST['name'],
     "delivery_address"  =>  $_POST['address'],
@@ -131,7 +134,7 @@ else
 
 
 
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Monday",
@@ -142,7 +145,7 @@ DB::insert('company_timing', array(
     "closing_time_he"               =>  $_POST['monday_end_time_he']
 ));
 
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Tuesday",
@@ -153,7 +156,7 @@ DB::insert('company_timing', array(
     "closing_time_he"               =>  $_POST['tuesday_end_time_he']
 
 ));
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Wednesday",
@@ -164,7 +167,7 @@ DB::insert('company_timing', array(
     "closing_time_he"               =>  $_POST['wednesday_end_time_he']
 ));
 
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Thursday",
@@ -176,7 +179,7 @@ DB::insert('company_timing', array(
 ));
 
 
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Friday",
@@ -188,7 +191,7 @@ DB::insert('company_timing', array(
 ));
 
 
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Saturday",
@@ -200,7 +203,7 @@ DB::insert('company_timing', array(
 ));
 
 
-
+DB::useDB('orderapp_b2b');
 DB::insert('company_timing', array(
     "company_id"                    =>  $company_id,
     "week_en"                       =>  "Sunday",

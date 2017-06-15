@@ -43,10 +43,10 @@ else
 }
 
 
-
 // SLIM INITIALIZATION
 $app = new \Slim\App();
 $app = new \Slim\App();
+
 
 
 //  GET LIST OF CITIES
@@ -75,6 +75,8 @@ $app->post('/get_all_cities', function ($request, $response, $args)
 
 });
 
+
+// SAVE CATEGORY IMAGE FOR ADMIN PANEL UPDATE MAIN DB (ORDER APP)
 $app->post('/save_category_image', function ($request, $response, $args)
 {
     $resp = "";
@@ -94,10 +96,6 @@ $app->post('/save_category_image', function ($request, $response, $args)
     $menu_id = DB::queryFirstRow("select restaurant_id from menus where id = '".$menu_id."'");
 
     $restaurant = DB::queryFirstRow("select * from restaurants where id = '".$menu_id['restaurant_id']."'");
-
-
-
-
 
 
     $restaurant['name_en'] = preg_replace('/\s*/', '', $restaurant['name_en']);
@@ -142,6 +140,10 @@ $app->post('/save_category_image', function ($request, $response, $args)
 
 });
 
+
+// UPDATE DATA ENTERY DB
+
+
 $app->post('/save_category_image_dataentry', function ($request, $response, $args)
 {
     global $con;
@@ -150,8 +152,6 @@ $app->post('/save_category_image_dataentry', function ($request, $response, $arg
 
     $id = $request->getParam('cat_id');
     $menu_id = $request->getParam('menu_id');
-
-
 
 
     // CATEGORY IMAGE URL
@@ -164,16 +164,8 @@ $app->post('/save_category_image_dataentry', function ($request, $response, $arg
         $name  = $row_brand['name_en'];
 
     }
-//    $rests = DB::queryFirstRow("select * from categories where id = '".$id."'");
-//    if(DB::count() != 0) {
-//        $data = $rests['image_url'];
-//    }
-
-
 
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
-
-
 
 
     $get_brand = "select restaurant_id from menus where id = '".$menu_id."'";
@@ -196,14 +188,6 @@ $app->post('/save_category_image_dataentry', function ($request, $response, $arg
 
     }
 
-    //$menu_id = DB::queryFirstRow("select restaurant_id from menus where id = '".$menu_id."'");
-
-    //$restaurant = DB::queryFirstRow("select * from restaurants where id = '".$menu_id['restaurant_id']."'");
-
-
-
-
-
 
     $restaurant['name_en'] = preg_replace('/\s*/', '', $restaurant['name_en']);
 
@@ -223,7 +207,7 @@ $app->post('/save_category_image_dataentry', function ($request, $response, $arg
 
     }
 
-    
+
     $filepath = "../m/en/img/categories/".$restaurant['name_en']."/".$rests['name_en'].".png"; // or image.jpg
 
 
@@ -250,6 +234,7 @@ $app->post('/save_category_image_dataentry', function ($request, $response, $arg
     return $response;
 
 });
+
 
 $app->post('/update_restaurant_logo', function ($request, $response, $args)
 {
@@ -330,19 +315,6 @@ $app->post('/insert_new_restaurant_dataentry', function ($request, $response, $a
     }
 
 
-
-
-
-
-
-//    $rests = DB::queryFirstRow("select * from restaurants where id = '".$id."'");
-//
-//    if(DB::count() != 0) {
-//
-//        $data = $rests['logo'];
-//
-//    }
-
     $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
 
     $name_logo = preg_replace('/\s*/', '', $name);
@@ -366,7 +338,6 @@ $app->post('/insert_new_restaurant_dataentry', function ($request, $response, $a
         $image_url = "/m/en/img/cs-logo.png";
 
     }
-    //DB::query("update restaurants set logo = '".$image_url."' where id = '$id'");
 
     $update_order = "update restaurants set logo = '".$image_url."' where id = '$id'";
     $run_order = mysqli_query($con, $update_order);
@@ -377,6 +348,8 @@ $app->post('/insert_new_restaurant_dataentry', function ($request, $response, $a
     return $response;
 
 });
+
+
 $app->post('/insert_new_restaurant', function ($request, $response, $args)
 {
     $resp = "";
@@ -424,31 +397,6 @@ $app->post('/insert_new_restaurant', function ($request, $response, $args)
     $response = $response->withJson(json_encode($resp));
     return $response;
 
-});
-
-
-
-
-//  WEB HOOK GET MINIMUM ORDER AMOUNT
-$app->post('/get_min_order_amount', function ($request, $response, $args)
-{
-    try {
-
-        // MINIMUM ORDER AMOUNT
-        $minOrder = DB::query("select * from default_settings where name = 'min_order'");
-
-        // RESPONSE RETURN TO REST API CALL
-        $response = $response->withStatus(202);
-        $response = $response->withJson(json_encode($minOrder));
-        return $response;
-    }
-    catch(MeekroDBException $e) {
-
-        $response =  $response->withStatus(500);
-        $response =  $response->withHeader('Content-Type', 'text/html');
-        $response =  $response->write( $e->getMessage());
-        return $response;
-    }
 });
 
 
@@ -780,6 +728,8 @@ $app->post('/coupon_validation', function ($request, $response, $args) {
         $isUniqueUser       =   false;
 
 
+        DB::useDB('orderapp_user');
+
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
         $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '$email'");
 
@@ -833,6 +783,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
     $voucherify     =  new VoucherifyClient($apiID, $apiKey);
     $data = '';
 
+    DB::useDB('orderapp_user');
 
     $result = DB::queryFirstRow("select * from users where id = '$user_id'");
 
@@ -1028,20 +979,6 @@ $app->post('/validate_email', function ($request, $response, $args) {
     }
 
 
-//
-////    # Instantiate the client.
-//
-//    $mgClient = new Mailgun('pubkey-bdbdde601ba26a9d5d1adb7f003284a9');
-//
-//    $validateAddress = $email;
-////
-////    # Issue the call to the client.
-//    $result = $mgClient->get("address/validate", array('address' => $validateAddress));
-////
-////    # is_valid is 0 or 1
-//    $isValid = $result->http_response_body->is_valid;
-
-
     // RESPONSE RETURN TO REST API CALL
     $response = $response->withStatus(202);
     $response = $response->withJson(json_encode($emailErr));
@@ -1061,9 +998,11 @@ $app->post('/add_new_user', function ($request, $response, $args) {
     $user_password      =   $request->getParam('user_password');
 
 
-    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
-    $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '" . $user_email . "'");
+    DB::useDB('orderapp_user');
 
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $user_email . "'");
+    
     if (DB::count() == 0) {
 
 
@@ -1146,6 +1085,8 @@ $app->post('/resend_signup_email', function ($request, $response, $args) {
     $user_email   =   $request->getParam('user_email');
     $resp = '';
 
+    DB::useDB('orderapp_user');
+
     //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
     $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $user_email . "'");
 
@@ -1178,6 +1119,8 @@ $app->post('/get_user', function ($request, $response, $args) {
     $resp = "not found";
     $user_smooch_id = $request->getParam('smooch_id');
 
+    DB::useDB('orderapp_user');
+
     $getUser = DB::queryFirstRow("select * from users where smooch_id = '$user_smooch_id'");
 
     if (DB::count() == 0) {
@@ -1207,6 +1150,8 @@ $app->post('/user_login', function ($request, $response, $args) {
 
     $user_email         =   $request->getParam('user_email');
     $user_password      =   $request->getParam('user_password');
+
+    DB::useDB('orderapp_user');
 
     //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
     $getUser = DB::queryFirstRow("select * from users where smooch_id = '$user_email' AND password = '$user_password'");
@@ -1240,6 +1185,8 @@ $app->post('/reset_password', function ($request, $response, $args) {
 
     $user_email   =   $request->getParam('user_email');
     $resp = '';
+
+    DB::useDB('orderapp_user');
 
     //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
     $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $user_email . "'");
@@ -1278,6 +1225,8 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
 
+
+        DB::useDB('orderapp_user');
 
         if($user_order['uid'] != '')
         {
@@ -1378,9 +1327,9 @@ $app->post('/add_order', function ($request, $response, $args) {
         $chat_id = "-165732759";
 
 
-       telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
+        telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
 
-       ob_end_clean();
+        ob_end_clean();
 
 
 
@@ -1399,8 +1348,8 @@ $app->post('/add_order', function ($request, $response, $args) {
         ob_end_clean();
 
 
-       //  CLIENT EMAIL
-      //   EMAIL ORDER SUMMARY
+        //  CLIENT EMAIL
+        //   EMAIL ORDER SUMMARY
 
         if ($user_order['language'] == 'en') {
 
@@ -1483,7 +1432,9 @@ $app->post('/native_app', function ($request, $response, $args) {
     $contact        = $request->getParam('contact');
 
 
-//CHECK IF USER ALREADY EXIST, IF NO CREATE USER
+    DB::useDB('orderapp_user');
+
+    //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
     $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $uid . "'");
 
     if (DB::count() == 0) {
@@ -1597,7 +1548,7 @@ function test_email(){
 
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -1610,7 +1561,7 @@ function test_email(){
 
 
     //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
     //Send HTML or Plain Text email
@@ -1651,6 +1602,8 @@ $app->post('/stripe_payment_request', function ($request, $response, $args) {
 
 
         $user_id = 0;
+
+        DB::useDB('orderapp_user');
 
         $getUser = DB::queryFirstRow("select id,smooch_id from users where smooch_id = '".$user_order['email']."'");
 
@@ -1903,7 +1856,7 @@ function email_to_b2b_users($email,$password,$username)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -1912,7 +1865,7 @@ function email_to_b2b_users($email,$password,$username)
 
 
     //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
     //Send HTML or Plain Text email
@@ -2102,7 +2055,7 @@ function sendVerificationEmail($code,$email)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -2148,7 +2101,7 @@ function sendPassword($password,$email)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -2359,7 +2312,7 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mail->Port = 587;
 
 //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -2551,7 +2504,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -2560,7 +2513,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mail->addAddress(EMAIL);                    //SEND  CLIENT EMAIL COPY TO ADMIN
 
     //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
     //Send HTML or Plain Text email
@@ -2741,7 +2694,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -2750,7 +2703,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
 
     //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
     //Send HTML or Plain Text email
@@ -2899,7 +2852,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -2908,7 +2861,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
 
     //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
     //Send HTML or Plain Text email
@@ -3019,7 +2972,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
     $mail->Port = 587;
 
     //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -3028,7 +2981,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
 
 
     //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
     //Send HTML or Plain Text email
@@ -3128,7 +3081,7 @@ function email_for_mark2($user_order,$orderId,$todayDate)
     $mail->Port = 587;
 
 //From email address and name
-    $mail->From = "order@orderapp.com";
+    $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
 
 
@@ -3137,7 +3090,7 @@ function email_for_mark2($user_order,$orderId,$todayDate)
 
 
 //Address to which recipient will reply
-    $mail->addReplyTo("order@orderapp.com", "Reply");
+    $mail->addReplyTo("orders@orderapp.com", "Reply");
 
 
 //Send HTML or Plain Text email

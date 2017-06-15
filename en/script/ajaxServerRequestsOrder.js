@@ -438,16 +438,33 @@ function onItemSelectedCallBack(response)
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
-                            ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                            + extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
+                        multipleTypeStr += '<li> ' +
+                            // '<input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                            // ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
+                            // + extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label>' +
+                            //     '<label class="control control--checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')">'+
+                            //      '<input type="checkbox"  id="checkbox-id-' + x.toString() + y.toString() +'">'+
+                            //     '<div class="control__indicator"></div>'+ extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+
+                            //     '</label>' +
+
+                            '<input id="checkbox-id-' + x + y + '" type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')"><label for="checkbox-id-' + x + y+'">'+ extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+' ('+extras.extra_with_subitems[x].subitems[y].price+')'+'</label>'+
+                            '</li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
-                            ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                            + extras.extra_with_subitems[x].subitems[y].name_en.capitalize() + '</label></li>';
+                        multipleTypeStr += '<li> ' +
+                            // '<input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                            // ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
+                            // + extras.extra_with_subitems[x].subitems[y].name_en.capitalize() + '</label>' +
+                            // '<label class="control control--checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')" >'+
+                            // '<input type="checkbox"  id="checkbox-id-' + x.toString() + y.toString() + '">'+
+                            // '<div class="control__indicator"></div>'+ extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+
+                            // '</label>' +
+
+                            '<input id="checkbox-id-' + x + y + '" type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')"><label for="checkbox-id-' + x + y+'">'+ extras.extra_with_subitems[x].subitems[y].name_en.capitalize()+'</label>'+
+
+                            '</li>';
                     }
 
 
@@ -479,12 +496,12 @@ function onItemSelectedCallBack(response)
     }
 
 
-    $('#parent_type_multiple').html(multipleTypeStr);
-    $('#parent_type_multiple').show();
+    $('#parent_type_multiple_2').html(multipleTypeStr);
+    $('#parent_type_multiple_2').show();
 
 
 
-    $('#myorder').modal('show');
+    $('#myorder-new').modal('show');
 
 }
 
@@ -522,7 +539,8 @@ function onOneTypeExtraSubItemSelected(extraIndex, subItemIndex, oneTypeIndex , 
 
 
 // ON MULTIPLE TYPE EXTRA SELECTED
-function onExtraSubItemSelected(ex,extraIndex, subItemIndex, index, e) {
+function onExtraSubItemSelected(ex,extraIndex, subItemIndex, index) {
+
 
     var id = '#checkbox-id-'+extraIndex+subItemIndex;
 
@@ -622,6 +640,10 @@ function onExtraSubItemSelected(ex,extraIndex, subItemIndex, index, e) {
 
 
     updatedSelectedItemPrice();
+
+    $('#scrollable2').css("max-height","60vh");
+
+
 }
 
 
@@ -724,7 +746,7 @@ function addUserOrder()
 
 
     $('#parent_type_one').hide();
-    $('#parent_type_multiple').hide();
+    $('#parent_type_multiple_2').hide();
 
 
 
@@ -761,7 +783,7 @@ function addUserOrder()
     updateCartElements();
 
 
-    $('#myorder').modal('hide');
+    $('#myorder-new').modal('hide');
 
 
 }

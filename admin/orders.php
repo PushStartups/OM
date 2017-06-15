@@ -77,37 +77,45 @@ include "header.php";
 
 									<tbody>
 									<?php
-									$orders = getAllOrders();
-									foreach ($orders as $order)
+									//$orders = getAllOrders();
+									DB::useDB('orderapp_user');
+									$user_orders = DB::query("select * from user_orders");
+									foreach($user_orders as $user_order)
 									{
-										if($order['payment_method'] != "CASH")
+										DB::useDB('orderapp_user');
+										if($user_order['payment_method'] != "CASH")
 										{
-											$refundAmount =   getTotalRefundAmount($order['id']);
+											$refundAmount =   getTotalRefundAmount($user_order['id']);
 										}
 										else
 										{
 											$refundAmount =   0;
 										}
+										DB::useDB('orderapp_user');
+										$users            =     DB::queryFirstRow("select * from users where id = '".$user_order['user_id']."'");
+										DB::useDB('orderapp_restaurants');
+										$restaurants  = 	DB::queryFirstRow("select * from restaurants where id = '".$user_order['restaurant_id']."' ");
+
 									?>
 									<tr>
-										<td><?=$order['id']?></td>
-										<td><?=$order['email']?></td>
-										<td><?=$order['restaurant_name']?></td>
-										<td><?=$order['payment_method']?></td>
-										<td><?=$order['total']." NIS"?></td>
+										<td><?=$user_order['id']?></td>
+										<td><?=$users['smooch_id']?></td>
+										<td><?=$restaurants['name_en']?></td>
+										<td><?=$user_order['payment_method']?></td>
+										<td><?=$user_order['total']." NIS"?></td>
 										<td><?=$refundAmount." NIS"?></td>
-										<?php if(empty($order['transaction_id'])) { $order['transaction_id'] = "N/A"; }?>
-										<td><?=$order['transaction_id']?></td>
+										<?php if(empty($user_order['transaction_id'])) { $user_order['transaction_id'] = "N/A"; }?>
+										<td><?=$user_order['transaction_id']?></td>
 
-										<?php if(empty($order['coupon_discount'])){ $order['coupon_discount'] = "N/A"; } ?>
-										<td><?=$order['coupon_discount']?></td>
-										<td><?=$order['discount_value']?></td>
+										<?php if(empty($user_order['coupon_discount'])){ $user_order['coupon_discount'] = "N/A"; } ?>
+										<td><?=$user_order['coupon_discount']?></td>
+										<td><?=$user_order['discount_value']?></td>
 
-										<?php $date     = explode(" "  , $order['order_date']);
+										<?php $date     = explode(" "  , $user_order['order_date']);
 										      $date[0]  = date('d-m-Y' , strtotime($date[0]));
 										?>
 										<td><?=$date[0]?></td>
-										<td><a href="order-detail.php?order_id=<?=$order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> More Detail </button></a></td>
+										<td><a href="order-detail.php?order_id=<?=$user_order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> More Detail </button></a></td>
 									</tr>
 									<?php } ?>
 									</tbody>

@@ -4,6 +4,8 @@ session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+DB::useDB('orderapp_user');
+
 $admin = DB::queryFirstRow("select * from admin where id = '1'");
 
 

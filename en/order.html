@@ -54,6 +54,21 @@
         <!-- DO NOT MODIFY -->
         <!-- End Facebook Pixel Code -->
 
+        <!-- Hotjar Tracking Code for orderapp.com -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:532682,hjsv:5};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+        <!--END Hotjar Tracking Code for orderapp.com -->
+
+
+
         <!-- Facebook/Twitter Open Graph -->
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@orderappteam" />
@@ -63,11 +78,11 @@
       We remove the phone call and give you the option of live chat or digital menu." />
     </head>
 </head>
-<style>
-    ::-webkit-scrollbar { /* for Mac OS X support */
-        width: 0;
-    }
-</style>
+<!--<style>-->
+    <!--::-webkit-scrollbar { /* for Mac OS X support */-->
+        <!--width: 0;-->
+    <!--}-->
+<!--</style>-->
 <script>
 
 
@@ -133,7 +148,8 @@
                 <div class="row">
                     <div class="col-xs-10" id="rest-name-cat">
                     </div>
-                    <div class="col-xs-2"><a  data-toggle="modal" data-target="#popup-info"  class="alert-img" href="#"><img src="/en/img/alert.png"></a></div>
+                    <div class="col-xs-2"><a  data-popup-open="popup-1"  class="alert-img" href="#"><img src="/en/img/alert.png"></a></div>
+                    <!--<div class="col-xs-2"><a  data-toggle="modal" data-target="#popup-info"  class="alert-img" href="#"><img src="/en/img/alert.png"></a></div>-->
                 </div>
             </header>
             <div class=" height-box">
@@ -269,61 +285,116 @@
 
 
 
-<div class="modal fade"  id="myorder" role="dialog">
-    <div class="modal-dialog modal-md mypopup">
-        <div class="modal-content">
-            <div class="holder">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                <div class="text-center">
+<!--<div class="modal fade"  id="myorder" role="dialog">-->
+    <!--<div class="modal-dialog modal-md mypopup">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="holder">-->
+                <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+                <!--<div class="text-center">-->
 
-                    <!--ITEM NAME IN POPUP-->
-                    <h2 id="itemPopUpTitle"> </h2>
+                    <!--&lt;!&ndash;ITEM NAME IN POPUP&ndash;&gt;-->
+                    <!--<h2 id="itemPopUpTitle"> </h2>-->
 
-                    <!--ITEMS PRICE IN POPUP-->
-                    <span id="itemPopUpPrice" class="txt"> </span>
+                    <!--&lt;!&ndash;ITEMS PRICE IN POPUP&ndash;&gt;-->
+                    <!--<span id="itemPopUpPrice" class="txt"> </span>-->
 
-                </div>
-                <div class="baron">
-                    <div id="scrollable2" class="baron__scroller popup">
-                        <div class="add-row first text-center">
+                <!--</div>-->
+                <!--<div class="baron">-->
+                    <!--<div id="scrollable2" class="baron__scroller popup">-->
+                        <!--<div class="add-row first text-center">-->
 
-                            <!--ITEM DESCRIPTION IN POPUP -->
-                            <p id="itemPopUpDesc"></p>
+                            <!--&lt;!&ndash;ITEM DESCRIPTION IN POPUP &ndash;&gt;-->
+                            <!--<p id="itemPopUpDesc"></p>-->
 
-                        </div>
+                        <!--</div>-->
 
-                        <div id="parent_type_one">
-                        </div>
-
-
-                        <div id="parent_type_multiple">
-                        </div>
+                        <!--<div id="parent_type_one">-->
+                        <!--</div>-->
 
 
-                        <div class="add-row">
-                            <label>Special Requests </label>
-                            <div class="text-holder no-gutters">
-                                <div class="col-xs-1">
-                                    <img class="edit" src="/en/img/ic_edit.png">
-                                </div>
-                                <div class="col-xs-11">
-                                    <textarea id="special_request" placeholder="Type here"></textarea>
-                                    <img class="resize" src="/en/img/Path 2.png">
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div id="parent_type_multiple">-->
+                        <!--</div>-->
 
-                    </div>
-                    <div class="baron__track">
-                        <div class="baron__bar"></div>
-                    </div>
-                </div>
-                <button  onclick="addUserOrder()"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
-            </div>
-        </div>
 
-    </div>
-</div>
+                        <!--<div class="add-row">-->
+                            <!--<label>Special Requests </label>-->
+                            <!--<div class="text-holder no-gutters">-->
+                                <!--<div class="col-xs-1">-->
+                                    <!--<img class="edit" src="/en/img/ic_edit.png">-->
+                                <!--</div>-->
+                                <!--<div class="col-xs-11">-->
+                                    <!--<textarea id="special_request" placeholder="Type here"></textarea>-->
+                                    <!--<img class="resize" src="/en/img/Path 2.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="baron__track">-->
+                        <!--<div class="baron__bar"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<button  onclick="addUserOrder()"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<div class="modal fade" id="my-popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-dialog" role="document">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+                <!--<h5 class="modal-title">Modal title Modal titleModal titleModal titleModal titleModal title Modal titleModal titleModal titleModal title</h5>-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<div class="baron">-->
+                    <!--<div id="scrollable-add" class="baron__scroller popup">-->
+                        <!--<div class="add-row first text-center">-->
+
+                            <!--&lt;!&ndash;ITEM DESCRIPTION IN POPUP &ndash;&gt;-->
+                            <!--<p id="itemPopUpDesc"></p>-->
+
+                        <!--</div>-->
+
+                        <!--<div id="parent_type_one">-->
+                        <!--</div>-->
+
+
+                        <!--<div id="parent_type_multiple">-->
+                        <!--</div>-->
+
+
+                        <!--<div class="add-row">-->
+                            <!--<label>Special Requests </label>-->
+                            <!--<div class="text-holder no-gutters">-->
+                                <!--<div class="col-xs-1">-->
+                                    <!--<img class="edit" src="/en/img/ic_edit.png">-->
+                                <!--</div>-->
+                                <!--<div class="col-xs-11">-->
+                                    <!--<textarea id="special_request" placeholder="Type here"></textarea>-->
+                                    <!--<img class="resize" src="/en/img/Path 2.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="baron__track">-->
+                        <!--<div class="baron__bar"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
 <!-- popup two -->
 <div class="modal fade"  id="popup-info" role="dialog">
     <div class="modal-dialog modal-md mypopup info">
@@ -436,6 +507,138 @@
     </div>
 </div>
 
+
+
+
+
+<div class="popup-new" data-popup="popup-1" id="myorder-new">
+    <div class="popup-inner">
+        <a class="popup-close" data-popup-close="popup-1" href="#">&times;</a>
+
+
+
+        <div class="add-row first text-center">
+
+            <!--ITEM NAME IN POPUP-->
+            <h2 id="itemPopUpTitle"> </h2>
+
+            <!--ITEMS PRICE IN POPUP-->
+            <span id="itemPopUpPrice" class="txt"> </span>
+
+        </div>
+
+        <div class="baron">
+            <div id="scrollable2" class="baron__scroller popup">
+                <div class="add-row first text-center">
+
+                    <!--ITEM DESCRIPTION IN POPUP -->
+                    <p id="itemPopUpDesc"></p>
+
+                </div>
+
+                <div id="parent_type_one">
+                </div>
+
+
+                <ul id="parent_type_multiple_2">
+                </ul>
+
+
+
+
+                <!--<div class="add-row">-->
+                    <!--<label style="text-align: left; margin-bottom: 20px; display: none;">testing</label>-->
+                    <!--<span  style=" color: red; text-align: left; margin-bottom: 16px; display: none;"></span>-->
+
+                    <!--<ul>-->
+                        <!--<li><input type="checkbox" id="test1" /><label for="test1">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test2" /><label for="test2">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test3" /><label for="test3">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test4" /><label for="test4">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test5" /><label for="test5">Red</label></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+
+                <!--<div class="add-row">-->
+                    <!--<label style="text-align: left; margin-bottom: 20px; display: none;">testing</label>-->
+                    <!--<span  style=" color: red;  text-align: left; margin-bottom: 16px;display: none;"></span>-->
+
+                    <!--<ul>-->
+                        <!--<li><input type="checkbox" id="test6" /><label for="test6">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test7" /><label for="test7">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test8" /><label for="test8">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test9" /><label for="test9">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test10" /><label for="test10">Red</label></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+
+                <!--<div class="add-row">-->
+                    <!--<label style="text-align: left; margin-bottom: 20px; display: none;">testing</label>-->
+                    <!--<span  style=" color: red; display: none; text-align: left; margin-bottom: 16px;"></span>-->
+
+                    <!--<ul>-->
+                        <!--<li><input type="checkbox" id="test11" /><label for="test11">Red</label></li>-->
+                        <!--<li><input type="checkbox" id="test12" /><label for="test12">Red</label></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+
+
+
+
+
+
+
+                <div class="add-row">
+                    <label>Special Requests </label>
+                    <div class="text-holder no-gutters">
+                        <div class="col-xs-1">
+                            <img class="edit" src="/en/img/ic_edit.png">
+                        </div>
+                        <div class="col-xs-11">
+                            <textarea id="special_request" placeholder="Type here"></textarea>
+                            <img class="resize" src="/en/img/Path 2.png">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="baron__track">
+                <div class="baron__bar"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!--<div class="box-frame">-->
+
+            <!--<ul>-->
+                <!--<li><input type="checkbox" id="test1" /><label for="test1">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test2" /><label for="test2">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test3" /><label for="test3">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test4" /><label for="test4">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test5" /><label for="test5">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test6" /><label for="test6">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test7" /><label for="test7">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test8" /><label for="test8">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test9" /><label for="test9">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test10" /><label for="test10">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test11" /><label for="test11">Red</label></li>-->
+                <!--<li><input type="checkbox" id="test12" /><label for="test12">Red</label></li>-->
+
+            <!--</ul>-->
+        <!--</div>-->
+        <button  onclick="addUserOrder()"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
+
+    </div>
+</div>
+
+
+
+
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/en/script/jquery.accordion.js"></script>
@@ -448,6 +651,29 @@
 
 
 <script>
+
+
+    $(function() {
+        //----- OPEN
+        $('[data-popup-open]').on('click', function(e)  {
+            var targeted_popup_class = jQuery(this).attr('data-popup-open');
+            $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+
+            e.preventDefault();
+        });
+
+        //----- CLOSE
+        $('[data-popup-close]').on('click', function(e)  {
+            var targeted_popup_class = jQuery(this).attr('data-popup-close');
+            $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+
+            e.preventDefault();
+        });
+    });
+
+
+
+
 
     // replace custom forms
     jcf.lib.domReady(function(){

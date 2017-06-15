@@ -1157,7 +1157,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	letter-spacing: 0.4px;
 	text-align: center;
 	color: #fff;
-	position: fixed;
+	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;

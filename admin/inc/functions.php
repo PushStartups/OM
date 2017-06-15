@@ -51,13 +51,16 @@ function getRestaurantsCountByCity($city_id)
 // GET ALL ORDERS FROM DATABASE (SHOWING ON ORDERS.PHP)
 function getAllOrders()
 {
-    $orders = DB::query("select o.*, r.name_en as restaurant_name, u.smooch_id as email from user_orders as o inner join restaurants as r on o.restaurant_id = r.id  inner join users as u on o.user_id = u.id order by o.id DESC ");
+    //$orders = DB::query("select o.*, r.name_en as restaurant_name, u.smooch_id as email from user_orders as o inner join restaurants as r on o.restaurant_id = r.id  inner join users as u on o.user_id = u.id order by o.id DESC ");
+    $orders = DB::query("select * from user_orders");
+    
     return $orders;
 }
 
 // GET ALL ORDERS FROM DATABASE (SHOWING ON ORDERS.PHP)
 function getAllB2BOrders()
 {
+    DB::useDB('orderapp_b2b');
     $orders = DB::query("select o.*, c.name as company_name, u.smooch_id as email from b2b_orders as o inner join company as c on o.company_id = c.id  inner join b2b_users as u on o.user_id = u.id order by o.id DESC ");
     return $orders;
 }
@@ -66,6 +69,7 @@ function getAllB2BOrders()
 
 function getOrderItems($order_id)
 {
+    DB::useDB('orderapp_user');
     $order_detail = DB::query("select * from order_detail where order_id = '$order_id'");
     return $order_detail;
 }
@@ -73,16 +77,17 @@ function getOrderItems($order_id)
 //GET ALL TIMINGS OF RESTAURANTS
 function getAllTimings($restaurant_id)
 {
+
     $timings = DB::query("select * from weekly_availibility where restaurant_id = '$restaurant_id'");
     return $timings;
 }
 
 
 
-
-
 function getOrderItemsB2B($order_id)
 {
+
+    DB::useDB('orderapp_b2b');
     $order_detail = DB::query("select * from b2b_order_detail where order_id = '$order_id'");
     return $order_detail;
 }
@@ -90,16 +95,17 @@ function getOrderItemsB2B($order_id)
 
 
 
-function getRestaurantNameByOrderId($order_id)
-{
-    $orders = DB::queryFirstRow("select o.*, r.name_en as restaurant_name from user_orders as o  inner join restaurants as r on o.restaurant_id = r.id where o.id = '$order_id'");
-    return $orders;
-}
+//function getRestaurantNameByOrderId($order_id)
+//{
+//    $orders = DB::queryFirstRow("select o.*, r.name_en as restaurant_name from user_orders as o  inner join restaurants as r on o.restaurant_id = r.id where o.id = '$order_id'");
+//    return $orders;
+//}
 
 
 
 function getCompanyNameByOrderId($order_id)
 {
+    DB::useDB('orderapp_b2b');
     $orders = DB::queryFirstRow("select o.*, c.name as company_name from b2b_orders as o  inner join company as c on o.company_id = c.id where o.id = '$order_id'");
     return $orders;
 }
@@ -108,6 +114,7 @@ function getCompanyNameByOrderId($order_id)
 
 function getTotalPriceOfSpecificOrder($order_id)
 {
+    DB::useDB('orderapp_user');
     $total = 0;
     $orders = DB::query("select * from order_detail where order_id = '$order_id'");
     foreach($orders as $order)
@@ -119,6 +126,7 @@ function getTotalPriceOfSpecificOrder($order_id)
 
 function getPaymentMethod($order_id)
 {
+    DB::useDB('orderapp_user');
     $payment                =  DB::queryFirstRow("select * from user_orders where id = '$order_id' ");
     $payment_info           =  $payment['payment_method'];
     $total                  =  $payment['total'];
@@ -131,6 +139,7 @@ function getPaymentMethod($order_id)
 
 function getPaymentMethodB2B($order_id)
 {
+    DB::useDB('orderapp_b2b');
     $payment       =  DB::queryFirstRow("select * from b2b_orders where id = '$order_id' ");
 
     $total                   =  $payment['total'];
@@ -143,6 +152,7 @@ function getPaymentMethodB2B($order_id)
 
 function getRefundCount($order_id)
 {
+    DB::useDB('orderapp_user');
     DB::query("select * from refund where order_id = '$order_id'");
     return $refund_count = DB::count();
 }
@@ -150,12 +160,14 @@ function getRefundCount($order_id)
 
 function getRefundCountB2B($order_id)
 {
+    DB::useDB('orderapp_b2b');
     DB::query("select * from b2b_refund where order_id = '$order_id'");
     return $refund_count = DB::count();
 }
 
 function getRefundDetail($order_id)
 {
+    DB::useDB('orderapp_user');
     $refund_orders = DB::query("select * from refund where order_id = '$order_id'");
     return $refund_orders;
 }
@@ -164,6 +176,7 @@ function getRefundDetail($order_id)
 
 function getTotalRefundAmount($order_id)
 {
+    DB::useDB('orderapp_user');
     $total = 0;
     $orders = DB::query("select * from refund where order_id = '$order_id'");
     foreach($orders as $order)
@@ -175,6 +188,7 @@ function getTotalRefundAmount($order_id)
 
 function getTotalRefundAmountB2B($order_id)
 {
+    DB::useDB('orderapp_b2b');
     $total = 0;
     $orders = DB::query("select * from b2b_refund where order_id = '$order_id'");
     foreach($orders as $order)
@@ -202,19 +216,21 @@ function getAllCities()
 //GET ALL B2B COMPANIES
 function getAllCompanies()
 {
+    DB::useDB('orderapp_b2b');
     $cities = DB::query("select * from company");
     return $cities;
 }
 
-function getRestaurantsOfSpecificCompany($company_id)
-{
-    $restaurants = DB::query("select company_rest.*, restaurants.name_en as restaurants_name from company_rest inner join restaurants on company_rest.rest_id = restaurants.id where company_id = '$company_id'");
-    return  $restaurants;
-}
+//function getRestaurantsOfSpecificCompany($company_id)
+//{
+//    $restaurants = DB::query("select company_rest.*, restaurants.name_en as restaurants_name from company_rest inner join restaurants on company_rest.rest_id = restaurants.id where company_id = '$company_id'");
+//    return  $restaurants;
+//}
 
 //GET COMPANY NAME
 function getCompanyName($company_id)
 {
+    DB::useDB('orderapp_b2b');
     $company = DB::queryFirstRow("select * from company where id = '$company_id'");
     return  $company['name'];
 }
@@ -222,19 +238,24 @@ function getCompanyName($company_id)
 //GET ALL COMPANIES
 function getSpecificCompanies($company_id)
 {
+    DB::useDB('orderapp_b2b');
     $edit_company = DB::queryFirstRow("select * from company where id = '$company_id'");
     return  $edit_company;
 }
 //GET ALL COMPANIES TIMINGS
 function getSpecificCompanyTiming($company_id)
 {
+    DB::useDB('orderapp_b2b');
     $edit_company_time = DB::query("select * from company_timing where company_id = '$company_id'");
     return  $edit_company_time;
 }
 
 
 //GET USERS OF SPECIFIC COMPANY
-function getUsersOfSpecificCompany($companies_id){
+function getUsersOfSpecificCompany($companies_id)
+{
+    DB::useDB('orderapp_b2b');
+
 
     $company = DB::query("select * from b2b_users where company_id = '$companies_id'");
     return $company;
@@ -322,6 +343,7 @@ function getRestaurant($restaurant_id)
     return $restaurant = DB::queryFirstRow("select * from restaurants where id = '$restaurant_id'");
 }
 
+//
 function getTagsOfSpecificRestaurant($restaurant_id)
 {
     return $tags = DB::query("select * from tags inner join restaurant_tags on tags.id = restaurant_tags.tag_id where restaurant_tags.restaurant_id = '$restaurant_id' ");
@@ -355,12 +377,6 @@ function getSpecificCity($city_id)
 {
     $city = DB::queryFirstRow("select * from cities where id = '$city_id'");
     return $city;
-}
-
-function getSpecificb2bRestDisc($rest_id)
-{
-    $rest = DB::queryFirstRow("select * from b2b_rest_discounts where id = '$rest_id'");
-    return $rest;
 }
 
 function getAllTags()

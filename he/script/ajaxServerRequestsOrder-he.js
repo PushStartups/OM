@@ -442,16 +442,26 @@ function onItemSelectedCallBack(response)
                     if(convertFloat(extras.extra_with_subitems[x].subitems[y].price) > 0)
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
-                            ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                            + extras.extra_with_subitems[x].subitems[y].name_he+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label></li>';
+                        multipleTypeStr += '<li> ' +
+                            // '<input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                            // ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
+                            // + extras.extra_with_subitems[x].subitems[y].name_he+" (+"+extras.extra_with_subitems[x].subitems[y].price+")"+'</label>' +
+
+                            '<input id="checkbox-id-' + x + y + '" type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')"><label for="checkbox-id-' + x + y+'">'+ extras.extra_with_subitems[x].subitems[y].name_he.capitalize()+' ('+extras.extra_with_subitems[x].subitems[y].price+')'+'</label>'+
+
+                            '</li>';
                     }
                     else
                     {
                         // ON CLICK PASSING EXTRA ID AND SUB ITEM ID
-                        multipleTypeStr += '<li> <input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
-                            ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
-                            + extras.extra_with_subitems[x].subitems[y].name_he + '</label></li>';
+                        multipleTypeStr += '<li> ' +
+                            // '<input  type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+',this)"  id="checkbox-id-' + x.toString() + y.toString() + '" />' +
+                            // ' <label for="checkbox-id-' + x.toString() + y.toString() + '">'
+                            // + extras.extra_with_subitems[x].subitems[y].name_he + '</label>' +
+
+                            '<input id="checkbox-id-' + x + y + '" type="checkbox" onclick="onExtraSubItemSelected(' +multipleTypeSubItems.length+','+ x + ',' + y + ',' + multiTypeItemSet.length+')"><label for="checkbox-id-' + x + y+'">'+ extras.extra_with_subitems[x].subitems[y].name_he.capitalize()+'</label>'+
+
+                            '</li>';
                     }
 
 
@@ -482,8 +492,8 @@ function onItemSelectedCallBack(response)
         $('#parent_type_one').hide();
     }
 
-    $('#parent_type_multiple').html(multipleTypeStr);
-    $('#parent_type_multiple').show();
+    $('#parent_type_multiple_2').html(multipleTypeStr);
+    $('#parent_type_multiple_2').show();
 
 
     // var div = document.getElementById('scrollable2');
@@ -493,7 +503,7 @@ function onItemSelectedCallBack(response)
     // SimpleScrollbar.initAll();
 
 
-    $('#myorder').modal('show');
+    $('#myorder-new').modal('show');
 
 }
 
@@ -734,7 +744,7 @@ function addUserOrder()
 
 
     $('#parent_type_one').hide();
-    $('#parent_type_multiple').hide();
+    $('#parent_type_multiple_2').hide();
 
 
     // Convert Multi Type 2D array to One Type Array
@@ -770,7 +780,7 @@ function addUserOrder()
     updateCartElements();
 
 
-    $('#myorder').modal('hide');
+    $('#myorder-new').modal('hide');
 
 
 }

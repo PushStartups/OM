@@ -124,57 +124,57 @@ else
 $company_id = $_POST['company_id'];
 
 
-    $timings = getSpecificCompanyTiming($company_id);
+$timings = getSpecificCompanyTiming($company_id);
 
-    $count = 1;
-    $week1[] ="";
-    $week2[] ="";
-    $week3[] ="";
-    $week4[] ="";
-    $week5[] ="";
-    $week6[] ="";
-    $week7[] ="";
+$count = 1;
+$week1[] ="";
+$week2[] ="";
+$week3[] ="";
+$week4[] ="";
+$week5[] ="";
+$week6[] ="";
+$week7[] ="";
 
-    foreach ($timings as $time)
+foreach ($timings as $time)
+{
+    if($count == 1)
     {
-        if($count == 1)
-        {
-            $week1['id']                    =  $time['id'];
-
-        }
-        if($count == 2)
-        {
-            $week2['id']                    =  $time['id'];
-
-        }
-        if($count == 3)
-        {
-            $week3['id']                    =  $time['id'];
-
-        }
-        if($count == 4)
-        {
-            $week4['id']                    =  $time['id'];
-
-        }
-        if($count == 5)
-        {
-            $week5['id']                    =  $time['id'];
-
-        }
-        if($count == 6)
-        {
-            $week6['id']                    =  $time['id'];
-
-        }
-        if($count == 7)
-        {
-            $week7['id']                    =   $time['id'];
-
-        }
-        $count++;
+        $week1['id']                    =  $time['id'];
 
     }
+    if($count == 2)
+    {
+        $week2['id']                    =  $time['id'];
+
+    }
+    if($count == 3)
+    {
+        $week3['id']                    =  $time['id'];
+
+    }
+    if($count == 4)
+    {
+        $week4['id']                    =  $time['id'];
+
+    }
+    if($count == 5)
+    {
+        $week5['id']                    =  $time['id'];
+
+    }
+    if($count == 6)
+    {
+        $week6['id']                    =  $time['id'];
+
+    }
+    if($count == 7)
+    {
+        $week7['id']                    =   $time['id'];
+
+    }
+    $count++;
+
+}
 
 
 
@@ -183,7 +183,7 @@ $company_id = $_POST['company_id'];
 
 
 
-
+DB::useDB('orderapp_b2b');
 
 
 //UPDATE COMPANY
@@ -197,76 +197,76 @@ DB::update('company', array(
 ),  "id=%d",    $company_id   );
 
 
-    $week1_id = $week1['id'];
-    $week2_id = $week2['id'];
-    $week3_id = $week3['id'];
-    $week4_id = $week4['id'];
-    $week5_id = $week5['id'];
-    $week6_id = $week6['id'];
-    $week7_id = $week7['id'];
+$week1_id = $week1['id'];
+$week2_id = $week2['id'];
+$week3_id = $week3['id'];
+$week4_id = $week4['id'];
+$week5_id = $week5['id'];
+$week6_id = $week6['id'];
+$week7_id = $week7['id'];
 
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['sunday_start_time'],
+    "closing_time"                  =>  $_POST['sunday_end_time'],
+    "opening_time_he"               =>  $_POST['sunday_start_time_he'],
+    "closing_time_he"               =>  $_POST['sunday_end_time_he']
 
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['sunday_start_time'],
-        "closing_time"                  =>  $_POST['sunday_end_time'],
-        "opening_time_he"               =>  $_POST['sunday_start_time_he'],
-        "closing_time_he"               =>  $_POST['sunday_end_time_he']
+),  "id=%d",     $week7_id  );
 
-    ),  "id=%d",     $week7_id  );
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['monday_start_time'],
+    "closing_time"                  =>  $_POST['monday_end_time'],
+    "opening_time_he"               =>  $_POST['monday_start_time_he'],
+    "closing_time_he"               =>  $_POST['monday_end_time_he']
 
+),  "id=%d",     $week1_id  );
 
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['monday_start_time'],
-        "closing_time"                  =>  $_POST['monday_end_time'],
-        "opening_time_he"               =>  $_POST['monday_start_time_he'],
-        "closing_time_he"               =>  $_POST['monday_end_time_he']
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['tuesday_start_time'],
+    "closing_time"                  =>  $_POST['tuesday_end_time'],
+    "opening_time_he"               =>  $_POST['tuesday_start_time_he'],
+    "closing_time_he"               =>  $_POST['tuesday_end_time_he']
 
-    ),  "id=%d",     $week1_id  );
+),  "id=%d",     $week2_id  );
 
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['wednesday_start_time'],
+    "closing_time"                  =>  $_POST['wednesday_end_time'],
+    "opening_time_he"               =>  $_POST['wednesday_start_time_he'],
+    "closing_time_he"               =>  $_POST['wednesday_end_time_he']
 
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['tuesday_start_time'],
-        "closing_time"                  =>  $_POST['tuesday_end_time'],
-        "opening_time_he"               =>  $_POST['tuesday_start_time_he'],
-        "closing_time_he"               =>  $_POST['tuesday_end_time_he']
+),  "id=%d",     $week3_id  );
 
-    ),  "id=%d",     $week2_id  );
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['thursday_start_time'],
+    "closing_time"                  =>  $_POST['thursday_end_time'],
+    "opening_time_he"               =>  $_POST['thursday_start_time_he'],
+    "closing_time_he"               =>  $_POST['thursday_end_time_he']
 
+),  "id=%d",     $week4_id  );
 
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['wednesday_start_time'],
-        "closing_time"                  =>  $_POST['wednesday_end_time'],
-        "opening_time_he"               =>  $_POST['wednesday_start_time_he'],
-        "closing_time_he"               =>  $_POST['wednesday_end_time_he']
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['friday_start_time'],
+    "closing_time"                  =>  $_POST['friday_end_time'],
+    "opening_time_he"               =>  $_POST['friday_start_time_he'],
+    "closing_time_he"               =>  $_POST['friday_end_time_he']
 
-    ),  "id=%d",     $week3_id  );
+),  "id=%d",     $week5_id  );
 
+DB::useDB('orderapp_b2b');
+DB::update('company_timing', array(
+    "opening_time"                  =>  $_POST['saturday_start_time'],
+    "closing_time"                  =>  $_POST['saturday_end_time'],
+    "opening_time_he"               =>  $_POST['saturday_start_time_he'],
+    "closing_time_he"               =>  $_POST['saturday_end_time_he']
 
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['thursday_start_time'],
-        "closing_time"                  =>  $_POST['thursday_end_time'],
-        "opening_time_he"               =>  $_POST['thursday_start_time_he'],
-        "closing_time_he"               =>  $_POST['thursday_end_time_he']
-
-    ),  "id=%d",     $week4_id  );
-
-
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['friday_start_time'],
-        "closing_time"                  =>  $_POST['friday_end_time'],
-        "opening_time_he"               =>  $_POST['friday_start_time_he'],
-        "closing_time_he"               =>  $_POST['friday_end_time_he']
-
-    ),  "id=%d",     $week5_id  );
-
-
-    DB::update('company_timing', array(
-        "opening_time"                  =>  $_POST['saturday_start_time'],
-        "closing_time"                  =>  $_POST['saturday_end_time'],
-        "opening_time_he"               =>  $_POST['saturday_start_time_he'],
-        "closing_time_he"               =>  $_POST['saturday_end_time_he']
-
-    ),  "id=%d",     $week6_id  );
+),  "id=%d",     $week6_id  );
 
 
 

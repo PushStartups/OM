@@ -228,7 +228,8 @@ function save_imagee(rest_id,restapi_url)
         success: function (data) {
             alert("restaurant added successfully");
             hideLoading();
-             window.location.href = "index.php";
+
+           // setTimeout(function(){ window.location.href = "index.php"; }, 5000);
         }
     });
 }

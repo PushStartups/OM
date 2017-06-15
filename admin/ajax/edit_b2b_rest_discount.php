@@ -8,7 +8,7 @@ DB::query("set names utf8");
 $rest_id            =  $_POST['rest_id'];
 
 
-
+DB::useDB('orderapp_b2b');
 
 DB::update('b2b_rest_discounts', array(
 

@@ -1601,3 +1601,141 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 }
 
 
+
+
+
+
+
+/* Outer */
+.popup-new {
+	width:100%;
+	height:100%;
+	display:none;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index: 999999;
+	background:rgba(0,0,0,0.75);
+}
+
+/* Inner */
+.popup-new .popup-inner {
+	padding:24px 31px 78px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform:translate(-50%, -50%);
+	transform:translate(-50%, -50%);
+	background:#fff;
+	border-radius: 13px;
+	width: 457px;
+	margin: 0 auto;
+	z-index: 9999999;
+}
+
+.popup-new .btn-submit {
+	width: 100%;
+	height: 78px;
+	padding: 10px;
+	border-radius:0 0 13px 13px;
+	background-image: linear-gradient(249deg, #ffae5e, #ff7f00);
+	font-size: 24px;
+	line-height: 36px;
+	letter-spacing: 0.3px;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+}
+.popup-new .btn-submit:hover{background-image: linear-gradient(249deg, #ff7f00, #ffae5e);}
+
+
+.popup-new .text-center {
+	text-align: center;
+	padding: 0 33px;
+}
+.popup-new h2{
+	font-size: 24px;
+	font-weight: 300;
+	font-stretch: normal;
+	line-height: 27px;
+	color: #000000;
+	margin: 0 0 20px;
+}
+.popup-new .add-row #itemPopUpDesc{margin:0;}
+.popup-new .add-row p{margin:  0 0 25px;}
+.popup-new h3 {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 23px;
+	color: #000;
+	margin: 0 0 20px;
+}
+.popup-new .popup-close {
+	float: right;
+	font-size: 40px;
+	line-height: 50px;
+	font-weight: 700;
+	color: #000;
+	opacity: 1;
+	margin: -20px 0 0;
+	outline: none;
+}
+.popup-new .popup-close:hover{color:#ff7f00;}
+
+.popup-new .add-row{
+	padding: 25px 0;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: 0.2px;
+	color: #797979;
+	border-top: 1px solid #979797;
+}
+.popup-new .add-row.first {
+	border: none;
+	padding: 0 0 25px;
+}
+.popup-new ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+}
+.popup-new ul li{
+	display: block;}
+
+.popup-new .txt {
+	display: block;
+	color: #f46c00;
+	line-height: 27px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 300;
+	border-radius: 50%;
+	margin: 0 0 30px;
+}
+
+.popup-new .add-row .red{display: none;}
+.popup-new .add-row.error .red{
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 15px;
+	color: #ff3838;
+	display: block;
+	padding: 10px 0;
+	text-align: left;
+	margin: 8px 0 0;
+}
+.mypopup .add-row .red{display: none;}
+.baron _scrollbar{
+	overflow: visible !important;
+}
+.baron _scrollbar:after{
+	display: block;
+	clear: both;
+	content: "";
+}
+.popup-new .add-row{padding-right: 2px;}

@@ -7,7 +7,7 @@ if(isset($_GET['companies_id']))
 {
     $companies_id = $_GET['companies_id'];
     $company_name = getCompanyName($companies_id);
-    $restaurants = getRestaurantsOfSpecificCompany($companies_id);
+    //$restaurants = getRestaurantsOfSpecificCompany($companies_id);
 }
 ?>
 
@@ -64,13 +64,17 @@ if(isset($_GET['companies_id']))
 <!--                                            <input class="form-control" id="rest_name" name="rest_name" placeholder="Enter Restaurant Name" type="text">-->
                                             <select id="rest_name" name="rest_name[]" multiple="multiple" class="form-control" required>
                                                 <?php
-                                                $rest_ids = DB::query("SELECT company_rest.rest_id FROM company_rest INNER JOIN restaurants ON company_rest.rest_id = restaurants.id WHERE company_id =  '$companies_id'");
+
+
+                                                DB::useDB('orderapp_b2b');
+                                                $rest_ids = DB::query("SELECT *  FROM company_rest WHERE company_id =  '$companies_id'");
 
 
 
                                                 foreach ($rest_ids as $r) {
                                                     $row[] = $r['rest_id'];
                                                 }
+                                                DB::useDB('orderapp_restaurants');
                                                 $qry1 = " select  * from  restaurants where id not in('" . implode("','", $row) . "') ";
 
                                                 $restaurant = db::query($qry1);
@@ -98,6 +102,14 @@ if(isset($_GET['companies_id']))
                             </div>
                         </div>
                     </div>
+
+<!--                    $restaurants = DB::query("select company_rest.*, restaurants.name_en as restaurants_name from company_rest inner join restaurants on company_rest.rest_id = restaurants.id where company_id = '$company_id'");-->
+                    <?php
+                    DB::useDB('orderapp_b2b');
+                    $restaurants  = DB::query("select * from company_rest where company_id = '$companies_id'");
+
+
+                    ?>
 
                     <?php if(!empty($restaurants)){  ?>
                     <!-- Widget ID (each widget will need unique ID)-->
@@ -131,12 +143,15 @@ if(isset($_GET['companies_id']))
                                     <tbody id="content">
                                     <?php
 
-                                    foreach ($restaurants as $restaurant)
+
+                                    foreach($restaurants as $restaurant)
                                     {
+                                        DB::useDB('orderapp_restaurants');
+                                        $rest = DB::queryFirstRow("select * from restaurants where id = '".$restaurant['rest_id']."'");
                                         ?>
                                         <tr>
                                             <td><?=$restaurant['rest_id']?></td>
-                                            <td><?=$restaurant['restaurants_name']?></td>
+                                            <td><?=$rest['name_en']?></td>
                                             <td><a onclick="delete_company_restaurant('<?=$restaurant['rest_id']?>','<?=$restaurant['company_id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete </button></a></td>
                                         </tr>
                                     <?php } ?>

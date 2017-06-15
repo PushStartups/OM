@@ -21,8 +21,16 @@ else{
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <?php $order = getRestaurantNameByOrderId($order_id) ?>
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i><?=$order['restaurant_name']?> Restaurant</h1>
+                <?php //$order = getRestaurantNameByOrderId($order_id);
+                //DB::queryFirstRow("select o.*, r.name_en as restaurant_name from user_orders as o  inner join restaurants as r on o.restaurant_id = r.id where o.id = '$order_id'");
+                DB::useDB('orderapp_user');
+                $order = DB::queryFirstRow("select * from user_orders where id  = '$order_id'");
+                DB::useDB('orderapp_restaurant');
+                $order = DB::queryFirstRow("select * from restaurants where id  = '".$order['restaurant_id']."'");
+
+
+                ?>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i><?=$order['name_en']?> Restaurant</h1>
             </div>
             <!-- end col -->
 

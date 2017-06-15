@@ -76,6 +76,8 @@ if( function_exists( "curl_init" )) {
             $str = $item->nodeValue . "\n";
             if(intval($str) == 0)
             {
+                DB::useDB('orderapp_user');
+
                 //RREFUND SUCCESS
                 DB::query("UPDATE user_orders SET total = total - '$refund_amount_NIS' WHERE id = '$order_id'");
                 DB::insert('refund', array(
