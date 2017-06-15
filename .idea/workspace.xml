@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="DB update + code latest">
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
@@ -889,14 +889,7 @@
       <workItem from="1497417991030" duration="5121000" />
       <workItem from="1497468493069" duration="187000" />
       <workItem from="1497512291040" duration="2371000" />
-      <workItem from="1497525735263" duration="12000" />
-    </task>
-    <task id="LOCAL-00101" summary="DB update + code latest &#10;&#10;">
-      <created>1493552619195</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1493552619195</updated>
+      <workItem from="1497525735263" duration="365000" />
     </task>
     <task id="LOCAL-00102" summary="DB update + code latest &#10;&#10;">
       <created>1493555505292</created>
@@ -1234,11 +1227,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497524041535</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="DB update + code latest">
+      <created>1497525755335</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1497525755336</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1040081000" />
+    <option name="totallyTimeSpent" value="1040434000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
