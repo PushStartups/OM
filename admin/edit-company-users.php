@@ -1,7 +1,17 @@
 <?php
 include "header.php";
-?>
 
+if(isset($_GET['id']))
+{
+    $user_id                 =    $_GET['id'];
+    $users_id                    =    getSpecificCompanyUser($user_id);
+
+}
+else
+{
+    header("location:logout.php");
+}
+?>
 <div id="main" role="main">
 
     <!-- MAIN CONTENT -->
@@ -11,12 +21,12 @@ include "header.php";
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-building "></i> Add A Company Restaurant Discount </h1>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Update Company Users</h1>
             </div>
 
         </div>
         <div id="myform">
-            <section id="widget-grid" >
+            <section id="widget-grid"  id="myform">
                 <!-- row -->
                 <div class="row">
                     <!-- NEW WIDGET START -->
@@ -37,46 +47,44 @@ include "header.php";
 
                                 <div class="widget-body">
 
-                                    <form id="my-form"  method="post" enctype="multipart/form-data">
+                                    <form method="post">
                                         <fieldset>
-                                            <input name="authenticity_token" type="hidden">
 
                                             <div class="form-group">
-                                                <label>Company</label>
-                                                <input class="form-control" id="company" name="company" placeholder="Enter Company Name" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="company_error"></span>
+                                                <label>Name</label>
+                                                <input class="form-control" id="name" name="name" value="<?=$users_id['name'];?>" placeholder="Enter Name" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="name_error"></span>
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Restaurant</label>
-                                                <input class="form-control" id="restaurant" name="restaurant" placeholder="Enter Restaurant Name" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="restaurant_error"></span>
+                                                <label>Email</label>
+                                                <input class="form-control" id="smooch_id" name="smooch_id" placeholder="Enter Email" value="<?=$users_id['smooch_id'];?>" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="email_error"></span>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label>Contact</label>
+                                                <input class="form-control" id="contact" name="contact" placeholder="Enter Contact" value="<?=$users_id['contact'];?>" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="contact_error"></span>
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Discount</label>
-                                                <input class="form-control" id="discount" name="discount" placeholder="Enter Discount in Percentage" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="discount_error"></span>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>In Time Discount</label>
-                                                <input class="form-control" id="in_time_discount" name="in_time_discount" placeholder="Enter In Time Discount in Percentage" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="in_time_discount_error"></span>
+                                                <label>Address</label>
+                                                <input class="form-control" id="address" name="address" placeholder="Enter Address" value="<?=$users_id['address'];?>" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="address_error"></span>
                                             </div>
 
 
-                                            <br>
                                         </fieldset>
                                         <div class="form-actions">
-                                            <div onclick="add_rest_company_discount('<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
+                                            <div onclick="edit_company_user('<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
                                                 <i class="fa fa-save"></i>
                                                 Submit
                                             </div>
-                                            <!--                                            <input type="submit" value="Submit" class="btn btn-primary btn-lg">-->
                                         </div>
                                     </form>
-
                                 </div>
                                 <!-- end widget content -->
                             </div>
@@ -100,6 +108,7 @@ include "header.php";
     </div>
     <!-- END MAIN CONTENT -->
 </div>
+
 
 
 <div id="divBackground" style="position: fixed; z-index: 999; height: 100%; width: 100%;

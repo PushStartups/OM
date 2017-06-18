@@ -110,6 +110,8 @@ include "header.php";
                                             <th >Discount</th>
                                             <th >Contact</th>
                                             <th >Language</th>
+                                            <th >Action</th>
+                                            <th >Delete</th>
                                             <!--                                            <th>Delete</th>-->
                                         </tr>
                                         </thead>
@@ -127,6 +129,9 @@ include "header.php";
                                                 <td><?=$user['discount']?></td>
                                                 <td><?=$user['contact']?></td>
                                                 <td><?=$user['language']?></td>
+                                                <td><a href="edit-company-users.php?id=<?=$user['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+                                                <td><a onclick="delete('<?=$user['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+
                                             </tr>
                                         <?php } ?>
                                         </tbody>
@@ -205,7 +210,7 @@ include "header.php";
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="address_error"></span>
                                         </div>
 
-                                        <input type="hidden" name="companies_id" id="companies_id" value="<?=$companies_id;?>"
+                                        <input type="hidden" name="companies_id" id="companies_id" value="<?=$companies_id;?>"/>
 
                                     </fieldset>
                                     <div class="form-actions">

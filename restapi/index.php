@@ -398,6 +398,192 @@ $app->post('/insert_new_restaurant', function ($request, $response, $args)
     return $response;
 
 });
+//  WEB HOOK GET ALL RESTAURANT
+$app->post('/get_selected_restaurants', function ($request, $response, $args)
+{
+
+    try {
+
+        $city_name        = $request->getParam('city');
+        $restaurant_name  = $request->getParam('rest');
+
+        $new_city_name    = "";
+        $new_restaurant_name = "";
+
+        $cities   =  DB::query("select * from cities");
+        foreach($cities as $city)
+        {
+            $cityy = str_replace(' ', '', $city['name_en']);
+            if($cityy == $city_name)
+            {
+                $new_city_name = $city['name_en'];
+            }
+        }
+
+
+
+
+        $restaurants   =  DB::query("select * from restaurants");
+        foreach($restaurants as $restaurant)
+        {
+            $restaurantt = str_replace(' ', '', $restaurant['name_en']);
+            if($restaurantt == $restaurant_name)
+            {
+                $new_restaurant_name = $restaurant['name_en'];
+            }
+        }
+
+        if(($new_city_name == "") || ($new_restaurant_name == ""))
+        {
+            // RESPONSE RETURN TO REST API CALL
+            $response = $response->withStatus(202);
+            $response = $response->withJson(json_encode("false"));
+            return $response;
+        }
+
+
+
+
+
+
+        $get_city_id = DB::queryFirstRow("select * from cities where name_en = '$new_city_name' ");
+        $get_restaurant_id = DB::queryFirstRow("select * from restaurants where name_en = '$new_restaurant_name' ");
+
+
+
+        $restaurants = Array();
+
+        $result = DB::queryFirstRow("select * from restaurants  where city_id = '".$get_city_id['id']."' and hide = 0 and id = '".$get_restaurant_id['id']."' order by sort ASC ");
+
+        $count = 0;
+
+        //foreach ($results as $result) {
+        // GET TAGS OF RESTAURANT i.e BURGER , PIZZA
+
+        $tagsIds = DB::query("select tag_id from restaurant_tags where restaurant_id = '" . $result['id'] . "'");
+
+        $tags = Array();
+        $count2 = 0;
+        $hoursLeftToOpen = null;
+
+        foreach ($tagsIds as $id) {
+
+            $tag = DB::queryFirstRow("select * from tags where id = '" . $id["tag_id"] . "'");
+            $tags[$count2] = $tag;
+            $count2++;
+        };
+
+        // GET GALLERY OF RESTAURANT
+
+        $galleryImages = DB::query("select url from restaurant_gallery where restaurant_id = '" . $result['id'] . "'");
+
+
+        // RETRIEVING RESTAURANT TIMINGS i.e SUNDAY   STAT_TIME : 12:00  END_TIME 21:00;
+
+        $restaurantTimings = DB::query("select * from weekly_availibility where restaurant_id = '" . $result['id'] . "'");
+
+        // CURRENT TIME OF ISRAEL
+        date_default_timezone_set("Asia/Jerusalem");
+        $currentTime = date("H:i");
+        $tempDate = date("d/m/Y");
+        $dayOfWeek = date('l');
+
+        // RESTAURANT AVAILABILITY ACCORDING TO TIME
+        $currentStatus = false;
+
+        $today_timings = "";
+        $today_timings_he = "";
+
+
+        foreach ($restaurantTimings as $singleTime) {
+
+
+            if ($singleTime['week_en'] == $dayOfWeek) {
+
+
+                $today_timings = $singleTime['opening_time'] . " - " . $singleTime['closing_time'];
+                $today_timings_he = $singleTime['opening_time_he'] . " - " . $singleTime['closing_time_he'];
+                $openingTime = DateTime::createFromFormat('H:i', $singleTime['opening_time']);
+                $closingTime = DateTime::createFromFormat('H:i', $singleTime['closing_time']);
+                $currentTime = DateTime::createFromFormat('H:i', $currentTime);
+
+
+                if ($currentTime >= $openingTime && $currentTime <= $closingTime) {
+
+                    $currentStatus = true;
+
+                    break;
+                } else {
+
+                    $hoursLeftToOpen = "Open On Sunday";
+
+
+                }
+
+            }
+        }
+
+        $delivery_fee = DB::query("select * from delivery_fee where restaurant_id = '".$result['id']."'");
+
+        $min = $delivery_fee[0]["fee"];
+        $max = $delivery_fee[0]["fee"];
+
+        // CALCULATING MINIMUM AND MAXIMUM DELIVERY FEE
+        foreach ($delivery_fee as $fee) {
+            if ($fee['fee'] > $max)
+                $max = $fee['fee'];
+            else if ($fee['fee'] < $min)
+                $min = $fee['fee'];
+        }
+
+
+        // CREATE DEFAULT RESTAURANT OBJECT;
+        $restaurant = [
+
+            "min_delivery"         => $min,                         // MINIMUM DELIVERY FEE
+            "max_delivery"         => $max,                         // MAXIMUM DELIVERY FEE
+            "id"                   => $result["id"],                // RESTAURANT ID
+            "name_en"              => $result["name_en"],           // RESTAURANT NAME
+            "name_he"              => $result["name_he"],           // RESTAURANT NAME
+            "min_amount"           => $result["min_amount"],        // RESTAURANT MINIMUM AMOUNT
+            "logo"                 => $result["logo"],              // RESTAURANT LOGO
+            "description_en"       => $result["description_en"],    // RESTAURANT DESCRIPTION
+            "description_he"       => $result["description_he"],    // RESTAURANT DESCRIPTION
+            "address_en"           => $result["address_en"],        // RESTAURANT ADDRESS
+            "address_he"           => $result["address_he"],        // RESTAURANT ADDRESS
+            "hechsher_en"          => $result["hechsher_en"],       // RESTAURANT HECHSHER
+            "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
+            "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
+            "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
+            "tags"                 => $tags,                        // RESTAURANT TAGS
+            "gallery"              => $galleryImages,               // RESTAURANT GALLERY
+            "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
+            "availability"         => $currentStatus,               // RESTAURANT CURRENT AVAILABILITY
+            "today_timings"        => $today_timings,               // TODAY TIMINGS
+            "today_timings_he"     => $today_timings_he,            // TODAY TIMINGS HE
+            "hours_left_to_open"   => $hoursLeftToOpen,             // HOURS LEFT TO OPEN FROM CURRENT TIME
+            "delivery_fee"         => $delivery_fee,                // DELIVERY FEE AREA WISE
+            "contact"              => $result['contact']            // CONTACT NO
+        ];
+
+        //}
+
+
+        // RESPONSE RETURN TO REST API CALL
+        $response = $response->withStatus(202);
+        $response = $response->withJson(json_encode($restaurant));
+        return $response;
+
+    }
+    catch(MeekroDBException $e) {
+
+        $response =  $response->withStatus(500);
+        $response =  $response->withHeader('Content-Type', 'text/html');
+        $response =  $response->write( $e->getMessage());
+        return $response;
+    }
+
+});
 
 
 
@@ -707,6 +893,39 @@ $app->post('/extras_with_subitems', function ($request, $response, $args) {
 
 });
 
+$app->post('/testing_traccer', function ($request, $response, $args) {
+
+    $service_url = "http://35.156.74.68:8082/api/objectives";
+    $curl = curl_init($service_url);
+    $curl_post_data = array(
+        "name" => "asad",
+        "phone" => "testing",
+        "startLatitude"=>0,
+        "startLongitude"=>0,
+        "endLatitude"=>0.0,
+        "endLongitude"=>0.0,
+        "deviceId"=>0,
+        "status"=>"",
+        "startAddress" => "Modiin",
+        "endAddress" => "beit",
+        "orderId" => "684"
+    );
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_USERPWD,  "admin:admin");
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($curl_post_data));
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Basic YWRtaW46YWRtaW4=',
+        'Content-Type: application/json'
+    ));
+    $curl_response = curl_exec($curl);
+    curl_close($curl);
+
+    $response = $response->withStatus(202);
+    $response = $response->withJson(json_encode($curl_response));
+    return $response;
+
+});
 
 // VALIDATE COUPONS
 
@@ -1309,6 +1528,11 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         $orderId = DB::insertId();
 
+        if($user_order['pickFromRestaurant'] == 'false') {
+            traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress']);
+        }
+
+
         foreach ($user_order['cartData'] as $orders) {
 
             // ADD ORDER DETAIL AGAINST USER
@@ -1346,6 +1570,7 @@ $app->post('/add_order', function ($request, $response, $args) {
         email_for_mark2($user_order, $orderId, $todayDate);
 
         ob_end_clean();
+
 
 
         //  CLIENT EMAIL
@@ -2081,7 +2306,33 @@ function sendVerificationEmail($code,$email)
 
 }
 
+function traccer($order_id,$name,$phone,$start_address,$delivery_address)
+{
+    $service_url = "http://35.156.74.68:8082/api/objectives";
+    $curl = curl_init($service_url);
+    $curl_post_data = array(
+        "name"          => $name,
+        "phone"         => $phone,
+        "startAddress"  => $start_address,
+        "endAddress"    => $delivery_address,
+        "orderId"       => $order_id
+    );
 
+
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_USERPWD,  "admin:admin");
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($curl_post_data));
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Basic YWRtaW46YWRtaW4=',
+        'Content-Type: application/json'
+    ));
+
+
+    $curl_response = curl_exec($curl);
+    curl_close($curl);
+
+}
 function sendPassword($password,$email)
 {
     $mailbody  = 'your password is '.$password;
@@ -2171,7 +2422,8 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
                 $mailbody .= '<td >' . $t['detail'] .', Special Request : '.$t['specialRequest']. '</td>';
             }
-            else {
+            else
+            {
 
                 $mailbody .= '<td >' . $t['detail'].' Special Request : '.$t['specialRequest'].' </td>';
             }

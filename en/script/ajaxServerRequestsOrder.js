@@ -14,7 +14,7 @@ var extras                      = null;                                         
 var minOrderLimit               = null;                                           // MINIMUM ORDER LIMIT
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
-
+var paths = null;
 
 //SERVER HOST DETAIL
 
@@ -23,10 +23,96 @@ $(document).ready(function() {
     // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
     if(localStorage.getItem("USER_OBJECT") == undefined ||localStorage.getItem("USER_OBJECT") == "" || localStorage.getItem("USER_OBJECT") == null)
     {
+
+        var path = window.location.pathname;
+        paths = path.split('/');
+
+
+        alert(paths[2]+" "+paths[3]);
+
+        commonAjaxCall("/restapi/index.php/get_selected_restaurants",{'city':paths[2],'rest':paths[3]},getSelectedRestaurant);
+
+    }
+    else {
+
+        onReadyJobs();
+    }
+
+});
+
+
+
+function getSelectedRestaurant(response) {
+
+    var result = JSON.parse(response);
+
+    if(result == "false")
+    {
+
         // SEND USER BACK TO HOME PAGE
         window.location.href = '/en/index.html';
 
     }
+    else {
+
+        // USER ORDER INFORMATION
+        userObject = {
+
+            'uid' : '',                        // UNIQUE USER ID
+            'language': 'en',                  // USER LANGAGUE ENGLISH
+            'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
+            'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
+            'pickup_hide': false,              // IS PICK UP OPTION HIDE
+            'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
+            'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
+            'name': "",                        // USER NAME
+            'email': "",                       // USER EMAIL
+            'contact': "",                     // USER CONTACT
+            'orders': [],                      // USER ORDERS
+            'total': 0,                        // TOTAL AMOUNT OF ORDER
+            'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
+            'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
+            'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
+            'isCoupon': false,                 // USER HAVE COUPON CODE ?
+            'couponCode': '',                  // COUPON CODE OF USER
+            'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
+            'discount': 0,                     // DISCOUNT ON COUPON VALUE
+            'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD
+            'Cash_Card_he': null,              // USER WANT TO PAY CASH OR CREDIT CARD
+            'cartData': null,                  // COMPUTED CART DATA
+            'totalWithoutDiscount': null,      // TOTAL WITHOUT DISCOUNT
+            'deliveryArea': null,              // DELIVERY AREA
+            'deliveryCharges':null,            // DELIVERY CHARGES
+            'specialRequest':"",               // SPECIAL REQUEST FROM USER
+            'trans_id':""                      // SPECIAL REQUEST FROM USER
+
+        };
+
+        userObject.restaurantId        = result.id;
+        userObject.restaurantTitle     = result.name_en;
+        userObject.restaurantTitleHe   = result.name_he;
+        userObject.restaurantAddress   = result.address_en;
+
+        if(parseInt(result.pickup_hide) == 1) {
+
+            userObject.pickup_hide = true;
+
+        }
+
+        // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
+
+        localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+        localStorage.setItem("SELECTED_REST", JSON.stringify(result));
+
+        onReadyJobs();
+
+    }
+
+}
+
+
+function onReadyJobs() {
+
 
     // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
     userObject  = JSON.parse(localStorage.getItem("USER_OBJECT"));
@@ -66,8 +152,7 @@ $(document).ready(function() {
         $('.col-one').css("visibility","visible");
     }
 
-});
-
+}
 
 
 // RESTAURANT DETAIL POPUP

@@ -2,8 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/cancel_amount_b2b.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/edit_company_users.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/refund_amount_b2b.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/edit-company-users.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/js/custom/edit_company_users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-company-users.php" afterPath="$PROJECT_DIR$/admin/add-company-users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-rest-company-discount.php" afterPath="$PROJECT_DIR$/admin/add-rest-company-discount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/add_rest_company_discount.php" afterPath="$PROJECT_DIR$/admin/ajax/add_rest_company_discount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/edit_b2b_rest_discount.php" afterPath="$PROJECT_DIR$/admin/ajax/edit_b2b_rest_discount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/b2b-order-detail.php" afterPath="$PROJECT_DIR$/admin/b2b-order-detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/b2b-orders.php" afterPath="$PROJECT_DIR$/admin/b2b-orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/b2b-rest-discounts.php" afterPath="$PROJECT_DIR$/admin/b2b-rest-discounts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit-b2b-rest-discount.php" afterPath="$PROJECT_DIR$/admin/edit-b2b-rest-discount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/footer.php" afterPath="$PROJECT_DIR$/admin/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/inc/functions.php" afterPath="$PROJECT_DIR$/admin/inc/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-rest-company-discount.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-rest-company-discount.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit-b2b-rest-disc.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit-b2b-rest-disc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/refund.js" afterPath="$PROJECT_DIR$/admin/js/custom/refund.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/order-detail.php" afterPath="$PROJECT_DIR$/admin/order-detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/orders.php" afterPath="$PROJECT_DIR$/admin/orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,18 +46,7 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="orderapp_restaurants.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db_dump/orderapp_restaurants.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,7 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add-user</find>
       <find>login-btn</find>
       <find>dropdown-nav</find>
       <find>addNativeAppIDInCache</find>
@@ -76,6 +87,7 @@
       <find>cc_parent</find>
       <find>check24_click</find>
       <find>cc-click</find>
+      <find>userObject</find>
     </findStrings>
     <replaceStrings>
       <replace>app.orderapp.com</replace>
@@ -128,7 +140,6 @@
         <option value="$PROJECT_DIR$/m/en/script/isMobileRedirect.js" />
         <option value="$PROJECT_DIR$/m/he/script/isMobileRedirect.js" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
-        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
         <option value="$PROJECT_DIR$/m/en/index.html" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
         <option value="$PROJECT_DIR$/he/confirm-order.html" />
@@ -144,8 +155,9 @@
         <option value="$PROJECT_DIR$/restapi/index.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/en/order.html" />
-        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
+        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
       </list>
     </option>
   </component>
@@ -163,10 +175,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1562" />
-    <option name="y" value="83" />
-    <option name="width" value="1647" />
-    <option name="height" value="989" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="819" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -206,8 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -221,22 +230,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_dump" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -917,14 +914,8 @@
       <workItem from="1497512291040" duration="2371000" />
       <workItem from="1497525735263" duration="966000" />
       <workItem from="1497528842176" duration="65000" />
-      <workItem from="1497529527015" duration="30000" />
-    </task>
-    <task id="LOCAL-00104" summary="DB update + code latest">
-      <created>1493801053233</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1493801053234</updated>
+      <workItem from="1497529527015" duration="101000" />
+      <workItem from="1497767500378" duration="4807000" />
     </task>
     <task id="LOCAL-00105" summary="DB update + code latest">
       <created>1493820040357</created>
@@ -1262,11 +1253,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497528855283</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="DB update + code latest">
+      <created>1497529572582</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1497529572583</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1041130000" />
+    <option name="totallyTimeSpent" value="1046008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1278,7 +1276,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1562" y="83" width="1647" height="989" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="819" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1288,20 +1286,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4548908" sideWeight="0.5042644" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30917874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1268974" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17381974" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1451,13 +1449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1483,20 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsIndex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2533">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1601,13 +1578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16439">
-          <caret line="1187" column="25" lean-forward="false" selection-start-line="1187" selection-start-column="25" selection-end-line="1187" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1659,8 +1629,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db_dump/orderapp_restaurants.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-95">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1497776120000" expanded="true" signature="15294:15309" ph="..." />
+            <marker date="1497776120000" expanded="true" signature="15355:15433" ph="..." />
+            <marker date="1497776120000" expanded="true" signature="15535:15549" ph="..." />
+            <marker date="1497776120000" expanded="true" signature="17436:17473" ph="..." />
+            <marker date="1497776120000" expanded="true" signature="17583:17650" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="499" column="35" lean-forward="true" selection-start-line="499" selection-start-column="35" selection-end-line="499" selection-end-column="35" />
+          <folding>
+            <marker date="1497776122000" expanded="true" signature="9794:9807" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="9882:9895" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="10137:10164" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="10991:11009" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="14185:14198" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="14273:14286" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="14528:14555" ph="..." />
+            <marker date="1497776122000" expanded="true" signature="15287:15305" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="116" column="82" lean-forward="true" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>

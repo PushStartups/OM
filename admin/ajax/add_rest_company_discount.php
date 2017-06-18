@@ -17,8 +17,10 @@ DB::useDB('orderapp_b2b');
 
 
 DB::useDB('orderapp_b2b');
+
 DB::insert('b2b_rest_discounts', array(
     "discount_percent"              =>  $_POST['discount'],
+    "in_time_discount"              =>  $_POST['in_time_discount'],
     "rest_id"               =>  $restaurant_id,
     "company_id"               =>  $company_id
 

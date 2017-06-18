@@ -126,6 +126,7 @@ you can add as many as you like
 <script src="js/custom/edit-b2b-rest-disc.js"></script>
 <script src="js/custom/add-rest-company-discount.js"></script>
 <script src="js/custom/add-company-delivery.js"></script>
+<script src="js/custom/edit_company_users.js"></script>
 
 <script type="text/javascript">
     hideLoading();

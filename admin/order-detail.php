@@ -25,7 +25,7 @@ else{
                 //DB::queryFirstRow("select o.*, r.name_en as restaurant_name from user_orders as o  inner join restaurants as r on o.restaurant_id = r.id where o.id = '$order_id'");
                 DB::useDB('orderapp_user');
                 $order = DB::queryFirstRow("select * from user_orders where id  = '$order_id'");
-                DB::useDB('orderapp_restaurant');
+                DB::useDB('orderapp_restaurants');
                 $order = DB::queryFirstRow("select * from restaurants where id  = '".$order['restaurant_id']."'");
 
 
@@ -144,7 +144,9 @@ else{
                                             <td><?=$order['qty']?></td>
 
                                         </tr>
-                                    <?php } ?>
+                                    <?php
+                                    }
+                                    ?>
                                     </tbody>
 
                                 </table>

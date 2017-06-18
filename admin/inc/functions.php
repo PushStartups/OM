@@ -384,6 +384,18 @@ function getAllTags()
     return $tags= DB::query("select * from tags");
 }
 
+function getSpecificCompanyUser($user_id)
+{
+    DB::useDB('orderapp_b2b');
+    return $users = DB::queryFirstRow("select * from b2b_users where id = '$user_id'");
+}
+
+function getSpecificb2bRestDisc($rest_id)
+{
+    DB::useDB('orderapp_b2b');
+    return $rest_discounts = DB::queryFirstRow("select * from b2b_rest_discounts where id = '$rest_id'");
+}
+
 function getAllB2BRestDiscounts()
 {
     $b2bRestDiscounts  =  DB::query("select brd.*,c.name,r.name_en from b2b_rest_discounts as brd inner join restaurants as r on brd.rest_id = r.id  inner join company as c on brd.company_id = c.id");

@@ -73,6 +73,7 @@ include "header.php";
                                         <th data-hide="phone,tablet">Todays's Remaining Balance</th>
 
                                         <th data-hide="phone, tablet">Refund</th>
+                                        <th data-hide="phone, tablet">Order Status</th>
                                         <th data-hide="phone, tablet">Transaction ID</th>
 
 
@@ -103,7 +104,19 @@ include "header.php";
                                             <td><?=$order['discount']." NIS"?></td>
 
                                             <td><?=$refundAmount." NIS"?></td>
+                                            <?php
+                                            DB::useDB('orderapp_b2b');
+                                            DB::queryFirstRow("select * from b2b_refund where order_id = '".$order['id']."'");
+                                            if(DB::count() == 0)
+                                            {
+                                                ?> <td><b>Complete</b></td> <?php
+                                            }
+                                            else
+                                            {
+                                                ?> <td><b>Refund</b></td> <?php
 
+                                            }
+                                            ?>
                                             <?php if(empty($order['transaction_id'])) { $order['transaction_id'] = "N/A"; }?>
                                             <td><?=$order['transaction_id']?></td>
 

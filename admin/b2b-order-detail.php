@@ -34,6 +34,7 @@ else{
                     <li class="sparks-info">
                         <?php $info = getPaymentMethodB2B($order_id);
                         $transaction_id = $info['transaction_id'];
+                        $order_time     =  $info['order_date'];
                         ?>
                         <?php $count = $info['total'];  ?>
                         <h5> <b>Payable Amount</b> <span class="txt-color-blue"><?=$count?></span></h5>
@@ -158,6 +159,21 @@ else{
         <!-- end widget grid -->
 
         <!--   REFUND AREA-->
+<?php
+
+
+    $currentTime = getCurrentTime();
+    $date1 = new DateTime($order_time);
+    $date2 = new DateTime($currentTime);
+
+    $diff = $date2->diff($date1);
+
+    $hours = $diff->h;
+    $hours = $hours + ($diff->days * 24);
+
+    if($hours > 24) {
+
+        ?>
             <section id="widget-grid" class="">
                 <!-- row -->
                 <div class="row">
@@ -196,7 +212,7 @@ else{
                                 </section>
                             </fieldset>
                             <footer>
-                                <button onclick="refend_amount('<?=$count?>','<?=$order_id?>','<?=$_SERVER['REQUEST_URI']?>','<?=$transaction_id?>')"  class="btn btn-primary">
+                                <button onclick="refend_amount_b2b('<?=$count?>','<?=$order_id?>','<?=$_SERVER['REQUEST_URI']?>','<?=$transaction_id?>')"  class="btn btn-primary">
                                     Submit
                                 </button>
 
@@ -273,6 +289,12 @@ else{
 
                 </section> <?php } ?>
             <!--   REFUND TABLE    -->
+                <?php
+                }
+                else{
+                    ?><a onclick="cancel_order_b2b('<?= $count ?>','<?= $order_id ?>','<?= $_SERVER['REQUEST_URI'] ?>','<?= $transaction_id ?>')" class="btn btn-danger">Cancel Order</a><?php
+                }
+                ?>
       
 
     </div>

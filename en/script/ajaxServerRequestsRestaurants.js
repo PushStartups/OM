@@ -4,18 +4,65 @@ var allRestJson         = null;  // RAW JSON FROM SERVER FOR ALL RESTAURANTS
 var userObject          = null;
 var rawResponse         = null;
 
+var paths = null;
 
 // AFTER DOCUMENTED LOADED
 $(document).ready(function() {
 
-
-
-
     // EXCEPTION IF USER OBJECT NOT RECEIVED UN-DEFINED
     if (localStorage.getItem("USER_CITY_ID") == undefined || localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null) {
+
+
+        var path = window.location.pathname;
+        paths = path.split('/');
+
+        commonAjaxCall("/restapi/index.php/get_all_cities", '', displayAllCities);
+
+    }
+    else {
+
+        onReadyJobs();
+
+    }
+
+});
+
+
+function displayAllCities(response)
+{
+    // DISPLAY ALL CITIES TO USER FROM SERVER
+    var result = JSON.parse(response);
+
+    var str = '';
+    var  found = false;
+
+    for(var x=0; x<result.length;x++)
+    {
+        var nametemp = result[x].name_en;
+        nametemp = nametemp.replace(/\s/g, "");
+
+        if(nametemp == paths[3])
+        {
+            localStorage.setItem("USER_CITY_ID", JSON.stringify(result[x].id));
+            localStorage.setItem("USER_CITY_NAME", JSON.stringify(result[x].name_en));
+            found = true;
+            onReadyJobs();
+            break;
+        }
+    }
+
+
+    if(found == false)
+    {
         // SEND USER BACK TO HOME PAGE
         window.location.href = '../index.html';
+
     }
+
+}
+
+
+function onReadyJobs() {
 
 
 // RETRIEVE USER OBJECT RECEIVED FROM PREVIOUS PAGE
@@ -57,7 +104,11 @@ $(document).ready(function() {
 
     commonAjaxCall("/restapi/index.php/get_all_restaurants",{'city_id':selectedCityId},getAllRestaurants);      // GET LIST OF ALL RESTAURANTS FROM SERVER
 
-});
+
+}
+
+
+
 
 
 
@@ -73,6 +124,8 @@ function onFilterChange() {
 
     }
 }
+
+
 
 
 // GET ALL RESTAURANTS FROM COMMON AJAX CALL

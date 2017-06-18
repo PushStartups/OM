@@ -67,6 +67,7 @@ include "header.php";
 										<th data-hide="phone, tablet">Payment</th>
 										<th data-hide="phone, tablet">Total</th>
 										<th data-hide="phone, tablet">Refund</th>
+										<th data-hide="phone, tablet">Order Status</th>
 										<th data-hide="phone, tablet">Transaction ID</th>
 										<th data-hide="phone, tablet">Coupon</th>
 										<th data-hide="phone,tablet">Discount</th>
@@ -104,6 +105,19 @@ include "header.php";
 										<td><?=$user_order['payment_method']?></td>
 										<td><?=$user_order['total']." NIS"?></td>
 										<td><?=$refundAmount." NIS"?></td>
+										<?php
+										DB::useDB('orderapp_user');
+										DB::queryFirstRow("select * from refund where order_id = '".$user_order['id']."'");
+										if(DB::count() == 0)
+										{
+											?> <td><b>Complete</b></td> <?php
+										}
+										else
+										{
+											?> <td><b>Refund</b></td> <?php
+
+										}
+										?>
 										<?php if(empty($user_order['transaction_id'])) { $user_order['transaction_id'] = "N/A"; }?>
 										<td><?=$user_order['transaction_id']?></td>
 
