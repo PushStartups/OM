@@ -80,8 +80,8 @@ else
 
                                             <div class="form-group">
                                                 <label>Limit</label>
-                                                <input class="form-control" id="limit" name="limit" value="<?=$extra['limit']?>" placeholder="Enter Limit" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="limit_error"></span>
+                                                <input class="form-control" id="limiit" name="limiit" value="<?=$extra['limit']?>" placeholder="Enter Limit" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="limiit_error"></span>
                                             </div>
 
                                             <div class="form-group">

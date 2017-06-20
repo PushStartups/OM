@@ -184,8 +184,8 @@ else
 
                                             <div class="form-group">
                                                 <label>Limit</label>
-                                                <input class="form-control" id="limit" name="limit" placeholder="Enter Limit" type="text">
-                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="limit_error"></span>
+                                                <input class="form-control" id="limitt" name="limitt" placeholder="Enter Limit" type="text">
+                                                <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="limitt_error"></span>
                                             </div>
 
                                             <div class="form-group">

@@ -24,15 +24,15 @@ $('#desc_he').bind('input', function() {
 });
 
 
-$('#price').bind('input', function() {
+$('#prrice').bind('input', function() {
 
     if(!this.value.match(/^\d+$/))
     {
-        document.getElementById('price_error').innerHTML = "Wrong Number!";
+        document.getElementById('prrice_error').innerHTML = "Wrong Number!";
     }
     else
     {
-        document.getElementById('price_error').innerHTML = "";
+        document.getElementById('prrice_error').innerHTML = "";
     }
 
 });
@@ -60,7 +60,7 @@ function edit_item(item_id,url)
     var name_he                    =  $('#name_he').val();
     var desc_en                    =  $('#desc_en').val();
     var desc_he                    =  $('#desc_he').val();
-    var price                      =  $('#price').val();
+    var price                      =  $('#prrice').val();
 
 
     if(name_en == "")
@@ -87,9 +87,9 @@ function edit_item(item_id,url)
         return;
     }
 
-    if(price == "")
+    if(prrice == "")
     {
-        $('#price_error').html('Required');
+        $('#prrice_error').html('Required');
         return;
     }
 
@@ -103,7 +103,7 @@ function edit_item(item_id,url)
         'desc_en'          :  $('#desc_en').val(),
         'desc_he'          :  $('#desc_he').val(),
 
-        'price'                   :  $('#price').val(),
+        'price'                   :  $('#prrice').val(),
 
         'hide'                    :  $('#hide').val(),
 

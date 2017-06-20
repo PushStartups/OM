@@ -73,24 +73,6 @@
 
 
         }
-          else if(window.location.hostname == "staging.orderapp.com")
-        {
-
-            if (location.protocol != 'https:')
-            {
-                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-            }
-
-            if(USER_LANGUAGE == 'EN') {
-
-                window.location.href = 'https://staging.orderapp.com/m/en/';
-            }
-            else
-            {
-                window.location.href = 'https://staging.orderapp.com/m/he/';
-            }
-
-        }
         else if(window.location.hostname == "dev.orderapp.com")
         {
 
@@ -144,6 +126,24 @@
                 window.location.href = 'https://app.orderapp.com/m/he/';
             }
         }
+        else if(window.location.hostname == "eluna.orderapp.com")
+        {
+
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://eluna.orderapp.com/m/en/';
+            }
+            else {
+
+
+                window.location.href = 'https://eluna.orderapp.com/m/he/';
+            }
+        }
 
     }
 
@@ -170,24 +170,6 @@
             }
         }
 
-           else if(window.location.hostname == "staging.orderapp.com")
-        {
-
-            if (location.protocol != 'https:')
-            {
-                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-            }
-
-            if(USER_LANGUAGE == 'EN') {
-
-                window.location.href = 'https://staging.orderapp.com/en/';
-            }
-            else
-            {
-                window.location.href = 'https://staging.orderapp.com/he/';
-            }
-
-        }
 
         else if(window.location.hostname == "dev.orderapp.com")
         {
@@ -243,6 +225,22 @@
             else
             {
                 window.location.href = 'https://app.orderapp.com/he/';
+            }
+        }
+        else if(window.location.hostname == "eluna.orderapp.com")
+        {
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://eluna.orderapp.com/en/';
+            }
+            else
+            {
+                window.location.href = 'https://eluna.orderapp.com/he/';
             }
         }
 

@@ -24,15 +24,15 @@ $('#desc_he').bind('input', function() {
 });
 
 
-$('#price').bind('input', function() {
+$('#pricee').bind('input', function() {
 
     if(!this.value.match(/^\d+$/))
     {
-        document.getElementById('price_error').innerHTML = "Wrong Number!";
+        document.getElementById('pricee_error').innerHTML = "Wrong Number!";
     }
     else
     {
-        document.getElementById('price_error').innerHTML = "";
+        document.getElementById('pricee_error').innerHTML = "";
     }
 
 });
@@ -49,7 +49,8 @@ function add_new_item(category_id,url)
     var name_he                    =  $('#name_he').val();
     var desc_en                    =  $('#desc_en').val();
     var desc_he                    =  $('#desc_he').val();
-    var price                      =  $('#price').val();
+    var price                      =  $('#pricee').val();
+
 
 
     if(name_en == "")
@@ -76,9 +77,9 @@ function add_new_item(category_id,url)
         return;
     }
 
-    if(price == "")
+    if(pricee == "")
     {
-        $('#price_error').html('Required');
+        $('#pricee_error').html('Required');
         return;
     }
 
@@ -86,17 +87,15 @@ function add_new_item(category_id,url)
 
     var postForm = { //Fetch form data
 
-        'name_en'                 :  $('#name_en').val(),
-        'name_he'                 :  $('#name_he').val(),
+        'name_en'                   :  $('#name_en').val(),
+        'name_he'                   :  $('#name_he').val(),
 
-        'desc_en'          :  $('#desc_en').val(),
-        'desc_he'          :  $('#desc_he').val(),
-
-        'price'                   :  $('#price').val(),
-
-        'hide'                    :  $('#hide').val(),
-
-        'category_id'             :   category_id
+        'desc_en'                   :  $('#desc_en').val(),
+        'desc_he'                   :  $('#desc_he').val(),
+        'price'                     :  $('#pricee').val(),
+        'hide'                      :  $('#hide').val(),
+        'category_id'               :   category_id,
+      
 
     };
 

@@ -73,7 +73,7 @@ function edit_category(category_id,url)
         success:function(data)
         {
             hideLoading();
-            alert("Category edited successfully");
+            alert("Category updated successfully");
 
         }
     });

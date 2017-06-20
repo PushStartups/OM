@@ -137,12 +137,14 @@ DB::query("set names utf8");
                     <?php  $city = getAllCities();
                     foreach ($city as $cities)
                     {
-
+                        DB::query("select * from restaurants where city_id = '".$cities['id']."'");
+                        $count = DB::count();
                     ?>
                     <li>
-                        <a href="index.php?id=<?=$cities['id']?>" title=<?=$cities['name_en']?>><span class="menu-item-parent"><?=$cities['name_en']?></span></a>
+                        <a href="index.php?id=<?=$cities['id']?>" title=<?=$cities['name_en']?>><span class="menu-item-parent"><?=$cities['name_en']?>&nbsp;&nbsp;&nbsp;(<?=$count?>)</span></a>
                     </li>
-                    <?php  } ?>
+                    <?php
+                    } ?>
                 </ul>
             </li>
             <li>

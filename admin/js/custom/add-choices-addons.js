@@ -16,12 +16,19 @@ $('#name_he').bind('input', function() {
 
 });
 
-$('#limit').bind('input', function() {
 
-    document.getElementById('limit_error').innerHTML = "";
+$('#limitt').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('limitt_error').innerHTML = "Wrong Number!";
+    }
+    else
+    {
+        document.getElementById('limitt_error').innerHTML = "";
+    }
 
 });
-
 
 
 function add_extras(item_id,url)
@@ -29,7 +36,7 @@ function add_extras(item_id,url)
 
     var name_en                    =  $('#name_en').val();
     var name_he                    =  $('#name_he').val();
-    var limit                    =  $('#limit').val();
+    var limit                    =  $('#limitt').val();
 
 
     if(name_en == "")
@@ -44,9 +51,9 @@ function add_extras(item_id,url)
         return;
     }
 
-    if(limit == "")
+    if(limitt == "")
     {
-        $('#limit_error').html('Required*');
+        $('#limitt_error').html('Required*');
         return;
     }
 
@@ -58,7 +65,7 @@ function add_extras(item_id,url)
         'name_en'                 :  $('#name_en').val(),
         'name_he'                 :  $('#name_he').val(),
 
-        'limit'                   :  $('#limit').val(),
+        'limit'                   :  $('#limitt').val(),
 
         'type'                    :  $('#type').val(),
 

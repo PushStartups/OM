@@ -130,7 +130,7 @@ $app->post('/save_category_image', function ($request, $response, $args)
     else{
 
         $resp = "not workign";
-        $image_url = "/m/en/img/cs-logo.png";
+        $image_url = "/m/en/img/cs-category.png";
     }
     DB::query("update categories set image_url = '".$image_url."' where id = '$id'");
 
@@ -221,7 +221,7 @@ $app->post('/save_category_image_dataentry', function ($request, $response, $arg
     else{
 
         $resp = "not workign";
-        $image_url = "/m/en/img/cs-logo.png";
+        $image_url = "/m/en/img/cs-category.png";
     }
 
     $update_order = "update categories set image_url = '".$image_url."' where id = '$id'";
@@ -2575,7 +2575,12 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 //Send HTML or Plain Text email
     $mail->isHTML(false);
-    $mail->Subject = $user_order['restaurantTitle'].' Order# '.$orderId;
+   
+    if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
+        $mail->Subject = "(ELUNA) "+$user_order['restaurantTitle'].' Order# '.$orderId;
+    else
+        $mail->Subject = $user_order['restaurantTitle'].' Order# '.$orderId;
+
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
@@ -2770,7 +2775,14 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
     //Send HTML or Plain Text email
     $mail->isHTML(false);
-    $mail->Subject = 'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
+
+
+    if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
+        $mail->Subject = "(ELUNA) "+'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
+    else
+        $mail->Subject = 'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
+
+
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
@@ -2960,7 +2972,12 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
 
     //Send HTML or Plain Text email
     $mail->isHTML(false);
-    $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+
+    if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
+      $mail->Subject = "(ELUNA) "+$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+    else
+      $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
@@ -3118,7 +3135,13 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
     //Send HTML or Plain Text email
     $mail->isHTML(false);
-    $mail->Subject = " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+
+    if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+    else
+        $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+
+
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
@@ -3238,7 +3261,13 @@ function email_for_mark($user_order,$orderId,$todayDate)
 
     //Send HTML or Plain Text email
     $mail->isHTML(false);
-    $mail->Subject = " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+
+    if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+    else
+        $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+
+
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 
@@ -3347,7 +3376,14 @@ function email_for_mark2($user_order,$orderId,$todayDate)
 
 //Send HTML or Plain Text email
     $mail->isHTML(false);
-    $mail->Subject = 'Ledger '.$user_order['restaurantTitle'].' Order# '.$orderId;
+
+    if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
+
+        $mail->Subject = 'ELUNA Ledger '.$user_order['restaurantTitle'].' Order# '.$orderId;
+    else
+        $mail->Subject = 'Ledger '.$user_order['restaurantTitle'].' Order# '.$orderId;
+
+
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
 

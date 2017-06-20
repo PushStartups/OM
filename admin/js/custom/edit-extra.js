@@ -16,9 +16,17 @@ $('#name_he').bind('input', function() {
 
 });
 
-$('#limit').bind('input', function() {
 
-    document.getElementById('limit_error').innerHTML = "";
+$('#limiit').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('limiit_error').innerHTML = "Wrong Number!";
+    }
+    else
+    {
+        document.getElementById('limiit_error').innerHTML = "";
+    }
 
 });
 
@@ -45,7 +53,7 @@ function update_extras(extra_id,url)
 
     var name_en                    =  $('#name_en').val();
     var name_he                    =  $('#name_he').val();
-    var limit                    =  $('#limit').val();
+    var limit                    =  $('#limiit').val();
 
 
     if(name_en == "")
@@ -60,9 +68,9 @@ function update_extras(extra_id,url)
         return;
     }
 
-    if(limit == "")
+    if(limiit == "")
     {
-        $('#limit_error').html('Required*');
+        $('#limiit_error').html('Required*');
         return;
     }
 
@@ -74,7 +82,7 @@ function update_extras(extra_id,url)
         'name_en'                 :  $('#name_en').val(),
         'name_he'                 :  $('#name_he').val(),
 
-        'limit'                   :  $('#limit').val(),
+        'limit'                   :  $('#limiit').val(),
 
         'type'                    :  $('#type').val(),
 

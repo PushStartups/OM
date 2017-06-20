@@ -130,7 +130,7 @@ include "header.php";
                                                 <td><?=$user['contact']?></td>
                                                 <td><?=$user['language']?></td>
                                                 <td><a href="edit-company-users.php?id=<?=$user['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
-                                                <td><a onclick="delete('<?=$user['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+                                                <td><a onclick="delete_comp_user('<?=$user['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
 
                                             </tr>
                                         <?php } ?>

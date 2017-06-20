@@ -35,7 +35,7 @@ function delete_subitem(subitem_id,url)
         success:function(data)
         {
             hideLoading();
-            alert("Subitems deleted successfully");
+            alert("Subitem deleted successfully");
             window.location.href = url;
         }
     });
@@ -89,7 +89,7 @@ function edit_subitems(subitem_id,url)
         success:function(data)
         {
             hideLoading();
-            alert("Subitems added successfully");
+            alert("Subitem added successfully");
             window.location.href = url;
         }
     });

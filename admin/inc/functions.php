@@ -53,7 +53,6 @@ function getAllOrders()
 {
     //$orders = DB::query("select o.*, r.name_en as restaurant_name, u.smooch_id as email from user_orders as o inner join restaurants as r on o.restaurant_id = r.id  inner join users as u on o.user_id = u.id order by o.id DESC ");
     $orders = DB::query("select * from user_orders");
-    
     return $orders;
 }
 
@@ -65,8 +64,20 @@ function getAllB2BOrders()
     return $orders;
 }
 
+// GET ALL ORDERS FROM DATABASE (SHOWING ON ORDERS.PHP)
+function getSpecificUserB2BOrders($user_id)
+{
+    DB::useDB('orderapp_b2b');
+    $orders = DB::query("select o.*, c.name as company_name, u.smooch_id as email from b2b_orders as o inner join company as c on o.company_id = c.id  inner join b2b_users as u on o.user_id = u.id where u.id = '$user_id' order by o.id DESC ");
+    return $orders;
+}
 
-
+function UserTotalSpenditure($user_id)
+{
+    DB::useDB('orderapp_b2b');
+    $monthly = DB::queryFirstRow("SELECT SUM( actual_total ) AS monthly_total FROM b2b_orders WHERE MONTH(DATE) = MONTH(CURDATE())  AND user_id =  '$user_id'");
+    return $monthly['monthly_total'];
+}
 function getOrderItems($order_id)
 {
     DB::useDB('orderapp_user');
@@ -146,8 +157,9 @@ function getPaymentMethodB2B($order_id)
     $remaining_balance       =  $payment['discount'];
     $transaction_id          =  $payment['transaction_id'];
     $billing_amount          =  $payment['actual_total'];
+    $order_date              =   $payment['date'];
 
-    return array('total' => $total, 'transaction_id' => $transaction_id, 'remaining_balance' => $remaining_balance ,'billing_amount' => $billing_amount );
+    return array('total' => $total, 'transaction_id' => $transaction_id, 'remaining_balance' => $remaining_balance ,'billing_amount' => $billing_amount, 'order_date' => $order_date );
 }
 
 function getRefundCount($order_id)

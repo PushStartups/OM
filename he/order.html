@@ -463,7 +463,7 @@
 
 <div class="popup-new" data-popup="popup-1" id="myorder-new" dir="rtl">
     <div class="popup-inner">
-        <a class="popup-close" data-popup-close="popup-1" href="#">&times;</a>
+        <a class="popup-close" onclick="$('#myorder-new').modal('hide');" href="#">&times;</a>
 
 
 
@@ -571,24 +571,6 @@
 
 <script>
 
-    $(function() {
-        //----- OPEN
-        $('[data-popup-open]').on('click', function(e)  {
-            var targeted_popup_class = jQuery(this).attr('data-popup-open');
-            $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
-
-            e.preventDefault();
-        });
-
-        //----- CLOSE
-        $('[data-popup-close]').on('click', function(e)  {
-            var targeted_popup_class = jQuery(this).attr('data-popup-close');
-            $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
-
-            e.preventDefault();
-        });
-    });
-
     // replace custom forms
     jcf.lib.domReady(function(){
 
@@ -609,6 +591,25 @@
 
 
 <script>
+
+
+    $(function() {
+        //----- OPEN
+        $('[data-popup-open]').on('click', function(e)  {
+            var targeted_popup_class = jQuery(this).attr('data-popup-open');
+            $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+
+            e.preventDefault();
+        });
+
+        //----- CLOSE
+        $('[data-popup-close]').on('click', function(e)  {
+            var targeted_popup_class = jQuery(this).attr('data-popup-close');
+            $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+
+            e.preventDefault();
+        });
+    });
 
     window.onload = function() {
         window.dima = baron({
@@ -637,6 +638,15 @@
     $('.btn-icon').click(function() {
 
         $(this).toggleClass('active');
+
+    });
+
+    $('body').on('click', '#myorder-new', function(e) {
+
+        if(e.target.id == 'myorder-new')
+        {
+            $('#myorder-new').modal('hide');
+        }
 
     });
 

@@ -40,6 +40,7 @@ function edit_company_user(url)
 
     var name            =  $('#name').val();
     var smooch_id       =  $('#smooch_id').val();
+    var password        =  $('#password').val();
     var contact         =  $('#contact').val();
     var address         =  $('#address').val();
 
@@ -84,6 +85,8 @@ function edit_company_user(url)
 
     };
 
+
+
     addLoading();
     $.ajax({
         url:"ajax/edit_company_users.php",
@@ -97,10 +100,6 @@ function edit_company_user(url)
             window.location.href = url;
         }
     });
-
-
-
-
 }
 
 

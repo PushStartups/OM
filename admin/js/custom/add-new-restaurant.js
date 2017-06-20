@@ -85,9 +85,59 @@ $('#file').bind('input', function() {
 });
 
 
+function add_business_offer(url)
+{
+    // alert($("#business_category").val());
+    // alert($("#business_item").val());
+    // alert($("#day").val());
+    // alert($("#week_cycle").val());
 
 
+    var postForm = { //Fetch form data
+        'category_id'   : $('#business_category').val(),
+        'item_id'       : $('#business_item').val(),
+        'day'           : $('#day').val(),
+        'week_cycle'    : $('#week_cycle').val()
+    };
 
+
+    addLoading();
+    $.ajax({
+        url:"ajax/insert_business_offer.php",
+        method:"post",
+        data:postForm,
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("business offer added successfully");
+             window.location.href = url;
+        }
+    });
+
+}
+
+function category_change(val)
+{
+    addLoading();
+    $.ajax({
+        url: "ajax/business_offers.php",
+        type: 'POST',
+        data: {category_id:val},
+        dataType:"json",
+        success: function (data) {
+            //alert("restaurant added successfully");
+            hideLoading();
+            $("#item-div").show();
+            $("#week-cycle-div").show();
+            $("#week-day-div").show();
+            $("#business-offer-div").show();
+            $("#item-div").html(data);
+
+            // setTimeout(function(){ window.location.href = "index.php"; }, 5000);
+        }
+    });
+}
 
 
 

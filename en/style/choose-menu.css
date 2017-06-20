@@ -1577,7 +1577,7 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
 	top:0px;
 	left:0px;
 	z-index: 999999;
-	background:rgba(0,0,0,0.75);
+	/*background:rgba(0,0,0,0.75);*/
 }
 
 /* Inner */

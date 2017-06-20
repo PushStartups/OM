@@ -210,7 +210,7 @@ function update_restaurant(rest_id)
                // save_imagee_edit(data);
             }
             hideLoading();
-            alert("restaurant updated successfully");
+            alert("Restaurant updated successfully");
             //window.location.href = "index.php?id="+city_id;
         }
     });
