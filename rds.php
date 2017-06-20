@@ -8,6 +8,7 @@ $output = NULL;
 
 try {
 
+
     $result = exec('mysqldump --replace --user=root --password=orderapp orderapp > /var/www/html/db_backups/' . $name . '.sql', $output, $return_var);
 
     var_dump($output);

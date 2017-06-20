@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/add-business-offers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/business_offers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/delete_company_users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ajax/insert_business_offer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-choices-addons.php" afterPath="$PROJECT_DIR$/admin/add-choices-addons.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-company-users.php" afterPath="$PROJECT_DIR$/admin/add-company-users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-category.php" afterPath="$PROJECT_DIR$/admin/add-new-category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-new-items.php" afterPath="$PROJECT_DIR$/admin/add-new-items.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add-subitems.php" afterPath="$PROJECT_DIR$/admin/add-subitems.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/delete_category.php" afterPath="$PROJECT_DIR$/admin/ajax/delete_category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/delete_item.php" afterPath="$PROJECT_DIR$/admin/ajax/delete_item.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/edit_category.php" afterPath="$PROJECT_DIR$/admin/ajax/edit_category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/edit_company_users.php" afterPath="$PROJECT_DIR$/admin/ajax/edit_company_users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/insert_new_item.php" afterPath="$PROJECT_DIR$/admin/ajax/insert_new_item.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ajax/insert_new_restaurant.php" afterPath="$PROJECT_DIR$/admin/ajax/insert_new_restaurant.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit-company-users.php" afterPath="$PROJECT_DIR$/admin/edit-company-users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit-extras.php" afterPath="$PROJECT_DIR$/admin/edit-extras.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit-items.php" afterPath="$PROJECT_DIR$/admin/edit-items.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/header.php" afterPath="$PROJECT_DIR$/admin/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/import-category.php" afterPath="$PROJECT_DIR$/admin/import-category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/inc/functions.php" afterPath="$PROJECT_DIR$/admin/inc/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-choices-addons.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-choices-addons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-item.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-restaurant.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-restaurant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" afterPath="$PROJECT_DIR$/admin/js/custom/add-new-timing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit-category.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit-category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit-extra.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit-extra.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit-item.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit-item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit-restaurant.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit-restaurant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit-subitem.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit-subitem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/custom/edit_company_users.js" afterPath="$PROJECT_DIR$/admin/js/custom/edit_company_users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/order.html" afterPath="$PROJECT_DIR$/en/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/style/choose-menu.css" afterPath="$PROJECT_DIR$/en/style/choose-menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/order.html" afterPath="$PROJECT_DIR$/he/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/style/choose-menu.css" afterPath="$PROJECT_DIR$/he/style/choose-menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rds.php" afterPath="$PROJECT_DIR$/rds.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,7 +93,6 @@
         <option value="$PROJECT_DIR$/en/restaurants.html" />
         <option value="$PROJECT_DIR$/en/style/rest-list-new.css" />
         <option value="$PROJECT_DIR$/he/style/rest-list-new.css" />
-        <option value="$PROJECT_DIR$/rds.php" />
         <option value="$PROJECT_DIR$/en/style/confirm-order.css" />
         <option value="$PROJECT_DIR$/refund.php" />
         <option value="$PROJECT_DIR$/ccitest.php" />
@@ -172,6 +134,7 @@
         <option value="$PROJECT_DIR$/index2.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/restapi/index.php" />
+        <option value="$PROJECT_DIR$/rds.php" />
       </list>
     </option>
   </component>
@@ -931,14 +894,7 @@
       <workItem from="1497528842176" duration="65000" />
       <workItem from="1497529527015" duration="101000" />
       <workItem from="1497767500378" duration="4991000" />
-      <workItem from="1497952965372" duration="2444000" />
-    </task>
-    <task id="LOCAL-00106" summary="DB update + code latest">
-      <created>1493820495913</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1493820495913</updated>
+      <workItem from="1497952965372" duration="2481000" />
     </task>
     <task id="LOCAL-00107" summary="DB update + code latest">
       <created>1493884043776</created>
@@ -1276,11 +1232,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497776584912</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="code update (New 20th June)">
+      <created>1497958298277</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1497958298278</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1048636000" />
+    <option name="totallyTimeSpent" value="1048673000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1342,7 +1305,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="250 issue updated" />
     <MESSAGE value="update" />
     <MESSAGE value="Final Update Desktop And Mobile Client" />
     <MESSAGE value="Fix Added for Delivery Area Selection (Mendatory)" />
@@ -1367,7 +1329,8 @@
     <MESSAGE value="DB update + code latest &#10;&#10;" />
     <MESSAGE value="DB update + code latest" />
     <MESSAGE value="DB update + code latest (New 18 June)" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB update + code latest (New 18 June)" />
+    <MESSAGE value="code update (New 20th June)" />
+    <option name="LAST_COMMIT_MESSAGE" value="code update (New 20th June)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1542,13 +1505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rds.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="108" />
         </state>
       </provider>
     </entry>
@@ -1946,6 +1902,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
           <caret line="244" column="9" lean-forward="false" selection-start-line="244" selection-start-column="9" selection-end-line="244" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rds.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
