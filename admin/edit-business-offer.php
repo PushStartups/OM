@@ -1,10 +1,19 @@
 <?php
 include "header.php";
-$menu_id = $_GET['id'];
-$categories  =  getAllCategories($menu_id);
 
+if(isset($_GET['id']))
+{
+    $busines_id                 =    $_GET['id'];
+    $business_id                    =    getSpecificBusinessOffer($busines_id);
+    $cat_id = $business_id['category_id'];
+    $categories  =  getSpecificCategories($cat_id);
+
+}
+else
+{
+    header("location:logout.php");
+}
 ?>
-
 <div id="main" role="main">
 
     <!-- MAIN CONTENT -->
@@ -14,12 +23,12 @@ $categories  =  getAllCategories($menu_id);
 
             <!-- col -->
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Add A Business Offer</h1>
+                <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-cutlery "></i> Update Business Offer</h1>
             </div>
 
         </div>
         <div id="myform">
-            <section id="widget-grid">
+            <section id="widget-grid"  id="myform">
                 <!-- row -->
                 <div class="row">
                     <!-- NEW WIDGET START -->
@@ -42,7 +51,8 @@ $categories  =  getAllCategories($menu_id);
 
                                     <form id="my-form"  method="post" enctype="multipart/form-data">
                                         <fieldset>
-                                            <input name="authenticity_token" type="hidden">
+
+                                            <input type="text" value="<?=$business_id['category_id']?>"
 
                                             <div class="form-group">
                                                 <label> Select Category </label>
@@ -98,9 +108,7 @@ $categories  =  getAllCategories($menu_id);
                                             </div>
                                             <!--                                            <input type="submit" value="Submit" class="btn btn-primary btn-lg">-->
                                         </div>
-                                    </form>
-
-                                </div>
+                                    </form>                                </div>
                                 <!-- end widget content -->
                             </div>
                             <!-- end widget div -->
@@ -109,88 +117,13 @@ $categories  =  getAllCategories($menu_id);
                     </article>
                     <!-- WIDGET END -->
                 </div>
-
-
-                <?php
-                foreach($categories as $cat)
-                {
-                    $row[] = $cat['id'];
-                }
-                //$qry1 = " select  * from  restaurants where id not in('" . implode("','", $row) . "') ";
-
-                $business  =  DB::query("select * from business_lunch_detail where category_id IN ('" . implode("','", $row) . "') ");
-                if(DB::count() > 0)
-                {
-
-                ?>
                 <div class="row">
-                    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
-
-                            <header>
-                                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                                <h2>Extras</h2>
-                            </header>
-
-                            <!-- widget div-->
-                            <div>
-
-                                <!-- widget edit box -->
-                                <div class="jarviswidget-editbox">
-                                    <!-- This area used as dropdown edit box -->
-
-                                </div>
-                                <!-- end widget edit box -->
-
-                                <!-- widget content -->
-                                <div class="widget-body no-padding">
-                                    <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
-                                        <thead>
-                                        <tr>
-
-                                            <th data-hide="phone"> Category</th>
-                                            <th data-hide="phone"> Item </th>
-                                            <th data-hide="phone"> Week Day </th>
-                                            <th data-hide="phone"> Week Cycle </th>
-                                            <th data-hide="phone,tablet"> Edit</th>
-                                            <th data-hide="phone,tablet"> Delete</th>
-
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-
-                                        foreach($business as $busines)
-                                        {
-                                            $items = DB::queryFirstRow("select * from items where id = '".$busines['item_id']."'");
-                                            $category = DB::queryFirstRow("select * from categories where id = '".$busines['category_id']."'");
-
-                                            ?>
-                                            <tr>
-                                                <td><?=$items['name_en']?></td>
-                                                <td><?=$category['name_en']?></td>
-                                                <td><?=$busines['week_day']?></td>
-                                                <td><?=$busines['week_cycle']?></td>
-                                                <td><a href="edit-business-offer.php?id=<?=$busines['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
-                                                <td><a onclick="delete_('<?=$busines['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
-
-
-                                            </tr>
-                                        <?php  }
-                                        ?>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </article>
+                    <!-- a blank row to get started -->
+                    <div class="col-sm-12">
+                        <!-- your contents here -->
+                    </div>
 
                 </div>
-                <?php } ?>
                 <!-- end row -->
             </section>
         </div>
@@ -198,7 +131,6 @@ $categories  =  getAllCategories($menu_id);
     </div>
     <!-- END MAIN CONTENT -->
 </div>
-
 
 
 

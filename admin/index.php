@@ -1,4 +1,5 @@
 <?php
+
 include "header.php";
 if(isset($_GET['id'])){
 	$city_id = $_GET['id'];
@@ -20,6 +21,7 @@ else{
 		background-color: #d75b85 !important;
 	}
 </style>
+
 <!-- END NAVIGATION -->
 
 <!-- MAIN PANEL -->
@@ -47,14 +49,7 @@ else{
 						<?php $count = getTotalRestaurants();  ?>
 						<h5> Total Restaurants <span class="txt-color-blue"><?=$count?></span></h5>
 					</li>
-					<li class="sparks-info">
-						<?php $count1 = getRestaurantsCountByCity(1);  ?>
-						<h5> Beit Shemesh <span class="txt-color-purple">&nbsp;<?=$count1?></span></h5>
-					</li>
-					<li class="sparks-info">
-						<?php $count2 = getRestaurantsCountByCity(2);  ?>
-						<h5> Modiin <span class="txt-color-greenDark">&nbsp;<?=$count2?></span></h5>
-					</li>
+
 				</ul>
 				<!-- end sparks -->
 			</div><br>

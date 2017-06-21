@@ -895,31 +895,9 @@ $app->post('/extras_with_subitems', function ($request, $response, $args) {
 
 $app->post('/testing_traccer', function ($request, $response, $args) {
 
-    $service_url = "http://35.156.74.68:8082/api/objectives";
-    $curl = curl_init($service_url);
-    $curl_post_data = array(
-        "name" => "asad",
-        "phone" => "testing",
-        "startLatitude"=>0,
-        "startLongitude"=>0,
-        "endLatitude"=>0.0,
-        "endLongitude"=>0.0,
-        "deviceId"=>0,
-        "status"=>"",
-        "startAddress" => "Modiin",
-        "endAddress" => "beit",
-        "orderId" => "684"
-    );
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_USERPWD,  "admin:admin");
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($curl_post_data));
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-        'Authorization: Basic YWRtaW46YWRtaW4=',
-        'Content-Type: application/json'
-    ));
-    $curl_response = curl_exec($curl);
-    curl_close($curl);
+
+    $curl_response = traccer(212,'test2','000000',"Yitzhak Rabin Road 5, Beit Shemesh","Tel Aviv-Yafo, Israel");
+
 
     $response = $response->withStatus(202);
     $response = $response->withJson(json_encode($curl_response));
@@ -1529,7 +1507,15 @@ $app->post('/add_order', function ($request, $response, $args) {
         $orderId = DB::insertId();
 
         if($user_order['pickFromRestaurant'] == 'false') {
-            traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress']);
+
+            $temp_res = traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress']);
+
+
+            // RESPONSE RETURN TO REST API CALL
+            $response = $response->withStatus(202);
+            $response = $response->withJson(json_encode($temp_res));
+            return $response;
+
         }
 
 
@@ -2313,11 +2299,16 @@ function traccer($order_id,$name,$phone,$start_address,$delivery_address)
     $curl_post_data = array(
         "name"          => $name,
         "phone"         => $phone,
+        "startLatitude"=>0,
+        "startLongitude"=>0,
+        "endLatitude"=>0.0,
+        "endLongitude"=>0.0,
+        "deviceId"=>0,
+        "status"=>"",
         "startAddress"  => $start_address,
         "endAddress"    => $delivery_address,
         "orderId"       => $order_id
     );
-
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_USERPWD,  "admin:admin");
@@ -2331,6 +2322,9 @@ function traccer($order_id,$name,$phone,$start_address,$delivery_address)
 
     $curl_response = curl_exec($curl);
     curl_close($curl);
+
+
+    return $curl_response;
 
 }
 function sendPassword($password,$email)

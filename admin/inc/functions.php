@@ -286,6 +286,11 @@ function getAllCategories($menu_id)
     return $categories = DB::query("select * from categories where menu_id = '$menu_id'");
 
 }
+function getSpecificCategories($cat_id)
+{
+    return $categories = DB::query("select * from categories where id = '$cat_id'");
+
+}
 
 function getItemsFromCategoryId($category_id)
 {
@@ -400,6 +405,12 @@ function getSpecificCompanyUser($user_id)
 {
     DB::useDB('orderapp_b2b');
     return $users = DB::queryFirstRow("select * from b2b_users where id = '$user_id'");
+}
+
+function getSpecificBusinessOffer($busines_id)
+{
+    DB::useDB('orderapp_restaurants');
+    return $business = DB::queryFirstRow("select * from business_lunch_detail where id = '$busines_id'");
 }
 
 function getSpecificb2bRestDisc($rest_id)
