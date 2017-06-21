@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="code update (New 21th June)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db_dump/orderapp_dataentrydb.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db_dump/orderapp_user.sql" afterPath="" />
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db_dump/orderapp_dataentrydb.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" />
     </list>
@@ -911,14 +910,7 @@
       <workItem from="1497529527015" duration="101000" />
       <workItem from="1497767500378" duration="4991000" />
       <workItem from="1497952965372" duration="5171000" />
-      <workItem from="1498024170302" duration="1641000" />
-    </task>
-    <task id="LOCAL-00109" summary="DB update + code latest">
-      <created>1494144634821</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1494144634822</updated>
+      <workItem from="1498024170302" duration="1921000" />
     </task>
     <task id="LOCAL-00110" summary="DB update + code latest">
       <created>1494317464117</created>
@@ -1256,11 +1248,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498032776851</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="code update (New 21th June)">
+      <created>1498037633311</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1498037633311</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1053004000" />
+    <option name="totallyTimeSpent" value="1053284000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1556,13 +1555,6 @@
     <entry file="file://$PROJECT_DIR$/db_dump/orderapp_user.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_dump/orderapp_restaurants.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1920,6 +1912,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_dump/orderapp_dataentrydb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_dump/orderapp_restaurants.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

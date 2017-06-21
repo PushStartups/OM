@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 21, 2017 at 09:18 AM
--- Server version: 5.5.56
+-- Generation Time: Jun 21, 2017 at 10:10 AM
+-- Server version: 5.5.54
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -4573,8 +4573,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `name_en` varchar(255) NOT NULL,
   `name_he` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `restaurant_id` (`restaurant_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100029 ;
 
 --
@@ -18959,31 +18958,6 @@ ALTER TABLE `gloria_menus`
 --
 ALTER TABLE `items`
   ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
-
---
--- Constraints for table `menus`
---
-ALTER TABLE `menus`
-  ADD CONSTRAINT `menus_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
-
---
--- Constraints for table `restaurant_gallery`
---
-ALTER TABLE `restaurant_gallery`
-  ADD CONSTRAINT `restaurant_gallery_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`);
-
---
--- Constraints for table `restaurant_tags`
---
-ALTER TABLE `restaurant_tags`
-  ADD CONSTRAINT `restaurant_tags_ibfk_1` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`),
-  ADD CONSTRAINT `restaurant_tags_ibfk_2` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`);
-
---
--- Constraints for table `subitems`
---
-ALTER TABLE `subitems`
-  ADD CONSTRAINT `subitems_ibfk_1` FOREIGN KEY (`extra_id`) REFERENCES `extras` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
