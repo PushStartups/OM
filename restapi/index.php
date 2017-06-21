@@ -1506,17 +1506,17 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         $orderId = DB::insertId();
 
-        if($user_order['pickFromRestaurant'] == 'false') {
+//         if($user_order['pickFromRestaurant'] == 'false') {
 
-            $temp_res = traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress']);
+//             $temp_res = traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress']);
 
 
-            // RESPONSE RETURN TO REST API CALL
-            $response = $response->withStatus(202);
-            $response = $response->withJson(json_encode($temp_res));
-            return $response;
+//             // RESPONSE RETURN TO REST API CALL
+//             $response = $response->withStatus(202);
+//             $response = $response->withJson(json_encode($temp_res));
+//             return $response;
 
-        }
+//         }
 
 
         foreach ($user_order['cartData'] as $orders) {
