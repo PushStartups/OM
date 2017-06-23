@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 15, 2017 at 08:51 AM
--- Server version: 5.5.54
+-- Generation Time: Jun 23, 2017 at 09:23 AM
+-- Server version: 5.5.56
 -- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   `sub_items` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1376 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1439 ;
 
 --
 -- Dumping data for table `order_detail`
@@ -822,7 +822,70 @@ INSERT INTO `order_detail` (`id`, `order_id`, `qty`, `item`, `sub_total`, `sub_i
 (1372, 780, 2, 'Sashimi salmon', 34, ''),
 (1373, 781, 2, 'Shawarma', 33, 'French Fries, Babaghanoush, Bread Type:Pita, Veal'),
 (1374, 782, 5, 'Nigiri Denis', 21, ''),
-(1375, 783, 2, 'Shawarma', 33, 'Fried Onions, Tomatoes, Amba, Spicy, Bread Type:Pita, Veal');
+(1375, 783, 2, 'Shawarma', 33, 'Fried Onions, Tomatoes, Amba, Spicy, Bread Type:Pita, Veal'),
+(1376, 784, 2, 'Smoked roll', 38, ''),
+(1377, 785, 1, 'Angus Burger', 62, 'Bbq, Thousand Island, Fried onions, Pickled spicy pepper, 170 grams chicken breast (+18), Egg (+4)'),
+(1378, 786, 3, 'Alfredo', 18, 'Pasta penne, Creamy sauce (+3)'),
+(1379, 787, 2, 'Meshulashim Toast', 40, 'Mushrooms (+5), Olives (+5), Tomatoes (+5)'),
+(1380, 788, 1, 'Xl Pie', 70, 'Tomatoes (+5)'),
+(1381, 788, 1, 'Xl + Toppings', 75, 'Olives, Tomatoes, Corn'),
+(1382, 789, 1, 'Popia Gai', 25, ''),
+(1383, 789, 1, 'Gai Pad Mad Ma Mung', 45, 'chicken'),
+(1384, 790, 1, 'Gang Qiao Wen Gai', 55, ''),
+(1385, 790, 1, 'Som Tam', 28, ''),
+(1386, 790, 1, 'Popia', 25, ''),
+(1387, 791, 1, 'Pad Ki Mao', 55, 'Antricot (+10)'),
+(1388, 791, 1, 'Arizona iced tea pomegranate ', 12, ''),
+(1389, 792, 1, 'Angus Salad', 88, '150 grams goose breast or entrecote (+18), 170 grams chicken breast (+18), Egg (+4), portobello mushroom (+4)'),
+(1390, 793, 2, 'Bandora Express', 42, 'French Fries, Fried Onions, Techina, Chummus'),
+(1391, 794, 1, 'Special offer - 3 Large Pizzas for 99 Shekel', 99, ''),
+(1392, 795, 1, 'Entrecote salad', 48, 'Garlic mayonnaise, BBQ, 1000 Island, Sweet Chili'),
+(1393, 795, 1, 'Chicken steak salad', 46, 'Garlic mayonnaise, BBQ, 1000 Island, Sweet Chili'),
+(1394, 795, 1, 'French fries', 15, ''),
+(1395, 795, 1, 'Onion rings', 15, ''),
+(1396, 795, 1, 'Burger 150 g meat', 31, 'Tomato, Pickles, Onion, Ketchup, Mayonnaise, Mustard, BBQ, Burger Bun'),
+(1397, 795, 1, 'Hot dogs', 29, 'Ketchup, Mustard, BBQ, Baguette'),
+(1398, 795, 1, 'Schwarma', 31, 'Fried onion, Humous, Ketchup, Chimichurri, Baguette'),
+(1399, 796, 1, 'Chicken breast with pesto and parsley sauce', 31, 'Lettuce, Tomato, Pickles, Cucumber, Ketchup, Garlic mayonnaise, Whole Wheat Ciabatta'),
+(1400, 796, 1, 'Burger 300 g meat', 44, 'Lettuce, Tomato, Pickles, Fried onion, Eggplant, Schug, BBQ, Hot chili, Whole Wheat Ciabatta'),
+(1401, 797, 3, '#17 Asian Vegetable Soup ', 16, ''),
+(1402, 797, 1, '#52 Sweet and sour lemon chicken', 51, ''),
+(1403, 798, 1, 'Chicken breast in honey and mustard sauce', 52, 'French fries, Chinese rice, Coca Cola Zero - small bottle'),
+(1404, 798, 1, 'Burger 300 g meat', 62, 'Lettuce, Pickles, Fried onion, Eggplant, Garlic mayonnaise, Chimichurri'),
+(1405, 798, 1, 'Hummus with meat', 35, ''),
+(1406, 798, 2, 'Egg roll', 8, ''),
+(1407, 798, 1, 'Stir fried chicken salad', 40, 'Garlic mayonnaise, Sweet Chili, Chimichurri'),
+(1408, 798, 1, 'Sweet Chilli Wings', 50, 'French fries, Chinese rice, Coca Cola Zero - small bottle, Fried onion'),
+(1409, 799, 1, 'שווארמה', 39, 'לחם:לאפה, בשר עגל, French Fries, Techina'),
+(1410, 799, 1, 'שווארמה', 39, 'לחם:לאפה, מעורב, French Fries, Tomatoes, Chummus, Amba'),
+(1411, 800, 1, 'שווארמה', 39, 'לחם:לאפה, בשר עגל, French Fries, Techina'),
+(1412, 800, 1, 'שווארמה', 39, 'לחם:לאפה, מעורב, French Fries, Tomatoes, Chummus, Amba'),
+(1413, 801, 1, 'Haloumi and mushroom', 63, ''),
+(1414, 801, 1, 'Sweet potato ravioli ', 58, ''),
+(1415, 802, 1, 'Large pie', 65, 'Garlic sauce , Thousand Island'),
+(1416, 803, 1, 'Meat steak', 65, 'French fries, Salad, Fanta - can, Baguette'),
+(1417, 803, 1, 'Schnitzel nuggets', 24, ''),
+(1418, 803, 1, 'Egg roll', 8, ''),
+(1419, 804, 2, 'Bandora Express', 42, 'French Fries, Fried Onions, Chummus, Amba'),
+(1420, 805, 2, 'Shawarma', 39, 'French Fries, Fried Onions, Tomatoes, Bread Type:Baguette, Veal'),
+(1421, 806, 1, 'Chicken breast in garlic chili and coriander sauce', 52, 'Salad, Chinese rice, Diet Coke - can, Lettuce, Tomato, Pickles, Onion, BBQ, Baguette'),
+(1422, 807, 1, 'Chicken in tempura', 33, ''),
+(1423, 807, 1, 'Fujiama', 97, 'Soya, Teriyaki, Spicy Mayonnaise'),
+(1424, 808, 1, 'Xl Pie', 65, ''),
+(1425, 808, 1, 'Greek Salad', 28, ''),
+(1426, 809, 1, 'Xl Pie', 65, ''),
+(1427, 809, 1, 'Alfredo', 28, 'Fettuccine'),
+(1428, 810, 1, 'Family sized pizza', 25, 'Green olives (+5)'),
+(1429, 810, 1, 'Family sized pizza', 25, 'onion (+5)'),
+(1430, 810, 1, 'Family sized pizza', 25, 'bulgarian cheese (+5)'),
+(1431, 810, 1, 'Garlic bread', 12, ''),
+(1432, 811, 1, 'בורגול עדשים', 59, ''),
+(1433, 811, 1, 'הממולאים של גרג', 64, ''),
+(1434, 811, 1, 'בטטה', 59, ''),
+(1435, 811, 1, 'קפה קפוא / לייט ', 16, ':קטן'),
+(1436, 812, 2, 'Schnitzel nuggets', 24, ''),
+(1437, 812, 1, 'Burger 150 g meat', 31, ''),
+(1438, 812, 1, 'Chicken breast with pesto and parsley sauce', 52, 'French fries, Fanta - small bottle, Lettuce, Tomato, Pickles, Fried onion, Ketchup, Garlic mayonnaise, Sweet Chili');
 
 -- --------------------------------------------------------
 
@@ -886,7 +949,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `restaurant_id` (`restaurant_id`),
   KEY `company_id` (`company_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=762 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=772 ;
 
 --
 -- Dumping data for table `users`
@@ -984,7 +1047,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (602, 'sdaf@sf.com', NULL, NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (603, 'jgfjh@sdfg.com', 'fjg', NULL, '', '', 0, '0000-00-00', '0000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (604, 'dafs@sadf.com', 'adsf', NULL, '', '', 0, '0000-00-00', '0000', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(605, 'ahmadworkspace@gmail.com', 'Testing', 'ahmadworkspace@gmail.com', '', '', 0, '0000-00-00', '000000', 'Testing', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(605, 'ahmadworkspace@gmail.com', 'testing', 'ahmadworkspace@gmail.com', '', '', 0, '0000-00-00', '000000', 'Monte Testaccio, Rome, Metropolitan City of Rome, Italy', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (606, 'Testing@Testing.com', 'Testing', NULL, '', '', 0, '0000-00-00', '000000', 'Testing', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (607, 'kpk@gmail.com', '', NULL, 'kpk@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (608, 'kpk2@gmail.com', '', NULL, 'kpk2@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
@@ -993,7 +1056,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (611, 'kok2@gmail.com', '', NULL, 'kok2@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (612, 'kok3@gmail.com', '', NULL, 'kok3@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (613, 'kok4@gmail.com', '', NULL, 'kok4@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(614, 'test@gmail.com', 'Test', NULL, 'test@gmail.com', '1234', 0, '0000-00-00', '000000', 'Dasfa ir ko, Kareivių gatvė, Vilnius, Lithuania', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_XIXwxjRM3I6wWbDbhOzVK1JK', NULL, 0),
+(614, 'test@gmail.com', 'test', 'test@gmail.com', 'test@gmail.com', '1234', 0, '0000-00-00', '000000', 'test', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_XIXwxjRM3I6wWbDbhOzVK1JK', NULL, 0),
 (615, 'cool@gmail.com', '', NULL, 'cool@gmail.com', 'cool1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (616, 'jkj@gmailc.com', '', NULL, 'jkj@gmailc.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (617, 'rael@pushstartups.com', '', NULL, 'rael@pushstartups.com', 'rael', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success', 0),
@@ -1002,7 +1065,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (620, 'gujg@fghh.com', '', NULL, 'gujg@fghh.com', 'h', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (621, 'kpk10@gmail.com', '', NULL, 'kpk10@gmail.com', '1234', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (627, 'avi@puahstartups.com', 'TEST TEST', NULL, '', '', 0, '0000-00-00', '000000000', 'דרך יצחק רבין 23, בית שמש, ישראל', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(628, 'test@orderapp.com', 'test', 'test@orderapp.com', '', '', 0, '0000-00-00', '0000000', 'Gad 14, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL, 0),
+(628, 'test@orderapp.com', 'test', 'test@orderapp.com', '', '', 0, '0000-00-00', '000000', 'Gad 14, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_hMsEIdA4Vvpmt8p8FBrj4Xcs', NULL, 0),
 (629, 'tasawarmahmood24@gmail.com', 'test', NULL, 'tasawarmahmood24@gmail.com', '123', 0, '0000-00-00', '000000', 'SDF, Terminal Drive, Louisville, KY, United States', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', '34609bdc08a07ace4e1526bbb1777673', 0),
 (631, 'muhammad.iftikhar.aftab@gmail.com', 'Test', 'muhammad.iftikhar.aftab@gmail.com', 'muhammad.iftikhar.aftab@gmail.com', '1234', 0, '0000-00-00', '000000', 'test', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success', 0),
 (632, 'dvora@pushstartups.com', '', NULL, 'dvora@pushstartups.com', '025832037', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, '', 'success', 0),
@@ -1028,7 +1091,7 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (652, 'bjelena106@gmail.com', 'Bj weiss', NULL, '', '', 0, '0000-00-00', '0584221194', 'Building code 2015 bottom floor apartment on the right', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (653, 'leorarocs98@gmail.com', 'Leora mehlman ', NULL, '', '', 0, '0000-00-00', '0507092506', 'Midrasha ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (654, 'me@gmail.com', 'סולטן', NULL, '', '', 0, '0000-00-00', '0527699766', 'נהר הירדן 122', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(655, 'etanadee@gmail.com', 'Etana Hecht', NULL, '', '', 0, '0000-00-00', '0586288568', 'Asher 14, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(655, 'etanadee@gmail.com', 'Etana Hecht', 'etanadee@gmail.com', '', '', 0, '0000-00-00', '0586288568', 'Asher 14, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (656, 'alexandmaddy@gmail.com', 'Madelaine Drucker', NULL, '', '', 0, '0000-00-00', '0584012165', 'Apartment 5, 2nd floor', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (657, 'zac198@aol.com', 'Zac Cohen ', NULL, '', '', 0, '0000-00-00', '0532207102', 'Front ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (658, 'rivkalevitz@gmail.com', 'Rivka', NULL, '', '', 0, '0000-00-00', '0545900598', '6a', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
@@ -1040,14 +1103,14 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (664, 'mjmike28@aim.com', 'Michael ', NULL, '', '', 0, '0000-00-00', '0539353371', 'Front entrance ', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_cCWI1WX9kQQgVjbRvniLXZkU', NULL, 0),
 (665, 'sarahpritzker@gmail.com', 'Sarah Pritzker', NULL, '', '', 0, '0000-00-00', '0542237586', 'Yigael Yadin 47, Modi''in-Maccabim-Re''ut, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (666, 'iamher@gmail.com', 'אנה', NULL, '', '', 0, '0000-00-00', '0644824392', 'רחוב הנרקיס 142', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(667, 'mrgoldwag@gmail.com', 'רחל​ גולדווג', NULL, '', '', 0, '0000-00-00', '0506810630', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_04mYbO2mbSsyuACqro9Oqa6d', NULL, 0),
+(667, 'mrgoldwag@gmail.com', 'Rachel Goldwag', 'mrgoldwag@Gmail.com', '', '', 0, '0000-00-00', '0506810630', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_04mYbO2mbSsyuACqro9Oqa6d', NULL, 0),
 (668, 'melinda.matkowsky@yahoo.com', 'Melinda matkowsky', NULL, '', '', 0, '0000-00-00', '0543485535', 'Floor -2, apartment 1, enter between building # 9 and 11 ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (669, 'yosigolb@gmail.com', 'Yosef Golberstein', NULL, '', '', 0, '0000-00-00', '0507105515', '7/10 (דירה 10 היא כניסה פרטי בצד שמאל של הבנין (', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (670, 'tziona.summer@gmail.com', 'ציונה ', NULL, '', '', 0, '0000-00-00', '0543540881', 'קומה 4', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (671, 'zakjeffay@gmail.com', 'Zak Jeffay ', NULL, '', '', 0, '0000-00-00', '0527969953', 'First floor', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (672, 'sruliguttman@gmail.con', 'Sruli', NULL, '', '', 0, '0000-00-00', '0507050514', 'Beit shemesh', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (673, 'amuller2016@yula.org', 'Adam Muller', NULL, '', '', 0, '0000-00-00', '0507090052', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(674, 'Elyallen@aol.com', 'Ely Allen', NULL, '', '', 0, '0000-00-00', '0584028538', '11', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_jMxJ0WaR8RPCBuzSAExFjnwN', NULL, 0),
+(674, 'Elyallen@aol.com', 'Ely Allen', 'Elyallen@aol.com', '', '', 0, '0000-00-00', '0584028538', '0', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_jMxJ0WaR8RPCBuzSAExFjnwN', NULL, 0),
 (675, 'ariella.caplan@gmail.com', 'Ariella Mendlowitz', NULL, '', '', 0, '0000-00-00', '0548829115', '34/17 Nahal Ein Gedi Street, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_h7jAPYkfQMiU1FywdeJKVTcS', NULL, 0),
 (676, 'tews@gmail.com', NULL, NULL, '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_u3J3Ojf9QBMEP2QwgNNn9cEY', NULL, 0),
 (677, 'rubinseligson@gmail.com', 'Rebecca seligson', NULL, '', '', 0, '0000-00-00', '0584021403', 'דירה 2- כניסה בקרקע, מאחורה מהמדריגות בצד ימין', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
@@ -1119,10 +1182,10 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (743, 'dov.carpe@gmail.com', 'Dov Carpe', NULL, '', '', 0, '0000-00-00', '0586889251', 'נחל דולב 39א/5, בית שמש, ישראל', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (744, 'joshuaguedalia@gmail.com', 'Rina Guedalia', NULL, '', '', 0, '0000-00-00', '0542264666', 'Sderot Yitshak Rabin 31, Modi''in-Maccabim-Re''ut, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (745, 'zimberg.r@gmail.com', 'Zimberg', NULL, '', '', 0, '0000-00-00', '0545437775', 'HaShita 13, Beit Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(746, 'Lgrodner@me.com', 'Linda Grodner ', NULL, '', '', 0, '0000-00-00', '0537082570', 'ג', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(746, 'Lgrodner@me.com', 'Linda Grodner', 'lgrodner@me.com', '', '', 0, '0000-00-00', '0537082570', 'Reuven Street 16', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (747, 'alliefraim@gmail.com', 'efraim rosenbaum', NULL, '', '', 0, '0000-00-00', '0542802823', 'nahar hayarden 90/2 ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (748, 'brachagoldstein@gmail.com', 'Bracha Goldstein', NULL, '', '', 0, '0000-00-00', '0545452478', 'Rabi Yanai Street 1/8, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(749, 'sarascheinert@gmail.com', 'Sara scheinert ', NULL, '', '', 0, '0000-00-00', '0585913133', 'Floor 1', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(749, 'sarascheinert@gmail.com', 'Sara scheinert ', 'sarascheinert@gmail.com', '', '', 0, '0000-00-00', '0585913133', '1', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_29NVNgmdPTmEXZA90Vodv0Ea', NULL, 0),
 (750, 'etana@orderapp.com', 'Ilana Hiller', 'etana@orderapp.com', '', '', 0, '0000-00-00', '0584478353', 'Nahal Dolev, Beit Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (751, 'orders@orderapp.com', 'Pick Up', 'orders@orderapp.com', '', '', 0, '0000-00-00', '0584888799', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (752, 'yoel123@gmail.com', 'yoel baumann', 'yoel123@gmail.com', '', '', 0, '0000-00-00', '0524045123', 'Havakuk HaNavi 4/5, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_2eh2IDHJUyRlpB9CQ68vlADj', NULL, 0),
@@ -1131,10 +1194,20 @@ INSERT INTO `users` (`id`, `smooch_id`, `name`, `email`, `user_name`, `password`
 (755, 'cmnac770@gmail.com', 'Alon Golub', 'cmnac770@gmail.com', '', '', 0, '0000-00-00', '0586114770', 'Nahal Miha Street 17, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (756, 'amaschkenasy@gmail.com', 'Aschkenasy', 'amaschkenasy@gmail.com', '', '', 0, '0000-00-00', '0548421774', 'chaggai HaNavi 4 dira 3', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (757, 'aaron@pushstartups.com', NULL, 'aaron@pushstartups.com', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_hiFOo4YWJ3929LUkgbzzl9UO', NULL, 0),
-(758, 'shoshlip97@gmail.com', 'Shoshi', 'shoshlip97@gmail.com', '', '', 0, '0000-00-00', '0502057357', 'Call from gate we will come out ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(758, 'shoshlip97@gmail.com', 'שושי ליפשיץ', 'Shoshlip97@gmail.com', '', '', 0, '0000-00-00', '0502057357', 'בית קרקע', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_N31g0ATDSx8OfeA9DP6ZoY8w', NULL, 0),
 (759, 'lhllsurface@gmail.com', 'Mike hunt ', 'lhllsurface@gmail.com', '', '', 0, '0000-00-00', '0539359133', '308 first bed on the left, thank you, ', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
 (760, 'raeltest@orderapp.com', 'Raeltest', 'raeltest@orderapp.com', '', '', 0, '0000-00-00', '000000', 'Ahad Ha''Am Street 2, Tel Aviv-Yafo, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
-(761, 'test@ordrapp.com', NULL, 'test@ordrapp.com', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_fveIU9xapthwC0BGQxC7cfUO', NULL, 0);
+(761, 'test@ordrapp.com', NULL, 'test@ordrapp.com', '', '', 0, '0000-00-00', NULL, NULL, 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_fveIU9xapthwC0BGQxC7cfUO', NULL, 0),
+(762, 'bentsi.rubin@gmail.com', 'DAVID RUBin', 'bentsi.rubin@gmail.com', 'bentsi.rubin@gmail.com', 'OId2005m6p', 0, '0000-00-00', '0533385066', 'נחל נועם 16/9, בית שמש, ישראל', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_RVVkWOTTg3hzWgzyRS244QY8', '60519c3dd22587d6de04d5f1e28bd41d', 1),
+(763, 'cheskorn535@gmail.com', 'Chad Korn', 'cheskorn535@gmail.com', '', '', 0, '0000-00-00', '0549196788', 'SUBS Hub, HaUman Street, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(764, 'oyaffar@gmail.com', 'rosenstein', 'oyaffar@gmail.com', '', '', 0, '0000-00-00', '0584584644', 'Nahal Refa''im 7/2, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(765, 'shabsiem@gmail.com', 'Shabsie Moskovitz', 'shabsiem@gmail.com', '', '', 0, '0000-00-00', '0543070058', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_DAbSNfrtoxAgg2jl2FP7VhM4', NULL, 0),
+(766, 'lf@ground-rent.com', 'Laurence Freilich', 'lf@ground-rent.com', '', '', 0, '0000-00-00', '0526724541', 'Sderot Nehar HaYarden 78, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(767, 'shemouel200@gmail.com', 'שמואל בוגנים', 'shemouel200@gmail.com', '', '', 0, '0000-00-00', '0585865868', '13/8', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(768, 'brianthau@gmail.com', 'Brian Thau', 'brianthau@gmail.com', '', '', 0, '0000-00-00', '0522573109', '', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0),
+(769, 'test@orderapp.comj', 'test', 'test@orderapp.comj', '', '', 0, '0000-00-00', '00000', 'Gad 14, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_KMb1KKuTlC3hQXCBIsVixrsu', NULL, 0),
+(770, 'brina.groskin@gmail.com', 'Brina Groskin', 'brina.groskin@gmail.com', '', '', 0, '0000-00-00', '0543552792', '3 Avi David, Modi''in Ilit', 0, 'english', NULL, NULL, NULL, NULL, NULL, 'cust_Rteq55Dxcfh71ZpCUsoxreHn', NULL, 0),
+(771, 'mbshaulson@yahoo.com', 'michelle shaulson', 'mbshaulson@yahoo.com', '', '', 0, '0000-00-00', '9951226', 'Shim''on Street 43, Bet Shemesh, Israel', 0, 'english', NULL, NULL, NULL, NULL, NULL, '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -1148,7 +1221,7 @@ CREATE TABLE IF NOT EXISTS `user_coupons` (
   `coupon_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1171,7 +1244,7 @@ CREATE TABLE IF NOT EXISTS `user_orders` (
   PRIMARY KEY (`id`),
   KEY `fk_user_order` (`user_id`),
   KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=784 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=813 ;
 
 --
 -- Dumping data for table `user_orders`
@@ -1477,7 +1550,36 @@ INSERT INTO `user_orders` (`id`, `user_id`, `restaurant_id`, `total`, `coupon_di
 (780, 628, 16, 83, 'fixed value', 10, '2017-06-11 10:58:45', 'ENG mobile', 'CASH', '', NULL),
 (781, 631, 3, 91, NULL, 0, '2017-06-12 00:11:53', 'ENG Desktop', 'CASH', '', 'Chrome'),
 (782, 760, 6, 117, NULL, 0, '2017-06-13 11:54:56', 'ENG Desktop', 'CASH', '', 'Chrome'),
-(783, 628, 3, 81, 'fixed value', 10, '2017-06-14 13:39:44', 'ENG Desktop', 'CASH', '', 'Netscape');
+(783, 628, 3, 81, 'fixed value', 10, '2017-06-14 13:39:44', 'ENG Desktop', 'CASH', '', 'Netscape'),
+(784, 628, 33, 91, 'fixed value', 10, '2017-06-20 15:29:41', 'ENG Desktop', 'Credit Card', '32979533', 'Chrome'),
+(785, 628, 1, 77, 'fixed value', 10, '2017-06-20 15:36:25', 'HE Desktop', 'CASH', '', 'Chrome'),
+(786, 628, 9, 61, 'fixed value', 10, '2017-06-20 16:47:50', 'HE Desktop', 'Credit Card', '32983561', 'Chrome'),
+(787, 628, 2, 95, 'fixed value', 10, '2017-06-20 17:26:16', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(788, 628, 2, 160, 'fixed value', 10, '2017-06-21 10:29:38', 'ENG Desktop', 'Credit Card', '33015344', 'Chrome'),
+(789, 762, 20, 75, 'fixed value', 20, '2017-06-21 12:39:00', 'ENG Desktop', 'Credit Card', '33024261', 'Netscape'),
+(790, 628, 20, 133, NULL, 0, '2017-06-21 12:53:05', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(791, 763, 20, 82, NULL, 0, '2017-06-21 15:13:32', 'ENG Desktop', 'Credit Card', '33033654', 'Chrome'),
+(792, 614, 1, 113, NULL, 0, '2017-06-21 17:20:29', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(793, 628, 3, 99, 'fixed value', 10, '2017-06-21 17:25:23', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(794, 655, 2, 114, NULL, 0, '2017-06-21 17:26:04', 'ENG mobile', 'CASH', '', NULL),
+(795, 764, 17, 230, NULL, 0, '2017-06-21 18:36:41', 'ENG Desktop', 'Credit Card', '33043215', 'Chrome'),
+(796, 765, 17, 65, 'fixed value', 10, '2017-06-21 18:55:18', 'ENG Desktop', 'Credit Card', '33044081', 'Safari'),
+(797, 746, 5, 114, NULL, 0, '2017-06-21 19:15:20', 'ENG Desktop', 'Credit Card', '33044934', 'Safari'),
+(798, 766, 17, 270, NULL, 0, '2017-06-21 19:47:56', 'ENG Desktop', 'Credit Card', '33046071', 'Chrome'),
+(799, 767, 3, 103, NULL, 0, '2017-06-21 20:19:51', 'HE mobile', 'Credit Card', '33047136', NULL),
+(800, 767, 3, 128, NULL, 0, '2017-06-21 20:19:54', 'HE mobile', 'Credit Card', '33047136', NULL),
+(801, 655, 7, 136, NULL, 0, '2017-06-21 20:56:18', 'ENG mobile', 'CASH', '', NULL),
+(802, 768, 14, 65, NULL, 0, '2017-06-21 21:17:39', 'ENG mobile', 'Credit Card', '33049257', NULL),
+(803, 674, 17, 112, NULL, 0, '2017-06-21 22:30:11', 'ENG mobile', 'Credit Card', '33051777', NULL),
+(804, 769, 3, 99, 'fixed value', 10, '2017-06-22 11:33:05', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(805, 605, 3, 103, NULL, 0, '2017-06-22 11:50:44', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(806, 762, 17, 67, NULL, 0, '2017-06-22 12:31:18', 'ENG Desktop', 'Credit Card', '33081256', 'Chrome'),
+(807, 770, 6, 67, 'fixed value', 75, '2017-06-22 16:41:46', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(808, 749, 2, 68, 'fixed value', 50, '2017-06-22 17:25:46', 'ENG mobile', 'CASH', '', NULL),
+(809, 771, 2, 108, NULL, 0, '2017-06-22 17:39:06', 'ENG Desktop', 'CASH', '', 'Chrome'),
+(810, 667, 9, 74, 'fixed percentage', 15, '2017-06-22 17:56:13', 'ENG mobile', 'Credit Card', '33099639', NULL),
+(811, 758, 7, 183, 'fixed percentage', 15, '2017-06-22 18:08:39', 'HE mobile', 'Credit Card', '33100250', NULL),
+(812, 655, 17, 156, NULL, 0, '2017-06-22 18:45:05', 'ENG Desktop', 'CASH', '', 'Chrome');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
