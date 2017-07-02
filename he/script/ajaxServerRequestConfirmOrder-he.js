@@ -355,6 +355,10 @@ function saveUserInfo() {
 function deliveryAddress()
 {
 
+    userObject.delivery_lat = $('#lat').val();
+    userObject.delivery_lng = $('#lng').val();
+
+
     $("#appt-no").removeClass("error");
     $("#address").removeClass("error");
     $("#area").removeClass("error");
@@ -413,6 +417,18 @@ function deliveryAddress()
             $("#error-address").show();
             return;
         }
+        if($('#lat').val() == "" || $('#lng').val() == "")
+        {
+
+
+            $("#address").addClass("error");
+            $("#error-address").html('בחר מתוך הצעות');
+            $("#error-address").show();
+
+            return;
+        }
+
+
 
         if(userObject.deliveryArea == null)
         {

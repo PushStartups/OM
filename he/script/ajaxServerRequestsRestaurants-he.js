@@ -39,6 +39,8 @@ $(document).ready(function() {
         'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
         'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
         'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
+        'delivery_lat' : "",               // DELIVERY LATITUDE
+        'delivery_lng' : "",               // DELIVERY LONGITUDE
         'isCoupon': false,                 // USER HAVE COUPON CODE ?
         'couponCode': '',                  // COUPON CODE OF USER
         'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE

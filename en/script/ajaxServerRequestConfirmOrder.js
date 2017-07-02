@@ -417,6 +417,18 @@ function deliveryAddress()
             return;
         }
 
+        if($('#lat').val() == "" || $('#lng').val() == "")
+        {
+
+
+            $("#address").addClass("error");
+            $("#error-address").html('Please Select From Suggestions');
+            $("#error-address").show();
+
+            return;
+        }
+
+
         if(userObject.deliveryArea == null)
         {
             $("#area").addClass("error");

@@ -384,7 +384,7 @@
                                             </a>
 
                                             <div class="slide" id="deliverySlider">
-                                                <form>
+                                                <form id="property">
                                                     <div class="slide-holder">
                                                         <ul class="checkbox-list">
                                                             <li id="pickup_option"> <input type="checkbox" id="checkbox-id-12"> <label for="checkbox-id-12"> איסוף עצמי מהמסעדה <span id="address-text">שדרות יגאל אלון 6, בית שמש</span></label></li>
@@ -404,6 +404,14 @@
                                                                         </div>
                                                                         <span class="error-span" id="error-address">error in field</span>
                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="display:none;">
+                                                                <div class="form-group">
+                                                                    <input id= "lat" type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input id = "lng" type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
                                                                 </div>
                                                             </div>
                                                             <div class="error-field">
@@ -972,10 +980,12 @@
             e.preventDefault(e);
             return false;
         });
+
+
         $("#address").geocomplete({
-                    details: "form",
-                    types: ["geocode", "establishment"],
-                }
+                details:"form#property",
+                types: ["geocode", "establishment"],
+            }
         );
 
 

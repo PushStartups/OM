@@ -1532,11 +1532,20 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         $orderId = DB::insertId();
 
-        if($user_order['pickFromRestaurant'] == 'false') {
+        try {
 
-            traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress'],$user_order['rest_lat'],$user_order['rest_lng'],$user_order['delivery_lat'],$user_order['delivery_lng']);
+
+            if ($user_order['pickFromRestaurant'] == 'false') {
+
+                traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress'], $user_order['rest_lat'], $user_order['rest_lng'], $user_order['delivery_lat'], $user_order['delivery_lng']);
+
+            }
+
         }
+        catch (Exception $exception)
+        {
 
+        }
 
         foreach ($user_order['cartData'] as $orders) {
 
