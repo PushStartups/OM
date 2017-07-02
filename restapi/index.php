@@ -700,6 +700,8 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
                 "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
                 "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
+                "rest_lat"             => $result["lat"],               // LATITUDE
+                "rest_lng"             => $result["lng"],               // LONGITUDE
                 "tags"                 => $tags,                        // RESTAURANT TAGS
                 "gallery"              => $galleryImages,               // RESTAURANT GALLERY
                 "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -895,9 +897,33 @@ $app->post('/extras_with_subitems', function ($request, $response, $args) {
 
 $app->post('/testing_traccer', function ($request, $response, $args) {
 
-
-    $curl_response = traccer(212,'test2','000000',"Yitzhak Rabin Road 5, Beit Shemesh","Tel Aviv-Yafo, Israel");
-
+    $service_url = "http://35.156.74.68:8082/api/objectives";
+    $curl = curl_init($service_url);
+    $curl_post_data = array(
+        "name" => "asad",
+        "phone" => "testing",
+        "startLatitude"=>31.748089,
+        "startLongitude"=>34.9950524999999,
+        "endLatitude"=>32.083725,
+        "endLongitude"=>34.798195,
+        "deviceId"=>0,
+        "status"=>"",
+        "startAddress" => "Modiin",
+        "endAddress" => "beit",
+        "orderId" => "684",
+        "geocode"        => "no",
+        "timeCreate"     => null
+    );
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_USERPWD,  "admin:admin");
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($curl_post_data));
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Basic YWRtaW46YWRtaW4=',
+        'Content-Type: application/json'
+    ));
+    $curl_response = curl_exec($curl);
+    curl_close($curl);
 
     $response = $response->withStatus(202);
     $response = $response->withJson(json_encode($curl_response));
@@ -1508,14 +1534,7 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         if($user_order['pickFromRestaurant'] == 'false') {
 
-            $temp_res = traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress']);
-
-
-            // RESPONSE RETURN TO REST API CALL
-            $response = $response->withStatus(202);
-            $response = $response->withJson(json_encode($temp_res));
-            return $response;
-
+            traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress'],$user_order['rest_lat'],$user_order['rest_lng'],$user_order['delivery_lat'],$user_order['delivery_lng']);
         }
 
 
@@ -1533,9 +1552,11 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         }
 
+
+
+
         $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
         $chat_id = "-165732759";
-
 
         telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
 
@@ -1595,6 +1616,7 @@ $app->post('/add_order', function ($request, $response, $args) {
         createBringgTask($user_order, $todayDate, $delivery_time) ;
 
         ob_end_clean();
+
 
 
 
@@ -2292,23 +2314,26 @@ function sendVerificationEmail($code,$email)
 
 }
 
-function traccer($order_id,$name,$phone,$start_address,$delivery_address)
+function traccer($order_id,$name,$phone,$start_address,$delivery_address,$startLat,$startLng,$endLat,$endLng)
 {
     $service_url = "http://35.156.74.68:8082/api/objectives";
     $curl = curl_init($service_url);
     $curl_post_data = array(
-        "name"          => $name,
-        "phone"         => $phone,
-        "startLatitude"=>0,
-        "startLongitude"=>0,
-        "endLatitude"=>0.0,
-        "endLongitude"=>0.0,
-        "deviceId"=>0,
-        "status"=>"",
-        "startAddress"  => $start_address,
-        "endAddress"    => $delivery_address,
-        "orderId"       => $order_id
+        "name"           => $name,
+        "phone"          => $phone,
+        "startLatitude"  => $startLat,
+        "startLongitude" => $startLng,
+        "endLatitude"    => $endLat,
+        "endLongitude"   => $endLng,
+        "deviceId"       => 100,
+        "status"         => "incomplete",
+        "startAddress"   => $start_address,
+        "endAddress"     => $delivery_address,
+        "orderId"        => $order_id,
+        "geocode"        => "no",
+        "timeCreate"     => null
     );
+
 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_USERPWD,  "admin:admin");

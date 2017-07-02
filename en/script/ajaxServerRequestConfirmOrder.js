@@ -354,6 +354,9 @@ function saveUserInfo() {
 function deliveryAddress()
 {
 
+    userObject.delivery_lat = $('#lat').val();
+    userObject.delivery_lng = $('#lng').val();
+
     $("#appt-no").removeClass("error");
     $("#address").removeClass("error");
     $("#area").removeClass("error");
@@ -838,6 +841,10 @@ function  callPage3() {
     }
 
     var browserName = BrowserInfo();
+
+
+    userObject.rest_lat = selectedRest.rest_lat;
+    userObject.rest_lng = selectedRest.rest_lng;
 
 
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'ENG Desktop',"browser_info":browserName},callPage3CallBack);

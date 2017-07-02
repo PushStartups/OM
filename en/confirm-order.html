@@ -303,7 +303,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <form>
+                                        <form id="property">
                                             <li id="deliveryInfoParent">
                                                 <a href="#" class="opener" id="addressOpener">
                                                     <h3>Delivery</h3>
@@ -322,14 +322,23 @@
                                                                             <div class="col-xs-1">
                                                                                 <img class="edit" src="img/ic_checkin.png">
                                                                             </div>
+                                                                            
                                                                             <div class="col-xs-11">
                                                                                 <input type="text" placeholder="Please enter Apt no and street address" id="address">
                                                                             </div>
-                                                                        </div>
                                                                         <span class="error-span" id="error-address">error in field</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            </div>
+                                                                <div style="display:none;">
+                                                                    <div class="form-group">
+                                                                        <input id= "lat" type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input id = "lng" type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+                                                                    </div>
+                                                                </div>
                                                             <div class="error-field">
                                                                 <div class="row">
                                                                     <div class="col-sm-12">
@@ -355,7 +364,7 @@
                                                                 </div>
                                                                 <span class="error-span" id="error-area">error in field</span>
                                                             </div>
-                                                        </div>
+
                                                         <button type="button" onclick="deliveryAddress()" class="btn-add-submit">Save</button>
                                                     </div>
                                                 </div>
@@ -918,8 +927,9 @@
             e.preventDefault(e);
             return false;
         });
+
         $("#address").geocomplete({
-                details: "form",
+                details:"form#property",
                 types: ["geocode", "establishment"],
             }
         );
