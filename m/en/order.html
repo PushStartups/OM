@@ -749,7 +749,7 @@
                             <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span id="address-text"></span></label></li>
                             <li> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> Delivery <span>Complete your details</span></label></li>
                         </ul>
-                        <form>
+                        <form id="property">
                             <div class="show-box" id="delivery-info" style="display: none">
                                 <div class="row no-gutters margin">
                                     <div class="col-xs-12">
@@ -766,6 +766,16 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div style="display:none;">
+                                    <div class="form-group">
+                                        <input id= "lat" type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id = "lng" type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+                                    </div>
+                                </div>
+
                                 <div class="row no-gutters margin">
                                     <div class="col-xs-12">
                                         <div id="address-parent" class="error-box">
@@ -1142,12 +1152,12 @@
             $(this).carousel('next');
         });
 
-        $("#appt_no").geocomplete({
-                    details: "form",
-                    types: ["geocode", "establishment"],
-                }
-        );
 
+        $("#appt_no").geocomplete({
+                details:"form#property",
+                types: ["geocode", "establishment"],
+            }
+        );
 
     });
 

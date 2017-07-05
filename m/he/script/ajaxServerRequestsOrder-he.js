@@ -1289,7 +1289,17 @@ $('#delivery-areas').on('change', function() {
 });
 
 
+$("#appt_no").change(function() {
+
+    $("#apt-parent").removeClass("error");
+    $("#error-apt").hide();
+});
+
+
 function deliveryAddress() {
+
+    userObject.delivery_lat = $('#lat').val();
+    userObject.delivery_lng = $('#lng').val();
 
     $("#apt-parent").removeClass("error");
     $("#address-parent").removeClass("error");
@@ -1318,6 +1328,17 @@ function deliveryAddress() {
             return;
         }
 
+        if($('#lat').val() == "" || $('#lng').val() == "")
+        {
+
+
+            $("#address").addClass("error");
+            $("#error-apt").html('בחר מתוך הצעות');
+            $("#error-apt").show();
+
+            return;
+        }
+
 
         if($("#address").val() == "")
         {
@@ -1327,6 +1348,8 @@ function deliveryAddress() {
             $('.box-frame.new').scrollTop(800);
             return;
         }
+
+
 
         if(userObject.deliveryArea == null)
         {

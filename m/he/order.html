@@ -565,7 +565,7 @@
                                 <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> איסוף עצמי מהמסעדה <span>שדרות יגאל אלון 6, בית שמ</span></label></li>
                                 <li> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> משלוח <span>הזן את פרטי הכתובת למשלוח</span></label></li>
                             </ul>
-                            <form>
+                            <form id="property">
                                 <div class="show-box" id="delivery-info" style="display: none">
                                     <div class="row no-gutters margin">
                                         <div class="col-xs-12">
@@ -597,6 +597,16 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div style="display:none;">
+                                        <div class="form-group">
+                                            <input id= "lat" type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <input id = "lng" type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+                                        </div>
+                                    </div>
+
                                     <div id="area_parent">
                                         <div class="text-holder row no-gutters">
                                             <div class="col-xs-12">
@@ -962,7 +972,7 @@
         });
 
         $("#appt_no").geocomplete({
-                    details: "form",
+                    details: "form#property",
                     types: ["geocode", "establishment"],
                 }
         );
