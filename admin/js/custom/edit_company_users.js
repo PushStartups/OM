@@ -32,6 +32,23 @@ $('#address').bind('input', function() {
 
 });
 
+function delete_comp_user(users_id,url)
+{
+    addLoading();
+    $.ajax({
+        url:"ajax/delete_company_users.php",
+        method:"post",
+        data:{users_id:users_id},
+        dataType:"json",
+        success:function(data)
+        {
+            hideLoading();
+            alert("User deleted successfully");
+            window.location.href = url;
+        }
+    });
+}
+
 
 
 
@@ -82,10 +99,9 @@ function edit_company_user(url)
         'smooch_id'      :  $('#smooch_id').val(),
         'contact'        :  $('#contact').val(),
         'address'        :  $('#address').val(),
+        'user_id'        :  $('#user_id').val(),
 
     };
-
-
 
     addLoading();
     $.ajax({
@@ -100,6 +116,10 @@ function edit_company_user(url)
             window.location.href = url;
         }
     });
+
+
+
+
 }
 
 

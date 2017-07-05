@@ -39,10 +39,27 @@ $('#min_order').bind('input', function() {
 });
 
 
+$('#email').bind('input', function() {
+
+    if(!this.value.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/))
+    {
+        document.getElementById('error_email').innerHTML = "Wrong Email!";
+        return;
+
+    }
+    else
+    {
+        document.getElementById('error_email').innerHTML = "";
+    }
+
+});
 
 
+$('#password').bind('input', function() {
 
+    document.getElementById('error_password').innerHTML = "";
 
+});
 
 
 
@@ -53,6 +70,8 @@ function add_company()
     var name                    =  $('#name').val();
     var amount                  =  $('#amount').val();
     var discount_type           =  $('#discount_type').val();
+    var email                    =  $('#email').val();
+    var password                    =  $('#password').val();
 
     var sunday_start_time       =  $('#sunday_start_time').val();
     var sunday_end_time         =  $('#sunday_end_time').val();
@@ -111,6 +130,20 @@ function add_company()
     if(min_order == "")
     {
         $('#error_min_order').html('Amount Required*');
+        return;
+    }
+
+
+    if(email == "")
+    {
+        $('#error_email').html('Email Required*');
+        return;
+    }
+
+
+    if(password == "")
+    {
+        $('#error_password').html('Password Required*');
         return;
     }
 
@@ -212,10 +245,12 @@ function add_company()
 
     var postForm = { //Fetch form data
         'address'                 :  $('#address').val(),
-        'min_order'                 :  $('#min_order').val(),
+        'min_order'               :  $('#min_order').val(),
         'name'                    :  $('#name').val(),
         'amount'                  :  $('#amount').val(),
         'discount_type'           :  $('#discount_type').val(),
+        'email'                   :  $('#email').val(),
+        'password'                :  $('#password').val(),
 
         'sunday_start_time'       :  $('#sunday_start_time').val(),
         'sunday_end_time'         :  $('#sunday_end_time').val(),

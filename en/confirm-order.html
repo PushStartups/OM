@@ -365,9 +365,8 @@
                                                                 </div>
                                                                 <span class="error-span" id="error-area">error in field</span>
                                                             </div>
-
-                                                        <button type="button" onclick="deliveryAddress()" class="btn-add-submit">Save</button>
                                                     </div>
+                                                        <button type="button" onclick="deliveryAddress()" class="btn-add-submit">Save</button>
                                                     </div>
                                                 </div>
                                             </li>
@@ -916,6 +915,7 @@
 <!--STRIPE PAYMENT -->
 <script>
 
+
     $(document).ready(function() {
 
         $("#payment-form").submit(function(e){
@@ -929,6 +929,7 @@
             e.preventDefault(e);
             return false;
         });
+
 
         $("#address").geocomplete({
                 details:"form#property",

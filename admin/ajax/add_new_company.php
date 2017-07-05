@@ -11,6 +11,8 @@ DB::insert('company', array(
     "min_order"         =>  $_POST['min_order'],
     "discount"          =>  $_POST['amount'],
     "discount_type"     =>  $_POST['discount_type'],
+    "email"             =>  $_POST['email'],
+    "password"          =>  $_POST['password'],
     "voting"            =>  0
 ));
 

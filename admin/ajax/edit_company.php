@@ -193,6 +193,8 @@ DB::update('company', array(
     "discount"          =>  $_POST['amount'],
     "min_order"          =>  $_POST['min_order'],
     "discount_type"     =>  $_POST['discount_type'],
+    "email"             =>  $_POST['email'],
+    "password"          =>  $_POST['password'],
 
 ),  "id=%d",    $company_id   );
 

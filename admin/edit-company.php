@@ -142,11 +142,24 @@ include "header.php";
                                                     <option value="monthly" selected>monthly</option>
                                                 <?php } ?>
                                             </select>
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;"></span>
                                         </div>
                                         <div class="form-group">
                                             <label>Discount Amount </label>
                                             <input class="form-control" id="amount" name="amount" value="<?=$edit_company['discount'];?>" placeholder="Enter Discount Amount" type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_amount"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" id="email" name="email" placeholder="Enter Email" type="text" value="<?=$edit_company['email']?>">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_email"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input class="form-control" id="password" name="password" placeholder="Enter Password" type="text" value="<?=$edit_company['password']?>">
+                                            <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_password"></span>
                                         </div>
 
                                         <br>

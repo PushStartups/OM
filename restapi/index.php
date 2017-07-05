@@ -23,7 +23,7 @@ DB::query("set names utf8");
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
 {
-    define("EMAIL","orderapp.orders@gmail.com");
+    define("EMAIL","muhammad.iftikhar.aftab@gmail.com");
     define("B2BEMAIL","devb2b.orderapp.com");
 }
 
@@ -1532,6 +1532,7 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         $orderId = DB::insertId();
 
+
         try {
 
 
@@ -1563,13 +1564,11 @@ $app->post('/add_order', function ($request, $response, $args) {
 
 
 
-
         $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
         $chat_id = "-165732759";
 
-        telegramAPI($bot_id, $chat_id, createOrderForTelegram($user_order));
+        telegramAPI($bot_id, $chat_id,  createOrderForTelegram($user_order));
 
-        ob_end_clean();
 
 
 
@@ -1611,18 +1610,6 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         email_order_summary_hebrew_admin($user_order, $orderId, $todayDate);
 
-
-        ob_end_clean();
-
-
-
-        $delivery_time  = date('H:i:s');
-
-        $delivery_time = strtotime($delivery_time) + 60*60;
-
-        $delivery_time = date('H:i:s',$delivery_time);
-
-        createBringgTask($user_order, $todayDate, $delivery_time) ;
 
         ob_end_clean();
 
@@ -3366,8 +3353,20 @@ function email_for_mark2($user_order,$orderId,$todayDate)
     }
 
 
-    $mailbody .= '\n';
-    $mailbody .= 'Total Without Discount : '.$user_order['totalWithoutDiscount'];
+    if(!($user_order['discount'] == 0 || $user_order['discount'] == '0' )) {
+
+        $mailbody .= '\n';
+        $mailbody .= 'Total Without Discount : ' . $user_order['totalWithoutDiscount'];
+
+    }
+    else{
+
+        $mailbody .= '\n';
+        $mailbody .= 'Sub Total : ' . $user_order['subTotal'];
+
+    }
+
+
     $mailbody .= '\n';
     $mailbody .= 'Total : '.$user_order['total'];
 
@@ -3632,6 +3631,9 @@ function telegramAPI($bot_id, $chat_id, $text) {
 
 
 }
+
+
+
 function getCurrentTime(){
 
     //CURRENT TIME OF ISRAEL

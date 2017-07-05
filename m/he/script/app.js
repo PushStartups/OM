@@ -223,7 +223,7 @@ function orderNow(){
 
     var total = parseInt(userObject.total);
 
-    if(total < minOrderLimit)
+    if(total < minOrderLimit && (!ignoreMinOrderLimit))
     {
         $('#email-popup').modal('show');
     }

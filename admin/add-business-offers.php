@@ -168,12 +168,12 @@ $categories  =  getAllCategories($menu_id);
 
                                             ?>
                                             <tr>
-                                                <td><?=$items['name_en']?></td>
                                                 <td><?=$category['name_en']?></td>
+                                                <td><?=$items['name_en']?></td>
                                                 <td><?=$busines['week_day']?></td>
                                                 <td><?=$busines['week_cycle']?></td>
                                                 <td><a href="edit-business-offer.php?id=<?=$busines['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
-                                                <td><a onclick="delete_('<?=$busines['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+                                                <td><a onclick="delete_business_offer('<?=$busines['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
 
 
                                             </tr>

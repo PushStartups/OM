@@ -13,6 +13,8 @@ var minOrderLimit               = null;                                         
 var selectedRest                = null;
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
+var ignoreMinOrderLimit         = true;
+var cash_pickup_exception       = true;
 
 var paymentReceived = false;
 
@@ -749,6 +751,8 @@ function addUserOrder()
         "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemIndex].price,
         "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
         "itemNameHe"         : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
+        "cash_pickup_exception"   : result.categories_items[currentCategoryId].items[currentItemIndex].cash_pickup_exception,
+        "min_order_exception"   : result.categories_items[currentCategoryId].items[currentItemIndex].min_order_exception,
         "qty"                : 1 ,
         "subItemsOneType"    : oneTypeSubItems,
         "multiItemsOneType"  : multipleTypeSubItems,
@@ -792,6 +796,8 @@ function generateTotalUpdateFoodCart()
             "detail_he" : "" ,
             "orderIndex" : x ,
             "qty" : order.qty,
+            "cash_pickup_exception" : order.cash_pickup_exception,
+            "min_order_exception" : order.min_order_exception,
             "specialRequest" : order.specialRequest,
             "subItemOneIndex" : null,
             "subItemMultipleIndex" : null};
@@ -1013,6 +1019,18 @@ function updateCartElements()
                 '</div>'+
                 '</div>';
 
+
+            if(foodCartData[x].min_order_exception == 0)
+            {
+                ignoreMinOrderLimit = false;
+            }
+
+
+            if(foodCartData[x].cash_pickup_exception == 0)
+            {
+                cash_pickup_exception = false;
+            }
+
         }
 
         $('#totalWithoutDiscount').html(userObject.total + " NIS");
@@ -1193,6 +1211,9 @@ function OnOrderNowClicked() {
 
 
     $('#food-cart-popup').modal('hide');
+
+    userObject.subTotal = userObject.total;
+
     orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
 }
 
@@ -1409,7 +1430,7 @@ function submit_summary() {
         $('#coupon').removeClass('error');
 
 
-        if(userObject.pickFromRestaurant)
+        if(userObject.pickFromRestaurant && (!cash_pickup_exception))
         {
             $('#cashBtn').hide();
         }
@@ -1548,7 +1569,7 @@ function processPayment() {
     $('.payment-errors').html("");
     $('.payment-errors').hide();
 
-    if (!($('#show_credit_card').hasClass('show')) && !userObject.pickFromRestaurant) {
+    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception)) {
 
         userObject.Cash_Card = "CASH";
         userObject.Cash_Card_he = "מזומן";

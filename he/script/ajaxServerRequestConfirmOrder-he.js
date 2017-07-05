@@ -13,6 +13,8 @@ var paymentInfoFlag             = false;
 var couponApplied               = false;
 var paymentReceived             = false;
 
+var cash_pickup_exception       = true;
+
 
 //SERVER HOST DETAIL
 
@@ -200,6 +202,14 @@ function updateCartElements()
             '</div>'+
             '</div>';
 
+
+
+        if(foodCartData[x].cash_pickup_exception == 0)
+        {
+            cash_pickup_exception = false;
+        }
+
+
     }
 
 
@@ -375,8 +385,14 @@ function deliveryAddress()
         $('#customerInfoParent').removeClass("active");
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
-        $('#cash_parent').hide();
-        $('#cash_message').show();
+
+
+        if(!cash_pickup_exception) {
+
+            $('#cash_parent').hide();
+            $('#cash_message').show();
+
+        }
 
         addressInfoFlag = true;
 
@@ -686,7 +702,7 @@ function checkCouponCallBack(response)
 
 function processPayments()
 {
-    if ($('#checkbox-id-13').is(':checked') && !userObject.pickFromRestaurant) {
+    if ($('#checkbox-id-13').is(':checked') && ( (!userObject.pickFromRestaurant) || cash_pickup_exception) ) {
 
         userObject.Cash_Card = "CASH";
         userObject.Cash_Card_he = "מזומן";

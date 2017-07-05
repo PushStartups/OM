@@ -12,6 +12,7 @@ var oneTypeSubItems             = null;                                         
 var multipleTypeSubItems        = null;                                           // SUB-ITEMS TYPE MULTIPLE
 var extras                      = null;                                           // EXTRAS FROM SERVER
 var minOrderLimit               = null;                                           // MINIMUM ORDER LIMIT
+var ignoreMinOrderLimit         = true;
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
 
@@ -769,6 +770,8 @@ function addUserOrder()
         "itemPrice"          : result.categories_items[currentCategoryId].items[currentItemIndex].price,
         "itemName"           : result.categories_items[currentCategoryId].items[currentItemIndex].name_en,
         "itemNameHe"         : result.categories_items[currentCategoryId].items[currentItemIndex].name_he,
+        "cash_pickup_exception"   : result.categories_items[currentCategoryId].items[currentItemIndex].cash_pickup_exception,
+        "min_order_exception"   : result.categories_items[currentCategoryId].items[currentItemIndex].min_order_exception,
         "qty"                : 1 ,
         "subItemsOneType"    : oneTypeSubItems,
         "multiItemsOneType"  : multipleTypeSubItems,
@@ -812,6 +815,8 @@ function generateTotalUpdateFoodCart()
             "detail_he" : "" ,
             "orderIndex" : x ,
             "qty" : order.qty,
+            "cash_pickup_exception" : order.cash_pickup_exception,
+            "min_order_exception" : order.min_order_exception,
             "specialRequest" : order.specialRequest ,
             "subItemOneIndex" : null,
             "subItemMultipleIndex" : null};
@@ -1039,6 +1044,12 @@ function updateCartElements()
 
                 '</div>' +
                 '</div>';
+
+
+            if(foodCartData[x].min_order_exception == 0)
+            {
+                ignoreMinOrderLimit = false;
+            }
 
         }
 

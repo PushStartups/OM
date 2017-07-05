@@ -8,6 +8,15 @@ if(isset($_GET['id']))
     $cat_id = $business_id['category_id'];
     $categories  =  getSpecificCategories($cat_id);
 
+foreach($categories as $category){
+
+    $category_data_id = $category['id'];
+    $category_data_name = $category['name_en'];
+
+}
+
+
+    $itemss  =  DB::query("select * from items where category_id = '$category_data_id' ");
 }
 else
 {
@@ -52,32 +61,33 @@ else
                                     <form id="my-form"  method="post" enctype="multipart/form-data">
                                         <fieldset>
 
-                                            <input type="text" value="<?=$business_id['category_id']?>"
-
                                             <div class="form-group">
-                                                <label> Select Category </label>
-                                                <select id="business_category" name="business_category" class="form-control" onchange="category_change(this.value)">
-                                                    <option value="" disabled selected>Select Category</option>
-                                                    <?php foreach($categories as $category)
+                                               <h2>You are editing <?=$category_data_name;?> category</h2>
+                                            </div>
+
+                                            <div  id="item-div" class="form-group">
+                                                <label> Select Item </label>
+                                                <select id="business_item" name="business_item" class="form-control">
+                                                    <option value="" disabled selected>Select Item</option>
+                                                    <?php foreach($itemss as $items)
                                                     { ?>
-                                                        <option value="<?=$category['id']?>"><?=$category['name_en']?></option>
+                                                        <option value="<?=$items['id']?>"><?=$items['name_en']?></option>
 
                                                     <?php }
                                                     ?>
 
 
                                                 </select>
-                                                <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
                                             </div>
 
-                                            <div style="display:none" id="item-div" class="form-group">
 
-                                            </div>
 
-                                            <div id="week-day-div" style="display:none" class="form-group">
+                                            <div id="week-day-div"  class="form-group">
                                                 <label>Select Day</label>
+
                                                 <select id="day" name="day" class="form-control">
-                                                    <option value="Sunday" selected>Sunday</option>
+                                                    <option value="<?=$business_id['week_day']?>" selected><?=$business_id['week_day']?></option>
+                                                    <option value="Sunday">Sunday</option>
                                                     <option value="Monday">Monday</option>
                                                     <option value="Tuesday">Tuesday</option>
                                                     <option value="Wednesday">Wednesday</option>
@@ -85,10 +95,11 @@ else
                                                 </select>
                                             </div>
 
-                                            <div id="week-cycle-div" style="display:none" class="form-group">
+                                            <div id="week-cycle-div" class="form-group">
                                                 <label>Week Cycle</label>
                                                 <select id="week_cycle" name="week_cycle" class="form-control">
-                                                    <option value="1" selected>1</option>
+                                                    <option value="<?=$business_id['week_cycle']?>" selected><?=$business_id['week_cycle']?></option>
+                                                    <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
                                                     <option value="4">4</option>
@@ -101,8 +112,8 @@ else
                                             <br>
 
                                         </fieldset>
-                                        <div style="display:none" id="business-offer-div" class="form-actions">
-                                            <div onclick="add_business_offer('<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
+                                        <div id="business-offer-div" class="form-actions">
+                                            <div onclick="edit_business_offer('<?=$busines_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
                                                 <i class="fa fa-save"></i>
                                                 Submit
                                             </div>

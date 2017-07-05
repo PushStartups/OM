@@ -5,7 +5,7 @@ DB::query("set names utf8");
 
 
 
-$id            =  $_POST['id'];
+$users_id            =  $_POST['user_id'];
 
 
 DB::useDB('orderapp_b2b');
@@ -16,7 +16,7 @@ DB::update('b2b_users', array(
     "contact"                  =>  $_POST['contact'],
     "address"                  =>  $_POST['address']
 
-),  "id=%d",     $id  );
+),  "id=%d",     $users_id  );
 
 
 echo json_encode("success");

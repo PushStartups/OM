@@ -102,7 +102,8 @@ function onReadyJobs() {
         'deliveryArea': null,              // DELIVERY AREA
         'deliveryCharges':null,            // DELIVERY CHARGES
         'specialRequest':"",               // SPECIAL REQUEST FROM USER
-        'trans_id':""                      // SPECIAL REQUEST FROM USER
+        'trans_id':"",                     // SPECIAL REQUEST FROM USER
+        "subTotal":0
 
     };
 

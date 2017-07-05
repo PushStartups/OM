@@ -3,12 +3,12 @@ require "inc/initDb.php";
 require '../restapi/PHPMailer/PHPMailerAutoload.php';
 if(isset($_POST["Import"])){
 
-
+    DB::useDB('orderapp_b2b');
     $last_id = DB::queryFirstRow("SELECT max(id) FROM b2b_users");
     $last_user_id = $last_id['id'];
     $company_id = $_POST['company_id'];
 
-
+    DB::useDB('orderapp_b2b');
     $company = DB::queryFirstRow("SELECT * FROM company where id = '$company_id'");
     $discount = $company['discount'];
 
@@ -27,6 +27,7 @@ if(isset($_POST["Import"])){
             {
                 $last_user_id++;
                 $password = $getData[1].rand(100,9999);
+                DB::useDB('orderapp_b2b');
                 DB::insert('b2b_users', array(
                     "smooch_id"         => $getData[0],
                     "name"              => $getData[1],
