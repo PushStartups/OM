@@ -89,14 +89,14 @@ else
                                             
 
                                             <div class="form-group">
-                                                <label>Pickup</label>
+                                                <label>Pickup From Restaurant</label>
                                                 <select id="pickup_hide" name="pickup_hide" class="form-control">
                                                     <?php if($restaurant['pickup_hide'] == 0){  ?>
-                                                        <option value="0" selected>No</option>
-                                                        <option value="1">Yes</option>
+                                                        <option value="0" selected>Yes</option>
+                                                        <option value="1">No</option>
                                                     <?php } else { ?>
-                                                        <option value="1" selected>Yes</option>
-                                                        <option value="0">No</option>
+                                                        <option value="1" selected>No</option>
+                                                        <option value="0">Yes</option>
 
                                                     <?php } ?>
                                                 </select>

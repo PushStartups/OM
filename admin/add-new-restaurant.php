@@ -73,10 +73,10 @@ include "header.php";
                                             
 
                                             <div class="form-group">
-                                                <label>Pickup</label>
+                                                <label>Pickup From Restaurant</label>
                                                 <select id="pickup_hide" name="pickup_hide" class="form-control">
-                                                    <option value="1" selected>Yes</option>
-                                                    <option value="0">No</option>
+                                                    <option value="1" selected>No</option>
+                                                    <option value="0">Yes</option>
                                                 </select>
                                                 <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
                                             </div>
