@@ -1069,6 +1069,7 @@ function generateTotalUpdateFoodCart()
 function updateCartElements()
 {
     var countItems = 0;
+    ignoreMinOrderLimit = true;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
     if(foodCartData.length != 0)
@@ -1139,7 +1140,6 @@ function updateCartElements()
             {
                 ignoreMinOrderLimit = false;
             }
-
 
         }
 
@@ -1216,6 +1216,9 @@ function onQtyIncreaseButtonClicked(index) {
     var leftBtnId = "#left-btn"+index;
 
     $(leftBtnId).attr("src","/en/img/ic_reduce.png");
+
+
+    updateCartElements();
 
 }
 
@@ -1307,6 +1310,8 @@ function onQtyDecreasedButtonClicked(index) {
 
     $('#totalAmount').html('Total '+userObject.total + " NIS ");
     hideShowMinAmount(userObject.total);
+
+    updateCartElements();
 }
 
 

@@ -946,6 +946,8 @@ function updateCartElements()
 {
     var countItems = 0;
     var newTotal = userObject.total;
+    ignoreMinOrderLimit = true;
+    cash_pickup_exception = true;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
     if(foodCartData.length != 0)
@@ -1030,6 +1032,7 @@ function updateCartElements()
             {
                 cash_pickup_exception = false;
             }
+
 
         }
 

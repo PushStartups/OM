@@ -971,6 +971,7 @@ function generateTotalUpdateFoodCart()
 function updateCartElements()
 {
     var countItems = 0;
+    ignoreMinOrderLimit = true;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
     if(foodCartData.length != 0)
