@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="update eluna and app.orderapp on RDS">
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -924,14 +922,7 @@
       <workItem from="1499332458467" duration="505000" />
       <workItem from="1499334926988" duration="290000" />
       <workItem from="1499339905287" duration="1274000" />
-      <workItem from="1499341605597" duration="2006000" />
-    </task>
-    <task id="LOCAL-00124" summary="DB update + code latest">
-      <created>1495096695068</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1495096695068</updated>
+      <workItem from="1499341605597" duration="2318000" />
     </task>
     <task id="LOCAL-00125" summary="DB update + code latest">
       <created>1495096971707</created>
@@ -1269,11 +1260,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499335103091</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="update fix of Traccer">
+      <created>1499344279022</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1499344279022</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1097875000" />
+    <option name="totallyTimeSpent" value="1098187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1301,7 +1299,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30917874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1136" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15946667" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1335,7 +1333,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Special Request updates to Telegram" />
     <MESSAGE value="small changes 3rd party integration" />
     <MESSAGE value="DB updated for pinati issue" />
     <MESSAGE value="Website 2.0 DB update + Desktop Design changes" />
@@ -1360,7 +1357,8 @@
     <MESSAGE value="code update (New 5th July)" />
     <MESSAGE value="code update (New 6th July)" />
     <MESSAGE value="update eluna and app.orderapp on RDS" />
-    <option name="LAST_COMMIT_MESSAGE" value="update eluna and app.orderapp on RDS" />
+    <MESSAGE value="update fix of Traccer" />
+    <option name="LAST_COMMIT_MESSAGE" value="update fix of Traccer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
