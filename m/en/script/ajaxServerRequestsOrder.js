@@ -1401,8 +1401,8 @@ function deliveryAddress() {
 
         userObject.pickFromRestaurant = false;
 
-        userObject.deliveryAddress  = $("#address").val();
-        userObject.deliveryAptNo    = $("#appt_no").val();
+        userObject.deliveryAddress  = $("#appt_no").val();
+        userObject.deliveryAptNo    = $("#address").val();
 
     }
 
