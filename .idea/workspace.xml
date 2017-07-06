@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1214,14 +1213,7 @@
       <workItem from="1499318364144" duration="100000" />
       <workItem from="1499323274906" duration="1556000" />
       <workItem from="1499332458467" duration="505000" />
-      <workItem from="1499334926988" duration="149000" />
-    </task>
-    <task id="LOCAL-00122" summary="DB update + code latest">
-      <created>1495096241412</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1495096241413</updated>
+      <workItem from="1499334926988" duration="157000" />
     </task>
     <task id="LOCAL-00123" summary="DB update + code latest">
       <created>1495096336940</created>
@@ -1559,11 +1551,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499332569771</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="update eluna and app.orderapp on RDS">
+      <created>1499335081202</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1499335081202</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1094454000" />
+    <option name="totallyTimeSpent" value="1094462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
