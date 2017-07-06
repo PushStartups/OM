@@ -2594,8 +2594,11 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
    
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-        $mail->Subject = "(ELUNA) "+$user_order['restaurantTitle'].' Order# '.$orderId;
+
+        $mail->Subject = "(ELUNA) ".$user_order['restaurantTitle'].' Order# '.$orderId;
+
     else
+
         $mail->Subject = $user_order['restaurantTitle'].' Order# '.$orderId;
 
     $mail->Body = $mailbody;
@@ -2795,7 +2798,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
 
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-        $mail->Subject = "(ELUNA) "+'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) ".'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
     else
         $mail->Subject = 'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
 
@@ -2991,7 +2994,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-      $mail->Subject = "(ELUNA) "+$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+      $mail->Subject = "(ELUNA) ".$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
     else
       $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
 
@@ -3154,7 +3157,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "." הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     else
         $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
 
@@ -3280,7 +3283,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "." הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     else
         $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
 
