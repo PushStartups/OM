@@ -208,6 +208,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db_dump" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -922,14 +936,7 @@
       <workItem from="1499334926988" duration="290000" />
       <workItem from="1499339905287" duration="1274000" />
       <workItem from="1499341605597" duration="2327000" />
-      <workItem from="1499581076509" duration="1709000" />
-    </task>
-    <task id="LOCAL-00126" summary="DB update + code latest">
-      <created>1495100782103</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1495100782104</updated>
+      <workItem from="1499581076509" duration="1950000" />
     </task>
     <task id="LOCAL-00127" summary="DB update + code latest">
       <created>1495104935341</created>
@@ -1267,11 +1274,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499348480572</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="updated db dump">
+      <created>1499587037120</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1499587037121</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1099905000" />
+    <option name="totallyTimeSpent" value="1100146000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1333,7 +1347,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="small changes 3rd party integration" />
     <MESSAGE value="DB updated for pinati issue" />
     <MESSAGE value="Website 2.0 DB update + Desktop Design changes" />
     <MESSAGE value="Website 2.0 changes with db" />
@@ -1358,7 +1371,8 @@
     <MESSAGE value="code update (New 6th July)" />
     <MESSAGE value="update eluna and app.orderapp on RDS" />
     <MESSAGE value="update fix of Traccer" />
-    <option name="LAST_COMMIT_MESSAGE" value="update fix of Traccer" />
+    <MESSAGE value="updated db dump" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated db dump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
