@@ -13,7 +13,7 @@ var minOrderLimit               = null;                                         
 var selectedRest                = null;
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
-var ignoreMinOrderLimit         = true;
+var ignoreMinOrderLimit         = false;
 var cash_pickup_exception       = true;
 
 var paymentReceived = false;
@@ -946,7 +946,7 @@ function updateCartElements()
 {
     var countItems = 0;
     var newTotal = userObject.total;
-    ignoreMinOrderLimit = true;
+    ignoreMinOrderLimit = false;
     cash_pickup_exception = true;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
@@ -1022,9 +1022,9 @@ function updateCartElements()
                 '</div>';
 
 
-            if(foodCartData[x].min_order_exception == 0)
+            if(foodCartData[x].min_order_exception == 1)
             {
-                ignoreMinOrderLimit = false;
+                ignoreMinOrderLimit = true;
             }
 
 
@@ -1035,6 +1035,14 @@ function updateCartElements()
 
 
         }
+
+
+        if(cash_pickup_exception)
+        {
+            $('#delivery-parent').hide();
+        }
+
+
 
         $('#totalWithoutDiscount').html(userObject.total + " NIS");
         $('#food-cart-data').html(str);
@@ -1208,6 +1216,7 @@ function OnOrderNowClicked() {
 
 
     generateTotalUpdateFoodCart();
+    updateCartElements();
 
     $('.totalBill').html(userObject.total + " NIS");
     $('#restAddress').html(userObject.restaurantAddress);

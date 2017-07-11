@@ -267,6 +267,12 @@ function updateCartElements()
     $('#totalAmount').html(' סה"כ '+newTotal + ' ש"ח');
     $('#totalAmount2').html(' סה"כ '+newTotal + ' ש"ח');
 
+    if(cash_pickup_exception)
+    {
+        $('#delivery-parent').hide();
+    }
+
+
 }
 
 

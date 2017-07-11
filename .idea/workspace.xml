@@ -3,10 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/confirm-order.html" afterPath="$PROJECT_DIR$/en/confirm-order.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/confirm-order.html" afterPath="$PROJECT_DIR$/he/confirm-order.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/order.html" afterPath="$PROJECT_DIR$/m/en/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/order.html" afterPath="$PROJECT_DIR$/m/he/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,60 +31,7 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ajaxServerRequestConfirmOrder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxServerRequestsOrder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="910">
-              <caret line="1315" column="0" lean-forward="true" selection-start-line="1315" selection-start-column="0" selection-end-line="1315" selection-end-column="0" />
-              <folding>
-                <marker date="1499768434000" expanded="true" signature="15645:15660" ph="..." />
-                <marker date="1499768434000" expanded="true" signature="15706:15784" ph="..." />
-                <marker date="1499768434000" expanded="true" signature="15886:15900" ph="..." />
-                <marker date="1499768434000" expanded="true" signature="17787:17824" ph="..." />
-                <marker date="1499768434000" expanded="true" signature="17934:18001" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxServerRequestConfirmOrder-he.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="210" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1033" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajaxServerRequestsOrder-he.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="1051" column="35" lean-forward="false" selection-start-line="1051" selection-start-column="16" selection-end-line="1051" selection-end-column="35" />
-              <folding>
-                <marker date="1499769680000" expanded="true" signature="12212:12227" ph="..." />
-                <marker date="1499769680000" expanded="true" signature="12273:12350" ph="..." />
-                <marker date="1499769680000" expanded="true" signature="12452:12466" ph="..." />
-                <marker date="1499769680000" expanded="true" signature="14336:14374" ph="..." />
-                <marker date="1499769680000" expanded="true" signature="14484:14552" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,21 +43,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>process</find>
-      <find>pickFromRestaurant</find>
-      <find>place o</find>
-      <find>host</find>
-      <find>form</find>
-      <find>auto</find>
-      <find>location</find>
-      <find>geocome</find>
-      <find>property</find>
-      <find>lat</find>
-      <find>#lat</find>
-      <find>deliveryad</find>
-      <find>min_order_exception</find>
       <find>updateCartElements</find>
-      <find>update</find>
       <find>updatecar</find>
       <find>eluna</find>
       <find>deliveryAddress</find>
@@ -119,8 +57,22 @@
       <find>rest_lat</find>
       <find>get_a</find>
       <find>minOrderLimit</find>
-      <find>ignoreMinOrderLimit</find>
+      <find>update</find>
       <find>cash_pickup_exception</find>
+      <find>e</find>
+      <find>minAmount</find>
+      <find>minAmoun</find>
+      <find>minou</find>
+      <find>23</find>
+      <find>checkb</find>
+      <find>onordernow</find>
+      <find>ignoreMinOrderLimit</find>
+      <find>onorder</find>
+      <find>onorde</find>
+      <find>cash_pick</find>
+      <find>id213</find>
+      <find>cash_pickup_exception</find>
+      <find>delivery-parent</find>
     </findStrings>
     <replaceStrings>
       <replace>app.orderapp.com</replace>
@@ -172,26 +124,26 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/cc.php" />
         <option value="$PROJECT_DIR$/rds.php" />
-        <option value="$PROJECT_DIR$/he/confirm-order.html" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsRestaurants-he.js" />
         <option value="$PROJECT_DIR$/en/.htaccess" />
-        <option value="$PROJECT_DIR$/en/confirm-order.html" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js" />
         <option value="$PROJECT_DIR$/tele.php" />
         <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsRestaurants.js" />
         <option value="$PROJECT_DIR$/m/en/script/app.js" />
-        <option value="$PROJECT_DIR$/m/en/order.html" />
-        <option value="$PROJECT_DIR$/m/he/order.html" />
         <option value="$PROJECT_DIR$/restapi/inc/initDb.php" />
         <option value="$PROJECT_DIR$/admin/inc/initDb.php" />
         <option value="$PROJECT_DIR$/restapi/index.php" />
-        <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
-        <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
         <option value="$PROJECT_DIR$/en/index.html" />
-        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
         <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
-        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
+        <option value="$PROJECT_DIR$/en/confirm-order.html" />
+        <option value="$PROJECT_DIR$/he/confirm-order.html" />
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
+        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
+        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
+        <option value="$PROJECT_DIR$/m/en/order.html" />
+        <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
+        <option value="$PROJECT_DIR$/m/he/order.html" />
+        <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
       </list>
     </option>
   </component>
@@ -263,52 +215,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="restapi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="he" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="he" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1026,14 +932,7 @@
       <workItem from="1499341605597" duration="2327000" />
       <workItem from="1499581076509" duration="2274000" />
       <workItem from="1499596300764" duration="3633000" />
-      <workItem from="1499768106325" duration="761000" />
-    </task>
-    <task id="LOCAL-00128" summary="DB update + code latest">
-      <created>1495108956769</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1495108956769</updated>
+      <workItem from="1499768106325" duration="5891000" />
     </task>
     <task id="LOCAL-00129" summary="DB update + code latest">
       <created>1495353897133</created>
@@ -1371,11 +1270,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499587300641</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="updated db dump">
+      <created>1499769741325</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1499769741326</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1104864000" />
+    <option name="totallyTimeSpent" value="1109994000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1475,8 +1381,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/ajaxServerRequestsOrder.js" />
-    <entry file="file://$USER_HOME$/Downloads/style-en.css" />
     <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1584,13 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/he/confirm-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="982" column="0" lean-forward="false" selection-start-line="982" selection-start-column="0" selection-end-line="982" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1634,20 +1531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/script/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="234" column="0" lean-forward="true" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/he/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="973" column="25" lean-forward="false" selection-start-line="973" selection-start-column="22" selection-end-line="973" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
@@ -1666,34 +1549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1333">
-          <caret line="1376" column="1" lean-forward="true" selection-start-line="1376" selection-start-column="1" selection-end-line="1376" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="1403" column="5" lean-forward="true" selection-start-line="1403" selection-start-column="5" selection-end-line="1404" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="1155" column="19" lean-forward="false" selection-start-line="1155" selection-start-column="12" selection-end-line="1155" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/confirm-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="326" column="128" lean-forward="false" selection-start-line="326" selection-start-column="125" selection-end-line="326" selection-end-column="128" />
         </state>
       </provider>
     </entry>
@@ -2006,18 +1861,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
+    <entry file="file://$PROJECT_DIR$/he/confirm-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="390" column="68" lean-forward="true" selection-start-line="390" selection-start-column="68" selection-end-line="390" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="157" column="25" lean-forward="false" selection-start-line="157" selection-start-column="4" selection-end-line="157" selection-end-column="25" />
+          <caret line="271" column="27" lean-forward="false" selection-start-line="271" selection-start-column="12" selection-end-line="271" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="254" column="54" lean-forward="false" selection-start-line="254" selection-start-column="54" selection-end-line="254" selection-end-column="54" />
+          <folding>
+            <marker date="1499773389000" expanded="true" signature="12235:12250" ph="..." />
+            <marker date="1499773389000" expanded="true" signature="12296:12373" ph="..." />
+            <marker date="1499773389000" expanded="true" signature="12475:12489" ph="..." />
+            <marker date="1499773389000" expanded="true" signature="14359:14397" ph="..." />
+            <marker date="1499773389000" expanded="true" signature="14507:14575" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="225" column="19" lean-forward="false" selection-start-line="225" selection-start-column="19" selection-end-line="225" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1443">
+          <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="1315" column="0" lean-forward="true" selection-start-line="1315" selection-start-column="0" selection-end-line="1315" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="341" column="32" lean-forward="false" selection-start-line="341" selection-start-column="32" selection-end-line="341" selection-end-column="54" />
           <folding>
             <marker date="1499768434000" expanded="true" signature="15645:15660" ph="..." />
             <marker date="1499768434000" expanded="true" signature="15706:15784" ph="..." />
@@ -2028,24 +1921,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
+    <entry file="file://$PROJECT_DIR$/en/confirm-order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="1051" column="35" lean-forward="false" selection-start-line="1051" selection-start-column="16" selection-end-line="1051" selection-end-column="35" />
+        <state relative-caret-position="4890">
+          <caret line="326" column="119" lean-forward="false" selection-start-line="326" selection-start-column="117" selection-end-line="326" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4050">
+          <caret line="270" column="11" lean-forward="true" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/he/script/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="225" column="53" lean-forward="false" selection-start-line="225" selection-start-column="34" selection-end-line="225" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="1013" column="31" lean-forward="false" selection-start-line="1013" selection-start-column="16" selection-end-line="1013" selection-end-column="31" />
           <folding>
-            <marker date="1499769680000" expanded="true" signature="12212:12227" ph="..." />
-            <marker date="1499769680000" expanded="true" signature="12273:12350" ph="..." />
-            <marker date="1499769680000" expanded="true" signature="12452:12466" ph="..." />
-            <marker date="1499769680000" expanded="true" signature="14336:14374" ph="..." />
-            <marker date="1499769680000" expanded="true" signature="14484:14552" ph="..." />
+            <marker date="1499776391000" expanded="true" signature="11752:11821" ph="..." />
+            <marker date="1499776391000" expanded="true" signature="12251:12328" ph="..." />
+            <marker date="1499776391000" expanded="true" signature="14268:14337" ph="..." />
+            <marker date="1499776391000" expanded="true" signature="14603:14671" ph="..." />
+            <marker date="1499776391000" expanded="true" signature="33329:33349" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js">
+    <entry file="file://$PROJECT_DIR$/m/he/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="210" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1033" selection-end-column="1" />
+        <state relative-caret-position="316">
+          <caret line="565" column="56" lean-forward="false" selection-start-line="565" selection-start-column="56" selection-end-line="565" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="1043" column="0" lean-forward="true" selection-start-line="1039" selection-start-column="5" selection-end-line="1043" selection-end-column="0" />
+          <folding>
+            <marker date="1499775116000" expanded="true" signature="12373:12442" ph="..." />
+            <marker date="1499775116000" expanded="true" signature="12884:12962" ph="..." />
+            <marker date="1499775116000" expanded="true" signature="14904:14973" ph="..." />
+            <marker date="1499775116000" expanded="true" signature="15239:15306" ph="..." />
+            <marker date="1499775116000" expanded="true" signature="33849:33868" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="749" column="51" lean-forward="false" selection-start-line="749" selection-start-column="36" selection-end-line="749" selection-end-column="51" />
           <folding />
         </state>
       </provider>

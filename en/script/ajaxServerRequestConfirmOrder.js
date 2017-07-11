@@ -265,6 +265,12 @@ function updateCartElements()
     $('#totalAmount').html('Total '+newTotal + " NIS");
     $('#totalAmount2').html('Total '+newTotal + " NIS");
 
+
+    if(cash_pickup_exception)
+    {
+        $('#delivery-parent').hide();
+    }
+
 }
 
 

@@ -252,7 +252,7 @@ function  getCategoriesWithItems(response)
 
 function hideShowMinAmount( total )
 {
-    if ( total >= minOrderLimit )
+    if ( total >= minOrderLimit || ignoreMinOrderLimit )
     {
         $('#minAmount').hide();
     }
@@ -1228,7 +1228,7 @@ function OnOrderNowClicked() {
 
     generateTotalUpdateFoodCart();
 
-    if(convertFloat(userObject.total) < convertFloat(minOrderLimit) )
+    if(convertFloat(userObject.total)< convertFloat(minOrderLimit) && (!ignoreMinOrderLimit) )
     {
         $("#minAmount").css("color","red");
     }
