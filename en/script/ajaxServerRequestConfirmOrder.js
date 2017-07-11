@@ -13,7 +13,7 @@ var paymentInfoFlag             = false;
 var couponApplied               = false;
 var paymentReceived             = false;
 
-var cash_pickup_exception       = true;
+var cash_pickup_exception       = false;
 
 
 //SERVER HOST DETAIL
@@ -155,7 +155,7 @@ function updateCartElements()
 {
     var countItems = 0;
     var newTotal = userObject.total;
-    cash_pickup_exception = true;
+    cash_pickup_exception = false;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
 
@@ -203,9 +203,9 @@ function updateCartElements()
             '</div>';
 
 
-        if(foodCartData[x].cash_pickup_exception == 0)
+        if(foodCartData[x].cash_pickup_exception == 1)
         {
-            cash_pickup_exception = false;
+            cash_pickup_exception = true;
         }
 
 

@@ -12,7 +12,7 @@ var oneTypeSubItems             = null;                                         
 var multipleTypeSubItems        = null;                                           // SUB-ITEMS TYPE MULTIPLE
 var extras                      = null;                                           // EXTRAS FROM SERVER
 var minOrderLimit               = null;                                           // MINIMUM ORDER LIMIT
-var ignoreMinOrderLimit         = true;
+var ignoreMinOrderLimit         = false;
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
 var paths = null;
@@ -1069,7 +1069,7 @@ function generateTotalUpdateFoodCart()
 function updateCartElements()
 {
     var countItems = 0;
-    ignoreMinOrderLimit = true;
+    ignoreMinOrderLimit = false;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
     if(foodCartData.length != 0)
@@ -1136,9 +1136,9 @@ function updateCartElements()
                 '</div>';
 
 
-            if(foodCartData[x].min_order_exception == 0)
+            if(foodCartData[x].min_order_exception == 1)
             {
-                ignoreMinOrderLimit = false;
+                ignoreMinOrderLimit = true;
             }
 
         }
