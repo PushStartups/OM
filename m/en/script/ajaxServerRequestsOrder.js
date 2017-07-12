@@ -14,7 +14,7 @@ var selectedRest                = null;
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
 var ignoreMinOrderLimit         = false;
-var cash_pickup_exception       = true;
+var cash_pickup_exception       = false;
 
 var paymentReceived = false;
 
@@ -947,7 +947,7 @@ function updateCartElements()
     var countItems = 0;
     var newTotal = userObject.total;
     ignoreMinOrderLimit = false;
-    cash_pickup_exception = true;
+    cash_pickup_exception = false;
 
     // DISPLAY FOOD CART IF AT LEAST ONE ITEM TO DISPLAY
     if(foodCartData.length != 0)
@@ -1028,9 +1028,9 @@ function updateCartElements()
             }
 
 
-            if(foodCartData[x].cash_pickup_exception == 0)
+            if(foodCartData[x].cash_pickup_exception == 1)
             {
-                cash_pickup_exception = false;
+                cash_pickup_exception = true;
             }
 
 
