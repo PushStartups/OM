@@ -747,7 +747,7 @@ $app->post('/categories_with_items', function ($request, $response, $args)
         $menu = DB::queryFirstRow("select * from menus where restaurant_id = '" . $id . "'");
 
         // GET CATEGORIES OF RESTAURANT i.e ANGUS SALAD , ANGUS BURGER
-        $categories = DB::query("select * from categories where menu_id = '" . $menu['id'] . "'");
+        $categories = DB::query("select * from categories where menu_id = '" . $menu['id'] . "' order by sort ASC");
 
         $count2 = 0;
 
@@ -1564,14 +1564,14 @@ $app->post('/add_order', function ($request, $response, $args) {
 
 
 
-        $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
-        $chat_id = "-165732759";
+//        $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
+//        $chat_id = "-165732759";
+//
+//        telegramAPI($bot_id, $chat_id,  createOrderForTelegram($user_order));
+//
+//
 
-        telegramAPI($bot_id, $chat_id,  createOrderForTelegram($user_order));
-
-
-
-
+        
         // SEND EMAIL TO KITCHEN
 
         email_for_kitchen($user_order, $orderId, $todayDate);
@@ -2315,7 +2315,6 @@ function traccer($order_id,$name,$phone,$start_address,$delivery_address,$startL
     $service_url = "http://35.156.74.68:8082/api/objectives";
     $curl = curl_init($service_url);
     $curl_post_data = array(
-
         "name"           => $name,
         "phone"          => $phone,
         "startLatitude"  => $startLat,
@@ -2329,7 +2328,6 @@ function traccer($order_id,$name,$phone,$start_address,$delivery_address,$startL
         "orderId"        => $order_id,
         "geocode"        => "no",
         "timeCreate"     => null
-
     );
 
 
@@ -2594,11 +2592,8 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
    
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-
-        $mail->Subject = "(ELUNA) ".$user_order['restaurantTitle'].' Order# '.$orderId;
-
+        $mail->Subject = "(ELUNA) "+$user_order['restaurantTitle'].' Order# '.$orderId;
     else
-
         $mail->Subject = $user_order['restaurantTitle'].' Order# '.$orderId;
 
     $mail->Body = $mailbody;
@@ -2798,7 +2793,7 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
 
 
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-        $mail->Subject = "(ELUNA) ".'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
     else
         $mail->Subject = 'הזמנה חדשה '." ".$user_order['restaurantTitleHe'];
 
@@ -2994,7 +2989,7 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-      $mail->Subject = "(ELUNA) ".$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+      $mail->Subject = "(ELUNA) "+$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
     else
       $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
 
@@ -3157,7 +3152,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "." הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     else
         $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
 
@@ -3283,7 +3278,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "." הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     else
         $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
 
