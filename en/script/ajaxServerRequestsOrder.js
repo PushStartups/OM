@@ -758,6 +758,7 @@ function updatedSelectedItemPrice() {
                     sum = convertFloat(sum) + convertFloat(oneTypeSubItems[y][key].subItemPrice);
                 }
                 else {
+
                     replace = oneTypeSubItems[y][key].subItemPrice;
 
                 }

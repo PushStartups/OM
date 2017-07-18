@@ -581,9 +581,11 @@ function ClosePayment()
         {
             var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
 
+
             commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
                 "total": userObject.total,"rest_title" : userObject.restaurantTitle,
-                "rest_city" : selectedCityName},checkCouponCallBack);
+                "rest_city" : selectedCityName, "delivery_fee" : userObject.deliveryCharges, "user_order" : userObject },checkCouponCallBack);
+
         }
 
     }
