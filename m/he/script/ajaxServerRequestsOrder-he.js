@@ -1425,7 +1425,7 @@ function submit_summary() {
 
         commonAjaxCall("/restapi/index.php/coupon_validation", {"code": code, "email": userObject.email,
             "total": userObject.total,"rest_title" : userObject.restaurantTitle,
-            "rest_city" : selectedCityName },checkCouponCallBack);
+            "rest_city" : selectedCityName, "delivery_fee" : userObject.deliveryCharges, "user_order" : userObject },checkCouponCallBack);
         
     }
     else {
