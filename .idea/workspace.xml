@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/.png" afterPath="$PROJECT_DIR$/m/en/img/categories/.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/cdcd.png" afterPath="$PROJECT_DIR$/m/en/img/categories/cdcd.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/judica/drinks.png" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/drinks.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/pasta.png" afterPath="$PROJECT_DIR$/m/en/img/categories/pasta.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/salads.png" afterPath="$PROJECT_DIR$/m/en/img/categories/salads.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/testing_logo.png" afterPath="$PROJECT_DIR$/m/en/img/testing_logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" afterPath="$PROJECT_DIR$/db_dump/orderapp_restaurants.sql" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -954,14 +959,7 @@
       <workItem from="1500381223954" duration="216000" />
       <workItem from="1500401818293" duration="43000" />
       <workItem from="1500464099642" duration="686000" />
-      <workItem from="1500535771543" duration="395000" />
-    </task>
-    <task id="LOCAL-00135" summary="DB update + code latest">
-      <created>1495620054240</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1495620054241</updated>
+      <workItem from="1500535771543" duration="535000" />
     </task>
     <task id="LOCAL-00136" summary="DB update + code latest">
       <created>1495952212542</created>
@@ -1299,11 +1297,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500381246641</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="updated db dump">
+      <created>1500536200442</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1500536200443</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1121893000" />
+    <option name="totallyTimeSpent" value="1122033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1315,7 +1320,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
