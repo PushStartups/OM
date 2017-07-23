@@ -2,13 +2,230 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/.png" afterPath="$PROJECT_DIR$/m/en/img/categories/.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/cdcd.png" afterPath="$PROJECT_DIR$/m/en/img/categories/cdcd.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/judica/drinks.png" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/drinks.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/pasta.png" afterPath="$PROJECT_DIR$/m/en/img/categories/pasta.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/salads.png" afterPath="$PROJECT_DIR$/m/en/img/categories/salads.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/testing_logo.png" afterPath="$PROJECT_DIR$/m/en/img/testing_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ahmadtest_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/alegriaskuri_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/aromaespressobar_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/asadlogo_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/avitest_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Ahmad Test/saled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/DRINKS.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/PIZZA.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/Special.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Chicken.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/For The Little Ones.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Hamburger.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Sandwiches.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Side Dishes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/From Yemen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Greg Cafe/Ice Coffee Special.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Ice Cream.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Bourekas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Dairy Toast (Bagel).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Meat Toasts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/colddrinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/dairytoast(bagel).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/dairytoast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/meattoast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/pastry.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/toastdd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/At Mesubin, Meat is Served On Blazing Platters.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Children are Joy...Kids Deal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/FIsh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Handmade Hummus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Hot Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Mesubin's Butcher Shop - Steak on Blazing Hot Frypan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Mesubin's Recomendations.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Mesubin's Tabun.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Skewers Off a Blazing Coal Grill.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Starters.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Tasty Entrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/49 NIS Business Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/52 NIS Business Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/56 NIS Business Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/79 NIS Business Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Cones .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Fotomaki.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Inside Out Rolls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Mains.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Nigiri.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Osomaki .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Salads  .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Sashimi  .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Soups.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Specials .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Starters.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Stir-Fry.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Sushi Combinations .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Sushi Sandwich.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Party Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Mains.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Sides.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Business Deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pasta.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pastries.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pizza Pazatz Deals .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Soft Drink&#9;.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Specialty Pizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/White Pizzas - Alfredo Sauce Based.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Bread.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Pasta.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Toasts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Recommended Pizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Asian Styled Soups.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Combinations.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Hand-Rolled Cone.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Kids Menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Maki Sushi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Natural Juices.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Nigiri Sushi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Rice.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/River Specials.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Sashimi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Starters.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Wok.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/asianstyledsoups.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/hand-rolledcone.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/kidsmenu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/makisushi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/naturaljuices.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/nigirisushi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/riverspecials.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/asadlogo/er.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/avi test/cofe.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/burgersbar/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/childrenarejoy...kidsdeal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/business.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/chummus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/chummusbythekilo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/coldbeverages.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/drink.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/drywhitewine.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/fromyemen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/gregcafe/icecoffeespecial.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/gregcafe/lunchappetizers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/haborganim/test.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hateimania.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/businessmeal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/mains.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/sides.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/fish.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/focacciainthetaboon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/ourshackshukot.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/pastas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/sandwiches.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/specials.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hotbeverages.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/icecream.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/Daily Specials.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/Plates and Baguettes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/3burgercombo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/4burgercombo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/fried.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/hamburger.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/hamburgerbusinessdeals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/kidsmeal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/planche.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/planchebusinessdeals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/saladbusinessdeals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/panko/combos.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/panko/dimsum.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/partydeals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/fish.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/foccocia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/kidsmenu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/lasagna.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/lunchspecial.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/pasta.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/specialtypizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/mains.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/pasta.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/sides.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/qqqqqq/xsxs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/recommendedpizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/redwines.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sweetcorner.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test 3/Kid's meals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test 3/Sides.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test 4/Main.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test2/meat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test2/newcat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/alcoholicdrinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/appetizers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/colddrinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/desserts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/hamburgers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/kids.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/lunchspecial55shekels.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/lunchspecials.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/lunchspecials65shekels.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/plated.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/sandwiches.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/sides.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/chumusim_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/cookieschnitzel_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/haborganim_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/haburganim_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/hashamen_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/hatortilla_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/holybagel2_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/holybagel_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/judica_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/le'echoletzeljulie_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/leecholetzeljulie_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/mesubin_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/mikeburger_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/panko_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pastaria_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizapazatz_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizzabarama_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizzaiola_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/qqqqqq_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/river_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/seaweedsushibar_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/test2_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/test3_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/test5_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/vicideli_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/w_logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/order.html" afterPath="$PROJECT_DIR$/en/order.html" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +245,7 @@
     <favorites_list name="gloria_lading_city_page" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,9 +257,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_a</find>
-      <find>minOrderLimit</find>
-      <find>update</find>
       <find>e</find>
       <find>minAmount</find>
       <find>minAmoun</find>
@@ -70,6 +284,9 @@
       <find>itemName</find>
       <find>coupon</find>
       <find>coup</find>
+      <find>platfom</find>
+      <find>popup-info</find>
+      <find>popup-1</find>
     </findStrings>
     <replaceStrings>
       <replace>app.orderapp.com</replace>
@@ -115,7 +332,6 @@
         <option value="$USER_HOME$/Downloads/style-en.css" />
         <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsIndex.js" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/en/order.html" />
         <option value="$PROJECT_DIR$/index2.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/cc.php" />
@@ -141,6 +357,7 @@
         <option value="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
         <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
         <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
+        <option value="$PROJECT_DIR$/en/order.html" />
       </list>
     </option>
   </component>
@@ -200,6 +417,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -214,23 +432,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_dump" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -959,14 +1162,9 @@
       <workItem from="1500381223954" duration="216000" />
       <workItem from="1500401818293" duration="43000" />
       <workItem from="1500464099642" duration="686000" />
-      <workItem from="1500535771543" duration="535000" />
-    </task>
-    <task id="LOCAL-00136" summary="DB update + code latest">
-      <created>1495952212542</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1495952212543</updated>
+      <workItem from="1500535771543" duration="588000" />
+      <workItem from="1500793225882" duration="1797000" />
+      <workItem from="1500813209617" duration="695000" />
     </task>
     <task id="LOCAL-00137" summary="DB update + code latest">
       <created>1495952703503</created>
@@ -1304,11 +1502,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500536200443</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="updated db dump">
+      <created>1500539000703</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1500539000703</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1122033000" />
+    <option name="totallyTimeSpent" value="1124578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1320,7 +1525,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1336,7 +1541,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30917874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1423462" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17668097" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1585,24 +1790,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1203">
-          <caret line="116" column="57" lean-forward="false" selection-start-line="116" selection-start-column="57" selection-end-line="116" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/restaurants.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="152" column="24" lean-forward="false" selection-start-line="152" selection-start-column="24" selection-end-line="152" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7110">
-          <caret line="474" column="18" lean-forward="false" selection-start-line="474" selection-start-column="18" selection-end-line="474" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1627,13 +1818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10845">
-          <caret line="723" column="12" lean-forward="false" selection-start-line="723" selection-start-column="12" selection-end-line="723" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -1645,13 +1829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="390" column="68" lean-forward="true" selection-start-line="390" selection-start-column="68" selection-end-line="390" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/he/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="633" column="35" lean-forward="false" selection-start-line="633" selection-start-column="35" selection-end-line="633" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1676,13 +1853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="583" column="142" lean-forward="true" selection-start-line="581" selection-start-column="11" selection-end-line="583" selection-end-column="142" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -1697,18 +1867,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="537" column="33" lean-forward="false" selection-start-line="537" selection-start-column="33" selection-end-line="537" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db_dump/orderapp_restaurants.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="1059" column="1" lean-forward="false" selection-start-line="1059" selection-start-column="1" selection-end-line="1059" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="76" column="21" lean-forward="false" selection-start-line="76" selection-start-column="9" selection-end-line="76" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2723">
+          <caret line="204" column="19" lean-forward="false" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="448" column="17" lean-forward="true" selection-start-line="448" selection-start-column="17" selection-end-line="448" selection-end-column="17" />
+          <folding>
+            <marker date="1500368121000" expanded="true" signature="15645:15660" ph="..." />
+            <marker date="1500368121000" expanded="true" signature="15706:15784" ph="..." />
+            <marker date="1500368121000" expanded="true" signature="15886:15900" ph="..." />
+            <marker date="1500368121000" expanded="true" signature="17787:17824" ph="..." />
+            <marker date="1500368121000" expanded="true" signature="17934:18001" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="150" column="91" lean-forward="false" selection-start-line="150" selection-start-column="91" selection-end-line="150" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="463" column="42" lean-forward="false" selection-start-line="463" selection-start-column="35" selection-end-line="463" selection-end-column="42" />
           <folding />
         </state>
       </provider>
