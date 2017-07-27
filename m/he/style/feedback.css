@@ -322,10 +322,23 @@ button {
 	height: auto;
 	display: block;
 }
-
-
-
-
-
-
-
+.btn-back img{transform: rotate(90deg);}
+.btn-back{
+	width: 78px;
+	height: 72px;
+	opacity: 0.8;
+	background-color: #32e949;
+	position: fixed;
+	top:50px;
+	right:0;
+	line-height:72px;
+	text-align: center;
+	z-index: 999999;
+	-webkit-border-radius:50px 0 0 50px;
+	-moz-border-radius:50px 0 0 50px;
+	border-radius:50px 0 0 50px;
+	color: #fff;
+	cursor: pointer;
+}
+.btn-back:focus,
+.btn-back:hover{background: #ffaf5f;}

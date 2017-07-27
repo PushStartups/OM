@@ -13,3 +13,6 @@ RewriteRule ^complete-order complete-order.html [NC,L]
 
 
 ErrorDocument 404 /he/error.html
+
+Options -Indexes
+
