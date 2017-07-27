@@ -1236,11 +1236,32 @@ function OnOrderNowClicked() {
     {
         localStorage.setItem("USER_OBJECT_HE", JSON.stringify(userObject));
         localStorage.setItem("FOOD_CARD_DATA_HE", JSON.stringify(foodCartData));
+        localStorage.setItem("IGNORE_DELIVERY", "false");
 
         $("#minAmount").css("color","black");
         window.location.href = '/he/confirm-order';
     }
 }
+
+
+// USER CLICKED ORDER NOW
+function OnOrderPickUp() {
+
+    generateTotalUpdateFoodCart();
+
+
+    userObject.subTotal = userObject.total;
+
+    localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+    localStorage.setItem("FOOD_CARD_DATA", JSON.stringify(foodCartData));
+    localStorage.setItem("IGNORE_DELIVERY", "true");
+
+    $("#minAmount").css("color","black");
+    window.location.href = '/he/confirm-order';
+
+
+}
+
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);

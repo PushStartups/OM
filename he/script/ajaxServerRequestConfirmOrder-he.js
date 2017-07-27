@@ -107,14 +107,28 @@ $(document).ready(function() {
 
     $('#address-text').html(userObject.restaurantAddress);
 
-    var temp = '<option value="-1">בחר אזור</option>';
+    var ignore_pickup = localStorage.getItem("IGNORE_DELIVERY");
 
-    for(var x=0;x<selectedRest.delivery_fee.length;x++)
-    {
-        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_he +' : דמי משלוח ' +selectedRest.delivery_fee[x].fee+  ' ש"ח ' +'</option>';
+    if(ignore_pickup == "false") {
+
+
+        var temp = '<option value="-1">בחר אזור</option>';
+
+        for (var x = 0; x < selectedRest.delivery_fee.length; x++) {
+            temp += '<option value="' + x + '">' + selectedRest.delivery_fee[x].area_he + ' : דמי משלוח ' + selectedRest.delivery_fee[x].fee + ' ש"ח ' + '</option>';
+        }
+
+        $('#delivery-areas').html(temp);
+
+
+    }
+    else {
+
+        $('#delivery-parent').hide();
+
     }
 
-    $('#delivery-areas').html(temp);
+
 
     updateCartElements();
 

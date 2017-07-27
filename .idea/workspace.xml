@@ -2,230 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/ahmadtest_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/alegriaskuri_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/aromaespressobar_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/asadlogo_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/avitest_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Ahmad Test/saled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/DRINKS.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/PIZZA.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/American Pizza/Special.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Chicken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/For The Little Ones.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Hamburger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Sandwiches.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgerim/Side Dishes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/From Yemen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Greg Cafe/Ice Coffee Special.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Ice Cream.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Bourekas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Dairy Toast (Bagel).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Meat Toasts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/Salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/colddrinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/dairytoast(bagel).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/dairytoast.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/meattoast.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/pastry.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Menfis/toastdd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/At Mesubin, Meat is Served On Blazing Platters.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Children are Joy...Kids Deal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/FIsh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Handmade Hummus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Hot Salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Mesubin's Butcher Shop - Steak on Blazing Hot Frypan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Mesubin's Recomendations.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Mesubin's Tabun.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Skewers Off a Blazing Coal Grill.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Starters.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Mesubin/Tasty Entrees.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/49 NIS Business Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/52 NIS Business Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/56 NIS Business Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/79 NIS Business Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Cones .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Fotomaki.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Inside Out Rolls.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Mains.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Nigiri.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Osomaki .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Salads  .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Sashimi  .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Soups.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Specials .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Starters.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Stir-Fry.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Sushi Combinations .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Nagisa/Sushi Sandwich.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Party Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Mains.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Barama/Sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Business Deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pastries.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pizza Pazatz Deals .png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Pizzas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Soft Drink&#9;.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/Specialty Pizzas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizza Pazatz/White Pizzas - Alfredo Sauce Based.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Bread.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Pasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Pizzaiola/Toasts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Recommended Pizzas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Asian Styled Soups.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Combinations.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Hand-Rolled Cone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Kids Menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Maki Sushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Natural Juices.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Nigiri Sushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Rice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/River Specials.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Sashimi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Starters.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/Wok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/asianstyledsoups.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/hand-rolledcone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/kidsmenu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/makisushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/naturaljuices.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/nigirisushi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/River/riverspecials.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/asadlogo/er.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/avi test/cofe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/burgersbar/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/childrenarejoy...kidsdeal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/business.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/chummus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/chummusbythekilo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/chumusim/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/coldbeverages.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/drink.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/drywhitewine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/fromyemen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/gregcafe/icecoffeespecial.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/gregcafe/lunchappetizers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/haborganim/test.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hateimania.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/businessmeal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/mains.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hatortilla/sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/fish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/focacciainthetaboon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/ourshackshukot.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/pastas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/sandwiches.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/holybagel2/specials.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/hotbeverages.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/icecream.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/Daily Specials.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/judica/Plates and Baguettes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/3burgercombo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/4burgercombo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/fried.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/hamburger.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/hamburgerbusinessdeals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/kidsmeal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/planche.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/planchebusinessdeals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/mikeburger/saladbusinessdeals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/panko/combos.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/panko/dimsum.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/partydeals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/fish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/foccocia.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/kidsmenu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/lasagna.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/lunchspecial.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/pasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/specialtypizzas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/deals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/drinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/mains.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/pasta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzabarama/sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pizzas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/qqqqqq/xsxs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/recommendedpizzas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/redwines.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/sweetcorner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test 3/Kid's meals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test 3/Sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test 4/Main.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test2/meat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/test2/newcat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/alcoholicdrinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/appetizers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/colddrinks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/desserts.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/hamburgers.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/kids.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/lunchspecial55shekels.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/lunchspecials.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/lunchspecials65shekels.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/plated.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/salads.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/sandwiches.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/vicideli/sides.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/chumusim_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/cookieschnitzel_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/haborganim_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/haburganim_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/hashamen_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/hatortilla_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/holybagel2_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/holybagel_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/judica_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/le'echoletzeljulie_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/leecholetzeljulie_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/mesubin_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/mikeburger_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/panko_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pastaria_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizapazatz_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizzabarama_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizzaiola_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/qqqqqq_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/river_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/seaweedsushibar_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/test2_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/test3_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/test5_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/vicideli_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/w_logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/order.html" afterPath="$PROJECT_DIR$/en/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" afterPath="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/order.html" afterPath="$PROJECT_DIR$/he/order.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" afterPath="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -257,19 +40,14 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>e</find>
-      <find>minAmount</find>
-      <find>minAmoun</find>
       <find>minou</find>
       <find>23</find>
       <find>checkb</find>
-      <find>onordernow</find>
       <find>ignoreMinOrderLimit</find>
       <find>onorder</find>
       <find>onorde</find>
       <find>cash_pick</find>
       <find>id213</find>
-      <find>delivery-parent</find>
       <find>cash_pickup_exception</find>
       <find>$hoursLeftToOpen</find>
       <find>time-drop-down</find>
@@ -282,11 +60,16 @@
       <find>itemname</find>
       <find>vouc</find>
       <find>itemName</find>
-      <find>coupon</find>
       <find>coup</find>
       <find>platfom</find>
       <find>popup-info</find>
       <find>popup-1</find>
+      <find>coupon_code</find>
+      <find>coupon</find>
+      <find>strip</find>
+      <find>order n</find>
+      <find>onordernow</find>
+      <find>delivery-parent</find>
     </findStrings>
     <replaceStrings>
       <replace>app.orderapp.com</replace>
@@ -348,16 +131,16 @@
         <option value="$PROJECT_DIR$/en/index.html" />
         <option value="$PROJECT_DIR$/en/confirm-order.html" />
         <option value="$PROJECT_DIR$/he/confirm-order.html" />
-        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
-        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
         <option value="$PROJECT_DIR$/m/en/order.html" />
         <option value="$PROJECT_DIR$/m/he/order.html" />
-        <option value="$PROJECT_DIR$/he/order.html" />
-        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
-        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
         <option value="$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js" />
         <option value="$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js" />
         <option value="$PROJECT_DIR$/en/order.html" />
+        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js" />
+        <option value="$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js" />
+        <option value="$PROJECT_DIR$/he/order.html" />
+        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js" />
+        <option value="$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js" />
       </list>
     </option>
   </component>
@@ -375,9 +158,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="width" value="1920" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -417,9 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,6 +215,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1164,14 +948,12 @@
       <workItem from="1500464099642" duration="686000" />
       <workItem from="1500535771543" duration="588000" />
       <workItem from="1500793225882" duration="1797000" />
-      <workItem from="1500813209617" duration="695000" />
-    </task>
-    <task id="LOCAL-00137" summary="DB update + code latest">
-      <created>1495952703503</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1495952703503</updated>
+      <workItem from="1500813209617" duration="890000" />
+      <workItem from="1500884157569" duration="917000" />
+      <workItem from="1500934003945" duration="113000" />
+      <workItem from="1501070834510" duration="249000" />
+      <workItem from="1501088700702" duration="1977000" />
+      <workItem from="1501134306116" duration="794000" />
     </task>
     <task id="LOCAL-00138" summary="DB update + code latest">
       <created>1496042231819</created>
@@ -1509,11 +1291,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500539000703</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="updated db dump">
+      <created>1500813946667</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1500813946668</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1124578000" />
+    <option name="totallyTimeSpent" value="1128823000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1525,10 +1314,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="1440" y="23" width="1920" height="1177" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1541,7 +1330,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30917874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17668097" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12939297" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1554,7 +1343,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953465" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953465" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5121019" sideWeight="0.49573562" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1818,13 +1607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restapi/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="1085" column="30" lean-forward="true" selection-start-line="1085" selection-start-column="30" selection-end-line="1085" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/he/confirm-order.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -1836,20 +1618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="55" column="1" lean-forward="false" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="792" column="38" lean-forward="true" selection-start-line="792" selection-start-column="38" selection-end-line="792" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="570" column="38" lean-forward="true" selection-start-line="570" selection-start-column="38" selection-end-line="570" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1874,14 +1642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="1059" column="1" lean-forward="false" selection-start-line="1059" selection-start-column="1" selection-end-line="1059" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsRestaurants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1893,36 +1653,246 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2723">
           <caret line="204" column="19" lean-forward="false" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
+    <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="448" column="17" lean-forward="true" selection-start-line="448" selection-start-column="17" selection-end-line="448" selection-end-column="17" />
+        <state relative-caret-position="346">
+          <caret line="1915" column="39" lean-forward="false" selection-start-line="1915" selection-start-column="33" selection-end-line="1915" selection-end-column="39" />
           <folding>
-            <marker date="1500368121000" expanded="true" signature="15645:15660" ph="..." />
-            <marker date="1500368121000" expanded="true" signature="15706:15784" ph="..." />
-            <marker date="1500368121000" expanded="true" signature="15886:15900" ph="..." />
-            <marker date="1500368121000" expanded="true" signature="17787:17824" ph="..." />
-            <marker date="1500368121000" expanded="true" signature="17934:18001" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="1299:1334" ph="select * fro... cities" />
+            <marker date="1499958479000" expanded="true" signature="2075:2120" ph="select * fro... categories" />
+            <marker date="1499958479000" expanded="true" signature="2313:2370" ph="select resta... menus" />
+            <marker date="1499958479000" expanded="true" signature="2412:2480" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="3430:3497" ph="update categ... " />
+            <marker date="1499958479000" expanded="true" signature="3926:3971" ph="select * fro... categories" />
+            <marker date="1499958479000" expanded="true" signature="4276:4333" ph="select resta... menus" />
+            <marker date="1499958479000" expanded="true" signature="4521:4572" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="5768:5835" ph="update categ... " />
+            <marker date="1499958479000" expanded="true" signature="6295:6341" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="7031:7094" ph="update resta... " />
+            <marker date="1499958479000" expanded="true" signature="7438:7484" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="8219:8282" ph="update resta... " />
+            <marker date="1499958479000" expanded="true" signature="8653:8699" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="9313:9376" ph="update resta... " />
+            <marker date="1499958479000" expanded="true" signature="9849:9869" ph="select * fro... cities" />
+            <marker date="1499958479000" expanded="true" signature="10145:10170" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="10785:10838" ph="select * fro... cities" />
+            <marker date="1499958479000" expanded="true" signature="10891:10955" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="11033:11171" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="11324:11404" ph="select tag_i... restaurant_tags" />
+            <marker date="1499958479000" expanded="true" signature="11564:11617" ph="select * fro... tags" />
+            <marker date="1499958479000" expanded="true" signature="11765:11845" ph="select url f... restaurant_gallery" />
+            <marker date="1499958479000" expanded="true" signature="11981:12060" ph="select * fro... weekly_availibility" />
+            <marker date="1499958479000" expanded="true" signature="13320:13388" ph="select * fro... delivery_fee" />
+            <marker date="1499958479000" expanded="true" signature="16701:16780" ph="select * fro... restaurants" />
+            <marker date="1499958479000" expanded="true" signature="16939:17019" ph="select tag_i... restaurant_tags" />
+            <marker date="1499958479000" expanded="true" signature="17199:17252" ph="select * fro... tags" />
+            <marker date="1499958479000" expanded="true" signature="17420:17500" ph="select url f... restaurant_gallery" />
+            <marker date="1499958479000" expanded="true" signature="17644:17723" ph="select * fro... weekly_availibility" />
+            <marker date="1499958479000" expanded="true" signature="19083:19151" ph="select * fro... delivery_fee" />
+            <marker date="1499958479000" expanded="true" signature="22884:22939" ph="select * fro... menus" />
+            <marker date="1499958479000" expanded="true" signature="23048:23128" ph="select * fro... categories" />
+            <marker date="1499958479000" expanded="true" signature="23342:23422" ph="select * fro... items" />
+            <marker date="1499958479000" expanded="true" signature="24057:24202" ph="select item_... business_lunch_detail" />
+            <marker date="1499958479000" expanded="true" signature="24319:24439" ph="select * fro... items" />
+            <marker date="1499958479000" expanded="true" signature="24719:24814" ph="select * fro... extras" />
+            <marker date="1499958479000" expanded="true" signature="24981:25043" ph="select * fro... subitems" />
+            <marker date="1499958479000" expanded="true" signature="26693:26740" ph="select * fro... extras" />
+            <marker date="1499958479000" expanded="true" signature="26912:26975" ph="select * fro... subitems" />
+            <marker date="1499958479000" expanded="true" signature="29891:29948" ph="select id,sm... users" />
+            <marker date="1499958479000" expanded="true" signature="31463:31504" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="32018:32091" ph="update users... " />
+            <marker date="1499958479000" expanded="true" signature="36756:36815" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="38844:38903" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="39501:39556" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="40321:40404" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="41052:41111" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="42050:42127" ph="select id,sm... users" />
+            <marker date="1499958479000" expanded="true" signature="42198:42277" ph="select id,sm... users" />
+            <marker date="1499958479000" expanded="true" signature="47594:47646" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="47959:48011" ph="select * fro... users" />
+            <marker date="1499958479000" expanded="true" signature="51166:51241" ph="select id,sm... users" />
+            <marker date="1499958479000" expanded="true" signature="52958:55080" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="52975:55064" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="53107:55047" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="53597:53766" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="53906:55020" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="56378:56621" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="56389:56621" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="56735:56755" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="56868:57007" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="57102:57190" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="57257:57314" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="57423:57516" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="57688:57725" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="57988:58026" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="58181:58203" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="58323:58358" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="58528:58563" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="58732:58767" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="58938:58973" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="59145:59180" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="59351:59386" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="59681:59711" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="59723:59761" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="61692:63814" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="61709:63798" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="61841:63781" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="62331:62500" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="62640:63754" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69130:69151" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69187:69267" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69303:69325" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69421:69577" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69614:69654" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69689:69719" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69761:69791" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="69899:69916" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70009:70039" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70083:70089" ph="&amp;nbsp;" />
+            <marker date="1499958479000" expanded="true" signature="70150:70167" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70320:70348" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70437:70512" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70552:70601" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70722:70760" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70800:70806" ph="&amp;nbsp;" />
+            <marker date="1499958479000" expanded="true" signature="70820:70834" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="70971:71021" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="71520:71537" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="71793:71868" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="71908:71957" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72073:72111" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72126:72141" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72368:72467" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72556:72591" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72630:72644" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72695:72733" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72749:72764" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72894:72929" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="72968:72982" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73038:73076" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73092:73107" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73406:73441" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73484:73498" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73593:73631" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73647:73662" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73807:73842" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73885:73899" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="73971:74009" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74025:74040" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74266:74300" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74333:74347" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74444:74491" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74543:74578" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74625:74640" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74730:74780" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74815:74830" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74846:74857" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="74954:74991" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75081:75131" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75166:75181" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75197:75208" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75306:75343" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75436:75486" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75521:75556" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75572:75585" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75750:75787" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="75972:76009" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76142:76192" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76227:76242" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76258:76269" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76367:76404" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76495:76545" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76580:76595" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76611:76623" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="76720:76757" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="78641:78662" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="78699:78798" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="78984:79006" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79042:79198" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79237:79277" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79312:79342" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79387:79403" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79474:79492" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79521:79551" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79672:79702" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="79800:79817" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80061:80089" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80177:80252" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80289:80338" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80377:80392" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80492:80498" ph="&amp;nbsp;" />
+            <marker date="1499958479000" expanded="true" signature="80615:80643" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80732:80782" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="80949:80980" ph="..." />
+            <marker date="1499958479000" expanded="true" signature="81126:81157" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/en/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="150" column="91" lean-forward="false" selection-start-line="150" selection-start-column="91" selection-end-line="150" selection-end-column="91" />
-          <folding />
+        <state relative-caret-position="273">
+          <caret line="259" column="149" lean-forward="true" selection-start-line="259" selection-start-column="38" selection-end-line="259" selection-end-column="149" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/he/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="463" column="42" lean-forward="false" selection-start-line="463" selection-start-column="35" selection-end-line="463" selection-end-column="42" />
+        <state relative-caret-position="335">
+          <caret line="204" column="83" lean-forward="true" selection-start-line="204" selection-start-column="83" selection-end-line="204" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#1;n#aside#0;n#div#0;n#div#0;n#div#0;n#div#2;n#section#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="1335" column="0" lean-forward="true" selection-start-line="1334" selection-start-column="7" selection-end-line="1335" selection-end-column="0" />
+          <folding>
+            <marker date="1501090920000" expanded="true" signature="15645:15660" ph="..." />
+            <marker date="1501090920000" expanded="true" signature="15706:15784" ph="..." />
+            <marker date="1501090920000" expanded="true" signature="15886:15900" ph="..." />
+            <marker date="1501090920000" expanded="true" signature="17787:17824" ph="..." />
+            <marker date="1501090920000" expanded="true" signature="17934:18001" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestsOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="1259" column="31" lean-forward="false" selection-start-line="1259" selection-start-column="31" selection-end-line="1259" selection-end-column="31" />
+          <folding>
+            <marker date="1501135158000" expanded="true" signature="12235:12250" ph="..." />
+            <marker date="1501135158000" expanded="true" signature="12296:12373" ph="..." />
+            <marker date="1501135158000" expanded="true" signature="12475:12489" ph="..." />
+            <marker date="1501135158000" expanded="true" signature="14359:14397" ph="..." />
+            <marker date="1501135158000" expanded="true" signature="14507:14575" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/en/script/ajaxServerRequestConfirmOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="886">
+          <caret line="125" column="5" lean-forward="true" selection-start-line="121" selection-start-column="4" selection-end-line="125" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/he/script/ajaxServerRequestConfirmOrder-he.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="126" column="27" lean-forward="false" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="27" />
           <folding />
         </state>
       </provider>

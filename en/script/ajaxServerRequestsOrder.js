@@ -678,7 +678,7 @@ function onExtraSubItemSelected(ex,extraIndex, subItemIndex, index) {
 
             if(countSelectedItems >= limit)
             {
-               // alert("limit over");
+                // alert("limit over");
 
                 var errorId = "#error-"+extraIndex;
 
@@ -1332,11 +1332,33 @@ function OnOrderNowClicked() {
 
         localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
         localStorage.setItem("FOOD_CARD_DATA", JSON.stringify(foodCartData));
+        localStorage.setItem("IGNORE_DELIVERY", "false");
 
         $("#minAmount").css("color","black");
         window.location.href = '/en/confirm-order';
     }
 }
+
+
+
+// USER CLICKED ORDER NOW
+function OnOrderPickUp() {
+
+    generateTotalUpdateFoodCart();
+
+
+    userObject.subTotal = userObject.total;
+
+    localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
+    localStorage.setItem("FOOD_CARD_DATA", JSON.stringify(foodCartData));
+    localStorage.setItem("IGNORE_DELIVERY", "true");
+
+    $("#minAmount").css("color","black");
+    window.location.href = '/en/confirm-order';
+
+}
+
+
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);

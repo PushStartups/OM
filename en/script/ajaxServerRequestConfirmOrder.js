@@ -16,6 +16,7 @@ var paymentReceived             = false;
 var cash_pickup_exception       = false;
 
 
+
 //SERVER HOST DETAIL
 
 $(document).ready(function() {
@@ -103,17 +104,28 @@ $(document).ready(function() {
     userObject.Cash_Card = "CASH";
     userObject.Cash_Card_he = "מזומן";
 
-
     $('#address-text').html(userObject.restaurantAddress);
 
-    var temp = '<option value="-1">Select Area</option>';
+    var ignore_pickup = localStorage.getItem("IGNORE_DELIVERY");
 
-    for(var x=0;x<selectedRest.delivery_fee.length;x++)
-    {
-        temp += '<option value="'+x+'">'+selectedRest.delivery_fee[x].area_en +' : Fee '+ selectedRest.delivery_fee[x].fee +'NIS</option>';
+    if(ignore_pickup == "false") {
+
+
+        var temp = '<option value="-1">Select Area</option>';
+
+        for (var x = 0; x < selectedRest.delivery_fee.length; x++) {
+            temp += '<option value="' + x + '">' + selectedRest.delivery_fee[x].area_en + ' : Fee ' + selectedRest.delivery_fee[x].fee + 'NIS</option>';
+        }
+
+        $('#delivery-areas').html(temp);
+    }
+    else {
+
+        $('#delivery-parent').hide();
+
     }
 
-    $('#delivery-areas').html(temp);
+
 
     updateCartElements();
 
