@@ -14,7 +14,8 @@ var selectedRest                = null;
 var selectedItemPriceOrg        = 0;
 var selectedItemPrice           = 0;
 var ignoreMinOrderLimit         = false;
-var cash_pickup_exception       = false;
+
+var cash_pickup_from_link       = false;
 
 var paymentReceived = false;
 
@@ -1221,12 +1222,34 @@ function OnOrderNowClicked() {
     $('.totalBill').html(userObject.total + " NIS");
     $('#restAddress').html(userObject.restaurantAddress);
 
+    $('#food-cart-popup').modal('hide');
+
+    userObject.subTotal = userObject.total;
+
+    cash_pickup_from_link = false;
+
+    orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
+}
+
+function OnOrderPickUpClicked()
+{
+
+    generateTotalUpdateFoodCart();
+    updateCartElements();
+
+    cash_pickup_from_link = true;
+
+    $('.totalBill').html(userObject.total + " NIS");
+    $('#restAddress').html(userObject.restaurantAddress);
+
 
     $('#food-cart-popup').modal('hide');
 
     userObject.subTotal = userObject.total;
 
-    orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
+    $('#delivery-parent').hide();
+
+    $('#customer-info-popup').modal('show');
 }
 
 
@@ -1471,9 +1494,12 @@ function submit_summary() {
         $('#coupon').removeClass('error');
 
 
-        if(userObject.pickFromRestaurant && (!cash_pickup_exception))
+        if((userObject.pickFromRestaurant && (!cash_pickup_exception)))
         {
-            $('#cashBtn').hide();
+            if(!cash_pickup_from_link)
+               $('#cashBtn').hide();
+            else
+               $('#cashBtn').show();
         }
         else
         {
@@ -1610,7 +1636,7 @@ function processPayment() {
     $('.payment-errors').html("");
     $('.payment-errors').hide();
 
-    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception)) {
+    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception || cash_pickup_from_link)) {
 
         userObject.Cash_Card = "CASH";
         userObject.Cash_Card_he = "מזומן";

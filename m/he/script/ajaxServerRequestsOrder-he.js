@@ -16,6 +16,9 @@ var selectedItemPrice           = 0;
 var ignoreMinOrderLimit         = false;
 var cash_pickup_exception       = false;
 
+
+var cash_pickup_from_link       = false;
+
 var paymentReceived = false;
 
 
@@ -1196,7 +1199,35 @@ function OnOrderNowClicked() {
 
     $('#food-cart-popup').modal('hide');
     userObject.subTotal = userObject.total;
+
     orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
+
+    cash_pickup_from_link = false;
+
+    $('#delivery-parent').show();
+
+}
+
+function OnOrderPickUpClicked()
+{
+    generateTotalUpdateFoodCart();
+    updateCartElements();
+
+
+    $('.totalBill').html(userObject.total + " ש״ח");
+    $('#restAddress').html(userObject.restaurantAddress);
+
+    $('.box-frame.new').css('height' , 'calc(100% - 242px)');
+
+    $('#food-cart-popup').modal('hide');
+
+    userObject.subTotal = userObject.total;
+
+    $('#customer-info-popup').modal('show');
+
+    cash_pickup_from_link = true;
+
+    $('#delivery-parent').hide();
 }
 
 
@@ -1435,7 +1466,10 @@ function submit_summary() {
 
         if(userObject.pickFromRestaurant && (!cash_pickup_exception))
         {
-            $('#cashBtn').hide();
+            if(!cash_pickup_from_link)
+                $('#cashBtn').hide();
+            else
+                $('#cashBtn').show();
         }
         else
         {
@@ -1572,7 +1606,7 @@ function processPayment() {
     $('.parent_date').removeClass('error');
     $('#cvv-parent').removeClass('error');
 
-    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception)) {
+    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception  || cash_pickup_from_link)) {
 
         userObject.Cash_Card = "CASH";
         userObject.Cash_Card_he = "מזומן";
