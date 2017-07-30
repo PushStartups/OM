@@ -555,6 +555,9 @@ $app->post('/get_selected_restaurants', function ($request, $response, $args)
             "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
             "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
             "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
+            "delivery_exception"   => $result["delivery_exception"],    // DELIVERY EXCEPTION
+            "cash_exception"       => $result["cash_exception"],    // CASH_EXCEPTION
+            "cc_exception"         => $result["cc_exception"],          // CREDIT CARD
             "tags"                 => $tags,                        // RESTAURANT TAGS
             "gallery"              => $galleryImages,               // RESTAURANT GALLERY
             "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -700,6 +703,9 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
                 "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
                 "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
+                "delivery_exception"   => $result["delivery_exception"],    // DELIVERY EXCEPTION
+                "cash_exception"       => $result["cash_exception"],    // CASH_EXCEPTION
+                "cc_exception"         => $result["cc_exception"],          // CREDIT CARD
                 "rest_lat"             => $result["lat"],               // LATITUDE
                 "rest_lng"             => $result["lng"],               // LONGITUDE
                 "tags"                 => $tags,                        // RESTAURANT TAGS
@@ -1528,9 +1534,41 @@ $app->post('/add_order', function ($request, $response, $args) {
             'transaction_id'  => $user_order['trans_id'],
             'browser_info'    => $browser_info
         ));
-
-
         $orderId = DB::insertId();
+
+
+        date_default_timezone_set("Asia/Jerusalem");
+        $onlyDate = date("d/m/Y");              //FOR LEDGER
+        $onlytime = date("H:i");                //FOR LEDGER
+        if($user_order['pickFromRestaurant'] == 'true')
+        {
+            $delivery_pickup = "Pick";
+        }
+        else
+        {
+            $delivery_pickup = "Delivery";
+        }
+
+
+        $restaurant_total = $user_order['total'] - $user_order['deliveryCharges'];
+        DB::useDB('orderapp_user');
+        DB::insert('ledger', array(
+            'date'                  => $onlyDate,
+            'time'                  => $onlytime,
+            'customer_name'         => $user_order['name'],
+            'customer_contact'      => $user_order['contact'],
+            "customer_email"        => $user_order['email'],
+            "restaurant_name"       => $user_order['restaurantTitle'],
+            'payment_method'        => $user_order['Cash_Card'],
+            'delivery_or_pickup'    => $delivery_pickup,
+            'delivery_price'        => $user_order['deliveryCharges'],
+            'company_name'          => "N/A",
+            'order_no'              => $orderId ,
+            'discount_amount'       => $discountValue ,
+            'restaurant_total'      => $restaurant_total,
+            'customer_grand_total'  => $user_order['totalWithoutDiscount'],
+            'customer_total_paid_to_restaurant'  => $user_order['total'],
+        ));
 
 
         try {
@@ -1585,7 +1623,6 @@ $app->post('/add_order', function ($request, $response, $args) {
         email_for_mark2($user_order, $orderId, $todayDate);
 
         ob_end_clean();
-
 
 
         //  CLIENT EMAIL
