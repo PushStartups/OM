@@ -84,31 +84,40 @@ $(document).ready(function() {
     if(userObject.pickup_hide == true)
     {
         $('#pickup_option').hide();
+        $('#delivery-parent').show();
         $('#checkbox-id-23').prop('checked', true);
+        $('#checkbox-id-12').prop('checked', false);
         $('#deliveryFieldsParent').addClass('show');
 
     }
     else {
 
         // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
+        $('#pickup_option').show();
+        $('#checkbox-id-23').prop('checked', false);
         $('#checkbox-id-12').prop('checked', true);
-
+        $('#deliveryFieldsParent').removeClass('show');
     }
 
 
     $('.dropdown-nav').show();
 
 
+
     userObject.pickFromRestaurant = true;
 
+
     $('#checkbox-id-13').prop('checked', true);
+
 
     userObject.Cash_Card = "CASH";
     userObject.Cash_Card_he = "מזומן";
 
+
     $('#address-text').html(userObject.restaurantAddress);
 
     var ignore_pickup = localStorage.getItem("IGNORE_DELIVERY");
+
 
     if(ignore_pickup == "false") {
 
@@ -121,12 +130,16 @@ $(document).ready(function() {
 
         $('#delivery-areas').html(temp);
         cash_pickup_from_link = false;
+
     }
     else {
 
-        $('#delivery-parent').hide();
-        cash_pickup_from_link = true;
+        if(!userObject.delivery_exception) {
 
+            $('#delivery-parent').hide();
+        }
+
+        cash_pickup_from_link = true;
     }
 
 
@@ -282,7 +295,7 @@ function updateCartElements()
     $('#totalAmount2').html('Total '+newTotal + " NIS");
 
 
-    if(cash_pickup_exception)
+    if(cash_pickup_exception && !userObject.delivery_exception)
     {
         $('#delivery-parent').hide();
     }
@@ -406,14 +419,6 @@ function deliveryAddress()
         $('#paymentParent').addClass("active");
         $('#specialRequestParent').removeClass("active");
 
-
-        if(!cash_pickup_exception && !cash_pickup_from_link) {
-
-            $('#cash_parent').hide();
-            $('#cash_message').show();
-
-        }
-
         addressInfoFlag = true;
 
         if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
@@ -431,8 +436,18 @@ function deliveryAddress()
         hideSlide($('#deliverySlider'));
 
 
-        $('#checkbox-id-13').prop('checked', false);
+        if((!cash_pickup_exception && !cash_pickup_from_link)) {
+
+            if(!userObject.cash_exception) {
+
+                $('#cash_parent').hide();
+                $('#cash_message').show();
+            }
+
+        }
+
         $('#checkbox-id-24').prop('checked', true);
+        $('#checkbox-id-13').prop('checked', false);
         $('#show_credit_card').addClass('show');
 
     }
@@ -490,6 +505,8 @@ function deliveryAddress()
         $("#user_name").val(userObject.name);
 
 
+
+
         addressInfoFlag = true;
 
         if(customerInfoFlag && paymentInfoFlag && addressInfoFlag)
@@ -504,14 +521,15 @@ function deliveryAddress()
         showSlide($('#paymentSlider')).hide().slideDown(300);
         hideSlide($('#deliverySlider'));
 
+        $('#cash_parent').show();
+        $('#cash_message').hide();
+
         $('#checkbox-id-24').prop('checked', false);
         $('#checkbox-id-13').prop('checked', true);
         $('#show_credit_card').removeClass('show');
 
 
     }
-
-
 
     console.log(userObject);
 }
