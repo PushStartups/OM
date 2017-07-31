@@ -555,9 +555,6 @@ $app->post('/get_selected_restaurants', function ($request, $response, $args)
             "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
             "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
             "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
-            "delivery_exception"   => $result["delivery_exception"],    // DELIVERY EXCEPTION
-            "cash_exception"       => $result["cash_exception"],    // CASH_EXCEPTION
-            "cc_exception"         => $result["cc_exception"],          // CREDIT CARD
             "tags"                 => $tags,                        // RESTAURANT TAGS
             "gallery"              => $galleryImages,               // RESTAURANT GALLERY
             "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -703,9 +700,6 @@ $app->post('/get_all_restaurants', function ($request, $response, $args)
                 "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
                 "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
                 "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
-                "delivery_exception"   => $result["delivery_exception"],    // DELIVERY EXCEPTION
-                "cash_exception"       => $result["cash_exception"],    // CASH_EXCEPTION
-                "cc_exception"         => $result["cc_exception"],          // CREDIT CARD
                 "rest_lat"             => $result["lat"],               // LATITUDE
                 "rest_lng"             => $result["lng"],               // LONGITUDE
                 "tags"                 => $tags,                        // RESTAURANT TAGS
