@@ -1549,7 +1549,6 @@ $app->post('/add_order', function ($request, $response, $args) {
             $delivery_pickup = "Delivery";
         }
 
-
         $restaurant_total = $user_order['total'] - $user_order['deliveryCharges'];
         DB::useDB('orderapp_user');
         DB::insert('ledger', array(
@@ -1577,7 +1576,6 @@ $app->post('/add_order', function ($request, $response, $args) {
             if ($user_order['pickFromRestaurant'] == 'false') {
 
                 traccer($orderId, $user_order['name'], $user_order['contact'], $user_order['restaurantAddress'], $user_order['deliveryAddress'], $user_order['rest_lat'], $user_order['rest_lng'], $user_order['delivery_lat'], $user_order['delivery_lng']);
-
             }
 
         }
