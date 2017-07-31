@@ -35,6 +35,7 @@ function initialize() {
         'orders': [],                      // USER ORDERS
         'total': 0,                        // TOTAL AMOUNT OF ORDER
         'restaurantContact' : "",          // RESTAURANT CONTACT
+        'pickup_hide'   : "",              // PICK UP HIDE
         'pickFromRestaurant': false,       // USER PICK ORDER FROM RESTAURANT ? DEFAULT NO
         'deliveryAptNo': "",               // USER DELIVERY APARTMENT NO
         'deliveryAddress': "",             // USER ORDER DELIVERY ADDRESS
@@ -328,6 +329,14 @@ function order_now(clickedRestId) {
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
     userObject.restaurantAddress   = allRestJson[clickedRestId].address_he;
     userObject.restaurantContact   = allRestJson[clickedRestId].contact;
+
+
+    if(parseInt(allRestJson[clickedRestId].pickup_hide) == 1) {
+
+        userObject.pickup_hide = true;
+
+    }
+
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 

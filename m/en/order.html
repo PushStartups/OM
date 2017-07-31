@@ -506,7 +506,7 @@
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
             <h3 id="min_order"></h3>
-            <a onclick="OnOrderPickUpClicked()" data-dismiss="modal" href="#" style="text-align: center;display: block; margin-top: 10px">Order pick-up from restaurant</a>
+            <a id="order-pick-link" onclick="OnOrderPickUpClicked()" data-dismiss="modal" href="#" style="text-align: center;display: block; margin-top: 10px">Order pick-up from restaurant</a>
         </div>
     </div>
 </div>
@@ -523,7 +523,7 @@
             </div>
             <ul class="list">
                 <li><a onclick="decision(false);" id="continue">Continue</a></li>
-                <li><a onclick="decision(true);" id="cancel">Cancle</a></li>
+                <li><a onclick="decision(true);" id="cancel">Cancel</a></li>
             </ul>
         </div>
     </div>
@@ -747,7 +747,7 @@
                     </div>
                     <div class="slide-holder">
                         <ul class="checkbox-list">
-                            <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span id="address-text"></span></label></li>
+                            <li id="pickup_option"> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span id="address-text"></span></label></li>
                             <li id="delivery-parent"> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> Delivery <span>Complete your details</span></label></li>
                         </ul>
                         <form id="property">

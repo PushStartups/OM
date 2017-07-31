@@ -49,6 +49,22 @@ $( document ).ready(function() {
 
 
 
+    if(userObject.pickup_hide)
+    {
+
+        $('#order-pick-link').hide();
+    }
+    else {
+
+
+        $('#order-pick-link').show();
+
+    }
+
+
+
+
+
     if(localStorage.getItem("USER_SMOOCH_ID") != undefined && localStorage.getItem("USER_SMOOCH_ID") != "" && localStorage.getItem("USER_SMOOCH_ID") != null) {
 
 
@@ -73,6 +89,21 @@ $( document ).ready(function() {
 
     }
 
+
+
+    if(userObject.pickup_hide == true)
+    {
+        $('#pickup_option').hide();
+        $('#checkbox-id213').prop('checked', true);
+        $('#delivery-info').show();
+
+    }
+    else {
+
+        // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
+        $('#checkbox-id112').prop('checked', true);
+
+    }
 
 
     // SET RESTAURANT TITLE

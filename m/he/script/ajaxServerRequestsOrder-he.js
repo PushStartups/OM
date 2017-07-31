@@ -50,8 +50,37 @@ $( document ).ready(function() {
     selectedRest                = JSON.parse(localStorage.getItem("SELECTED_REST_HE"));             // MINIMUM ORDER LIMIT
 
 
+
+    if(userObject.pickup_hide)
+    {
+
+        $('#order-pick-link').hide();
+    }
+    else {
+
+
+        $('#order-pick-link').show();
+
+    }
+
+
     // SET RESTAURANT TITLE
     $('#rest-title').html(restName);
+
+
+    if(userObject.pickup_hide == true)
+    {
+        $('#pickup_option').hide();
+        $('#checkbox-id213').prop('checked', true);
+        $('#delivery-info').show();
+
+    }
+    else {
+
+        // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
+        $('#checkbox-id112').prop('checked', true);
+
+    }
 
 
     // REQUEST SERVER GET CATEGORIES WITH ITEMS

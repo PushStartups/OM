@@ -27,7 +27,8 @@ function initialize() {
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
         'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
-        'restaurantContact': "",          // RESTAURANT CONTACT
+        'restaurantContact': "",           // RESTAURANT CONTACT
+        "pickup_hide"  : false,            // PICK UP HIDE
         'name': "",                        // USER NAME
         'email': "",                       // USER EMAIL
         'contact': "",                     // USER CONTACT
@@ -329,6 +330,13 @@ function order_now(clickedRestId) {
     userObject.restaurantTitleHe   = allRestJson[clickedRestId].name_he;
     userObject.restaurantAddress   = allRestJson[clickedRestId].address_en;
     userObject.restaurantContact   = allRestJson[clickedRestId].contact;
+
+
+    if(parseInt(allRestJson[clickedRestId].pickup_hide) == 1) {
+
+        userObject.pickup_hide = true;
+
+    }
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 

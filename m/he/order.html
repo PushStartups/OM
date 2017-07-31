@@ -456,7 +456,7 @@
             <div class="modal-content" dir="rtl">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 <h3 id="min_order"></h3>
-                <a onclick="OnOrderPickUpClicked()" data-dismiss="modal" href="#" style="text-align: center;display: block; margin-top: 10px">איסוף עצמי ממסעדה</a>
+                <a id="order-pick-link" onclick="OnOrderPickUpClicked()" data-dismiss="modal" href="#" style="text-align: center;display: block; margin-top: 10px">איסוף עצמי ממסעדה</a>
             </div>
         </div>
     </div>
@@ -562,7 +562,7 @@
                         </div>
                         <div class="slide-holder">
                             <ul class="checkbox-list">
-                                <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> איסוף עצמי מהמסעדה <span>שדרות יגאל אלון 6, בית שמ</span></label></li>
+                                <li id="pickup_option"> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> איסוף עצמי מהמסעדה <span>שדרות יגאל אלון 6, בית שמ</span></label></li>
                                 <li id="delivery-parent"> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> משלוח <span>הזן את פרטי הכתובת למשלוח</span></label></li>
                             </ul>
                             <form id="property">
