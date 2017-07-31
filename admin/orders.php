@@ -72,7 +72,10 @@ include "header.php";
 										<th data-hide="phone, tablet">Coupon</th>
 										<th data-hide="phone,tablet">Discount</th>
 										<th data-hide="phone,tablet">Date</th>
+
+                                        <?php if ($rolee == 1) {?>
 										<th>Action</th>
+                                        <?php } ?>
 									</tr>
 									</thead>
 
@@ -129,8 +132,12 @@ include "header.php";
 										      $date[0]  = date('d-m-Y' , strtotime($date[0]));
 										?>
 										<td><?=$date[0]?></td>
+
+
+                                        <?php if ($rolee == 1) {?>
 										<td><a href="order-detail.php?order_id=<?=$user_order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> More Detail </button></a></td>
-									</tr>
+									<?php } ?>
+                                    </tr>
 									<?php } ?>
 									</tbody>
 

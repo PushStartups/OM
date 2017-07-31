@@ -18,11 +18,14 @@ include "header.php";
 
             <!-- right side of the page with the sparkline graphs -->
             <!-- col -->
+
+            <?php if ($rolee == 1) {?>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
                 <!-- sparks -->
                 <a style="float:right" href="add-new-company.php" class="btn btn-lg bg-color-purple txt-color-white"><i class="fa-fw fa fa-plus "></i> Add New Company</a>
                 <!-- end sparks -->
             </div>
+            <?php }?>
             <!-- end col -->
 
         </div>
@@ -67,12 +70,16 @@ include "header.php";
                                         <th data-hide="phone, tablet">Minimum Order</th>
                                         <th data-hide="phone, tablet">Discount Type</th>
                                         <th data-hide="phone, tablet">Discount</th>
-                                        <th data-hide="phone, tablet">Voting</th>
-                                        <th data-hide="phone, tablet">Delivery Timings</th>
-                                        <th data-hide="phone, tablet">Add Users</th>
-                                        <th data-hide="phone, tablet">Add Restaurants</th>
 
+                                        <?php if ($rolee == 1) {?>
+                                        <th data-hide="phone, tablet">Voting</th>
+                                        <?php }?>
+                                        <th data-hide="phone, tablet">Delivery Timings</th>
+                                        <th data-hide="phone, tablet">Users</th>
+                                        <th data-hide="phone, tablet">Restaurants</th>
+                                        <?php if ($rolee == 1) {?>
                                         <th>Action</th>
+                                        <?php }?>
                                     </tr>
                                     </thead>
 
@@ -89,6 +96,7 @@ include "header.php";
                                             <td><?=$companies['min_order']?></td>
                                             <td><?=$companies['discount_type']?></td>
                                             <td><?=$companies['discount']?></td>
+                                            <?php if ($rolee == 1) {?>
                                             <td>
                                                 <div class="onoffswitch">
                                                     <input type="checkbox" name="onoffswitchcompany" class="onoffswitch-checkbox" id="<?=$companies['id']?>" <?php if($companies['voting'] == '1'){ ?> checked <?php } ?>>
@@ -98,14 +106,17 @@ include "header.php";
                                                     </label>
                                                 </div>
                                             </td>
+                                            <?php } ?>
 
                                             <td>
-                                                <a href="add-company-delivery.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-warning  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Delivery Time </button></a>
+                                                <a href="add-company-delivery.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-warning  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Delivery Time </button></a>
                                             </td>
-                                            <td><a href="add-company-users.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Users </button></a></td>
+                                            <td><a href="add-company-users.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i>  Users </button></a></td>
 
-                                            <td><a href="add-company-restaurant.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Restaurants </button></a></td>
+                                            <td><a href="add-company-restaurant.php?companies_id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i>Restaurants </button></a></td>
+                                            <?php if ($rolee == 1) {?>
                                             <td><a href="edit-company.php?id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> Detail </button></a></td>
+                                       <?php } ?>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

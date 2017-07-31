@@ -56,13 +56,17 @@ else{
 
 
 		</div>
+
+
 		<br>
+        <?php if ($rolee == 1) {?>
 		<div align="center">
 			<a style="text-decoration: none" href="add-new-restaurant.php"><div class="btn btn-purple btn-lg">
 					<i class="fa fa-plus"></i>
 					Add Restaurant
 				</div></a>
 		</div><br><br>
+        <?php } ?>
 
 		<section id="widget-grid" class="">
 			<!-- row -->
@@ -94,13 +98,20 @@ else{
 											<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Logo</th>
 											<th data-hide="phone"><i class="fa-fw fa fa-cutlery text-muted hidden-md hidden-sm hidden-xs"></i> Name EN</th>
 											<th data-hide="phone,tablet">City</th>
+
+                                            <?php if ($rolee == 1) {?>
 											<th data-hide="phone,tablet">Hide/Show</th>
+                                            <?php }?>
+
 											<th data-hide="phone,tablet">Rank</th>
 										
-											<th data-hide="phone,tablet">Add Categories</th>
-											<th data-hide="phone,tablet">Add Timings & Delivery Address</th>
-											<th data-hide="phone,tablet">Add Tags</th>
+											<th data-hide="phone,tablet">Categories</th>
+											<th data-hide="phone,tablet"> Timings & Delivery Address</th>
+											<th data-hide="phone,tablet"> Tags</th>
+
+                                            <?php if ($rolee == 1) {?>
 											<th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Action</th>
+                                            <?php } ?>
 										</tr>
 										</thead>
 										<tbody>
@@ -115,6 +126,8 @@ else{
 												<td><img class="logo-table" src="<?=WEB_PATH.$restaurants['logo'] ?>"></td>
 												<td><?=$restaurants['name_en']?></td>
 												<td><?=$restaurants['city_name']?></td>
+
+                                                <?php if ($rolee == 1) {?>
 												<td>
 													<div class="onoffswitch">
 														<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="<?=$restaurants['id']?>" <?php if($restaurants['hide'] == '0'){ ?> checked <?php } ?>>
@@ -124,20 +137,30 @@ else{
 														</label>
 													</div>
 												</td>
+                                                <?php } ?>
+
+
+                                                <?php if ($rolee == 1) {?>
 												<td>
 													<div class="tel-holder">
 														<input class="form-control" id="rank<?=$restaurants['id']?>" value="<?=$restaurants['sort']?>" type="tel">
 														<button onclick="change_rank('<?=$restaurants['id']?>','<?=$city_id?>')" class="btn btn-labeled btn-primary add"><i class="fa fa-fw fa-save"></i> Save </button>
 													</div>
 												</td>
+                                                <?php } elseif ($rolee == 0){ ?>
+                                                    <td>
+                                                       <?=$restaurants['sort']?>
+                                                    </td>
+                                                <?php }?>
 
 
-												<td><a style="text-decoration: none" href="add-new-category.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Categories </button></a></td>
-												<td><a style="text-decoration: none" href="add-restaurant-timing.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-pink  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Timings & Delivery Address </button></a></td>
-												<td><a style="text-decoration: none" href="add-tags.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-orange txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Tags </button></a></td>
+												<td><a style="text-decoration: none" href="add-new-category.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i>  Categories </button></a></td>
+												<td><a style="text-decoration: none" href="add-restaurant-timing.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-pink  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Timings & Delivery Address </button></a></td>
+												<td><a style="text-decoration: none" href="add-tags.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled bg-color-orange txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Tags </button></a></td>
 
+                                                <?php if ($rolee == 1) {?>
 												<td><a href="edit-restaurant.php?id=<?=$restaurants['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;" ><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
-
+<?php } ?>
 											</tr>
 										<?php  } ?>
 

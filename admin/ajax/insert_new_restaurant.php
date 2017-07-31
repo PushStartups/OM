@@ -43,10 +43,18 @@ DB::insert('restaurants', array(
     "hechsher_en"           =>      $_POST['hechsher_en'],
     "hechsher_he"           =>      $_POST['hechsher_he'],
     "pickup_hide"           =>      $_POST['pickup_hide'],
-    "min_amount"            =>       $_POST['min_amount'],
-    "sort"                  =>       $getMax,
+    "min_amount"            =>      $_POST['min_amount'],
+    "sort"                  =>      $getMax,
+    "lat"                   =>       $_POST['lat'],
+    "lng"                   =>       $_POST['lng'],
+    "cc_exception"          =>       $_POST['cash_exception'],
+    "delivery_exception"    =>       $_POST['delivery_exception'],
+    "cash_exception"        =>       $_POST['cc_exception'],
 
 ));
+
+
+
 
 $lastInsertID = DB::insertId();
 

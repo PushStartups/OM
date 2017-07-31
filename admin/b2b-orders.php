@@ -80,7 +80,9 @@ include "header.php";
 
                                         <th data-hide="phone,tablet">Date</th>
 
+<?php if ($rolee == 1) {?>
                                         <th>Action</th>
+    <?php } ?>
                                     </tr>
                                     </thead>
 
@@ -123,7 +125,10 @@ include "header.php";
 
                                             <td><?=$order['date']?></td>
 
+
+                                        <?php if ($rolee == 1) {?>
                                             <td><a href="b2b-order-detail.php?order_id=<?=$order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-info"></i> More Detail </button></a></td>
+                                        <?php } ?>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

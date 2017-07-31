@@ -27,6 +27,8 @@ else
     <!-- MAIN CONTENT -->
     <div id="content">
         <!-- row -->
+
+        <?php if ($rolee == 1) {?>
         <div class="row">
 
             <!-- col -->
@@ -80,7 +82,7 @@ else
         </div><br><br>
         <?php  } }?>
         <section id="widget-grid"  id="myform">
-
+<?php } ?>
             <!-- SHOW CATEGORIES-->
             <?php  if(!empty($categories)) { ?>
                 <div class="row">
@@ -113,9 +115,11 @@ else
                                             <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Logo</th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-info text-muted hidden-md hidden-sm hidden-xs"></i> Name </th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-info text-muted hidden-md hidden-sm hidden-xs"></i> שֵׁם </th>
-                                            <th data-hide="phone"><i class="fa-fw fa fa-plus text-muted hidden-md hidden-sm hidden-xs"></i> Add Items </th>
+                                            <th data-hide="phone"><i class="fa-fw fa fa-plus text-muted hidden-md hidden-sm hidden-xs"></i> Items </th>
+                                            <?php if ($rolee == 1) {?>
                                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Edit</th>
                                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Delete</th>
+                                            <?php }?>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -131,10 +135,11 @@ else
                                                 <td><?=$category['name_en']?></td>
                                                 <td><?=$category['name_he']?></td>
 
-                                                <td><a style="text-decoration: none" href="add-new-items.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Items </button></a></td>
+                                                <td><a style="text-decoration: none" href="add-new-items.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i>  Items </button></a></td>
+                                                <?php if ($rolee == 1) {?>
                                                 <td><a href="edit-category.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
                                                 <td><a onclick="delete_category('<?=$category['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
-
+<?php }?>
                                             </tr>
                                         <?php  } ?>
 
@@ -199,10 +204,12 @@ else
                                     <i class="fa fa-arrow-left"></i>
                                     Go Back
                                 </div>
+                                <?php if ($rolee == 1) {?>
                                 <div onclick="show_category_div()" class="btn btn-primary btn-lg">
                                     <i class="fa fa-plus"></i>
                                     Add Category
                                 </div>
+                                <?php } ?>
                                 <br><br>
                                 <div id="add-category" style="display: none">
                                     <form>

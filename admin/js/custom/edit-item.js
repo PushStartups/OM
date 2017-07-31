@@ -107,7 +107,12 @@ function edit_item(item_id,url)
 
         'hide'                    :  $('#hide').val(),
 
-        'item_id'             :   item_id
+        'item_id'             :   item_id,
+
+
+        'cash_pickup_exception'                      :  $('#cash_pickup_exception').val(),
+        'min_order_exception'                      :  $('#min_order_exception').val(),
+
 
     };
 

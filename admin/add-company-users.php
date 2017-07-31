@@ -25,11 +25,14 @@ include "header.php";
 
             <!-- right side of the page with the sparkline graphs -->
             <!-- col -->
+
+            <?php if ($rolee == 1) {?>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
 
                 <a onclick="add_user_tab()" style="float:right"  class="btn btn-lg bg-color-purple txt-color-white"><i class="fa-fw fa fa-plus "></i> Add New User</a>
 
             </div>
+            <?php } ?>
             <!-- end col -->
 
         </div>
@@ -110,8 +113,11 @@ include "header.php";
                                             <th >Discount</th>
                                             <th >Contact</th>
                                             <th >Language</th>
+
+                                            <?php if ($rolee == 1) {?>
                                             <th >Action</th>
                                             <th >Delete</th>
+                                            <?php }?>
                                             <!--                                            <th>Delete</th>-->
                                         </tr>
                                         </thead>
@@ -129,9 +135,12 @@ include "header.php";
                                                 <td><?=$user['discount']?></td>
                                                 <td><?=$user['contact']?></td>
                                                 <td><?=$user['language']?></td>
+
+
+                                                <?php if ($rolee == 1) {?>
                                                 <td><a href="edit-company-users.php?id=<?=$user['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
                                                 <td><a onclick="delete_comp_user('<?=$user['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
-
+<?php } ?>
                                             </tr>
                                         <?php } ?>
                                         </tbody>
@@ -160,9 +169,7 @@ include "header.php";
             <div class="row">
 
                 <!-- col -->
-                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                    <h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-users "></i> Add Users</h1>
-                </div>
+                
 
             </div>
 
@@ -223,10 +230,13 @@ include "header.php";
                             </div>
                         </div>
                     </div>
+
+                    <?php if ($rolee == 1) {?>
                     <div onclick="show_add_new_user()" class="btn btn-primary btn-lg" style="margin-top: 2%;">
                         <i class="fa fa-plus"></i>
                         Add User
                     </div><br>
+                    <?php } ?>
 
                 </article>
 

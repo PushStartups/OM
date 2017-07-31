@@ -18,6 +18,7 @@ else
     <!-- MAIN CONTENT -->
     <div id="content">
         <!-- row -->
+        <?php if ($rolee == 1) {?>
         <div class="row">
 
             <!-- col -->
@@ -46,7 +47,7 @@ else
                 *Please see the sample CSV file link. <a target="_blank" href="https://docs.google.com/spreadsheets/d/15DeOW-ZHI734O0F22juE5kEuffymjfTQCzmG00h1uqE/edit?usp=sharing">Click Here</a>
             </form>
         </div><br><br>
-
+<?php } ?>
         <!-- widget grid -->
 
         <section id="widget-grid"  id="myform">
@@ -84,8 +85,10 @@ else
                                             <th data-hide="phone"> Name </th>
                                             <th data-hide="phone"> שֵׁם </th>
                                             <th data-hide="phone"> Price </th>
+                                            <?php if ($rolee == 1) {?>
                                             <th data-hide="phone,tablet"> Edit</th>
                                             <th data-hide="phone,tablet"> Delete</th>
+                                            <?php } ?>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -98,8 +101,10 @@ else
                                                 <td><?=$subItem['name_en']?></td>
                                                 <td><?=$subItem['name_he']?></td>
                                                 <td><?=$subItem['price']?></td>
+                                                <?php if ($rolee == 1) {?>
                                                 <td><a href="edit-subitems.php?id=<?=$subItem['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
                                                 <td><a onclick="delete_subitem('<?=$subItem['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+                                            <?php } ?>
                                             </tr>
                                         <?php  }
                                         ?>
@@ -140,10 +145,12 @@ else
                                     <i class="fa fa-arrow-left"></i>
                                     Go Back
                                 </div>
+                                <?php if ($rolee == 1) {?>
                                 <div onclick="show_subitems_div()" class="btn btn-primary btn-lg">
                                     <i class="fa fa-plus"></i>
                                     Add SubItems
                                 </div>
+                                <?php }?>
                                 <br><br>
                                 <div id="add-subitem" style="display: none">
                                     <form>

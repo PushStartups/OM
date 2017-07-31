@@ -106,7 +106,14 @@ include "header.php";
                             </div>
 
                             <div class="widget-body">
+                                <style>
+                                    .map_canvas {
+                                        width: 500px;
+                                        height: 300px;
+                                        margin: 10px 20px 10px 0;
+                                    }
 
+                                </style>
                                 <form>
                                     <div class="form-actions">
                                         <div onclick="delete_company('<?=$companies_id?>')" class="btn btn-danger btn-lg">
@@ -121,16 +128,23 @@ include "header.php";
                                             <input class="form-control" id="name" name="name" value="<?php echo $edit_company['name'];?>"  type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_name"></span>
                                         </div>
+                                        <div style="display:none" class="form-group">
+                                            <div id="map" class="map_canvas"></div>
+                                        </div>
+                                        <input type="hidden" id="lat" name="lat">
+                                        <input type="hidden" id="lng" name="lng">
                                         <div class="form-group">
                                             <label>Delivery Address</label>
-                                            <input class="form-control" id="address" name="address" value="<?=$edit_company['delivery_address'];?>"  type="text">
+                                            <input class="form-control" id="area_en" name="area_en" value="<?=$edit_company['delivery_address'];?>"  type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_address"></span>
                                         </div>
+
                                         <div class="form-group">
                                             <label>Minimum Order</label>
                                             <input class="form-control" id="min_order" name="min_order" value="<?=$edit_company['min_order'];?>"  type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_min_order"></span>
                                         </div>
+
                                         <div class="form-group">
                                             <label>Discount Type </label>
                                             <select id="discount_type" name="discount_type" class="form-control">
@@ -144,6 +158,7 @@ include "header.php";
                                             </select>
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;"></span>
                                         </div>
+
                                         <div class="form-group">
                                             <label>Discount Amount </label>
                                             <input class="form-control" id="amount" name="amount" value="<?=$edit_company['discount'];?>" placeholder="Enter Discount Amount" type="text">

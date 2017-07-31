@@ -19,12 +19,15 @@ include "header.php";
 
                 <!-- right side of the page with the sparkline graphs -->
                 <!-- col -->
+
+<?php if ($rolee == 1) {?>
                 <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
                     <!-- sparks -->
                     <a style="float:right" href="add-new-tag.php" class="btn btn-lg bg-color-purple txt-color-white"><i class="fa-fw fa fa-plus "></i> Add New Tag</a>
 
                     <!-- end sparks -->
                 </div>
+    <?php } ?>
                 <!-- end col -->
 
             </div>
@@ -69,10 +72,12 @@ include "header.php";
 
                                             <th data-hide="phone, tablet">Tag Name HE</th>
 
+
+<?php if ($rolee == 1) {?>
                                             <th >Edit</th>
 
                                             <th >Delete</th>
-
+<?php } ?>
                                             <!--                                            <th>Action</th>-->
                                         </tr>
                                         </thead>
@@ -90,10 +95,12 @@ include "header.php";
 
                                                 <td><?=$tag['name_he']?></td>
 
+
+                                            <?php if ($rolee == 1) {?>
                                                 <td><a href="edit-tag.php?id=<?=$tag['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
 
                                                 <td><a onclick="delete_tag('<?=$tag['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
-
+<?php }?>
                                             </tr>
                                         <?php } ?>
                                         </tbody>

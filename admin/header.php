@@ -6,6 +6,8 @@ require_once 'inc/constants.php';
 checkAdminSession();
 DB::query("set names utf8");
 
+$rolee = $_SESSION['b2c_admin_role'];
+
 ?>
 
 <!DOCTYPE html>
@@ -155,17 +157,28 @@ DB::query("set names utf8");
                 <a href="tags.php" title="Tags"><i class="fa fa-lg fa-fw fa-tags"></i> <span class="menu-item-parent">Tags</span></a>
             </li>
             <li>
+                <a href="ledger.php" title="Ledger"><i class="fa fa-lg fa-fw fa-files-o"></i> <span class="menu-item-parent">Ledger</span></a>
+            </li>
+            <li>
                 <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
             </li>
             <li>
-                <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>
+                <a href="stock-reports.php" title="Stock Invoice Taxing"><i class="fa fa-lg fa-fw fa-files-o"></i> <span class="menu-item-parent">Stock Invoice Taxes </span></a>
             </li>
-            <li>
-                <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>
-            </li>
-            <li>
-                <a href="b2b-rest-discounts.php" title="Orders"><i class="fa fa-lg fa-fw fa-tags"></i> <span class="menu-item-parent">B2B Rest Disc</span></a>
-            </li>
+<!--            <li>-->
+<!--                <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="b2b-orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">B2B Orders</span></a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="b2b-rest-discounts.php" title="Orders"><i class="fa fa-lg fa-fw fa-tags"></i> <span class="menu-item-parent">B2B Rest Disc</span></a>-->
+<!--            </li>-->
+            <?php if ($rolee == 1) { ?>
+                <li>
+                    <a href="add-new-admin.php" title="Add Admin"><i class="fa fa-lg fa-fw fa-user-secret"></i> <span class="menu-item-parent">Add New Admin </span></a>
+                </li>
+            <?php } ?>
             <li>
                 <a href="logout.php" title="Restaurant"><i class="fa fa-lg fa-fw fa-sign-out"></i> <span class="menu-item-parent">Sign Out</span></a>
             </li>
