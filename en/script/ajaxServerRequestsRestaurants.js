@@ -77,9 +77,6 @@ function onReadyJobs() {
         'restaurantId': "",                // RESTAURANT ID SELECTED BY USER
         'restaurantTitle': "",             // SELECTED RESTAURANT TITLE
         'pickup_hide': false,              // IS PICK UP OPTION HIDE
-        'delivery_exception': false,       // DELIVERY EXCEPTION
-        'cash_exception': false,           // CASH EXCEPTION
-        'cc_exception': false,             // CREDIT CARD EXCEPTION
         'restaurantTitleHe': "",           // SELECTED RESTAURANT TITLE
         'restaurantAddress': "",           // SELECTED RESTAURANT ADDRESS
         'rest_lat': "",                    // SELECTED RESTAURANT LAT
@@ -518,26 +515,6 @@ function order_now(clickedRestId) {
         userObject.pickup_hide = true;
 
     }
-
-    if(parseInt(allRestJson[clickedRestId].delivery_exception) == 1) {
-
-        userObject.delivery_exception = true;
-
-    }
-
-    if(parseInt(allRestJson[clickedRestId].cash_exception) == 1) {
-
-        userObject.cash_exception = true;
-
-    }
-
-    if(parseInt(allRestJson[clickedRestId].cc_exception) == 1) {
-
-        userObject.cc_exception = true;
-
-    }
-
-
 
     // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
 
