@@ -90,35 +90,7 @@ include "header.php";
                                             </div>
 
 
-
                                             
-                                            
-                                            <div class="form-group">
-                                                <label>CC Exception</label>
-                                                <select id="cc_exception" name="cc_exception" class="form-control">
-                                                    <option value="1" selected>No</option>
-                                                    <option value="0">Yes</option>
-                                                </select>
-                                                <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Delivery Exception</label>
-                                                <select id="delivery_exception" name="delivery_exception" class="form-control">
-                                                    <option value="1" selected>No</option>
-                                                    <option value="0">Yes</option>
-                                                </select>
-                                                <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
-                                            </div>
-                                            
-                                            <div class="form-group">
-                                                <label>Cash Exception</label>
-                                                <select id="cash_exception" name="cash_exception" class="form-control">
-                                                    <option value="1" selected>No</option>
-                                                    <option value="0">Yes</option>
-                                                </select>
-                                                <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
-                                            </div>
 
                                             <div class="form-group">
                                                 <label>City </label>

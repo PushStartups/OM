@@ -47,9 +47,6 @@ DB::insert('restaurants', array(
     "sort"                  =>      $getMax,
     "lat"                   =>       $_POST['lat'],
     "lng"                   =>       $_POST['lng'],
-    "cc_exception"          =>       $_POST['cash_exception'],
-    "delivery_exception"    =>       $_POST['delivery_exception'],
-    "cash_exception"        =>       $_POST['cc_exception'],
 
 ));
 
