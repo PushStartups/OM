@@ -21,6 +21,7 @@ else
     <!-- MAIN CONTENT -->
     <div id="content">
         <!-- row -->
+        <?php if ($rolee == 1) {?>
         <div class="row">
 
             <!-- col -->
@@ -50,7 +51,7 @@ else
                 *Please see the sample CSV file link. <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VObPfVvW9cVT9jPTijsHsanmIVhajdFuFbFdW5dCHZQ/edit">Click Here</a>
             </form>
         </div><br><br>
-
+<?php } ?>
         <!-- widget grid -->
 
         <section id="widget-grid"  id="myform">
@@ -90,9 +91,11 @@ else
                                             <th data-hide="phone"> Type </th>
                                             <th data-hide="phone"> Price Replace </th>
                                             <th data-hide="phone"> Limit </th>
-                                            <th data-hide="phone"> Add SubItems</th>
+                                            <th data-hide="phone"> SubItems</th>
+                                            <?php if ($rolee == 1) {?>
                                             <th data-hide="phone,tablet"> Edit</th>
                                             <th data-hide="phone,tablet"> Delete</th>
+                                            <?php } ?>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -107,10 +110,11 @@ else
                                                 <td><?=$extra['type']?></td>
                                                 <td><?=$extra['price_replace']?></td>
                                                 <td><?=$extra['limit']?></td>
-                                                <td><a style="text-decoration: none" href="add-subitems.php?id=<?=$extra['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add SubItems </button></a></td>
+                                                <td><a style="text-decoration: none" href="add-subitems.php?id=<?=$extra['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> SubItems </button></a></td>
+                                                <?php if ($rolee == 1) {?>
                                                 <td><a href="edit-extras.php?id=<?=$extra['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
                                                 <td><a onclick="delete_extras('<?=$extra['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
-
+<?php } ?>
                                             </tr>
                                         <?php  }
                                         ?>
@@ -151,10 +155,12 @@ else
                                     <i class="fa fa-arrow-left"></i>
                                     Go Back
                                 </div>
+                                <?php if ($rolee == 1) {?>
                                 <div onclick="show_addons_div()" class="btn btn-primary btn-lg">
                                     <i class="fa fa-plus"></i>
                                     Add Choices & Addons
                                 </div>
+                                <?php } ?>
                                 <br><br>
                                 <div id="add-choices" style="display: none">
                                     <form>

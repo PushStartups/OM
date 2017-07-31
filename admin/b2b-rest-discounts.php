@@ -19,9 +19,12 @@ include "header.php";
 
                 <!-- right side of the page with the sparkline graphs -->
                 <!-- col -->
+
+<?php if ($rolee == 1) { ?>
                 <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                     <a style="text-decoration: none" href="add-rest-company-discount.php"><div class="btn btn-purple btn-lg"><i class="fa-fw fa fa-plus "></i> Add A Company Restaurant Discount</div></a>
                 </div>
+    <?php } ?>
                 <!-- end col -->
 
             </div>
@@ -68,8 +71,10 @@ include "header.php";
                                             <th data-hide="phone, tablet">In Time Discount</th>
 
 
+<?php if ($rolee == 1) {?>
                                             <th>Action</th>
                                             <th>Delete</th>
+    <?php }?>
                                         </tr>
                                         </thead>
 
@@ -97,8 +102,10 @@ include "header.php";
 
                                                 <td><?=$companies['in_time_discount']?>%</td>
 
+                                            <?php if ($rolee == 1) {?>
                                               <td><a href="edit-b2b-rest-discount.php?id=<?=$companies['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
                                                 <td><a onclick="delete_b2b_rest_disc('<?=$companies['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
+                                           <?php }?>
                                             </tr>
                                         <?php } ?>
                                         </tbody>

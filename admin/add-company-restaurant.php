@@ -25,11 +25,14 @@ if(isset($_GET['companies_id']))
 
             <!-- right side of the page with the sparkline graphs -->
             <!-- col -->
+
+            <?php if ($rolee == 1) {?>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
 
                 <a onclick="add_restaurant_tab()" style="float:right"  class="btn btn-lg bg-color-purple txt-color-white"><i class="fa-fw fa fa-plus "></i> Add New Restaurant</a>
 
             </div>
+            <?php } ?>
             <!-- end col -->
 
         </div>
@@ -136,7 +139,10 @@ if(isset($_GET['companies_id']))
                                     <tr>
                                         <th data-class="expand">Restaurant ID</th>
                                         <th >Restaurant Name</th>
+
+                                        <?php if ($rolee == 1) {?>
                                         <th>Delete</th>
+                                        <?php } ?>
                                     </tr>
                                     </thead>
 
@@ -152,7 +158,10 @@ if(isset($_GET['companies_id']))
                                         <tr>
                                             <td><?=$restaurant['rest_id']?></td>
                                             <td><?=$rest['name_en']?></td>
+
+                                            <?php if ($rolee == 1) {?>
                                             <td><a onclick="delete_company_restaurant('<?=$restaurant['rest_id']?>','<?=$restaurant['company_id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete </button></a></td>
+                                        <?php }?>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

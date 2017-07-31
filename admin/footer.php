@@ -129,6 +129,8 @@ you can add as many as you like
 <script src="js/custom/sweetalert-dev.js"></script>
 <script src="js/custom/sweetalert.min.js"></script>
 <script src="js/custom/add-new-city.js"></script>
+<script src="js/custom/add-new-admin.js"></script>
+
 
 <script type="text/javascript">
     hideLoading();
@@ -359,7 +361,7 @@ you can add as many as you like
     tags.push("<?php echo $tag_name['name_en']; ?>");
     <?php } ?>
 
-    $( "#tag_name_en" ).autocomplete({
+    $( "#tag_name_en").autocomplete({
         source: tags,
         select: function (event, ui) {
             globalTag = ui.item.label;

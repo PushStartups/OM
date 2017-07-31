@@ -95,6 +95,10 @@ function add_new_item(category_id,url)
         'price'                     :  $('#pricee').val(),
         'hide'                      :  $('#hide').val(),
         'category_id'               :   category_id,
+
+
+        'cash_pickup_exception'                      :  $('#cash_pickup_exception').val(),
+        'min_order_exception'                      :  $('#min_order_exception').val(),
       
 
     };

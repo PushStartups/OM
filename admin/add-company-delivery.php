@@ -90,6 +90,9 @@ include "header.php";
             <?php  } ?>
 
             <!-- row -->
+
+
+            <?php if ($rolee == 1) {?>
             <div class="row">
                 <!-- NEW WIDGET START -->
                 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -150,6 +153,7 @@ include "header.php";
                 </article>
                 <!-- WIDGET END -->
             </div>
+            <?php }?>
             <div class="row">
                 <!-- a blank row to get started -->
                 <div class="col-sm-12">

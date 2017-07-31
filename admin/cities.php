@@ -1,5 +1,7 @@
 <?php
 include "header.php";
+
+$rolee = $_SESSION['b2c_admin_role'];
 ?>
 <div id="main" role="main">
 
@@ -18,11 +20,13 @@ include "header.php";
 
             <!-- right side of the page with the sparkline graphs -->
             <!-- col -->
+            <?php if ($rolee == 1) {?>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
                 <!-- sparks -->
                 <a style="float:right" href="add-new-city.php" class="btn btn-lg bg-color-purple txt-color-white"><i class="fa-fw fa fa-plus "></i> Add New City</a>
                 <!-- end sparks -->
             </div>
+            <?php } ?>
             <!-- end col -->
 
         </div>
@@ -63,8 +67,11 @@ include "header.php";
                                     <tr>
                                         <th data-class="expand">Company ID</th>
                                         <th >Company Name</th>
+
+                                        <?php if ($rolee == 1) {?>
                                         <th >Hide/Show</th>
                                         <th>Action</th>
+                                        <?php } ?>
                                     </tr>
                                     </thead>
 
@@ -77,6 +84,8 @@ include "header.php";
                                         <tr>
                                             <td><?=$city['name_en']?></td>
                                             <td><?=$city['name_he']?></td>
+
+                                            <?php if ($rolee == 1) {?>
                                             <td>
                                             <div class="onoffswitch">
                                                 <input type="checkbox" name="onoffswitch1" class="onoffswitch-checkbox" id="<?=$city['id']?>" <?php if($city['hide'] == '0'){ ?> checked <?php } ?>>
@@ -87,6 +96,7 @@ include "header.php";
                                             </div>
                                             </td>
                                            <td><a href="edit-city.php?id=<?=$city['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+                                        <?php }?>
                                         </tr>
                                     <?php
                                     } ?>

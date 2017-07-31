@@ -95,6 +95,40 @@ else
                                                 <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="desc_he_error"></span>
                                             </div>
 
+
+                                            <div class="form-group">
+                                                <label>Cash Pickup Exception</label>
+                                                <select id="cash_pickup_exception" name="cash_pickup_exception" class="form-control">
+                                                    <?php if($item['cash_pickup_exception'] == 0){  ?>
+                                                        <option value="0" selected>No</option>
+                                                        <option value="1">Yes</option>
+                                                    <?php } else { ?>
+                                                        <option value="1" selected>Yes</option>
+                                                        <option value="0">No</option>
+
+                                                    <?php } ?>
+                                                </select>
+                                                <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label>Min Order Exception</label>
+                                                <select id="min_order_exception" name="min_order_exception" class="form-control">
+                                                    <?php if($item['min_order_exception'] == 0){  ?>
+                                                        <option value="0" selected>No</option>
+                                                        <option value="1">Yes</option>
+                                                    <?php } else { ?>
+                                                        <option value="1" selected>Yes</option>
+                                                        <option value="0">No</option>
+
+                                                    <?php } ?>
+                                                </select>
+                                                <span style="font-size: 14px; color: red; width: 100%; padding: 9px;text-transform: none;"></span>
+                                            </div>
+
+
                                         </fieldset>
                                         <div class="form-actions">
                                             <div onclick="edit_item('<?=$item_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">

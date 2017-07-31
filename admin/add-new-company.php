@@ -44,17 +44,31 @@ include "header.php";
 
                                 <form>
                                     <fieldset>
+                                        <style>
+                                            .map_canvas {
+                                                width: 500px;
+                                                height: 300px;
+                                                margin: 10px 20px 10px 0;
+                                            }
+
+                                        </style>
                                         <input name="authenticity_token" type="hidden">
                                         <div class="form-group">
                                             <label>Company Name</label>
                                             <input class="form-control" id="name" name="name" placeholder="Enter Company Name" type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-name"></span>
                                         </div>
+                                        <div style="display:none" class="form-group">
+                                            <div id="map" class="map_canvas"></div>
+                                        </div>
+                                        <input type="hidden" id="lat" name="lat">
+                                        <input type="hidden" id="lng" name="lng">
                                         <div class="form-group">
                                             <label>Delivery Address</label>
-                                            <input class="form-control" id="address" name="address" placeholder="Enter Delivery Address" type="text">
+                                            <input class="form-control" id="area_en" name="area_en"  placeholder="Enter Delivery Address" type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-address"></span>
                                         </div>
+
                                         <div class="form-group">
                                             <label>Minimum Order</label>
                                             <input class="form-control" id="min_order" name="min_order" placeholder="Enter Minimum Order" type="text">
@@ -85,7 +99,6 @@ include "header.php";
                                             <input class="form-control" id="password" name="password" placeholder="Enter Password" type="text">
                                             <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error_password"></span>
                                         </div>
-
 
                                         <br>
                                         <h3 align="center">Company Timings</h3><br>

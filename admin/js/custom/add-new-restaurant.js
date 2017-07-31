@@ -54,13 +54,13 @@ $('#description_he').bind('input', function() {
 
 });
 
-$('#address_en').bind('input', function() {
+$('#area_en').bind('input', function() {
 
     document.getElementById('address_en_error').innerHTML = "";
 
 });
 
-$('#address_he').bind('input', function() {
+$('#area_he').bind('input', function() {
 
     document.getElementById('address_he_error').innerHTML = "";
 
@@ -142,6 +142,7 @@ function category_change(val)
 
 
 function add_restaurant() {
+
     //alert(globalImg);
     var name_en = $('#name_en').val();
     var name_he = $('#name_he').val();
@@ -156,13 +157,19 @@ function add_restaurant() {
     var description_en = $('#description_en').val();
     var description_he = $('#description_he').val();
 
-    var address_en = $('#address_en').val();
-    var address_he = $('#address_he').val();
+    var address_en = $('#area_en').val();
+    var address_he = $('#area_he').val();
 
     var hechsher_en = $('#hechsher_en').val();
     var hechsher_he = $('#hechsher_he').val();
 
 
+    if($('#lat').val() == "")
+    {
+        $('#address_en_error').html('Please Use Suggestions*');
+        return;
+
+    }
 
     if (name_en == "") {
         $('#name_en_error').html('Required*');
@@ -226,13 +233,18 @@ function add_restaurant() {
         'description_en': $('#description_en').val(),
         'description_he': $('#description_he').val(),
 
-        'address_en': $('#address_en').val(),
-        'address_he': $('#address_he').val(),
+        'address_en' : $('#area_en').val(),
+        'address_he' : $('#area_he').val(),
 
         'hechsher_en': $('#hechsher_en').val(),
         'hechsher_he': $('#hechsher_he').val(),
         'pickup_hide': $('#pickup_hide').val(),
-        'min_amount': $('#min_amount').val(),
+        'cash_exception': $('#cash_exception').val(),
+        'delivery_exception': $('#delivery_exception').val(),
+        'cc_exception': $('#cc_exception').val(),
+        'min_amount' : $('#min_amount').val(),
+        'lat': $('#lat').val(),
+        'lng': $('#lng').val(),
 
 
     };

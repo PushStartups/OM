@@ -20,6 +20,8 @@ DB::insert('items', array(
     "desc_en"               =>      $_POST['desc_en'],
     "desc_he"               =>      $_POST['desc_he'],
     "price"                 =>      $_POST['price'],
+    "cash_pickup_exception"                 =>      $_POST['cash_pickup_exception'],
+    "min_order_exception"                 =>      $_POST['min_order_exception'],
     "sort"                  =>      $sort
 
 ));
