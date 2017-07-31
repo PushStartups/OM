@@ -41,6 +41,7 @@ $(document).ready(function() {
         onReadyJobs();
     }
 
+
 });
 
 
@@ -103,7 +104,12 @@ function getSelectedRestaurant(response) {
         if(parseInt(result.pickup_hide) == 1) {
 
             userObject.pickup_hide = true;
+            $('#order-pick-link').hide();
 
+        }
+        else {
+
+            $('#order-pick-link').show();
         }
 
         // SAVE USER OBJECT IS CACHE FOR NEXT PAGE USAGE
