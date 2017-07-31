@@ -104,6 +104,7 @@ function getSelectedRestaurant(response) {
         if(parseInt(result.pickup_hide) == 1) {
 
             userObject.pickup_hide = true;
+
             $('#order-pick-link').hide();
 
         }
@@ -144,6 +145,20 @@ function onReadyJobs() {
     multipleTypeSubItems        = [];                                              // SUB-ITEMS TYPE MULTIPLE
     extras                      = null;                                            // EXTRAS FROM SERVER
     minOrderLimit               = selectedRest.min_amount;                         // MINIMUM ORDER LIMIT
+
+
+
+    if(userObject.pickup_hide)
+    {
+
+        $('#order-pick-link').hide();
+    }
+    else {
+
+
+        $('#order-pick-link').show();
+
+    }
 
 
 

@@ -49,6 +49,20 @@ $(document).ready(function() {
     minOrderLimit               = selectedRest.min_amount;                         // MINIMUM ORDER LIMIT
 
 
+    if(userObject.pickup_hide)
+    {
+
+        $('#order-pick-link').hide();
+    }
+    else {
+
+
+        $('#order-pick-link').show();
+
+    }
+
+
+
 
     // // REQUEST SERVER GET CATEGORIES WITH ITEMS
     commonAjaxCall("/restapi/index.php/categories_with_items", {"restaurantId" :  restId }, getCategoriesWithItems);
