@@ -151,7 +151,7 @@ function  getAllRestaurants(response)
 
 
         if((!$('#cb_milky').is(":checked")) && (!$('#cb_meat').is(":checked")) &&  (!$('#cb_health').is(":checked")) &&  (!$('#cb_pizzeria').is(":checked")) && (!$('#cb_hamburger').is(":checked"))
-        && (!$('#cb_sushi').is(":checked")) && (!$('#cb_mehadrin').is(":checked")) )
+        && (!$('#cb_sushi').is(":checked")) && (!$('#cb_mehadrin').is(":checked")) && (!$('#cb_ice_cream').is(":checked")))
         {
             isShow = true;
         }
@@ -231,7 +231,16 @@ function  getAllRestaurants(response)
                     }
 
                 }
+                if ($('#cb_ice_cream').is(":checked")) {
 
+                    var tag = result[x].tags[y]['name_en'];
+
+                    if ((tag.toLowerCase()).includes('ice cream')) {
+                        isShow = true;
+                        break;
+                    }
+
+                }
 
             }
 

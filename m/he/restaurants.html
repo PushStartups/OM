@@ -300,6 +300,16 @@
                                 <div class="slider round"></div>
                             </label>
                         </li>
+                        <li id="ice_cream_click">
+                            <div id="ice_cream_others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/ice-cream-icon.png">
+                                <span class="span">גלידה</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_ice_cream" type="checkbox" onclick="onFilterChange()" >
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
                     </ul>
                 </div>
 
@@ -512,6 +522,21 @@
         $('#cb_mehadrin').click();
     });
 
+
+    $('#ice_cream_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_ice_cream').click();
+    });
+
+
+    $('#ice_cream_others').on('click', function(e) {
+
+        $('#cb_ice_cream').click();
+
+    });
 
 
 </script>
