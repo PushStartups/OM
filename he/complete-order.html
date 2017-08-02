@@ -128,18 +128,22 @@
 <!--<script src='script/render.js'></script>-->
 
 <script src="https://cdn.smooch.io/smooch.min.js"></script>
+
+
 <script>
     Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
-    Smooch.open();
 
+    if(window.location.hostname != "app.orderapp.com")
+    {
+        Smooch.open();
+    }
 
     Smooch.on('ready', function(){
         Smooch.sendMessage("HEBREW HEBREW");
     });
 
-
-
 </script>
+
 
 
 </body>
