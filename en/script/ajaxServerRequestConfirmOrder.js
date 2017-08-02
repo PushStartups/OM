@@ -659,6 +659,12 @@ function checkCouponCallBack(response)
 
                 discountedAmount = convertFloat(userObject.discount);
 
+                if(userObject.total < userObject.discount)
+                {
+                    userObject.discount = userObject.total;
+                    discountedAmount = userObject.total;
+                }
+
                 newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
 
                 $('#discountValue').html("-" + discountedAmount + " NIS");

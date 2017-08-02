@@ -1569,6 +1569,12 @@ function checkCouponCallBack(response)
 
             discountedAmount = convertFloat(userObject.discount);
 
+            if(userObject.total < userObject.discount)
+            {
+                userObject.discount = userObject.total;
+                discountedAmount = userObject.total;
+            }
+
             newTotal = convertFloat(userObject.total) - convertFloat(userObject.discount);
 
             $('#coupon-fee').html("-" + discountedAmount +" NIS");
@@ -1849,15 +1855,17 @@ function  callPage3() {
 
 function callPage3CallBack(response) {
 
+    // CALLING SMOOCH BOT FOR NATIVE APP
 
-    try
-    {
-        app.orderNowEvent();
-    }
-    catch (err)
-    {
-
-    }
+    //
+    // try
+    // {
+    //     app.orderNowEvent();
+    // }
+    // catch (err)
+    // {
+    //
+    // }
 
     var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
     var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));
