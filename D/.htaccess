@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteRule ^([0-9a-zA-Z_-]+) index.php [NC,L]
+
+ErrorDocument 404 /error.html
+
+Options -Indexes

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/D/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/D/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
@@ -154,9 +156,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="1440" />
-    <option name="y" value="24" />
+    <option name="y" value="23" />
     <option name="width" value="1920" />
-    <option name="height" value="1110" />
+    <option name="height" value="1119" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -205,6 +207,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orderapp-website-2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -910,14 +926,7 @@
       <workItem from="1501496515766" duration="349000" />
       <workItem from="1501570163093" duration="5233000" />
       <workItem from="1501616108257" duration="184000" />
-      <workItem from="1501653892202" duration="4778000" />
-    </task>
-    <task id="LOCAL-00155" summary="code update (New 20th June)">
-      <created>1497958298277</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1497958298278</updated>
+      <workItem from="1501653892202" duration="5199000" />
     </task>
     <task id="LOCAL-00156" summary="code update (New 20th June)">
       <created>1497958314368</created>
@@ -1255,11 +1264,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501660966067</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="updated db dump">
+      <created>1501661400663</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1501661400663</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1158676000" />
+    <option name="totallyTimeSpent" value="1159097000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1271,7 +1287,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="24" width="1920" height="1110" extended-state="0" />
+    <frame x="1440" y="23" width="1920" height="1119" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1701,20 +1717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="1570" column="0" lean-forward="false" selection-start-line="1570" selection-start-column="0" selection-end-line="1570" selection-end-column="0" />
-          <folding>
-            <marker date="1501660775000" expanded="true" signature="12833:12902" ph="..." />
-            <marker date="1501660775000" expanded="true" signature="13344:13422" ph="..." />
-            <marker date="1501660775000" expanded="true" signature="15364:15433" ph="..." />
-            <marker date="1501660775000" expanded="true" signature="15699:15766" ph="..." />
-            <marker date="1501660775000" expanded="true" signature="34310:34329" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/he/script/ajaxServerRequestsOrder-he.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1734,6 +1736,20 @@
         <state relative-caret-position="510">
           <caret line="664" column="56" lean-forward="false" selection-start-line="664" selection-start-column="56" selection-end-line="664" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/en/script/ajaxServerRequestsOrder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="1570" column="0" lean-forward="false" selection-start-line="1570" selection-start-column="0" selection-end-line="1570" selection-end-column="0" />
+          <folding>
+            <marker date="1501660775000" expanded="true" signature="12833:12902" ph="..." />
+            <marker date="1501660775000" expanded="true" signature="13344:13422" ph="..." />
+            <marker date="1501660775000" expanded="true" signature="15364:15433" ph="..." />
+            <marker date="1501660775000" expanded="true" signature="15699:15766" ph="..." />
+            <marker date="1501660775000" expanded="true" signature="34310:34329" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
