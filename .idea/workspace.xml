@@ -910,14 +910,7 @@
       <workItem from="1501496515766" duration="349000" />
       <workItem from="1501570163093" duration="5233000" />
       <workItem from="1501616108257" duration="184000" />
-      <workItem from="1501653892202" duration="4491000" />
-    </task>
-    <task id="LOCAL-00154" summary="DB update + code latest (New 18 June)">
-      <created>1497776584912</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1497776584912</updated>
+      <workItem from="1501653892202" duration="4778000" />
     </task>
     <task id="LOCAL-00155" summary="code update (New 20th June)">
       <created>1497958298277</created>
@@ -1255,11 +1248,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501660918872</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <task id="LOCAL-00203" summary="updated db dump">
+      <created>1501660966067</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1501660966067</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1158389000" />
+    <option name="totallyTimeSpent" value="1158676000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1271,7 +1271,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="24" width="1920" height="1110" extended-state="6" />
+    <frame x="1440" y="24" width="1920" height="1110" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
