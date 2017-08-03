@@ -42,8 +42,8 @@ if( $iPod || $iPhone || $iPad)
 else if($Android)
 {
     $redirect_url = "https://play.google.com/store/apps/details?id=ps.orderapp&hl=en";
-    header("Location: $redirect_url");
-}
+    header("Location: market://details?id=ps.orderapp&hl=en");
+     }
 else if($webOS)
 {
     $redirect_url = "https://orderapp.com";

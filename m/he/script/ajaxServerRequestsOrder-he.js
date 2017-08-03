@@ -68,6 +68,12 @@ $( document ).ready(function() {
     $('#rest-title').html(restName);
 
 
+
+    $('#checkbox-id213').prop('checked', true);
+    $('#checkbox-id112').prop('checked', false);
+    $('#delivery-info').show();
+
+
     if(userObject.pickup_hide == true)
     {
         $('#pickup_option').hide();
@@ -75,12 +81,7 @@ $( document ).ready(function() {
         $('#delivery-info').show();
 
     }
-    else {
 
-        // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
-        $('#checkbox-id112').prop('checked', true);
-
-    }
 
 
     // REQUEST SERVER GET CATEGORIES WITH ITEMS
@@ -1227,13 +1228,18 @@ function OnOrderNowClicked() {
     $('.box-frame.new').css('height' , 'calc(100% - 242px)');
 
     $('#food-cart-popup').modal('hide');
-    userObject.subTotal = userObject.total;
 
-    orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
+    userObject.subTotal = userObject.total;
 
     cash_pickup_from_link = false;
 
     $('#delivery-parent').show();
+
+    $('#delivery-info').show();
+
+    $('#delivery-info').addClass('show');
+
+    orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
 
 }
 
@@ -1248,15 +1254,20 @@ function OnOrderPickUpClicked()
 
     $('.box-frame.new').css('height' , 'calc(100% - 242px)');
 
+    $('#checkbox-id112').prop('checked', true);
+
     $('#food-cart-popup').modal('hide');
 
     userObject.subTotal = userObject.total;
 
+    $('#delivery-parent').hide();
+
+    $('#delivery-info').hide();
+
+    $('#delivery-info').removeClass('show');
+
     $('#customer-info-popup').modal('show');
 
-    cash_pickup_from_link = true;
-
-    $('#delivery-parent').hide();
 }
 
 

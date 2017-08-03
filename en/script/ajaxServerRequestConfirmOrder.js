@@ -81,6 +81,14 @@ $(document).ready(function() {
     }
 
 
+
+    userObject.pickFromRestaurant = false;
+    $('#checkbox-id-23').prop('checked', true);
+    $('#checkbox-id-12').prop('checked', false);
+    $('#deliveryFieldsParent').addClass('show');
+
+
+
     if(userObject.pickup_hide == true)
     {
         $('#pickup_option').hide();
@@ -88,18 +96,13 @@ $(document).ready(function() {
         $('#deliveryFieldsParent').addClass('show');
 
     }
-    else {
 
-        // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
-        $('#checkbox-id-12').prop('checked', true);
 
-    }
+
 
 
     $('.dropdown-nav').show();
 
-
-    userObject.pickFromRestaurant = true;
 
     $('#checkbox-id-13').prop('checked', true);
 
@@ -126,6 +129,7 @@ $(document).ready(function() {
 
         $('#delivery-parent').hide();
         cash_pickup_from_link = true;
+        $('#deliveryFieldsParent').removeClass('show');
 
     }
 

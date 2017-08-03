@@ -90,18 +90,16 @@ $( document ).ready(function() {
     }
 
 
+    $('#checkbox-id213').prop('checked', true);
+    $('#checkbox-id112').prop('checked', false);
+    $('#delivery-info').show();
+
 
     if(userObject.pickup_hide == true)
     {
         $('#pickup_option').hide();
         $('#checkbox-id213').prop('checked', true);
         $('#delivery-info').show();
-
-    }
-    else {
-
-        // SET DEFAULT VALUES ON ADDRESS AND DELIVERY SELECTION
-        $('#checkbox-id112').prop('checked', true);
 
     }
 
@@ -1259,6 +1257,13 @@ function OnOrderNowClicked() {
 
     cash_pickup_from_link = false;
 
+    $('#delivery-parent').show();
+
+    $('#delivery-info').show();
+
+    $('#delivery-info').addClass('show');
+
+
     orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
 }
 
@@ -1274,11 +1279,17 @@ function OnOrderPickUpClicked()
     $('#restAddress').html(userObject.restaurantAddress);
 
 
+    $('#checkbox-id112').prop('checked', true);
+
     $('#food-cart-popup').modal('hide');
 
     userObject.subTotal = userObject.total;
 
     $('#delivery-parent').hide();
+
+    $('#delivery-info').hide();
+
+    $('#delivery-info').removeClass('show');
 
     $('#customer-info-popup').modal('show');
 }
