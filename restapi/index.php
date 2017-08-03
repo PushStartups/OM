@@ -23,7 +23,7 @@ DB::query("set names utf8");
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
 {
-    define("EMAIL","muhammad.iftikhar.aftab@gmail.com");
+    define("EMAIL","avi@pushstartups.com");
     define("B2BEMAIL","devb2b.orderapp.com");
 }
 
@@ -3084,7 +3084,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
     $mailbody .= ' <span dir="rtl">
       הזמנה:  
-   ' . substr($user_order['contact'], -4) . '
+   ' . $orderId . '
     </span>';
 
 
@@ -3181,9 +3181,9 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".$orderId . " #" . $user_order['restaurantTitleHe'];
     else
-        $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject =  " הזמנה חדשה ".$orderId. " #" . $user_order['restaurantTitleHe'];
 
 
     $mail->Body = $mailbody;
@@ -3221,7 +3221,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
 
     $mailbody .= '\n';
 
-    $mailbody .= 'הזמנה:' . substr($user_order['contact'], -4);
+    $mailbody .= 'הזמנה:' . $orderId;
 
     if($user_order['specialRequest'] != '')
     {
@@ -3307,9 +3307,9 @@ function email_for_mark($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".$orderId . " #" . $user_order['restaurantTitleHe'];
     else
-        $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject =  " הזמנה חדשה ".$orderId . " #" . $user_order['restaurantTitleHe'];
 
 
     $mail->Body = $mailbody;
