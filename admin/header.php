@@ -163,8 +163,13 @@ $rolee = $_SESSION['b2c_admin_role'];
                 <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>
             </li>
             <li>
+                <a href="agents.php" title="Sales Agents"><i class="fa fa-lg fa-fw  fa-user-secret"></i> <span class="menu-item-parent">Sales Agents </span></a>
+            </li>
+            <li>
                 <a href="stock-reports.php" title="Stock Invoice Taxing"><i class="fa fa-lg fa-fw fa-files-o"></i> <span class="menu-item-parent">Stock Invoice Taxes </span></a>
             </li>
+
+
 <!--            <li>-->
 <!--                <a href="companies.php" title="Companies"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span class="menu-item-parent">B2B Company</span></a>-->
 <!--            </li>-->
@@ -176,7 +181,7 @@ $rolee = $_SESSION['b2c_admin_role'];
 <!--            </li>-->
             <?php if ($rolee == 1) { ?>
                 <li>
-                    <a href="add-new-admin.php" title="Add Admin"><i class="fa fa-lg fa-fw fa-user-secret"></i> <span class="menu-item-parent">Add New Admin </span></a>
+                    <a href="add-new-admin.php" title="Add Admin"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Add New Admin </span></a>
                 </li>
             <?php } ?>
             <li>

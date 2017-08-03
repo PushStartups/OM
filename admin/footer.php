@@ -193,6 +193,7 @@ you can add as many as you like
             //"bAutoWidth": false,
             //"bPaginate": false,
             //"bStateSave": true // saves sort state using localStorage
+            "order": [[ 0, "desc" ]],
             "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'f><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>"+
             "t"+
             "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
