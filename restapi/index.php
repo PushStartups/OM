@@ -23,7 +23,7 @@ DB::query("set names utf8");
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
 {
-    define("EMAIL","avi@pushstartups.com");
+    define("EMAIL","orders@orderapp.com");
     define("B2BEMAIL","devb2b.orderapp.com");
 }
 
@@ -1514,6 +1514,16 @@ $app->post('/add_order', function ($request, $response, $args) {
         $currentTime =  getCurrentTime();
 
 
+        if($user_order['pickFromRestaurant'] == 'true')
+        {
+            $delivery_pickup = "Pick";
+            $delivery_pickup1 = "Pick Up";
+        }
+        else
+        {
+            $delivery_pickup = "Delivery";
+            $delivery_pickup1 = "Delivery";
+        }
         // CREATE A NEW ORDER AGAINST USER
         DB::insert('user_orders', array(
 
@@ -1523,6 +1533,9 @@ $app->post('/add_order', function ($request, $response, $args) {
             'coupon_discount' => $discountType,
             'discount_value'  => $discountValue,
             "order_date"      => $db_date." ".$currentTime,
+            "contact"         => $user_order['contact'],
+            "delivery_address"         => $user_order['deliveryAddress'],
+            "delivery_or_pickup"         => $delivery_pickup1,
             "platform_info"   => $user_platform,
             'payment_method'  => $user_order['Cash_Card'],
             'transaction_id'  => $user_order['trans_id'],
@@ -1534,14 +1547,7 @@ $app->post('/add_order', function ($request, $response, $args) {
         date_default_timezone_set("Asia/Jerusalem");
         $onlyDate = date("d/m/Y");              //FOR LEDGER
         $onlytime = date("H:i");                //FOR LEDGER
-        if($user_order['pickFromRestaurant'] == 'true')
-        {
-            $delivery_pickup = "Pick";
-        }
-        else
-        {
-            $delivery_pickup = "Delivery";
-        }
+
 
         $restaurant_total = $user_order['total'] - $user_order['deliveryCharges'];
         DB::useDB('orderapp_user');
@@ -1604,17 +1610,17 @@ $app->post('/add_order', function ($request, $response, $args) {
         
         // SEND EMAIL TO KITCHEN
 
-        email_for_kitchen($user_order, $orderId, $todayDate);
+     //   email_for_kitchen($user_order, $orderId, $todayDate);
 
-        ob_end_clean();
+     //   ob_end_clean();
 
-        email_for_mark($user_order, $orderId, $todayDate);
+     //   email_for_mark($user_order, $orderId, $todayDate);
 
-        ob_end_clean();
+     //   ob_end_clean();
 
-        email_for_mark2($user_order, $orderId, $todayDate);
+     //   email_for_mark2($user_order, $orderId, $todayDate);
 
-        ob_end_clean();
+      //  ob_end_clean();
 
 
         //  CLIENT EMAIL
@@ -1622,25 +1628,25 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         if ($user_order['language'] == 'en') {
 
-            email_order_summary_english($user_order, $orderId, $todayDate);
+       //     email_order_summary_english($user_order, $orderId, $todayDate);
 
         }
         else {
 
 
-            email_order_summary_hebrew($user_order, $orderId, $todayDate);
+       //     email_order_summary_hebrew($user_order, $orderId, $todayDate);
 
         }
 
 
-        ob_end_clean();
+       // ob_end_clean();
 
         // SEND ADMIN COPY EMAIL ORDER SUMMARY
 
         email_order_summary_hebrew_admin($user_order, $orderId, $todayDate);
 
 
-        ob_end_clean();
+      //  ob_end_clean();
 
 
 
@@ -1789,16 +1795,10 @@ function test_email(){
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";
-
-
-
-
-
-    //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
@@ -2106,10 +2106,10 @@ function email_to_b2b_users($email,$password,$username)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
@@ -2305,12 +2305,13 @@ function sendVerificationEmail($code,$email)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
+
 
     //From email address and name
     $mail->From = "orders@orderapp.com";
@@ -2388,12 +2389,13 @@ function sendPassword($password,$email)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
+
 
     //From email address and name
     $mail->From = "orders@orderapp.com";
@@ -2600,10 +2602,10 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
@@ -2613,9 +2615,11 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 
 //To address and name
-    $mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
+    //$mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
+    $mail->addAddress("ahmadworkspace@gmail.com");     // SEND EMAIL TO USER
+  //  $mail->addAddress("muhammad.iftikhar.aftab@gmail.com");     // SEND EMAIL TO USER
 
-    $mail->AddCC(EMAIL);                        //SEND  CLIENT EMAIL COPY TO ADMIN
+    //$mail->AddCC(EMAIL);                        //SEND  CLIENT EMAIL COPY TO ADMIN
 
 //Send HTML or Plain Text email
     $mail->isHTML(false);
@@ -2797,12 +2801,13 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
+
 
     //From email address and name
     $mail->From = "orders@orderapp.com";
@@ -2994,10 +2999,10 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
@@ -3157,10 +3162,10 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
@@ -3283,10 +3288,10 @@ function email_for_mark($user_order,$orderId,$todayDate)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
@@ -3410,10 +3415,10 @@ function email_for_mark2($user_order,$orderId,$todayDate)
     $mail->SMTPDebug = 3;                                               // Enable verbose debug output
 
     $mail->isSMTP();
-    $mail->Host = "email-smtp.eu-west-1.amazonaws.com";                 //   Set mailer to use SMTP
+    $mail->Host = "email-smtp.us-west-2.amazonaws.com";                 //   Set mailer to use SMTP
     $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
-    $mail->Username = "AKIAJZTPZAMJBYRSJ27A";
-    $mail->Password = "AujjPinHpYPuio4CYc5LgkBrSRbs++g9sJIjDpS4l2Ky";   //   SMTP password
+    $mail->Username = "AKIAIREDXPXLR6TJGRLA";
+    $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
