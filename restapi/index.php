@@ -555,6 +555,9 @@ $app->post('/get_selected_restaurants', function ($request, $response, $args)
             "hechsher_he"          => $result["hechsher_he"],       // RESTAURANT HECHSHER
             "coming_soon"          => $result["coming_soon"],       // RESTAURANT COMING SOON
             "pickup_hide"          => $result["pickup_hide"],       // HIDE PICK UP OPTION
+            "delivery_exception"   => $result["delivery_exception"],    // DELIVERY EXCEPTION
+            "cash_exception"       => $result["cash_exception"],    // CASH_EXCEPTION
+            "cc_exception"         => $result["cc_exception"],          // CREDIT CARD
             "tags"                 => $tags,                        // RESTAURANT TAGS
             "gallery"              => $galleryImages,               // RESTAURANT GALLERY
             "timings"              => $restaurantTimings,           // RESTAURANT WEEKLY TIMINGS
@@ -1514,16 +1517,16 @@ $app->post('/add_order', function ($request, $response, $args) {
         $currentTime =  getCurrentTime();
 
 
+        $delivery_pickup = "";
         if($user_order['pickFromRestaurant'] == 'true')
         {
             $delivery_pickup = "Pick";
-            $delivery_pickup1 = "Pick Up";
         }
         else
         {
             $delivery_pickup = "Delivery";
-            $delivery_pickup1 = "Delivery";
         }
+
         // CREATE A NEW ORDER AGAINST USER
         DB::insert('user_orders', array(
 
@@ -1534,8 +1537,8 @@ $app->post('/add_order', function ($request, $response, $args) {
             'discount_value'  => $discountValue,
             "order_date"      => $db_date." ".$currentTime,
             "contact"         => $user_order['contact'],
-            "delivery_address"         => $user_order['deliveryAddress'],
-            "delivery_or_pickup"         => $delivery_pickup1,
+            "delivery_address" => $user_order['deliveryAddress'],
+            "delivery_or_pickup"  => $delivery_pickup,
             "platform_info"   => $user_platform,
             'payment_method'  => $user_order['Cash_Card'],
             'transaction_id'  => $user_order['trans_id'],
@@ -1610,17 +1613,17 @@ $app->post('/add_order', function ($request, $response, $args) {
         
         // SEND EMAIL TO KITCHEN
 
-     //   email_for_kitchen($user_order, $orderId, $todayDate);
+        email_for_kitchen($user_order, $orderId, $todayDate);
 
-     //   ob_end_clean();
+        ob_end_clean();
 
-     //   email_for_mark($user_order, $orderId, $todayDate);
+        email_for_mark($user_order, $orderId, $todayDate);
 
-     //   ob_end_clean();
+        ob_end_clean();
 
-     //   email_for_mark2($user_order, $orderId, $todayDate);
+        email_for_mark2($user_order, $orderId, $todayDate);
 
-      //  ob_end_clean();
+        ob_end_clean();
 
 
         //  CLIENT EMAIL
@@ -1628,25 +1631,25 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         if ($user_order['language'] == 'en') {
 
-       //     email_order_summary_english($user_order, $orderId, $todayDate);
+            email_order_summary_english($user_order, $orderId, $todayDate);
 
         }
         else {
 
 
-       //     email_order_summary_hebrew($user_order, $orderId, $todayDate);
+            email_order_summary_hebrew($user_order, $orderId, $todayDate);
 
         }
 
 
-       // ob_end_clean();
+        ob_end_clean();
 
         // SEND ADMIN COPY EMAIL ORDER SUMMARY
 
         email_order_summary_hebrew_admin($user_order, $orderId, $todayDate);
 
 
-      //  ob_end_clean();
+        ob_end_clean();
 
 
 
@@ -2312,7 +2315,6 @@ function sendVerificationEmail($code,$email)
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
 
-
     //From email address and name
     $mail->From = "orders@orderapp.com";
     $mail->FromName = "OrderApp";
@@ -2395,7 +2397,6 @@ function sendPassword($password,$email)
     $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
-
 
     //From email address and name
     $mail->From = "orders@orderapp.com";
@@ -2615,11 +2616,9 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 
 //To address and name
-    //$mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
-    $mail->addAddress("ahmadworkspace@gmail.com");     // SEND EMAIL TO USER
-  //  $mail->addAddress("muhammad.iftikhar.aftab@gmail.com");     // SEND EMAIL TO USER
+    $mail->addAddress($user_order['email']);     // SEND EMAIL TO USER
 
-    //$mail->AddCC(EMAIL);                        //SEND  CLIENT EMAIL COPY TO ADMIN
+    $mail->AddCC(EMAIL);                        //SEND  CLIENT EMAIL COPY TO ADMIN
 
 //Send HTML or Plain Text email
     $mail->isHTML(false);
@@ -2807,7 +2806,6 @@ function email_order_summary_hebrew($user_order,$orderId,$todayDate)
     $mail->Password = "AojfisSeSPUL6H0kp8eI+lcwWsyrCojnT24ak8ejSoW6";   //   SMTP password
     $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;
-
 
     //From email address and name
     $mail->From = "orders@orderapp.com";
@@ -3089,7 +3087,7 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
 
     $mailbody .= ' <span dir="rtl">
       הזמנה:  
-   ' . $orderId . '
+   ' . substr($user_order['contact'], -4) . '
     </span>';
 
 
@@ -3186,9 +3184,9 @@ function email_for_kitchen($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".$orderId . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     else
-        $mail->Subject =  " הזמנה חדשה ".$orderId. " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
 
 
     $mail->Body = $mailbody;
@@ -3226,7 +3224,7 @@ function email_for_mark($user_order,$orderId,$todayDate)
 
     $mailbody .= '\n';
 
-    $mailbody .= 'הזמנה:' . $orderId;
+    $mailbody .= 'הזמנה:' . substr($user_order['contact'], -4);
 
     if($user_order['specialRequest'] != '')
     {
@@ -3312,9 +3310,9 @@ function email_for_mark($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
-        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".$orderId . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject = "(ELUNA) "+" הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
     else
-        $mail->Subject =  " הזמנה חדשה ".$orderId . " #" . $user_order['restaurantTitleHe'];
+        $mail->Subject =  " הזמנה חדשה ".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'];
 
 
     $mail->Body = $mailbody;
