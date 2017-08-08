@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ddd/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ddd/index.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/D/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/D/index.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ddd/.htaccess" afterPath="$PROJECT_DIR$/d/.htaccess" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ddd/index.php" afterPath="$PROJECT_DIR$/d/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
@@ -28,7 +26,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ddd/index.php">
+        <entry file="file://$PROJECT_DIR$/d/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
@@ -936,14 +934,7 @@
       <workItem from="1502113238426" duration="33000" />
       <workItem from="1502114008880" duration="875000" />
       <workItem from="1502190976972" duration="501000" />
-      <workItem from="1502200432654" duration="222000" />
-    </task>
-    <task id="LOCAL-00166" summary="code update (New 5th July)">
-      <created>1499256587252</created>
-      <option name="number" value="00166" />
-      <option name="presentableId" value="LOCAL-00166" />
-      <option name="project" value="LOCAL" />
-      <updated>1499256587253</updated>
+      <workItem from="1502200432654" duration="256000" />
     </task>
     <task id="LOCAL-00167" summary="code update (New 5th July)">
       <created>1499260450543</created>
@@ -1281,11 +1272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502200555283</updated>
     </task>
-    <option name="localTasksCounter" value="215" />
+    <task id="LOCAL-00215" summary="updated db dump">
+      <created>1502200663636</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1502200663636</updated>
+    </task>
+    <option name="localTasksCounter" value="216" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1167701000" />
+    <option name="totallyTimeSpent" value="1167735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1999,7 +1997,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ddd/index.php">
+    <entry file="file://$PROJECT_DIR$/d/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
