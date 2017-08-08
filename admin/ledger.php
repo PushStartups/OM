@@ -75,6 +75,7 @@ include "header.php";
                                         <thead>
 
                                         <tr>
+                                            <th data-class="expand">ID</th>
                                             <th data-class="expand">Date</th>
                                             <th >Time</th>
                                             <th data-hide="phone, tablet">Name</th>
@@ -100,6 +101,7 @@ include "header.php";
                                             ?>
 
                                             <tr>
+                                                <td><?= $order['id'] ?></td>
                                                 <td><?= $order['date'] ?></td>
                                                 <td><?= $order['time'] ?></td>
                                                 <td><?= $order['customer_name'] ?></td>

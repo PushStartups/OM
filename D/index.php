@@ -5,6 +5,7 @@ require "../restapi/inc/initDb.php";
 $url         =      explode("/", $_SERVER['REQUEST_URI']);
 $agent_name  =      end($url);
 
+
 DB::useDB("orderapp_user");
 $agent = DB::queryFirstRow("select * from agents where name = '$agent_name'");
 
@@ -14,6 +15,7 @@ if(DB::count() == 0)
     DB::insert('agents', array(
         "name"              =>  $agent_name,
         "sales_count"       =>  1,
+
 
     ));
 }
