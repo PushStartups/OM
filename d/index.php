@@ -45,7 +45,7 @@ else if($Android)
 {
     $redirect_url = "https://play.google.com/store/apps/details?id=ps.orderapp&hl=en";
     header("Location: market://details?id=ps.orderapp&hl=en");
-     }
+}
 else if($webOS)
 {
     $redirect_url = "https://orderapp.com";

@@ -20,8 +20,21 @@ DB::query("set names utf8");
 
 // EMAIL SERVERS FOR EACH EMAIL ADDRESS
 define("EMAIL_HOST",'in-v3.mailjet.com');
-define("EMAIL_SMTP_USERNAME",'0678fe01dc183bf6233e88db22d7a8c1');
-define("EMAIL_SMTP_PASSWORD",'23e2c89d08c5fc829e2a2a3d467247df');
+
+if($_SERVER['HTTP_HOST'] == "orderapp.com" || $_SERVER['HTTP_HOST'] == "b2b.orderapp.com" || $_SERVER['HTTP_HOST'] == "staging.orderapp.com" ) {
+
+
+    define("EMAIL_SMTP_USERNAME", '0678fe01dc183bf6233e88db22d7a8c1');
+    define("EMAIL_SMTP_PASSWORD", '23e2c89d08c5fc829e2a2a3d467247df');
+}
+else{
+
+    define("EMAIL_SMTP_USERNAME", '36b628d25e50f1c49e10c29973f27ac5');
+    define("EMAIL_SMTP_PASSWORD", '8a589863b6cb4adbed8c73085fe01393');
+
+
+}
+
 
 // DEV SERVER
 if($_SERVER['HTTP_HOST'] == "dev.orderapp.com")
