@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
+    <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="updated db dump">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bardagim_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/bayernmarket_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/beef_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/carmeli'sbagel_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/carmi's_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgers Bar/Business - NIS 54 - Served Until 18:00.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgers Bar/Fish.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Burgers Bar/Salads.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/Haburganim/Make it A Meal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/additionaldishes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/drinks.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/hamburgers.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/kidsmeal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/sandwiches.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/beef/sidedishes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/carmi's/dairypizzamehadrin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/haturkiave'hakeves/deals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/lavan/a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/lavan/icecream&amp;yogurt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/Kids Menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/Lasagna .png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/Specialty Pizzas.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/haturkiave'hakeves_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/lavan_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/newdeli_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/oshioshi_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/pizzakitchen_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/m/en/img/shinto_logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/pastaria/foccocia.png" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/foccocia.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/pastaria/pasta.png" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/pasta.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/categories/pastaria/pizza.png" afterPath="$PROJECT_DIR$/m/en/img/categories/pastaria/pizza.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/roza_logo.png" afterPath="$PROJECT_DIR$/m/en/img/roza_logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/m/en/img/test_logo.png" afterPath="$PROJECT_DIR$/m/en/img/test_logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
@@ -922,14 +956,7 @@
       <workItem from="1502190976972" duration="501000" />
       <workItem from="1502200432654" duration="328000" />
       <workItem from="1502261163666" duration="269000" />
-      <workItem from="1502273781707" duration="1877000" />
-    </task>
-    <task id="LOCAL-00169" summary="update eluna and app.orderapp on RDS">
-      <created>1499331697528</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1499331697528</updated>
+      <workItem from="1502273781707" duration="2493000" />
     </task>
     <task id="LOCAL-00170" summary="update eluna and app.orderapp on RDS">
       <created>1499332569771</created>
@@ -1267,11 +1294,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502275884384</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="updated db dump">
+      <created>1502276883865</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1502276883865</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1169953000" />
+    <option name="totallyTimeSpent" value="1170569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
