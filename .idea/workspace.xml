@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b395a220-fe15-440c-8de0-9adcb5f8b9df" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/d/index.php" afterPath="$PROJECT_DIR$/d/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restapi/index.php" afterPath="$PROJECT_DIR$/restapi/index.php" />
     </list>
     <ignored path="gloria_lading_city_page.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -210,20 +208,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orderapp-website-2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="restapi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -938,14 +922,7 @@
       <workItem from="1502190976972" duration="501000" />
       <workItem from="1502200432654" duration="328000" />
       <workItem from="1502261163666" duration="269000" />
-      <workItem from="1502273781707" duration="1047000" />
-    </task>
-    <task id="LOCAL-00168" summary="code update (New 6th July)">
-      <created>1499323328435</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1499323328435</updated>
+      <workItem from="1502273781707" duration="1877000" />
     </task>
     <task id="LOCAL-00169" summary="update eluna and app.orderapp on RDS">
       <created>1499331697528</created>
@@ -1283,11 +1260,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502200695625</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="updated db dump">
+      <created>1502275884384</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1502275884384</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1169123000" />
+    <option name="totallyTimeSpent" value="1169953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1736,8 +1720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/restapi/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1651">
-          <caret line="3427" column="0" lean-forward="true" selection-start-line="3427" selection-start-column="0" selection-end-line="3427" selection-end-column="0" />
+        <state relative-caret-position="870">
+          <caret line="3471" column="1" lean-forward="true" selection-start-line="3471" selection-start-column="1" selection-end-line="3471" selection-end-column="1" />
           <folding>
             <marker date="1502275423000" expanded="true" signature="1773:1808" ph="select * fro... cities" />
             <marker date="1502275423000" expanded="true" signature="2549:2594" ph="select * fro... categories" />
