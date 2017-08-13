@@ -3,14 +3,14 @@
 $creditCardNo = '4003447840172805';
 $cvv = '788';
 $expDate = '0321';
-$amount = 7;
-$email = 'sdfsdfb@adf.com';
+$amount = 100;
+$email = 'muhammad.iftikhar.aftab@gmail.com';
 $str = "Error";
 $cgConf['tid']='8804324';
 $cgConf['amount']=$amount;
 $cgConf['user']='pushstart';
 $cgConf['password']='OE2@38sz';
-$cgConf['cg_gateway_url']="https://cgpay5.creditguard.co.il/xpo/Relay";
+$cgConf['cg_gateway_url']="https://cguat2.creditguard.co.il/xpo/Relay";
 
 $user_order['email'] = 'muhammad.iftikhar.aftab@gmail.com';
 $user_id = '111';
@@ -78,7 +78,7 @@ $poststring.='&int_in=<ashrait>
 									
 									<sendMail>1</sendMail>
 									
-									<mailTo>ahmadworkspace@gmail.com</mailTo>
+									<mailTo>muhammad.iftikhar.aftab@gmail.com</mailTo>
 									
 									<isItemPriceWithTax>1</isItemPriceWithTax>
 									
@@ -105,15 +105,15 @@ if( function_exists( "curl_init" )) {
     curl_setopt($CR, CURLOPT_POSTFIELDS, $poststring);
     curl_setopt($CR, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($CR, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($CR, CURLOPT_FAILONERROR,true);
+    curl_setopt($CR, CURLOPT_FAILONERROR, true);
 
 
     //actual curl execution perfom
-    $result = curl_exec( $CR );
-    $error = curl_error ( $CR );
+    $result = curl_exec($CR);
+    $error = curl_error($CR);
 
     // on error - die with error message
-    if( !empty( $error )) {
+    if (!empty($error)) {
 
         die($error);
 
@@ -122,50 +122,6 @@ if( function_exists( "curl_init" )) {
     curl_close($CR);
 
 
-
     print_r($result);
-
-
-//    $dom = new DOMDocument;
-//    $dom->loadXML($result);
-//    $dodeal      = $dom->getElementsByTagName('cardId');
-//    $mask        = $dom->getElementsByTagName('cardMask');
-//
-//
-//    echo  '</br></br></br></br></br></br></br>'.$dodeal->item(0)->nodeValue ;
-//    echo  '</br></br></br></br></br></br></br>'.$mask->item(0)->nodeValue ;
-
-
-    $xml  = simplexml_load_string((string) $result);
-
-    if($xml->response->result[0] == 000)
-    {
-
-//        $dodeal      = $dom->getElementsByTagName('cardId');
-//        $mask        = $dom->getElementsByTagName('cardMask');
-
-
-        echo  '</br></br></br></br></br></br></br>'.$xml->response->dodeal->cardid[0] ;
-
-
-
-    }
-
 }
-
-
-//echo  '</br></br></br></br></br></br></br>'.$str;
-
-
-//echo  $receipt->item(0)->nodeValue;
-
-//
-//foreach ($receipt as $book) {
-//
-//    print_r($book);
-//}
-
-
-//echo $receipt->item(0)->nodeValue;
-
 ?>
