@@ -139,7 +139,27 @@ function category_change(val)
     });
 }
 
+function add_restaurant_city()
+{
+    var postForm = { //Fetch form data
 
+        'city_id'       : $('#city').val(),
+        'restaurant_id' : $('#restaurant').val()
+    };
+
+    addLoading();
+    $.ajax({
+        url: "ajax/add_restaurant_city.php",
+        type: 'POST',
+        data: postForm,
+        dataType:"json",
+        success: function (data) {
+           
+            hideLoading();
+           
+        }
+    });
+}
 
 function add_restaurant() {
 

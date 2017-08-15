@@ -1,0 +1,568 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/alertify.css">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/restaurants.css">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+
+
+    <script type="text/javascript" src="/m/en/script/isMobileRedirect.js"></script>
+    <script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+
+    <!-- Hotjar Tracking Code for orderapp.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:532682,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+    </noscript>
+
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Facebook/Twitter Open Graph -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
+
+</head>
+
+<body>
+
+<script>
+
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0 ) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+            $('body').css("overflow","inherit");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+            $('body').css("overflow","hidden");
+        }
+    });
+
+    if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
+    {
+        window.location.href='/m/en/index.html';
+    }
+
+
+
+
+</script>
+
+
+<div id="main-content"  style="height: 100%;">
+
+
+    <img id="loader" style="z-index: 99999;" class="loader-css" src="/en/img/loader.gif" >
+    <div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
+
+    <!--HEADER -->
+    <div id="wrapper" style="height: 100%;">
+        <header id="header">
+            <div class="logo">
+                <a href="#">
+                    <img src="/m/en/img/logo.png" alt="images description">
+                    <strong>Order App</strong>
+                </a>
+            </div>
+            <div class="title-box">
+                <span  class="title" id="rest-name-header"></span>
+                <a class="filter" href="#"  data-toggle="modal" data-target="#filter-popup"> <img src="/m/he/img/filter.png">  filter </a>
+            </div>
+            <nav id="nav">
+                <ul>
+
+                    <li><a onclick="redirectToHE()" class="active" href="#">HE</a></li>
+
+                </ul>
+            </nav>
+            <a class="btn-back"  onclick="window.location.href='../'" ><img src="/m/en/img/back_arrow.png"></a>
+        </header>
+        <div id="main" style="height: 100%; overflow-y: scroll">
+            <div class="accordion-holder">
+                <ul class="accordion multilevel-accordion" id="scrollable">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--ADDRESS DELIVERY POPUP -->
+    <div class="modal fade" id="address-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+                <div class="popup-address">
+                    <div class="frame">
+                        <h3>delivery Fee</h3>
+                        <h4>Minimum for delivery 100 NIS</h4>
+                    </div>
+                    <!--RESTAURANT DELIVERY FEE-->
+                    <div class="fee-txt add" id="discount-pop">
+                        <span class="add-title">Restaurant Address: Gad 14, Ramat Beit Shemesh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TIME POPUP -->
+    <div class="modal fade" id="time-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+                <div class="popup-address">
+                    <div class="frame">
+                        <h3>delivery</h3>
+                        <h4>Until half an hour before closing</h4>
+                    </div>
+
+                    <!--RESTRAURANT TMINGS-->
+                    <table class="time-table" id="rest-time"></table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- POPUP IMAGE SLIDER GALLERY-->
+    <div class="modal fade"  id="slider-popup" role="dialog"  >
+        <div class="modal-dialog" style="margin-top: 60% !important;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <!--RESTAURANT GALLERY IMAGES-->
+                    <div class="carousel-inner" id="gallery-imgs" role="listbox">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="ori-mess" style="display: none; background: url('/m/en/img/home-bg.jpg'); background-size: cover; height: 100%; font-family: 'Open Sans', sans-serif;">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;">We work best in portrait mode.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;"> Please rotate your screen </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- filter POPUP -->
+<div class="modal fade"  id="filter-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page filter">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header new-red">
+                <h2>Filter</h2>
+                <span class="title-add total">Select Preferred Option</span>
+            </div>
+            <div class="box-frame new add">
+                <div class="list-item">
+                    <ul>
+                        <li id="dairy_click">
+                            <label class="switch">
+                                <input class="milky" id="cb_milky" onclick="onFilterChange()" type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                            <div  id="dairy-others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/milky.png">
+                                <span class="span">Dairy</span>
+                            </div>
+                        </li>
+                        <li  id="meat_click" >
+                            <label class="switch">
+                                <input  id="cb_meat" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="meat-others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/meat.png">
+                                <span class="span">Meat</span>
+                            </div>
+
+                        </li>
+                        <li id="health_click">
+                            <label  class="switch">
+                                <input id="cb_health" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="health-others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/health.png">
+                                <span class="span">Health</span>
+                            </div>
+
+                        </li>
+                        <li id="pizzeria_click">
+                            <label class="switch">
+                                <input id="cb_pizzeria" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="pizzeria-others"  class="new-txt pull-left">
+                                <img class="img" src="/en/img/pizzeria.png">
+                                <span class="span">Pizzeria</span>
+                            </div>
+                        </li>
+                        <li id="hamburger_click">
+                            <label class="switch">
+                                <input id="cb_hamburger" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="hamburger_others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/hambuger.png">
+                                <span class="span">Hamburger</span>
+                            </div>
+
+                        </li>
+                        <li id="sushi_click">
+                            <label class="switch">
+                                <input id="cb_sushi" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                            <div id="sushi_extras" class="new-txt pull-left">
+                                <img class="img" src="/en/img/sushi.png">
+                                <span class="span">Sushi</span>
+                            </div>
+
+                        </li>
+                        <li id="mehadrin_click">
+                            <label class="switch">
+                                <input id="cb_mehadrin" type="checkbox" onclick="onFilterChange()" >
+                                <div class="slider round"></div>
+                            </label>
+                            <div  id="mehadrin_others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/mehadrin.png">
+                                <span class="span">Mehadrin</span>
+                            </div>
+                        </li>
+                        <li id="ice_cream_click">
+                            <label class="switch">
+                                <input id="cb_ice_cream" type="checkbox" onclick="onFilterChange()" >
+                                <div class="slider round"></div>
+                            </label>
+                            <div  id="ice_cream_others" class="new-txt pull-left">
+                                <img class="img" src="/en/img/ice-cream-icon.png">
+                                <span class="span">Ice Cream</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="my-btn-holder">
+                <button onclick="addUserOrder();"  type="button" class="btn-submit">APPLY</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/m/en/script/bootstrap.min.js"></script>
+<!--<script src="script/script.js"> </script>-->
+<script src="/m/en/script/jquery.accordion.js"> </script>
+<script type="text/javascript" src="/m/en/script/jquery.easing.1.3.js"></script>
+<script src="/m/en/script/jquery.mobile.custom.min.js"></script>
+<script src="/m/en/script/alertify.min.js"></script>
+<script src="/m/en/script/commonAjaxCall.js"></script>
+<script src="/m/en/script/ajaxServerRequestsRestaurants.js"></script>
+
+<script>
+    $('#main').scroll(function(){
+        if($('#main').scrollTop() > 0) {
+
+            $('#header').addClass('small');
+        }
+        else {
+
+            $('#header').removeClass('small');
+        }
+    });
+
+    $(document).ready(function () {
+
+        $("#carousel").swiperight(function () {
+            $(this).carousel('prev');
+        });
+
+        $("#carousel").swipeleft(function () {
+            $(this).carousel('next');
+        });
+
+        // SET CITY NAME IN HEADER USER SELECTED IN PREVIOUS PAGE
+        var cityName = JSON.parse( localStorage.getItem("USER_CITY_NAME") );
+        $('#rest-name-header').text('Restaurants in ' + cityName);
+
+        initialize();
+
+    });
+
+//    $(function() {
+//
+//        function reposition() {
+//            var modal = $(this),
+//                    dialog = modal.find('.modal-dialog');
+//            modal.css('display', 'block');
+//
+//            // Dividing by two centers the modal exactly, but dividing by three
+//            // or four works better for larger screens.
+//            // dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+//        }
+//
+//        // Reposition when a modal is shown
+//        $('.modal').on('show.bs.modal', reposition);
+//
+//        // Reposition when the window is resized
+//        $(window).on('resize', function() {
+//            $('.modal:visible').each(reposition);
+//        });
+//
+//    });
+
+
+    $(function() {
+
+        function reposition() {
+
+            var modal = $(this),
+                dialog = modal.find('.modal-dialog');
+            modal.css('display', 'block');
+
+            // Dividing by two centers the modal exactly, but dividing by three
+            // or four works better for larger screens.
+            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+        }
+
+        // Reposition when a modal is shown
+        $('.modal').on('show.bs.modal', reposition);
+
+        // Reposition when the window is resized
+        $(window).on('resize', function() {
+            $('.modal:visible').each(reposition);
+        });
+
+    });
+
+
+    function redirectToHE() {
+
+        localStorage.setItem("USER_LANGUAGE", 'HE');
+        localStorage.setItem("USER_CITY_ID_HE", localStorage.getItem("USER_CITY_ID"));
+
+        var selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+        selectedCityName = selectedCityName.replace(/\s/g, '');
+        window.location.href = '/m/he/restaurants/'+selectedCityName;
+
+    }
+
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation == undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+            $('body').css("overflow","inherit");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+            $('body').css("overflow","hidden");
+        }
+
+    });
+
+
+    $('#dairy_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_milky').click();
+    });
+
+    $('#dairy-others').on('click', function(e) {
+
+        $('#cb_milky').click();
+    });
+
+    $('#meat_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_meat').click();
+    });
+
+    $('#meat-others').on('click', function(e) {
+
+        $('#cb_meat').click();
+    });
+
+    $('#health_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_health').click();
+    });
+
+    $('#health-others').on('click', function(e) {
+
+        $('#cb_health').click();
+    });
+
+    $('#pizzeria_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_pizzeria').click();
+    });
+
+    $('#pizzeria-others').on('click', function(e) {
+
+        $('#cb_pizzeria').click();
+    });
+
+
+  $('#hamburger_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_hamburger').click();
+    });
+
+    $('#hamburger_others').on('click', function(e) {
+
+        $('#cb_hamburger').click();
+    });
+
+    $('#sushi_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_sushi').click();
+    });
+
+    $('#sushi_others').on('click', function(e) {
+
+        $('#cb_sushi').click();
+    });
+
+    $('#mehadrin_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_mehadrin').click();
+    });
+
+    $('#mehadrin_others').on('click', function(e) {
+
+        $('#cb_mehadrin').click();
+    });
+
+
+    $('#ice_cream_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_ice_cream').click();
+    });
+
+    $('#ice_cream_others').on('click', function(e) {
+
+        $('#cb_ice_cream').click();
+    });
+
+    
+
+</script>
+</body>
+</html>

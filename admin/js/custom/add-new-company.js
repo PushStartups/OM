@@ -5,9 +5,9 @@ $('#name').bind('input', function() {
 
 });
 
-$('#address').bind('input', function() {
+$('#area_en').bind('input', function() {
 
-    document.getElementById('error_address').innerHTML = "";
+    document.getElementById('error-address').innerHTML = "";
 
 });
 
@@ -65,7 +65,8 @@ $('#password').bind('input', function() {
 
 function add_company()
 {
-    var address                 =  $('#address').val();
+
+    var address                 =  $('#area_en').val();
     var min_order               =  $('#min_order').val();
     var name                    =  $('#name').val();
     var amount                  =  $('#amount').val();
@@ -106,6 +107,11 @@ function add_company()
     if(address == "")
     {
         $('#error-address').html('Address Required*');
+        return;
+    }
+    if($('#lat').val() == "")
+    {
+        $('#error-address').html('Please Use Suggesstions*');
         return;
     }
 
@@ -244,7 +250,7 @@ function add_company()
 
 
     var postForm = { //Fetch form data
-        'address'                 :  $('#address').val(),
+        'address'                 :  $('#area_en').val(),
         'min_order'               :  $('#min_order').val(),
         'name'                    :  $('#name').val(),
         'amount'                  :  $('#amount').val(),
@@ -272,6 +278,8 @@ function add_company()
 
         'saturday_start_time'     :  $('#saturday_start_time').val(),
         'saturday_end_time'       :  $('#saturday_end_time').val(),
+        'lat'       :  $('#lat').val(),
+        'lng'       :  $('#lng').val(),
     };
 
 

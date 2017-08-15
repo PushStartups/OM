@@ -1,0 +1,16 @@
+{
+    "name": "rspective/voucherify",
+    "description": "PHP SDK for Voucherify. Please visit: www.voucherify.io",
+    "keywords": [ "rspective", "voucherify", "voucher" ],
+    "homepage": "http://www.voucherify.io/",
+    "license": "MIT",
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Voucherify\\": "."
+        }
+    }
+}

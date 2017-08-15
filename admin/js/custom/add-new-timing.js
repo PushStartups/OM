@@ -2,6 +2,7 @@
 function show_delivery_address()
 {
     $("#add-delivery-address").show();
+
 }
 
 
@@ -320,11 +321,16 @@ function add_timing(restaurant_id,url)
 function add_delivery_address(restaurant_id,url)
 {
 
-    var area_en       =  $('#area_en').val();
+    var area_en       =  $('#delivery_zone').val();
     var area_he       =  $('#area_he').val();
     var fee           =  $('#fee').val();
 
 
+    if(path.length == 0)
+    {
+        $('#map_error').html('Map Drawing Required*');
+        return;
+    }
 
     if (area_en == "")
     {
@@ -343,13 +349,15 @@ function add_delivery_address(restaurant_id,url)
     }
 
 
+
     var postForm = { //Fetch form data
 
         'restaurant_id'           :  restaurant_id,
 
-        'area_en'       :  $('#area_en').val(),
-        'area_he'       :  $('#area_he').val(),
+        'area_en'       :  $('#delivery_zone').val(),
+        'area_he'       :  $('#delivery_zone_he').val(),
         'fee'           :  $('#fee').val(),
+        'path'          :  path
 
     };
 
@@ -368,4 +376,104 @@ function add_delivery_address(restaurant_id,url)
             window.location.href = url;
         }
     });
+}
+
+
+
+function add_delivery_address_update(restaurant_id,url)
+{
+
+    var area_en       =  $('#delivery_zone').val();
+    var area_he       =  $('#delivery_zone_he').val();
+    var fee           =  $('#fee').val();
+
+
+
+
+
+    if($('#pathh').val() == 0)
+    {
+
+        // DRAWING IS NOT CHANGED
+        var change = 0;
+
+    }
+    else{
+        //DRAWING CHANGED
+        var change = 1;
+    }
+
+    if (area_en == "")
+    {
+        $('#area_en_error').html('Required*');
+        return;
+    }
+    if (area_he == "")
+    {
+        $('#area_he_error').html('Required*');
+        return;
+    }
+    if (fee == "")
+    {
+        $('#fee_error').html('Required*');
+        return;
+    }
+
+
+
+   
+
+
+    if(change == 0)
+    {
+        var postForm = { //Fetch form data
+
+            'restaurant_id'           :  restaurant_id,
+
+            'area_en'       :  $('#delivery_zone').val(),
+            'area_he'       :  $('#delivery_zone_he').val(),
+            'fee'           :  $('#fee').val()
+
+        };
+        addLoading();
+        $.ajax({
+            url:"ajax/update_delivery_address_only.php",
+            method:"post",
+            data:postForm,
+            dataType:"json",
+            success:function(data)
+            {
+                hideLoading();
+                alert("Adrress added successfully");
+                window.location.href = url;
+            }
+        });
+    }
+    else
+    {
+        var postForm = { //Fetch form data
+
+            'restaurant_id'           :  restaurant_id,
+
+            'area_en'       :  $('#delivery_zone').val(),
+            'area_he'       :  $('#delivery_zone_he').val(),
+            'fee'           :  $('#fee').val(),
+            'path'           :  $('#pathh').val(),
+
+        };
+        addLoading();
+        $.ajax({
+            url:"ajax/update_delivery_address.php",
+            method:"post",
+            data:postForm,
+            dataType:"json",
+            success:function(data)
+            {
+                hideLoading();
+                alert("Adrress added successfully");
+                window.location.href = url;
+            }
+        });
+    }
+
 }

@@ -156,6 +156,11 @@ $rolee = $_SESSION['b2c_admin_role'];
             <li>
                 <a href="tags.php" title="Tags"><i class="fa fa-lg fa-fw fa-tags"></i> <span class="menu-item-parent">Tags</span></a>
             </li>
+            <?php if ($rolee == 1) { ?>
+                <li>
+                    <a href="add-city-restaurant.php" title="Add Restaurant By City"><i class="fa fa-lg fa-fw fa-plus"></i> <span class="menu-item-parent">Add Restaurants (By City) </span></a>
+                </li>
+            <?php } ?>
             <li>
                 <a href="ledger.php" title="Ledger"><i class="fa fa-lg fa-fw fa-files-o"></i> <span class="menu-item-parent">Ledger</span></a>
             </li>

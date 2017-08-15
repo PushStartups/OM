@@ -122,3 +122,64 @@ function initMap()
 
 }
 
+
+function restaurantAddress()
+{
+    var map = new google.maps.Map(document.getElementById('map'), {
+
+        center: {lat: 31.768319 , lng: 35.21371},
+        zoom: 13
+
+    });
+
+
+    var input = document.getElementById('area_en');
+
+    var options =
+    {
+        componentRestrictions: {country: 'il'}
+    };
+
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+
+
+    autocomplete.bindTo('bounds', map);
+
+    var marker = new google.maps.Marker({
+        map: map,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+
+    autocomplete.addListener('place_changed', function () {
+
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);  // Why 17? Because it looks good.
+        }
+
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+
+        //alert(place.place_id);
+
+        var placeId = "";
+        placeId = place.place_id;
+
+        document.getElementById('lat').value = place.geometry.location.lat();
+        document.getElementById('lng').value = place.geometry.location.lng();
+
+    });
+
+
+}
+
+

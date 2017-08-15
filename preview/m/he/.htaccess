@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteRule ^restaurants/([0-9a-zA-Z_-]+) restaurants.html [NC,L]
+
+RewriteRule ^([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/order order.html [NC,L]
+
+RewriteRule ^wait wait.html [NC,L]
+
+
+RewriteRule ^feedback feedback.html [NC,L]
+
+ErrorDocument 404 /m/he/error-mobile.html
+
+Options -Indexes

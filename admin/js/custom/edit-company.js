@@ -4,7 +4,7 @@ $('#name').bind('input', function() {
 
 });
 
-$('#address').bind('input', function() {
+$('#area_en').bind('input', function() {
 
     document.getElementById('error_address').innerHTML = "";
 
@@ -86,7 +86,7 @@ function edit_company(companies_id,urll)
     var company_id              = companies_id;
     var url                     =  urll;
 
-    var address                 =  $('#address').val();
+    var address                 =  $('#area_en').val();
     var min_order              =  $('#min_order').val();
     var name                    =  $('#name').val();
     var amount                  =  $('#amount').val();
@@ -120,13 +120,18 @@ function edit_company(companies_id,urll)
 
     if(name == "")
     {
-        $('#error-name').html('Name Required*');
+        $('#error_name').html('Name Required*');
         return;
     }
 
+    if($('#lat').val() == "")
+    {
+        $('#error_address').html('Please Use Suggesstions*');
+        return;
+    }
     if(address == "")
     {
-        $('#error-address').html('Address Required*');
+        $('#error_address').html('Address Required*');
         return;
     }
     if(min_order == "")
@@ -141,7 +146,7 @@ function edit_company(companies_id,urll)
     }
     if(amount == "")
     {
-        $('#error-amount').html('Amount Required*');
+        $('#error_amount').html('Amount Required*');
         return;
     }
 
@@ -267,8 +272,7 @@ function edit_company(companies_id,urll)
         'week5_id'                : $('#week5_id').val(),
         'week6_id'                : $('#week6_id').val(),
         'week7_id'                : $('#week7_id').val(),
-
-        'address'                 :  $('#address').val(),
+        'address'                 :  $('#area_en').val(),
         'name'                    :  $('#name').val(),
         'amount'                  :  $('#amount').val(),
         'min_order'               :  $('#min_order').val(),
@@ -296,6 +300,8 @@ function edit_company(companies_id,urll)
 
         'saturday_start_time'     :  $('#saturday_start_time').val(),
         'saturday_end_time'       :  $('#saturday_end_time').val(),
+        'lat'       :  $('#lat').val(),
+        'lng'       :  $('#lng').val(),
     };
 
 

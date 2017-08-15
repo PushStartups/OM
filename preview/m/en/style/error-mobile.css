@@ -1,0 +1,138 @@
+@font-face {
+	font-family: 'BebasNeue';
+	src: url('../fonts/BebasNeue-webfont.eot');
+	src: url('../fonts/BebasNeue-webfontd41d.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/BebasNeue-webfont.woff') format('woff'),
+	url('../fonts/BebasNeue-webfont.ttf') format('truetype'),
+	url('../fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+html,  body {
+  height: 100%;
+}
+html {box-sizing: border-box;}
+body {
+	margin: 0;
+	color: #fff;
+	font-family: 'BebasNeue', Arial, sans-serif;
+	min-width: 320px;
+	background-image:url("/m/en/img/bg-img.jpg");
+	background-size:cover;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: none;
+}
+.blur-class {
+	-webkit-filter: opacity(.2);
+	filter: opacity(.2);
+	pointer-events: none;
+}
+.loader-css{
+
+	z-index:9999;
+	width: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 30px;
+	margin:auto;
+	height: auto;
+	display: none;
+}
+* {max-height: 1000000px;}
+img {
+	border-style: none;
+	height: auto;
+}
+a {
+	text-decoration: none;
+	color: #92278f;
+	transition: all 1s;
+}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: 0px !important;
+}
+
+#wrapper{
+	overflow:hidden;
+	position:relative;
+}
+/*.container{*/
+	/*width: 1654px;*/
+	/**/
+/*}*/
+.jumbotron .container {
+	width: 100%;
+	padding: 0;
+	max-width: 100%;
+}
+.jumbotron .row{margin: 0;}
+.jumbotron .col-xs-12{padding:0;}
+.txt{
+	overflow: hidden;
+	margin:-20px 0 0;
+}
+.txt h1{
+	color: #000;
+	display: block;
+	font-size: 38vw;
+	line-height: 37vw;
+	margin: 0 0 18px;
+}
+.txt h1 span{
+	display: block;
+	font-size: 12.4vw;
+	line-height: 9.4vw;
+}
+.jumbotron p{
+	color: #eae8e8;
+	font-size: 5.5vw;
+	line-height: 5.4vw;
+	margin: 0;
+}
+
+.vertical-center {
+	min-height: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	background-color: inherit;
+	text-align: center;
+}
+.img-block {
+	overflow: hidden;
+	position: relative;
+	padding: 25px 10px;
+}
+.img-responsive{
+	height: auto;
+	margin: 0 auto 16px;
+	max-width: inherit;
+	width: 87%;
+}
+
+.txt .btn-submit{
+	/*max-width: 358px;*/
+	font-size: 3.7vw;
+	font-weight: normal;
+	line-height: 4vw;
+	color: #f5f6f8;
+	width: 36vw;
+	height: 9.5vw;
+	border-radius: 10px;
+	background: #000;
+	display: inline-block;
+	vertical-align: top;
+	transition: all 1s;
+	outline: none;
+	margin: 12px 0 0;
+	letter-spacing: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.txt .btn-submit:hover{
+	color: #000;
+	background: #f5f6f8;
+}

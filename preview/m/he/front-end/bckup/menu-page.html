@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choose a city</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/menu-page.css">
+    <link href="style/dropdown.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="logo-area">
+                <a class="btn-back" href="#"><img src="img/back_arrow.png"></a>
+                <div class="logo">
+                    <a href="#"><img src="img/bg_logo.png"></a>
+                </div>
+                <span class="title">Bandora</span>
+            </div>
+            <ul class="top-list">
+                <li><a data-toggle="modal" data-target="#customer-info-popup" href="#"><img src="img/alert.png"></a></li>
+                <li><a data-toggle="modal" data-target="#food-cart-popup" href="#"><img src="img/shopping-cart.png"></a> <span class="price">1</span> </li>
+            </ul>
+        </header>
+        <div id="main">
+            <ul class="accordion multilevel-accordion">
+                <li>
+                    <a href="#" class="opener">
+                        <img src="img/salad1.png" alt="images description">
+                        <div class="text">
+                            <h3>Salads</h3>
+                        </div>
+                    </a>
+                    <div class="slide">
+                        <div class="add-row">
+                            <h4>Coffee <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a  data-toggle="modal" data-target="#order-popup" href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                        <div class="add-row">
+                            <h4>Munchies <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="opener">
+                        <img src="img/pizza1.png" alt="images description">
+                        <div class="text">
+                            <h3>Pizza</h3>
+                        </div>
+                    </a>
+                    <div class="slide">
+                        <div class="add-row">
+                            <h4>Coffee <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                        <div class="add-row">
+                            <h4>Munchies <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                        <div class="add-row">
+                            <h4>Coffee <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                        <div class="add-row">
+                            <h4>Munchies <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                        <div class="add-row">
+                            <h4>Coffee <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                        <div class="add-row">
+                            <h4>Munchies <span>75 NIS</span></h4>
+                            <div class="box">
+                                <a href="#" class="btn-icon"><img src="img/add.png" alt="images description"></a>
+                                <p>Freshly brewed coffee Freshly Perfectly baked goodies Perfectly baked.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <a href="#" class="btn-ordernow">ORDER NOW</a>
+        </div>
+    </div>
+    <!-- Email popup  new design done-->
+    <div class="modal fade"  id="email-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h3>Minimum order 75 NIS</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Cart popup new design done-->
+    <div class="modal fade"  id="cart-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="cart-holder">
+                    <img src="img/shopping-cart01.png">
+                    <h3>Items in the cart will be gone</h3>
+                </div>
+                <ul class="list">
+                    <li><a href="#">Continue</a></li>
+                    <li><a href="#">Cancle</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- order popup  new design done -->
+    <div class="modal fade"  id="order-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page order">
+            <div class="modal-content">
+                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header">
+                    <!--<img src="img/title.png">-->
+                    <div class="txt">
+                        <div class="heading-wrap">
+                            <h2>Alfredo</h2>
+                        </div>
+                        <p>150 grams of quality Angus entrecote meat and 80 grams of goose liver with mayonnaise, mustard, chimichurri, lettuce, and tomatoes</p>
+                    </div>
+                    <span class="btn-nis">20 NIS</span>
+                </div>
+                <div class="box-frame">
+                    <div class="add-row first error">
+                        <h3>Type of meat</h3>
+                        <div id="cards-drop" class="custom-drop-down">
+                            <input id="firstItem" placeholder="Please Choose" value="" style="font-size: 18px" readonly="">
+                            <img style="width:13px; position:absolute; right:15px; top:50%; transform:translateY(-50%)" src="img/drop_down.png">
+                            <div id="list" class="custom-drop-down-list" style="display: block;">
+                                <ul id="categories_list">
+                                    <li>Creamy sauce [5 NIS]</li>
+                                    <li>Without Addons</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="red">*Required field</span>
+                    </div>
+                    <div class="add-row">
+                        <h3>Addons</h3>
+                        <ul class="checkbox-list">
+                            <li> <input type="checkbox" id="checkbox-id12"> <label for="checkbox-id12"> Fried onions</label></li>
+                            <li> <input type="checkbox" id="checkbox-id23"> <label for="checkbox-id23"> Tomato</label></li>
+                            <li> <input type="checkbox" id="checkbox-id34"> <label for="checkbox-id34"> Fried onions</label></li>
+                            <li> <input type="checkbox" id="checkbox-id45"> <label for="checkbox-id45"> Tomato</label></li>
+                        </ul>
+                    </div>
+                    <div class="add-row">
+                        <h3>Special Requests</h3>
+                        <div class="text-holder row no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="img/ic_edit.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <textarea placeholder="Type here"></textarea>
+                                <img class="resize" src="img/Path 2.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button data-dismiss="modal" type="button" class="btn-submit">+ ADD TO MY ORDER </button>
+            </div>
+        </div>
+    </div>
+    <!-- popup info  new design done -->
+    <div class="modal fade"  id="popup-info" role="dialog">
+        <div class="modal-dialog modal-md mypopup info">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="row no-gutters">
+                    <div class="col-xs-12 first-col text-center">
+                        <a class="btn-phone" href="#"><img src="img/ic_phone.png"></a>
+                        <div class="img-frame">
+                            <a href="#"><img src="img/logo01.png" alt="logo-img"></a>
+                        </div>
+                        <h2>bandora</h2>
+                        <p>Sderot Yigal Allon 6, Canyon Gate City, Beit Shemesh</p>
+                        <span class="cart">Min 100 NIS</span>
+                        <div class="wrap">
+                            <p>Bandora is known for its high-quality meats. Our traditional charcoal grill gives the shawarma a unique flavor and aroma; flavors reminiscent of
+                                homecooked meals made in distant villages in Turkey, Jordan, Syria and Egypt.</p>
+                        </div>
+                        <img class="mobile-sec" src="img/delivery line.png">
+                    </div>
+                    <div class="col-xs-12 second-col">
+                            <div class="add-row first">
+                                <span class="title">Opening Hours</span>
+                                <table class="table">
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="add-row first">
+                                <span class="title title2">Delivery Fee</span>
+                                <table class="table">
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monday </td>
+                                        <td>10:00AM - 11:00PM</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="add-row first">
+                                <span class="title title3">Gallery</span>
+                                <div id="menu-carousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="img/menu1.png" alt="Chania" width="50%">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/menu2.png" alt="Chania" width="50%">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/menu3.png" alt="Chania" width="50%">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/menu4.png" alt="Chania" width="50%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- order popup new design done-->
+    <div class="modal fade"  id="food-cart-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page order">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header red">
+                    <h2>Alfredo</h2>
+                    <span class="title-add">110.6 NIS</span>
+                </div>
+                <div class="box-frame">
+                    <div class="add-row first">
+                        <div class="row-holder">
+                            <div class="row header-row no-gutters">
+                                <div class="col-md-9 col-xs-9">
+                                    <h2> Cheese Ravioli </h2>
+                                </div>
+                                <div class="col-md-3 col-xs-3">
+                                    <span class="dim"> 62 NIS </span>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <p>In a cream sauce, seasoned with garlic and fresh basil</p>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div class="switch-btn">
+                                        <img class="left-btn" src="img/ic_cancel.png">
+                                        <span class="count">1</span>
+                                        <img class="increase-btn" src="img/ic_plus.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-row">
+                        <div class="row-holder">
+                            <div class="row header-row no-gutters">
+                                <div class="col-md-9 col-xs-9">
+                                    <h2> Cheese Ravioli </h2>
+                                </div>
+                                <div class="col-md-3 col-xs-3">
+                                    <span class="dim"> 62 NIS </span>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <p>In a cream sauce, seasoned with garlic and fresh basil</p>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div class="switch-btn">
+                                        <img class="left-btn" src="img/ic_cancel.png">
+                                        <span class="count">1</span>
+                                        <img class="increase-btn" src="img/ic_plus.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-row">
+                        <div class="row-holder">
+                            <div class="row header-row no-gutters">
+                                <div class="col-md-9 col-xs-9">
+                                    <h2> Cheese Ravioli </h2>
+                                </div>
+                                <div class="col-md-3 col-xs-3">
+                                    <span class="dim"> 62 NIS </span>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <p>In a cream sauce, seasoned with garlic and fresh basil</p>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div class="switch-btn">
+                                        <img class="left-btn" src="img/ic_cancel.png">
+                                        <span class="count">1</span>
+                                        <img class="increase-btn" src="img/ic_plus.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button data-dismiss="modal" type="button" class="btn-submit">ORDER NOW</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- order popup  new design done-->
+    <div class="modal fade"  id="customer-info-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page order">
+            <div class="modal-content">
+                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header red">
+                    <h2>ordering information</h2>
+                    <span class="title-add">110 NIS</span>
+                    <ul class="header-links">
+                        <li class="active">
+                            <span class="img-box"><img class="edit" src="img/ic_profile01.png"></span>
+                            <h4>contact info</h4>
+                        </li>
+                        <li>
+                            <span class="img-box"><img class="edit" src="img/ic_checkin.png"></span>
+                        </li>
+                        <li>
+                            <span class="img-box"><img class="edit" src="img/ic_profile.png"></span>
+                        </li>
+                        <li>
+                            <span class="img-box"><img class="edit" src="img/ic_cart01.png"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-frame new">
+                    <div class="wrap-col">
+                        <div class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="img/ic_profile.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" placeholder="Name of customer">
+                            </div>
+                        </div>
+                        <div class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit email" src="img/ic_message.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="email" placeholder="Email address">
+                            </div>
+                        </div>
+                        <div class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="img/ic_phone.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="tel" placeholder="Phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button data-dismiss="modal" type="button" class="btn-submit">Delivery</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- delivery popup -->
+    <div class="modal fade"  id="delivery-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page order">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header red">
+                    <h2>ordering information</h2>
+                    <span class="title-add">110 NIS</span>
+                    <ul class="header-links">
+                        <li class="active">
+                            <span class="img-box"><img class="edit" src="img/ic_checkin.png"></span>
+                            <h4>Delivery</h4>
+                        </li>
+                        <li>
+                            <span class="img-box"><img class="edit" src="img/ic_profile.png"></span>
+                        </li>
+                        <li>
+                            <span class="img-box"><img class="edit" src="img/ic_cart01.png"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-frame new delivery">
+                    <div class="wrap-col">
+                        <div class="title-txt">
+                            <p>Delivery services will be available in a 3 hours</p>
+                        </div>
+                        <div class="slide-holder">
+                            <ul class="checkbox-list">
+                                <li> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span>Gad St 14, Bet Shemesh</span></label></li>
+                                <li> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> Tomato</label></li>
+                            </ul>
+                            <div class="show-box show">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="text-holder row no-gutters">
+                                            <div class="col-xs-4">
+                                                <img class="edit" src="img/ic_home.png">
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <input type="text" placeholder="Apt. No.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="text-holder row no-gutters">
+                                            <div class="col-xs-2">
+                                                <img class="edit" src="img/ic_checkin.png">
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder row no-gutters error">
+                                    <div class="col-xs-12">
+                                        <select>
+                                            <option>select area</option>
+                                            <option>select area</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-btn-holder">
+                    <button type="button" class="btn-back"><img src="img/back_arrow.png"></button>
+                    <button type="button" class="btn-summary">Summary <img src="img/back_arrow-next.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- delivery popup -->
+    <div class="modal fade"  id="payment-popup" role="dialog">
+        <div class="modal-dialog modal-md menu-page order">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header red">
+                    <h2>ordering information</h2>
+                    <span class="title-add">110 NIS</span>
+                </div>
+                <div class="box-frame new delivery">
+                    <div class="head-popup">
+                        <img src="img/ic_cart.png">
+                        <h3>Payment</h3>
+                    </div>
+                    <ul class="card-columns">
+                        <li>
+                            <div class="card-box">
+                                <div class="card-col">
+                                    <span>Cash</span>
+                                    <img src="img/card-img.png">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card-box">
+                                <div class="card-col">
+                                    <span>Credit card</span>
+                                    <img src="img/card-images.png">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="txt-frame">
+                        <div class="show-box show" id="show_credit_card">
+
+                            <form name="payment-form" id="payment-form" style="height:100%" method="POST">
+                                <div class="error-field">
+                                    <div class="text-holder row no-gutters error">
+                                        <div class="col-xs-12">
+                                            <input class="add-box" id="user_name" type="text" placeholder="Name on card">
+                                        </div>
+                                    </div>
+                                    <span class="error-span">error in field</span>
+                                </div>
+                                <div class="error-field">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-12">
+                                            <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" class="add-box" type="text" placeholder="Card Number">
+                                        </div>
+                                    </div>
+                                    <span class="error-span" id="error-card-no">error in field</span>
+                                </div>
+                                <div class="error-field">
+                                    <div class="row no-gutters">
+                                        <div class="col-xs-7">
+                                            <div class="text-holder add row no-gutters col">
+                                                <div class="col-xs-2">
+                                                    <img class="edit" src="img/ic_calender.png">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-xs-5">
+                                                            <input class="left-field" placeholder="MM" id="month" type="number" size="2" data-stripe="exp_month">
+                                                        </div>
+                                                        <div class="col-xs-1">
+                                                            <span class="devider"> / </span>
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            <input class="right-field" placeholder="YY" maxlength="2" id="year" type="number" size="2" data-stripe="exp_year">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="error-span" id="error-month">error in field</span>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <div class="text-holder row no-gutters">
+                                                <div class="col-xs-4">
+                                                    <img class="edit" src="img/cvs-icon.png">
+                                                </div>
+                                                <div class="col-xs-8">
+                                                    <input type="number" placeholder="cvv" size="4" data-stripe="cvc">
+                                                </div>
+                                            </div>
+                                            <span class="error-span">error in field</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <span style="color: red;font-size: 15px;" class="payment-errors"></span>
+
+                                <div class="form-row" style="display: none">
+                                    <label>
+                                        <span>Billing ZIP Code</span>
+                                        <input type="text" size="6" data-stripe="address_zip" value="5">
+                                    </label>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="my-btn-holder">
+                    <button type="button" class="btn-back"><img src="img/back_arrow.png"></button>
+                    <button type="button" class="btn-summary">place order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/jquery.accordion.js"></script>
+    <script src="script/dropdown.js"></script>
+
+    <script>
+        $('.carousel').carousel();
+        $(function() {
+            function reposition() {
+                var modal = $(this),
+                    dialog = modal.find('.modal-dialog');
+                modal.css('display', 'block');
+
+                // Dividing by two centers the modal exactly, but dividing by three
+                // or four works better for larger screens.
+                dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+            }
+            // Reposition when a modal is shown
+            $('.modal').on('show.bs.modal', reposition);
+            // Reposition when the window is resized
+            $(window).on('resize', function() {
+                $('.modal:visible').each(reposition);
+            });
+        });
+
+    </script>
+  </body>
+</html>

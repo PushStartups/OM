@@ -154,6 +154,9 @@ DB::query("set names utf8");
             <li>
                 <a href="cities.php" title="Cities"><i class="fa fa-lg fa-fw fa-building"></i> <span class="menu-item-parent">Cities</span></a>
             </li>
+            <li>
+                <a href="add-city-restaurant.php" title="Add Restaurant By City"><i class="fa fa-lg fa-fw fa-plus"></i> <span class="menu-item-parent">Add Restaurants (By City) </span></a>
+            </li>
 <!--            <li>-->
 <!--                <a href="orders.php" title="Orders"><i class="fa fa-lg fa-fw fa-shopping-cart"></i> <span class="menu-item-parent">Orders</span></a>-->
 <!--            </li>-->

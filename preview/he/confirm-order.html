@@ -1,0 +1,1652 @@
+<!Doctype html>
+<html lang="he">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
+    <link rel="icon" href="/he/img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/he/style/baron.css">
+    <link rel="stylesheet" type="text/css" href="/he/style/confirm-order.css">
+    <link href="/he/style/dropdown.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/he/style/alertify.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    <script src="/he/script/isMobileRedirect.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Hotjar Tracking Code for orderapp.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:532682,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!--END Hotjar Tracking Code for orderapp.com -->
+
+
+
+    <!-- Facebook/Twitter Open Graph -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
+
+</head>
+<style>
+    ::-webkit-scrollbar { /* for Mac OS X support */
+        width: 0;
+    }
+</style>
+
+
+<script>
+
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+</script>
+
+
+<body style="overflow: hidden">
+
+<img id="loader" style="z-index: 99999;" class="loader-css" src="/he/img/loader.gif" >
+
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.5);"></div>
+
+<div id="wrapper" dir="rtl">
+    <section class="jumbotron jumbotron-fluid">
+        <header id="header">
+            <div class="container new">
+                <div class="row justify-content-md-center no-gutters">
+
+                    <div class="col-xs-12">
+                        <div class="logo">
+                            <a href="../">
+                                <div class="logo-img">
+                                    <img src="/he/img/logo.png" alt="img description">
+                                </div>
+                                <span>פרטי המזמין</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a  id="login-btn" href="#"><img class="icon-user" src="/en/img/ic_profile01.png"> <span id="loginBtnText" dir="ltr">התחברות</span></a>
+                        <div class="dropdown-nav"  id="dropdown-nav" >
+                            <div class="signin" id="signin" style="display: none">
+                                <form class="login-form">
+                                    <h2>התחברות</h2>
+                                    <p>התחבר והפוך את תהליך ההזמנה לקצר יותר</p>
+                                    <p>עדיין אין לך חשבון?  <a onclick="switchToSignUp()" href="#">הירשם</a></p>
+                                    <div class="btn-holder">
+                                        <button onclick="myFacebookLogin()" class="btn btn-facebook" type="button">התחבר באמצעות פייסבוק</button>
+                                        <button id="google-btn-2" class="btn btn-google" type="button">התחבר באמצעות גוגל</button>
+                                    </div>
+                                    <div class="line">או</div>
+
+                                    <!-- start login with email sectopm -->
+
+                                    <a id="login_with_email_pass" onclick="expand_login()" class="login-email" href="#">הירשם באמצעות דואר אלקטרוני וסיסמה</a>
+
+                                    <div  id="login_email" class="login-section" style="display: none">
+                                        <input id="email-login" class="form-control" type="email" placeholder="דואר אלקטרוני">
+                                        <input id="password-login" class="form-control add" type="password" placeholder="סיסמה">
+                                        <a onclick="forgetPassword()" class="login-email text-left" href="#">שכחתי סיסמה</a>
+                                        <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-login"></span>
+
+                                        <button onclick="loginUser()" class="btn btn-login" type="button">התחבר</button>
+                                    </div>
+
+                                    <!-- end login with email sectopm -->
+
+                                    <!-- start forget sectopm -->
+
+                                    <div id="forget_pass_sec" class="forget-section" style="display: none">
+                                        <p>הזן את הדוא"ל שלך כדי לאפס את הסיסמה שלך</p>
+                                        <input id="rest-pass-email" class="form-control add1" type="email" placeholder="דואר אלקטרוני">
+                                        <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-reset"></span>
+                                        <button id="rest-pass-request" class="btn btn-login" type="button">לִשְׁלוֹחַ</button>
+                                    </div>
+
+                                    <!-- end forget sectopm -->
+
+
+                                    <div class="" id="email_reset_message" style="display: none">
+                                        <p style="text-align: left">אנו שולחים לך קישור לאיפוס הסיסמה שלך בדוא"ל</p>
+                                        <a style="text-align: left; margin-bottom: 40px" onclick="restPasswordResend()" class="login-guest" href="#">לא קיבלתי דוא"ל</a>
+                                    </div>
+
+
+                                    <a  class="login-guest asGuest" href="#">המשך כאורח</a>
+
+
+                                    <!--<a class="login-guest" href="#">המשך כאורח</a>-->
+
+                                </form>
+                            </div>
+
+
+                            <div id="signup" class="signup" >
+                                <form class="login-form" id="signUpForm">
+                                    <h2>הירשם</h2>
+                                    <p>הירשם והפוך את תהליך ההזמנה לקצר יותר</p>
+                                    <p>כבר יש לך חשבון? <a onclick="switchToLogin()" href="#">התחברות</a></p>
+                                    <div class="btn-holder">
+                                        <button onclick="myFacebookLogin()" class="btn btn-facebook" type="button">להירשם עם Facebook</button>
+                                        <button  id="google-btn"  class="btn btn-google " type="button">הירשם באמצעות Google</button>
+                                    </div>
+                                    <div class="line">אוֹ</div>
+
+                                    <!--start login with email sectopm-->
+                                    <div class="links" id="signup-message">
+                                        <a id="signup-email-pass" class="login-email" href="#">הירשם באמצעות דוא"ל וסיסמה</a>
+                                        <a class="login-guest asGuest" href="#">המשך כאורח</a>
+                                    </div>
+
+                                    <div class="login-section" id="manual-signup" style="display: none">
+                                        <input id="signup-email" class="form-control" type="email" placeholder='כתובת דוא"ל'>
+                                        <input id="signup-password" class="form-control" type="password" placeholder="סיסמה">
+                                        <input id="signup-confirm-pass" class="form-control add" type="password" placeholder="סיסמה">
+                                        <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-signup"></span>
+                                        <button id="signUp-btn" class="btn btn-login" type="button">הירשם</button>
+                                        <a class="login-guest asGuest" href="#">המשך כאורח</a>
+                                    </div>
+
+
+                                    <!-- end login with email sectopm -->
+                                    <div class="" id="email_verification_message" style="display: none">
+                                        <p>על מנת להשלים את ההרשמה שלך, לחץ על הקישור שקיבלת בדוא"ל.</p>
+                                        <a  onclick="resendValidationLink()" class="login-guest" href="#">לא קיבלתי דוא"ל</a>
+                                    </div>
+
+
+                                </form>
+
+
+                                <div id="loginMessage" class="welcom-popup" style="display: none">
+                                    <h3 id="success-message"></h3>
+                                    <a  id="logout" class="login-guest" href="#">להתנתק</a>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li data-toggle="modal" data-target="#about"><a href="#">אודות</a></li>
+                    <li style="display: none;"><a class="active" href="#">HE</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <section class="content dropdown">
+        <div class="parent" style="position: relative;width:100%; height:100%;">
+            <img src="/he/img/pizza.png" style="left: -10px"/>
+            <img src="/he/img/img1.png" style="right: 0"/>
+        </div>
+        <div class="parent-bottom" style="position: relative;width:100%;height:100%;">
+            <img src="/he/img/left_bottom.png" style="left: -10px;bottom: 0"/>
+            <img src="/he/img/right_bottom.png" style="right: 0"/>
+        </div>
+        <div class="container new height-box">
+            <header class="header-box">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1 id="rest-title"></h1>
+                        <span class="title-add">שרות משלוחים פעיל</span>
+                    </div>
+                </div>
+            </header>
+            <div class=" height-box">
+                <div class="row no-gutters">
+                    <div class="col-sm-4 col-md-4 col-xs-4">
+                        <aside id="sidebar">
+                            <div class="col-second">
+                                <h3> עגלת קניות <span class="badge"> 1 </span> </h3>
+
+                                <div class="baron scrollable6">
+
+                                    <div id="scrollable6" class="baron__scroller right">
+
+                                        <!--ITEMS IN CART-->
+                                        <div id="nested-section">
+                                        </div>
+
+                                    </div>
+                                    <div class="baron__track">
+                                        <div class="baron__bar"></div>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class=" col-xs-12">
+                                        <div class="minimum-item add">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <span id="totalAmountWithoutDiscount" class="nis"></span>
+                                                </div>
+                                                <div  class="col-md-6 col-xs-6">
+                                                    <h3>סיכום ביניים</h3>
+                                                </div>
+                                            </div>
+                                            <div id="showDiscount" class="row no-gutters">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <span id="discountValue" class="nis"></span>
+                                                </div>
+                                                <div  class="col-md-6 col-xs-6">
+                                                    <h3 id="discountTitle">קופון הנחה</h3>
+                                                </div>
+                                            </div>
+                                            <div id="deliveryDetail" class="row no-gutters">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <span id="area-charges" class="nis"></span>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <h3>מְסִירָה</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="minimum-item">
+                                            <h2 id="totalAmount">  </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="col-sm-8 col-md-8 col-xs-8 add">
+
+                        <div class="baron">
+                            <div id="scrollable3" class="baron__scroller">
+
+                                <div class="left-content">
+                                    <ul class="accordion multilevel-accordion">
+                                        <li class="active"  id="customerInfoParent">
+                                            <a href="#" class="opener"  id="personalInfoOpener">
+
+                                                <!--CUSTOMER INFO-->
+                                                <h3>פרטי הלקוח</h3>
+
+                                            </a>
+                                            <div class="slide" id="customerSlider">
+                                                <div class="slide-holder">
+                                                    <div class="error-field">
+                                                        <div class="text-holder row no-gutters" id="name">
+                                                            <div class="col-xs-11">
+
+                                                                <!--CUSTOMER NAME-->
+                                                                <input type="text" id="name_text" placeholder="שם הלקוח">
+
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <img class="edit" src="/he/img/ic_profile.png">
+                                                            </div>
+                                                        </div>
+                                                        <span class="error-span" id="error-name">error in field</span>
+                                                    </div>
+
+                                                    <div class="error-field">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="text-holder row no-gutters" id="email">
+                                                                    <div class="col-xs-10">
+
+                                                                        <!--CUSTOMER EMAIL-->
+                                                                        <input type="email" id="email_text" placeholder="דואר אלקטרוני">
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <img class="edit" src="/he/img/ic_message.png">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-email">error in field</span>
+                                                            </div>
+
+
+                                                            <div class="col-sm-6">
+                                                                <div class="text-holder row no-gutters" id="contact">
+                                                                    <div class="col-xs-10">
+
+                                                                        <!--CUSTOEMR NUMBER-->
+                                                                        <input type="tel" placeholder="מספר טלפון" id="contact_text">
+
+                                                                    </div>
+                                                                    <div class="col-xs-2">
+                                                                        <img class="edit" src="/he/img/ic_phone.png">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-contact">error in field</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <button  onclick="saveUserInfo()"   type="button" class="btn-add-submit">שמור</button>
+                                                    <!--<button  data-toggle="modal" data-target="#order-summary"   type="button" class="btn-add-submit">order</button>-->
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li  id="deliveryInfoParent">
+                                            <a href="#" class="opener" id="addressOpener">
+                                                <h3>אופן האיסוף</h3>
+                                            </a>
+
+                                            <div class="slide" id="deliverySlider">
+                                                <form id="property">
+                                                    <div class="slide-holder">
+                                                        <ul class="checkbox-list">
+                                                            <li id="pickup_option"> <input type="checkbox" id="checkbox-id-12"> <label for="checkbox-id-12"> איסוף עצמי מהמסעדה <span id="address-text">שדרות יגאל אלון 6, בית שמש</span></label></li>
+                                                            <li id="delivery-parent"> <input type="checkbox" id="checkbox-id-23"> <label for="checkbox-id-23">   משלוח עד הדלת<span>מלא את פרטי הכתובת</span></label></li>
+                                                        </ul>
+                                                        <div class="show-box" id="deliveryFieldsParent" style="display: none">
+                                                            <div class="error-field">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="text-holder row no-gutters">
+                                                                            <div class="col-xs-11">
+                                                                                <input type="text" id="address" placeholder="הזן מיקום">
+                                                                            </div>
+                                                                            <div class="col-xs-1">
+                                                                                <img class="edit" src="/he/img/ic_checkin.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <span class="error-span" id="error-address">error in field</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div style="display:none;">
+                                                                <div class="form-group">
+                                                                    <input id= "lat" type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input id = "lng" type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+                                                                </div>
+                                                            </div>
+                                                            <div class="error-field">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="text-holder row no-gutters">
+                                                                            <div class="col-xs-11">
+                                                                                <input id="appt-no" type="text" placeholder="פרטים נוספים : מס כניסה, מס קומה וכו...">
+                                                                            </div>
+                                                                            <div class="col-xs-1">
+                                                                                <img class="edit" src="/he/img/ic_home.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <span class="error-span" id="error-appt-no">error in field</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="error-field">
+                                                                <div class="text-holder row no-gutters" id="area">
+                                                                    <div class="col-xs-12">
+                                                                        <div class="custom-select" >
+                                                                            <select id="delivery-areas">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" id="error-area">error in field</span>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" onclick="deliveryAddress()" class="btn-add-submit">שמור</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                        <li id="paymentParent">
+                                            <a href="#" class="opener" id="paymentOpener">
+                                                <h3>אמצעי תשלום</h3>
+                                            </a>
+                                            <div class="slide" id="paymentSlider">
+                                                <div class="slide-holder">
+                                                    <ul class="checkbox-list">
+                                                        <li id="cash_parent"> <input type="checkbox" id="checkbox-id-13"> <label for="checkbox-id-13"> תשלום במזומן <span>התשלום יתבצע במעמד קבלת ההזמנה</span></label></li>
+                                                        <li id="cash_message" style="display: none"> <input type="checkbox" disabled > <label style="opacity: 0.5;"> תשלום במזומן <span>מזומן לא זמין כאשר נבחרה אפשרות האיסוף</span></label></li>
+                                                        <li> <input type="checkbox" id="checkbox-id-24"> <label for="checkbox-id-24"> תשלום באמצעות כרטיס אשראי <span id="check24_click" ><a href="#"><img src="/he/img/cards.png"></a></span></label></li>
+                                                    </ul>
+
+
+                                                    <div class="show-box" id="show_credit_card">
+                                                        <form name="payment-form" id="payment-form" style="height:100%"  method="POST">
+                                                            <div class="error-field">
+                                                                <div class="text-holder row no-gutters">
+                                                                    <div class="col-xs-12">
+                                                                        <input class="add-box" id="user_name" type="text" placeholder="שם בעל הכרטיס">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span">error in field</span>
+                                                            </div>
+                                                            <div class="error-field">
+                                                                <div class="text-holder row no-gutters" id="error-card">
+                                                                    <div class="col-xs-12">
+                                                                        <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" class="add-box" type="text" placeholder="מספר הכרטיס">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="error-span" style="display: block!important;" id="error-card-no"></span>
+                                                            </div>
+                                                            <div class="error-field">
+                                                                <div class="row">
+                                                                    <div class="col-sm-1"></div>
+                                                                    <div class="col-sm-6">
+                                                                        <div class="text-holder add row no-gutters" id="exp_error">
+                                                                            <div class="col-xs-10">
+                                                                                <div class="row no-gutters">
+                                                                                    <div class="col-xs-5">
+                                                                                        <input class="left-field"  placeholder="MM"  id="month"  type="number" size="2" data-stripe="exp_month">
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <span class="devider"> / </span>
+                                                                                    </div>
+                                                                                    <div class="col-xs-5">
+                                                                                        <input class="right-field" placeholder="YY" maxlength="2" id="year" type="number" size="2" data-stripe="exp_year">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-xs-2">
+                                                                                <img class="edit" src="/he/img/ic_calender.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <span class="error-span" id="error-month"></span>
+                                                                    </div>
+                                                                    <div class="col-sm-5">
+                                                                        <div class="text-holder row no-gutters" id="error-cvv-parent">
+
+                                                                            <div class="col-xs-8">
+                                                                                <input id="cvv" type="number" placeholder="cvv" size="4" data-stripe="cvc">
+                                                                            </div>
+                                                                            <div class="col-xs-4">
+                                                                                <img class="edit" src="/he/img/cvs-icon.png">
+                                                                            </div>
+                                                                        </div>
+                                                                        <span id="error-cvv" class="error-span">error in field</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <span style="color: red;font-size: 15px;" class="payment-errors"></span>
+
+                                                            <div class="form-row" style="display: none">
+                                                                <label>
+                                                                    <span>Billing ZIP Code</span>
+                                                                    <input type="text" size="6" data-stripe="address_zip" value="5">
+                                                                </label>
+                                                            </div>
+
+                                                        </form>
+
+                                                    </div>
+
+                                                    <div class="error-field" id="coupon_parent">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <label class="new-label">השתמש בקופון</label>
+                                                            </div>
+                                                            <div class="show-text" id="isCoupon">
+                                                                <div class="col-xs-4"></div>
+                                                                <div class="col-xs-8">
+                                                                    <div class="text-holder row no-gutters" id="coupon">
+                                                                        <input class="add-box" type="text" id="coupon-txt" placeholder="מספר קופון">
+                                                                    </div>
+                                                                    <span class="error-span" id="error-coupon"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <button type="button" onclick="ClosePayment()" class="btn-add-submit">שמור</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li id="specialRequestParent">
+                                            <a href="#" class="opener" id="specialRequestOpener">
+                                                <h3>הערות מיוחדת</h3>
+                                            </a>
+                                            <div class="slide" id="specialRequest">
+                                                <div class="slide-holder">
+                                                    <div class="error-field">
+                                                        <div class="text-holder row no-gutters">
+                                                            <div class="col-xs-11">
+                                                                <textarea id="specialRequestText" placeholder="הזן כאן"></textarea>
+                                                                <img class="resize" src="/he/img/Path-he.png">
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <img class="edit" src="/he/img/ic_edit-he.png">
+                                                            </div>
+                                                        </div>
+                                                        <span class="error-span">error in field</span>
+                                                    </div>
+                                                    <button type="button" onclick="specialRequestSave()"  class="btn-add-submit">שמור</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <button type="button" id="submitOrder" onclick="$('#order-summary').modal('show')" class="btn-submit">אשר הזמנה</button>
+                                    <!--<button type="button" id="submitOrder" onclick="saveCashDetail()" class="btn-submit">אשר הזמנה</button>-->
+                                    <div class="empty-height"></div>
+                                </div>
+                            </div>
+                            <!-- end scroll  -->
+                            <div class="baron__track">
+                                <div class="baron__bar"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <a class="btn-left" onclick="goBack()" href="#"></a>
+</div>
+
+
+
+<!-- order summary popup -->
+<div class="modal fade"  dir="rtl" id="order-summary" role="dialog">
+    <div class="modal-dialog modal-md mypopup">
+        <div class="modal-content">
+            <div class="holder">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="text-center">
+
+                    <!--ITEM NAME IN POPUP-->
+                    <h2 id="itemPopUpTitle">סיכום הזמנה</h2>
+
+                    <!--ITEMS PRICE IN POPUP-->
+                    <span id="itemPopUpPrice" class="txt"> </span>
+
+                </div>
+                <div class="baron">
+                    <div id="scrollable2" class="baron__scroller popup">
+                        <div class="popup-txt">
+                            <div id="summary_items">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="baron__track">
+                        <div class="baron__bar"></div>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class=" col-xs-12">
+                        <div class="minimum-item add">
+                            <div class="row no-gutters">
+                                <div class="col-md-6 col-xs-6">
+                                    <span id="totalAmountWithoutDiscount2" class="nis">90 NIS</span>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <h3>סיכום ביניים</h3>
+                                </div>
+                            </div>
+                            <div id="showDiscount2" class="row no-gutters">
+                                <div class="col-md-6 col-xs-6">
+                                    <span id="discountValue2" class="nis">0 NIS</span>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <h3 id="discountTitle2">Coupon Discount</h3>
+                                </div>
+                            </div>
+                            <div id="deliveryDetail2" class="row no-gutters">
+                                <div class="col-md-6 col-xs-6">
+                                    <span id="area-charges2" class="nis">0 NIS</span>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <h3>משלוח</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="minimum-item">
+                            <h2 id="totalAmount2"></h2>
+                        </div>
+                    </div>
+                </div>
+                <button  type="button" onclick="saveCashDetail()" class="btn-submit">אשר הזמנה</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade"  id="about" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <p dir="rtl">
+                OrderApp מחוללת מהפכה בחוויית הזמנת אוכל באינטרנט.
+                <br>אנו מקלים על כל הסבל והקושי בתהליך ההזמנה דרך האינטרנט.<br>
+                עבור המסעדות, אנו מתפעלים מערכת  אשר תנהל את כל ההזמנות.<br>
+                עבור הלקוח, אנו פלטפורמת הזמנות נוחה המקלה ומזרזת את תהליך ההזמנה כך שיגיע במהירות לבית הלקוח.<br><br><br>
+                בחסות  Push Startups</p>
+
+
+            <!-- SOCIAL LINKS FOR ORDER APP -->
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/theorderapp/"><img src="/he/img/fb.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/OrderAppTeam"><img src="/he/img/tw.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/106974163137537901922"><img src="/he/img/gp.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/theorderapp/"><img src="/he/img/insta.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/orderapp/"><img src="/he/img/pin.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/orderapp-team-4a886510b"><img src="/he/img/link.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=he&libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
+
+
+<script type="text/javascript" src="/he/script/jcf.js"></script>
+<script type="text/javascript" src="/he/script/jcf.scrollable.js"></script>
+<script type="text/javascript">
+    // replace custom forms
+    jcf.lib.domReady(function(){
+        jcf.customForms.replaceAll();
+    });
+</script>
+<script src="/he/script/bootstrap.min.js"></script>
+<script src="/he/script/script.js"> </script>
+<script src="/he/script/dropdown.js"></script>
+<script src="/he/script/ajaxServerRequestConfirmOrder-he.js"></script>
+<script type="text/javascript" src="/he/script/jquery.accordion.without.click.js"></script>
+<script src="/he/script/alertify.min.js"></script>
+<script type="text/javascript" src="/he/script/baron.js"></script>
+<script>
+
+
+    window.onload = function() {
+        window.dima = baron({
+            root: '.baron',
+            scroller: '.baron__scroller',
+            bar: '.baron__bar'
+        }).autoUpdate();
+    };
+
+
+    $('.new-label').click(function(e){
+
+        $('.show-text').toggleClass('show');
+
+    });
+
+
+    //    $(function() {
+    //
+    //        function reposition() {
+    //
+    //            var modal = $(this),
+    //                    dialog = modal.find('.modal-dialog');
+    //            modal.css('display', 'block');
+    //
+    //            // Dividing by two centers the modal exactly, but dividing by three
+    //            // or four works better for larger screens.
+    //            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+    //        }
+    //
+    //        // Reposition when a modal is shown
+    //        $('.modal').on('show.bs.modal', reposition);
+    //
+    //        // Reposition when the window is resized
+    //        $(window).on('resize', function() {
+    //
+    //            $('.modal:visible').each(reposition);
+    //
+    //        });
+    //
+    //    });
+
+
+</Script>
+
+<script>
+
+    //    // WHEN NAME FIELD CHANGES
+    //    $('#name_text').bind('input', function() {
+    //
+    //        document.getElementById("error-name").innerHTML = "";
+    //
+    //        $("#name").removeClass("error");
+    //
+    //
+    //    });
+
+</script>
+
+<script>
+
+    //    // WHEN NAME FIELD CHANGES
+    //    $('#email_text').bind('input', function() {
+    //
+    //        document.getElementById("error-email").innerHTML = "";
+    //
+    //        $("#email").removeClass("error");
+    //
+    //
+    //    });
+
+</script>
+
+
+<script>
+
+    //    // WHEN NAME FIELD CHANGES
+    //    $('#contact_text').bind('input', function() {
+    //        document.getElementById("error-contact").innerHTML = "";
+    //        $("#contact").removeClass("error");
+    //    });
+
+</script>
+
+<script>
+
+    $("#checkbox-id-23").click(function(e) {
+
+        $('#checkbox-id-12').prop('checked', false);
+        $('#deliveryFieldsParent').addClass('show');
+
+        if(!this.checked)
+        {
+            return false;
+        }
+
+        updateCartElements();
+
+    });
+
+
+    $("#checkbox-id-12").click(function(e) {
+
+        $('#checkbox-id-23').prop('checked', false);
+        $('#deliveryFieldsParent').removeClass('show');
+
+        if(!this.checked)
+        {
+
+            return false;
+        }
+
+        updateCartElements();
+
+
+    });
+
+
+
+</script>
+
+<script>
+
+    //    // WHEN NAME FIELD CHANGES
+    //    $('#appt-no').bind('input', function() {
+    //
+    //        document.getElementById("error-appt-no").innerHTML = "";
+    //        $("#appt-no").removeClass("error");
+    //
+    //    });
+
+</script>
+
+
+<script>
+
+    //    // WHEN NAME FIELD CHANGES
+    //    $('#address').bind('input', function() {
+    //
+    //        document.getElementById("error-address").innerHTML = "";
+    //        $("#address").removeClass("error");
+    //
+    //    });
+
+</script>
+
+<script>
+
+    $("#checkbox-id-13").click(function(e) {
+
+        $('#checkbox-id-24').prop('checked', false);
+        $('#show_credit_card').removeClass('show');
+
+        if(!this.checked)
+        {
+
+            return false;
+        }
+
+
+    });
+
+    $("#checkbox-id-24").click(function(e) {
+
+        $('#checkbox-id-13').prop('checked', false);
+        $('#show_credit_card').addClass('show');
+
+        if(!this.checked)
+        {
+            return false;
+        }
+
+    });
+
+
+    $('#check24_click').click(function(e) {
+
+        $('#checkbox-id-13').prop('checked', false);
+        $('#checkbox-id-24').prop('checked', true);
+        $('#show_credit_card').addClass('show');
+
+    });
+
+
+
+</script>
+
+
+
+<!--VALIDATE CARD NUMBER-->
+<script>
+
+    $('#card_no').bind('input', function() {
+
+        $('#error-card-no').html("");
+        $("#error-card").removeClass("error");
+
+        if((!this.value.match(/^\d+$/)))
+        {
+            if($("#card_no").val() == ''){
+
+                $("#error-card").removeClass("error");
+                $('#error-card-no').html("");
+            }
+            else
+            {
+                $("#error-card").addClass("error");
+                $('#error-card-no').html("Invalid Card Number!");
+            }
+        }
+        else
+        {
+
+            $("#error-card").removeClass("error");
+
+        }
+    });
+
+</script>
+
+
+<script>
+    $('#month').bind('input', function(e) {
+        //alert($("#price").val());
+        if ($(this).val() > 12) {
+            e.preventDefault();
+            $(this).val(12);
+
+        }
+    });
+</script>
+
+<!--STRIPE PAYMENT -->
+<script>
+
+    $(document).ready(function() {
+
+        $("#payment-form").submit(function(e){
+
+
+            var exp = $('#month').val() + $('#year').val();
+
+            payment_credit_card($('#card_no').val(),$('#cvv').val(),exp);
+
+
+            e.preventDefault(e);
+            return false;
+        });
+
+
+        $("#address").geocomplete({
+                details:"form#property",
+                types: ["geocode", "establishment"],
+            }
+        );
+
+
+    });
+
+
+
+
+</script>
+
+<script>
+
+    $('#login-btn').click(function(e){
+
+        if($("#dropdown-nav").is(':visible'))
+        {
+            $('#dropdown-nav').hide();
+            $('#signup-email').val('');
+            $('#signup-password').val('');
+            $('#signup-confirm-pass').val('');
+            $('#error-signup').html('');
+
+        }
+        else {
+
+
+            $('#dropdown-nav').show();
+
+        }
+
+        e.stopPropagation();
+
+
+    });
+
+
+
+    $(document).click(function(e){
+
+        if(!(document.getElementById('dropdown-nav').contains(e.target)))
+        {
+            $('#dropdown-nav').hide();
+            $('#error-signup').html('');
+            $('#signup-email').val('');
+            $('#signup-password').val('');
+            $('#signup-confirm-pass').val('');
+        }
+
+    });
+
+
+
+    $('.asGuest').click(function(e) {
+
+
+        $('#dropdown-nav').hide();
+
+
+    });
+
+
+    $('#signup-email-pass').click(function(e) {
+
+
+        $('#signup-message').hide();
+        $('#manual-signup').show();
+
+
+    });
+
+
+
+    var email              =  $('#signup-email').val();
+    var password           =  $('#signup-password').val();
+    var confirmPassword    =  $('#signup-confirm-pass').val();
+
+
+    // VALIDATE USER SIGN UP
+
+    $('#signUp-btn').click(function(e) {
+
+        $('#error-signup').val('');
+
+
+        email              =  $('#signup-email').val();
+        password           =  $('#signup-password').val();
+        confirmPassword    =  $('#signup-confirm-pass').val();
+
+
+        if(email == "")
+        {
+            $('#error-signup').html('Email required*');
+            return;
+        }
+        else if(password == "")
+        {
+            $('#error-signup').html('Password required*');
+            return;
+        }
+        else if(confirmPassword == "")
+        {
+            $('#error-signup').html('Confirm Password required*');
+            return;
+        }
+        else if(!validateEmail(email))
+        {
+
+            $('#error-signup').html('Invalid Email!');
+            return;
+        }
+
+        else if(password != confirmPassword)
+        {
+
+            $('#error-signup').html('Password not match');
+            return;
+        }
+
+
+        commonAjaxCall("/restapi/index.php/validate_email",{"email": email},validateEmailCallBack);
+
+    });
+
+    function validateEmailCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == true) {
+
+            commonAjaxCall("/restapi/index.php/add_new_user",{"user_email": email,"user_password": password},addNewUserCallBack);
+        }
+        else {
+
+            $('#error-signup').html('Invalid email not exist');
+        }
+
+    }
+
+
+    $('#logout').click(function(e) {
+
+        localStorage.setItem("USER_EMAIL",'');
+        localStorage.setItem("USER_SMOOCH_ID",'');
+        localStorage.setItem("USER_NAME",'');
+
+        $('#signup-message').show();
+        $('#manual-signup').hide();
+        $("#loginMessage").hide();
+        $('#signUpForm').show();
+
+        $('#loginBtnText').html("Login");
+
+    });
+
+
+    function addNewUserCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success" || resp == "verification_pending")
+        {
+            userObject.email = email;
+            userObject.name = '';
+
+            localStorage.setItem("USER_EMAIL",email);
+            localStorage.setItem("USER_SMOOCH_ID",email);
+            localStorage.setItem("USER_NAME",'');
+
+            $('#signin').hide();
+            $('#signup').show();
+
+            $('#email_text').val(userObject.email);
+            $('#name_text').val(userObject.name);
+
+            $('#loginBtnText').html("Hi "+userObject.email);
+            $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+            $("#email_verification_message").hide();
+            $("#loginMessage").show();
+            $('#signup-message').hide();
+            $('#signUpForm').hide();
+            $('#manual-signup').hide();
+
+            $('#email-login').val('');
+            $('#password-login').val('');
+
+
+        }
+        else if(resp == "account_exist") {
+
+
+            $('#error-signup').html('נראה שכבר יש לך חשבון, לחץ על היכנס למעלה');
+
+
+        }
+
+    }
+
+
+    function resendValidationLink() {
+
+
+        commonAjaxCall("/restapi/index.php/resend_signup_email",{"user_email": email},resendCallBack);
+
+    }
+
+    function resendCallBack(response) {}
+
+
+    var login_email       =  '';
+    var login_password    =  '';
+
+    function loginUser()
+    {
+        $('#error-login').html('');
+
+        login_email       =  $('#email-login').val();
+        login_password    =  $('#password-login').val();
+
+        if(login_email == "")
+        {
+            $('#error-login').html('Email required*');
+            return;
+        }
+        else if(login_password == "")
+        {
+            $('#error-login').html('Password required*');
+            return;
+        }
+        else if(!validateEmail(login_email))
+        {
+            $('#error-login').html('Invalid Email!');
+            return;
+        }
+
+        commonAjaxCall("/restapi/index.php/user_login",{"user_email": login_email,"user_password": login_password},loginUserCallBack);
+
+    }
+
+
+
+    function loginUserCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success")
+        {
+            localStorage.setItem("USER_EMAIL",login_email);
+            localStorage.setItem("USER_SMOOCH_ID",login_email);
+            localStorage.setItem("USER_NAME",'');
+
+            userObject.email = login_email;
+            userObject.name = '';
+
+            $('#signin').hide();
+            $('#signup').show();
+
+            $("#email_text").val(userObject.email);
+
+
+            $('#loginBtnText').html("Hi "+userObject.email);
+            $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+            $("#email_verification_message").hide();
+            $("#loginMessage").show();
+            $('#signup-message').hide();
+            $('#signUpForm').hide();
+            $('#manual-signup').hide();
+
+            $('#email-login').val('');
+            $('#password-login').val('');
+        }
+        else if(resp == "error")
+        {
+
+            $('#error-login').html('Email or Password incorrect!');
+
+        }
+        else if(resp == "validation_error")
+        {
+            $('#signin').hide();
+            $('#signup').show();
+
+            email = login_email;
+
+            $("#email_verification_message").show();
+            $("#loginMessage").hide();
+            $('#signup-message').hide();
+            $('#manual-signup').hide();
+
+
+        }
+
+    }
+
+    function switchToLogin()
+    {
+        $('#signup').hide();
+        $('#signin').show();
+    }
+
+    function switchToSignUp()
+    {
+        $('#signin').hide();
+        $('#signup').show();
+    }
+
+    function forgetPassword() {
+
+        $('#login_email').hide();
+        $('#forget_pass_sec').show();
+    }
+
+    function expand_login() {
+
+        $('#login_email').show();
+        $('#forget_pass_sec').hide();
+        $('#email_reset_message').hide();
+    }
+
+
+    $('#rest-pass-request').click(function(e) {
+
+        $('#error-reset').html('');
+
+        var emailRest   =  $('#rest-pass-email').val();
+
+        if(emailRest == "")
+        {
+            $('#error-reset').html('Enter Email!');
+
+            return;
+        }
+        else if(!validateEmail(emailRest))
+        {
+            $('#error-reset').html('Invalid Email!');
+
+            return;
+        }
+
+        commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
+
+    });
+
+
+    function restPassCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success")
+        {
+            $('#email_reset_message').show();
+            $('#forget_pass_sec').hide();
+
+        }
+        else {
+
+            $('#error-reset').html('Not find this email!');
+        }
+
+    }
+
+    function restPasswordResend() {
+
+        var emailRest   =  $('#rest-pass-email').val();
+
+        commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
+    }
+
+    //FACEBOOK LOGIN
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '572922239565680',
+            xfbml      : true,
+            version    : 'v2.9'
+        });
+    };
+
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function myFacebookLogin() {
+
+        FB.login(function(response)
+        {
+            if (response.authResponse)
+            {
+                getUserInformation();
+            }
+            else
+            {console.log('User cancelled login or did not fully authorize.');
+            }
+
+        }, {scope: 'email'});
+
+        function getUserInformation() {
+
+            FB.api('/me', { locale: 'en_US', fields: 'name, email' },
+
+                function(response) {
+
+                    isSocial = true;
+
+
+                    var name = "";
+                    var primaryEmail = "";
+                    var provider = "";
+                    var uid = "";
+                    var contact = "";
+
+                    try {
+
+                        name = response.name;
+                    }
+                    catch (exp)
+                    {
+                        name = "";
+                    }
+
+
+                    try {
+
+                        primaryEmail = response.email;
+                    }
+                    catch (exp)
+                    {
+                        primaryEmail = "";
+                    }
+
+
+                    try {
+
+                        provider = "facebook";
+                    }
+                    catch (exp)
+                    {
+                        provider = "";
+                    }
+
+                    try {
+
+                        uid = response.id;
+                    }
+                    catch (exp)
+                    {
+                        uid = "";
+                    }
+
+                    try {
+
+                        contact = "";
+                    }
+                    catch (exp)
+                    {
+                        contact = "";
+                    }
+
+
+
+                    localStorage.setItem("USER_EMAIL",primaryEmail);
+                    localStorage.setItem("USER_SMOOCH_ID",uid);
+                    localStorage.setItem("USER_NAME",name);
+                    $("#email_text").val(primaryEmail);
+                    $("#name_text").val(name);
+
+                    if(primaryEmail != null)
+                    {
+                        userObject.email = primaryEmail;
+                    }
+                    else {
+
+                        userObject.email = "";
+                    }
+
+                    userObject.name = name;
+
+                    $('#signin').hide();
+                    $('#signup').show();
+
+
+                    $('#loginBtnText').html("Hi "+userObject.name);
+                    $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+                    $("#email_verification_message").hide();
+                    $("#loginMessage").show();
+                    $('#signup-message').hide();
+                    $('#signUpForm').hide();
+                    $('#manual-signup').hide();
+
+                    $('#email-login').val('');
+                    $('#password-login').val('');
+
+                    commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+
+
+                });
+        }
+    }
+
+    // GOOGLE SIGN IN
+    var googleUser = {};
+
+
+    var startApp = function() {
+        gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+
+                'client_id' : '116247344094-kbebvthkdfclmocoj7fi6jo75b0llvjv.apps.googleusercontent.com',
+                'cookiepolicy' : 'single_host_origin',
+                'callback' : 'onSignInCallback',
+                'approvalprompt':'auto',
+                'setAccessType' : 'online',
+                'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+            });
+
+            attachSignin(document.getElementById('google-btn'));
+            attachSignin(document.getElementById('google-btn-2'));
+        });
+    };
+
+    function attachSignin(element) {
+
+        console.log(element.id);
+        auth2.attachClickHandler(element, {},
+
+            function(googleUser)
+            {
+
+                sessionStorage.token = googleUser.getAuthResponse().access_token;
+                console.log(googleUser);
+
+                var name = "";
+                var primaryEmail = "";
+                var provider = "";
+                var uid = "";
+                var contact = "";
+
+                try {
+
+                    name = googleUser.getBasicProfile().getName();
+                }
+                catch (exp)
+                {
+                    name = "";
+                }
+
+
+                try {
+
+                    primaryEmail = googleUser.getBasicProfile().getEmail();
+                }
+                catch (exp)
+                {
+                    primaryEmail = "";
+                }
+
+
+                try {
+
+                    provider = "google";
+                }
+                catch (exp)
+                {
+                    provider = "";
+                }
+
+                try {
+
+                    uid = googleUser.getBasicProfile().getId();
+                }
+                catch (exp)
+                {
+                    uid = "";
+                }
+
+                try {
+
+                    contact = "";
+                }
+                catch (exp)
+                {
+                    contact = "";
+                }
+
+
+
+
+                localStorage.setItem("USER_EMAIL",primaryEmail);
+                localStorage.setItem("USER_SMOOCH_ID",uid);
+                localStorage.setItem("USER_NAME",name);
+                $("#email_text").val(primaryEmail);
+                $("#name_text").val(name);
+
+                if(primaryEmail != null)
+                {
+                    userObject.email = primaryEmail;
+                }
+                else {
+
+                    userObject.email = "";
+                }
+
+                userObject.name = name;
+
+                $('#signin').hide();
+                $('#signup').show();
+
+                $('#loginBtnText').html("Hi "+userObject.name);
+                $("#success-message").html("היי"+userObject.name+", נעים להכיר אותך :)");
+
+                $("#email_verification_message").hide();
+                $("#loginMessage").show();
+                $('#signup-message').hide();
+                $('#signUpForm').hide();
+                $('#manual-signup').hide();
+
+                $('#email-login').val('');
+                $('#password-login').val('');
+
+
+                commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+            },
+            function(error) {
+
+                alert(JSON.stringify(error, undefined, 2));
+            });
+    }
+
+    startApp();
+</script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="/he/script/commonAjaxCall.js"></script>
+
+<script>
+
+    function singUpUser(response) {
+
+        resp = JSON.parse(response);
+    }
+
+</script>
+
+
+
+<script src="https://cdn.smooch.io/smooch.min.js"></script>
+<script>
+    Smooch.init({ appToken: '3ro5efd8o5voeoj8bhzgxohsq' });
+    Smooch.on('ready', function(){
+        Smooch.sendMessage("HEBREW HEBREW");
+    });
+</script>
+
+
+</body>
+</html>

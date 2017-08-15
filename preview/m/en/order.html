@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:touch-action="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/m/en/style/menu-page.css">
+    <link href="/m/en/style/dropdown.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+
+    <script type="text/javascript" src="/m/en/script/isMobileRedirect.js"></script>
+    <script type="text/javascript" src="/m/en/script/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC1lQDoUmh5UiXrGzkjQQjnl5FxujHvsZc"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <style>
+        /*.pac-container {*/
+        /*z-index: 10000 !important;*/
+        /*}*/
+        .pac-container {
+            background-color: #FFF;
+            z-index: 999999;
+            position: fixed;
+            display: inline-block;
+            float: left;
+        }
+
+    </style>
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+    </script>
+
+    <!-- Hotjar Tracking Code for orderapp.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:532682,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+    </noscript>
+
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Facebook/Twitter Open Graph -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
+
+
+
+</head>
+
+<body style="height: 100%; overflow: hidden;" >
+
+
+<img id="loader" style="z-index: 99999999;" class="loader-css" src="/en/img/loader.gif" >
+<div id="Loader_bg" style="display:none ; z-index: 9999999; width: 100%; height: 100%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
+
+<script>
+
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+            $('body').css("overflow","inherit");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+            $('body').css("overflow","hidden");
+        }
+
+    });
+
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+
+    //  IF USER CITY ID IS NOT IN CACHE THEN SEND USER TO INDEX PAGE
+    if(localStorage.getItem("USER_CITY_ID") == undefined ||localStorage.getItem("USER_CITY_ID") == "" || localStorage.getItem("USER_CITY_ID") == null)
+    {
+        window.location.href='/m/en/index.html';
+    }
+
+
+
+    var refresh = false;
+
+    $(window).on("beforeunload", function () {
+
+        if (refresh == false) {
+
+            return false;
+        }
+
+    });
+
+    if(window.location.hostname == "app.orderapp.com") {
+
+        refresh = true;
+    }
+
+</script>
+
+<div id="main-content" style="height: 100%">
+
+
+    <div id="wrapper" style="height: 100%;">
+
+        <!--HEADER-->
+        <header id="header">
+            <div class="logo-area">
+                <a class="btn-back" onclick="goBack()" href="#"><img src="/m/en/img/back_arrow.png"></a>
+                <div class="logo">
+                    <a href="#"><img src="/m/en/img/bg_logo.png"></a>
+                </div>
+                <!--RESTAURANT TITE-->
+                <span class="title" id="rest-title"></span>
+            </div>
+            <ul class="top-list" >
+                <li><a data-toggle="modal" onclick="$('#popup-info').modal('show');"><img src="/m/en/img/alert.png"></a></li>
+                <li class="add-user"><a data-toggle="modal" onclick="openSignUpLoginPopup()"><img src="/m/en/img/ic_profile01.png"></a></li>
+                <li><a data-toggle="modal"   onclick="showCartElements(); updateCartElements();"><img src="/m/en/img/shopping-cart.png"><span class="price" id="count-badge">0</span></a> </li>
+            </ul>
+        </header>
+
+        <div id="main" style="height: 100%; overflow-y: scroll">
+            <!--LIST OF ALL CATEGORIES WITH ITEMS-->
+            <ul class="accordion multilevel-accordion" id="rest_categories_list">
+                <li>
+                </li>
+            </ul>
+
+            <a onclick="OnOrderNowClicked()" class="btn-ordernow">ORDER NOW</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- log in POPUP-->
+<div class="modal fade"  id="login-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <form class="login-form">
+                <h2>Log In</h2>
+                <p>Log In and make the ordering process shorter</p>
+                <p>Didn't have account? <a href="#" onclick="$('#login-popup').modal('hide'); $('#signup-popup').modal('show'); $('#welcome-popup').modal('hide'); ">Sign Up</a></p>
+                <div class="btn-holder">
+                    <button class="btn btn-facebook" onclick="myFacebookLogin()" type="button">Log In with Facebook</button>
+                    <button id="google-btn" class="btn btn-google" type="button">Log In with Google</button>
+                </div>
+                <div class="line">Or</div>
+
+
+
+                <!--start login with email sectopm-->
+                <div class="links" id="signin-message">
+                    <a class="login-email" onclick="expand_login()" href="#">Log In with Email and Password</a>
+                    <a class="login-guest asGuest" href="#">Continue as guest</a>
+                </div>
+
+                <div id="login_email" class="login-section" style="display: none">
+                    <a class="login-email"  onclick="expand_login()" href="#">Log In with Email and Password</a>
+                    <input id="email-login" class="form-control" type="email" placeholder="Email Address">
+                    <input id="password-login" class="form-control add" type="password" placeholder="Password">
+                    <a  onclick="forgetPassword()" class="login-email text-left" href="#">Forgot password</a>
+                    <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-login"></span>
+                    <button onclick="loginUser()" class="btn btn-login" type="button">Log In</button>
+                    <a class="login-guest asGuest" href="#">Continue as guest</a>
+                </div>
+
+                <!-- start forget sectopm -->
+                <div id="forget_pass_sec" class="forget-section" style="display: none">
+                    <a class="login-email"  onclick="expand_login()" href="#">Log In with Email and Password</a>
+                    <p>enter your email in order to reset your password</p>
+                    <input id="rest-pass-email" class="form-control add1" type="email" placeholder="Email Address">
+                    <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-reset"></span>
+                    <button id="rest-pass-request" class="btn btn-login" type="button">Send</button>
+                    <a class="login-guest asGuest" href="#">Continue as guest</a>
+                </div>
+                <!-- end forget sectopm -->
+
+
+                <div class="" id="email_reset_message" style="display: none">
+                    <a class="login-email"  onclick="expand_login()" href="#">Log In with Email and Password</a>
+                    <p style="text-align: left">We send you a link to reset your password via email</p>
+                    <a style="text-align: left; margin-left: 32px; margin-bottom: 203px;" onclick="restPasswordResend()" class="login-guest" href="#">I did’nt get an email</a>
+                    <a class="login-guest asGuest" href="#">Continue as guest</a>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!--<div class="modal fade"  id="login-email" role="dialog">-->
+    <!--<div class="modal-dialog modal-md menu-page order login-popup">-->
+        <!--<div class="modal-content">-->
+            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+            <!--<form class="login-form">-->
+                <!--<h2>Log In</h2>-->
+                <!--<p>Log In and make the ordering process shorter</p>-->
+                <!--<p>Didn't have account? <a href="#">Sign Up</a></p>-->
+                <!--<div class="btn-holder">-->
+                    <!--<button class="btn btn-facebook" type="button">Log In with Facebook</button>-->
+                    <!--<button class="btn btn-google" type="button">Log In with Google</button>-->
+                <!--</div>-->
+                <!--<div class="line">Or</div>-->
+
+                <!--&lt;!&ndash; start login with email sectopm &ndash;&gt;-->
+
+
+
+                <!--<div class="login-section">-->
+                    <!--<input class="form-control" type="email" placeholder="Email Address">-->
+                    <!--<input class="form-control add" type="password" placeholder="Password">-->
+                    <!--<a class="login-email text-left" href="#">Forgot password</a>-->
+                    <!--<button class="btn btn-login" type="button">Log In</button>-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash; end login with email sectopm &ndash;&gt;-->
+
+                <!--&lt;!&ndash; start forget sectopm &ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="forget-section">&ndash;&gt;-->
+                <!--&lt;!&ndash;<p>enter your email in order to reset your password</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;<input class="form-control add1" type="email" placeholder="Email Address">&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="btn btn-login" type="button">Send</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash; end forget sectopm &ndash;&gt;-->
+
+                <!--<a class="login-guest" href="#">Continue as guest</a>-->
+            <!--</form>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="modal fade"  id="forget-password" role="dialog">-->
+    <!--<div class="modal-dialog modal-md menu-page order login-popup">-->
+        <!--<div class="modal-content">-->
+            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+            <!--<form class="login-form">-->
+                <!--<h2>Log In</h2>-->
+                <!--<p>Log In and make the ordering process shorter</p>-->
+                <!--<p>Didn't have account? <a href="#">Sign Up</a></p>-->
+                <!--<div class="btn-holder">-->
+                    <!--<button class="btn btn-facebook" type="button">Log In with Facebook</button>-->
+                    <!--<button class="btn btn-google" type="button">Log In with Google</button>-->
+                <!--</div>-->
+                <!--<div class="line">Or</div>-->
+
+                <!--&lt;!&ndash; start forget sectopm &ndash;&gt;-->
+                <!--<div class="forget-section">-->
+                    <!--<p>enter your email in order to reset your password</p>-->
+                    <!--<input class="form-control add1" type="email" placeholder="Email Address">-->
+                    <!--<button class="btn btn-login" type="button">Send</button>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; end forget sectopm &ndash;&gt;-->
+
+                <!--<a class="login-guest asGuest" href="#">Continue as guest</a>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="modal fade"  id="welcome-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="welcom-popup">
+                <div class="user-img">
+                    <img src="/m/en/img/ic_profile.png">
+                </div>
+                <h3 id="success-message"></h3>
+                <a id="logout" class="login-guest" href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- start sign up popup -->
+
+<div class="modal fade"  id="signup-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order login-popup">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="signup" >
+                <form class="login-form" id="signUpForm">
+                    <h2>Sign Up</h2>
+                    <p>Sign Up and make the ordering process shorter</p>
+                    <p>Alredy have account? <a href="#" onclick="$('#login-popup').modal('show'); $('#signup-popup').modal('hide'); $('#welcome-popup').modal('hide'); ">Log In</a></p>
+                    <div class="btn-holder">
+                        <button class="btn btn-facebook" onclick="myFacebookLogin()" type="button">Sign Up with Facebook</button>
+                        <button id="google-btn-2" class="btn btn-google" type="button">Sign Up with Google</button>
+                    </div>
+                    <div class="line">Or</div>
+
+                    <!--start login with email sectopm-->
+                    <div class="links" id="signup-message">
+                        <a id="signup-email-pass" class="login-email" href="#">Sign Up with Email and Password</a>
+                        <a class="login-guest asGuest" href="#">Continue as guest</a>
+                    </div>
+
+
+                    <div class="login-section" id="manual-signup" style="display: none">
+                        <input id="signup-email" class="form-control" type="email" placeholder="Email Address">
+                        <input id="signup-password" class="form-control" type="password" placeholder="Password">
+                        <input id="signup-confirm-pass" class="form-control add" type="password" placeholder="Password">
+                        <span style="display:block; font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-signup"></span>
+                        <button id="signUp-btn" class="btn btn-login" type="button">Sign Up</button>
+                        <a class="login-guest asGuest" href="#">Continue as guest</a>
+                    </div>
+
+
+                    <!-- end login with email sectopm -->
+                    <!--<div class="" id="email_verification_message">-->
+                    <!--<p>In order to complete your registration, please click the link you recieved via email.</p>-->
+                    <!--<a class="login-guest" href="#">I did’nt get an email</a>-->
+                    <!--</div>-->
+
+                    <!-- start forget sectopm -->
+                    <!--<div class="forget-section re-enter">-->
+                    <!--<p>Please re-enter your email address</p>-->
+                    <!--<input class="form-control add1" type="email" placeholder="Email Address">-->
+                    <!--<button class="btn btn-login" type="button">Send</button>-->
+                    <!--<a class="login-guest" href="#">Continue as guest</a>-->
+                    <!--</div>-->
+                    <!-- end forget sectopm -->
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--<div class="modal fade"  id="signup-email" role="dialog">-->
+    <!--<div class="modal-dialog modal-md menu-page order login-popup">-->
+        <!--<div class="modal-content">-->
+            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+            <!--<div class="signup" >-->
+                <!--<form class="login-form" id="signInForm">-->
+                    <!--<h2>Sign Up</h2>-->
+                    <!--<p>Sign Up and make the ordering process shorter</p>-->
+                    <!--<p>Alredy have account? <a href="#">Log In</a></p>-->
+                    <!--<div class="btn-holder">-->
+                        <!--<button class="btn btn-facebook" type="button">Sign Up with Facebook</button>-->
+                        <!--<button class="btn btn-google" type="button">Sign Up with Google</button>-->
+                    <!--</div>-->
+                    <!--<div class="line">Or</div>-->
+                    <!--<div class="login-section" id="manual-signup">-->
+                        <!--<input id="signIn-email" class="form-control" type="email" placeholder="Email Address">-->
+                        <!--<input id="signup-password" class="form-control" type="password" placeholder="Password">-->
+                        <!--<input id="signup-confirm-pass" class="form-control add" type="password" placeholder="Password">-->
+                        <!--<span style="display:none; font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="error-signup"></span>-->
+                        <!--<button id="signUp-btn" class="btn btn-login" type="button">Sign Up</button>-->
+                        <!--<a class="login-guest asGuest" href="#">Continue as guest</a>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="modal fade"  id="signup-email-message" role="dialog">-->
+    <!--<div class="modal-dialog modal-md menu-page order login-popup">-->
+        <!--<div class="modal-content">-->
+            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+            <!--<div class="signup" >-->
+                <!--<form class="login-form" id="signUpForm">-->
+                    <!--<h2>Sign Up</h2>-->
+                    <!--<p>Sign Up and make the ordering process shorter</p>-->
+                    <!--<p>Alredy have account? <a href="#">Log In</a></p>-->
+                    <!--<div class="btn-holder">-->
+                        <!--<button class="btn btn-facebook" type="button">Sign Up with Facebook</button>-->
+                        <!--<button class="btn btn-google" type="button">Sign Up with Google</button>-->
+                    <!--</div>-->
+                    <!--<div class="line">Or</div>-->
+                    <!--<div class="" id="email_verification_message">-->
+                        <!--<p>In order to complete your registration, please click the link you recieved via email.</p>-->
+                        <!--<a class="login-guest" href="#">I did’nt get an email</a>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="modal fade"  id="signup-forget" role="dialog">-->
+    <!--<div class="modal-dialog modal-md menu-page order login-popup">-->
+        <!--<div class="modal-content">-->
+            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+            <!--<div class="signup" >-->
+                <!--<form class="login-form" id="signUpForm">-->
+                    <!--<h2>Sign Up</h2>-->
+                    <!--<p>Sign Up and make the ordering process shorter</p>-->
+                    <!--<p>Alredy have account? <a href="#">Log In</a></p>-->
+                    <!--<div class="btn-holder">-->
+                        <!--<button class="btn btn-facebook" type="button">Sign Up with Facebook</button>-->
+                        <!--<button class="btn btn-google" type="button">Sign Up with Google</button>-->
+                    <!--</div>-->
+                    <!--<div class="line">Or</div>-->
+                    <!--&lt;!&ndash; start forget sectopm &ndash;&gt;-->
+                    <!--<div class="forget-section re-enter">-->
+                        <!--<p>Please re-enter your email address</p>-->
+                        <!--<input class="form-control add1" type="email" placeholder="Email Address">-->
+                        <!--<button class="btn btn-login" type="button">Send</button>-->
+                        <!--<a class="login-guest" href="#">Continue as guest</a>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; end forget sectopm &ndash;&gt;-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="modal fade"  id="signup-welcom-popup" role="dialog">-->
+    <!--<div class="modal-dialog modal-md menu-page order login-popup">-->
+        <!--<div class="modal-content">-->
+            <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>-->
+            <!--<div class="signup" >-->
+                <!--<form class="login-form" id="signUpForm">-->
+                    <!--<h2>Sign Up</h2>-->
+                    <!--<p>Sign Up and make the ordering process shorter</p>-->
+                    <!--<p>Alredy have account? <a href="#">Log In</a></p>-->
+                    <!--<div class="btn-holder">-->
+                        <!--<button class="btn btn-facebook" type="button">Sign Up with Facebook</button>-->
+                        <!--<button class="btn btn-google" type="button">Sign Up with Google</button>-->
+                    <!--</div>-->
+                    <!--<div class="line">Or</div>-->
+                    <!--<div id="loginMessage" class="welcom-popup">-->
+                        <!--<h3 id="success-message"></h3>-->
+                        <!--<a  id="logout" class="login-guest" href="#">Disconnect</a>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+<!-- end sign up popup -->
+
+
+
+
+
+<!-- MINIMUM AMOUNT POPUP-->
+<div class="modal fade"  id="email-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <h3 id="min_order"></h3>
+            <a id="order-pick-link" onclick="OnOrderPickUpClicked()" data-dismiss="modal" href="#" style="text-align: center;display: block; margin-top: 10px">Order pick-up from restaurant</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- CARD EMPTY MESSAGE-->
+<div class="modal fade"  id="cart-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="cart-holder">
+                <img src="/m/en/img/shopping-cart01.png">
+                <h3>Items in the cart will be gone</h3>
+            </div>
+            <ul class="list">
+                <li><a onclick="decision(false);" id="continue">Continue</a></li>
+                <li><a onclick="decision(true);" id="cancel">Cancel</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- ON ITEM CLICK POPUP ITEM DETAIL  -->
+<div class="modal fade"  id="order-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+
+            <div class="box-frame new add">
+                <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <div class="popup-header">
+                    <!--ORDER POPUP HEADER .. INCLUDES RESTAURANT NAME AND DESCRIPTION-->
+                    <div class="txt" id="order-popup-header"></div>
+                    <!--ITEM PRICE ON ORDER POPUP-->
+                    <span class="btn-nis" id="itemPriceOrderPopup"></span>
+                </div>
+
+                <div class="wrap-col">
+                    <!--EXTRAS WITH TYPE ONE-->
+                    <div class="add-row first" id="parent_type_one" style="display: none;"></div>
+                    <!--EXTRAS WITH TYPE MULTIPLE-->
+                    <div class="add-row first" id="parent_type_multiple" style="display: none;"></div>
+
+                    <div class="add-row">
+                        <h3>Special Requests</h3>
+                        <div class="text-holder row no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="/m/en/img/ic_edit.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <textarea id="special_request" placeholder="Type here"></textarea>
+                                <img class="resize" src="/m/en/img/Path 2.png">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="my-btn-holder">
+            <button onclick="addUserOrder();"  type="button" class="btn-submit">+ ADD TO MY ORDER </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- RESTAURANT DETAIL POPUP -->
+<div class="modal fade"  id="popup-info" role="dialog">
+    <div class="modal-dialog modal-md mypopup info">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="row no-gutters">
+
+                <!--INFO POPUP FIRST SECTION-->
+                <div class="col-xs-12 first-col text-center" id="info-popup-header"></div>
+                <div class="col-xs-12 second-col">
+
+                    <div class="add-row first">
+                        <span class="title title0">Contact Info</span>
+                        <div class="table" id="info-popup-contact"></div>
+                    </div>
+
+                    <div class="add-row first">
+                        <span class="title">Opening Hours</span>
+                        <!--RESTAURANT TIMINGS IN INFO POPUP-->
+                        <table class="table" id="info-popup-timing"></table>
+                    </div>
+
+                    <div class="add-row first">
+                        <span class="title title2">Delivery Fee</span>
+                        <!--RESTAURAT DELIVERY CHARGES IN INFO POPUP-->
+                        <table class="table" id="info-popup-delivery-fee"></table>
+                    </div>
+
+                    <div class="add-row first">
+                        <span class="title title3">Gallery</span>
+                        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox" id="info-popup-gallery">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- FOOD CARD POPUP-->
+<div class="modal fade"  id="food-cart-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header new-red">
+                <h2>my order</h2>
+                <span class="title-add total"></span>
+            </div>
+            <div class="box-frame new">
+                <!--SHOWING FOOD CAR DATA-->
+                <div class="wrap-col" id="food-cart-data"></div>
+            </div>
+            <div class="my-btn-holder">
+                <button data-dismiss="modal" onclick="OnOrderNowClicked()" type="button" class="btn-submit">ORDER NOW</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- CUSTOMER INFORMATION-->
+<div class="modal fade"  id="customer-info-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <span class="title-add"></span>
+                <ul class="header-links">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_profile01.png"></span>
+                        <h4>contact info</h4>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_checkin.png"></span>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt01.png"></span>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="box-frame new">
+                <div class="wrap-col">
+                    <div class="error-field" id="customer-name-field" >
+                        <div  class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit" src="/m/en/img/ic_profile.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input id="customer-name" type="text" placeholder="Name of customer">
+                            </div>
+                        </div>
+                        <span class="error-span" id="name-error"></span>
+                    </div>
+
+                    <div class="error-field" id="customer-email-field">
+                        <div class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit email" src="/m/en/img/ic_message.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="email" id="customer-email" placeholder="Email address">
+                            </div>
+                        </div>
+                        <span class="error-span" id="email-error"></span>
+                    </div>
+
+                    <div class="error-field" id="customer-number-field">
+                        <div  class="text-holder no-gutters">
+                            <div class="col-xs-2">
+                                <img class="edit my" src="/m/en/img/ic_phone.png">
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" id="customer-number" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <span class="error-span" id="contact-error"></span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="my-btn-holder">
+                <button data-toggle="modal" onclick="validateCustomerInfo()" type="button" class="btn-submit">Delivery <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--DELIVERY INFORMATION POPUP -->
+<div class="modal fade"  id="delivery-popup" role="dialog" style="height: 100%;">
+    <div class="modal-dialog modal-md menu-page order" style="height: 100%;">
+        <div class="modal-content" style="height: 100%;">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <span class="title-add"></span>
+                <ul class="header-links add">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/loc.png"></span>
+                        <h4>Delivery</h4>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt01.png"></span>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="box-frame new delivery">
+                <div class="wrap-col">
+                    <div class="title-txt">
+                        <p>Delivery services will be available from 12:00. You will receive your order in about 60 minutes.</p>
+                    </div>
+                    <div class="slide-holder">
+                        <ul class="checkbox-list">
+                            <li id="pickup_option"> <input type="checkbox" id="checkbox-id112"> <label for="checkbox-id112"> Pickup from restaurant <span id="address-text"></span></label></li>
+                            <li id="delivery-parent"> <input type="checkbox" id="checkbox-id213"> <label for="checkbox-id213"> Delivery <span>Complete your details</span></label></li>
+                        </ul>
+                        <form id="property">
+                            <div class="show-box" id="delivery-info" style="display: none">
+                                <div class="row no-gutters margin">
+                                    <div class="col-xs-12">
+                                        <div id="apt-parent" class="error-box">
+                                            <div class="text-holder row no-gutters">
+                                                <div class="col-xs-2">
+                                                    <img class="edit" src="/m/en/img/ic_home.png">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <input id="appt_no" type="text" placeholder="Please enter Apt no and street address">
+                                                </div>
+                                            </div>
+                                            <span id="error-apt" class="error-span"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="display:none;">
+                                    <div class="form-group">
+                                        <input id= "lat" type="text" name="lat" class="form-control" placeholder="Latitude" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id = "lng" type="text" name="lng" class="form-control" placeholder="Longitude" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="row no-gutters margin">
+                                    <div class="col-xs-12">
+                                        <div id="address-parent" class="error-box">
+                                            <div class="text-holder row no-gutters">
+                                                <div class="col-xs-2">
+                                                    <img class="edit edit1" src="/m/en/img/ic_checkin.png">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <input id="address" placeholder="Additional Details, Floor no. entrance etc..." type="text">
+                                                </div>
+                                            </div>
+                                            <span id="error-address" class="error-span"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="error-box" id="area_parent">
+                                    <div class="text-holder row no-gutters error">
+                                        <div class="col-xs-12">
+                                            <div class="custom-select">
+                                                <select  id="delivery-areas">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span id="error-area" class="error-span"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-btn-holder">
+                <button data-toggle="modal" data-target="#customer-info-popup" data-dismiss="modal" type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button onclick="deliveryAddress()" type="button" class="btn-summary">Summary <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ORDER SUMMARY POPUP -->
+<div class="modal fade"  id="summary-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <ul class="header-links add">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_payreceipt.png"></span>
+                        <h4>Summary</h4>
+                    </li>
+                    <li>
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart01.png"></span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="box-frame new summary">
+                <div class="wrap-col">
+
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="minimum-item add">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3>SubTotal</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span id="totalWithoutDiscount" class="nis"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="minimum-item" id="delivery-fee-parent">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3>Delivery</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span id="delivery-fee" class="nis"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="minimum-item" id="coupon-fee-parent">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3 id="coupon_detail">Coupon Code</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span id="coupon-fee" class="nis"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="minimum-item add1">
+                                <div class="row no-gutters">
+                                    <div class="col-xs-6">
+                                        <h3>Total</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span  class="nis total"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-txt">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label id="sr-label" class="new-label">Special Requests</label>
+                            </div>
+                            <div id="sr" class="show-text">
+                                <div class="col-xs-12">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-2">
+                                            <img class="edit add" src="/m/en/img/ic_edit.png">
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <textarea id="specialRequestText" placeholder="Type here"></textarea>
+                                            <img class="resize" src="/m/en/img/Path 2.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="coupon_parent">
+                            <div class="col-xs-12">
+                                <label id="cc-label" class="new-label">Use Coupon</label>
+                            </div>
+                            <div id="coupon" class="show-text">
+                                <div  class="col-xs-12">
+                                    <div class="text-holder error row no-gutters">
+                                        <div class="col-xs-10">
+                                            <input id="coupon-txt" class="add-box" type="text" placeholder="Coupon No.">
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <img  onclick="submitCoupon()" class="img-button" src="/m/en/img/arrow-btn.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <span id="error-coupon" class="error-coupon"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-btn-holder">
+                <button  data-toggle="modal" data-target="#delivery-popup" data-dismiss="modal"   type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button onclick="submit_summary()" type="button" class="btn-summary">Payment <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAYMENT POPUP -->
+<div class="modal fade"  id="payment-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page order">
+        <div class="modal-content">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header red">
+                <h2>ordering information</h2>
+                <span class="title-add total"></span>
+                <span class="title-add"></span>
+                <ul class="header-links add">
+                    <li class="active">
+                        <span class="img-box"><img class="edit" src="/m/en/img/ic_cart-02.png"></span>
+                        <h4>Payment</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="box-frame new payment">
+                <div class="wrap-col">
+                    <ul class="card-columns">
+                        <li id="cashBtn" class="active">
+                            <div  class="card-box image" onclick="selectCash()">
+                                <div class="card-col">
+                                    <span>Cash</span>
+                                    <img src="/m/en/img/card-img.png">
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ccBtn">
+                            <div  class="card-box" onclick="selectCC()">
+                                <div class="card-col">
+                                    <span>Credit card</span>
+                                    <img src="/m/en/img/card-images.png">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="txt-frame">
+                        <div id="cash-text" style="text-align: center;font-size: 10pt; line-height: 12pt; color: #797979; padding: 15px 0;">Cash when receiving the order</div>
+                        <div class="show-box" id="show_credit_card">
+
+                            <form name="payment-form" id="payment-form" style="height:100%" method="POST">
+                                <div class="error-field">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-12">
+                                            <input  id="user_name" type="text" placeholder="Name on card">
+                                        </div>
+                                    </div>
+                                    <span class="error-span">error in field</span>
+                                </div>
+                                <div class="error-field" id="error-card">
+                                    <div class="text-holder row no-gutters">
+                                        <div class="col-xs-12">
+                                            <input maxlength="16" id="card_no" value="" size="20" data-stripe="number" type="text" placeholder="Card Number">
+                                        </div>
+                                    </div>
+                                    <span class="error-span" id="error-card-no">error in field</span>
+                                </div>
+                                <div class="error-field">
+                                    <div class="row no-gutters">
+                                        <div class="col-xs-7">
+                                            <div class="text-holder add row no-gutters col">
+                                                <div class="col-xs-2">
+                                                    <img class="edit add2" src="/m/en/img/ic_calender.png">
+                                                </div>
+                                                <div class="col-xs-10">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-xs-5">
+                                                            <input class="left-field" placeholder="MM" id="month" type="text" size="2" data-stripe="exp_month">
+                                                        </div>
+                                                        <div class="col-xs-1">
+                                                            <span class="devider"> / </span>
+                                                        </div>
+                                                        <div class="col-xs-5">
+                                                            <input class="right-field" placeholder="YY" maxlength="2" id="year" type="text" size="2" data-stripe="exp_year">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="error-span" id="error-month">error in field</span>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <div class="text-holder row no-gutters">
+                                                <div class="col-xs-4">
+                                                    <img class="edit add3" src="/m/en/img/cvs-icon.png">
+                                                </div>
+                                                <div class="col-xs-8">
+                                                    <input type="text" id="cvv" placeholder="cvv" size="4" data-stripe="cvc">
+                                                </div>
+                                            </div>
+                                            <span id="cvv-error" class="error-span">error in field</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <span style="color: red;font-size: 15px;" class="payment-errors"></span>
+
+                                <div class="form-row" style="display: none">
+                                    <label>
+                                        <span>Billing ZIP Code</span>
+                                        <input type="text" size="6" data-stripe="address_zip" value="5">
+                                    </label>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my-btn-holder">
+                <button  data-toggle="modal" data-target="#summary-popup" data-dismiss="modal"  type="button" class="btn-back"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                <button type="button" class="btn-summary" onclick="processPayment()">place order <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<div id="ori-mess" style="display: none; background: url('/m/en/img/home-bg.jpg'); background-size: cover; height: 100%;font-family: 'Open Sans', sans-serif;">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;">We work best in portrait mode.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 20px; line-height: 23px; text-transform: uppercase; font-weight: 400; color: #fff;"> Please rotate your screen </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/m/en/script/bootstrap.min.js"></script>
+<script type="text/javascript" src="/m/en/script/jquery.accordion.js"></script>
+<script src="/m/en/script/dropdown.js"></script>
+<script src="/m/en/script/app.js"></script>
+<script src="/m/en/script/alertify.min.js"></script>
+<script src="/m/en/script/commonAjaxCall.js"></script>
+<script type="text/javascript" src="/m/en/script/ajaxServerRequestsOrder.js"></script>
+<script type="text/javascript" src="/m/en/script/jquery.easing.1.3.js"></script>
+<script src="/m/en/script/jquery.mobile.custom.min.js"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
+
+<script>
+
+    if(window.location.hostname == "app.orderapp.com")
+    {
+        $('.add-user').hide();
+    }
+
+    function goBack() {
+
+        var selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+        selectedCityName = selectedCityName.replace(/\s/g, '');
+        window.location.href = '/m/en/restaurants/'+selectedCityName;
+
+    }
+
+</script>
+
+
+<script>
+
+
+
+    $(window).on("navigate", function (event, data) {
+        var direction = data.state.direction;
+
+        if ( !! direction) {
+
+            alert(direction);
+            event.preventDefault();
+
+        }
+
+    });
+
+
+    $(document).ready(function() {
+
+
+        $("#payment-form").submit(function(e){
+
+
+            var exp = $('#month').val() + $('#year').val();
+
+            payment_credit_card($('#card_no').val(),$('#cvv').val(),exp);
+
+
+            e.preventDefault(e);
+            return false;
+        });
+
+        $('.carousel').carousel();
+
+
+        $("#mycarousel").swiperight(function () {
+            $(this).carousel('prev');
+        });
+
+
+        $("#mycarousel").swipeleft(function () {
+            $(this).carousel('next');
+        });
+
+
+        $("#appt_no").geocomplete({
+                details:"form#property",
+                types: ["geocode", "establishment"],
+            }
+        );
+
+    });
+
+    $( "#sr-label" ).click(function() {
+
+        if($( "#sr" ).hasClass("show"))
+        {
+
+            $( "#sr" ).removeClass("show");
+        }
+        else {
+
+            $( "#sr" ).addClass( "show" );
+
+        }
+    });
+
+    $( "#cc-label" ).click(function() {
+
+        if($( "#coupon" ).hasClass("show"))
+        {
+
+            $( "#coupon" ).removeClass("show");
+        }
+        else {
+
+            $( "#coupon" ).addClass( "show" );
+
+        }
+    });
+
+
+    $(function() {
+
+        function reposition() {
+
+            var modal = $(this),
+                    dialog = modal.find('.modal-dialog');
+            modal.css('display', 'block');
+
+            // Dividing by two centers the modal exactly, but dividing by three
+            // or four works better for larger screens.
+            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+        }
+
+        // Reposition when a modal is shown
+        $('.modal').on('show.bs.modal', reposition);
+
+        // Reposition when the window is resized
+        $(window).on('resize', function() {
+            $('.modal:visible').each(reposition);
+        });
+
+    });
+
+
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+            $('body').css("overflow","inherit");
+        }
+        else // Landscape
+        {
+
+            $('.modal').modal('hide');
+
+
+
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+            $('body').css("overflow","hidden");
+        }
+
+    });
+
+
+
+    $('.modal').on('shown', function() {
+
+
+        $('.order .btn-submit').show();
+        $('.popup-header').show();
+        $('.close').show();
+
+    })
+
+
+
+
+    // HEIGHT CALCULATION FOR SCREEN
+    // KEYBOARD OPEN LAYOUT AJSUTMENT ON ANDROID
+
+    var lastWindowWidth = $(window).width(),
+            lastWindowHeight = $(window).height();
+
+
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    if(isAndroid) {
+
+        $(window).resize(function() {
+
+            var newWindowWidth = $(window).width(),
+                    newWindowHeight = $(window).height();
+
+            if( newWindowHeight > lastWindowHeight && newWindowWidth == lastWindowWidth ) {
+
+                // Keyboard closed
+
+                $('.order .btn-submit').show();
+                $('.popup-header').show();
+                $('.close').show();
+
+                if ($('#customer-info-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' , 'calc(100% - 242px)');
+
+
+                }
+                else if ($('#delivery-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
+
+                }
+                else if ($('#summary-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
+
+                }
+                else if ($('#payment-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' ,  'calc(100% - 242px)');
+
+                }
+                else if($('#order-popup').is(':visible'))
+                {
+                    $('.box-frame.new').css('height' , 'calc(100% - 60px)');
+
+                    $('.box-frame.new').scrollTop(0);
+                }
+
+
+
+            }
+            else
+            {
+
+                $('.order .btn-submit').hide();
+                $('.popup-header').hide();
+                $('.close').hide();
+
+                setTimeout(function(){
+
+                    $('.box-frame.new').scrollTop(800);
+
+                }, 500);
+
+                if($('#order-popup').is(':visible'))
+                {
+                    $('.box-frame.new').css('height' , '80vh');
+
+                    $('.box-frame.new').scrollTop(800);
+
+
+                }
+                else if ($('#customer-info-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' , '70vh');
+
+                }
+                if ($('#delivery-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' ,  'calc(100vh - 50px)');
+
+                }
+                if ($('#summary-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' ,  'calc(100vh - 50px)');
+
+                }
+                if ($('#payment-popup').is(':visible')) {
+
+                    $('.box-frame.new').css('height' ,  'calc(100vh - 50px)');
+                }
+
+            }
+
+            lastWindowWidth = newWindowWidth;
+            lastWindowHeight = newWindowHeight;
+
+        });
+
+
+    }
+
+
+    $('body').on('click', '.text-holder', function() {
+
+        var scrollTo = $(this);
+
+        setTimeout(function(){
+
+            var container = $('.box-frame.new .wrap-col')
+
+            // Or you can animate the scrolling:
+            container.animate({
+
+                scrollTop: scrollTo.offset().top - (container.offset().top + container.scrollTop() + 2)
+
+            },500)
+
+        }, 300);
+
+    });
+
+
+    $( document ).ready(function() {
+
+
+        var height =  window.innerHeight-20;
+
+        $('.order').height(height);
+
+        $("#count-badge").hide();
+
+        $('#checkbox-id112').prop('checked', false);
+
+
+    });
+
+
+    // WHEN NAME FIELD CHANGES
+    $('#customer-name').bind('input', function() {
+
+        $('#customer-name-field').removeClass("error");
+
+    });
+
+
+    // WHEN EMAIL FIELD CHANGES
+    $('#customer-email').bind('input', function() {
+
+        $('#customer-email-field').removeClass("error");
+
+    });
+
+
+    // WHEN NUMBER FIELD CHANGES
+    $('#customer-number').bind('input', function() {
+
+        $('#customer-number-field').removeClass("error");
+
+    });
+
+
+    // CHECK IF CHECK BOX IS CHECKED
+    $('#checkbox-id112').change(function() {
+
+        if($(this).is(":checked")) {
+
+            $('#delivery-info').removeClass('show');
+            $('#checkbox-id213').prop('checked', false);
+
+        }
+        else {
+
+
+            $('#delivery-info').addClass('show');
+            $('#checkbox-id213').prop('checked', true);
+
+
+        }
+
+        updateCartElements();
+    });
+
+    // CHECK IF CHECK BOX IS CHECKED
+    $('#checkbox-id213').change(function() {
+
+        if($(this).is(":checked")) {
+
+            setTimeout(function(){
+
+
+                $('.box-frame.new').scrollTop(800);
+
+            }, 500);
+
+            $('#delivery-info').addClass('show');
+            $('#checkbox-id112').prop('checked', false);
+        }
+        else {
+
+
+            $('#delivery-info').removeClass('show');
+            $('#checkbox-id112').prop('checked', true);
+
+
+        }
+
+        updateCartElements();
+    });
+
+
+
+
+    // iOS check...ugly but necessary
+    if( navigator.userAgent.match(/iPhone|iPad|iPod/i) ) {
+        $('.modal').on('show.bs.modal', function() {
+            // Position modal absolute and bump it down to the scrollPosition
+            $(this)
+                    .css({
+                        position: 'absolute',
+                        marginTop: $(window).scrollTop() + 'px',
+                        bottom: 'auto'
+                    });
+            // Position backdrop absolute and make it span the entire page
+            //
+            // Also dirty, but we need to tap into the backdrop after Boostrap
+            // positions it but before transitions finish.
+            //
+            setTimeout( function() {
+                $('.modal-backdrop').css({
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: Math.max(
+                            document.body.scrollHeight, document.documentElement.scrollHeight,
+                            document.body.offsetHeight, document.documentElement.offsetHeight,
+                            document.body.clientHeight, document.documentElement.clientHeight
+                    ) + 'px'
+                });
+            }, 0);
+        });
+    }
+
+
+    // AS GUEST CLICK HIDE POPUP
+
+    $('.asGuest').click(function(e) {
+
+
+        $('#signup-popup').modal('hide');
+        $('#login-popup').modal('hide');
+
+
+    });
+
+    $('#signup-email-pass').click(function(e) {
+
+
+        $('#signup-message').hide();
+        $('#manual-signup').show();
+
+
+    });
+
+
+
+    var email              =  $('#signup-email').val();
+    var password           =  $('#signup-password').val();
+    var confirmPassword    =  $('#signup-confirm-pass').val();
+
+
+    // VALIDATE USER SIGN UP
+
+    $('#signUp-btn').click(function(e) {
+
+        $('#error-signup').val('');
+
+
+        email              =  $('#signup-email').val();
+        password           =  $('#signup-password').val();
+        confirmPassword    =  $('#signup-confirm-pass').val();
+
+
+        if(email == "")
+        {
+            $('#error-signup').html('Email required*');
+            return;
+        }
+        else if(password == "")
+        {
+            $('#error-signup').html('Password required*');
+            return;
+        }
+        else if(confirmPassword == "")
+        {
+            $('#error-signup').html('Confirm Password required*');
+            return;
+        }
+        else if(!validateEmail(email))
+        {
+
+            $('#error-signup').html('Invalid Email!');
+            return;
+        }
+
+        else if(password != confirmPassword)
+        {
+
+            $('#error-signup').html('Password not match');
+            return;
+        }
+
+
+        commonAjaxCall("/restapi/index.php/validate_email",{"email": email},validateEmailCallBack);
+
+    });
+
+    function validateEmailCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == true) {
+
+            commonAjaxCall("/restapi/index.php/add_new_user",{"user_email": email,"user_password": password},addNewUserCallBack);
+        }
+        else {
+
+            $('#error-signup').html('Invalid email not exist');
+        }
+
+    }
+
+
+    function addNewUserCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success" || resp == "verification_pending")
+        {
+            userObject.email = email;
+            userObject.name = '';
+
+            localStorage.setItem("USER_EMAIL",email);
+            localStorage.setItem("USER_SMOOCH_ID",email);
+            localStorage.setItem("USER_NAME",'');
+
+            //$('#signin').hide();
+
+            $('#signup-popup').modal('hide');
+            $('#welcome-popup').modal('show');
+
+
+            $('#customer-email').val(userObject.email);
+            $('#customer-name').val(userObject.name);
+
+            $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
+
+            $("#email_verification_message").hide();
+            $("#loginMessage").show();
+            $('#signup-message').hide();
+            $('#signUpForm').hide();
+            $('#manual-signup').hide();
+
+            $('#error-signup').html('');
+
+        }
+        else if(resp == "account_exist") {
+
+
+            $('#error-signup').html('It looks like you already have an account please click Log In above');
+
+
+        }
+
+    }
+
+
+    $('#logout').click(function(e) {
+
+        localStorage.setItem("USER_EMAIL",'');
+        localStorage.setItem("USER_SMOOCH_ID",'');
+        localStorage.setItem("USER_NAME",'');
+
+        $('#signup-message').show();
+        $('#manual-signup').hide();
+        $("#loginMessage").hide();
+        $('#signUpForm').show();
+
+        $('#signup-popup').modal('show');
+        $('#welcome-popup').modal('hide');
+
+    });
+
+
+
+    function openSignUpLoginPopup()
+    {
+        if(localStorage.getItem("USER_SMOOCH_ID") != undefined && localStorage.getItem("USER_SMOOCH_ID") != "" && localStorage.getItem("USER_SMOOCH_ID") != null) {
+
+            $('#signup-popup').modal('hide');
+            $('#welcome-popup').modal('show');
+
+        }
+        else {
+
+            $('#signup-popup').modal('show');
+            $('#welcome-popup').modal('hide');
+        }
+
+    }
+
+
+    function expand_login() {
+
+        $('#login_email').show();
+        $('#signin-message').hide();
+        $('#forget_pass_sec').hide();
+        $('#email_reset_message').hide();
+    }
+
+    function forgetPassword() {
+
+        $('#login_email').hide();
+        $('#forget_pass_sec').show();
+    }
+
+
+
+    $('#rest-pass-request').click(function(e) {
+
+        $('#error-reset').html('');
+
+        var emailRest   =  $('#rest-pass-email').val();
+
+        if(emailRest == "")
+        {
+            $('#error-reset').html('Enter Email!');
+
+            return;
+        }
+        else if(!validateEmail(emailRest))
+        {
+            $('#error-reset').html('Invalid Email!');
+
+            return;
+        }
+
+        commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
+
+    });
+
+    function restPassCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success")
+        {
+            $('#email_reset_message').show();
+            $('#forget_pass_sec').hide();
+        }
+        else {
+
+            $('#error-reset').html('Not find this email!');
+        }
+
+    }
+
+
+
+    function restPasswordResend() {
+
+        var emailRest   =  $('#rest-pass-email').val();
+
+        commonAjaxCall("/restapi/index.php/reset_password",{"user_email": emailRest},restPassCallBack);
+    }
+
+
+    function loginUser()
+    {
+        $('#error-login').html('');
+
+        login_email       =  $('#email-login').val();
+        login_password    =  $('#password-login').val();
+
+        if(login_email == "")
+        {
+            $('#error-login').html('Email required*');
+            return;
+        }
+        else if(login_password == "")
+        {
+            $('#error-login').html('Password required*');
+            return;
+        }
+        else if(!validateEmail(login_email))
+        {
+            $('#error-login').html('Invalid Email!');
+            return;
+        }
+
+        commonAjaxCall("/restapi/index.php/user_login",{"user_email": login_email,"user_password": login_password},loginUserCallBack);
+
+    }
+
+    function loginUserCallBack(response) {
+
+        var resp = JSON.parse(response);
+
+        if(resp == "success")
+        {
+            localStorage.setItem("USER_EMAIL",login_email);
+            localStorage.setItem("USER_SMOOCH_ID",login_email);
+            localStorage.setItem("USER_NAME",'');
+
+            userObject.email = login_email;
+            userObject.name = '';
+
+
+            $('#login-popup').modal('hide');
+            $('#welcome-popup').modal('show');
+
+
+            $('#customer-email').val(userObject.email);
+            $('#customer-name').val(userObject.name);
+
+            $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
+
+            $("#email_verification_message").hide();
+            $("#loginMessage").show();
+            $('#signup-message').hide();
+            $('#signUpForm').hide();
+            $('#manual-signup').hide();
+
+            $('#email-login').val('');
+            $('#password-login').val('');
+        }
+        else if(resp == "error")
+        {
+
+            $('#error-login').html('Email or Password incorrect!');
+
+        }
+        else if(resp == "validation_error")
+        {
+            $('#signin').hide();
+            $('#signup').show();
+
+            email = login_email;
+
+            $("#email_verification_message").show();
+            $("#loginMessage").hide();
+            $('#signup-message').hide();
+            $('#manual-signup').hide();
+
+
+        }
+
+    }
+
+    //FACEBOOK LOGIN
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '572922239565680',
+            xfbml      : true,
+            version    : 'v2.9'
+        });
+    };
+
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    function myFacebookLogin() {
+
+        FB.login(function(response)
+        {
+            if (response.authResponse)
+            {
+                getUserInformation();
+            }
+            else
+            {console.log('User cancelled login or did not fully authorize.');
+            }
+
+        }, {scope: 'email'});
+
+        function getUserInformation() {
+
+            FB.api('/me', { locale: 'en_US', fields: 'name, email' },
+
+                function(response) {
+
+                    isSocial = true;
+
+
+                    var name = "";
+                    var primaryEmail = "";
+                    var provider = "";
+                    var uid = "";
+                    var contact = "";
+
+                    try {
+
+                        name = response.name;
+                    }
+                    catch (exp)
+                    {
+                        name = "";
+                    }
+
+
+                    try {
+
+                        primaryEmail = response.email;
+                    }
+                    catch (exp)
+                    {
+                        primaryEmail = "";
+                    }
+
+
+                    try {
+
+                        provider = "facebook";
+                    }
+                    catch (exp)
+                    {
+                        provider = "";
+                    }
+
+                    try {
+
+                        uid = response.id;
+                    }
+                    catch (exp)
+                    {
+                        uid = "";
+                    }
+
+                    try {
+
+                        contact = "";
+                    }
+                    catch (exp)
+                    {
+                        contact = "";
+                    }
+
+
+
+                    localStorage.setItem("USER_EMAIL",primaryEmail);
+                    localStorage.setItem("USER_SMOOCH_ID",uid);
+                    localStorage.setItem("USER_NAME",name);
+
+                    $('#customer-email').val(primaryEmail);
+                    $('#customer-name').val(name);
+
+                    if(primaryEmail != null)
+                    {
+                        userObject.email = primaryEmail;
+                    }
+                    else {
+
+                        userObject.email = "";
+                    }
+
+                    userObject.name = name;
+
+
+                    $('#signup-popup').modal('hide');
+                    $('#login-popup').modal('hide');
+                    $('#welcome-popup').modal('show');
+
+
+                    $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
+
+                    $("#email_verification_message").hide();
+                    $("#loginMessage").show();
+                    $('#signup-message').hide();
+                    $('#signUpForm').hide();
+                    $('#manual-signup').hide();
+
+                    $('#email-login').val('');
+                    $('#password-login').val('');
+
+                    commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+
+
+                });
+        }
+    }
+
+    // GOOGLE SIGN IN
+    var googleUser = {};
+
+
+    var startApp = function() {
+        gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+
+                'client_id' : '116247344094-kbebvthkdfclmocoj7fi6jo75b0llvjv.apps.googleusercontent.com',
+                'cookiepolicy' : 'single_host_origin',
+                'callback' : 'onSignInCallback',
+                'approvalprompt':'auto',
+                'setAccessType' : 'online',
+                'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+            });
+
+            attachSignin(document.getElementById('google-btn'));
+            attachSignin(document.getElementById('google-btn-2'));
+        });
+    };
+
+    function attachSignin(element) {
+
+        console.log(element.id);
+        auth2.attachClickHandler(element, {},
+
+            function(googleUser)
+            {
+
+                sessionStorage.token = googleUser.getAuthResponse().access_token;
+                console.log(googleUser);
+
+                var name = "";
+                var primaryEmail = "";
+                var provider = "";
+                var uid = "";
+                var contact = "";
+
+                try {
+
+                    name = googleUser.getBasicProfile().getName();
+                }
+                catch (exp)
+                {
+                    name = "";
+                }
+
+
+                try {
+
+                    primaryEmail = googleUser.getBasicProfile().getEmail();
+                }
+                catch (exp)
+                {
+                    primaryEmail = "";
+                }
+
+
+                try {
+
+                    provider = "google";
+                }
+                catch (exp)
+                {
+                    provider = "";
+                }
+
+                try {
+
+                    uid = googleUser.getBasicProfile().getId();
+                }
+                catch (exp)
+                {
+                    uid = "";
+                }
+
+                try {
+
+                    contact = "";
+                }
+                catch (exp)
+                {
+                    contact = "";
+                }
+
+
+
+
+                localStorage.setItem("USER_EMAIL",primaryEmail);
+                localStorage.setItem("USER_SMOOCH_ID",uid);
+                localStorage.setItem("USER_NAME",name);
+
+                $('#customer-email').val(primaryEmail);
+                $('#customer-name').val(name);
+
+                if(primaryEmail != null)
+                {
+                    userObject.email = primaryEmail;
+                }
+                else {
+
+                    userObject.email = "";
+                }
+
+                userObject.name = name;
+
+                $('#signup-popup').modal('hide');
+                $('#login-popup').modal('hide');
+                $('#welcome-popup').modal('show');
+
+                $("#success-message").html("Hey "+userObject.name+", Nice to meet you :)");
+
+                $("#email_verification_message").hide();
+                $("#loginMessage").show();
+                $('#signup-message').hide();
+                $('#signUpForm').hide();
+                $('#manual-signup').hide();
+
+                $('#email-login').val('');
+                $('#password-login').val('');
+
+
+                commonAjaxCall("/restapi/index.php/native_app",{"email": primaryEmail,"name":name,"provider":provider,"uid":uid,"contact":contact},singUpUser);
+            },
+            function(error) {
+
+                alert(JSON.stringify(error, undefined, 2));
+            });
+    }
+
+    startApp();
+
+
+</script>
+
+<script>
+
+    function singUpUser(response) {
+
+        resp = JSON.parse(response);
+    }
+
+
+</script>
+
+</body>
+</html>

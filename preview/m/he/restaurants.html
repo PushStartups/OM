@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <meta name="description" content="OrderApp is the easiest solution for ordering takeaway from restaurants. Order from restaurants online today in Israel.">
+    <title>Orderapp | Order from restaurants online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/m/he/style/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="/m/he/style/alertify.css">
+    <link rel="stylesheet" type="text/css" href="/m/he/style/restaurants-he.css">
+    <link rel="icon" href="/en/img/favicon.png" type="image/png" sizes="32x32">
+
+    <script type="text/javascript" src="/m/he/script/isMobileRedirect.js"></script>
+    <script type="text/javascript" src="/m/he/script/jquery.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89656592-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!-- End Google Analytics -->
+    <!-- Facebook Pixel Code -->
+    <script>
+
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+        }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2198328787059300'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+
+    </script>
+
+    <!-- Hotjar Tracking Code for orderapp.com -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:532682,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
+    <noscript>
+
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2198328787059300&ev=PageView&noscript=1" />
+
+    </noscript>
+
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Facebook/Twitter Open Graph -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@orderappteam" />
+    <meta property="og:url" content="http://orderapp.com" />
+    <meta property="og:title" content="OrderApp - Order delivery online today." />
+    <meta property="og:description" content="OrderApp is the easiest solution for ordering takeaway from restaurants.
+      We remove the phone call and give you the option of live chat or digital menu." />
+
+</head>
+
+
+<script>
+
+    $( document ).ready(function() {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
+</script>
+
+
+<div id="ori-mess" style="display: none; background: url('/m/he/img/home-bg.png'); background-size: cover; height: 100%">
+    <div style="display: table; width: 100%; height: 100%; text-align: center">
+        <div style="display:table-cell; vertical-align: middle">
+            <div class="txt-msg" style="width: 400px; margin: 0 auto; overflow: hidden;">
+                <div class="logo" style="width: 60px;height: 40px; margin: 13px 11px; display: inline-block; vertical-align: middle;">
+                    <a href="#" style="display: block;">
+                        <img src="/en/img/logo.png" alt="images description" style="display: block; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">אנחנו עובדים הכי טוב במצב דיוקן.</span>
+                <span style="display: inline-block;vertical-align: middle;font-size: 23px; line-height: 26px; text-transform: uppercase; font-weight: 600; color: #fff;">  סובב את המסך </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img id="loader" style="z-index: 99999;" class="loader-css" src="/m/he/img/loader.gif" >
+<div id="Loader_bg" style="display:none ; z-index: 9999; width: 100%; height: 150%; position: absolute; top: 0; left: 0;right:  0; bottom: 0; background-color: rgba(255,233,206,0.9);"></div>
+
+
+<body>
+
+
+<div id="main-content" style="height: 100%">
+
+    <div id="wrapper" dir="rtl" style="height: 100%">
+        <header id="header">
+            <div class="logo">
+                <a href="#">
+                    <img src="/m/he/img/logo.png" alt="images description">
+                    <strong>Order App</strong>
+                </a>
+            </div>
+            <div class="title-box">
+                <span class="title">רעב? בחר מסעדה והזמן עכשיו</span>
+                <a class="filter" href="#"  data-toggle="modal" data-target="#filter-popup"> <img src="/m/he/img/filter.png">  פילטר </a>
+            </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a onclick="redirectToEN()" class="active" href="#">EN</a></li>
+                </ul>
+            </nav>
+            <a class="btn-back" href="/m/he/"><img src="/m/he/img/back_arrow-next.png"></a>
+        </header>
+        <div id="main" style="height: 100%; overflow-y: auto">
+            <div class="accordion-holder">
+
+                <!--LISTING ALL RESTAURANTS-->
+                <ul class="accordion multilevel-accordion" id="scrollable"></ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- all popup -->
+    <!-- popup with address -->
+    <div class="modal fade" id="address-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%">
+            <div class="modal-content" dir="rtl">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+                <div class="popup-address">
+                    <div class="frame" dir="rtl">
+                        <h3>מחירון משלוחים</h3>
+                        <h4>מינימום הזמנה למשלוח 100 ש״ח</h4>
+                    </div>
+                    <div class="fee-txt add" dir="rtl" id="discount-pop">
+                        <!--<span class="add-title">Yitzhak Rabin Road 5, Beit Shemesh</span>-->
+                        <!--<p>בית שמש: 15 ש״ח</p>-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popup with time -->
+    <div class="modal fade" id="time-popup" role="dialog">
+        <div class="modal-dialog" role="document" style="margin-top: 40%">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+                <div class="popup-address" dir="rtl">
+                    <div class="frame" dir="rtl">
+                        <h3>מְסִירָה</h3>
+                        <h4>עד חצי שעה לפני הסגירה</h4>
+                    </div>
+
+
+                    <!--TIME POPUP OF RESTAURANTS-->
+                    <table class="time-table" dir="rtl" id="rest-time"></table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popup with slider-->
+    <div class="modal fade"  id="slider-popup" role="dialog">
+        <div class="modal-dialog" style="margin-top: 60%;">
+            <div class="modal-content">
+                <button type="button" class="close-icon" data-dismiss="modal"><span aria-hidden="true">x</span></button>
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox" id="gallery-imgs">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- filter POPUP -->
+<div class="modal fade"  id="filter-popup" role="dialog">
+    <div class="modal-dialog modal-md menu-page filter">
+        <div class="modal-content" dir="rtl">
+            <button type="button" class="close black" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+            <div class="popup-header new-red">
+                <h2>פילטר</h2>
+                <span class="title-add total">בחר אפשרויות מעודפות</span>
+            </div>
+            <div class="box-frame new add">
+                <div class="list-item">
+                    <ul>
+                        <li id="dairy_click">
+                            <div id="dairy-others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/milky.png">
+                                <span class="span">חלבי</span>
+                            </div>
+                            <label  class="switch">
+                                <input id="cb_milky" onclick="onFilterChange()" type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="meat_click">
+                            <div id="meat-others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/meat.png">
+                                <span class="span">בשרי</span>
+                            </div>
+                            <label class="switch">
+                                <input  id="cb_meat" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="health_click">
+                            <div  id="health-others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/health.png">
+                                <span class="span">בריאות</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_health" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="pizzeria_click">
+                            <div id="pizzeria-others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/pizzeria.png">
+                                <span class="span">פיצה</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_pizzeria" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="hamburger_click">
+                            <div id="hamburger_others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/hambuger.png">
+                                <span class="span">המבורגר</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_hamburger" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="sushi_click">
+                            <div id="sushi_others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/sushi.png">
+                                <span class="span">סושי</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_sushi" type="checkbox" onclick="onFilterChange()">
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="mehadrin_click">
+                            <div id="mehadrin_others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/mehadrin.png">
+                                <span class="span">מהדרין</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_mehadrin" type="checkbox" onclick="onFilterChange()" >
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                        <li id="ice_cream_click">
+                            <div id="ice_cream_others" class="new-txt pull-right">
+                                <img class="img" src="/en/img/ice-cream-icon.png">
+                                <span class="span">גלידה</span>
+                            </div>
+                            <label class="switch">
+                                <input id="cb_ice_cream" type="checkbox" onclick="onFilterChange()" >
+                                <div class="slider round"></div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="my-btn-holder">
+                <button onclick="addUserOrder();"  type="button" class="btn-submit">בצע</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="/m/he/script/bootstrap.min.js"></script>
+<script src="/m/he/script/alertify.min.js"></script>
+<script src="/m/he/script/alertify.js"></script>
+<script src="/m/he/script/commonAjaxCall.js"></script>
+<script src="/m/he/script/jquery.accordion.js"> </script>
+<script type="text/javascript" src="/m/he/script/jquery.easing.1.3.js"></script>
+<script src="/m/he/script/jquery.mobile.custom.min.js"></script>
+<script src="/m/he/script/ajaxServerRequestsRestaurants-he.js"></script>
+
+
+
+<script>
+
+    $('#main').scroll(function(){
+        if($('#main').scrollTop() > 0) {
+
+            $('#header').addClass('small');
+        }
+        else {
+
+            $('#header').removeClass('small');
+        }
+    });
+
+    $(document).ready(function () {
+
+        $("#carousel").swiperight(function () {
+            $(this).carousel('prev');
+        });
+
+        $("#carousel").swipeleft(function () {
+            $(this).carousel('next');
+        });
+
+        initialize();
+    });
+
+//    $(function() {
+//        function reposition() {
+//            var modal = $(this),
+//                    dialog = modal.find('.modal-dialog');
+//            modal.css('display', 'block');
+//
+//            // Dividing by two centers the modal exactly, but dividing by three
+//            // or four works better for larger screens.
+//            //dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+//        }
+//        // Reposition when a modal is shown
+//        $('.modal').on('show.bs.modal', reposition);
+//        // Reposition when the window is resized
+//        $(window).on('resize', function() {
+//            $('.modal:visible').each(reposition);
+//        });
+//    });
+
+    $(function() {
+
+        function reposition() {
+
+            var modal = $(this),
+                dialog = modal.find('.modal-dialog');
+            modal.css('display', 'block');
+
+            // Dividing by two centers the modal exactly, but dividing by three
+            // or four works better for larger screens.
+            dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+        }
+
+        // Reposition when a modal is shown
+        $('.modal').on('show.bs.modal', reposition);
+
+        // Reposition when the window is resized
+        $(window).on('resize', function() {
+            $('.modal:visible').each(reposition);
+        });
+
+    });
+
+    function redirectToEN() {
+
+        localStorage.setItem("USER_LANGUAGE", 'EN');
+        localStorage.setItem("USER_CITY_ID", localStorage.getItem("USER_CITY_ID_HE"));
+
+        var selectedCityName  = JSON.parse(localStorage.getItem("USER_CITY_NAME"));
+        selectedCityName = selectedCityName.replace(/\s/g, '');
+        window.location.href = '/m/en/restaurants/'+selectedCityName;
+
+    }
+
+    $( window ).on( "orientationchange", function(event) {
+
+        if(window.orientation ==undefined || window.orientation == 0) // Portrait
+        {
+            $('#ori-mess').css("display","none");
+            $('#main-content').css("display","block");
+
+        }
+        else // Landscape
+        {
+            $('#ori-mess').css("display","block");
+            $('#main-content').css("display","none");
+        }
+
+    });
+
+
+    $('#dairy_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_milky').click();
+    });
+
+    $('#dairy-others').on('click', function(e) {
+
+        $('#cb_milky').click();
+    });
+
+    $('#meat_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_meat').click();
+    });
+
+    $('#meat-others').on('click', function(e) {
+
+        $('#cb_meat').click();
+    });
+
+    $('#health_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_health').click();
+    });
+
+    $('#health-others').on('click', function(e) {
+
+        $('#cb_health').click();
+    });
+
+    $('#pizzeria_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_pizzeria').click();
+    });
+
+    $('#pizzeria-others').on('click', function(e) {
+
+        $('#cb_pizzeria').click();
+    });
+
+
+    $('#hamburger_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_hamburger').click();
+    });
+
+    $('#hamburger_others').on('click', function(e) {
+
+        $('#cb_hamburger').click();
+    });
+
+    $('#sushi_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_sushi').click();
+    });
+
+    $('#sushi_others').on('click', function(e) {
+
+        $('#cb_sushi').click();
+    });
+
+    $('#mehadrin_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_mehadrin').click();
+    });
+
+    $('#mehadrin_others').on('click', function(e) {
+
+        $('#cb_mehadrin').click();
+    });
+
+
+    $('#ice_cream_click').on('click', function(e) {
+
+        if (e.target !== this)
+            return;
+
+        $('#cb_ice_cream').click();
+    });
+
+
+    $('#ice_cream_others').on('click', function(e) {
+
+        $('#cb_ice_cream').click();
+
+    });
+
+
+</script>
+</body>
+</html>
