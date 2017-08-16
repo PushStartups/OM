@@ -94,7 +94,7 @@ else{
 											<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Logo</th>
 											<th data-hide="phone"><i class="fa-fw fa fa-cutlery text-muted hidden-md hidden-sm hidden-xs"></i> Name EN</th>
 											<th data-hide="phone,tablet">City</th>
-											<th data-hide="phone,tablet">Hide/Show</th>
+										
 											<th data-hide="phone,tablet">Rank</th>
 										
 											<th data-hide="phone,tablet">Add Categories</th>
@@ -115,15 +115,7 @@ else{
 												<td><img class="logo-table" src="<?=WEB_PATH.$restaurants['logo'] ?>"></td>
 												<td><?=$restaurants['name_en']?></td>
 												<td><?=$restaurants['city_name']?></td>
-												<td>
-													<div class="onoffswitch">
-														<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="<?=$restaurants['id']?>" <?php if($restaurants['hide'] == '0'){ ?> checked <?php } ?>>
-														<label class="onoffswitch-label" for="<?=$restaurants['id']?>">
-															<span class="onoffswitch-inner"></span>
-															<span class="onoffswitch-switch"></span>
-														</label>
-													</div>
-												</td>
+
 												<td>
 													<div class="tel-holder">
 														<input class="form-control" id="rank<?=$restaurants['id']?>" value="<?=$restaurants['sort']?>" type="tel">
