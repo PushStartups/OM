@@ -1542,6 +1542,8 @@ function checkCouponCallBack(response)
         userObject.discount = responseCoupon.amount;
         var discountedAmount = 0;
 
+        userObject.couponCode = code;
+
         if (responseCoupon.isFixAmountCoupon) {
 
             userObject.isFixAmountCoupon = true;
@@ -1570,6 +1572,12 @@ function checkCouponCallBack(response)
             $('#coupon-fee').html(" ש״ח "+discountedAmount + "-" );
 
             $('#coupon_detail').html("Coupon Discount " + userObject.discount+"%");
+        }
+
+
+        if(responseCoupon.campaign != null)
+        {
+            userObject.coupon_campaign = responseCoupon.campaign;
         }
 
 

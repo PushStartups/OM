@@ -652,6 +652,8 @@ function checkCouponCallBack(response)
         userObject.discount = responseCoupon.amount;
         var discountedAmount = 0;
 
+        userObject.couponCode = code;
+
 
         // NOT A DELIVERY FREE COUPON
         if(!responseCoupon.deliveryFree) {
@@ -704,6 +706,12 @@ function checkCouponCallBack(response)
             $('#discountValue').html("Delivery Free -" + discountedAmount + " NIS");
             $('#discountValue2').html("Delivery Free -" + discountedAmount + " NIS");
 
+        }
+
+
+        if(responseCoupon.campaign != null)
+        {
+            userObject.coupon_campaign = responseCoupon.campaign;
         }
 
 

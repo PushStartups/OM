@@ -43,6 +43,7 @@ function initialize() {
         'delivery_lng' : "",               // DELIVERY LONGITUDE
         'isCoupon': false,                 // USER HAVE COUPON CODE ?
         'couponCode': '',                  // COUPON CODE OF USER
+        'coupon_campaign' : 'no detail',   // COUPON CAMPAIGN
         'isFixAmountCoupon': false,        // IF DISCOUNT AMOUNT IS FIXED AMOUNT  IF TRUE IT WILL BE A FIX PERCENTAGE
         'discount': 0,                     // DISCOUNT ON COUPON VALUE
         'Cash_Card': null,                 // USER WANT TO PAY CASH OR CREDIT CARD

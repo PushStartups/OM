@@ -652,6 +652,8 @@ function checkCouponCallBack(response)
         userObject.discount = responseCoupon.amount;
         var discountedAmount = 0;
 
+        userObject.couponCode = code;
+
         if (responseCoupon.isFixAmountCoupon) {
 
             userObject.isFixAmountCoupon = true;
@@ -686,6 +688,13 @@ function checkCouponCallBack(response)
             $('#discountTitle2').html(" קופון הנחה " + userObject.discount+"%");
 
         }
+
+
+        if(responseCoupon.campaign != null)
+        {
+            userObject.coupon_campaign = responseCoupon.campaign;
+        }
+
 
 
         userObject.totalWithoutDiscount = userObject.total;

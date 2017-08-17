@@ -1128,9 +1128,10 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
             $data = [
 
-                "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
-                "amount" => $dAmount,                                      // DISCOUNT ON COUPON
-                "isFixAmountCoupon" => true                                // COUPON TYPE (AMOUNT OR PERCENTAGE)
+                "success" => true,                                         //  COUPON VALID OR NOT (TRUE OR FALSE)
+                "amount" => $dAmount,                                      //  DISCOUNT ON COUPON
+                "campaign" => $resultRedeem->voucher->campaign,            //  VOUCHER CAMPAIGN DETAIL
+                "isFixAmountCoupon" => true,                               //  COUPON TYPE (AMOUNT OR PERCENTAGE)
 
             ];
 
@@ -1148,6 +1149,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
                 "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
                 "amount" => $dAmount,                                      // DISCOUNT ON COUPON
+                "campaign" => $resultRedeem->voucher->campaign,            //  VOUCHER CAMPAIGN DETAIL
                 "isFixAmountCoupon" => false,                              // COUPON TYPE (AMOUNT OR PERCENTAGE)
                 "deliveryFree" => false
             ];
@@ -1164,6 +1166,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
 
                 "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
                 "amount" => $dAmount,                                      // DISCOUNT ON COUPON
+                "campaign" => $resultRedeem->voucher->campaign,            //  VOUCHER CAMPAIGN DETAIL
                 "isFixAmountCoupon" => false,                             // COUPON TYPE (AMOUNT OR PERCENTAGE)
                 "deliveryFree" => false
             ];
@@ -1176,6 +1179,7 @@ function VoucherifyValidation($userCoupon,$user_id,$order_amount,$rest_title,$re
             $data = [
 
                 "success" => true,                                         // COUPON VALID OR NOT (TRUE OR FALSE)
+                "campaign" => $resultRedeem->voucher->campaign,            //  VOUCHER CAMPAIGN DETAIL
                 "deliveryFree" => true,                                    //  COUPON DISCOUNT
 
             ];
@@ -1517,15 +1521,15 @@ $app->post('/add_order', function ($request, $response, $args) {
             if ($user_order['isFixAmountCoupon'] == 'true') {
 
                 $discountType = "fixed value";
+                $discountValue = $user_order['discount'];
             }
             else
             {
 
                 $discountType = "fixed percentage";
+                $discountValue = $user_order['discount'].'%';
             }
 
-
-            $discountValue = $user_order['discount'];
         }
 
         $todayDate   =  Date("d/m/Y");
@@ -1568,8 +1572,49 @@ $app->post('/add_order', function ($request, $response, $args) {
         $onlytime = date("H:i");                //FOR LEDGER
 
 
-        $restaurant_total = $user_order['total'] - $user_order['deliveryCharges'];
+
+        if($user_order['couponCode'] == "")
+        {
+            $user_order['couponCode'] = 0;
+            $user_order['coupon_campaign'] = "N/A";
+        }
+
+
+        $restaurant_total = $user_order['totalWithoutDiscount'];
+
+
+        $disAmount =  ($user_order['totalWithoutDiscount']  * $user_order['discount'])  / 100;
+
+        $total_paid_rest = $user_order['totalWithoutDiscount'] - $disAmount;
+
+
+        if($user_order['discount'] == 0)
+        {
+            $total_paid_rest = $total_paid_rest - $user_order['deliveryCharges'];
+        }
+
+
+        $is_eluna = 0;
+
+
+        if($_SERVER['HTTP_HOST'] == "eluna.orderapp.com")
+        {
+            $is_eluna = 1;
+        }
+
+
+        DB::useDB('orderapp_restaurants');
+
+
+        $deliveryGrpId = DB::queryFirstRow("select delivery_group from restaurants where id = ".$user_order['restaurantId']);
+
+
+        $deliveryGrpName = DB::queryFirstRow("select delivery_team from delivery_groups where id =  ".$deliveryGrpId['delivery_group']);
+
+
         DB::useDB('orderapp_user');
+
+
         DB::insert('ledger', array(
             'date'                  => $onlyDate,
             'time'                  => $onlytime,
@@ -1581,11 +1626,16 @@ $app->post('/add_order', function ($request, $response, $args) {
             'delivery_or_pickup'    => $delivery_pickup,
             'delivery_price'        => $user_order['deliveryCharges'],
             'company_name'          => "N/A",
+            'deal_name'             => $user_order['coupon_campaign'],
+            'deal_code'             => $user_order['couponCode'],
             'order_no'              => $orderId ,
             'discount_amount'       => $discountValue ,
             'restaurant_total'      => $restaurant_total,
-            'customer_grand_total'  => $user_order['totalWithoutDiscount'],
-            'customer_total_paid_to_restaurant'  => $user_order['total'],
+            'restaurant_id'         => $user_order['restaurantId'],
+            'customer_grand_total'  => $user_order['total'],
+            'customer_total_paid_to_restaurant'  => $total_paid_rest,
+            'eluna' =>  $is_eluna,
+            'delivery_team' => $deliveryGrpName['delivery_team']
         ));
 
 
