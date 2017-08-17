@@ -20,6 +20,11 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'V' => 
+        array (
+            'Voucherify\\Test\\Helpers\\' => 24,
+            'Voucherify\\' => 11,
+        ),
         'S' => 
         array (
             'Symfony\\Component\\OptionsResolver\\' => 34,
@@ -66,6 +71,14 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Voucherify\\Test\\Helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rspective/voucherify/test/helpers',
+        ),
+        'Voucherify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rspective/voucherify/src',
         ),
         'Symfony\\Component\\OptionsResolver\\' => 
         array (

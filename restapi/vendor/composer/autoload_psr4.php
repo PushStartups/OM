@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'Voucherify\\Test\\Helpers\\' => array($vendorDir . '/rspective/voucherify/test/helpers'),
+    'Voucherify\\' => array($vendorDir . '/rspective/voucherify/src'),
     'Symfony\\Component\\OptionsResolver\\' => array($vendorDir . '/symfony/options-resolver'),
     'Smooch\\' => array($vendorDir . '/frankandoak/smooch-api/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),

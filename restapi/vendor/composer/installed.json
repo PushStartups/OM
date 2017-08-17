@@ -1313,5 +1313,49 @@
             "whatsapi",
             "whatsapp"
         ]
+    },
+    {
+        "name": "rspective/voucherify",
+        "version": "v1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/voucherifyio/voucherify-php-sdk.git",
+            "reference": "724e9345fd32cc603d098775b825e17191c12a2e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/voucherifyio/voucherify-php-sdk/zipball/724e9345fd32cc603d098775b825e17191c12a2e",
+            "reference": "724e9345fd32cc603d098775b825e17191c12a2e",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*"
+        },
+        "require-dev": {
+            "php-mock/php-mock": "1.0.*",
+            "phpunit/phpunit": "4.8.*"
+        },
+        "time": "2017-07-24T21:45:27+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Voucherify\\": "./src",
+                "Voucherify\\Test\\Helpers\\": "./test/helpers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "PHP SDK for Voucherify. Please visit: www.voucherify.io",
+        "homepage": "http://www.voucherify.io/",
+        "keywords": [
+            "rspective",
+            "voucher",
+            "voucherify"
+        ]
     }
 ]
