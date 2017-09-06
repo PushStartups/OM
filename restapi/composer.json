@@ -8,7 +8,8 @@
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message": "^1.5",
         "whatsapp/chat-api": "v3.2.0.1",
-        "rspective/voucherify": "^1.7"
+        "rspective/voucherify": "^1.7",
+        "stichoza/google-translate-php": "~3.2"
     }
 
 }

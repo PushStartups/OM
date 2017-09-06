@@ -6,32 +6,38 @@ require      'vendor/autoload.php';
 require      'PHPMailer/PHPMailerAutoload.php';
 require_once 'inc/initDb.php';
 require_once 'inc/db_dataentry.php';
+require_once 'Interfax/vendor/autoload.php';
 
 use Voucherify\VoucherifyClient;
 use Voucherify\VoucherBuilder;
 use Voucherify\CustomerBuilder;
 use Voucherify\ClientException;
 use Mailgun\Mailgun;
+use Interfax\Client;
+use Stichoza\GoogleTranslate\TranslateClient;
 
+//TRANSLATION SET UP
+$tr = new TranslateClient();
+$tr->setTarget('iw');
 
 $con = mysqli_connect("localhost","root","orderapp","orderapp_dataentrydb");
 DB::query("set names utf8");
 
 
 // EMAIL SERVERS FOR EACH EMAIL ADDRESS
-define("EMAIL_HOST",'in-v3.mailjet.com');
+define("EMAIL_HOST",'email-smtp.us-west-2.amazonaws.com');
 
 if($_SERVER['HTTP_HOST'] == "orderapp.com" || $_SERVER['HTTP_HOST'] == "b2b.orderapp.com" || $_SERVER['HTTP_HOST'] == "staging.orderapp.com" ) {
 
 
-    define("EMAIL_SMTP_USERNAME", '0678fe01dc183bf6233e88db22d7a8c1');
-    define("EMAIL_SMTP_PASSWORD", '23e2c89d08c5fc829e2a2a3d467247df');
+    define("EMAIL_SMTP_USERNAME", 'AKIAIV5E2JGHJ7L3J7VQ');
+    define("EMAIL_SMTP_PASSWORD", 'Aj3UaAH7JR91j6jDtnFCOONXeAiOyGdDaGh7gbA2p5fA');
+
 }
 else{
 
     define("EMAIL_SMTP_USERNAME", '36b628d25e50f1c49e10c29973f27ac5');
     define("EMAIL_SMTP_PASSWORD", '8a589863b6cb4adbed8c73085fe01393');
-
 
 }
 
@@ -1248,7 +1254,7 @@ $app->post('/add_new_user', function ($request, $response, $args) {
 
     //CHECK IF USER ALREADY EXIST, IF NO CREATE USER
     $getUser = DB::queryFirstRow("select * from users where smooch_id = '" . $user_email . "'");
-    
+
     if (DB::count() == 0) {
 
 
@@ -1579,14 +1585,26 @@ $app->post('/add_order', function ($request, $response, $args) {
             $user_order['coupon_campaign'] = "N/A";
         }
 
+        $total_paid_rest = $user_order['totalWithoutDiscount'];
 
         $restaurant_total = $user_order['totalWithoutDiscount'];
 
 
-        $disAmount =  ($user_order['totalWithoutDiscount']  * $user_order['discount'])  / 100;
+        if($user_order['discount'] != 0) {
 
-        $total_paid_rest = $user_order['totalWithoutDiscount'] - $disAmount;
 
+            if ($user_order['isFixAmountCoupon'] == 'true') {
+
+                $total_paid_rest = $user_order['totalWithoutDiscount'] - $user_order['discount'];
+
+            } else {
+
+                $disAmount = ($user_order['totalWithoutDiscount'] * $user_order['discount']) / 100;
+
+                $total_paid_rest = $user_order['totalWithoutDiscount'] - $disAmount;
+
+            }
+        }
 
         if($user_order['discount'] == 0)
         {
@@ -1635,7 +1653,7 @@ $app->post('/add_order', function ($request, $response, $args) {
             'customer_grand_total'  => $user_order['total'],
             'customer_total_paid_to_restaurant'  => $total_paid_rest,
             'eluna' =>  $is_eluna,
-            'delivery_team' => $deliveryGrpName['delivery_team']
+            'delivery_team_id' => $deliveryGrpId['delivery_group']
         ));
 
 
@@ -1669,14 +1687,56 @@ $app->post('/add_order', function ($request, $response, $args) {
 
 
 
-//        $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
-//        $chat_id = "-165732759";
-//
-//        telegramAPI($bot_id, $chat_id,  createOrderForTelegram($user_order));
-//
-//
+        //TEST MODE ACTIVATION
+        $TEST_MODE = true;
 
-        
+        DB::useDB('orderapp_restaurants');
+        $restaurant_id = $user_order['restaurantId'];
+        $restaurant_contacts  =  DB::query("SELECT whatsapp_group_name , whatsapp_group_creator , fax_number , email FROM restaurants WHERE id ='" . $restaurant_id . "'");
+
+        telegramAPI(createOrder($orderId, $user_order), $TEST_MODE);
+        telegramAPI(createOrderForDelivery($user_order), $TEST_MODE);
+
+        $group_name = $restaurant_contacts[0]['whatsapp_group_name'];
+        $group_creator_phone = '+' . $restaurant_contacts[0]['whatsapp_group_creator'];
+        $fax = $restaurant_contacts[0]['fax_number'];
+        $email = $restaurant_contacts[0]['email'];
+
+        whatsappAPI($group_creator_phone, $group_name, createOrder($orderId, $user_order), $TEST_MODE);
+
+        //SEND EMAIL WITH AN ORDER TO orders@orderapp.com
+        //if ( !$TEST_MODE ) {
+      //orders@orderapp.com
+            sendOrderEmail(createOrder($orderId, $user_order), 'orders@orderapp.com', $orderId);
+            ob_end_clean();
+        //}
+
+        //SEND EMAIL TO RESTAURANT
+        if ( $email && $TEST_MODE == false ) {
+            sendOrderEmail(createOrder($orderId, $user_order), $email, $orderId);
+            ob_end_clean();
+        }
+
+        //SEND FAX TO RESTAURANT
+        if ( $fax ) {
+            sendFax($fax, createOrder($orderId, $user_order), $TEST_MODE);
+        }
+
+        //DELIVERY MESSAGES
+        if ( $user_order['pickFromRestaurant'] == "false" ) {
+            $delivery_group = DB::query("SELECT delivery_group FROM `restaurants` WHERE id = " . $restaurant_id);
+            if ( $delivery_group[0]['delivery_group'] == 0 ) {
+                whatsappAPI($group_creator_phone, $group_name, createOrderForDelivery($user_order), $TEST_MODE);
+            } else {
+                $delivery_contacts = DB::query("SELECT `whatsapp_group_name`, `whatsapp_group_creator` FROM delivery_groups WHERE id = " . $delivery_group[0]['delivery_group']);
+                $delivery_group_name = $delivery_contacts[0]['whatsapp_group_name'];
+                $delivery_group_creator_phone = '+' . $delivery_contacts[0]['whatsapp_group_creator'];
+                whatsappAPI($delivery_group_creator_phone, $delivery_group_name, createOrderForDelivery($user_order), $TEST_MODE);
+                
+            }
+        }
+
+
         // SEND EMAIL TO KITCHEN
 
         email_for_kitchen($user_order, $orderId, $todayDate);
@@ -2688,7 +2748,7 @@ function email_order_summary_english($user_order,$orderId,$todayDate)
 
 //Send HTML or Plain Text email
     $mail->isHTML(false);
-   
+
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
         $mail->Subject = "(ELUNA) "+$user_order['restaurantTitle'].' Order# '.$orderId;
     else
@@ -3087,9 +3147,9 @@ function email_order_summary_hebrew_admin($user_order,$orderId,$todayDate)
     $mail->isHTML(false);
 
     if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')
-      $mail->Subject = "(ELUNA) "+$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+        $mail->Subject = "(ELUNA) "+$user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
     else
-      $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
+        $mail->Subject = $user_order['restaurantTitleHe']." הזמנה חדשה # "."  ".$orderId;
 
     $mail->Body = $mailbody;
     $mail->AltBody = "OrderApp";
@@ -3695,28 +3755,141 @@ function createOrderForTelegram($user_order)
     return $mailBody;
 }
 
+function createMsg($user_platform, $user_order, $restaurant_contacts) {
 
+    $mailBody = '';
+    $mailBody .= $user_order['restaurantTitle'] . '
+';
+
+    $group_name = $restaurant_contacts[0]['whatsapp_group_name'];
+    $group_creator_phone = '+' . $restaurant_contacts[0]['whatsapp_group_creator'];
+    $fax = $restaurant_contacts[0]['fax_number'];
+    $email = $restaurant_contacts[0]['email'];
+    $mailBody .= $group_name . ' ' . $group_creator_phone. ' ' . $fax . ' ' . $email;
+
+    return $mailBody;
+}
+
+
+function createOrder($orderId, $user_order) {
+    $mailBody = '';
+
+    if ( $user_order['contact'] == 000000 ) {
+        $mailBody .= 'Test' . '
+';
+    }
+
+    $mailBody .= $user_order['restaurantTitleHe'] . '
+';
+    $mailBody .= 'הזמנה חדשה :' . $orderId . '
+
+';
+    
+    if ( $user_order['pickFromRestaurant'] == 'true' && $user_order['isCoupon'] == 'true' ) {
+      $mailBody .= 'שם הלקוח :' . $user_order["name"] . "
+";
+    }
+
+    $mailBody .= '---------------
+';
+
+    foreach ($user_order['cartData'] as $t) {
+
+        $mailBody .= $t['qty'] . '  ' . $t['name_he'] . '
+';
+
+
+        if($t['specialRequest'] != "") {
+
+            $mailBody .= ' הערות : '.$t['specialRequest'] . '
+';
+
+            $mailBody .= '---------------
+';
+            $mailBody .= '---------------
+';
+        }
+        else
+        {
+
+            $mailBody .= $t['detail_he'] . '
+';
+
+            $mailBody .= '---------------
+';
+            $mailBody .= '---------------
+';
+
+        }
+
+    }
+  
+  $mailBody .= " סה\"כ: ₪" .  $user_order["total"] . "
+
+";
+  
+  $mailBody .= "כמה זמן?\n\n??????????????????";
+
+    return $mailBody;
+}
+
+function createOrderForDelivery($user_order) {
+
+    $mailBody = '';
+
+    if ( $user_order['contact'] == 000000 ) {
+        $mailBody .= 'Test' . '
+';
+    }
+
+    $mailBody .= $user_order['restaurantTitleHe'] . '
+';
+    $mailBody .= $user_order['Cash_Card'] . ' ' . '₪' . $user_order['total'] . '
+';
+    $mailBody .= 'שם הלקוח :' . $user_order['name'] . '
+';
+    $mailBody .=  'מספר :' . $user_order['contact'] . '
+';
+    if ( $user_order['restaurantTitle'] == "American Pizza" ) {
+        global $tr;
+        $delivery_address = $tr->translate($user_order['deliveryAddress']);
+        $delivery_area = $tr->translate($user_order['deliveryArea']);
+    } else {
+        $delivery_address = $user_order['deliveryAddress'];
+        $delivery_area = $user_order['deliveryArea'];
+    }
+    
+    $mailBody .= 'כתובת :'. $user_order['deliveryAptNo'] .' '.  $delivery_address .' ('.$delivery_area.')'.'  
+';
+
+    return $mailBody;
+}
 
 
 //  TELEGRAM API
 //  SEND ORDERS THROUGH TELEGRAM
 
-function telegramAPI($bot_id, $chat_id, $text) {
+function telegramAPI($text, $TEST_MODE) {
 
+    if ( $TEST_MODE ) {
+        $bot_id = "271480837:AAEI0i1O3ozIRNyWU-7-qC_hGfOBnUxab88";
+        $chat_id = "-222443307";
+    } else {
+        //LIVE TELEGRAM CREDENTIALS
+        $bot_id = "234472538:AAEwJUUgl0nasYLc3nQtGx4N4bzcqFT-ONs";
+        $chat_id = "-165732759";
+    }
 
     $postData = array(
         'chat_id' => $chat_id,
         'text' => $text
     );
 
-
     $headers = array(
         'Content-Type: application/json'
     );
 
-
     $url = 'https://api.telegram.org/bot'.$bot_id.'/sendMessage';
-
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -3724,9 +3897,123 @@ function telegramAPI($bot_id, $chat_id, $text) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
     $response = curl_exec($ch);
-    echo "Response: ".$response;
+    //echo "Response: ".$response;
     curl_close($ch);
+}
 
+function whatsappAPI($groupAdmin, $groupName, $message, $TEST_MODE) {
+
+    if ( $TEST_MODE ) {
+        $groupAdmin = "+972525952665";
+        $groupName = "Whatsapp Tests New";
+    }
+
+    $INSTANCE_ID = "3";
+    $CLIENT_ID = "orderapp.orders@gmail.com";
+    $CLIENT_SECRET = "59f0a2e52b384082a2f53b687836a65f";
+
+    $postData = array(
+        'group_admin' => $groupAdmin,
+        'group_name' => $groupName,
+        'message' => $message
+    );
+
+    $headers = array(
+        'Content-Type: application/json',
+        'X-WM-CLIENT-ID: '.$CLIENT_ID,
+        'X-WM-CLIENT-SECRET: '.$CLIENT_SECRET
+    );
+
+    $url = 'http://api.whatsmate.net/v2/whatsapp/group/message/' . $INSTANCE_ID;
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
+    $response = curl_exec($ch);
+
+    curl_close($ch);
+}
+
+//SEND EMAIL FUNCTION
+function sendOrderEmail($msg, $toEmail, $orderId) {
+
+    $mail = new PHPMailer;
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->isSMTP();
+    $mail->Host = EMAIL_HOST;                 //   Set mailer to use SMTP
+    $mail->SMTPAuth = true;                                             //   Enable SMTP authentication
+    $mail->Username = EMAIL_SMTP_USERNAME;
+    $mail->Password = EMAIL_SMTP_PASSWORD;   //   SMTP password
+    $mail->SMTPSecure = 'tls';                                          //   Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+    //From email address and name
+    $mail->From = "orders@orderapp.com";
+    //$mail->From = "orderapp.orders@gmail.com";
+    $mail->FromName = "OrderApp";
+
+
+    //To address and name
+    $mail->addAddress($toEmail);     //SEND EMAIL TO USER
+
+    //$mail->AddCC(EMAIL);           //SEND CLIENT EMAIL COPY TO ADMIN
+
+    //Send HTML or Plain Text email
+    $mail->isHTML(false);
+
+    if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com') {
+      //$mail->Subject = "(ELUNA) "+$user_order['restaurantTitle'].' Order# '.$orderId;
+    } else {
+      if ( $orderId ) {
+        $mail->Subject = ' Order# '.$orderId;
+      } else {
+        $mail->Subject = ' New Order ';
+      }
+    }
+    
+
+    $mail->Body = $msg;
+    $mail->AltBody = "OrderApp";
+    
+    
+
+    if (!$mail->send())
+    {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+      file_put_contents('EmailLog.txt', $mail->ErrorInfo);
+    }
+    else
+    {
+        echo "Message has been sent successfully";
+    }
+
+}
+
+//SEND FAX
+function sendFax($fax, $msg, $TEST_MODE ) {
+
+   $fax_number = '+' . $fax;
+
+   if ($TEST_MODE) {
+
+       $fax_number = "+97226544308";
+   }
+  
+  $file = 'FaxMessage.txt';
+  file_put_contents($file, $msg);
+
+   $interfax = new Client(['username' => 'Orderapp', 'password' => 'pushstartups1!']);
+    $fax = $interfax->deliver(['faxNumber' => $fax_number, 'file' => 'FaxMessage.txt']);
+
+    // get the latest status:
+    $fax->refresh()->status; // Pending if < 0. Error if > 0
+
+    // Simple polling
+    while ($fax->refresh()->status < 0) {
+        sleep(5);
+    }
 
 }
 

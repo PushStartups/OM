@@ -10,6 +10,7 @@ return array(
     'Voucherify\\Test\\Helpers\\' => array($vendorDir . '/rspective/voucherify/test/helpers'),
     'Voucherify\\' => array($vendorDir . '/rspective/voucherify/src'),
     'Symfony\\Component\\OptionsResolver\\' => array($vendorDir . '/symfony/options-resolver'),
+    'Stichoza\\GoogleTranslate\\' => array($vendorDir . '/stichoza/google-translate-php/src/Stichoza/GoogleTranslate'),
     'Smooch\\' => array($vendorDir . '/frankandoak/smooch-api/src'),
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),

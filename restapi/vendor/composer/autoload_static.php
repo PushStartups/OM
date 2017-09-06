@@ -10,8 +10,8 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'ddc0a4d7e61c0286f0f8593b1903e894' => __DIR__ . '/..' . '/clue/stream-filter/src/functions.php',
-        '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
     );
 
@@ -28,6 +28,7 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'S' => 
         array (
             'Symfony\\Component\\OptionsResolver\\' => 34,
+            'Stichoza\\GoogleTranslate\\' => 25,
             'Smooch\\' => 7,
             'Slim\\' => 5,
         ),
@@ -83,6 +84,10 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'Symfony\\Component\\OptionsResolver\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
+        'Stichoza\\GoogleTranslate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stichoza/google-translate-php/src/Stichoza/GoogleTranslate',
         ),
         'Smooch\\' => 
         array (
@@ -160,6 +165,13 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Stichoza\\GoogleTranslate\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/stichoza/google-translate-php/src',
+            ),
+        ),
         'P' => 
         array (
             'Pimple' => 

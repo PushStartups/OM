@@ -1,0 +1,14 @@
+{
+    "require": {
+
+        "slim/slim": "^3.0",
+        "frankandoak/smooch-api": "^0.1.0",
+        "guzzlehttp/guzzle": "6.1.1",
+        "mailgun/mailgun-php": "^2.3",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/message": "^1.5",
+        "whatsapp/chat-api": "v3.2.0.1",
+        "rspective/voucherify": "^1.7"
+    }
+
+}
