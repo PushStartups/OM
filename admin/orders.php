@@ -1,6 +1,14 @@
 <?php
 include "header.php";
+DB::useDB('orderapp_user');
+DB::query("select * from user_orders");
+$_SESSION['orders_count'] = DB::count();
 ?>
+<script>
+
+	setInterval(function(){get_new_orders('<?=$_SESSION['orders_count']?>')}, 5000);
+</script>
+<meta http-equiv="refresh" content="300">
 <div id="main" role="main">
 
 
@@ -59,7 +67,6 @@ include "header.php";
 								<table id="datatable_fixed_column" class="table table-striped table-bordered" width="100%">
 
 									<thead>
-
 									<tr>
 										<th data-class="expand">Order ID</th>
 										<th >User Email</th>

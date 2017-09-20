@@ -71,8 +71,8 @@ function add_company()
     var name                    =  $('#name').val();
     var amount                  =  $('#amount').val();
     var discount_type           =  $('#discount_type').val();
-    var email                    =  $('#email').val();
-    var password                    =  $('#password').val();
+    var email                   =  $('#email').val();
+    var password                =  $('#password').val();
 
     var sunday_start_time       =  $('#sunday_start_time').val();
     var sunday_end_time         =  $('#sunday_end_time').val();
@@ -193,9 +193,6 @@ function add_company()
         $('#error_tuesday_end_time').html('Tuesday End Time Required*');
         return;
     }
-
-
-
 
     if (wednesday_start_time == "")
     {

@@ -208,6 +208,7 @@ function update_restaurant(rest_id)
         url:"ajax/edit_restaurant.php",
         type: 'POST',
         data: postForm,
+        dataType:"text",
         success:function(data)
         {
 

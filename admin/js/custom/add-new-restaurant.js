@@ -111,7 +111,7 @@ function add_business_offer(url)
         {
             hideLoading();
             alert("business offer added successfully");
-             window.location.href = url;
+            window.location.href = url;
         }
     });
 
@@ -154,9 +154,9 @@ function add_restaurant_city()
         data: postForm,
         dataType:"json",
         success: function (data) {
-           
+
             hideLoading();
-           
+
         }
     });
 }
@@ -283,7 +283,7 @@ function add_restaurant() {
     }
     else
     {
-         restapi_url = "http://"+window.location.hostname+"/restapi/index.php/insert_new_restaurant";
+        restapi_url = "http://"+window.location.hostname+"/restapi/index.php/insert_new_restaurant";
     }
 
     $.ajax({
@@ -308,9 +308,217 @@ function save_imagee(rest_id,restapi_url)
             alert("restaurant added successfully");
             hideLoading();
 
-           // setTimeout(function(){ window.location.href = "index.php"; }, 5000);
+            // setTimeout(function(){ window.location.href = "index.php"; }, 5000);
         }
     });
 }
 
+$('#rest_select_id').on('change', function() {
+
+    $('#delivery_select_id').prop('selectedIndex',0);
+    var postForm =
+    { //Fetch form data
+
+        'rest_id'                    :  this.value
+    };
+    window.location.href = 'ledger-detail.php?id='+this.value;
+    // addLoading();
+    // $.ajax({
+    //     url:"ajax/rest_search.php",
+    //     method:"post",
+    //     data:postForm,
+    //     success:function(data)
+    //     {
+    //
+    //         var json = data;
+    //         var obj = JSON.parse(json);
+    //
+    //         var str1 = "";
+    //         var str2 = "";
+    //         str1 = obj[0].outputt;
+    //         str2 = obj[0].output1;
+    //
+    //
+    //         hideLoading();
+    //         //$('.dt-toolbar-footer').hide();
+    //         $("#swipe_row").show();
+    //         $("#delivery_swipe_row").hide();
+    //         $("#target-content1").html(str1);
+    //         $("#swipe-main-table").html(str2);
+    //
+    //     }
+    // });
+
+})
+
+function show_swipe_div()
+{
+    $("#add-swipe").show();
+}
+function show_delivery_swipe_div()
+{
+    $("#add-delivery-swipe").show();
+}
+
+$('#delivery_amount_added_tab').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('delivery_amount_added_tab_error').innerHTML = "Wrong Input!";
+    }
+    else
+    {
+        document.getElementById('delivery_amount_added_tab_error').innerHTML = "";
+    }
+
+});
+$('#amount_added_tab').bind('input', function() {
+
+    if(!this.value.match(/^\d+$/))
+    {
+        document.getElementById('amount_added_tab_error').innerHTML = "Wrong Input!";
+    }
+    else
+    {
+        document.getElementById('amount_added_tab_error').innerHTML = "";
+    }
+
+});
+function add_new_delivery_swipe(id,url)
+{
+    if ($('#delivery_amount_added_tab').val() == "") {
+        $('#delivery_amount_added_tab_error').html('Required*');
+        return;
+    }
+
+    if ($('#delivery_swiped_by').val() == "") {
+        $('#delivery_swiped_by_error').html('Required*');
+        return;
+    }
+
+    if ($('#delivery_comments').val() == "") {
+        $('#delivery_comments_error').html('Required*');
+        return;
+    }
+
+
+
+    if(!$("#delivery_amount_added_tab").val().match(/^\d+$/))
+    {
+        return;
+    }
+    else
+    {
+        document.getElementById('delivery_amount_added_tab_error').innerHTML = "";
+    }
+
+
+    var postForm = { //Fetch form data
+        'amount_added_tab'  : $('#delivery_amount_added_tab').val(),
+        'swiped_by'         : $('#delivery_swiped_by').val(),
+        'comments'          : $('#delivery_comments').val(),
+        'delivery_group_name'     : id
+    };
+
+    addLoading();
+    $.ajax({
+        url: "ajax/add_delivery_swipe_info.php",
+        type: 'POST',
+        data: postForm,
+        dataType:"json",
+        success: function (data) {
+            alert("Swipe Info added successfully");
+            window.location.href = "ledger-detail-delivery.php?team="+id;
+
+
+        }
+    });
+}
+
+function add_new_swipe(id,url)
+{
+
+    if ($('#amount_added_tab').val() == "") {
+        $('#amount_added_tab_error').html('Required*');
+        return;
+    }
+
+    if(!$("#amount_added_tab").val().match(/^\d+$/))
+    {
+        return;
+    }
+    else
+    {
+        document.getElementById('amount_added_tab_error').innerHTML = "";
+    }
+
+
+    if ($('#swiped_by').val() == "") {
+        $('#swiped_by_error').html('Required*');
+        return;
+    }
+
+    if ($('#comments').val() == "") {
+        $('#comments_error').html('Required*');
+        return;
+    }
+
+    var postForm = { //Fetch form data
+        'amount_added_tab': $('#amount_added_tab').val(),
+        'swiped_by': $('#swiped_by').val(),
+        'comments': $('#comments').val(),
+        'restaurant_id' : id
+    };
+
+    addLoading();
+    $.ajax({
+        url: "ajax/add_swipe_info.php",
+        type: 'POST',
+        data: postForm,
+        dataType:"json",
+        success: function (data) {
+            alert("Swipe Info added successfully");
+            window.location.href = "ledger-detail.php?id="+id;
+            hideLoading();
+
+        }
+    });
+}
+
+$('#delivery_select_id').on('change', function()
+{
+
+    $('#rest_select_id').prop('selectedIndex',0);
+    var postForm =
+    {
+        'delivery_group_id'   :  this.value
+    };
+    window.location.href = 'ledger-detail-delivery.php?team='+this.value;
+    // addLoading();
+    // $.ajax({
+    //     url:"ajax/delivery_group_search.php",
+    //     method:"post",
+    //     data:postForm,
+    //     success:function(data)
+    //     {
+    //         var json = data;
+    //         var obj = JSON.parse(json);
+    //
+    //         var str1 = "";
+    //         var str2 = "";
+    //         str1 = obj[0].outputt;
+    //         str2 = obj[0].output1;
+    //
+    //
+    //         hideLoading();
+    //         $('.dt-toolbar-footer').hide();
+    //         $("#swipe_row").hide();
+    //         $("#delivery_swipe_row").show();
+    //         $("#target-content1").html(str1);
+    //         $("#swipe-main-table").html(str2);
+    //
+    //     }
+    // });
+
+})
 

@@ -75,4 +75,4 @@ if($resp != "0")
 
 
 
-echo json_encode($resp);
+echo $resp;
