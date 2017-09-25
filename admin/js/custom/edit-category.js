@@ -14,21 +14,84 @@ $('#name_he').bind('input', function() {
 
 function delete_category(category_id,url)
 {
-    addLoading();
-    $.ajax({
-        url:"ajax/delete_category.php",
-        method:"post",
-        data:{category_id:category_id},
-        dataType:"json",
-        success:function(data)
-        {
-            hideLoading();
-            alert("Category deleted successfully");
-            window.location.href = url;
-        }
-    });
-}
 
+    $(function(){
+        swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this Category!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel please!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    addLoading();
+                    $.ajax({
+                        url:"ajax/delete_category.php",
+                        method:"post",
+                        data:{category_id:category_id},
+                        dataType:"json",
+                        success:function(data)
+                        {
+                            hideLoading();
+                           // alert("Category deleted successfully");
+                            window.location.href = url;
+                        }
+                    });
+                } else {
+                    swal("Cancelled", "Category is safe :)", "error");
+                    window.location.href = url;
+                }
+            });
+    });
+
+
+
+
+
+}
+$(function () {
+
+    $('#category-form').on('submit', function (e) {
+
+        var name_en                    =  $('#name_en').val();
+        var name_he                    =  $('#name_he').val();
+
+
+        if(name_en == "")
+        {
+            $('#name_en_error').html('Required*');
+            return;
+        }
+
+        if(name_he == "")
+        {
+            $('#name_he_error').html('Required');
+            return;
+        }
+        addLoading();
+        $.ajax({
+            url:"ajax/edit_category.php",
+            method:"post",
+            data: new FormData(this),
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData:false,
+            success:function(data)
+            {
+                hideLoading();
+                alert("Category updated successfully");
+
+            }
+        });
+
+    });
+
+});
 
 function edit_category(category_id,url)
 {

@@ -262,6 +262,11 @@ function add_restaurant() {
         'min_amount' : $('#min_amount').val(),
         'lat': $('#lat').val(),
         'lng': $('#lng').val(),
+        'fax_number': $('#fax_number').val(),
+        'email': $('#email').val(),
+        'whatsapp_group_creator': $('#whatsapp_group_creator').val(),
+        'whatsapp_group_name': $('#whatsapp_group_name').val(),
+        'delivery_group': $('#delivery_group').val(),
 
 
     };
@@ -522,3 +527,129 @@ $('#delivery_select_id').on('change', function()
 
 })
 
+function update_ledger(ledger_id)
+{
+    var postForm = { //Fetch form data
+        'restaurant_id'     :     $('#restaurant_id').val(),
+        'payment_method'           :     $('#payment_method').val(),
+        'delivery_or_pickup'           :     $('#delivery_or_pickup').val(),
+        'order_no'              :       $('#order_no').val(),
+        'balance': $('#balance').val(),
+        'restaurant_total': $('#restaurant_total').val(),
+        'customer_grand_total': $('#customer_grand_total').val(),
+        'customer_total_paid_to_restaurant': $('#customer_total_paid_to_restaurant').val(),
+        'id': ledger_id,
+
+    };
+    addLoading();
+    $.ajax({
+        url: "ajax/edit_ledger.php",
+        type: 'POST',
+        data: postForm,
+        dataType:"json",
+        success: function (data) {
+            alert("Ledger Updated Successfully");
+            window.location.href = "ledger.php";
+            hideLoading();
+
+        }
+    });
+}
+
+
+$(function () {
+
+    $('#add-rest').on('submit', function (e) {
+        e.preventDefault();
+        var name_en = $('#name_en').val();
+        var name_he = $('#name_he').val();
+
+        var contact = $('#contact').val();
+
+        var min_amount = $('#min_amount').val();
+
+        var city = $('#city').val();
+
+        var description_en = $('#description_en').val();
+        var description_he = $('#description_he').val();
+
+        var address_en = $('#area_en').val();
+        var address_he = $('#area_he').val();
+
+        var hechsher_en = $('#hechsher_en').val();
+        var hechsher_he = $('#hechsher_he').val();
+
+
+        if($('#lat').val() == "")
+        {
+            $('#address_en_error').html('Please Use Suggestions*');
+            return;
+
+        }
+
+        if (name_en == "") {
+            $('#name_en_error').html('Required*');
+            return;
+        }
+        if (name_he == "") {
+            $('#name_he_error').html('Required');
+            return;
+        }
+
+        if (contact == "") {
+            $('#contact_error').html('Required*');
+            return;
+        }
+
+        if (min_amount == "") {
+            $('#min_amount_error').html('Required*');
+            return;
+        }
+
+        if (description_en == "") {
+            $('#description_en_error').html('Required*');
+            return;
+        }
+        if (description_he == "") {
+            $('#description_he_error').html('Required*');
+            return;
+        }
+
+        if (address_en == "") {
+            $('#address_en_error').html('Required*');
+            return;
+        }
+        if (address_he == "") {
+            $('#address_he_error').html('Required*');
+            return;
+        }
+
+        if (hechsher_en == "") {
+            $('#hechsher_en_error').html('Required*');
+            return;
+        }
+        if (hechsher_en == "") {
+            $('#hechsher_en_error').html('Required*');
+            return;
+        }
+
+        addLoading();
+
+        $.ajax({
+            url: "ajax/insert_new_restaurant.php",
+            type: 'POST',
+            data: new FormData(this),
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData:false,
+            success: function (data) {
+
+                hideLoading();
+
+            }
+        });
+
+
+    });
+
+});

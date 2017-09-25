@@ -25,11 +25,6 @@ class VoucherifyClient
     public $distributions;
 
     /**
-     * @var \Voucherify\Orders
-     */
-    public $orders;
-
-    /**
      * @var \Voucherify\Products
      */
     public $products;
@@ -54,6 +49,7 @@ class VoucherifyClient
      */
     public $validationRules;
 
+
     /**
      * @var \Voucherify\Vouchers
      */
@@ -64,9 +60,9 @@ class VoucherifyClient
      * @param string $apiKey
      * @param string $apiVersion - Override the API version. When 'null' use default account API settings.
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null)
     {
-        $this->client = new ApiClient($apiId, $apiKey, $apiVersion, $apiUrl);
+        $this->client = new ApiClient($apiId, $apiKey, $apiVersion);
 
         $this->campaigns = new Campaigns($this->client);
         $this->customers = new Customers($this->client);
@@ -77,27 +73,10 @@ class VoucherifyClient
         $this->validations = new Validations($this->client);
         $this->validationRules = new ValidationRules($this->client);
         $this->vouchers = new Vouchers($this->client);
-        $this->orders = new Orders($this->client);
 
         /* ********* BACKWARD COMPATIBILITY ********* */
 
         $this->customer = $this->customers;
-    }
-
-    /**
-     * @param \PsrLogLoggerInterface $logger
-     */
-    public function setLogger($logger)
-    {
-        $this->client->setLogger($logger);
-    }
-
-    /**
-     * @param array $options
-     */
-    public function setConnectionOptions($options)
-    {
-        $this->client->setConnectionOptions($options);
     }
 
     /* ********* BACKWARD COMPATIBILITY ********* */

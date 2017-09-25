@@ -45,7 +45,7 @@ include "header.php";
 
                                 <div class="widget-body">
 
-                                    <form id="my-form"  method="post" enctype="multipart/form-data">
+                                    <form id="add-rest"  method="post" enctype="multipart/form-data">
                                         <fieldset>
                                             <input name="authenticity_token" type="hidden">
 
@@ -154,6 +154,7 @@ include "header.php";
                                                 <input class="form-control" id="hechsher_en" name="hechsher_en" placeholder="Enter Hechsher" type="text">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="hechsher_en_error"></span>
                                             </div>
+                                            <input class="form-control" type="hidden" name="hidden_image" id="hidden_image" value="">
                                             <div class="form-group">
                                                 <label dir="rtl">הכשרת </label>
                                                 <input style="direction:RTL;" class="form-control" id="hechsher_he" name="hechsher_he" placeholder="הזן הכשרת" type="text">
@@ -163,10 +164,7 @@ include "header.php";
 
                                         </fieldset>
                                         <div class="form-actions">
-                                            <div onclick="add_restaurant(globalImg)" class="btn btn-primary btn-lg">
-                                                <i class="fa fa-save"></i>
-                                                Submit
-                                            </div>
+                                            <input type="submit" class="btn btn-lg" value="Update">
 <!--                                            <input type="submit" value="Submit" class="btn btn-primary btn-lg">-->
                                         </div>
                                     </form>
@@ -203,7 +201,7 @@ include "header.php";
     globalImg = null;
     var scroll_position ;
 
-
+    document.getElementById('hidden_image').value = 0;
     $("#new_image1").hide();
 
 
@@ -214,7 +212,7 @@ include "header.php";
         reader.onload = function (e) {
 
             $('#new_image1').attr('src', e.target.result);
-
+            document.getElementById('hidden_image').value = 1;
         }
 
         reader.addEventListener("load", function () {

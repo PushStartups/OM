@@ -45,8 +45,6 @@ DB::delete('menus', "id=%d", $menu_id);
 DB::useDB('orderapp_restaurants');
 DB::delete('weekly_availibility', "restaurant_id=%d", $restaurant_id );
 
-DB::useDB('orderapp_b2b');
-DB::delete('user_votes', "restaurant_id=%d", $restaurant_id );
 
 DB::useDB('orderapp_restaurants');
 DB::delete('restaurant_tags', "restaurant_id=%d", $restaurant_id );
@@ -67,11 +65,10 @@ DB::delete('user_orders', "restaurant_id=%d", $restaurant_id );
 
 DB::useDB('orderapp_restaurants');
 DB::delete('delivery_fee', "restaurant_id=%d", $restaurant_id );
-DB::useDB('orderapp_b2b');
-DB::delete('company_voting', "restaurant_id=%d", $restaurant_id );
-DB::useDB('orderapp_b2b');
+
+DB::useDB('orderapp_b2b_wui');
 DB::delete('company_rest', "rest_id=%d", $restaurant_id );
-DB::useDB('orderapp_b2b');
+DB::useDB('orderapp_b2b_wui');
 DB::delete('b2b_rest_discounts', "rest_id=%d", $restaurant_id );
 
 DB::useDB('orderapp_restaurants');

@@ -27,8 +27,6 @@ else
     <!-- MAIN CONTENT -->
     <div id="content">
         <!-- row -->
-
-        <?php if ($rolee == 1) {?>
         <div class="row">
 
             <!-- col -->
@@ -82,7 +80,7 @@ else
         </div><br><br>
         <?php  } }?>
         <section id="widget-grid"  id="myform">
-<?php } ?>
+
             <!-- SHOW CATEGORIES-->
             <?php  if(!empty($categories)) { ?>
                 <div class="row">
@@ -115,11 +113,9 @@ else
                                             <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Logo</th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-info text-muted hidden-md hidden-sm hidden-xs"></i> Name </th>
                                             <th data-hide="phone"><i class="fa-fw fa fa-info text-muted hidden-md hidden-sm hidden-xs"></i> שֵׁם </th>
-                                            <th data-hide="phone"><i class="fa-fw fa fa-plus text-muted hidden-md hidden-sm hidden-xs"></i> Items </th>
-                                            <?php if ($rolee == 1) {?>
+                                            <th data-hide="phone"><i class="fa-fw fa fa-plus text-muted hidden-md hidden-sm hidden-xs"></i> Add Items </th>
                                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Edit</th>
                                             <th data-hide="phone,tablet"><i class="fa fa-fw fa-edit txt-color-blue hidden-md hidden-sm hidden-xs"></i> Delete</th>
-                                            <?php }?>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -131,15 +127,14 @@ else
                                             <tr>
 
                                                 <td><?=$category['id']?></td>
-                                                <td><img class="logo-table" src="<?=WEB_PATH.$category['image_url'] ?>"></td>
+                                                <td><img class="logo-table" src="<?=$category['image_url'] ?>"></td>
                                                 <td><?=$category['name_en']?></td>
                                                 <td><?=$category['name_he']?></td>
 
-                                                <td><a style="text-decoration: none" href="add-new-items.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i>  Items </button></a></td>
-                                                <?php if ($rolee == 1) {?>
+                                                <td><a style="text-decoration: none" href="add-new-items.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-success  txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-plus"></i> Add Items </button></a></td>
                                                 <td><a href="edit-category.php?id=<?=$category['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
                                                 <td><a onclick="delete_category('<?=$category['id']?>','<?=$_SERVER['REQUEST_URI']?>')"><button class="btn btn-labeled btn-danger txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-trash-o"></i> Delete</button></a></td>
-<?php }?>
+
                                             </tr>
                                         <?php  } ?>
 
@@ -157,6 +152,7 @@ else
             <?php  }  ?>
             <script>
                 globalImgCat = null;
+                document.getElementById('hidden_image_cat').value = 0;
                 $('#image1').hide();
                 function previewFilee() {
 
@@ -166,7 +162,7 @@ else
                     reader.onload = function (e) {
 
                         $('#image1').attr('src', e.target.result);
-
+                        document.getElementById('hidden_image_cat').value = 1;
                     }
                     reader.addEventListener("load", function () {
 
@@ -204,15 +200,13 @@ else
                                     <i class="fa fa-arrow-left"></i>
                                     Go Back
                                 </div>
-                                <?php if ($rolee == 1) {?>
                                 <div onclick="show_category_div()" class="btn btn-primary btn-lg">
                                     <i class="fa fa-plus"></i>
                                     Add Category
                                 </div>
-                                <?php } ?>
                                 <br><br>
                                 <div id="add-category" style="display: none">
-                                    <form>
+                                    <form id="add-cat">
                                         <fieldset>
                                             <input name="authenticity_token" type="hidden">
 
@@ -237,7 +231,8 @@ else
                                                 <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="name_he_error"></span>
                                             </div>
 
-
+                                            <input class="form-control" type="hidden" name="hidden_image_cat" id="hidden_image_cat" value="">
+                                            <input class="form-control" type="hidden" name="menu_id" id="menu_id" value="<?=$menu_id?>">
                                             <div class="form-group">
                                                 <label>Business Offer</label>
                                                 <select id="business_offer" name="business_offer" class="form-control">
@@ -249,10 +244,7 @@ else
 
                                         </fieldset>
                                         <div class="form-actions">
-                                            <div onclick="add_new_category('<?=$menu_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
-                                                <i class="fa fa-save"></i>
-                                                Submit
-                                            </div>
+                                            <input type="submit" class="btn btn-lg" value="Update">
                                         </div>
                                     </form>
                                 </div>

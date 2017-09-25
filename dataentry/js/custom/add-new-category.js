@@ -22,6 +22,45 @@ function go_back_to_restaurant()
 }
 
 
+$(function () {
+
+    $('#add-cat').on('submit', function (e) {
+        e.preventDefault();
+        var name_en                    =  $('#name_en').val();
+        var name_he                    =  $('#name_he').val();
+
+
+        if(name_en == "")
+        {
+            $('#name_en_error').html('Required*');
+            return;
+        }
+
+        if(name_he == "")
+        {
+            $('#name_he_error').html('Required*');
+            return;
+        }
+
+        addLoading();
+        $.ajax({
+            url:"ajax/insert_new_category.php",
+            method:"post",
+            data: new FormData(this),
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData:false,
+            success:function(data)
+            {
+
+
+            }
+        });
+
+    });
+
+});
+
 function add_new_category(menu_id,url)
 {
    // alert(menu_id);

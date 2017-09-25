@@ -1263,11 +1263,10 @@ function OnOrderPickUp() {
 
     generateTotalUpdateFoodCart();
 
-
     userObject.subTotal = userObject.total;
 
-    localStorage.setItem("USER_OBJECT", JSON.stringify(userObject));
-    localStorage.setItem("FOOD_CARD_DATA", JSON.stringify(foodCartData));
+    localStorage.setItem("USER_OBJECT_HE", JSON.stringify(userObject));
+    localStorage.setItem("FOOD_CARD_DATA_HE", JSON.stringify(foodCartData));
     localStorage.setItem("IGNORE_DELIVERY", "true");
 
     $("#minAmount").css("color","black");
@@ -1275,7 +1274,6 @@ function OnOrderPickUp() {
 
 
 }
-
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);

@@ -89,12 +89,10 @@ function addLoading(){
 // HIDE LOADING ON AJAX CALLS
 function hideLoading(){
 
-    setTimeout(function() {
 
         $("#loader").css("display" , "none");
         $("#Loader_bg").css("display" , "none");
 
-    }, 1000);
 
 
 }

@@ -161,6 +161,104 @@ function add_restaurant_city()
     });
 }
 
+$(function () {
+
+        $('#add-rest').on('submit', function (e) {
+        e.preventDefault();
+        var name_en = $('#name_en').val();
+        var name_he = $('#name_he').val();
+
+        var contact = $('#contact').val();
+
+        var min_amount = $('#min_amount').val();
+
+        var city = $('#city').val();
+
+        var description_en = $('#description_en').val();
+        var description_he = $('#description_he').val();
+
+        var address_en = $('#area_en').val();
+        var address_he = $('#area_he').val();
+
+        var hechsher_en = $('#hechsher_en').val();
+        var hechsher_he = $('#hechsher_he').val();
+
+
+        if($('#lat').val() == "")
+        {
+            $('#address_en_error').html('Please Use Suggestions*');
+            return;
+
+        }
+
+        if (name_en == "") {
+            $('#name_en_error').html('Required*');
+            return;
+        }
+        if (name_he == "") {
+            $('#name_he_error').html('Required');
+            return;
+        }
+
+        if (contact == "") {
+            $('#contact_error').html('Required*');
+            return;
+        }
+
+        if (min_amount == "") {
+            $('#min_amount_error').html('Required*');
+            return;
+        }
+
+        if (description_en == "") {
+            $('#description_en_error').html('Required*');
+            return;
+        }
+        if (description_he == "") {
+            $('#description_he_error').html('Required*');
+            return;
+        }
+
+        if (address_en == "") {
+            $('#address_en_error').html('Required*');
+            return;
+        }
+        if (address_he == "") {
+            $('#address_he_error').html('Required*');
+            return;
+        }
+
+        if (hechsher_en == "") {
+            $('#hechsher_en_error').html('Required*');
+            return;
+        }
+        if (hechsher_en == "") {
+            $('#hechsher_en_error').html('Required*');
+            return;
+        }
+
+        addLoading();
+
+        $.ajax({
+            url: "ajax/insert_new_restaurant.php",
+            type: 'POST',
+            data: new FormData(this),
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData:false,
+            success: function (data) {
+
+                hideLoading();
+
+            }
+        });
+
+
+    });
+
+});
+
+
 function add_restaurant() {
 
     //alert(globalImg);
@@ -267,7 +365,6 @@ function add_restaurant() {
     };
 
     addLoading();
-
 
     var url      = window.location.href;
     var restapi_url = "";

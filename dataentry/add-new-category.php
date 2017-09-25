@@ -127,7 +127,7 @@ else
                                             <tr>
 
                                                 <td><?=$category['id']?></td>
-                                                <td><img class="logo-table" src="<?=WEB_PATH.$category['image_url'] ?>"></td>
+                                                <td><img class="logo-table" src="<?=$category['image_url'] ?>"></td>
                                                 <td><?=$category['name_en']?></td>
                                                 <td><?=$category['name_he']?></td>
 
@@ -152,6 +152,7 @@ else
             <?php  }  ?>
             <script>
                 globalImgCat = null;
+                document.getElementById('hidden_image_cat').value = 0;
                 $('#image1').hide();
                 function previewFilee() {
 
@@ -161,7 +162,7 @@ else
                     reader.onload = function (e) {
 
                         $('#image1').attr('src', e.target.result);
-
+                        document.getElementById('hidden_image_cat').value = 1;
                     }
                     reader.addEventListener("load", function () {
 
@@ -205,7 +206,7 @@ else
                                 </div>
                                 <br><br>
                                 <div id="add-category" style="display: none">
-                                    <form>
+                                    <form id="add-cat">
                                         <fieldset>
                                             <input name="authenticity_token" type="hidden">
 
@@ -230,7 +231,8 @@ else
                                                 <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="name_he_error"></span>
                                             </div>
 
-
+                                            <input class="form-control" type="hidden" name="hidden_image_cat" id="hidden_image_cat" value="">
+                                            <input class="form-control" type="hidden" name="menu_id" id="menu_id" value="<?=$menu_id?>">
                                             <div class="form-group">
                                                 <label>Business Offer</label>
                                                 <select id="business_offer" name="business_offer" class="form-control">
@@ -242,10 +244,7 @@ else
 
                                         </fieldset>
                                         <div class="form-actions">
-                                            <div onclick="add_new_category('<?=$menu_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
-                                                <i class="fa fa-save"></i>
-                                                Submit
-                                            </div>
+                                            <input type="submit" class="btn btn-lg" value="Update">
                                         </div>
                                     </form>
                                 </div>

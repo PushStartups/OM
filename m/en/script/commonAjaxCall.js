@@ -31,43 +31,43 @@ function commonAjaxCall(url,data,callBcak)
 
 
             // ERROR OCCUR TAKE USER ACTION
-                if(!alertify.errorAlert)
-                {
-                    //define a new errorAlert base on alert
-                    alertify.dialog('errorAlert',function factory(){
+            if(!alertify.errorAlert)
+            {
+                //define a new errorAlert base on alert
+                alertify.dialog('errorAlert',function factory(){
 
-                        return{
+                    return{
 
-                            build:function(){
+                        build:function(){
 
-                                var errorHeader = '<span class="fa fa-times-circle fa-2x" ' +
-                                                  'style="vertical-align:middle;color:#e10000;">' +
-                                                  '</span>&nbsp &nbsp Server Error';
+                            var errorHeader = '<span class="fa fa-times-circle fa-2x" ' +
+                                'style="vertical-align:middle;color:#e10000;">' +
+                                '</span>&nbsp &nbsp Server Error';
 
-                                this.setHeader(errorHeader);
-                            },
-                            setup:function(){
+                            this.setHeader(errorHeader);
+                        },
+                        setup:function(){
 
-                                return {
+                            return {
 
-                                    buttons:[{text: "Try Again", key:27/*Esc*/}],
-                                    focus: { element:1 }
+                                buttons:[{text: "Try Again", key:27/*Esc*/}],
+                                focus: { element:1 }
 
-                                };
-                            },
-                            callback:function(closeEvent){
+                            };
+                        },
+                        callback:function(closeEvent){
 
-                                commonAjaxCall(url,data);
-                            }
+                            commonAjaxCall(url,data);
                         }
+                    }
 
 
-                    },true,'alert');
-                }
-                alertify.errorAlert("No Response From Server <br/>");
-
-
+                },true,'alert');
             }
+            alertify.errorAlert("No Response From Server <br/>");
+
+
+        }
 
     });
 
@@ -86,12 +86,10 @@ function addLoading(){
 // HIDE LOADING ON AJAX CALLS
 function hideLoading(){
 
-    setTimeout(function() {
 
-        $("#loader").css("display" , "none");
-        $("#Loader_bg").css("display" , "none");
+    $("#loader").css("display" , "none");
+    $("#Loader_bg").css("display" , "none");
 
-    }, 1000);
 
 
 }

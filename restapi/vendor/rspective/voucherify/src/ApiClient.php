@@ -7,7 +7,7 @@ class ApiClient
     /**
      * @var string
      */
-    private $basePath = "https://api.voucherify.io/v1";
+    private static $basePath = "https://api.voucherify.io/v1";
 
     /**
      * @var string
@@ -25,22 +25,11 @@ class ApiClient
     private $headers;
 
     /**
-     * @var \Psr\Log\LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * @var array|stdClass
-     */
-    private $options;
-
-    /**
      * @param string $apiID
      * @param string $apiKey
-     * @param string $apiVersion - default null
-     * @param string $apiUrl - default null
+     * @param string $apiVersion
      */
-    public function __construct($apiId, $apiKey, $apiVersion = null, $apiUrl = null)
+    public function __construct($apiId, $apiKey, $apiVersion = null)
     {
         if (!isset($apiId)) {
             throw new \Exception("ApiId is required");
@@ -58,9 +47,6 @@ class ApiClient
             "X-Voucherify-Channel: PHP-SDK"
         ];
 
-        if (isset($apiUrl)) {
-            $this->basePath = $apiUrl;
-        }
         if (isset($apiVersion)) {
             $this->headers[] = "X-Voucherify-API-Version: " . $apiVersion;
         }
@@ -82,13 +68,6 @@ class ApiClient
         return implode("&", $result);
     }
 
-    private function getConnectionOption($name)
-    {
-        $hasValue = isset($this->options, $this->options[$name]);
-
-        return $hasValue ? $this->options[$name] : null;
-    }
-
     /**
      * @param string $method
      * @param string $endpoint
@@ -103,7 +82,7 @@ class ApiClient
         $setBody = $body && in_array($method, ["POST", "PUT", "DELETE"]);
 
         $method = strtoupper($method);
-        $url = $this->basePath . $endpoint . ($setParams ? "?" . $this->encodeParams($params) : "");
+        $url = self::$basePath . $endpoint . ($setParams ? "?" . $this->encodeParams($params) : "");
 
         $options = array();
         $options[CURLOPT_URL] = $url;
@@ -111,15 +90,8 @@ class ApiClient
         $options[CURLOPT_RETURNTRANSFER] = true;
         $options[CURLOPT_CUSTOMREQUEST] = $method;
         $options[CURLOPT_POSTFIELDS] = $setBody ? json_encode($body) : null;
-        $options[CURLOPT_CONNECTTIMEOUT] = $this->getConnectionOption("connectTimeout");
-        $options[CURLOPT_TIMEOUT_MS] = $this->getConnectionOption("timeout");
 
         $curl = curl_init();
-
-        if (isset($this->logger)) {
-            $context = [ "options" => $options ];
-            $this->logger->info("[ApiClient][Request] Curl request;", $context);
-        }
 
         curl_setopt_array($curl, $options);
 
@@ -129,36 +101,16 @@ class ApiClient
 
         curl_close($curl);
 
-        if (isset($this->logger)) {
-            $context = [ "result" => $result, "statusCode" => $statusCode, "error" => $error ];
-            $this->logger->info("[ApiClient][Request] Curl response;", $context);
-        }
-
+        // Connection errors
         if ($result === false) {
             throw new ClientException($error);
-        }
+        } // Invalid status code
         elseif ($statusCode >= 400) {
             $error = json_decode($result);
             throw new ClientException($error, $statusCode);
         }
 
         return json_decode($result);
-    }
-
-    /**
-     * @param \Psr\Log\LoggerInterface $logger
-     */
-    public function setLogger($logger)
-    {
-        $this->logger = $logger;
-    }
-
-    /**
-     * @param array $options
-     */
-    public function setConnectionOptions($options)
-    {
-        $this->options = $options;
     }
 
     /**

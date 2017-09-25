@@ -3,11 +3,14 @@ require_once '../inc/initDb.php';
 DB::query("set names utf8");
 
 $delivery_group_name = $_POST['delivery_group_name'];
+
+DB::useDB('orderapp_b2b_b2c');
 $r = DB::queryFirstRow("select * from delivery_groups where delivery_team = '$delivery_group_name'");
 $balance = $r['balance'] + $_POST['amount_added_tab'];
 $date = date("d-m-Y");
 if(empty($r['amount_added_tab']))
 {
+    DB::useDB('orderapp_b2b_b2c');
     DB::update('delivery_groups', array(
 
         "amount_added_tab"                  =>  $_POST['amount_added_tab'],
@@ -24,6 +27,7 @@ else
     $swiped_by              =   $r['swiped_by'];
     $comments               =   $r['comments'];
 
+    DB::useDB('orderapp_b2b_b2c');
     DB::update('delivery_groups', array(
 
         "amount_added_tab"                  =>  $amount_added_tab.",".$_POST['amount_added_tab'],
@@ -34,6 +38,7 @@ else
     ),  "delivery_team=%s",     $delivery_group_name  );
 }
 
+DB::useDB('orderapp_b2b_b2c');
 DB::update('delivery_groups', array(
     "balance"                  =>  $balance,
 ),  "delivery_team=%s",     $delivery_group_name );

@@ -1100,6 +1100,13 @@ function updateCartElements()
         {
             $('#delivery-fee-parent').css('display','none');
             userObject.deliveryCharges = 0;
+            $("#appt_no").val('');
+            $("#address").val('');
+            $('#lat').val('');
+            $('#lng').val('');
+            $('#delivery-info').hide();
+            userObject.deliveryArea = null;
+            $("#delivery-areas").prop('selectedIndex',0);
 
         }
         else
@@ -1111,7 +1118,9 @@ function updateCartElements()
                 $('#delivery-fee').html(userObject.deliveryCharges + " NIS");
                 newTotal = convertFloat(convertFloat(userObject.total) + convertFloat(userObject.deliveryCharges));
 
+
             }
+
         }
 
 
@@ -1242,29 +1251,33 @@ function onQtyDecreasedButtonClicked(index) {
 
 // USER CLICKED ORDER NOW
 
+
+
+
 function OnOrderNowClicked() {
 
 
-    generateTotalUpdateFoodCart();
-    updateCartElements();
+        generateTotalUpdateFoodCart();
+        updateCartElements();
 
-    $('.totalBill').html(userObject.total + " NIS");
-    $('#restAddress').html(userObject.restaurantAddress);
+        $('.totalBill').html(userObject.total + " NIS");
+        $('#restAddress').html(userObject.restaurantAddress);
 
-    $('#food-cart-popup').modal('hide');
+        $('#food-cart-popup').modal('hide');
 
-    userObject.subTotal = userObject.total;
+        userObject.subTotal = userObject.total;
 
-    cash_pickup_from_link = false;
+        cash_pickup_from_link = false;
 
-    $('#delivery-parent').show();
+        $('#delivery-parent').show();
 
-    $('#delivery-info').show();
+        $('#delivery-info').show();
 
-    $('#delivery-info').addClass('show');
+        $('#delivery-info').addClass('show');
+
+        orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
 
 
-    orderNow(); // CALL TO FRONT END  // MOVE USER TO TAKE PERSONAL INFORMATION
 }
 
 function OnOrderPickUpClicked()
@@ -1353,7 +1366,17 @@ function validateCustomerInfo() {
     $('.box-frame.new').css('height' , 'calc(100% - 220px)');
 
     $('#customer-info-popup').modal('hide');
-    $('#delivery-popup').modal('show');
+
+    if(cash_pickup_from_link == false)
+    {
+        $('#delivery-popup').modal('show');
+    }
+    else {
+
+        userObject.pickFromRestaurant = true;
+        $('#summary-popup').modal('show');
+        $('#delivery-fee-parent').hide();
+    }
 
 
 
@@ -1688,87 +1711,89 @@ function selectCash() {
     $('#cash-text').show();
 }
 
+var clickInProgress = false;
+
 
 function processPayment() {
 
-    $('#error-card').removeClass('error');
-    $('.payment-errors').html("");
-    $('.payment-errors').hide();
 
-    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception || cash_pickup_from_link)) {
-
-        userObject.Cash_Card = "CASH";
-        userObject.Cash_Card_he = "מזומן";
-        onPaymentSuccess();
-    }
-    else
-    {
-        if(!paymentReceived)
-        {
-            var cardNumber = $('#card_no').val();
-            var cvv        = $('#cvv').val();
-
-            // CARD NO IS EMPTY
-            if(cardNumber == "")
-            {
-                $('#error-card').addClass('error');
-                $('#error-card-no').html("*required field");
-                return;
-            }
-
-            if(!(/^\d+$/.test(cardNumber)))
-            {
-                $('#error-card').addClass('error');
-                $('#error-card-no').html("invalid card number");
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
-
-            // CVV
-
-            if(cvv == "")
-            {
-                $('.payment-errors').html("*required field");
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
-
-            if(!(/^\d+$/.test(cardNumber)))
-            {
-                $('.payment-errors').html("invalid cvv");
-                $('.payment-errors').show();
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
+    if(!clickInProgress) {
 
 
-            // MONTH SHOULD NOT BE EMPTY
-            if ($('#month').val() == "") {
-                $("#exp_error").addClass("error");
-                $('.payment-errors').html("*Card Expiry Date Month (MM) Required");
-                $('.payment-errors').show();
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
 
-            // MONTH SHOULD NOT BE EMPTY
-            if ($('#year').val() == "") {
-                $("#exp_error").addClass("error");
-                $('.payment-errors').html("*Card Expiry Date Year (YY) Required");
-                $('.payment-errors').show();
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
+        $('#error-card').removeClass('error');
+        $('.payment-errors').html("");
+        $('.payment-errors').hide();
 
+        if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception || cash_pickup_from_link)) {
 
-            // SUBMIT PAYMENT FORM
-            $('#payment-form').submit();
-        }
-        else
-        {
-
+            userObject.Cash_Card = "CASH";
+            userObject.Cash_Card_he = "מזומן";
             onPaymentSuccess();
         }
+        else {
+            if (!paymentReceived) {
+                var cardNumber = $('#card_no').val();
+                var cvv = $('#cvv').val();
+
+                // CARD NO IS EMPTY
+                if (cardNumber == "") {
+                    $('#error-card').addClass('error');
+                    $('#error-card-no').html("*required field");
+                    return;
+                }
+
+                if (!(/^\d+$/.test(cardNumber))) {
+                    $('#error-card').addClass('error');
+                    $('#error-card-no').html("invalid card number");
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+                // CVV
+
+                if (cvv == "") {
+                    $('.payment-errors').html("*required field");
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+                if (!(/^\d+$/.test(cardNumber))) {
+                    $('.payment-errors').html("invalid cvv");
+                    $('.payment-errors').show();
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+
+                // MONTH SHOULD NOT BE EMPTY
+                if ($('#month').val() == "") {
+                    $("#exp_error").addClass("error");
+                    $('.payment-errors').html("*Card Expiry Date Month (MM) Required");
+                    $('.payment-errors').show();
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+                // MONTH SHOULD NOT BE EMPTY
+                if ($('#year').val() == "") {
+                    $("#exp_error").addClass("error");
+                    $('.payment-errors').html("*Card Expiry Date Year (YY) Required");
+                    $('.payment-errors').show();
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+
+                // SUBMIT PAYMENT FORM
+                $('#payment-form').submit();
+            }
+            else {
+
+                onPaymentSuccess();
+            }
+        }
+
     }
 }
 
@@ -1802,6 +1827,13 @@ function payment_credit_card(cardNo, cvv, exp) {
 
     }
 
+
+    if(userObject.totalWithoutDiscount == null || userObject.totalWithoutDiscount == "")
+    {
+        userObject.totalWithoutDiscount = newTotal;
+    }
+
+
     commonAjaxCall("/restapi/index.php/stripe_payment_request", {"amount" : newTotal, "user_order": userObject , "cc_no"  : cardNo, "exp_date"  : exp, "cvv"  : cvv },paymentCreditCardCallBack);
 
 }
@@ -1810,17 +1842,8 @@ function payment_credit_card(cardNo, cvv, exp) {
 function paymentCreditCardCallBack(response) {
 
 
-    var resp = '';
+    var resp = response;
 
-    try {
-
-        resp = JSON.parse(response);
-    }
-    catch (e)
-    {
-        resp = response;
-        console.log(resp);
-    }
 
     if(resp.response == "success")
     {
@@ -1842,6 +1865,7 @@ function paymentCreditCardCallBack(response) {
 
 function onPaymentSuccess()
 {
+    clickInProgress = true;
     callPage3();
 }
 
@@ -1849,6 +1873,7 @@ function onPaymentSuccess()
 // SEND ORDER USER TO SERVER & CALL PAGE 3
 
 function  callPage3() {
+
 
     userObject.cartData = foodCartData;
 
@@ -1870,12 +1895,20 @@ function  callPage3() {
 
     }
 
+    if(userObject.totalWithoutDiscount == null || userObject.totalWithoutDiscount == "")
+    {
+        userObject.totalWithoutDiscount = userObject.total;
+    }
+
+    addLoading();
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'ENG mobile'},callPage3CallBack);
 
 };
 
 
 function callPage3CallBack(response) {
+
+
 
     // CALLING SMOOCH BOT FOR NATIVE APP
 
@@ -1888,6 +1921,9 @@ function callPage3CallBack(response) {
     // {
     //
     // }
+
+
+    clickInProgress = false;
 
     var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
     var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));

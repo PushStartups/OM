@@ -54,7 +54,44 @@ function delete_category(category_id,url)
 
 
 }
+$(function () {
 
+    $('#category-form').on('submit', function (e) {
+
+        var name_en                    =  $('#name_en').val();
+        var name_he                    =  $('#name_he').val();
+
+
+        if(name_en == "")
+        {
+            $('#name_en_error').html('Required*');
+            return;
+        }
+
+        if(name_he == "")
+        {
+            $('#name_he_error').html('Required');
+            return;
+        }
+        addLoading();
+        $.ajax({
+            url:"ajax/edit_category.php",
+            method:"post",
+            data: new FormData(this),
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData:false,
+            success:function(data)
+            {
+                hideLoading();
+                alert("Category updated successfully");
+
+            }
+        });
+
+    });
+
+});
 
 function edit_category(category_id,url)
 {

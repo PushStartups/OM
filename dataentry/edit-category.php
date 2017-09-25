@@ -46,6 +46,7 @@ else
                                 </div>
                                 <script>
                                     globalEditCategoryLogo = null;
+                                    document.getElementById('hidden_image').value = 0;
                                     //alert(globalEditLogo);
                                     function previewEditFileCategory()
                                     {
@@ -56,7 +57,7 @@ else
                                         reader.onload = function (e) {
 
                                             $('#edit_logo1_category').attr('src', e.target.result);
-
+                                            document.getElementById('hidden_image').value = 1;
                                         }
 
                                         reader.addEventListener("load", function () {
@@ -73,7 +74,7 @@ else
                                 </script>
                                 <div class="widget-body">
 
-                                    <form>
+                                    <form id="category-form" method="post" enctype="multipart/form-data">
                                         <fieldset>
                                             <input name="authenticity_token" type="hidden">
 
@@ -83,7 +84,7 @@ else
                                                 <label>Category Mobile Logo</label>
                                                 <input class="form-control" name="logo1" id="file" onchange="previewEditFileCategory();"  type="file">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>
-                                                <img style="display:block" id="edit_logo1_category" src="<?=WEB_PATH.$category['image_url'] ?>" alt="" width="440" height="100" />
+                                                <img style="display:block" id="edit_logo1_category" src="<?=$category['image_url'] ?>" alt="" width="440" height="100" />
                                             </div>
 
                                             <div class="form-group">
@@ -96,8 +97,8 @@ else
                                                 <input style="direction:RTL;" class="form-control" id="name_he" name="name_he" value="<?=$category['name_he']?>" type="text">
                                                 <span style="direction:RTL;font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="name_he_error"></span>
                                             </div>
-
-
+                                            <input class="form-control" type="hidden" name="category_id" id="category_id" value="<?=$category_id ?>">
+                                            <input class="form-control" type="hidden" name="hidden_image" id="hidden_image" value="">
                                             <div class="form-group">
                                                 <label>Business Offer</label>
                                                 <select id="business_offer" name="business_offer" class="form-control">
@@ -115,10 +116,8 @@ else
 
                                         </fieldset>
                                         <div class="form-actions">
-                                            <div onclick="edit_category('<?=$category_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-primary btn-lg">
-                                                <i class="fa fa-save"></i>
-                                                Update
-                                            </div>
+
+                                            <input type="submit" class="btn btn-lg" value="Update">
                                         </div>
                                     </form>
                                 </div>

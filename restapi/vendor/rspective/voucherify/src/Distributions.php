@@ -77,12 +77,10 @@ class Distributions
     /**
      * List publications.
      *
-     * @param array|stdClass $params
-     *
      * @throws \Voucherify\ClientException
      */
-    public function getPublications($params = null)
+    public function getPublications()
     {
-        return $this->client->get("/publications", $params);
+        return $this->client->get("/publications");
     }
 }

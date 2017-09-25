@@ -18,6 +18,7 @@
 
     var isMobile = {
 
+
         Android: function() {
 
             return navigator.userAgent.match(/Android/i);
@@ -179,7 +180,42 @@
                 window.location.href = 'https://staging.orderapp.com/m/he/';
             }
         }
+        else if(window.location.hostname == "backup.orderapp.com")
+        {
 
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://backup.orderapp.com/m/en/';
+            }
+            else {
+
+
+                window.location.href = 'https://backup.orderapp.com/m/he/';
+            }
+        }
+        else if(window.location.hostname == "kosher.orderapp.com")
+        {
+
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://kosher.orderapp.com/m/en/';
+            }
+            else {
+
+
+                window.location.href = 'https://kosher.orderapp.com/m/he/';
+            }
+        }
         else if(window.location.hostname == "hunter.orderapp.com")
         {
 
@@ -198,7 +234,6 @@
                 window.location.href = 'https://hunter.orderapp.com/m/he/';
             }
         }
-
     }
 
 
@@ -269,6 +304,7 @@
 
         else if(window.location.hostname == "app.orderapp.com")
         {
+
             if (location.protocol != 'https:')
             {
                 location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
@@ -313,6 +349,38 @@
             else
             {
                 window.location.href = 'https://staging.orderapp.com/he/';
+            }
+        }
+        else if(window.location.hostname == "backup.orderapp.com")
+        {
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://backup.orderapp.com/en/';
+            }
+            else
+            {
+                window.location.href = 'https://backup.orderapp.com/he/';
+            }
+        }
+        else if(window.location.hostname == "kosher.orderapp.com")
+        {
+            if (location.protocol != 'https:')
+            {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+            }
+
+            if(USER_LANGUAGE == 'EN') {
+
+                window.location.href = 'https://kosher.orderapp.com/en/';
+            }
+            else
+            {
+                window.location.href = 'https://kosher.orderapp.com/he/';
             }
         }
         else if(window.location.hostname == "hunter.orderapp.com")

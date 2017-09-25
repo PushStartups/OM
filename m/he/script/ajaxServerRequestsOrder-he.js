@@ -1073,6 +1073,14 @@ function updateCartElements()
         {
             $('#delivery-fee-parent').css('display','none');
             userObject.deliveryCharges = 0;
+            $("#appt_no").val('');
+            $("#address").val('');
+            $('#lat').val('');
+            $('#lng').val('');
+            $('#delivery-info').hide();
+            userObject.deliveryArea = null;
+            $("#delivery-areas").prop('selectedIndex',0);
+
 
         }
         else
@@ -1329,7 +1337,18 @@ function validateCustomerInfo() {
 
 
     $('#customer-info-popup').modal('hide');
-    $('#delivery-popup').modal('show');
+
+    if(cash_pickup_from_link == false)
+    {
+        $('#delivery-popup').modal('show');
+    }
+    else {
+
+        userObject.pickFromRestaurant = true;
+        $('#summary-popup').modal('show');
+        $('#delivery-fee-parent').hide();
+    }
+
 }
 
 
@@ -1651,96 +1670,94 @@ function selectCash() {
     $('#cash-text').show();
 }
 
+var clickInProgress = false;
 
 function processPayment() {
 
-    $('#error-card').removeClass('error');
-    $('.payment-errors').html("");
-    $('.payment-errors').hide();
-    $('.parent_date').removeClass('error');
-    $('#cvv-parent').removeClass('error');
+    if(!clickInProgress) {
 
-    if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception  || cash_pickup_from_link)) {
+        $('#error-card').removeClass('error');
+        $('.payment-errors').html("");
+        $('.payment-errors').hide();
+        $('.parent_date').removeClass('error');
+        $('#cvv-parent').removeClass('error');
 
-        userObject.Cash_Card = "CASH";
-        userObject.Cash_Card_he = "מזומן";
-        onPaymentSuccess();
-    }
-    else
-    {
-        if(!paymentReceived)
-        {
-            var cardNumber = $('#card_no').val();
-            var cvv        = $('#cvv').val();
+        if (!($('#show_credit_card').hasClass('show')) && ( (!userObject.pickFromRestaurant) || cash_pickup_exception || cash_pickup_from_link)) {
 
-            // CARD NO IS EMPTY
-            if(cardNumber == "")
-            {
-                $('#error-card').addClass('error');
-                $('#error-card-no').html("*שדה חובה");
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
-
-            if(!(/^\d+$/.test(cardNumber)))
-            {
-                $('#error-card').addClass('error');
-                $('#error-card-no').html("מספר כרטיס שגוי");
-                $('.box-frame.new').scrollTop(800);
-
-                return;
-            }
-
-            // CVV
-
-            if(cvv == "")
-            {
-                $('.payment-errors').html("*שדה חובה");
-                $('.payment-errors').show();
-                $('#cvv-parent').addClass('error');
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
-
-            if(!(/^\d+$/.test(cvv)))
-            {
-                $('.payment-errors').html("Cvv לא חוקי");
-                $('.payment-errors').show();
-                $('.box-frame.new').scrollTop(800);
-                $('#cvv-parent').addClass('error');
-                return;
-            }
-
-
-            // MONTH SHOULD NOT BE EMPTY
-            if ($('#month').val() == "") {
-                $("#exp_error").addClass("error");
-                $('.payment-errors').html("* תאריך תפוגה של כרטיס חודש (MM) נדרש");
-                $('.payment-errors').show();
-                $('.parent_date').addClass('error');
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
-
-            // MONTH SHOULD NOT BE EMPTY
-            if ($('#year').val() == "") {
-                $("#exp_error").addClass("error");
-                $('.payment-errors').html("* תאריך תפוגת הכרטיס שנה (YY) חובה");
-                $('.payment-errors').show();
-                $('.parent_date').addClass('error');
-                $('.box-frame.new').scrollTop(800);
-                return;
-            }
-
-
-            // SUBMIT PAYMENT FORM
-            $('#payment-form').submit();
-        }
-        else
-        {
-
+            userObject.Cash_Card = "CASH";
+            userObject.Cash_Card_he = "מזומן";
             onPaymentSuccess();
         }
+        else {
+            if (!paymentReceived) {
+                var cardNumber = $('#card_no').val();
+                var cvv = $('#cvv').val();
+
+                // CARD NO IS EMPTY
+                if (cardNumber == "") {
+                    $('#error-card').addClass('error');
+                    $('#error-card-no').html("*שדה חובה");
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+                if (!(/^\d+$/.test(cardNumber))) {
+                    $('#error-card').addClass('error');
+                    $('#error-card-no').html("מספר כרטיס שגוי");
+                    $('.box-frame.new').scrollTop(800);
+
+                    return;
+                }
+
+                // CVV
+
+                if (cvv == "") {
+                    $('.payment-errors').html("*שדה חובה");
+                    $('.payment-errors').show();
+                    $('#cvv-parent').addClass('error');
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+                if (!(/^\d+$/.test(cvv))) {
+                    $('.payment-errors').html("Cvv לא חוקי");
+                    $('.payment-errors').show();
+                    $('.box-frame.new').scrollTop(800);
+                    $('#cvv-parent').addClass('error');
+                    return;
+                }
+
+
+                // MONTH SHOULD NOT BE EMPTY
+                if ($('#month').val() == "") {
+                    $("#exp_error").addClass("error");
+                    $('.payment-errors').html("* תאריך תפוגה של כרטיס חודש (MM) נדרש");
+                    $('.payment-errors').show();
+                    $('.parent_date').addClass('error');
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+                // MONTH SHOULD NOT BE EMPTY
+                if ($('#year').val() == "") {
+                    $("#exp_error").addClass("error");
+                    $('.payment-errors').html("* תאריך תפוגת הכרטיס שנה (YY) חובה");
+                    $('.payment-errors').show();
+                    $('.parent_date').addClass('error');
+                    $('.box-frame.new').scrollTop(800);
+                    return;
+                }
+
+
+                // SUBMIT PAYMENT FORM
+                $('#payment-form').submit();
+            }
+            else {
+
+                onPaymentSuccess();
+            }
+        }
+
     }
 }
 
@@ -1813,6 +1830,7 @@ function paymentCreditCardCallBack(response) {
 
 function onPaymentSuccess()
 {
+    clickInProgress = true;
     callPage3();
 }
 
@@ -1841,6 +1859,12 @@ function  callPage3() {
 
     }
 
+    if(userObject.totalWithoutDiscount == null || userObject.totalWithoutDiscount == "")
+    {
+        userObject.totalWithoutDiscount = newTotal;
+    }
+
+    addLoading();
     commonAjaxCall("/restapi/index.php/add_order",{"user_order": userObject,"user_platform": 'HE mobile'},callPage3CallBack);
 
 };
@@ -1860,6 +1884,8 @@ function callPage3CallBack(response) {
     //
     // }
 
+
+    clickInProgress = false;
 
     var restaurantTitle     =   userObject.restaurantTitle.replace(/\s/g, '');
     var selectedCityName    =   JSON.parse(localStorage.getItem("USER_CITY_NAME"));

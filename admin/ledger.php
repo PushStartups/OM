@@ -40,7 +40,7 @@ include "header.php";
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <select class="form-control" id="rest_select_id" style="color: black;" onchange="rest_search(this.val(),'<?=$_SERVER['REQUEST_URI']?>')" >
+                                        <select class="form-control" id="rest_select_id" style="color: black;"  >
                                             <option value=""  selected disabled> Select Restaurant</option>
                                             <?php
                                             DB::useDB('orderapp_restaurants');
@@ -51,10 +51,10 @@ include "header.php";
                                         </select>
                                     </div>
                                     <div class="col-xs-3">
-                                        <select class="form-control" id="delivery_select_id" style="color: black;" onchange="delivery_search(this.val(),'<?=$_SERVER['REQUEST_URI']?>')" >
+                                        <select class="form-control" id="delivery_select_id" style="color: black;" >
                                             <option value=""  selected disabled> Select Delivery Group</option>
                                             <?php
-                                            DB::useDB('orderapp_restaurants');
+                                            DB::useDB('orderapp_b2b_b2c');
                                             $delivery = DB::query("select * from delivery_groups");
                                             foreach($delivery  as $deliveries){  ?>
                                                 <option value="<?=$deliveries['delivery_team']?>" ><?=$deliveries['delivery_team']?></option>
@@ -287,8 +287,8 @@ include "header.php";
                                         </thead>
 
                                         <tbody id="target-content1">
-                                        <?php DB::useDB('orderapp_user');
-                                        $orders = DB::query("select * from ledger");
+                                        <?php DB::useDB('orderapp_b2b_b2c');
+                                        $orders = DB::query("select * from b2c_ledger");
 
 
                                         foreach ($orders as $order) {
@@ -310,7 +310,7 @@ include "header.php";
                                                 <td><?= $order['restaurant_total'] ?></td>
                                                 <td><?= $order['customer_grand_total'] ?></td>
                                                 <td><?= $order['customer_total_paid_to_restaurant'] ?></td>
-<!--                                                <td><a href="edit-ledger.php?id=--><?//=$order['id']?><!--"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>-->
+                                                <td><a href="edit-ledger.php?id=<?=$order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
 
                                             </tr>
 

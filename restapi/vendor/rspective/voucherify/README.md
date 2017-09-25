@@ -32,8 +32,6 @@ API:
 |
 <a href="#customers-api">Customers</a>
 |
-<a href="#orders-api">Orders</a>
-|
 <a href="#products-api">Products</a>
 |
 <a href="#validation-rules-api">Validation Rules</a>
@@ -45,7 +43,7 @@ API:
 
 Add Voucherify dependency into your `composer.json`:
 ```
-"rspective/voucherify": "v1.7.*"
+"rspective/voucherify": "v1.4.*"
 ```
 Update project dependencies:
 
@@ -76,29 +74,6 @@ $client = new VoucherifyClient($apiID, $apiKey, $apiVersion);
 ```
 
 Check [versioning](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#versioning).
-
-### Custom API URL
-By default client is sending request to `https://api.voucherify.io/v1`. You can override default api url while creating client instance.
-
-```php
-$apiVersion = null;
-$apiUrl = "https://custom-api-url";
-
-$client = new VoucherifyClient($apiID, $apiKey, $apiVersion, $apiUrl);
-```
-
-### PHP autoloading
-
-When you aren't using composer you can load Voucherify module by including `autoload.php` file from `/src` directory.
-
-```php
-require_once('{voucherify_src_path}/autoload.php');
-
-use Voucherify\VoucherifyClient;
-use Voucherify\ClientException;
-
-$client = new VoucherifyClient($apiID, $apiKey);
-```
 
 ## API
 
@@ -230,7 +205,6 @@ $client->distributions->deleteExport($exportId);
 #### [List Publications]
 ```php
 $client->distributions->getPublications();
-$client->distributions->getPublications($params);
 ```
 
 ---
@@ -309,35 +283,6 @@ $client->customers->update($customer_update);
 #### [Delete Customer]
 ```php
 $client->customers->delete($customer_id);
-```
-
----
-
-### Orders API
-Methods are provided within `$client->orders->*` namespace.
-
-- [Create Order](#create-order)
-- [Get Order](#get-order)
-- [Update Order](#update-order)
-- [List Orders](#list-orders)
-
-Check [customer object](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#the-order-object).
-
-#### [Create Order]
-```php
-$client->orders->create($order);
-```
-#### [Get Order]
-```php
-$client->orders->get($order_id);
-```
-#### [Update Order]
-```php
-$client->orders->update($order_update);
-```
-#### [List Orders]
-```php
-$client->orders->getList();
 ```
 
 ---
@@ -480,6 +425,7 @@ with their namespaced equivalent.
 - `$client->customer->*` - changed namespace to [$client->customers->\*](#customers-api)
 
 ---
+
 ## Error handling
 
 VoucherifyClient will throw custom `ClientException` object. To get sutructure described in our [API reference](https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#errors) please use:
@@ -492,103 +438,11 @@ catch (ClientException $e) {
 }
 ```
 
-## Logging
-
-VoucherifyClient has method `setLogger()` which can be used to set PSR-3 logger interface.
-
-Set own logger if you want to preview curl request and response data.
-```php
-$logger = /* Initialaze logger i.e Monolog, Analog */
-
-$client = new VoucherifyClient($apiID, $apiKey);
-$client->setLogger($logger);
-```
-
-## Connection Options
-
-Use `setConnectionOptions()` method to set client connection options.
-
-Options:
-- `timeout` - curl 'CURLOPT_TIMEOUT_MS'
-- `connectTimeout` - curl 'CURLOPT_CONNECTTIMEOUT'
-
-```php
-$options = [
-    "timeout" => 1500,
-    "connectTimeout" => 2
-];
-
-$client = new VoucherifyClient($apiID, $apiKey);
-$client->setConnectionOptions($options);
-```
-
-## Use case - CodeIgniter
-
-Simple example of adding Voucherify to your CodeIgniter project.
-
-### Setup
-
-Download voucherify `/src` directory to `application/third_party/voucherify`.
-
-### Custom Library
-
-Create new library file in `/application/libraries` directory, i.e. `Coupons.php`.
-
-```php
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
-
-$src_voucherify = APPPATH . "third_party/voucherify/autoload.php";
-
-include($src_voucherify);
-
-use Voucherify\VoucherifyClient;
-use Voucherify\ClientException;
-
-class Coupons {
-
-    public $voucherify;
-
-    public function __construct() {
-        $apiID  = "YOUR-APPLICATION-ID";
-        $apiKey = "YOUR-CLIENT-SECRET-KEY";
-
-        $this->voucherify = new VoucherifyClient($apiId, $apiKey);
-    }
-}
-```
-
-### Using Voucherify
-
-Load new library and start using voucherify client.
-```php
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Voucher extends CI_Controller {
-
-    public function index()
-    {
-        $this->load->library('coupons');
-
-        $voucherCode = "TEST-VOUCHER-CODE";
-        $voucher = $this->coupons->voucherify->get($voucherCode);
-
-        ...
-    }
-}
-```
-
 ## Contributing
 
 Bug reports and pull requests are welcome through [GitHub Issues](https://github.com/rspective/voucherify-php-sdk/issues).
 
 ### Changelog
-- **2017-07-24** - `1.7.2` - Fix get publications missing params
-- **2017-07-23** - `1.7.1` - Api Client conneciton options
-- **2017-07-12** - `1.7.0` - Orders API
-- **2017-07-10** - `1.6.2` - PHP autoloading support
-- **2017-07-07** - `1.6.1` - Remove Psr/Log dependency
-- **2017-06-26** - `1.6.0` - Api Client logger support
-- **2017-06-21** - `1.5.0` - Custom API URL support
 - **2017-05-02** - `1.4.0` - API Version Header support
 - **2017-05-02** - `1.3.0` - Validation rules API, Segments API, Products API
 - **2017-04-27** - `1.2.0` - Validations API, Redemptions-Get, Distributions-Export
@@ -652,11 +506,6 @@ Bug reports and pull requests are welcome through [GitHub Issues](https://github
 [Get Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#read-customer
 [Update Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-customer
 [Delete Customer]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#delete-customer
-
-[Create Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-order
-[Get Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-order
-[Update Order]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#update-order
-[List Orders]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#list-orders
 
 [Create Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#create-product
 [Get Product]: https://docs.voucherify.io/reference?utm_source=github&utm_medium=sdk&utm_campaign=acq#get-product

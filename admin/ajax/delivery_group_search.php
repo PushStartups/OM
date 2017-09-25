@@ -9,8 +9,8 @@ $delivery_group_name = $_POST['delivery_group_id'];
 $_SESSION['select_delivery_group_id'] = $delivery_group_name ;
 
 
-DB::useDB('orderapp_user');
-$query = "select * from ledger where delivery_team = '$delivery_group_name'";
+DB::useDB('orderapp_b2b_b2c');
+$query = "select * from b2c_ledger where delivery_team = '$delivery_group_name'";
 
 $result = DB::query($query);
 
@@ -97,7 +97,7 @@ $output1 .= '<div id="swipe_table"><article class="col-xs-12 col-sm-12 col-md-12
                                             </thead>
 
                                             <tbody>';
-DB::useDB('orderapp_restaurants');
+DB::useDB('orderapp_b2b_b2c');
 $order = DB::queryFirstRow("select * from delivery_groups where delivery_team = '$delivery_group_name'");
 $tab1 = explode(",", $order['amount_added_tab']);
 $tab2 = explode(",", $order['date_added_tab']);

@@ -55,7 +55,7 @@ $team = $_GET['team'];
                                         <select class="form-control" id="delivery_select_id" style="color: black;" onchange="delivery_search(this.val(),'<?=$_SERVER['REQUEST_URI']?>')" >
                                             <option value=""  selected disabled> Select Delivery Group</option>
                                             <?php
-                                            DB::useDB('orderapp_restaurants');
+                                            DB::useDB('orderapp_b2b_b2c');
                                             $delivery = DB::query("select * from delivery_groups");
                                             foreach($delivery  as $deliveries){  ?>
                                                 <option value="<?=$deliveries['delivery_team']?>" ><?=$deliveries['delivery_team']?></option>
@@ -91,7 +91,7 @@ $team = $_GET['team'];
                                 <form>
                                     <fieldset>
                                         <input name="authenticity_token" type="hidden">
-                                        <?php DB::useDB('orderapp_restaurants');
+                                        <?php DB::useDB('orderapp_b2b_b2c');
                                         $orders = DB::queryFirstRow("select * from delivery_groups where delivery_team = '$team'");
                                         ?>
                                         <div class="form-group">
@@ -227,12 +227,13 @@ $team = $_GET['team'];
                                             <th data-hide="phone,tablet">Restaurant Total</th>
                                             <th data-hide="phone, tablet">Customer Grand Total</th>
                                             <th data-hide="phone,tablet">Customer Total Paid To Restaurant</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
 
                                         <tbody id="target-content1">
-                                        <?php DB::useDB('orderapp_user');
-                                        $orders = DB::query("select * from ledger where delivery_team = '$team' order by id DESC");
+                                        <?php DB::useDB('orderapp_b2b_b2c');
+                                        $orders = DB::query("select * from b2c_ledger where delivery_team = '$team' order by id DESC");
 
 
                                         foreach ($orders as $order) {
@@ -254,6 +255,8 @@ $team = $_GET['team'];
                                                 <td><?= $order['restaurant_total'] ?></td>
                                                 <td><?= $order['customer_grand_total'] ?></td>
                                                 <td><?= $order['customer_total_paid_to_restaurant'] ?></td>
+                                                <td><a href="edit-ledger.php?id=<?=$order['id']?>"><button class="btn btn-labeled btn-primary bg-color-blueDark txt-color-white add" style="border-color: #4c4f53;"><i class="fa fa-fw fa-edit"></i> Edit </button></a></td>
+
                                             </tr>
 
                                             <?php
@@ -330,7 +333,7 @@ $team = $_GET['team'];
 
                                         <tbody>
                                         <?php
-                                        DB::useDB('orderapp_restaurants');
+                                        DB::useDB('orderapp_b2b_b2c');
                                         $order = DB::queryFirstRow("select * from delivery_groups where delivery_team = '$team'");
                                         $tab1 = explode(",", $order['amount_added_tab']);
                                         $tab2 = explode(",", $order['date_added_tab']);

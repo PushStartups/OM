@@ -10,9 +10,12 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         'ddc0a4d7e61c0286f0f8593b1903e894' => __DIR__ . '/..' . '/clue/stream-filter/src/functions.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
+        '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -29,13 +32,20 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         array (
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Stichoza\\GoogleTranslate\\' => 25,
-            'Smooch\\' => 7,
             'Slim\\' => 5,
         ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+        ),
+        'L' => 
+        array (
+            'League\\OAuth2\\Client\\' => 21,
+        ),
+        'J' => 
+        array (
+            'JmesPath\\' => 9,
         ),
         'I' => 
         array (
@@ -47,9 +57,9 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
             'Http\\Message\\MultipartStream\\' => 29,
             'Http\\Message\\' => 13,
             'Http\\Discovery\\' => 15,
+            'Http\\Client\\Curl\\' => 17,
             'Http\\Client\\Common\\' => 19,
             'Http\\Client\\' => 12,
-            'Http\\Adapter\\Guzzle6\\' => 21,
         ),
         'G' => 
         array (
@@ -59,12 +69,15 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         ),
         'F' => 
         array (
-            'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
         ),
         'C' => 
         array (
             'Clue\\StreamFilter\\' => 18,
+        ),
+        'A' => 
+        array (
+            'Aws\\' => 4,
         ),
     );
 
@@ -89,10 +102,6 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         array (
             0 => __DIR__ . '/..' . '/stichoza/google-translate-php/src/Stichoza/GoogleTranslate',
         ),
-        'Smooch\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/frankandoak/smooch-api/src',
-        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
@@ -104,6 +113,15 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'League\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
+            1 => __DIR__ . '/..' . '/league/oauth2-google/src',
+        ),
+        'JmesPath\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mtdowling/jmespath.php/src',
         ),
         'Interop\\Container\\' => 
         array (
@@ -126,6 +144,10 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         array (
             0 => __DIR__ . '/..' . '/php-http/discovery/src',
         ),
+        'Http\\Client\\Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/curl-client/src',
+        ),
         'Http\\Client\\Common\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/client-common/src',
@@ -133,10 +155,6 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/httplug/src',
-        ),
-        'Http\\Adapter\\Guzzle6\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-http/guzzle6-adapter/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -150,10 +168,6 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Firebase\\JWT\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
-        ),
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
@@ -161,6 +175,10 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         'Clue\\StreamFilter\\' => 
         array (
             0 => __DIR__ . '/..' . '/clue/stream-filter/src',
+        ),
+        'Aws\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aws/aws-sdk-php/src',
         ),
     );
 
@@ -188,160 +206,12 @@ class ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4
         ),
     );
 
-    public static $classMap = array (
-        'AESCipher' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/SessionCipher.php',
-        'AliceAxolotlParameters' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/AliceAxolotlParameters.php',
-        'AliceBuilder' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/AliceAxolotlParameters.php',
-        'AllEvents' => __DIR__ . '/..' . '/whatsapp/chat-api/src/events/AllEvents.php',
-        'AxolotlLogger' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/logging/AxolotlLogger.php',
-        'AxolotlLoggerProvider' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/logging/AxolotlLoggerProvider.php',
-        'AxolotlStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/AxolotlStore.php',
-        'BinTreeNodeReader' => __DIR__ . '/..' . '/whatsapp/chat-api/src/BinTreeNodeReader.php',
-        'BinTreeNodeWriter' => __DIR__ . '/..' . '/whatsapp/chat-api/src/BinTreeNodeWriter.php',
-        'BobAxolotlParameters' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/BobAxolotlParameters.php',
-        'BobBuilder' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/BobAxolotlParameters.php',
-        'ByteUtil' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/util/ByteUtil.php',
-        'ByteUtilTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/util/test_byteutil.php',
-        'ChainKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/ChainKey.php',
-        'ChainKeyTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/ratchet/test_chainkey.php',
-        'CiphertextMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/CiphertextMessage.php',
-        'ConnectionException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/exception.php',
-        'Constants' => __DIR__ . '/..' . '/whatsapp/chat-api/src/Constants.php',
-        'CryptoCounter' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/SessionCipher.php',
-        'Curve' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ecc/Curve.php',
-        'Curve25519Test' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/test_curve.php',
-        'CustomException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/exception.php',
-        'DerivedKeys' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/RatchetingSession.php',
-        'DerivedMessageSecrets' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/kdf/DerivedMessageSecrets.php',
-        'DerivedRootSecrets' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/kdf/DerivedRootSecrets.php',
-        'DjbECPrivateKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ecc/DjbECPrivateKey.php',
-        'DjbECPublicKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ecc/DjbECPublicKey.php',
-        'DocumentMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/pb_wa_messages.php',
-        'DuplicateMessageException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/DuplicateMessageException.php',
-        'ECKeyPair' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ecc/ECKeyPair.php',
-        'ECPrivateKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ecc/ECPrivateKey.php',
-        'ECPublicKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ecc/ECPublicKey.php',
-        'GroupCipher' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/GroupCipher.php',
-        'GroupCipherTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/groups/test_groupcipher.php',
-        'GroupSessionBuilder' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/GroupSessionBuilder.php',
-        'HKDF' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/kdf/HKDF.php',
-        'HKDFTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/kdf/test_hkdf.php',
-        'HKDFv2' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/kdf/HKDFv2.php',
-        'HKDFv3' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/kdf/HKDFv3.php',
-        'Handler' => __DIR__ . '/..' . '/whatsapp/chat-api/src/handlers/Handler.php',
-        'Helper' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/util/Helper.php',
-        'IException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/exception.php',
-        'IdentityKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/IdentityKey.php',
-        'IdentityKeyPair' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/IdentityKeyPair.php',
-        'IdentityKeyStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/IdentityKeyStore.php',
-        'ImageMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/pb_wa_messages.php',
-        'IncompleteMessageException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/protocol.class.php',
-        'InvalidKeyException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/InvalidKeyException.php',
-        'InvalidKeyIdException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/InvalidKeyIdException.php',
-        'InvalidMacException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/InvalidMacException.php',
-        'InvalidMessageException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/InvalidMessageException.php',
-        'InvalidVersionException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/InvalidVersionException.php',
-        'IqHandler' => __DIR__ . '/..' . '/whatsapp/chat-api/src/handlers/IqHandler.php',
-        'KeyExchangeMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/KeyExchangeMessage.php',
-        'KeyHelper' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/util/KeyHelper.php',
-        'KeyStream' => __DIR__ . '/..' . '/whatsapp/chat-api/src/keystream.class.php',
-        'LegacyMessageException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/LegacyMessageException.php',
-        'Location' => __DIR__ . '/..' . '/whatsapp/chat-api/src/pb_wa_messages.php',
-        'Log' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/logging/Log.php',
-        'Logger' => __DIR__ . '/..' . '/whatsapp/chat-api/src/Logger.php',
-        'Login' => __DIR__ . '/..' . '/whatsapp/chat-api/src/Login.php',
-        'LoginFailureException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/exception.php',
-        'MediaUrl' => __DIR__ . '/..' . '/whatsapp/chat-api/src/pb_wa_messages.php',
-        'Medium' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/util/Medium.php',
-        'MessageHandler' => __DIR__ . '/..' . '/whatsapp/chat-api/src/handlers/MessageHandler.php',
-        'MessageKeys' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/MessageKeys.php',
-        'MessageStoreInterface' => __DIR__ . '/..' . '/whatsapp/chat-api/src/SqliteMessageStore.php',
-        'MyEvents' => __DIR__ . '/..' . '/whatsapp/chat-api/src/events/MyEvents.php',
-        'NewMsgBindInterface' => __DIR__ . '/..' . '/whatsapp/chat-api/src/NewMsgBindInterface.php',
-        'NoSessionException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/NoSessionException.php',
-        'NotificationHandler' => __DIR__ . '/..' . '/whatsapp/chat-api/src/handlers/NotificationHandler.php',
-        'Pair' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/util/Pair.php',
-        'PreKeyBundle' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/PreKeyBundle.php',
-        'PreKeyRecord' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/PreKeyRecord.php',
-        'PreKeyStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/PreKeyStore.php',
-        'PreKeyWhisperMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/PreKeyWhisperMessage.php',
-        'ProtocolNode' => __DIR__ . '/..' . '/whatsapp/chat-api/src/protocol.class.php',
-        'RatchetingSession' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/RatchetingSession.php',
-        'RatchetingSessionTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/ratchet/test_ratchetingsession.php',
-        'Registration' => __DIR__ . '/..' . '/whatsapp/chat-api/src/Registration.php',
-        'RootKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/RootKey.php',
-        'RootKeyTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/ratchet/test_rootkey.php',
-        'SenderChainKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/ratchet/SenderChainKey.php',
-        'SenderKeyDistributionMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/SenderKeyDistributionMessage.php',
-        'SenderKeyGroupData' => __DIR__ . '/..' . '/whatsapp/chat-api/src/pb_wa_messages.php',
-        'SenderKeyGroupMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/pb_wa_messages.php',
-        'SenderKeyMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/SenderKeyMessage.php',
-        'SenderKeyRecord' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/state/SenderKeyRecord.php',
-        'SenderKeyState' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/state/SenderKeyState.php',
-        'SenderKeyStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/state/SenderKeyStore.php',
-        'SenderMessageKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/groups/ratchet/SenderMessageKey.php',
-        'SessionBuilder' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/SessionBuilder.php',
-        'SessionBuilderTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/test_sessionbuilder.php',
-        'SessionCipher' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/SessionCipher.php',
-        'SessionCipherTest' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/test_sessioncipher.php',
-        'SessionRecord' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/SessionRecord.php',
-        'SessionState' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/SessionState.php',
-        'SessionStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/SessionStore.php',
-        'SignedPreKeyRecord' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/SignedPreKeyRecord.php',
-        'SignedPreKeyStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/SignedPreKeyStore.php',
-        'SmileyNotFoundException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/smileys.class.php',
-        'Smileys' => __DIR__ . '/..' . '/whatsapp/chat-api/src/smileys.class.php',
-        'SqliteMessageStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/SqliteMessageStore.php',
-        'StaleKeyExchangeException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/StaleKeyExchangeException.php',
-        'SymmetricAxolotlParameters' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/SymmetricAxolotlParameters.php',
-        'SymmetricBuilder' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/ratchet/SymmetricAxolotlParameters.php',
-        'SyncResult' => __DIR__ . '/..' . '/whatsapp/chat-api/src/handlers/IqHandler.php',
-        'Textsecure_IdentityKeyPairStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_KeyExchangeMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/pb_proto_WhisperTextProtocol.php',
-        'Textsecure_PreKeyRecordStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_PreKeyWhisperMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/pb_proto_WhisperTextProtocol.php',
-        'Textsecure_RecordStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SenderKeyDistributionMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/pb_proto_WhisperTextProtocol.php',
-        'Textsecure_SenderKeyMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/pb_proto_WhisperTextProtocol.php',
-        'Textsecure_SenderKeyRecordStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SenderKeyStateStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SenderKeyStateStructure_SenderChainKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SenderKeyStateStructure_SenderMessageKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SenderKeyStateStructure_SenderSigningKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SessionStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SessionStructure_Chain' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SessionStructure_Chain_ChainKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SessionStructure_Chain_MessageKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SessionStructure_PendingKeyExchange' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SessionStructure_PendingPreKey' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_SignedPreKeyRecordStructure' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/pb_proto_LocalStorageProtocol.php',
-        'Textsecure_WhisperMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/pb_proto_WhisperTextProtocol.php',
-        'TokenMap' => __DIR__ . '/..' . '/whatsapp/chat-api/src/tokenmap.class.php',
-        'UnacknowledgedPreKeyMessageItems' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/state/SessionState.php',
-        'UntrustedIdentityException' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/UntrustedIdentityException.php',
-        'WhatsApiEventsManager' => __DIR__ . '/..' . '/whatsapp/chat-api/src/events/WhatsApiEventsManager.php',
-        'WhatsMediaUploader' => __DIR__ . '/..' . '/whatsapp/chat-api/src/mediauploader.php',
-        'WhatsProt' => __DIR__ . '/..' . '/whatsapp/chat-api/src/whatsprot.class.php',
-        'WhisperMessage' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/protocol/WhisperMessage.php',
-        'axolotlInterface' => __DIR__ . '/..' . '/whatsapp/chat-api/src/SqliteAxolotlStore.php',
-        'axolotlSqliteStore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/SqliteAxolotlStore.php',
-        'inmemoryaxolotlstore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/inmemoryaxolotlstore.php',
-        'inmemoryidentitykeystore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/inmemoryidentitykeystore.php',
-        'inmemoryprekeystore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/inmemoryprekeystore.php',
-        'inmemorysenderkeystore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/groups/inmemorysenderkeystore.php',
-        'inmemorysessionstore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/inmemorysessionstore.php',
-        'inmemorysignedprekeystore' => __DIR__ . '/..' . '/whatsapp/chat-api/src/libaxolotl-php/tests/inmemorysignedprekeystore.php',
-        'rc4' => __DIR__ . '/..' . '/whatsapp/chat-api/src/rc4.php',
-        'vCard' => __DIR__ . '/..' . '/whatsapp/chat-api/src/vCard.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit0bc7c5224831b30f18aa10a45831ced4::$classMap;
 
         }, null, ClassLoader::class);
     }

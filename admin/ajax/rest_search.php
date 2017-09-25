@@ -8,9 +8,9 @@ DB::query("set names utf8");
 $restaurant_id = $_POST['rest_id'];
 $_SESSION['select_rest_id'] = $restaurant_id ;
 
-DB::useDB('orderapp_user');
+DB::useDB('orderapp_b2b_b2c');
 
-$query = "select * from ledger where restaurant_id = '$restaurant_id' order by id DESC";
+$query = "select * from b2c_ledger where restaurant_id = '$restaurant_id' order by id DESC";
 
 $result = DB::query($query);
 

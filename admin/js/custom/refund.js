@@ -137,23 +137,3 @@ $('#refund').bind('input', function() {
     document.getElementsByClassName("refund_message")[0].innerHTML = "";
 
 });
-
-function get_new_orders(count)
-{
-
-    $.ajax({
-        url:"ajax/refresh_new_orders.php",
-        method:"post",
-        data:{previous_count:count},
-        dataType:"json",
-        success:function(data)
-        {
-
-            if(data == "refresh")
-            {
-                addLoading();
-                window.location.href = "orders.php";
-            }
-        }
-    });
-}

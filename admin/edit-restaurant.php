@@ -25,8 +25,8 @@ else
             </div>
 
         </div>
-        <div id="myform">
-            <section id="widget-grid"  id="myform">
+        <div>
+            <section id="widget-grid" >
                 <!-- row -->
                 <div class="row">
                     <!-- NEW WIDGET START -->
@@ -47,7 +47,7 @@ else
 
                                 <div class="widget-body">
 
-                                    <form  method="post" enctype="multipart/form-data">
+                                    <form id="edit-rest"  method="post" enctype="multipart/form-data">
                                         <div class="form-actions">
                                             <div onclick="delete_restaurant('<?=$restaurant_id?>','<?=$_SERVER['REQUEST_URI']?>')" class="btn btn-danger btn-lg">
                                                 <i class="fa fa-save"></i>
@@ -62,7 +62,7 @@ else
                                                 <label>Restaurant Logo</label>
                                                 <input class="form-control" accept="image/*" name="logo" id="logo" onchange="previewEditFile();"  type="file">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="logo_error"></span>
-                                                <br><img style="display:block" id="edit_logo1" src="<?=WEB_PATH.$restaurant['logo'] ?>" alt="" width="105" height="105" />
+                                                <br><img style="display:block" id="edit_logo1" src="<?=$restaurant['logo'] ?>" alt="" width="105" height="105" />
                                             </div>
                                             <div class="form-group">
                                                 <label>Restaurant Name</label>
@@ -194,6 +194,8 @@ else
                                                 <input class="form-control" id="hechsher_en" name="hechsher_en" value="<?=$restaurant['hechsher_en']?>"  placeholder="Enter Hechsher" type="text">
                                                 <span style="font-size: 14px; color: red; width: 100%;text-align: left; padding: 9px;text-transform: none;" id="hechsher_en_error"></span>
                                             </div>
+                                            <input class="form-control" type="hidden" name="hidden_image" id="hidden_image" value="">
+                                            <input class="form-control" type="hidden" name="rest_id" id="rest_id" value="">
                                             <div class="form-group">
                                                 <label dir="rtl">הכשרת </label>
                                                 <input style="direction:RTL;" class="form-control" id="hechsher_he" value="<?=$restaurant['hechsher_he']?>" name="hechsher_he" placeholder="הזן הכשרת" type="text">
@@ -202,10 +204,8 @@ else
                                             <br>
                                         </fieldset>
                                         <div class="form-actions">
-                                            <div onclick="update_restaurant('<?=$restaurant_id?>')" class="btn btn-primary btn-lg">
-                                                <i class="fa fa-save"></i>
-                                                Update
-                                            </div>
+                                            <input type="submit" class="btn btn-lg" value="Update">
+                                           </div>
                                         </div>
                                     </form>
                                 </div>
@@ -232,7 +232,8 @@ else
     <!-- END MAIN CONTENT -->
 </div>
 <script>
-    globalEditLogo = null;
+    document.getElementById('hidden_image').value = 0;
+    document.getElementById('rest_id').value = '<?=$restaurant_id ?>';
     //alert(globalEditLogo);
     function previewEditFile() {
 
@@ -248,6 +249,7 @@ else
         reader.addEventListener("load", function () {
 
             globalEditLogo = reader.result;
+            document.getElementById('hidden_image').value = 1;
            // alert(globalEditLogo);
 
         }, false);
