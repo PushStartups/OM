@@ -1748,6 +1748,7 @@ function processPayment() {
                     return;
                 }
 
+                clickInProgress = true;
 
                 // SUBMIT PAYMENT FORM
                 $('#payment-form').submit();
@@ -1823,6 +1824,7 @@ function paymentCreditCardCallBack(response) {
         $(".payment-errors").html(resp.response);
         $(".payment-errors").show();
         $('.box-frame.new').scrollTop(800);
+        clickInProgress = false;
     }
 
 }

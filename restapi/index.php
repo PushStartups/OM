@@ -1497,7 +1497,8 @@ $app->post('/add_order', function ($request, $response, $args) {
       DB::useDB('orderapp_restaurants');
       $restaurant_id = $user_order['restaurantId'];
       $restaurant_contacts = DB::query("SELECT whatsapp_group_name , whatsapp_group_creator , fax_number , email FROM restaurants WHERE id ='" . $restaurant_id . "'");
-  
+      
+      //SEND TELEGRAM MESSAGES
       telegramAPI(createOrder($orderId, $user_order), $TEST_MODE);
       telegramAPI(createOrderForDelivery($user_order), $TEST_MODE);
   
@@ -1505,17 +1506,16 @@ $app->post('/add_order', function ($request, $response, $args) {
       $group_creator_phone = '+' . $restaurant_contacts[0]['whatsapp_group_creator'];
       $fax = $restaurant_contacts[0]['fax_number'];
       $email = $restaurant_contacts[0]['email'];
-  
+      
+      //SEND TELEGRAM MESSAGES (CURRENTLY DOESNT WORK)
       whatsappAPI($group_creator_phone, $group_name, createOrder($orderId, $user_order), $TEST_MODE);
   
       //SEND EMAIL WITH AN ORDER TO orders@orderapp.com
       sendEmail(createOrderMsgForRestaurantHtml($orderId, $user_order), 'orders@orderapp.com', $orderId, $user_order);
-      //ob_end_clean();
   
       //SEND EMAIL TO RESTAURANT
       if ($email && $TEST_MODE == false) {
         sendEmail(createOrderMsgForRestaurantHtml($orderId, $user_order), $email, $orderId, $user_order);
-        //ob_end_clean();
       }
   
       //DELIVERY MESSAGES TO WHATSAPP
@@ -2180,125 +2180,6 @@ function createBringgTask($user_order, $todayDate, $delivery_time) {
 }
 
 
-
-
-function createOrderForTelegram($user_order)
-{
-    $mailBody = '';
-    $mailBody = " הזמנה חדשה".substr($user_order['contact'], -4) . " #" . $user_order['restaurantTitleHe'].'
-    
-    ';
-
-    $mailBody .= 'שם הלקוח :' . $user_order['name'] . '
-    
-    ';
-    $mailBody .= 'מספר :' . $user_order['contact'] . '
-    
-    ';
-
-    if ($user_order['pickFromRestaurant'] == 'false') {
-
-        $mailBody .= ':  כתובת'. $user_order['deliveryAptNo'] .' '. $user_order['deliveryAddress'] .' ('.$user_order['deliveryArea'].')'.' 
-        
-        ';
-    }
-    else
-    {
-        $mailBody .= 'כתובת: איסוף עצמי'.'
-        
-        ' ;
-    }
-
-    $mailBody .= 'הזמנה :' . substr($user_order['contact'], -4) . ' 
-    
-    ';
-
-
-    if($user_order['specialRequest'] != '')
-    {
-
-        $mailBody .= 'ההערות :' . $user_order["specialRequest"] . ' 
-    
-       ';
-    }
-
-
-
-    foreach ($user_order['cartData'] as $t) {
-
-        $mailBody .=  $t['qty'] . '  ' . $t['name_he'] . ' 
-        
-        ';
-
-        if($t['specialRequest'] != "") {
-
-
-            if ($t['detail_he'] == '') {
-
-
-                $mailBody .=  preg_replace("/\([^)]+\)/", "", $t['detail_he']).'הערות :'.$t['specialRequest'].' 
-                
-                ';
-
-            }
-            else {
-
-
-                $mailBody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']).' ,הערות :'.$t['specialRequest'].' 
-               
-                ';
-
-            }
-        }
-        else
-        {
-            $mailBody .= preg_replace("/\([^)]+\)/", "", $t['detail_he']) . ' 
-            
-            ';
-
-        }
-    }
-
-
-    return $mailBody;
-}
-
-
-
-//  TELEGRAM API
-//  SEND ORDERS THROUGH TELEGRAM
-
-//function telegramAPI($bot_id, $chat_id, $text) {
-//
-//
-//    $postData = array(
-//        'chat_id' => $chat_id,
-//        'text' => $text
-//    );
-//
-//
-//    $headers = array(
-//        'Content-Type: application/json'
-//    );
-//
-//
-//    $url = 'https://api.telegram.org/bot'.$bot_id.'/sendMessage';
-//
-//
-//    $ch = curl_init($url);
-//    curl_setopt($ch, CURLOPT_POST, 1);
-//    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
-//    $response = curl_exec($ch);
-//    echo "Response: ".$response;
-//    curl_close($ch);
-//
-//
-//}
-
-
-
 function getCurrentTime(){
 
     //CURRENT TIME OF ISRAEL
@@ -2349,21 +2230,8 @@ function traccer($order_id,$name,$phone,$start_address,$delivery_address,$startL
 
 }
 
-function createMsg($user_platform, $user_order, $restaurant_contacts) {
-  
-  $mailBody = '';
-  $mailBody .= $user_order['restaurantTitle'] . '
-';
-  
-  $group_name = $restaurant_contacts[0]['whatsapp_group_name'];
-  $group_creator_phone = '+' . $restaurant_contacts[0]['whatsapp_group_creator'];
-  $fax = $restaurant_contacts[0]['fax_number'];
-  $email = $restaurant_contacts[0]['email'];
-  $mailBody .= $group_name . ' ' . $group_creator_phone . ' ' . $fax . ' ' . $email;
-  
-  return $mailBody;
-}
 
+//CREATE MESSAGE FOR TELEGRAM AND FAX
 function createOrder($orderId, $user_order) {
   global $tr;
   $mailBody = '';
@@ -2408,7 +2276,9 @@ function createOrder($orderId, $user_order) {
       $mailBody .= 'כמות ' . $order['qty'] . '  ' . $order['itemNameHe'] . '
 ';
     } else {
-      $mailBody .= $order["itemPrice"] . ' ' . 'כמות ' . $order['qty'] . '  ' . $order['itemNameHe'] . '
+      $mailBody .=  ' ' . 'כמות ' . $order['qty'] . '  ' . $order['itemNameHe'] . '
+';
+      $mailBody .= $order["itemPrice"] . ' ש"ח ' . '
 ';
     }
     
@@ -2432,7 +2302,8 @@ function createOrder($orderId, $user_order) {
 ';
     }
     if (strlen($multiItemsText)) {
-      $mailBody .= $order["itemPrice"] + $multiItemsPrice . '
+      $totalPrice = $order["itemPrice"] + $multiItemsPrice;
+      $mailBody .= $totalPrice . ' ש"ח ' . '
 ';
       $mailBody .= '---------------
 
@@ -2453,6 +2324,7 @@ function createOrder($orderId, $user_order) {
   return $mailBody;
 }
 
+//CREATE MESSAGE FOR DELIVERY TEAMS
 function createOrderForDelivery($user_order) {
   global $tr;
   $mailBody = '';
@@ -2480,6 +2352,7 @@ function createOrderForDelivery($user_order) {
   return $mailBody;
 }
 
+//CREATE HTML TEXT FOR RESTURANTS TO SEND BY EMAIL
 function createOrderMsgForRestaurantHtml($orderId, $user_order) {
   global $tr;
   $msg = '<html>';
@@ -2555,6 +2428,7 @@ function createOrderMsgForRestaurantHtml($orderId, $user_order) {
   return $msg;
 }
 
+//SEND TELEGRAM MESSSAGE
 function telegramAPI($text, $TEST_MODE) {
   
   if ($TEST_MODE) {
@@ -2587,6 +2461,7 @@ function telegramAPI($text, $TEST_MODE) {
   curl_close($ch);
 }
 
+//SEND WHATSAPP MESSAGE
 function whatsappAPI($groupAdmin, $groupName, $message, $TEST_MODE) {
   
   if ($TEST_MODE) {
@@ -2647,6 +2522,7 @@ function sendFax($fax, $msg, $TEST_MODE) {
   
 }
 
+//SEND EMAIL
 function sendEmail($msg, $toEmail, $orderId, $user_order) {
   
   if($_SERVER['HTTP_HOST'] == 'eluna.orderapp.com')

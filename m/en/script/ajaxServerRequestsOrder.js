@@ -1720,7 +1720,6 @@ function processPayment() {
     if(!clickInProgress) {
 
 
-
         $('#error-card').removeClass('error');
         $('.payment-errors').html("");
         $('.payment-errors').hide();
@@ -1784,6 +1783,8 @@ function processPayment() {
                     return;
                 }
 
+
+                clickInProgress = true;
 
                 // SUBMIT PAYMENT FORM
                 $('#payment-form').submit();
@@ -1852,12 +1853,14 @@ function paymentCreditCardCallBack(response) {
         userObject.Cash_Card_he = "כרטיס אשראי";
         userObject.trans_id = resp.trans_id;
         onPaymentSuccess();
+
     }
     else
     {
         $(".payment-errors").html(resp.response);
         $(".payment-errors").show();
         $('.box-frame.new').scrollTop(800);
+        clickInProgress = false;
     }
 
 }
