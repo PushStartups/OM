@@ -1509,7 +1509,6 @@ $app->post('/add_order', function ($request, $response, $args) {
       whatsappAPI($group_creator_phone, $group_name, createOrder($orderId, $user_order), $TEST_MODE);
   
       //SEND EMAIL WITH AN ORDER TO orders@orderapp.com
-      sendEmail(createOrderMsgForRestaurantHtml($orderId, $user_order), 'shch.ouch@gmail.com', $orderId, $user_order);
       sendEmail(createOrderMsgForRestaurantHtml($orderId, $user_order), 'orders@orderapp.com', $orderId, $user_order);
       //ob_end_clean();
   
