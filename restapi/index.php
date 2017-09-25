@@ -1501,6 +1501,8 @@ $app->post('/add_order', function ($request, $response, $args) {
       //SEND TELEGRAM MESSAGES
       telegramAPI(createOrder($orderId, $user_order), $TEST_MODE);
       telegramAPI(createOrderForDelivery($user_order), $TEST_MODE);
+      
+      
   
       $group_name = $restaurant_contacts[0]['whatsapp_group_name'];
       $group_creator_phone = '+' . $restaurant_contacts[0]['whatsapp_group_creator'];
@@ -1551,19 +1553,19 @@ $app->post('/add_order', function ($request, $response, $args) {
 
         // SEND EMAIL TO KITCHEN
 
-        email_for_kitchen($user_order, $orderId, $todayDate);
-
-        ob_end_clean();
-
-
-        email_for_mark($user_order, $orderId, $todayDate);
-
-        ob_end_clean();
-
-
-        email_for_mark2($user_order, $orderId, $todayDate);
-
-        ob_end_clean();
+//        email_for_kitchen($user_order, $orderId, $todayDate);
+//
+//        ob_end_clean();
+//
+//
+//        email_for_mark($user_order, $orderId, $todayDate);
+//
+//        ob_end_clean();
+//
+//
+//        email_for_mark2($user_order, $orderId, $todayDate);
+//
+//        ob_end_clean();
 
 
         //  CLIENT EMAIL
@@ -2247,10 +2249,10 @@ function createOrder($orderId, $user_order) {
 
 ';
   
-  if ($user_order['pickFromRestaurant'] == 'true' && $user_order['isCoupon'] == 'true') {
-    $mailBody .= 'שם הלקוח :' . $user_order["name"] . "
-";
-  }
+//  if ($user_order['pickFromRestaurant'] == 'true' && $user_order['isCoupon'] == 'true') {
+//    $mailBody .= 'שם הלקוח :' . $user_order["name"] . "
+//";
+//  }
   
   $mailBody .= '---------------
 ';
@@ -2314,8 +2316,7 @@ function createOrder($orderId, $user_order) {
 ';
     }
   }
-  
-  $mailBody .= " סה\"כ: ₪" . $user_order["total"] . "
+  $mailBody .= " סה\"כ: ₪" . $user_order['totalWithoutDiscount'] . "
 
 ";
   
@@ -2346,8 +2347,14 @@ function createOrderForDelivery($user_order) {
   $delivery_address = $tr->translate($user_order['deliveryAddress']);
   $delivery_area = $tr->translate($user_order['deliveryArea']);
   
-  $mailBody .= 'כתובת :' . $user_order['deliveryAptNo'] . ' ' . $delivery_address . ' (' . $delivery_area . ')' . '
+  if ($user_order['pickFromRestaurant'] == "true") {
+      $mailBody .= 'כתובת: איסוף עצמי';
+  } else {
+    $mailBody .= 'כתובת :' . $user_order['deliveryAptNo'] . ' ' . $delivery_address . ' (' . $delivery_area . ')' . '
 ';
+  }
+  
+  
   
   return $mailBody;
 }
@@ -2421,7 +2428,7 @@ function createOrderMsgForRestaurantHtml($orderId, $user_order) {
   $msg .= '<div>---------------</div>';
   $msg .= '<br>';
   
-  $msg .= '<p>' . ' סה"כ סכום הזמנה ₪' . $user_order["total"] . '</p>';
+  $msg .= '<p>' . ' סה"כ סכום הזמנה ₪' . $user_order['totalWithoutDiscount'] . '</p>';
   $msg .= '</div>';
   $msg .= '</body>';
   $msg .= '</html>';
